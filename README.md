@@ -1,8 +1,6 @@
 ﻿# 概率论与数理统计教程
 使用 2004 年版本
 
-书籍模板请下载最新版 [ElegantBook](https://github.com/ElegantLaTeX/ElegantBook)。
-
 # 分工
 
 + 第一章（曹甄强）
@@ -18,13 +16,29 @@
 
 1. 不要用直立积分符号
 2. 使用 `\leqslan` 和 `\leq` 均可
-3. 自然对数底定义新命令\newcommand{\ee}{\mathrm e}，
+3. 自然对数底定义新命令 `\newcommand{\ee}{\mathrm e}`
 在指数形式比较复杂时，用\exp表示自然对数底
-4. 行内分式不需要用\displaystyle
-5. 关键词用\textbf{关键词}，然后建立索引\index{G!关键词}
-G表示名词首字母用于排序，!后面的就是关键词的名字
-6. 积分里面的微分符号d定义为\newcommand{\dd}{\\,d}
+4. 行内分式不需要用 `\displaystyle`
+5. 关键词用 `\textbf{关键词}`，然后建立索引 `\index{G!关键词}`
+G 表示名词首字母用于排序，!后面的就是关键词的名字
+6. 积分里面的微分符号 d 定义为`\newcommand{\dd}{\,d}`
 输入的时候就输入\dd，这样即便有必要改为正体也容易
+7. 标点符号全部使用英文符号，文本模式中，标点符号后需要加空格
+8. 数学公式中，使用 `\ldots` 进行罗列，如果两边是操作符，用 `\cdots`
+9. 交叉引用-标签
+    + 公式：\label{eq:3.1.2}
+    + 表格：\label{tab:3.1.2}
+    + 图：\label{tab:3.1.2}
+    + 章节：\label{cha:3.1.2}
+    + 小节：\label{sec:3.1.2}
+    + 小小节：\label{ssec:3.1.2}
+    + 示例：\label{exam:3.1.2}
+    + 练习：\label{exer:3.1.2}
+    + 其他定理环境交叉引用，请参考 ElegantBook 说明文档。
+10. 交叉引用-引用
+    + 使用`~\ref{label}` 进行引用，注意空格，示例：`在表~\ref{tab:3.1.2} 中...`
+11. 表格推荐使用 table+tabular 环境结合三线表：`\toprule`，`\midrule`，`\bottomrule` 制作。
+12. 公式里面距离，一般距离用 `\;`，然后大距离用 `\quad` 或者 `\qquad`（基本用 `\quad`）
 
 
 ```tex
