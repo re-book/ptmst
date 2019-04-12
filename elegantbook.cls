@@ -53,7 +53,7 @@
 % fontsetting
 
 \PassOptionsToPackage{no-math}{fontspec}
-\RequirePackage[UTF8, scheme=plain,punct=kaiming]{ctex}
+\RequirePackage[UTF8, scheme=plain,punct=kaiming,space=true]{ctex}
 
 \RequirePackage{ifxetex}
 
@@ -222,7 +222,7 @@
 
 % list/itemize/enumerate setting
 \RequirePackage[shortlabels]{enumitem}
-\setlist{nosep,after={}}
+\setlist{noitemsep}
 \newcommand*{\eitemi}{\tikz \draw [baseline, ball color=main, draw=none] circle (2pt);}
 \newcommand*{\eitemii}{\tikz \draw [baseline, fill=main,draw=none,circular drop shadow] circle (2pt);}
 \newcommand*{\eitemiii}{\tikz \draw [baseline, fill=main,draw=none] circle (2pt);}
