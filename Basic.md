@@ -29,18 +29,17 @@
 提前推荐个软件，你在用的：Typora。
 
   1. 先配置 SSH（一个协议）。请看演示
-	①电脑 Git Bash： ssh-keygen -t rsa  过程中，回车即可。
-	②打开github--> setting --> SSH,添加 SSH  public 文件内容。
+	1. 电脑 Git Bash： ssh-keygen -t rsa  过程中，回车即可。
+	2. 打开github--> setting --> SSH,添加 SSH  public 文件内容。
 	测试下：ssh git@github.com 看到：You've successfully authenticated 表示成功。
-
   2. 可以使用 Git 命令玩了。 就是这么简单。经常用的命令就是如下几个：
-	(1) git status 查看本地仓库状态
-	(2) git add .   添加所有改动到暂缓区，git add a.txt 这是添加a.txt单个文件
-	(3) git commit -m "你的注释说明"
-	(4) git push 提交到GitHub
+	1. git status 查看本地仓库状态
+	2. git add .   添加所有改动到暂缓区，git add a.txt 这是添加a.txt单个文件
+	3. git commit -m "你的注释说明"
+	4. git push 提交到GitHub
 	
 
-如何使用Git提交自己的文件到GitHub????
+如何使用 Git 提交自己的文件到 GitHub？
 
 	1. 选择仓库的 ssh 的地址
 	2. 克隆(下载),比如：git clone git@github.com:mathflow/LaTex_Notes.git
