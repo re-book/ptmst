@@ -1,4 +1,4 @@
-# 概率论与数理统计教程
+﻿# 概率论与数理统计教程
 使用 2004 年版本
 
 书籍模板请下载最新版 [ElegantBook](https://github.com/ElegantLaTeX/ElegantBook)。
@@ -18,6 +18,8 @@
 
 1. 不要用直立积分符号
 2. 使用 `\leqslan` 和 `\leq` 均可
+3. 自然对数底定义新命令\newcommand{\ee}{\mathrm e}
+4. 行内分式不需要用\displaystyle
 
 
 ```tex
