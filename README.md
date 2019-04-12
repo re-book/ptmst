@@ -18,7 +18,8 @@
 
 1. 不要用直立积分符号
 2. 使用 `\leqslan` 和 `\leq` 均可
-3. 自然对数底定义新命令\newcommand{\ee}{\mathrm e}
+3. 自然对数底定义新命令\newcommand{\ee}{\mathrm e}，
+在指数形式比较复杂时，用\exp表示自然对数底
 4. 行内分式不需要用\displaystyle
 
 
