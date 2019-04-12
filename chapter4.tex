@@ -1,3 +1,55 @@
-% Edit by:
+% Edit by: Xiao Xing
+% !TEX root = ./main.tex
+% !TEX program = latexmk
+% !TEX options = -pdfxe -synctex=1 -interaction=nonstopmode %DOCFILE%
 \chapter{大数定律与中心极限定理}
 大数定律与中心极限定理
+
+\section{特征函数}
+
+设 $ p (x) $ 是随机变量 $ X $ 的密度函数,
+则 $ p (x) $ 的傅里叶变换是
+\begin{equation*}
+    \varphi (t) = \int_{-\infty}^{+\infty} \ee^{itx} p (x) \dd x,
+\end{equation*}
+其中 $ i = \sqrt{-1} $ 是虚数单位.
+由数学期望的概念知,
+$ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
+这就是本节要讨论的特征函数,
+它是处理许多概率论问题的有力工具,
+它能把寻求独立随机变量和的分布的卷积运算 (积分运算) 转换成乘法运算,
+还能把求分布的各阶原点矩 (积分运算) 转换成微分运算.
+特别它能把寻求随机变量序列的极限分布转换成一般的函数极限问题,
+下面从特征函数的定义开始介绍它们.
+
+\subsection{特征函数的定义}
+
+\begin{definition}{}{def:4.1.1}
+    设 $ X $ 是一个随机变量,
+    称
+    \begin{equation}\label{eq:4.1.1}
+        \varphi (t) = E \bigl( \ee^{itx} \bigr), \; -\infty \leq t \leq +\infty,
+    \end{equation}
+    为 $ X $ 的\textbf{特征函数}\index{G!特征函数}.
+\end{definition}
+
+因为 $ \lvert \ee^{itx} \rvert \leq 1 $,
+所以 $ E \bigl( \ee^{itX} \bigr) $ 总是存在的,
+即任一随机变量的特征函数总是存在的.
+
+当离散随机变量 $ X $ 的分布列为 $ p_k = P ( X = x_k ) $, $ k = 1,2,\dotsc $,
+则 $ X $ 的特征函数为
+\begin{equation}\label{eq:4.1.2}
+    \varphi (t) = \sum_{k=1}^{+\infty} \ee^{itx_k} p_k, \; -\infty \leq t \leq +\infty.
+\end{equation}
+
+当连续随机变量 $ X $ 的密度函数为 $ p (x) $,
+则 $ X $ 的特征函数为
+\begin{equation}\label{ch9:eq:4.1.3}
+    \varphi (t) = \int_{-\infty}^{+\infty} \ee^{itx} p (x) \dd x, \; -\infty \leq t \leq +\infty.
+\end{equation}
+
+与随机变量的数学期望、方差及各阶矩一样,
+特征函数只依赖于随机变量的分布,
+分布相同则特征函数也相同,
+所以我们也常称为某\textbf{分布的特征函数}\index{G!分布的特征函数}.
