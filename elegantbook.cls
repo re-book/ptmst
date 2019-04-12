@@ -220,10 +220,13 @@
 \usetikzlibrary{backgrounds,calc,shadows}
 \usepackage[object=vectorian]{pgfornament} %% 
 
+% list/itemize/enumerate setting
+\RequirePackage[shortlabels]{enumitem}
+\setlist{nosep,after={}}
 \newcommand*{\eitemi}{\tikz \draw [baseline, ball color=main, draw=none] circle (2pt);}
 \newcommand*{\eitemii}{\tikz \draw [baseline, fill=main,draw=none,circular drop shadow] circle (2pt);}
 \newcommand*{\eitemiii}{\tikz \draw [baseline, fill=main,draw=none] circle (2pt);}
-\setlist[enumerate,1]{label=\color{main}\arabic*.}
+\setlist[enumerate,1]{label=\color{main}(\arabic*)}
 \setlist[enumerate,2]{label=\color{main}(\alph*).}
 \setlist[enumerate,3]{label=\color{main}\Roman*.}
 \setlist[enumerate,4]{label=\color{main}\Alph*.}
@@ -293,9 +296,7 @@
 
 %%define the note and proof environment
 \RequirePackage{pifont,manfnt,bbding}
-% list/itemize/enumerate setting
-\RequirePackage[shortlabels]{enumitem}
-\setlist{nolistsep}
+
 
 \RequirePackage[many]{tcolorbox}
 
