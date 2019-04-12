@@ -337,31 +337,31 @@
     },
 }
 
-\newtcbtheorem[auto counter,number within=chapter]{definition}{
+\newtcbtheorem[auto counter,number within=section]{definition}{
 	\ifdefstring{\ELEGANT@lang}{en}{Definition}{定义}
 }{defstyle}{def}
 
-\newtcbtheorem[auto counter,number within=chapter]{theorem}{
+\newtcbtheorem[auto counter,number within=section]{theorem}{
 	\ifdefstring{\ELEGANT@lang}{en}{Theorem}{定理}
 }{thmstyle}{thm}
 
-\newtcbtheorem[auto counter,number within=chapter]{proposition}{
+\newtcbtheorem[auto counter,number within=section]{proposition}{
 	\ifdefstring{\ELEGANT@lang}{en}{Proposition}{命题}
 }{propstyle}{pro}
 
-\newtcbtheorem[auto counter,number within=chapter]{corollary}{
+\newtcbtheorem[auto counter,number within=section]{corollary}{
 	\ifdefstring{\ELEGANT@lang}{en}{Corollary}{推论}
 }{thmstyle}{cor}
 
-\newtcbtheorem[auto counter,number within=chapter]{lemma}{
+\newtcbtheorem[auto counter,number within=section]{lemma}{
 	\ifdefstring{\ELEGANT@lang}{en}{Lemma}{引理}
 }{thmstyle}{lem}
 
 
 %% Example with counter
-\newcounter{exam}[chapter]
+\newcounter{exam}[section]
 \setcounter{exam}{0}
-\renewcommand{\theexam}{\thechapter.\arabic{exam}}
+\renewcommand{\theexam}{\thesection.\arabic{exam}}
 \newenvironment{example}[1][]{
  		\refstepcounter{exam}\par\medskip\noindent \textbf{\color{main}{
  			\ifdefstring{\ELEGANT@lang}{en}{Example}{例}
@@ -371,9 +371,9 @@
  	}
 
 %% Exercise with counter
-\newcounter{exer}[chapter]
+\newcounter{exer}[section]
 \setcounter{exer}{0}
-\renewcommand{\theexer}{\thechapter.\arabic{exer}}
+\renewcommand{\theexer}{\thesection.\arabic{exer}}
 \newenvironment{exercise}[1][]{
  		\refstepcounter{exer}\par\noindent\makebox[-3pt][r]{\scriptsize\color{red!90}\HandPencilLeft\quad}\textbf{\color{main}{
  			\ifdefstring{\ELEGANT@lang}{en}{Exercise}{练习}
@@ -383,9 +383,9 @@
  	}
 
 %% Exercise with counter
-\newcounter{prob}[chapter]
+\newcounter{prob}[section]
 \setcounter{prob}{0}
-\renewcommand{\theprob}{\thechapter.\arabic{prob}}
+\renewcommand{\theprob}{\thesection.\arabic{prob}}
 \newenvironment{problem}[1][]{
  		\refstepcounter{prob}\par\medskip\noindent \textbf{\color{main}{
  			\ifdefstring{\ELEGANT@lang}{en}{Problem}{例题}
