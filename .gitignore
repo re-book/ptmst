@@ -11,7 +11,8 @@
 *.cb
 *.cb2
 .*.lb
-main.*
+main.tex
+main.pdf
 
 
 ## Intermediate documents:
