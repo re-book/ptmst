@@ -26,7 +26,7 @@
 \end{table}%
 \end{example}
 
-本例中, 我们要比较的是三种饲料对鸡的增肥作用是否相同. 为此, 把饲料称为 \index{Y:因子}, 记为 $A$, 三种不同的配方称为因子 $A$ 的三个水平, 记为 $A_1$, $A_2$, $A_3$, 使用配方 $A_i$ 下第 $j$ 只鸡 60 天后的重量用 $y_{ij}$ 表示, $i = 1,2,3$, $j =1,2,3,\ldots,10$. 我们的目的是比较三种不同饲料配方下鸡的平均重量是否相等, 为此, 需要做一些基本假定, 把所研究的问题归结为一个统计问题, 然后用方差分析的方法进行解决. 
+本例中, 我们要比较的是三种饲料对鸡的增肥作用是否相同. 为此, 把饲料称为\textbf{因子}\index{Y!因子}, 记为 $A$, 三种不同的配方称为因子 $A$ 的三个水平, 记为 $A_1$, $A_2$, $A_3$, 使用配方 $A_i$ 下第 $j$ 只鸡 60 天后的重量用 $y_{ij}$ 表示, $i = 1,2,3$, $j =1,2,3,\ldots,10$. 我们的目的是比较三种不同饲料配方下鸡的平均重量是否相等, 为此, 需要做一些基本假定, 把所研究的问题归结为一个统计问题, 然后用方差分析的方法进行解决. 
 
 在例~\ref{exam:8.1.1} 中, 我们只考察了一个因子, 称其为单因子试验. 通常, 在单因子试验中, 记因子为 $A$, 设其有 $r$ 个水平, 记为 $A_1,A_2,\ldots,A_r$, 在每一水平下考察的指标可以看成一个总体, 现有 $r$ 个水平, 故有 $r$ 个总体, 假定：
 
@@ -48,7 +48,7 @@
 \end{equation*}
 在不会引起误解的情况下, $H_1$ 通常可省略不写. 
 
-如果 $H_0$ 成立, 因子 $A$ 的 $r$ 个水平均值相同, 称因子 $A$ 的 $r$ 个水平间没有显著差异, 简称因子 $A$ \textbf{不显著}；反之, 当 $H_0$ 不成立时, 因子 $A$ 的 $r$ 个水平均值不全相同, 这时称因子 $A$ 的不同水平间有显著差异, 简称因子 $A$ \textbf{显著}. 
+如果 $H_0$ 成立, 因子 $A$ 的 $r$ 个水平均值相同, 称因子 $A$ 的 $r$ 个水平间没有显著差异, 简称因子 $A$ \textbf{不显著}\index{B!不显著}；反之, 当 $H_0$ 不成立时, 因子 $A$ 的 $r$ 个水平均值不全相同, 这时称因子 $A$ 的不同水平间有显著差异, 简称因子 $A$ \textbf{显著}\index{X!显著}. 
 
 为对假设~(\ref{eq:8.1.1}) 进行检验, 需要从每一水平下的总体抽取样本, 设从第 $i$ 个水平下的总体获得 $m$ 个试验结果（简单起见, 这里先假设个水平下试验的重复数相同, 后面会看到, 重复数不同时的处理方式与此基本一致, 略有差异）,记 $y_{ij}$ 表示第 $i$ 个总体的第 $j$ 次重复试验结果. 共得到如下 $r \times m$ 个试验结果:
 \begin{equation*}
@@ -62,7 +62,7 @@
   y_{ij} = \mu_i + \varepsilon_{ij}
 \end{equation}
 
-~(\ref{eq:8.1.2}) 式称为试验结果 $y_{ij}$ 的\textbf{数据结构式}. 把三个假定用子数据结构式就可以写出单因子方差分析的统计模型：
+~(\ref{eq:8.1.2}) 式称为试验结果 $y_{ij}$ 的\textbf{数据结构式}\index{S!数据结构式}. 把三个假定用子数据结构式就可以写出单因子方差分析的统计模型：
 \begin{equation}
   \label{eq:8.1.3}
   \begin{cases}
@@ -81,13 +81,21 @@
   \label{eq:8.1.5}
   a_i = \mu_i - \mu, \quad i = 1,2,\ldots,r
 \end{equation}
-为因子 $A$ 的第 $i$ 水平的\index{Z:主效应}, 简称为 $A_i$ 的效应. 
+为因子 $A$ 的第 $i$ 水平的\textbf{主效应}\index{Z!主效应}, 简称为 $A_i$ 的效应. 
 
 容易看出 
-\begin{align}
-  \sum_{i=1}^{r} a_i = 0, \label{eq:8.1.6}\\
-  \mu_i = \mu + a_i, \label{eq:8.1.7}
-\end{align}
+% \begin{align}
+%   \sum_{i=1}^{r} a_i = 0, \label{eq:8.1.6}\\
+%   \mu_i = \mu + a_i, \label{eq:8.1.7}
+% \end{align}
+\begin{equation}
+  \label{eq:8.1.6}
+  \sum_{i=1}^{r} a_i = 0,
+\end{equation}
+\begin{equation}
+  \label{eq:8.1.7}
+  \mu_i = \mu + a_i,
+\end{equation}
 这表明第 $i$ 个总体均值是由总均值与该水平的效应叠加而成的, 从而模型~(\ref{eq:8.1.3}) 可以改写为
 \begin{equation}
   \label{eq:8.1.8}
@@ -135,6 +143,55 @@
   T_i & = \sum_{i=1}^{r} T_{i},\; \bar{y} = \frac{T}{r \cdot m} = \frac{T}{n},\\
   n & = r \cdot m = \text{ 总试验次数 }.
 \end{align*}
+
+\textbf{二、组内偏差与组间偏差}
+数据间是有差异的. 数据 $y_{ij}$ 与总平均 $\bar{y}$ 间的偏差可用 $y_{ij} - \bar{y}$ 表示, 它可分解为两个偏差之和
+\begin{equation}\label{eq:8.1.10}
+  y_{ij}-\bar{y}=(y_{ij}-\bar{y}_{i.})+(\bar{y}_{i.}-\bar{y})
+\end{equation}
+记
+\begin{equation*}
+  \bar{\varepsilon}_{i.} =\frac{1}{m} \sum_{j=1}^{m} \varepsilon_{ij}, \quad \bar{\varepsilon}=\frac{1}{r} \sum_{i=1}^{r} \bar{\varepsilon}_{i} = \frac{1}{n} \sum_{i=1}^{r} \sum_{j=1}^{m} \varepsilon_{ij}.
+\end{equation*}
+由于
+\begin{equation}\label{eq:8.1.11}
+  y_{i j}-\bar{y}_{i.}=(\mu_{i}+\varepsilon_{i j})-(\mu_{i}+\bar{\varepsilon}_{i})=\varepsilon_{i j}-\bar{\varepsilon}_{i},
+\end{equation}
+所以 $y_{ij} - \bar{y}_{i.}$ 仅反映组内数据与组内平均的随机误差, 称为\textbf{组内偏差}\index{Z!组内偏差}; 而
+\begin{equation}\label{eq:8.1.12}
+  \bar{y}_{i.}-\bar{y} = (\mu_{i}+ \bar{\varepsilon}_{i.})-(\mu +\bar{\varepsilon}_{i})= a_i + \bar{\varepsilon}_{i.}-\bar{\varepsilon},
+\end{equation}
+$\bar{y}_{i.} - \bar{y}$ 除了反映随机误差外，还反映了第 $i$ 个水平的效应，称为组间偏差，
+
+\textbf{三、偏差平方和及其自由度}
+
+在统计学中，把 $k$ 个数据 $y_1,\ldots,y_k$ 分别对其均值 $\bar{y}=(y_1+\cdots+y_{k}) / k$ 的偏差平方和
+\begin{equation*}
+  Q=\left(y_{1}-\bar{y}\right)^{2}+\cdots+\left(y_{k}-\bar{y}\right)^{2}=\sum_{i=1}^{k}\left(y_{i}-\bar{y}\right)^{2}
+\end{equation*}
+
+称为 $k$ 个数据的\textbf{偏差平方和}\index{P!偏差平方和}，有时简称\textbf{平方和}\index{P:平方和}. 偏差平方和常用来度量若干个数据集中或分散的程度，它是用来度量若干个数据间差异（即波动）的大小的一个重要的统计量.
+
+在构成偏差平方和 $Q$ 的 $k$ 个偏差 $y_1 - \bar{y}, \ldots, y_{k} - \bar{y}$ 间有一个恒等式
+\begin{equation*}
+  \sum_{i=1}^{k}\left(y_{i}-\bar{y}\right)=0
+\end{equation*}
+
+这说明在 $Q$ 中独立的偏差只有 $k-1$ 个. 在统计学中把平方和中独立偏差个数称为该平方和的\textbf{自由度}\index{Z:自由度}，常记为 $f$ ，如 $Q$ 的自由度为 $f_{Q}=k-1$. 自由度是偏差平方和的一个重要参数.
+
+\textbf{四、总平方和分解公式}
+
+各 $y_{ij}$ 间总的差异大小可用\textbf{总偏差平方和} $S_T$ 表示，
+
+\begin{equation}\label{eq:8.1.13}
+  S_{T}=\sum_{i=1}^{r} \sum_{j=1}^{m}\left(y_{i j}-\bar{y}\right)^{2}, \quad f_{T} = n-1,
+\end{equation}
+
+仅由随机误差引起的数据间的差异可以用组内偏差平方和表示，也称为误差偏差平方和，记为 $S_e$
+s.=2（%-y.），f.=r（m-1）=n-r.（8.1.14）
+i=1j=1由于组间差异除了随机误差外，还反映了效应间的差异，故由效应不同引起的数据差异可用组间偏差平方和表示，也称为因子A的偏差平方和，记为SA；SA=m】（-）2，fa=r-1.（8.1.15）i=1定理8.1.1在上述符号下，总平方和Sr可以分解为因子平方和SA与误差平方和S。之和，其自由度也有相应分解公式，具体为：
+Sr=SA+S，fr=fa+f，（8.1.16）
+（8.1.16）式通常称为总平方和分解式.
 
 \section{多重比较\label{sec:8.2}}
 
