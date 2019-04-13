@@ -1,4 +1,4 @@
-\let\leq\leqslant
+\let\leq\leqslant\let\geq\geqslant
 \usepackage{siunitx}
 
 \usepackage{makeidx}
@@ -11,4 +11,18 @@
 \newcommand{\dd}{\,d}
 
 \newcommand{\textop}[1]{\relax\ifmmode\mathop{\text{#1}}\else\text{#1}\fi}
-
+\usepackage{tabularx,booktabs}
+%%%%%%定义两个列格式，数学与非数学模式
+\newcolumntype{Y}{>{\centering\arraybackslash$}X<{$}}
+\newcolumntype{Z}{>{\centering\arraybackslash}X}
+%%%%定义罗马数字
+\makeatletter
+\newcommand{\rmnum}[1]{\romannumeral #1}
+\newcommand{\Rmnum}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\makeatother
+\newenvironment{xiti}{\begin{center}
+\textbf{\zihao{-3}\ding{45}\,习~~题\quad\thesection}
+\end{center}
+\begin{enumerate}[leftmargin=0.5cm]
+}
+{\end{enumerate}}
