@@ -1,9 +1,9 @@
 % !TeX program = XeLaTeX
 % !TeX root = main.tex
 % Edit by:
-\chapter{方差分析与回归分析\label{cha:8}}
+\chapter{方差分析与回归分析}\label{cha:8}
 
-\section{方差分析\label{sec:8.1}}
+\section{方差分析}\label{sec:8.1}
 \subsection{问题的提出}
 前面几章我们讨论的都是一个总体或者两个总体的统计分析问题, 在实际工作中我们还会经常碰到多个总体均值的比较问题, 处理这类问题通常采用所谓的方差分析方法. 本节将叙述这个方法, 先看一个例子. 
 
@@ -114,7 +114,7 @@
   H_1 \text{ : } a_1,a_2,\ldots,a_r \text{ 不全为 0.}
 \end{equation*}
 
-\subsection{平方和分解\label{ssec:8.1.3}}
+\subsection{平方和分解}\label{ssec:8.1.3}
 \textbf{一、试验数据}
 
 通常在单因子方差分析中可将试验数据列成如下表格形式. 
@@ -188,15 +188,60 @@ $\bar{y}_{i.} - \bar{y}$ 除了反映随机误差外，还反映了第 $i$ 个�
 \end{equation}
 
 仅由随机误差引起的数据间的差异可以用组内偏差平方和表示，也称为误差偏差平方和，记为 $S_e$
-s.=2（%-y.），f.=r（m-1）=n-r.（8.1.14）
-i=1j=1由于组间差异除了随机误差外，还反映了效应间的差异，故由效应不同引起的数据差异可用组间偏差平方和表示，也称为因子A的偏差平方和，记为SA；SA=m】（-）2，fa=r-1.（8.1.15）i=1定理8.1.1在上述符号下，总平方和Sr可以分解为因子平方和SA与误差平方和S。之和，其自由度也有相应分解公式，具体为：
-Sr=SA+S，fr=fa+f，（8.1.16）
-（8.1.16）式通常称为总平方和分解式.
+\begin{equation}\label{eq:8.1.14}
+  S_{e}=\sum_{i=1}^{r} \sum_{j=1}^{m}\left(y_{i j}-\bar{y}_{i .}\right)^{2}, \quad f_{e}=r(m-1)=n-r.
+\end{equation}
+由于组间差异除了随机误差外，还反映了效应间的差异，故由效应不同引起的数据差异可用\textbf{组间偏差平方和}表示，也称为因子 $A$ 的\textbf{偏差平方和}，记为 $S_A$；
+\begin{equation}\label{eq:8.1.15}
+  S_{A}=m \sum_{i=1}^{r}\left(\bar{y}_{i.}-\bar{y}\right)^{2}, \quad f_{A}=r-1
+\end{equation}
 
-\section{多重比较\label{sec:8.2}}
+\begin{theorem}{}{8.1.1}
+在上述符号下，总平方和 $S_T$ 可以分解为因子平方和 $S_A$ 与误差平方和 $S_e$。之和，其自由度也有相应分解公式，具体为：
+\begin{equation} \label{eq:8.1.16}
+S_{T}=S_{A}+ S_{e}, \quad f_{T}=f_{A}+f_{e}
+\end{equation}
+~\eqref{eq:8.1.16} 式通常称为总平方和分解式. 
+\end{theorem}
 
-\section{方差齐次检验\label{sec:8.3}}
+\begin{proof}
+注意到
+  \begin{equation}
+    \sum_{i=1}^{r} \sum_{j=1}^{m}(y_{i j}-\bar{y}_{i.})(\bar{y}_{i.}-\bar{y})= \sum_{i=1}^{r}\big[(\bar{y}_{i.}-\bar{y}) \sum_{i=1}^{m}(y_{i j}-\bar{y}_{i.})\big]=0
+    \end{equation}
+故有
+    \begin{align*}
+      S_{T} & =\sum_{i=1}^{r} \sum_{j=1}^{m}(y_{i j}-\bar{y})^{2} = \sum_{i=1}^{r} \sum_{i=1}^{m}[(y_{i j}-\bar{y}_{i.})+(\bar{y}_{i.}-\bar{y})]^{2}\\
+      &=S_{e}+S_{A} + 2 \sum_{i=1}^{r} \sum_{j=1}^{m}(y_{i j}-\bar{y}_{i.})+(\bar{y}_{i .}-\bar{y}) = S_{e} + S_{A},
+    \end{align*}
+诸自由度间的等式是显然的.
+\end{proof}
 
-\section{一元线性回归\label{sec:8.4}}
+\subsection{检验方法}
 
-\section{一元非线性回归\label{sec:8.5}}
+偏差平方和 $Q$ 的大小与数据个数（或自由度）有关，一般说来，数据越多，其偏差平方和越大. 为了便于在偏差平方和间进行比较，统计上引入了均方和的概念，它定义为 
+\begin{equation*}
+  MS=Q/f_Q,
+\end{equation*}
+其意为平均每个自由度上有多少平方和，它比较好地度量了一组数据的离散程度. 
+
+如今要对因子平方和SA与误差平方和S2之间进行比较，用其均方和
+\begin{equation*}
+  MS_{A}=S_A / f_A, \quad MS_{e}=S_{e}/f_{e}
+\end{equation*}
+
+
+进行比较更为合理，因为均方和排除了自由度不同所产生的干扰.故用
+\begin{equation}
+  F = \frac{MS_{A}}{MS_{e}} = \frac{S_A/f_A}{S_e/f_e}
+\end{equation}
+作为检验 $H_0$ 的统计量，为给出检验拒绝域，我们需要如下定理：
+
+
+\section{多重比较}\label{sec:8.2}
+
+\section{方差齐次检验}\label{sec:8.3}
+
+\section{一元线性回归}\label{sec:8.4}
+
+\section{一元非线性回归}\label{sec:8.5}
