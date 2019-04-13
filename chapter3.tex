@@ -79,59 +79,59 @@
     		\begin{equation*}
     		 	P(a<X \leq b, c<Y \leq d)= F(b, d)-F(a, d)-F(b, c)+ F(a, c) \geq 0 .
     		\end{equation*}
-    		\begin{proof}
-    			\begin{enumerate}
-    				\item  因为当 $x_1<x_2$ 时, 有 $\{X_1\leq x_1\} \subset \{X_2 \leq x_2\}$, 所以对任意给定的 $y$ 有
-    				\[
-    				 	\left\{X \leq x_{1}, Y \leq y\right\} \subseteq \{ X \leq x_{2}, Y \leq y \},
-    				\]
-    				由此可得
-    				\[
-    				 	F\left(x_{1}, y\right)=P\left(X \leq x_{1}, Y \leq y\right) \leq 
-    				 	P\left(X \leq x_{2}, Y \leq y\right)=F\left(x_{2}, y\right),
-    				\]
-    				即 $F(x,y)$ 关于 $x$ 是单调不减的, 同理可证 $F(x,y)$ 关于 $y$ 是单调不减的.
-    				\item 由概率的性质可知 $0\leq F(x,y) \leq 1$. 又因为对任意的正整数 $n$ 有
-    				\begin{align*}
-    					&\lim_{x\to -\infty}\{X\leq x\}=\lim_{n\to +\infty}\bigcap_{m=1}^n \{X\leq -m\}=\varnothing,	\\
-    					&\lim_{x\to +\infty}\{X\leq x\}=\lim_{n\to +\infty}\bigcup_{m=1}^n\{X\leq m\}=\Omega,
-    				\end{align*}
-    				对 $Y \leq y$ 也类似可得. 再由概率的连续性, 就可得
-    				\[
-    				 	F(-\infty, y)=F(x,-\infty)=0; \quad F(+\infty,+\infty)=1.
-    				\]
-    				\item 固定 $y$, 仿一维分布函数右连续的证明, 就可得知 $F(x, y)$ 关于 $x$ 是右连续的. 同样固定 $x$ 可
-    				证得 $F(x,y)$ 关于 $y$ 是右连续的.
-        			\item 只需证
-        			\[
-        			 	P(a<X \leq b, c<Y \leq d)=F(b, d)-F(a, d)-F(b, c)+F(a, c).
-        			\]
-        			为此记 ( 见图~\ref{fig:3.1.2} )
-        			\[
-        			 	A=\{X \leqslant a\}, \quad B=\{ X \leqslant b \}, \quad C=\{Y \leqslant c\}, \quad D=\{Y \leqslant d\},
-        			\]
-        			考虑到
-        			\[
-        			 	\{ a<X \leqslant b \}=B-A=B \cap \overline{A}, \quad\{c<Y \leqslant d\}=D-C=D \cap \overline{C},
-        			\]
-        			且 $A \subset B, C\subset D,$ 由此可得
-        			\begin{align*}
-        				 0 & \leqslant P(a<X \leqslant b, c<Y \leqslant d) \\ 
-        				 &=P(B \cap \overline{A} \cap D \cap \overline{C}) \\ 
-        				 &=P(B D-(A \cup C)) \\ 
-        				 &=P(B D)-P(A B D \cup B C D) \\ 
-        				 &=P(B D)-P(A D \cup B C) \\ 
-        				 &=P(B D)-P(A D)-P(B C)+P(A B C D) \\ 
-        				 &=P(B D)-P(A D)-P(B C)+P(A C ) \\ 
-        				 &=P(B D)-P(A D)-P(B C)+P(A B C D) \\ 
-        				 &=F(b, d)-F(a, d)-F(b, c)+F(a, c). 
-        			\end{align*}
-    			\end{enumerate}
-    		\end{proof}
     \end{enumerate}
    \end{theorem}
+   \begin{proof}
+    	\begin{enumerate}
+    		\item  因为当 $x_1<x_2$ 时, 有 $\{X_1\leq x_1\} \subset \{X_2 \leq x_2\}$, 所以对任意给定的 $y$ 有
+    		\[
+    			\left\{X \leq x_{1}, Y \leq y\right\} \subseteq \{ X \leq x_{2}, Y \leq y \},
+    		\]
+    		由此可得
+    		\[
+    			F\left(x_{1}, y\right)=P\left(X \leq x_{1}, Y \leq y\right) \leq 
+    			P\left(X \leq x_{2}, Y \leq y\right)=F\left(x_{2}, y\right),
+    		\]
+    		即 $F(x,y)$ 关于 $x$ 是单调不减的, 同理可证 $F(x,y)$ 关于 $y$ 是单调不减的.
+    		\item 由概率的性质可知 $0\leq F(x,y) \leq 1$. 又因为对任意的正整数 $n$ 有
+    		\begin{align*}
+    			&\lim_{x\to -\infty}\{X\leq x\}=\lim_{n\to +\infty}\bigcap_{m=1}^n \{X\leq -m\}=\varnothing,	\\
+    			&\lim_{x\to +\infty}\{X\leq x\}=\lim_{n\to +\infty}\bigcup_{m=1}^n\{X\leq m\}=\Omega,
+    		\end{align*}
+    		对 $Y \leq y$ 也类似可得. 再由概率的连续性, 就可得
+    		\[
+    		 	F(-\infty, y)=F(x,-\infty)=0; \quad F(+\infty,+\infty)=1.
+    		\]
+    		\item 固定 $y$, 仿一维分布函数右连续的证明, 就可得知 $F(x, y)$ 关于 $x$ 是右连续的. 同样固定 $x$ 可
+    		证得 $F(x,y)$ 关于 $y$ 是右连续的.
+        	\item 只需证
+        	\[
+        	 	P(a<X \leq b, c<Y \leq d)=F(b, d)-F(a, d)-F(b, c)+F(a, c).
+        	\]
+        	为此记 ( 见图~\ref{fig:3.1.2} )
+        	\[
+        	 	A=\{X \leqslant a\}, \quad B=\{ X \leqslant b \}, \quad C=\{Y \leqslant c\}, \quad D=\{Y \leqslant d\},
+        	\]
+        	考虑到
+        	\[
+        	 	\{ a<X \leqslant b \}=B-A=B \cap \overline{A}, \quad\{c<Y \leqslant d\}=D-C=D \cap \overline{C},
+        	\]
+        	且 $A \subset B, C\subset D,$ 由此可得
+        	\begin{align*}
+        		 0 & \leqslant P(a<X \leqslant b, c<Y \leqslant d) \\ 
+        		 &=P(B \cap \overline{A} \cap D \cap \overline{C}) \\ 
+        		 &=P(B D-(A \cup C)) \\ 
+        		 &=P(B D)-P(A B D \cup B C D) \\ 
+        		 &=P(B D)-P(A D \cup B C) \\ 
+        		 &=P(B D)-P(A D)-P(B C)+P(A B C D) \\ 
+        		 &=P(B D)-P(A D)-P(B C)+P(A C ) \\ 
+        		 &=P(B D)-P(A D)-P(B C)+P(A B C D) \\ 
+        		 &=F(b, d)-F(a, d)-F(b, c)+F(a, c). 
+        	\end{align*}
+    	\end{enumerate}
+    \end{proof}
    \begin{figure}[htbp]
    	\centering
-   	\includegraphics[width=0.4\textwidth]{fig3-1-1.pdf}
+   	\includegraphics[width=0.4\textwidth]{fig3-1-2.pdf}
    	\caption{二维随机变量 $(X,Y)$ 落在矩形中的情况}\label{fig:3.1.2}
    \end{figure}
