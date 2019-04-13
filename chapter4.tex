@@ -1,7 +1,6 @@
 % Edit by: Xiao Xing
 % !TEX root = ./main.tex
-% !TEX program = latexmk
-% !TEX options = -pdfxe -synctex=1 -interaction=nonstopmode %DOCFILE%
+
 \chapter{大数定律与中心极限定理}
 大数定律与中心极限定理
 
@@ -30,7 +29,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
     \begin{equation}\label{eq:4.1.1}
         \varphi (t) = E \bigl( \ee^{itx} \bigr), \; -\infty \leq t \leq +\infty,
     \end{equation}
-    为 $ X $ 的\textbf{特征函数}\index{G!特征函数}.
+    为 $ X $ 的\textbf{特征函数}\index{特征函数}.
 \end{definition}
 
 因为 $ \lvert \ee^{itx} \rvert \leq 1 $,
@@ -53,3 +52,70 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
 特征函数只依赖于随机变量的分布,
 分布相同则特征函数也相同,
 所以我们也常称为某\textbf{分布的特征函数}\index{G!分布的特征函数}.
+
+\begin{example}{常用分布的特征函数}\label{exam:4.1.1}
+    \begin{enumerate}
+        \item \textbf{单点分布}\index{单点分布}: $ P (X = a) = 1 $, 
+        其特征函数为
+        \begin{equation*}
+            \varphi (t) = \ee^{itz}.
+        \end{equation*}
+        \item \textbf{0-1分布}\index{0-1分布}: $ P( X = x ) = p^x  ( 1 - p )^{1 - x} $, $ x = 0,1 $,
+        其特征函数为
+        \begin{equation*}
+            \varphi (t) = p \ee^{it} + q, \quad \text{其中} \ q= 1 - p.
+        \end{equation*}
+        \item \textbf{泊松分布}\index{泊松分布}: $ P ( X = k ) = \tfrac{\lambda^k}{k!} \ee^{-\lambda} $, $ k = 0, 1, \dotsc $, 其特征函数为
+        \begin{equation*}
+            \varphi (t) = \sum_{k=0}^{+\infty} \ee^{ikt} \frac{\lambda^k}{k!} \ee^{-\lambda} = \ee^{\lambda} \ee^{\lambda \ee^{it}} = \ee^{\lambda ( \ee^{it} ) -1}.
+        \end{equation*}
+        \item \textbf{均匀分布}\index{均匀分布} $ U ( a,b ) $: 因为密度函数为
+        \begin{equation*}
+            p (x) = 
+            \begin{cases}
+                \dfrac{1}{b-a}, & a < x < b,\\
+                0, & \text{其他}.
+            \end{cases}
+        \end{equation*}
+        所以特征函数为
+        \begin{equation*}
+            \varphi (t) = \int_a^b \frac{\ee^{itx}}{b - a} \dd x = \frac{\ee^{ibt} - \ee^{iat}}{it (b-a)}.
+        \end{equation*}
+        \item \textbf{标准正态分布}\index{标准正态分布} $ N (0,1) $: 因为密度函数为
+        \begin{equation*}
+            p (x) = \frac{1}{\sqrt{2\pi}} \ee^{-\frac{x^2}{2}}, \quad - \infty < x < + \infty.
+        \end{equation*}
+        所以特征函数为
+        \begin{align*}
+            \varphi (t) & = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{+\infty} \ee^{itx - \frac{x^2}{2}} \dd x\\
+            & = \ee^{-\frac{t^2}{2}} \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{+\infty} \ee^{-\frac{( x - it )^2}{2}} \dd x\\
+            & = \ee^{-\frac{t^2}{2}} \frac{1}{\sqrt{2\pi}} \int_{-\infty -it}^{+\infty -it} \ee^{-\frac{x^2}{2}} \dd x\\
+            & = \ee^{-\frac{t^2}{2}},
+        \end{align*}
+        其中
+        \begin{equation*}
+            \int_{-\infty -it}^{+\infty -it} \ee^{-\frac{x^2}{2}} \dd x = \sqrt{2\pi}
+        \end{equation*}
+        是利用复变函数中的围道积分求得的.
+        有了标准正态分布的特征函数,
+        再利用下节给出的特征函数的性质,
+        就很容易得到一般正态分布 $ N ( \mu, \sigma^2 ) $ 的特征函数,
+        见例~.
+        \item \textbf{指数分布}\index{指数分布} $ \exp ( \lambda ) $: 因为密度函数为
+        \begin{equation*}
+            p (x) =
+            \begin{cases}
+                \lambda \ee^{-\lambda x}, & x > 0,\\
+                0, & x \leq 0.
+            \end{cases}
+        \end{equation*}
+        所以特征函数为
+        \begin{align*}
+            \varphi (t) & = \int_0^{+\infty} \ee^{itx} \lambda \ee^{-\lambda x} \dd x\\
+            & = \lambda \left( \int_0^{+\infty} \cos (tx) \ee^{-\lambda x} \dd x + i \int_0^{+\infty} \sin (tx) \ee^{-\lambda x} \dd x \right)\\
+            & = \lambda \left( \frac{\lambda}{\lambda^2 + t^2} + i \frac{t}{\lambda^2 + t^2} \right)\\
+            & = \left( 1 - \frac{it}{\lambda} \right)^{-1}.
+        \end{align*}
+        以上积分中用到了复变函数中的欧拉公式: $ \ee^{itx} = \cos (tx) + i \sin ( tx) $.
+    \end{enumerate}
+\end{example}
