@@ -178,7 +178,10 @@
 \RequirePackage[font=small,labelfont={bf,color=main}]{caption} 
 \captionsetup[table]{skip=3pt}
 \captionsetup[figure]{skip=3pt}
-
+% \captionsetup{%
+%    figurewithin=section,
+%    tablewithin=section
+% }
 %% 常用宏包
 \linespread{1.3}
 \RequirePackage{graphicx}
@@ -364,7 +367,7 @@
 \setcounter{exam}{0}
 \renewcommand{\theexam}{\thesection.\arabic{exam}}
 \newenvironment{example}[1][]{
- 		\refstepcounter{exam}\par\medskip\noindent \textbf{\color{main}{
+ 		\refstepcounter{exam}\par\noindent \textbf{\color{main}{
  			\ifdefstring{\ELEGANT@lang}{en}{Example}{例}
  		}~\theexam #1: }\rmfamily %
  	}{
@@ -388,7 +391,7 @@
 \setcounter{prob}{0}
 \renewcommand{\theprob}{\thesection.\arabic{prob}}
 \newenvironment{problem}[1][]{
- 		\refstepcounter{prob}\par\medskip\noindent \textbf{\color{main}{
+ 		\refstepcounter{prob}\par\noindent \textbf{\color{main}{
  			\ifdefstring{\ELEGANT@lang}{en}{Problem}{例题}
  		}~\theprob #1: }\rmfamily %
  	}{
