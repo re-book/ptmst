@@ -42,6 +42,7 @@
      + 使用`~\ref{label}` 进行引用，注意空格，示例：`在表~\ref{tab:3.1.2} 中...`
 13. 表格推荐使用 table+tabular 环境结合三线表：`\toprule`，`\midrule`，`\bottomrule` 制作。
 14. 公式里面距离，一般距离用 `\;`，然后大距离用 `\quad` 或者 `\qquad`（基本用 `\quad`）
+15. 习题用settings里面定义的xiti环境\begin{xiti}blablabla\end{xiti}，内层问题列表用enumerate环境
 
 
 ```tex
