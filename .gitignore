@@ -241,3 +241,9 @@ TSWLatexianTemp*
 
 # generated if using elsarticle.cls
 *.spl
+
+# Camuse 
+.gitignore
+Temp/*
+push.sh
+main.tex
