@@ -65,7 +65,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
         \begin{equation*}
             \varphi (t) = p \ee^{it} + q, \quad \text{其中} \ q= 1 - p.
         \end{equation*}
-        \item \textbf{泊松分布}\index{泊松分布}: $ P ( X = k ) = \tfrac{\lambda^k}{k!} \ee^{-\lambda} $, $ k = 0, 1, \dotsc $, 其特征函数为
+        \item \textbf{泊松分布}\index{泊松分布}: $ P ( X = k ) = ( \lambda^k/k! ) \ee^{-\lambda} $, $ k = 0, 1, \dotsc $, 其特征函数为
         \begin{equation*}
             \varphi (t) = \sum_{k=0}^{+\infty} \ee^{ikt} \frac{\lambda^k}{k!} \ee^{-\lambda} = \ee^{\lambda} \ee^{\lambda \ee^{it}} = \ee^{\lambda ( \ee^{it} ) -1}.
         \end{equation*}
@@ -83,18 +83,18 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
         \end{equation*}
         \item \textbf{标准正态分布}\index{标准正态分布} $ N (0,1) $: 因为密度函数为
         \begin{equation*}
-            p (x) = \frac{1}{\sqrt{2\pi}} \ee^{-\frac{x^2}{2}}, \quad - \infty < x < + \infty.
+            p (x) = \frac{1}{\sqrt{2\pi}} \exp \left( -\frac{x^2}{2} \right), \quad - \infty < x < + \infty.
         \end{equation*}
         所以特征函数为
         \begin{align*}
-            \varphi (t) & = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{+\infty} \ee^{itx - \frac{x^2}{2}} \dd x\\
-            & = \ee^{-\frac{t^2}{2}} \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{+\infty} \ee^{-\frac{( x - it )^2}{2}} \dd x\\
-            & = \ee^{-\frac{t^2}{2}} \frac{1}{\sqrt{2\pi}} \int_{-\infty -it}^{+\infty -it} \ee^{-\frac{x^2}{2}} \dd x\\
-            & = \ee^{-\frac{t^2}{2}},
+            \varphi (t) & = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{+\infty} \exp \left( itx - \frac{x^2}{2} \right) \dd x\\
+            & = \exp \left( -\frac{t^2}{2} \right) \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{+\infty} \exp \left( -\frac{( x - it )^2}{2} \right) \dd x\\
+            & = \exp \left( -\frac{t^2}{2} \right) \frac{1}{\sqrt{2\pi}} \int_{-\infty -it}^{+\infty -it} \exp \left( -\frac{x^2}{2} \right) \dd x\\
+            & = \exp \left( -\frac{t^2}{2} \right),
         \end{align*}
         其中
         \begin{equation*}
-            \int_{-\infty -it}^{+\infty -it} \ee^{-\frac{x^2}{2}} \dd x = \sqrt{2\pi}
+            \int_{-\infty -it}^{+\infty -it} \exp \left( -\frac{x^2}{2} \right) \dd x = \sqrt{2\pi}
         \end{equation*}
         是利用复变函数中的围道积分求得的.
         有了标准正态分布的特征函数,
@@ -119,3 +119,77 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
         以上积分中用到了复变函数中的欧拉公式: $ \ee^{itx} = \cos (tx) + i \sin ( tx) $.
     \end{enumerate}
 \end{example}
+
+\subsection{特征函数的性质}
+
+现在我们来研究特征函数的一些性质,
+其中 $ \varphi_X (t) $ 表示 $ X $ 的特征函数,
+其他类似.
+
+\begin{property}\label{prop:4.1.1}
+    \begin{equation}\label{eq:4.1.4}
+        \lvert \varphi (t) \rvert \leq \varphi (0) = 1.
+    \end{equation}
+\end{property}
+
+\begin{property}\label{prop:4.1.2}
+    \begin{equation}\label{eq:4.1.5}
+        \varphi (-t) = \overline{\varphi (t)},
+    \end{equation}
+    其中 $ \overline{\varphi (t)} $ 表示 $ \overline{\varphi (t)} $ 的共轭.
+\end{property}
+
+\begin{property}\label{prop:4.1.3}
+    若 $ Y = aX + b $, 其中 $ a,b $ 是常数, 则
+    \begin{equation}\label{eq:4.1.6}
+        \varphi_Y (t) = \ee^{ibt} \varphi_X (at).
+    \end{equation}
+\end{property}
+
+\begin{property}\label{prop:4.1.4}
+    独立随机变量和的特征函数为特征函数的积,
+    即设 $ X $ 与 $ Y $ 相互独立, 则
+    \begin{equation}\label{eq:4.1.7}
+        \varphi_{X+Y} (t) = \varphi_X (t) \cdot \varphi_Y (t).
+    \end{equation}
+\end{property}
+
+\begin{property}\label{prop:4.1.5}
+    若 $ E (x^l) $ 存在,
+    则 $ X $ 的特征函数 $ \varphi(t) $ 可 $ l $ 次求导,
+    且对 $ 1 \leq k \leq l $, 有
+    \begin{equation}\label{eq:4.1.8}
+        \varphi6{(k)} (0) = i^k E ( X^k ).
+    \end{equation}
+    上式提供了一条求随机变量的各阶矩的途径,
+    特别可用下式去求数学期望和方差.
+    \begin{equation}\label{eq:4.1.9}
+        E (X) = \frac{\varphi' (0)}{i}, \quad \mathrm{Var} (X) = - \varphi'' (0) + \bigl( \varphi' (0) \bigr)^2.
+    \end{equation}
+\end{property}
+
+\begin{proof}
+    在此我们仅对连续场合进行证明,
+    而在离散场合的证明是类似的.
+    \begin{enumerate}
+        \item 
+        \begin{align*}
+            \lvert \varphi (t) \rvert & = \left\lvert \int_{-\infty}^{+\infty} \ee^{itx} p (x) \dd x \right\rvert 
+            \leq \int_{-\infty}^{+\infty} \left\lvert \ee^{itx} \right\rvert p (x) \dd x\\
+            & = \int_{-\infty}^{+\infty} p (x) \dd x
+            = \varphi (0)
+            = 1.
+        \end{align*}
+        \item 
+        \begin{equation*}
+            \varphi (-t) = \int_{-\infty}^{+\infty} \ee^{-itx} p (x) \dd x
+            = \overline{\int_{-\infty}^{+\infty} \ee^{itx} p (x) \dd x}
+            = \overline{\varphi (t)}.
+        \end{equation*}
+        \item
+        \begin{equation*}
+            \varphi_Y (t) = E ( \ee^{it (aX + b)} )
+            = \ee^{ibt} E ( \ee^{iatX} ) = \ee^{ibt} \varphi (at).
+        \end{equation*}
+    \end{enumerate}
+\end{proof}
