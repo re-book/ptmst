@@ -419,7 +419,7 @@ $\sum(x_i-\bar x)=\sum x_i-n\bar x=\sum x_i-n\cdot\big(\sum x_i\big)/n=0$.
 数据观察值与均值的偏差平方和最小,即在形如$\sum(x_i-c)^2$的函数中, $\sum(x_i-\bar x)^2$最小,其中$c$为任意给定常数.
 \end{theorem}
 \begin{proof}
-对任意给定的常数c,
+对任意给定的常数$c$,
 \begin{align*}
 {}&\sum(x_i-c)^2=\sum(x_i-\bar x+\bar x-c)^2\\
 =&\sum(x_i-\bar x)^2+n(\bar x-c)^2+
@@ -442,6 +442,139 @@ $\sum(x_i-\bar x)=\sum x_i-n\bar x=\sum x_i-n\cdot\big(\sum x_i\big)/n=0$.
 设$x_1,x_2,\dotsc,x_n$是来自某个总体的样本, $\bar x$为样本均值.
 \begin{enumerate}
 \item 若总体分布为$N(\mu,\sigma^2)$,则$\bar x$的\textbf{精确分布}\index{J!精确分布}为$N(\mu,\sigma^2/n)$;
-\item 若总体分布位置或不是正态分布,但$E(x)=\mu,\operatorname{Var}(x)=\sigma^2$,则$n$较大时$\bar x$的\textbf{渐进分布}\index{J!渐近分布}为$N(\mu,\sigma^2)$,常记为$\bar x\dot{\sim}N(\mu,\sigma^2/n)$.这里渐近分布是指$n$较大时的近似分布.
+\item 若总体分布位置或不是正态分布,但$E(x)=\mu,\operatorname{Var}(x)=\sigma^2$,则$n$较大时$\bar x$的\textbf{渐近分布}\index{J!渐近分布}为$N(\mu,\sigma^2)$,常记为$\bar x\dot{\sim}N(\mu,\sigma^2/n)$.这里渐近分布是指$n$较大时的近似分布.
 \end{enumerate}
 \end{theorem}
+\begin{proof}
+\begin{enumerate}
+\item 利用卷积公式,可得知$\sum_{i=1}^nx_i\sim N(n\mu,n\sigma^2)$,由此可知$\bar x\sim N(\mu,\sigma^2/n)$
+\item 由中心极限定理, $\sqrt n(\bar x-\mu)/\sigma\xrightarrow{L}N(0,1)$,这表明$n$较大时$\bar x$的渐近分布为$N(\mu,\sigma^2/n)$,证毕.
+\end{enumerate}
+\end{proof}
+\begin{example}\label{exam:5.3.3}
+图~\ref{fig:5.3.3} 给出三个不同总体样本均值的分布.三个总体分别是:
+\ding{172}均匀分布、\ding{173}倒三角分布、\ding{174}指数分布,随着样本量的增加,样本均值的抽样分布逐渐向正态分布逼近,他们均值保持不变,而方差则缩小为原来的$1/n$.当样本量为30时,我们看到三个抽样分布都近似于正态分布.下面对之进行说明.
+
+\ding{172}的总体分布为均匀分布$U(1,5)$,该总体的均值和方差分别为$3$和$4/3$,若从该总体抽取样本容量为30的样本,则其样本均值的渐近分布为
+\[\bar x_1\dot{\sim}N\left(3,\frac4{3\times40}\right)=N(3,0.21^2).\]
+
+\ding{173}的总体分布的概率密度函数为
+\[p(x)=\begin{cases}
+(3-x)/4,&1\leq x<3;\\
+(x-3)/4,&3\leq x\leq 5;\\
+0,&\text{其他}.
+\end{cases}\]
+
+这是一个倒三角分布,可以算得其均值与方差分别为3和2,若从该总体抽取样本容量为30的样本,则其样本均值的渐近分布为
+\[\bar x_2\dot{\sim} N\left(3,\frac{2}{30}\right)=N(3,0.26^2).\]
+\ding{174}的总体分布为指数分布$Exp(1)$,其均值与方差都等于1,若从该总体抽取样本容量为30的样本,则其样本均值$\bar x_3$的分布近似为
+\[\bar x_3\dot{\sim}N\left(1,\frac1{30}\right)=N(1,0.18^2).\]
+这三个总体都不是正态分布,但其样本均值的分布都十分近似于正态分布,差别表现在均值与标准差上.图~\ref{fig:5.3.3} 所示曲线既展示它们的共同之处,又显示它们之间的差别.
+\end{example}
+\subsection{样本方差与样本标准差}
+\begin{definition}{}{5.3.3}
+设$x_1,x_2,\dotsc,x_n$为取自某总体的样本,则它关于样本均值$\bar x$的平均偏差平方和
+\begin{equation}\label{eq:5.3.3}
+{s^\ast}^2=\frac1n\sum_{i=1}^n(x_i-\bar x)^2
+\end{equation}
+称为\textbf{样本方差}\index{Y!样本方差}.其算术根$s^\ast=\sqrt{{s^\ast}^2}$称为样本标准差.相对样本方差而言,样本标准差通常更有实际意义,因为它与样本均值具有相同的度量单位.在$n$不大时,常用
+\begin{equation}\label{eq:5.3.4}
+s^2=\frac1{n-1}\sum_{i=1}^n(x_i-\bar x)^2
+\end{equation}
+
+作为样本方差(也称\textbf{无偏方差}\index{W!无偏方差},其含义在第六章讲述),其算术根$s=\sqrt{s^2}$也称为样本标准差.在实际中,$s^2$比${s^\ast}^2$更常用,在以后讲样本方差通常指的是$s^2$.
+\end{definition}
+
+在这个定义中, $n$为\textbf{样本量}\index{Y!样本量}, $\sum_{i=1}^n(x_i-\bar x)^2$称为偏差平方和\index{P!偏差平方和}, $n-1$称为偏差平方和的自由度\index{Z!自由度}.其含义是: 在$\bar x$确定后, $n$个偏差$x_1-\bar x,x_2-\bar x,\dotsc,x_n-\bar x$中只有$n-1$个数据可以自由变动,而第$n$个则不能自由取值,因为$\sum(x_i-\bar x)=0$.
+
+样本偏差平方和有三个不同的表达式:
+\begin{equation}\label{eq:5.3.5}
+\sum(x_i-\bar x)^2=\sum x_i^2-\frac{\bigl(\sum x_i\bigr)^2}n=\sum x_i^2-n\bar x^2.
+\end{equation}
+它们都可用来计算样本方差.
+
+在分组样本场合,样本方差的近似计算公式为
+\begin{equation}\label{eq:5.3.6}
+s^2=\frac1{n-1}\sum_{i=1}^kf_i(x_i-\bar x)^2=\frac1{n-1}\Bigl[\sum_{i=1}^kf_ix_i^2-n\bar x^2\Bigr],
+\end{equation}
+其中$x_i,f_i$分别为第$i$个区间的组中值和频数, $\bar x$为~\ref{eq5.3.2} 中给出的样本均值.
+\begin{example}\label{exam:5.3.4}
+考察~\ref{exam:5.3.1} 的样本,我们已经算得$\bar x=99.4$,其样本方差与样本标准差分别为
+\begin{align*}
+s^2&=\frac1{20-1}[(79-99.4)^2+(84-99.4)^2+\dotsb+(125-99.4)^2]133.9368,\\
+s&=\sqrt{133.9368}=11.5731,
+\end{align*}
+对表~\ref{table5.3.1} 的分组样本,我们可以如表~\ref{tab:5.3.2}计算(样本均值也由分组样本计算):
+\begin{table}[!htb]
+  \centering
+  \caption{分组样本方差的计算表}\label{tab:5.3.2}
+\begin{tabularx}{\textwidth}{YYYYY}
+\toprule
+\text{组中值}x&\text{频数}f&xf&x-\bar x&(x-\bar x)^2f\\
+\midrule
+82&3&246&-18&972\\
+92&5&460&-8&320\\
+102&7&714&2&28\\
+112&3&336&12&432\\
+122&2&244&22&968\\
+\text{和}&20&2000&&2720\\
+\bottomrule
+\end{tabularx}
+\end{table}
+于是$\bar x=\frac{2000}{20}=100,s^2=\frac{2720}{20-1}=143.16,s=\sqrt{143.16}=11.96$.
+\end{example}
+
+下面的定理给出样本均值的数学期望和方差以及样本方差的数学期望,它不依赖于总体的分布形式.这些结果在后面的讨论中是有用的.
+\begin{theorem}{}{5.3.4}
+设总体$X$具有二阶矩,即$E(X)=\mu,\operatorname{Var}(X)=\sigma^2<+\infty,x_1,x_2,\dotsc,x_n$为从该总体得到的样本, $\bar x$和$s^2$分别是样本均值和样本方差,则
+\begin{gather}
+E(\bar x)=\mu,\qquad\operatorname{Var}(\bar x)=\sigma^2/n,\label{eq:5.3.7}\\
+E(s^2)=\sigma^2.\label{eq:5.3.8}
+\end{gather}
+\end{theorem}
+此定理表明,样本均值的均值与总体均值相同,而样本均值的方差是总体方差的$1/n$.
+\begin{proof}
+由于
+\begin{gather*}
+E(\bar x)=\frac1nE\Bigl(\sum_{i=1}^nx_i\Bigr)=\frac{n\mu}n=\mu,\\
+\operatorname{Var}(\bar x)=\frac1{n^2}\operatorname{Var}\Bigl(\sum_{i=1}^nx_i\Bigr)
+=\frac{n\sigma^2}{n^2}=\frac{\sigma^2}n,
+\end{gather*}
+故~\ref{eq:5.3.7}成立.下证~\ref{eq:5.3.8},注意到
+\[\sum_{i=1}^n(x_i-\bar x)^2=\sum_{i=1}^nx_i^2-n\bar x^2,\]
+而$Ex_i^2=(Ex_i)^2+\operatorname{Var}(x_i)=\mu^2+\sigma^2,E(\bar x^2)=(E\bar x)^2+\operatorname(Var)(\bar x)=\mu^2+\sigma^2/n$,于是
+\[E\Bigl(\sum_{i=1}^n(x_i-\bar x)^2\Bigr)=n(\mu^2+\sigma^2)-n(\mu^2+\sigma^2/n)=(n-1)\sigma^2,\]
+两边各除以$n-1$,即得~\ref{eq:5.3.8}.
+\end{proof}
+\subsection{样本矩及其函数}
+样本均值和样本方差的更一般的推广是样本矩,这是一类常见的统计量.
+\begin{definition}{}{5.3.4}
+设$x_1,x_2,\dotsc,x_n$是样本,则统计量
+\begin{equation}\label{eq:5.3.9}
+a_k=\frac1n\sum_{i=1}^nx_i^k
+\end{equation}
+称为样本$k$阶原点矩.特别,样本一阶原点矩就是样本均值.统计量
+\begin{equation}\label{eq:5.3.10}
+b_k=\frac1n\sum_{i=1}^n(x_i-\bar x)^k
+\end{equation}
+称为样本$k$阶中心矩.特别,样本二阶中心矩就是样本方差.
+\end{definition}
+
+当总体关于分布中心对称时,我们用$\bar x$和$s$刻画样本特征很有代表性,而当其不对称时,只用$\bar x,s$就显得很不够.为此,需要一些刻画分布形状的统计量.这里我们介绍样本偏度和样本峰度,它们都是样本中心矩的函数.
+\begin{definition}{}{5.3.5}
+设$x_1,x_2,\dotsc,x_n$是样本,则称统计量
+\begin{equation}\label{eq:5.3.11}
+\gamma_1=b_3/b_2^{3/2}
+\end{equation}
+为样本偏度\index{Y!样本偏度}.
+\end{definition}
+样本偏度$\gamma_1$反映了总体分布密度曲线的对称性信息.如果数据完全对称,则不难看出$b_3=0$.对不对称的数据则$b_3=0$.这里用$b_3$除以$b_2^{3/2}$是为了消除量纲的影响,$\gamma_1$是个相对数,它很好地刻画了数据分布的偏斜方向和程度.如果$\gamma_1$表示样本对称(见图~\ref{fig:5.3.4(a)}),如果$\gamma_1>0$表示样本的右尾长,即样本中有几个较大的数,这反映总体分布是正偏的或右偏的(见图~\ref{fig:5.3.4(b)}),如果$\gamma_1<0$表示分布的左尾长,即样本中有几个特小的数,这反映总体分布是负偏的或左偏的(见图~\ref{fig:5.3.4(c)}).
+\begin{definition}{}{5.3.6}
+设$x_1,x_2,\dotsc,x_n$是样本,则统计量
+\begin{equation}\label{eq:5.3.12}
+\gamma_2=\frac{b_4}{b_2^2}-3
+\end{equation}
+为样本峰度.
+\end{definition}
+
+样本峰度$\gamma_2$反映了总体分布密度曲线在其峰值附近的陡峭程度.当$\gamma_2>0$时,分布密度曲线在其峰值附近比正态分布来得陡,称为尖顶型;当$\gamma_2<0$时,分布密度曲线在其峰值附近比正态分布来得平坦,称为平顶型.
