@@ -243,7 +243,6 @@ TSWLatexianTemp*
 *.spl
 
 # Camuse 
-.gitignore
 Temp/*
 push.sh
 main.tex
