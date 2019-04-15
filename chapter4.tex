@@ -307,3 +307,38 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
         & = \frac{a (a+1)}{\lambda^2} - \frac{a^2}{\lambda^2} = \frac{a}{\lambda^2}.
     \end{align*}
 \end{solution}
+
+特征函数还有以下一些优良性质.
+
+\begin{theorem}{一致连续性}{thm:4.1.1}
+    随机变量 $ X $ 的特征函数 $ \varphi (t) $ 在 $ ( -\infty, +\infty ) $ 上一致连续.
+\end{theorem}
+
+\begin{proof}
+    设 $ X $ 是连续随机变量 (离散随机变量的证明是类似的), 其密度函数为 $ p (x) $, 则对任意实数 $t$, $h$ 和正数$ a > 0 $, 有
+    \begin{align*}
+        \lvert \varphi ( t + h ) - \varphi (t) \rvert & = \left\lvert \int_{-\infty}^{+\infty} \bigl( \ee^{ihx} - 1 \bigr) \ee^{itx} p (x) \dd x \right\rvert\\
+        & \leq \int_{-\infty}^{+\infty} \bigl\lvert \ee^{ihx} - 1 \bigr\rvert p (x) \dd x\\
+        & \leq \int_{-a}^a \bigl\lvert \ee^{ihx} - 1 \bigr\rvert p (x) \dd x + 2 \int_{\lvert x \rvert \geq a} p (x) \dd x.
+    \end{align*}
+    对任意的 $ \varepsilon > 0 $, 先取定一个充分大的 $ a $, 使得
+    \begin{equation*}
+        2 \int_{\lvert x \rvert \geq a} p (x) \dd x < \frac{\varepsilon}{2},
+    \end{equation*}
+    然后对任意的$ x \in [-a,a] $, 只要取$ \delta = \varepsilon/(2a) $, 则当$ \lvert h \rvert < \delta $ 时, 便有
+    \begin{align*}
+        \lvert \ee^{ihx} - 1 \rvert & = \left\lvert \ee^{i \frac{h}{2} x} \left( \ee^{i \frac{h}{2} x} - \ee^{-i \frac{h}{2} x} \right) \right\rvert\\
+        & = 2 \left\lvert \sin \frac{hx}{2} \right\rvert
+        \leq 2 \left\lvert \frac{hx}{2} \right\rvert
+        < ha
+        < \frac{\varepsilon}{2},
+    \end{align*}
+    即 $ \varphi (t) $ 在 $ (-\infty, +\infty) $ 上一致连续.
+\end{proof}
+
+\begin{theorem}{非负定性}{thm:4.1.2}
+    随机变量 $ X $ 的特征函数 $ \varphi (t) $ 是非负定的, 即对任意正整数 $ n $, 及 $ n $ 个实数 $ t_1, t_2, \dotsc, t_n $ 和 $ n $ 个复数 $ z_1, z_2, \dotsc, z_n $, 有
+    \begin{equation}\label{eq:4.1.10}
+        \sum_{k=1}^n \sum_{j=1}^n \varphi ( t_k - t_j ) z_k \overline{z_j} \geq 0.
+    \end{equation}
+\end{theorem}
