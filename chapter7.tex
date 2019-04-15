@@ -328,12 +328,153 @@ t = \frac { \sqrt { n } \left( \overline { x } - \mu _ { 0 } \right) } { s }
 
 \section{其他分布参数的假设检验}\label{sec:7.3}
 \subsection{指数分布参数的假设检验}\label{sec:7.3.1}
+指数分布是一类重要的分布，有广泛的应用.设$x_{1},\dotsc,x_{n}$，是来自指数分布$Exp(1/\theta)$的样本，$\theta$为其均值，现考虑关于$\theta$的如下检验问题：
+\begin{equation}\label{eq7.3.1}
+H _ { 0 } : \theta \leq \theta _ { 0 } \quad \text { vs } \quad H _ { 1 } : \theta > \theta _ { 0 }
+\end{equation}
+拒绝域的自然形式是$W = \{ \overline { x } \geq c \}$，下面讨论$\overline{ x }$的分布.
 
+为寻找检验统计量，我们考察参数$\theta$的充分统计量$\overline { x }$.在$\theta=\theta_{ 0 }$时，$n \overline { x } = \sum _ { i = 1 } ^ { n } x _ { 1 } \sim G a \left( n , 1 / \theta _ { 0 } \right)$，由伽玛分布性质可知
+\begin{equation}\label{eq7.3.2}
+\chi ^ { 2 } = \frac { 2 n \overline { x } } { \theta _ { 0 } } \sim \chi ^ { 2 } ( 2 n )
+\end{equation}
+于是可用$\chi ^ { 2 }$作为检验统计量并利用$\chi ^ { 2 }(2n)$的分位数建立检验的拒绝域，对检验问题~\ref{eq7.3.1}，拒绝域为
+\begin{equation}\label{eq7.3.3}
+W = \left\{ \chi ^ { 2 } \geq \chi _ { 1 - a } ^ { 2 } ( 2 n ) \right\}
+\end{equation}
+关于$\theta$的另两种检验问题的处理方法是类似的.对检验问题
+\begin{equation}\label{eq7.3.4}
+H _ { 0 } : \theta \geq \theta _ { 0 } \quad \text { vs } \quad H _ { 1 } : \theta < \theta _ { 0 }
+\end{equation}
+\begin{equation}\label{eq7.3.5}
+H _ { 0 } : \theta = \theta _ { 0 } \quad \text { vs } \quad H _ { 1 } : \theta \ne  \theta _ { 0 }
+\end{equation}
+检验统计量仍然是~\ref{eq7.3.2}的$\chi ^ { 2 }$，拒绝域分别为
+\begin{equation}\label{eq7.3.6}
+W = \left\{ \chi ^ { 2 } \leq \chi _ { a } ^ { 2 } ( 2 n ) \right\}
+\end{equation}
+\begin{equation}\label{eq7.3.7}
+W=\left\{\chi^2\leq\chi_{\alpha/2}^{2}\left(2n\right)\textrm{或}\chi^2\geq\chi_{\alpha/2}^{2}\left(2n\right)\right\}
+\end{equation}
+\begin{problem}\label{exam7.3.1}
+	设我们要检验某种元件的平均寿命不小于6000h，假定元件寿命为指敬分布，现取5个元件投人试验，观测到如下5个失效时间（h）
+	\[395 \quad 4094 \quad 119 \quad 11572 \quad 6133\]
+	这是一个假设检验问题，检验的假设为
+	\[H _ { 0 } : \theta \geq 6000 \quad \text { vs } \quad H _ { 1 } : \theta < 6000\]
+	经计算，$\overline{ x }=4462.6$，故检验统计量为
+	\[\chi ^ { 2 } = \frac { 10 \overline { x } } { \theta _ { 0 } } = \frac { 10 \times 4462.6 } { 6000 } = 7.4377\]
+	若取$\alpha = 0.05$，则查表知$\chi _ { 0.05 } ^ { 2 } ( 10 ) = 3.94$，由于$\chi^{2}>\chi _ { 0.05 } ^ { 2 } ( 10 ) $，故接受原假设可以认为平均寿命不低于6000h.
+\end{problem}
 \subsection{比例 $p$ 检验}\label{sec:7.3.2}
+比例$p$可看作某事件发生的概率，即可看作二点分布$b(1,p)$中的参数.作$n$次独立试验，以$x$记该事件发生的次数，则$x\sim b(n,p)$.我们可以根据$x$检验关于$p$的一些假设.先考虑如下单边假设检验问题.
+\begin{equation}\label{eq7.3.8}
+H _ { 0 } : p \leq p _ { 0 } \quad \text { vs } \quad H _ { 1 } : p > p _ { 0 }
+\end{equation}
+直观上看，一个显然的检验方法是取如下的拒绝域$W=\{x\geq c\}$，由于$x$只取整数值，故$c$可限制在非负整数中.然而，一般情况下对给定的$\alpha$，不一定能正好取到一个$c$使
+	\begin{equation}\label{eq7.3.9}
+	P \left( x \geq c ; p _ { 0 } \right) = \sum _ { i = c } ^ { n } \left( \begin{array} { l } { n } \\ { i } \end{array} \right) p _ { o } ^ { i } \left( 1 - p _ { 0 } \right) ^ { n - i } = \alpha
+	\end{equation}
+能恰巧使得\ref{eq7.3.9}成立的$c$值是罕见的.这是在对离散总体作假设检验中普遍会遇到的问题，在这种情况下，较常见的是找一个$c_{0}$，使得
+\[\sum_{i=c_0}^n{\left(\begin{array}{l}
+	n\\
+	i\\
+	\end{array}\right)}p_{0}^{i}\left(1-p_0\right)^{n-i}>a>\sum_{i=c_0+1}^n{\left(\begin{array}{c}
+	n\\
+	i\\
+	\end{array}\right)}p_{0}^{i}\left(1-p_0\right)^{i-1}\]
+于是，若取$c=c_{0}$，这相当于把检验的显著性水平提高了一些，由$\alpha$提高到到$\sum_{i=c_0}^n{\left(\begin{array}{l}
+	n\\
+	i\\
+	\end{array}\right)}p_{0}^{i}\left(1-p_0\right)^{n-i}$若取$c=c_{0}+1$，此时相当于把显著性水平由$\alpha$降低到$\sum_{i=c_0+1}^n{\left(\begin{array}{c}
+	n\\
+	i\\
+	\end{array}\right)}p_{0}^{i}\left(1-p_0\right)^{i-1}$，因为后者可保证\ref{eq7.3.9}的左侧不大于$\alpha$，故取$c=c_{0}+1$可得水平为$\alpha$的检验，
+
+对检验问题
+\begin{equation}\label{eq7.3.10}
+H _ { 0 } : p \geq p _ { 0 } \quad \text { vs } \quad H _ { 1 } : p < p _ { 0 }
+\end{equation}
+处理方法是类似的，检验的拒绝域为$W=\{x\geq c\}$，$c$为满足
+\[\sum _ { i = 0 } ^ { c } \left( \begin{array} { l } { n } \\ { i } \end{array} \right) p _ { 0 } ^ { i } \left( 1 - p _ { 0 } \right) ^ { n - i } \leq a\]
+的最大正整数.对检验问题
+\begin{equation}\label{eq7.3.11}
+H _ { 0 } : p = p _ { 0 } \quad \text { vs } \quad H _ { 1 } ; p \neq p _ { 0 },
+\end{equation}
+检验的拒绝域$W={x\leq c_{1}\text{或}x\geq c_{2}}$，其中$c_{1}$为满足
+\[\sum _ { i = 0 } ^ { c _ { 1 } } \left( \begin{array} { l } { n } \\ { i } \end{array} \right) p _ { 0 } ^ { i } \left( 1 - p _ { 0 } \right) ^ { n - i } \leq \frac { \alpha } { 2 }\]
+的最大整数，$c_{2}$为满足
+\[\sum _ { i = c _ { 2 } } ^ { n _ { 1 } } \left( \begin{array} { l } { n } \\ { i } \end{array} \right) p _ { 0 } ^ { i } \left( 1 - p _ { 0 } \right) ^ { n - i } \leq \frac { \alpha } { 2 }\]
+的最小整数.
+\begin{problem}\label{exam7.3.2}
+	某厂生产的产品优质品率一直保持在40\%，近期对该厂生产的该类产品抽检20件，其中优质品7件，在$\alpha=0.05$下能否认为优质品率仍保持在40\%？
+	
+	这是一个假设检验问题，以$p$表示优质品率，$x$表示20件产品中的优质品件数，则$x\sim b（(20,p)$，待检验的原假设为
+	\[H _ { 0 } : p = 0.4 \quad \text { vs } \quad H _ { 1 } : p \neq 0.4\]
+	拒绝域为$W={x\leq c_{1}\text{或}x\geq c_{2}}$，下求$c_{1}$与$c_{2}$.
+		
+	由于
+	\[P ( x \leq 3 ) = 0.0160 < 0.025 < P ( x \leq 4 ) = 0.0510\]
+	故取$c_{1}=3$，又因
+	\[P ( x \geq 11 ) = 0.0565 > 0.025 > P ( x \geq 12 ) = 0.0210\]
+	从而$c_{2}=12$，拒绝域为$W={x\leq 3\text{或}x\geq 12}$.附带指出，该拒绝域的显著水平实际上不是0.05，而是0.0160+0.021=0.0370，本例中，由于观测值没有落入拒绝域，故接受原假设.
+\end{problem}
+
 \subsection{大样本检验}\label{sec:7.3.3}
+前一小节我们介绍了对二点分布参数$p$的检验问题，我们看到临界值的确定比较繁琐，使用不太方便.如果样本量较大，我们可用近似的检验方法一—大样本检验.其一般思路如下：设$x_{1},\dotsc,x_{n}$，是来自某总体的样本，又设该总体均值为$\theta$，方差为$\theta$的函数，记为$\sigma^{2}(\theta)$，譬如，对二点分布$b(1,\theta)$，其方差$\theta(1-\theta)$是均值$\theta$的函数，则对下列三类假设检验问题：
 
+(1) $H _ { 0 } : \theta \leq \theta _ { 0 } \quad \text { vs } \quad H _ { 0 } : \theta > \theta _ { 0 }$;
+
+(2) $H _ { 0 } : \theta \geq \theta _ { 0 } \quad \text { vs } \quad H _ { 0 } : \theta < \theta _ { 0 }$;
+
+(3)  $H _ { 0 } : \theta = \theta _ { 0 } \quad \text { vs } \quad H _ { 0 } : \theta \ne  \theta _ { 0 }$
+
+在样本容量$n$充分大时，利用中心极限定理，$\overline { x }\dot{\sim}N \left( \theta , \sigma ^ { 2 } ( \theta ) / n \right)$，故在$\theta=\theta_{ 0 }$时，可采用如下检验统计量
+\begin{equation}\label{eq7.3.12}
+u=\frac{\sqrt{n}\left(\overline{x}-\theta_0\right)}{\sqrt{\sigma^2\left(\theta_0\right)}}\dot{\sim}N\left(0,1\right)
+\end{equation}
+近似地确定拒绝域.对应上述三类检验问题的拒绝域依次分别为
+\[\begin{array} { l } { W = \left\{ u \geq u _ { 1 - \alpha } \right\} } \\ { W = \left\{ u \leq u _ { a } \right\} } \\ { W = \left\{ | u | \geq u _ { 1 - a / 2 } \right\} } \end{array}\]
+\begin{problem}\label{exam7.3.3}
+	某厂生产的产品不合格率为10\%，在一次例行检查中，随机抽取80件，发现有11件不合格品，在$\alpha=0.05$下能否认为不合格品率仍为10\%？
+\end{problem}
+\begin{solution}
+	这是关于不合格品率$\theta$的检验，假设为
+	\[H _ { 0 } : \theta = 0.1 \quad \text { vs } \quad H _ { 1 } : \theta \neq 0.1\]
+	我们可以仿例~\ref{exam7.3.2}的方法求拒绝域，但要把此拒绝域找出来是困难的，如今$n=80$比较大，因此可采用大样本检验方法.由\ref{eq7.3.12}，$\theta_{0}=0.1,\sigma^{2}(\theta_{ 0 }=0.1\times 0.9)$，检验统计量为
+	\[u = \frac { \sqrt { 80 } \left( \frac { 11 } { 80 } - 0.1 \right) } { \sqrt { 0.1 \times 0.9 } } = 1.118\]
+	若取$\alpha = 0.05$，则$u _ { 0.975 } = 1.96$，故拒绝域为$W = \{ | u | \geq 1.96 \}$.如今$u = 1.118$未落入拒绝域，故不能拒绝原假设，可以认为不合格品率仍为10\%.
+\end{solution}
+\begin{problem}\label{exam7.3.4}
+	某建筑公司宣称其磨下建筑工地平均每天发生事故数不超过0.6起，现记录了该公司磨下建筑工地200天的安全生产情况，事故数记录如下：
+	\begin{table}[!htp]
+		\centering
+		\begin{tabularx}{0.72\textwidth}{c|cccccccc}
+一天发生的事故数&0&1&2&3&4&5&$\geq 6$&合计\\
+		\midrule
+天数&102&59&30&8&0&1&0&200
+		\end{tabularx}
+	\end{table}
+试检验该建筑公司的宜称是否成立.（取$\alpha=0.05$.）
+\end{problem}
+\begin{solution}
+	以$X$记该建筑公司麾下建筑工地一天发生的事故数，可认为$X\sim P（(A)$见习题~(7.4.4)，现要检验的假设是：
+	\[H _ { 0 } : \lambda \leq 0.6 \quad \text { vs } \quad H _ { 1 } : \lambda > 0.6\]
+	由于$n=200$很大，故可以采用大样本检验，泊松分布的均值和方差都是$\lambda$，而
+	\[\overline { x } = \frac { 1 } { 200 } ( 0 \times 102 + 1 \times 59 + 2 \times 30 + 3 \times 8 + 4 \times 0 + 5 \times 1 )=0.74\]
+	
+	由（\ref{eq7.3.12}），检验统计量为
+	\[u = \frac { \sqrt { n } ( \overline { x } - \lambda ) } { \lambda } = \frac { \sqrt { 200 } ( 0.74 - 0.6 ) } { \sqrt { 0.6 } } = 2.556\]
+	若取$\alpha=0.05$，则$u_{0.95}=1.645$，拒绝域为$W=\{u\geq 1.645\}$.如今$u=
+	2.556$，已落入拒绝域，故拒绝原假设，认为该建筑公司的宣称明显不成立.
+	
+	大样本检验是近似的.近似的含义是指检验的实际显著性水平与原先设定的显著性水平有差距，这是由于诸如（\ref{eq7.3.12}）中$u$的分布与$N(0,1)$有距离.如果$n$很大，则这种差异就很小.实用中我们一般并不清楚对一定的$n$，$u$的分布与$N(0,1)$的差异有多大，因而也就不能确定检验的实际水平与设定水平究竟差多少.在区间估计中也有类似问题.因此，大样本方法是一个“不得已而为之”的方法.只要有基于精确分布的方法一般总是首先要加以考虑的.
+\end{solution}
 \subsection{检验的 $p$ 值}\label{sec:7.3.4}
-
+假设检验的结论通常是简单的.在给定的显著水平下，不是拒绝原假设就是保留原假设.然而有时也会出现这样的情况：在一个较大的显著水平（比如$\alpha=
+0.05$）下得到拒绝原假设的结论，而在一个较小的显著水平（比如$\alpha=
+0.01$）下却会得到相反的结论.这种情况在理论上很容易解释：因为显著水平变小后会导致检验的拒绝域变小，于是原来落在拒绝域中的观测值就可能落入接受域，但这种情况在应用中会带来一些麻烦.假如这时一个人主张选择显著水平$\alpha=
+0.05$，而另一个人主张选$\alpha=
+0.01$，则第一个人的结论是拒绝$H_{0}$，而后一个人的结论是接受H0，我们该如何处理这一问题呢？下面从一个例子谈起.
 \begin{xiti}
 	\item 从一批服从指数分布的产品中抽取10个进行寿命试验，观测值如下（单位：h）：
 	\[1643 \quad 1629 \quad 426 \quad 132 \quad 1522 \quad 432 \quad 1759 \quad 1074 \quad 528 \quad 283\]
@@ -342,6 +483,18 @@ t = \frac { \sqrt { n } \left( \overline { x } - \mu _ { 0 } \right) } { s }
 	\item 某厂一种元件平均使用寿命为1200h，偏低，现厂里进行技术革新，革新后任选8个元件进行寿命试验，测得寿命数据如下：
 	\[2686 \quad 2001 \quad 2082 \quad 792 \quad 1660 \quad 4105 \quad 1416 \quad 2089\]
 	假定元件寿命服从指数分布，取 $(\alpha=0.05)$，问革新后元件的平均寿命是否有明显提高？
+	
+	\item 有人称某地成年人中大学毕业生比例不低于30\%，为检验之，随机调查该地15名成年人，发现有3名大学毕业生，取$\alpha=0.05$，问该人看法是否成立？并给出检验的$p$值.
+		
+	\item 某大学随机调查120名男同学，发现有50人非常喜欢看武侠小说，而随机调查的85名女同学中有23人喜欢，用大样本检验方法在$\alpha=0.05$下确认：男女同学在喜爱武侠小说方面有无显著差异？并给出检验的$p$值.
+	
+			
+	\item 假定电话总机在单位时间内接到的呼叫次数服从泊松分布，现观测了40个单位时间，接到的呼叫次数如下：
+	\[0 \quad 2 \quad 3 \quad 2 \quad 3 \quad 2 \quad 1 \quad 0 \quad 2 \quad 2 \quad 1 \quad 2 \quad 2 \quad 1 \quad 3 \quad 1 \quad 1 \quad 4 \quad 1 \quad 1\]
+	\[5 \quad 1 \quad 2 \quad 3 \quad 3 \quad 1 \quad 3 \quad 1 \quad 3 \quad 4 \quad 0 \quad 6 \quad 1 \quad 1 \quad 1 \quad 4 \quad 0 \quad 1 \quad 3\]
+	在显著性水平0.05下能否认为单位时间内平均呼叫次数不低于2.5次？并给出检验的$p$值.
+				
+	\item 通常每平方米某种布上的疵点数服从泊松分布，现观测该种布100$m^{2}$，发现有126个疵点，在显著性水平为0.05下能否认为该种布每平方分米土平均疵点数不超过l个？并给出检验的$p$值.
 \end{xiti}
 \section{分布拟合检验}\label{sec:7.4}
 在前面我们讨论的检验问题都是在总体分布形式已知的前提下对分布的参数建立假设并进行检验，它们都属于参数假设检验问题.下面我们对总体分布的形式建立假设并进行检验.这一类检验问题统称为分布的拟合检验，它们是一类非参数检验问题.
