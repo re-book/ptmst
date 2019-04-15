@@ -256,5 +256,54 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
         \begin{equation*}
             \varphi(t) = \left( 1 - \frac{it}{\lambda} \right)^{-a}.
         \end{equation*}
+        \item
+        $ \mathbf{\chi^2 (n)} $ \textbf{分布}\index{$ \mathbf{\chi^2 (n)} $ 分布}: 因为 $ \chi^2 (n) = Ga ( n/2, 1/2 ) $, 所以 $ \chi^2 (n) $ 分布的特征函数为
+        \begin{equation*}
+            \varphi (t) = ( 1 - 2it )^{-n/2}.
+        \end{equation*}
     \end{enumerate}
 \end{example}
+
+上述常用分布的特征函数汇总在表~\ref{tab:4.1.1} 中.
+
+\begin{table}
+    \renewcommand{\arraystretch}{1.6}
+    \centering
+    \caption{常用分布的特征函数}\label{tab:4.1.1}
+    \begin{tabular}{>{\centering\arraybackslash}m{0.15\linewidth}>{\centering\arraybackslash}m{0.45\linewidth}>{\centering\arraybackslash}m{0.3\linewidth}}
+        \toprule
+        分布 & 分布列 $ p_k $ 或分布密度 $ p (x) $ & 特征函数 $ \varphi (t) $\\
+        \midrule
+        单点分布 & $ P (X = a) = 1 $ & $ \ee^{itz} $\\
+        0-1分布 & $ P_k = p^k  q^{1 - k} $, $ k = 0,1 $ & $ p \ee^{it} + q $\\
+        二项分布 $ b (n, p) $ & $ p_k = \binom{n}{k} p^k q^{1-k} $, $ k = 0,1,\dotsc,n $ & $ \left( p \ee^{it} + q \right)^{\pi} $\\
+        泊松分布 $ P (\lambda) $ & $ P_k = ( \lambda^k/k! ) \ee^{-\lambda} $, $ k = 0, 1, \dotsc $ & $ \ee^{\lambda ( \ee^{it} ) -1} $\\
+        均匀分布 $ U (a,b) $ & $ p (x) = 1/(b-a) $, $ a \leq x \leq b $ & $ \dfrac{\ee^{ibt} - \ee^{iat}}{it (b-a)} $\\
+        正态分布 $ N (\mu, \sigma^2) $ & $ p (x) = \dfrac{1}{\sqrt{2\pi}\sigma} \exp \left( - \dfrac{( x - \mu )^2}{2 \sigma^2} \right) $ & $ \exp \left( i \mu t - \dfrac{\sigma^2 t^2}{2} \right) $\\
+        指数分布 $ Exp ( \lambda ) $ & $ p (x) = \lambda \ee^{-\lambda x} $, $ x > 0 $ & $ \left( 1 - \dfrac{it}{\lambda} \right)^{-1} $\\
+        伽玛分布 $ Ga ( a, \lambda ) $ & $ p (x) = \dfrac{\lambda^\alpha}{\Gamma (a)} x^{\alpha - 1} \ee^{-\lambda x} $, $ x \geq 0 $ & $ \left( 1 - \dfrac{it}{\lambda} \right)^{-a} $\\
+        $ \chi^2 (n) $ 分布 & $ p (x) = \dfrac{x^{n/2 - 1} \ee^{-x/2}}{\Gamma (n/2) 2^{n/2}} $, $ x > 0 $ & $ ( 1 - 2it )^{-n/2} $\\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+下例是利用 \eqref{eq:4.1.8} 来求分布的数学期望和方差.
+
+\begin{example}\label{exam:4.1.3}
+    试利用特征函数的方法求伽玛分布 $ Ga ( n, \lambda ) $ 的数学期望和方差.
+\end{example}
+
+\begin{solution}
+    因为伽玛分布 $ Ga ( a, \lambda ) $ 的特征函数及其一、二阶导数为
+    \begin{gather*}
+        \varphi (t) = \left( 1 - \dfrac{it}{\lambda} \right)^{-a},\\
+        \varphi' (t) = \frac{ai}{\lambda} \left( 1 - \frac{it}{\lambda} \right)^{-a-1}, \ \varphi' (0) = \frac{ai}{\lambda},\\
+        \varphi'' (t) = \frac{a ( a + 1 ) i^2}{\lambda^2} \left( 1 - \frac{it}{\lambda} \right)^{-a-2}, \ \varphi'' (0) = -\frac{a (a+1)}{\lambda^2},
+    \end{gather*}
+    所以由 \eqref{eq:4.1.9} 得
+    \begin{align*}
+        E (X) & = \frac{\varphi' (0)}{i} = \frac{a}{\lambda},\\
+        Var (X) & = - \varphi'' (0) + \bigl( \varphi' (0) \bigr)^2 = \frac{a (a+1)}{\lambda^2} + \left( \frac{ai}{\lambda} \right)^2\\
+        & = \frac{a (a+1)}{\lambda^2} - \frac{a^2}{\lambda^2} = \frac{a}{\lambda^2}.
+    \end{align*}
+\end{solution}
