@@ -13,8 +13,8 @@
 \end{example}
 诸如例~\ref{exam5.0.1} 研究的问题属于数理统计的范畴.接下来我们从统计中最基本的概念——总体和样本开始介绍统计学内容.
 \section{总体与样本\label{sec:8.1}}
-\subsection{总体与个体\label{5.1.1}}
-在一个统计问题中, 我们把研究对象的全体称为\textbf{总体}\index{Z!总体}, 构成总体的每个成员称为\textbf{个体}\index{G!个体}.对多数实际问题, 总体中的个体是一些实在的人或物.比如, 我们要研究某大学的学生身高情况, 则该大学的全体学生构成问题的总体, 而每一个学生即使一个个体.事实上, 每个学生都有许多特征：性别、年龄、身高、体重、名字、籍贯等等, 而在该问题中, 我们关心的只是该校学生的身高如何, 对其他的特征暂不予考虑.这样, 每个学生（个体）所具有的数量指标值——身高就是个体, 而将所有身高全体看成总体.这样一来, 若抛开实际背景, 总体就是一堆数, 这堆数中有大有小, 有的出现的机会多, 有的出现机会小, 因此用一个概率分布去描述和归纳总体是恰当的, 从这个意义看, \textbf{总体就是一个分布}, 而其数量指标就是服从这个分布的随机变量.以后说``从总体中抽样"与``从分布中抽样"是同一个意思.
+\subsection{总体与个体\label{ssec:5.1.1}}
+在一个统计问题中, 我们把研究对象的全体称为 \textbf{总体}\index{Z!总体}, 构成总体的每个成员称为 \textbf{个体}\index{G!个体}.对多数实际问题, 总体中的个体是一些实在的人或物.比如, 我们要研究某大学的学生身高情况, 则该大学的全体学生构成问题的总体, 而每一个学生即使一个个体.事实上, 每个学生都有许多特征：性别、年龄、身高、体重、名字、籍贯等等, 而在该问题中, 我们关心的只是该校学生的身高如何, 对其他的特征暂不予考虑.这样, 每个学生（个体）所具有的数量指标值——身高就是个体, 而将所有身高全体看成总体.这样一来, 若抛开实际背景, 总体就是一堆数, 这堆数中有大有小, 有的出现的机会多, 有的出现机会小, 因此用一个概率分布去描述和归纳总体是恰当的, 从这个意义看,  \textbf{总体就是一个分布}, 而其数量指标就是服从这个分布的随机变量.以后说``从总体中抽样"与``从分布中抽样"是同一个意思.
 \begin{example}
 考察某厂的产品质量, 将其产品只分为合格品与不合格品, 并以$0$记合格品, 以$1$记不合格品, 则
 \[\text{总体}=\{\text{该厂生产的全部合格品与不合格品}\}=\{\text{由}~0~\text{或}~1~\text{组成的一堆数}\}.\]
@@ -68,8 +68,8 @@ P&0.915&0.085
 在有些问题中,我们对每一研究对象可能要观测两个甚至更多个指标,此时可用多维随机向量及其联合分布来描述总体.这种总体称为多维总体.譬如,我们要了解某校大学生的三个指标: 年龄、身高、月生活支出.则我们可用一个三维随机向量描述该总体.这是一个三维总体,它是多元分析所研究的对象.本书中主要研究一维总体,某些地方也会涉及二维总体.
 
 总体还有有限总体和无限总体,本书将以无限总体作为主要研究对象.
-\subsection{样本}
-为了了解总体的分布,我们从总体中随机地抽取$n$个个体,记其指标值为$x_1,x_2,\dotsc,x_n$,则$x_1,x_2,\dotsc,x_n$称为总体的一个\textbf{样本}\index{Y!样本}, $n$称为\textbf{样本容量}\index{Y!样本容量},或简称为\textbf{样本量}\index{Y!样本量},样本中的个体称为\textbf{样品}\index{Y!样品}.
+\subsection{样本\label{ssec:5.1.2}}
+为了了解总体的分布,我们从总体中随机地抽取$n$个个体,记其指标值为$x_1,x_2,\dotsc,x_n$,则$x_1,x_2,\dotsc,x_n$称为总体的一个 \textbf{样本}\index{Y!样本}, $n$称为 \textbf{样本容量}\index{Y!样本容量},或简称为 \textbf{样本量}\index{Y!样本量},样本中的个体称为 \textbf{样品}\index{Y!样品}.
 
 我们首先指出,样本具有二重性: 一方面,由于样本是从总体中随机抽取的,抽取前无法预知它们的数值,因此,样本是随机变量,用大写字母$X_1,X_2,\dotsc,X_n$表示;另一方面, 样本在抽取以后经观测就有确定的观测值,因此,样本又是一组数值.此时用小写字母$x_1,x_2,\dotsc,x_n$表示是恰当的.简单起见,无论是样本还是其观测值,本书中样本一般均用$x_1,x_2,\dotsc,x_n$表示,读者应能从上下文中加以区别.
 \begin{example}\label{exam5.1.3}
@@ -81,7 +81,7 @@ P&0.915&0.085
 \end{center}
 这是一个容量为10的样本的观测值,对应的总体为该厂生产的瓶装啤酒的净含量.
 \end{example}
-\begin{example}\textbf{(分组样本)}
+\begin{example} \textbf{(分组样本)}
 我们考察某厂生产的某种电子元件的寿命,该厂生产的一级将要生产的所有元件是总体是总体(通常可以认为是无限总体),我们选了100只进行寿命试验,由于一些原因,我们不可能每时每刻对试验进行观察,而只能定期(比如每隔24\si{h})进行观察,于是,对每个元件,我们只能观察到其寿命落在某个范围内,这就产生了表~\ref{table5.1.2} 所示的一组样本:
 \begin{table}
 \centering  \caption{100只元件的寿命数据}\label{table5.1.2}
@@ -108,13 +108,13 @@ P&0.915&0.085
 
 从总体中抽取样本可以有不同的抽法,为了能由样本对总体作出比较可靠的推断,就希望样本能很好的代表总体.这就需要对抽样方法提出一些要求,最常用的``简单随机样本"有如下两个要求:
 \begin{itemize}
-\item 样本具有\textbf{随机性}\index{S!随机性},即要求总体中每一个个体都有同等机会会被选入样本,这便意味着每一样品$x_i$与总体$X$有相同的分布.
-\item 样本要有\textbf{独立性}\index{D!独立性},即要求样本中每一样品的取值不影响其他样品的取值,这意味着$x_1,x_2,\dotsc,x_n$相互独立.
+\item 样本具有 \textbf{随机性}\index{S!随机性},即要求总体中每一个个体都有同等机会会被选入样本,这便意味着每一样品$x_i$与总体$X$有相同的分布.
+\item 样本要有 \textbf{独立性}\index{D!独立性},即要求样本中每一样品的取值不影响其他样品的取值,这意味着$x_1,x_2,\dotsc,x_n$相互独立.
 \end{itemize}
 
-用简单抽样方法得到的样本称为\textbf{简单随机样本}\index{J!简单随机样本},也简称\textbf{样本}\index{!样本}.除非特别指明,本书中的样本皆为简单随机样本.于是,样本$x_1,x_2,\dotsc,x_n$可以看成是相互独立的具有同一分布的随机变量,其共同分布即为总体分布.
+用简单抽样方法得到的样本称为 \textbf{简单随机样本}\index{J!简单随机样本},也简称 \textbf{样本}\index{!样本}.除非特别指明,本书中的样本皆为简单随机样本.于是,样本$x_1,x_2,\dotsc,x_n$可以看成是相互独立的具有同一分布的随机变量,其共同分布即为总体分布.
 
-设总体$X$具有分布函数$F(x),x_1,x_2,\dotsc,x_n$为取自该总体的容量为$n$的样本,则样本\textbf{联合分布函数}\index{L!联合分布函数}为
+设总体$X$具有分布函数$F(x),x_1,x_2,\dotsc,x_n$为取自该总体的容量为$n$的样本,则样本 \textbf{联合分布函数}\index{L!联合分布函数}为
 \[F(x_1,x_2,\dotsc,x_n)=\prod_{i=1}^nF(x_i).\]
 对无限总体,随机性与独立性容易实现,困难在于排除有意或无意的认为干扰.对有限总体,只要总体所含个体数很大,特别是与样本量相比很大,则独立性也可基本得到满足.
 \begin{example}
@@ -142,10 +142,10 @@ P&0.915&0.085
 \item 某厂生产的电容器的使用寿命服从指数分布,为了解其平均寿命,从中抽出$n$个产品测其实际使用寿命,试说明什么是总体,什么是样本,并指出样本的分布.
 \item 美国某高校根据毕业生返校情况记录,宣布该校毕业生的年平均工资为5万美元,你对此有何平均?
 \end{xiti}
-\section{样本数据的整理与显示}
+\section{样本数据的整理与显示\label{sec:5.2}}
 \subsection{经验分布函数\label{ssec:5.2.1}}
 设$x_1,x_2,\dotsc,x_n$是取自总体分布函数为$F(x)$的样本,若将样本观测值由小到大进行排列,为$x_{(1)},x_{(2)},\dotsc,x_{(n)}$,则$x_ {(1)},x_{(2)},\dotsc,x_{(n)}$称为有序样本\index{Y!有序样本},用有序样本定义如下函数
-\begin{equation}\label{eq5.2.1}
+\begin{equation}\label{eq:5.2.1}
 F_n(x)=\begin{cases}
 0,&\text{当}x<x_{(1)},\\
 k/n,&\text{当}x_{(k)}\leq x<x_{(k+1)},k=1,2\dotsc,n-1,\\
@@ -154,7 +154,7 @@ k/n,&\text{当}x_{(k)}\leq x<x_{(k+1)},k=1,2\dotsc,n-1,\\
 \end{equation}
 则$F_n(x)$是一非减右连续函数,且满足
 \[F_n(-\infty)=0\text{和}F_n(+\infty)=1.\]
-由此可见,$F_n(x)$是一个分布函数,并称$F_n(x)$为\textbf{经验分布函数}\index{J!经验分布函数}.
+由此可见,$F_n(x)$是一个分布函数,并称$F_n(x)$为 \textbf{经验分布函数}\index{J!经验分布函数}.
 \begin{example}
 某食品厂生产听装饮料,现从生产线上随机抽取5听饮料,称得其净重为(单位:\si{g})
 \[351\quad347\quad355\quad344\quad351\]
@@ -177,7 +177,7 @@ k/n,&\text{当}x_{(k)}\leq x<x_{(k+1)},k=1,2\dotsc,n-1,\\
 \end{theorem}
 
 定理~\ref{thm:5.2.1} 表明,当$n$相当大时,经验分布函数是总体分布函数$F(x)$的一个良好的近似.经典的统计学中一切统计推断都以样本为依据,其理由就在于此.
-\subsection{频数频率分布表}
+\subsection{频数频率分布表\label{ssec:5.2.2}}
 样本数据的整理是统计研究的基础,整理数据的最常用方法之一是给出其频数分布表或频率分布表.我们从一个例子开始介绍.
 \begin{example}\label{exam:5.2.2}
 为研究某厂工人生产某种产品的能力,我们随机调查了20位工人某天生产的该种产品的数量,数据如下
@@ -189,18 +189,18 @@ k/n,&\text{当}x_{(k)}\leq x<x_{(k+1)},k=1,2\dotsc,n-1,\\
 \end{align*}
 对这20个数据(样本)进行整理,具体步骤如下
 \begin{itemize}
-\item \textbf{对样本进行分组}.首先确定组数$k$,作为一般性的原则,组数通常在$5\sim20$个,对容量较小的样本,通常将其分为5组或6组,容量为100左右的样本可分7到10组,容量为200左右的样本可分9到13组,容量为300左右及以上的样本可分12到20组,目的是使用足够的组来表示数据的变异.本例中只有20个数据,我们将之分为5组,即$k=5$.
-\item \textbf{确定每组组距}.每组区间长度可以相同也可以不同,实用中常选用长度相同的区间以便于进行比较,此时各组区间的长度称为\textbf{组距}\index{Z!组距},其近似公式为
+\item  \textbf{对样本进行分组}.首先确定组数$k$,作为一般性的原则,组数通常在$5\sim20$个,对容量较小的样本,通常将其分为5组或6组,容量为100左右的样本可分7到10组,容量为200左右的样本可分9到13组,容量为300左右及以上的样本可分12到20组,目的是使用足够的组来表示数据的变异.本例中只有20个数据,我们将之分为5组,即$k=5$.
+\item  \textbf{确定每组组距}.每组区间长度可以相同也可以不同,实用中常选用长度相同的区间以便于进行比较,此时各组区间的长度称为 \textbf{组距}\index{Z!组距},其近似公式为
 \[\text{组距}d=\text{样本最大观测值-样本最小观测值)}/\text{组数}\]
 本例中,数据最大观测值为196,最小观测值为148,故组距近似为
 \[d=\frac{196-148}5=9.6,\]
 方便起见,取组距为10.
-\item \textbf{确定每组组限}.各组区间端点为$a_0,a_0+d=a1,a_0+2d=a_2,a_0+2d=a_2,\cdots,a_0+kd=a_k$,形成如下的分组区间
+\item  \textbf{确定每组组限}.各组区间端点为$a_0,a_0+d=a1,a_0+2d=a_2,a_0+2d=a_2,\cdots,a_0+kd=a_k$,形成如下的分组区间
 \[(a_0,a_1],(a_1,a_2],\dotsc,(a_{k-1},a_k],\]
 其中$a_0$略小于最小观测值, $a_k$略大于最大观测值,本例中可取$a_0=147,a_5=197$,于是本例的分组区间为:
 \[(147,157],(157,167],(167,177],(177,187],(187,197],\]
 通常可用每组的组中值来代表该组的变量取值,组中值=(组上限$+$组下限)/2.
-\item \textbf{统计样本数据落入每个区间的个数——频数},并列出其频数频率分布表.本例的频数频率分布表见表~\ref{table5.2.1}.从表中可以读出很多信息,如: 40\%的工人产量在157到167之间;产量少于167个的有12人,占60\%;产量高于177的有3人,占15\%.
+\item  \textbf{统计样本数据落入每个区间的个数——频数},并列出其频数频率分布表.本例的频数频率分布表见表~\ref{table5.2.1}.从表中可以读出很多信息,如: 40\%的工人产量在157到167之间;产量少于167个的有12人,占60\%;产量高于177的有3人,占15\%.
 \end{itemize}
 \end{example}
 \begin{table}[!htp]
@@ -219,7 +219,7 @@ k/n,&\text{当}x_{(k)}\leq x<x_{(k+1)},k=1,2\dotsc,n-1,\\
 \bottomrule
 \end{tabularx}
 \end{table}
-\subsection{样本数据的图形显示}
+\subsection{样本数据的图形显示\label{ssec:5.2.3}}
 前面我们介绍了频数频率分布的表格形式,它也可以用图形表示,这在许多场合更直观.
 \subsubsection{直方图}
 频数分布最常用的图形表示是直方图\index{Z!直方图},它在组距相等场合常用宽度相等的长条矩形表示,矩形的高低表示频数的大小.在图形上,横坐标表示所关心变量的取值区间,纵坐标表示频数,这样就得到频数直方图,图~\ref{fig5.2.2} 画出了例~\ref{exam:5.2.2} 的频数直方图.若把纵轴改成频率就得到频率直方图
@@ -235,18 +235,18 @@ k/n,&\text{当}x_{(k)}\leq x<x_{(k+1)},k=1,2\dotsc,n-1,\\
 102&&104&&106&&106&&107&&108&&108&&112&&112&&114&\\
 116&&118&&119&&119&&122&&123&&125&&126&&128&&133&
 \end{align*}
-我们用这批数据给出一个茎叶图.把每一个数值分为两部分,前面一部分(百位和十位)称为\textbf{茎},后面部分(个位)称为\textbf{叶},如
+我们用这批数据给出一个茎叶图.把每一个数值分为两部分,前面一部分(百位和十位)称为 \textbf{茎},后面部分(个位)称为  \textbf{叶},如
 \begin{center}
 \begin{tabularx}{0.7\textwidth}{ZZZZZZZ}
 数值&     &分开&     &茎&和&叶\\
 112&$\to$&11 | 2&$\to$&11&和&2
 \end{tabularx}
 \end{center}
-然后画一条竖线,\textbf{在竖线的左侧写上茎,右侧写上叶,就形成了茎叶图}.应聘人员测试成绩的茎叶图见图~\ref{fig5.2.3}.
+然后画一条竖线, \textbf{在竖线的左侧写上茎,右侧写上叶,就形成了茎叶图}.应聘人员测试成绩的茎叶图见图~\ref{fig5.2.3}.
 
 茎叶图的外观很像横放的直方图,但茎叶图中叶增加了具体的数值,使我们对数据的具体取值一目了然,从面保留了数据中全部的信息.
 
-在要比较两组样本时,可画出它们的\textbf{背靠背的茎叶图}\index{B!背靠背的茎叶图},这是一个简单直观而有效的对比方法.
+在要比较两组样本时,可画出它们的 \textbf{背靠背的茎叶图}\index{B!背靠背的茎叶图},这是一个简单直观而有效的对比方法.
 \end{example}
 \begin{example}\label{exam:5.2.4}
 下面的数据是某厂两个车间某天各40名员工生产的产品数量(表~\ref{table5.2.2}).为对其进行比较,我们将这些数据放到一个背靠背茎叶图上(图~\ref{fig5.2.4}).
@@ -355,23 +355,23 @@ k/n,&\text{当}x_{(k)}\leq x<x_{(k+1)},k=1,2\dotsc,n-1,\\
 \end{align*}
 试画出茎叶图.
 \end{xiti}
-\section{统计量及其分布}
-\subsection{统计量与抽样分布}
+\section{统计量及其分布\label{sec:5.3}}
+\subsection{统计量与抽样分布\label{ssec:5.3.1}}
 样本来自总体,样本的观测值中含有总体各方面的信息,但这些信息较为分散,有时显得杂乱无章,为将这些分散在样本中的有关总体的信息集中起来以反映总体的各种特征,需要对样本进行加工,表和图是一类加工形式,它是人们从中获得对总体的初步认识.当人们需要从样本获得对总体各种参数的认识时,最常用的加工方法是构造样本的函数,不同的函数反映总体的不同特征.
 \begin{definition}{统计量}{tongjiliang}
-设$x_1,x_2,\dotsc,x_n$为取自某总体的样本,若样本函数$T=T(x_1,x_2,\dotsc,x_n)$中不含有任何未知参数,则称$T$为\textbf{统计量}\index{T~统计量}.统计量的分布称为\textbf{抽样分布}\index{C!抽样分布}.
+设$x_1,x_2,\dotsc,x_n$为取自某总体的样本,若样本函数$T=T(x_1,x_2,\dotsc,x_n)$中不含有任何未知参数,则称$T$为 \textbf{统计量}\index{T~统计量}.统计量的分布称为 \textbf{抽样分布}\index{C!抽样分布}.
 \end{definition}
 按照这一定义,若$x_1,x_2,\dotsc,x_n$为样本,则$\sum_{i=1}^nx_i,\sum_{i=1}^nx_i^2$以及~\ref{ssec:5.2.1} 节中的$F_n(x)$都是统计量.而当$\mu,\sigma^2$未知时, $x_1-\mu,x_1/\sigma$等均不是统计量.必须指出的是: 尽管统计量不依赖于未知参数,但是它的分布一般是依赖于未知参数的.
 
 下面几小节及~\ref{sec:5.4} 节我们介绍一些常见的统计量及其抽样分布.
-\subsection{样本均值及其抽样分布}
+\subsection{样本均值及其抽样分布\label{ssec:5.3.2}}
 \begin{definition}{样本均值}{ybjz}
-设$x_1,x_2,\dotsc,x_n$为取自某总体的样本,其算术平均值为\textbf{样本均值}\index{Y!样本均值},一般用$\bar x$表示,即
-\begin{equation}\label{eq5.3.1}
+设$x_1,x_2,\dotsc,x_n$为取自某总体的样本,其算术平均值为 \textbf{样本均值}\index{Y!样本均值},一般用$\bar x$表示,即
+\begin{equation}\label{eq:5.3.1}
 \bar x=\frac{x_1+\dotsb+x_n}n=\frac1n\sum_{i=1}^nx_i.
 \end{equation}
 在分组样本场合,样本均值的近似公式为
-\begin{equation}\label{eq5.3.2}
+\begin{equation}\label{eq:5.3.2}
 \bar x=\frac{x_1f_1+\dotsb+x_kf_k}n\quad\left(n=\sum_{i=1}^kf_i\right).
 \end{equation}
 其中$k$为组数, $x_i$为第$i$组的组中值, $f_i$为第$i$组的频数.
@@ -402,9 +402,9 @@ k/n,&\text{当}x_{(k)}\leq x<x_{(k+1)},k=1,2\dotsc,n-1,\\
 \bottomrule
 \end{tabularx}
 \end{table}
-对表~\ref{table5.3.1} 的分组样本,使用公式~\eqref{eq5.3.2} 进行计算可得
+对表~\ref{table5.3.1} 的分组样本,使用公式~\eqref{eq:5.3.2} 进行计算可得
 \[\bar x=\frac1{20}(82\times3+92\times 5+\dotsb+122\times2)=100.\]
-我们看到两种计算结果不同.事实上,由于~\eqref{eq5.3.2} 式未用到真实的样本观测数据,因而给出的是近似结果.
+我们看到两种计算结果不同.事实上,由于~\eqref{eq:5.3.2} 式未用到真实的样本观测数据,因而给出的是近似结果.
 
 关于样本均值,有如下几个性质.
 \begin{theorem}{}{5.3.1}
@@ -441,8 +441,8 @@ $\sum(x_i-\bar x)=\sum x_i-n\bar x=\sum x_i-n\cdot\big(\sum x_i\big)/n=0$.
 \begin{theorem}{}{5.3.3}
 设$x_1,x_2,\dotsc,x_n$是来自某个总体的样本, $\bar x$为样本均值.
 \begin{enumerate}
-\item 若总体分布为$N(\mu,\sigma^2)$,则$\bar x$的\textbf{精确分布}\index{J!精确分布}为$N(\mu,\sigma^2/n)$;
-\item 若总体分布位置或不是正态分布,但$E(x)=\mu,\operatorname{Var}(x)=\sigma^2$,则$n$较大时$\bar x$的\textbf{渐近分布}\index{J!渐近分布}为$N(\mu,\sigma^2)$,常记为$\bar x\dot{\sim}N(\mu,\sigma^2/n)$.这里渐近分布是指$n$较大时的近似分布.
+\item 若总体分布为$N(\mu,\sigma^2)$,则$\bar x$的 \textbf{精确分布}\index{J!精确分布}为$N(\mu,\sigma^2/n)$;
+\item 若总体分布位置或不是正态分布,但$E(x)=\mu,\operatorname{Var}(x)=\sigma^2$,则$n$较大时$\bar x$的 \textbf{渐近分布}\index{J!渐近分布}为$N(\mu,\sigma^2)$,常记为$\bar x\dot{\sim}N(\mu,\sigma^2/n)$.这里渐近分布是指$n$较大时的近似分布.
 \end{enumerate}
 \end{theorem}
 \begin{proof}
@@ -467,25 +467,27 @@ $\sum(x_i-\bar x)=\sum x_i-n\bar x=\sum x_i-n\cdot\big(\sum x_i\big)/n=0$.
 
 这是一个倒三角分布,可以算得其均值与方差分别为3和2,若从该总体抽取样本容量为30的样本,则其样本均值的渐近分布为
 \[\bar x_2\dot{\sim} N\left(3,\frac{2}{30}\right)=N(3,0.26^2).\]
+
 \ding{174}的总体分布为指数分布$Exp(1)$,其均值与方差都等于1,若从该总体抽取样本容量为30的样本,则其样本均值$\bar x_3$的分布近似为
 \[\bar x_3\dot{\sim}N\left(1,\frac1{30}\right)=N(1,0.18^2).\]
+
 这三个总体都不是正态分布,但其样本均值的分布都十分近似于正态分布,差别表现在均值与标准差上.图~\ref{fig:5.3.3} 所示曲线既展示它们的共同之处,又显示它们之间的差别.
 \end{example}
-\subsection{样本方差与样本标准差}
+\subsection{样本方差与样本标准差\label{ssec:5.3.3}}
 \begin{definition}{}{5.3.3}
 设$x_1,x_2,\dotsc,x_n$为取自某总体的样本,则它关于样本均值$\bar x$的平均偏差平方和
 \begin{equation}\label{eq:5.3.3}
 {s^\ast}^2=\frac1n\sum_{i=1}^n(x_i-\bar x)^2
 \end{equation}
-称为\textbf{样本方差}\index{Y!样本方差}.其算术根$s^\ast=\sqrt{{s^\ast}^2}$称为样本标准差.相对样本方差而言,样本标准差通常更有实际意义,因为它与样本均值具有相同的度量单位.在$n$不大时,常用
+称为 \textbf{样本方差}\index{Y!样本方差}.其算术根$s^\ast=\sqrt{{s^\ast}^2}$称为样本标准差.相对样本方差而言,样本标准差通常更有实际意义,因为它与样本均值具有相同的度量单位.在$n$不大时,常用
 \begin{equation}\label{eq:5.3.4}
 s^2=\frac1{n-1}\sum_{i=1}^n(x_i-\bar x)^2
 \end{equation}
 
-作为样本方差(也称\textbf{无偏方差}\index{W!无偏方差},其含义在第六章讲述),其算术根$s=\sqrt{s^2}$也称为样本标准差.在实际中,$s^2$比${s^\ast}^2$更常用,在以后讲样本方差通常指的是$s^2$.
+作为样本方差(也称 \textbf{无偏方差}\index{W!无偏方差},其含义在第六章讲述),其算术根$s=\sqrt{s^2}$也称为样本标准差.在实际中,$s^2$比${s^\ast}^2$更常用,在以后讲样本方差通常指的是$s^2$.
 \end{definition}
 
-在这个定义中, $n$为\textbf{样本量}\index{Y!样本量}, $\sum_{i=1}^n(x_i-\bar x)^2$称为偏差平方和\index{P!偏差平方和}, $n-1$称为偏差平方和的自由度\index{Z!自由度}.其含义是: 在$\bar x$确定后, $n$个偏差$x_1-\bar x,x_2-\bar x,\dotsc,x_n-\bar x$中只有$n-1$个数据可以自由变动,而第$n$个则不能自由取值,因为$\sum(x_i-\bar x)=0$.
+在这个定义中, $n$为 \textbf{样本量}\index{Y!样本量}, $\sum_{i=1}^n(x_i-\bar x)^2$称为偏差平方和\index{P!偏差平方和}, $n-1$称为偏差平方和的自由度\index{Z!自由度}.其含义是: 在$\bar x$确定后, $n$个偏差$x_1-\bar x,x_2-\bar x,\dotsc,x_n-\bar x$中只有$n-1$个数据可以自由变动,而第$n$个则不能自由取值,因为$\sum(x_i-\bar x)=0$.
 
 样本偏差平方和有三个不同的表达式:
 \begin{equation}\label{eq:5.3.5}
@@ -497,14 +499,14 @@ s^2=\frac1{n-1}\sum_{i=1}^n(x_i-\bar x)^2
 \begin{equation}\label{eq:5.3.6}
 s^2=\frac1{n-1}\sum_{i=1}^kf_i(x_i-\bar x)^2=\frac1{n-1}\Bigl[\sum_{i=1}^kf_ix_i^2-n\bar x^2\Bigr],
 \end{equation}
-其中$x_i,f_i$分别为第$i$个区间的组中值和频数, $\bar x$为~\ref{eq5.3.2} 中给出的样本均值.
+其中$x_i,f_i$分别为第$i$个区间的组中值和频数, $\bar x$为~\eqref{eq:5.3.2} 中给出的样本均值.
 \begin{example}\label{exam:5.3.4}
 考察~\ref{exam:5.3.1} 的样本,我们已经算得$\bar x=99.4$,其样本方差与样本标准差分别为
 \begin{align*}
 s^2&=\frac1{20-1}[(79-99.4)^2+(84-99.4)^2+\dotsb+(125-99.4)^2]133.9368,\\
 s&=\sqrt{133.9368}=11.5731,
 \end{align*}
-对表~\ref{table5.3.1} 的分组样本,我们可以如表~\ref{tab:5.3.2}计算(样本均值也由分组样本计算):
+对表~\ref{table5.3.1} 的分组样本,我们可以如表~\ref{tab:5.3.2} 计算(样本均值也由分组样本计算):
 \begin{table}[!htb]
   \centering
   \caption{分组样本方差的计算表}\label{tab:5.3.2}
@@ -540,13 +542,13 @@ E(\bar x)=\frac1nE\Bigl(\sum_{i=1}^nx_i\Bigr)=\frac{n\mu}n=\mu,\\
 \operatorname{Var}(\bar x)=\frac1{n^2}\operatorname{Var}\Bigl(\sum_{i=1}^nx_i\Bigr)
 =\frac{n\sigma^2}{n^2}=\frac{\sigma^2}n,
 \end{gather*}
-故~\ref{eq:5.3.7}成立.下证~\ref{eq:5.3.8},注意到
+故~\eqref{eq:5.3.7} 成立.下证~\ref{eq:5.3.8} ,注意到
 \[\sum_{i=1}^n(x_i-\bar x)^2=\sum_{i=1}^nx_i^2-n\bar x^2,\]
 而$Ex_i^2=(Ex_i)^2+\operatorname{Var}(x_i)=\mu^2+\sigma^2,E(\bar x^2)=(E\bar x)^2+\operatorname(Var)(\bar x)=\mu^2+\sigma^2/n$,于是
 \[E\Bigl(\sum_{i=1}^n(x_i-\bar x)^2\Bigr)=n(\mu^2+\sigma^2)-n(\mu^2+\sigma^2/n)=(n-1)\sigma^2,\]
-两边各除以$n-1$,即得~\ref{eq:5.3.8}.
+两边各除以$n-1$,即得~\eqref{eq:5.3.8}.
 \end{proof}
-\subsection{样本矩及其函数}
+\subsection{样本矩及其函数\label{ssec:5.3.4}}
 样本均值和样本方差的更一般的推广是样本矩,这是一类常见的统计量.
 \begin{definition}{}{5.3.4}
 设$x_1,x_2,\dotsc,x_n$是样本,则统计量
@@ -578,3 +580,373 @@ b_k=\frac1n\sum_{i=1}^n(x_i-\bar x)^k
 \end{definition}
 
 样本峰度$\gamma_2$反映了总体分布密度曲线在其峰值附近的陡峭程度.当$\gamma_2>0$时,分布密度曲线在其峰值附近比正态分布来得陡,称为尖顶型;当$\gamma_2<0$时,分布密度曲线在其峰值附近比正态分布来得平坦,称为平顶型.
+\begin{example}\label{exam:5.3.3}
+表~\ref{tab:5.3.3} 是两个班(每班50名同学)的英语课程的考试成绩.
+
+下面我们分别计算两个班级的平均成绩、标准差、样本偏度及样本峰度.表
+~\ref{tab:5.3.4} 和表~\ref{tab:5.3.5} 分别给出甲班和乙班的计算过程.
+
+可算得两个班的平均成绩、标准差、偏态系数、峰态系数分别为:
+\begin{align*}
+\begin{gathered}
+\bar x_{\text{甲}}=\frac{3790}{50}=75.8,\\
+s_{\text{甲}}=\sqrt{\frac{5368}{49}=10.47},\\
+\gamma_{1\text{甲}}=\frac{-8908.8/50}{(5368/50)^{3/2}}=-0.16,\\
+\gamma_{2\text{甲}}=\frac{1987874.56/50}{(5368/50)^2}-3=0.45,
+\end{gathered}\qquad
+\begin{gathered}
+\bar x_{\text{乙}}=\frac{3790}{50}=75.8,\\
+s_{\text{乙}}=\sqrt{\frac{5168}{49}}=10.27,\\
+\gamma_{1\text{乙}}=\frac{3571.2/50}{(5168/50)^{3/2}}=0.068,\\
+\gamma_{2乙}=\frac{1208706.56/50}{(5168/50)^2}-3=-0.74.
+\end{gathered}
+\end{align*}
+\end{example}
+\begin{table}[!htp]
+  \centering
+  \caption{两个班级的英语成绩}\label{tab:5.3.3}
+\begin{tabularx}{\textwidth}{ZZZZ}
+\toprule
+成绩&组中值&甲班人数$f_{\text{甲}}$&乙班人数$f_{\text{乙}}$\\
+\midrule
+$90\sim100$&95&5&4\\
+$80\sim89$&85&10&14\\
+$70\sim79$&75&22&16\\
+$60\sim69$&65&11&14\\
+$50\sim59$&55&1&2\\
+$40\sim49$&45&1&0\\
+\bottomrule
+\end{tabularx}
+\end{table}
+\begin{table}[!htp]
+  \centering
+  \caption{甲班成绩的计算过程}\label{tab:5.3.4}
+\begin{tabularx}{\textwidth}{YYYYYY}
+\toprule
+x&f_{\text{甲}}&x\cdot f_{\text{甲}}&(x-\bar x_{甲})^2f_{\text{甲}}&(x-\bar x_{甲})^3f_{\text{甲}}&(x-\bar x_{甲})^4f_{\text{甲}}\\
+\midrule
+95&5&475&1843.20&35389.440&679477.2480\\
+85&10&850&846.40&7786.880&71639.2960\\
+75&22&1650&14.08&-11.264&9.0112\\
+65&11&715&1283.04&-13856.832&149653.7856\\
+55&1&55&432.64&-8998.912&187 177.3696\\
+45&1&45&948.64&-29218.112&899917.8496\\
+\midrule
+\text{和}&50&3790&5368&-8908.8&1987874.56\\
+\bottomrule
+\end{tabularx}
+\end{table}
+\begin{table}[!htp]
+  \centering
+  \caption{乙班成绩的计算过程}\label{tab:5.3.5}
+\begin{tabularx}{\textwidth}{YYYYYY}
+\toprule
+x&f_{\text{乙}}&x\cdot f_{\text{乙}}&(x-\bar x_{乙})^2f_{\text{乙}}&(x-\bar x_{乙})^3f_{\text{乙}}&(x-\bar x_{乙})^4f_{\text{乙}}\\
+\midrule
+95&4&380&1474.56&28311.552&543581.7984\\
+85&14&1190&1184.96&10901.632&100295.0144\\
+75&16&1200&10.24&-8.192&6.5536\\
+65&14&910&1632.96&-17635.968&190468.4544\\
+55&2&110&865.28&-17997.824&374354.7392\\
+\text{和}&50&3790&5168&3571.2&1208706.56\\
+\bottomrule
+\end{tabularx}
+\end{table}
+\subsection{次序统计量及其分布}
+除了样本矩以外,另一类常见的统计量是 \textbf{次序统计量}\index{C!次序统计量},它在实际和理论中都有广泛的应用.
+\subsubsection{定义}
+\begin{definition}{}{5.3.7}
+设$x_1,x_2,\dotsc,x_n$是取自总体X的样本, $x_{(i)}$称为该样本的第$i$个次序统计量,它的取值是将样本观测值由小到大排列后得到的第$i$个观测值.其中$x_{(1)}=\min\{x_1,\dotsc,x_n\}$称为该样本的 \textbf{最小次序统计量}\index{Z!最小次序统计量}, $x_{(n)}=\max\{x_1,\dotsc,x_n\}$称为该样本的 \textbf{最大次序统计量}\index{Z!最大次序统计量}.
+\end{definition}
+
+在一个(简单随机)样本中, $x_1,x_2,\dotsc,x_n$是独立同分布的,而次序统计量$x_{(1)},x_{(2)},\dotsc,x_{(n)}$则既不独立,分布也不相同,看下例.
+\begin{example}\label{exam:5.3.6}
+设总体$X$的分布为仅取$0,1,2$的离散均匀分布,分布列为
+\begin{center}
+\begin{tabularx}{0.5\textwidth}{Y|YYY}
+x&0&1&2\\
+\midrule
+p&1/3&1/3&1/3
+\end{tabularx}
+\end{center}
+现从中抽取容量为3的样本,其一切可能取值有$3^3=27$种,现将它们列在表~\ref{tab:5.3.6} 左侧,其右侧相应的次序统计量观测值.
+\end{example}
+\begin{table}[!htp]
+  \centering
+  \caption{例~\ref{exam:5.3.6} 中样本取值及其次序统计量}\label{tab:5.3.6}
+\begin{tabularx}{\textwidth}{YYY|YYY||YYY|YYY}
+\toprule
+x_1&x_2&x_3&x_{(1)}&x_{(2)}&x_{(3)}&x_1&x_2&x_3&x_{(1)}&x_{(2)}&x_{(3)}\\
+\midrule
+0&0&0&0&0&0&1&2&0&0&1&2\\
+0&0&1&0&0&1&2&1&0&0&1&2\\
+0&1&0&0&0&1&0&2&2&0&2&2\\
+1&0&0&0&0&1&2&0&2&0&2&2\\
+0&0&2&0&0&2&2&2&0&0&2&2\\
+0&2&0&0&0&2&1&1&2&1&1&2\\
+2&0&0&0&0&2&1&2&1&1&1&2\\
+0&1&1&0&1&1&2&1&1&1&1&2\\
+1&0&1&0&1&1&1&2&2&1&2&2\\
+1&1&0&0&1&1&2&1&2&1&2&2\\
+0&1&2&0&1&2&2&2&1&1&2&2\\
+0&2&1&0&1&2&1&1&1&1&1&1\\
+1&0&2&0&1&2&2&2&2&2&2&2\\
+2&0&1&0&1&2\\
+\bottomrule
+\end{tabularx}
+\end{table}
+由于样本取上述每一组观测值的概率相同,都为$1/27$,由此可给出$x_{(1)},x_{(2)},x_{(3)}$的分布列如下:
+\begin{center}
+\begin{minipage}{0.3\textwidth}
+\begin{tabularx}{0.9\textwidth}{Y|YYY}
+\toprule
+x_{(1)}&0&1&2\\
+\midrule
+p&\frac{19}{27}&\frac{7}{27}&\frac1{27}\\
+\bottomrule
+\end{tabularx}
+\end{minipage}
+\begin{minipage}{0.3\textwidth}
+\begin{tabularx}{0.9\textwidth}{Y|YYY}
+\toprule
+x_{(2)}&0&1&2\\
+\midrule
+p&\frac{7}{27}&\frac{13}{27}&\frac7{27}\\
+\bottomrule
+\end{tabularx}
+\end{minipage}
+\begin{minipage}{0.3\textwidth}
+\begin{tabularx}{0.9\textwidth}{Y|YYY}
+\toprule
+x_{(3)}&0&1&2\\
+\midrule
+p&\frac{1}{27}&\frac{7}{27}&\frac{19}{27}\\
+\bottomrule
+\end{tabularx}
+\end{minipage}
+\end{center}
+我们可以清楚地看到这三个次序统计量的分布是不相同的.
+
+进一步,我们可以给出两个次序统计量的联合分布,如, $x_{(1)}$和$x_{(2)}$的联合分布列为
+\begin{center}
+\begin{tabularx}{\textwidth}{Y|YYY}
+\toprule
+\multirow{2}*{$x_{(1)}$}&\multicolumn{3}{c}{$x_{(2)}$}\\
+\cmidrule{2-4}
+&1&2&3\\
+\midrule
+0&7/27&9/27&3/27\\
+1&0&4/27&3/27\\
+2&0&0&1/27\\
+\bottomrule
+\end{tabularx}
+\end{center}
+因为$P(x_{(1)}=0)P(x_{(2)}=0)=\frac{19}{27}\times\frac7{27}$,而$P(x_{(1)}=0,x_{(2)}=0)=7/27$,两者不等,由此可看出$x_{(1)}$和$x_{(2)}$是不独立的.
+
+接下来我们讨论次序统计量的抽样分布,它们常用在连续总体上,故我们仅就总体$X$的分布为连续情况进行叙述.
+\subsubsection{单个次序统计量的分布}
+\begin{theorem}{}{5.3.5}
+设总体$X$的密度函数为$p(x)$,分布函数为$F(x),x_1,x_2,\dotsc,x_n$为样本,则第$k$个次序统计量$x_{(k)}$的密度函数为
+\begin{equation}\label{eq:5.3.13}
+p_k(x)=\frac{n!}{(k-1)!(n-k)!}(F(x))^{k-1}(1-F(x))^{n-k}p(x).
+\end{equation}
+\end{theorem}
+\begin{proof}
+对任意的实数$x$,考虑次序统计量$x_{(k)}$取值落在小区间$(x,x+\Delta x]$内这一事件,它等价``样本容量为$n$的样本中有1个观测值落在$(x,x+△x]$之间,而有$k-1$个观测值小于等于$x$,有$n一k$个观测值大于$x+△x$'',其直观示意见图~\ref{fig:5.3.5}.
+\begin{figure}[!htp]
+  \centering
+\begin{tikzpicture}[semithick]
+\draw(-4,0)--(4,0);\coordinate(a)at(-1,0);\node[below=2pt]at(a){$x$};
+\coordinate(b)at(1,0);\node[below]at(b){$x+\Delta x$};
+\draw[out=100,in=0](a)to(-3.4,1);
+\draw[out=70,in=110](a)to(b);
+\node at(0,0.75){$1$};\node at(-2.7,0.5){$k-1$};
+\draw[out=60,in=190](b)to(3.7,1.1);
+\node at(2.6,0.5){$n-k$};
+\end{tikzpicture}
+  \caption{$x_{(k)}$取值的示意图}\label{fig:5.3.5}
+\end{figure}
+
+样本的每一个分量小于等于$x$的概率为$F(x)$,落入区间$(x,x+\Delta x]$的概率为$F(x+\Delta x)-F(x)$,大于$x+\Delta x$的概率为$1-F(x+\Delta x)$,而将$n$个分量分成这样的三组,总的分法有$\frac{n!}{(k-1)!1!(n-k)!}$种.于是,若以$F_k(x)$记$x_{(k)}$的分布函数,则由多项分布可得
+\[F_k(x+\Delta x)-F_k(x)\approx\frac{n!}{(k-1)!1!(n-k)!}(F(x))^{k-1}(F(x+\Delta x)-F(x))(1-F(x+\Delta x))^{n-k},\]
+两边除以$\Delta x$,并令$\Delta x\to0$,即有
+\begin{align*}
+p_k(x)&=\lim_{\Delta x\to0}\frac{F_k(x+\Delta x)-F_k(x)}{\Delta x}\\
+&=\frac{n!}{(k-1)!(n-k)!}(F(x))^{k-1}p(x)(1-F(x))^{n-k},
+\end{align*}
+其中$p_k(x)$的非零区间与总体的非零区间相同.特别,令$k=1$和$k=n$即得到最小次序统计量$x_{(1)}$和最大次序统计量$x_{(n)}$的密度函数分别为:
+\begin{gather}
+p_1(x)=n\cdot(F(x))^{n-1}p(x),\label{eq:5.3.14}\\
+p_n(x)=n\cdot(1-F(x))^{n-1}p(x).\label{eq:5.3.15}
+\end{gather}
+\end{proof}
+\begin{example}\label{exam:5.3.7}
+设总体密度函数为
+\[p(x)=3x^2,\quad0<x<1,\]
+现从该总体抽得一个容量为5的样本,试计算$P(x_{(2)}<1/2)$.
+\end{example}
+\begin{solution}
+我们首先应求出$x_{(2)}$的分布.由总体密度函数不难求出总体分布函数为
+\[F(x)=\begin{cases}
+0,&x\leq0;\\
+x^3,&0<x<1\\
+1,&x\geq1.
+\end{cases}\]
+由公式~\eqref{eq:5.3.8} 可以得到$x_{(2)}$的密度函数为
+\begin{align*}
+p_2(x)&=\frac{5!}{(2-1)!(5-2)!}(F(x))^{2-1}p(x)(1_F(x))^{5-2}\\
+&=20\cdot x^3\cdot3x^2\cdot(1-x^3)^3=60x^5(1-x^3)^3,\quad 0<x<1,
+\end{align*}
+于是
+\begin{align*}
+P(x_{(2)}<1/2)&=\int_0^{1/2}60x^5(1-x^3)^3\dd x\\
+&=\int_0^{1/8}20y(1-y)^5\dd y=\int_{7/8}^120(z^3-z^4)\dd z\\
+&=5(1-(7/8)^4)-4(1-(7/8)^5)=0.1207.
+\end{align*}
+\end{solution}
+\begin{example}\label{exam:5.3.8}
+设总体分布为$U(0,1),x_1,x_2,\dotsc,x_n$为样本,则其第$k$个次序统计量的密度函数为
+\[p_k(x)=\frac{n!}{(k-1)!(n-k)!}x^{k-1}(1-x)^{n-k},\quad0<x<1,\]
+这就是\S\ref{sec:2.5} 中介绍的贝塔分布$Be(k,n-k+1)$,从而有$E(x_{(k)})=\frac k{n+1}$.
+\end{example}
+\subsubsection{多个次序统计量的联合分布}
+下面我们讨论任意二个次序统计量的联合分布.对三个或三个以上次序统计量的分布可参照进行.
+\begin{theorem}{}{5.3.6}
+在定理~\ref{thm:5.3.5} 的记号下,次序统计量$(x_{(i)},x_{(j)})(i<j)$的联合分布密度函数为
+\begin{equation}\label{eq:5.3.16}
+p_{ij}(y,z)=\frac{n!}{(i-1)!(j-i-1)!(n-j)!}[F(y)]^{i-1}[F(z)-F(y)]^{j-i-1}
+\cdot[1-F(z)]^{n-j}p(y)p(z),\quad y\leq z,
+\end{equation}
+\end{theorem}
+\begin{proof}
+对正能量$\Delta y,\Delta z$以及$y<z$,事件``$x_{(i)}\in(y,y+\Delta y],x_{(j)}\in(z,z+\Delta z]$''可以表示为``容量为$n$的样本$x_1,\dotsc,x_n$中有$i-1$个观测值小于等于$y$,一个落入区间$(y,y+\Delta y],j-i-1$个落入区间$(y+\Delta y,z]$,一个落入区间$(z,z+\Delta z]$,而余下$n-j$个大于$z+\Delta z$''(见图~\ref{fig:5.3.6}).
+\begin{figure}[!htp]
+  \centering
+\begin{tikzpicture}[semithick]
+\draw(-6,0)--(6,0);
+\coordinate(a) at(-3,0);\coordinate(b)at(-1.5,0);
+\coordinate(c)at(1.5,0);\coordinate(d)at(3,0);
+\node[below=2pt]at(a){$y$};\node[below]at(b){$y+\Delta y$};
+\node[below=2pt]at(c){$z$};\node[below]at(d){$z+\Delta z$};
+\draw[out=100,in=0](a)to(-5.4,1);
+\draw[out=70,in=110](a)to(b);\draw[out=70,in=110](c)to(d);
+\node at(-2.25,0.75){$1$};\node at(-4.7,0.5){$i-1$};
+\draw[out=60,in=190](d)to(5.7,1.1);
+\node at(4.6,0.5){$n-j$};\node at(0,0.5){$j-i-1$};
+\draw[out=80,in=100](b)to(c);
+\node at(2.25,0.75){$1$};
+\end{tikzpicture}
+  \caption{$x_{(i)}$与$x_{(j)}$取值的示意图}\label{fig:5.3.6}
+\end{figure}
+
+于是由多项分布可得
+\begin{align*}
+{}&P(x_{(i)}\in(y,y+\Delta y),x_{(j)}\in(z,z+\Delta z))\\
+\approx&\frac{n!}{(i-1)!1!(j-i-1)!1!(n-j)!}[F(y)]^{i-1}p(y)\Delta y[F(z)-F(y+\Delta y)]^{j-i-1}p(z)\Delta z[1-F(z+\Delta z)]^{n-j},
+\end{align*}
+考虑到$F(x)$的连续性,当$\Delta y\to0,\Delta z\to0$时有$F(y+\Delta y)\to F(y),F(z+\Delta z)\to F(z)$,于是
+\begin{align*}
+p_{ij}(y,z)&=\lim_{\Delta y\to0,\Delta z\to0}
+\frac{x_{(i)}\in(y,y+\Delta y),x_{(j)}\in(z,z+\Delta z)}{\Delta y\cdot\Delta z}\\
+&=\frac{n!}{(i-1)!(j-i-1)!(n-j)!}[F(y)]^{i-1}[F(z)-F(y)]^{j-i-1}[1-F(z)]^{n-j}p(y)p(z).
+\end{align*}
+定理得证.
+\end{proof}
+
+在实际问题中会用到一些次序统计量的函数,如$R_n=x_{(n)}-x_{(1)}$称为 \textbf{样本极差}\index{Y!样本极差},是一个很常用的统计量,要推导这个统计量的分布原则上并不难,我们只要使用定理~\ref{fig:5.3.6} 以及第三章讲过的随机变量函数的分布求法即可解决.但它们的分布常用积分表示,只在很少几种场合可用初等函数表示,下面是一个样本极差的分布可用初等函数表示的例子.
+\begin{example}
+设总体分布为$U(0,1),x_1,x_2,\dotsc,x_n$为样本,则$(x_{(1)},x_{(n)})$的联合密度函数为
+\[p_{1,n}(y,z)=n(n-1)(z-y)^{n-2},\quad 0<y<z<1,\]
+令$R=x_{(n)}-x_{(1)}$,由$R>0$可以推出$0<x_{(1)}=x_{(n)}-R\leq1-R$,则
+\[p_R(r)=\int_0^{1-r}n(n-1)[(y+r)-y]^{n-2}\dd y=n(n-1)r^{n-2}(1-r).\]
+这正是参数为$(n-1,2)$的贝塔分布.
+\end{example}
+\subsection{样本分位数与样本中位数}
+ \textbf{样本中位数}\index{Y!样本中位数}也是一个很常见的统计量,它也是次序统计量的函数,通常如下定义.设$x_{(1)},\dotsc,x_{(n)}$是有序样本,则 \textbf{样本中位数}\index{Y!样本中位数} $m_{0,5}$定义为
+\[m_{0,5}=\begin{cases}
+x_{\left(\frac{n+1}2\right)},&n\;\text{为奇数}\\
+\frac12\left(x_{(n/2)}+x_{(n/2+1)}\right),&\;\text{为偶数}.
+\end{cases}\]
+譬如,若$n=5$,则$m_{0,5}=x_{(3)}$,若$n=6$,则$m_{0,5}=\frac12(x_{(3)}+x_{(4)})$.
+
+更一般地,样本$p$分位数$m_p$可如下定义:
+\[m_p=\begin{cases}
+x_{[np+1]},&\text{若}\;np\;\text{不是整数};\\
+\frac12(x_{np}+x_{(np+1)}),&\text{若}\;np\;\text{是整数}.
+\end{cases}\]
+譬如,若$n=10,p=0.35$,则$m_{0.35}=x_{(4)}$,若$n=20,p=0.45$,则$m_{0.45}=\frac12(x_{(9)}+x_{(10)})$.
+
+对多数总体而言,要给出样本p分位数的精确分布通常不是一件容易的事.幸运的是当$n\to+\infty$时样本$p$分位数的渐近分布有比较简单的表达式,我们这里不加证明地给出如下定理.
+\begin{theorem}{}{5.3.7}
+设总体密度函数为$p(x),x_p$为其$p$分位数, $p(x)$在$x_p$处连续且$p(x_p)>0$,则当$n\to+\infty$时样本$p$分位数$m_p$的渐近分布为
+\begin{equation}\label{eq:5.3.17}
+m_p\dot{\sim}N\left(x_p,\frac{p(1-p)}{n\cdot p^2(x_p)}\right).
+\end{equation}
+特别,对样本中位数,当$n\to+\infty$时近似地有
+\begin{equation}\label{eq:5.3.18}
+m_{0.5}\dot{\sim}\left(x_{0.5},\frac1{4n\cdot p^2(x_{0.5})}\right).
+\end{equation}
+\end{theorem}
+\begin{example}
+设总体为柯西分布,密度函数为
+\[p(x;\theta)=\frac1{\pi(1+(x-\theta)^2)},\quad -\infty<x<+\infty,\]
+其分布函数为
+\[F(x;\theta)=\frac12+\frac1\pi\arctan(x-\theta).\]
+不难看出$\theta$是该总体的分位数,即$x_{0.5}=\theta$.设$x_1,\dotsc,x_n$是来自该总体的样本,当样本量$n$较大时,样本中位数$m_{0.5}$的渐近分布为
+\[m_{0.5}\dot{\sim}N\left(\theta,\frac{\pi^2}{4n}\right).\]
+\end{example}
+通常,样本均值在概括数据方面具有一定的优势.但样本均值也有其不足之处.设我们有5个数$3,5,9,10,13$,则其均值为$(3+5+9+10+13)/5=8$.如果我们不小心将13错输入为133(比如在计算机输入时将3连按2下),则均值即变为$(3+5+9+10+133)/5=32$.这说明均值受极端数值影响较大,与之相对应,中位数则不受极端值的影响,因此,当数据中含有极端值时,使用中位数比使用均值更好,中位数的这种抗干扰性在统计中称为具有 \textbf{稳健性}\index{W!稳健性}.
+\subsection{五数概括与箱线图}
+次序统计量的应用之一是五数概括\index{W!五数概括}与箱线图\index{X!箱线图}.在得到有序样本后,容易计算如下五个值: 最小观测值$x_{\min}=x_{(1)}$;最大观测值$x_{\max}=x_{(n)}$,中位数$m_{0.5}$,第一4分位数$Q_1=m_{0.25}$和第三4分位数$Q_3=m_{0.75}$.所谓五数概括就是指用这五个数:
+\[x_{\min},\quad Q_1,\quad m_{0.5},\quad Q_3,x_{\max}\]
+来大致描述一批数据的轮廓.
+\begin{example}\label{exam:5.3.11}
+表~\ref{tab:5.3.7} 是某厂160名销售入员某月的销售量数据的有序样本,由该批数据可计算得到$x_{\min}=45,x_{\max}=319,m_{0.5}=181,Q_1=144,Q_3=212$.
+\end{example}
+\begin{table}[!htp]
+  \centering
+  \caption{某厂160名销售员的月销售量的有序样本}\label{tab:5.3.7}
+\begin{tabularx}{\textwidth}{YYYYYYYYYY}
+\toprule
+45&74&76&80&87&91&92&93&95&96\\
+98&99&104&106&111&113&117&120&122&122\\
+124&126&127&127&129&129&130&131&131&133\\
+134&134&135&136&137&137&139&141&141&143\\
+145&148&149&149&149&150&150&153&153&153\\
+153&154&157&160&160&162&163&163&165&165\\
+167&167&168&170&171&172&173&174&175&175\\
+176&178&178&178&179&179&179&180&181&181\\
+181&182&182&185&185&186&186&187&188&188\\
+188&189&189&191&191&191&192&192&194&194\\
+194&194&195&196&197&197&198&198&198&199\\
+200&201&202&204&204&205&205&206&207&210\\
+214&214&215&215&216&217&218&219&219&221\\
+221&221&221&221&222&223&223&224&227&227\\
+228&229&232&234&234&238&240&242&242&242\\
+244&246&253&253&255&258&282&290&314&319\\
+\bottomrule
+\end{tabularx}
+\end{table}
+五数概括的图形表示称为箱线图,由箱子和线段组成.图~\ref{fig:5.3.7} 是例~\ref{exam:5.3.11} 中样本数据的箱线图,其作法如下:
+
+(1)画一个箱子,其两侧恰为第一4分位数和第三4分位数,在中位数位置上画一条竖线,它在箱子内.这个箱子包含了样本中50\%的数据;
+
+(2)在箱子左右两侧各引出一条水平线,分别至最小值和最大值为止.每条线段包含了样本中25\%的数据.
+\begin{figure}[!htp]
+  \centering
+\begin{tikzpicture}[scale=3]
+\draw(0,0)--(3.5,0);
+\draw[dashed](0.3,0.7)--(0.3,0)node[below]{45};
+\draw[dashed](3.2,0.7)--(3.2,0)node[below]{319};
+\draw[semithick](0.3,0.7)--(1.2,0.7)(2.3,0.7)--(3.2,0.7);
+\draw[semithick](1.2,0.4)--(2.3,0.4)--(2.3,1)--(1.2,1)--cycle;
+\draw[dashed,semithick](1.2,0.4)--(1.2,0)node[below]{144};
+\draw[dashed,semithick](2.3,0.4)--(2.3,0)node[below]{212};
+\draw[dashed,semithick](1.8,0.4)--(1.8,0)node[below]{181};
+\draw[semithick](1.8,0.4)--(1.8,1);
+\end{tikzpicture}
+  \caption{月销售量的箱线图}\label{fig:5.3.7}
+\end{figure}
+
+箱线图可用来对样本数据分布的形状进行大致的判断.图~\ref{fig:5.3.8} 给出三种常见的箱线图,分别对应对称分布、左偏分布和右偏分布.
+
