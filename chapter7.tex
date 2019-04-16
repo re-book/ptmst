@@ -5,7 +5,7 @@
 \section{假设检验的基本思想与概念}\label{sec:7.1}
 \subsection{假设检验问题\label{7.1.1}}
 我们从一个例子开始引出假设检验问题。
-\begin{problem}\label{exam7.1.1}
+\begin{example}\label{exam7.1.1}
 某厂生产的合金强度服从正态分布 $N(\theta,16)$ ，其中 $\theta$ 的设计值为不低于 110Pa .为保证质量，该厂每天都要对生产情况做例行检查，以判断生产是否正常进行，即该合金的平均强度不低于 110(pa) .某天从生产中随机抽取25块合金，测得强度值为 $x_{1},x_{2},\dotsc,x_{25}$ 其均值为 $\overline{x}=108(\mathrm {Pa})$ ，间当日生产是否正常？
 
 对这个实际问题可作如下分析；
@@ -30,7 +30,7 @@
 	\item 若假设可用一个参数的集合表示，该假设检验问题称为参数假设检验问题，否则称为非参数假设检验问题，例~\ref{exam7.1.1}就是一个参数假设检验问题，而对假设“总体为正态分布”作出检验的问题就是一个非参数假设检验问题.本章前三节讲述参数假设检验问题，最后一节(7.4)将讨论非参数假设检验问题.
 \end{enumerate}
 
-\end{problem}
+\end{example}
 
 \subsection{假设检验的基本步骤\label{7.1.2}}
 接下来我们来叙述假设检验的基本步骤.
@@ -199,11 +199,11 @@ W = \left\{ \left( x _ { 1 } , \cdots , x _ { n } \right) : u \geq c \right\}
 常简记为${\mu \geq c}$，若要求检验的显著性水平为$\alpha$，则$c$满足
 \[P _ { \mu _ { 0 } } ( u \geq c ) = \alpha\]
 
-\begin{problem}\label{exam7.2.1}
+\begin{example}\label{exam7.2.1}
 从甲地发送一个讯号到乙地.设乙地接受到的讯号值是一个服从正态分布$N(\mu ,0.2^{2})$的随机变量，其中$\mu $为甲地发送的真实讯号值.现甲地重复发送同一讯号5次，乙地接收到的讯号值为
 \[8.05 \quad 8.15 \quad 8.2 \quad 8.1 \quad 8.25\]
 设接受方有理由猜测甲地发送的讯号值为8，问能否接受这猜测？
-\end{problem}
+\end{example}
 \begin{solution}
 	这是一个假设检验的问题，总体$X \sim N \left( \mu , 0.2 ^ { 2 } \right)$，待检验的原假设$H_{0}$与备择假设$H_{1}$分别为
 	\[H _ { 0 } : \mu = 8 \quad \text { vs } \quad H _ { 1 } : \mu \neq 8\]
@@ -356,7 +356,7 @@ W = \left\{ \chi ^ { 2 } \leq \chi _ { a } ^ { 2 } ( 2 n ) \right\}
 \begin{equation}\label{eq7.3.7}
 W=\left\{\chi^2\leq\chi_{\alpha/2}^{2}\left(2n\right)\textrm{或}\chi^2\geq\chi_{\alpha/2}^{2}\left(2n\right)\right\}
 \end{equation}
-\begin{problem}\label{exam7.3.1}
+\begin{example}\label{exam7.3.1}
 	设我们要检验某种元件的平均寿命不小于6000h，假定元件寿命为指敬分布，现取5个元件投人试验，观测到如下5个失效时间（h）
 	\[395 \quad 4094 \quad 119 \quad 11572 \quad 6133\]
 	这是一个假设检验问题，检验的假设为
@@ -364,7 +364,7 @@ W=\left\{\chi^2\leq\chi_{\alpha/2}^{2}\left(2n\right)\textrm{或}\chi^2\geq\chi_
 	经计算，$\overline{ x }=4462.6$，故检验统计量为
 	\[\chi ^ { 2 } = \frac { 10 \overline { x } } { \theta _ { 0 } } = \frac { 10 \times 4462.6 } { 6000 } = 7.4377\]
 	若取$\alpha = 0.05$，则查表知$\chi _ { 0.05 } ^ { 2 } ( 10 ) = 3.94$，由于$\chi^{2}>\chi _ { 0.05 } ^ { 2 } ( 10 ) $，故接受原假设可以认为平均寿命不低于6000h.
-\end{problem}
+\end{example}
 \subsection{比例 $p$ 检验}\label{sec:7.3.2}
 比例$p$可看作某事件发生的概率，即可看作二点分布$b(1,p)$中的参数.作$n$次独立试验，以$x$记该事件发生的次数，则$x\sim b(n,p)$.我们可以根据$x$检验关于$p$的一些假设.先考虑如下单边假设检验问题.
 \begin{equation}\label{eq7.3.8}
@@ -405,7 +405,7 @@ H _ { 0 } : p = p _ { 0 } \quad \text { vs } \quad H _ { 1 } ; p \neq p _ { 0 },
 的最大整数，$c_{2}$为满足
 \[\sum _ { i = c _ { 2 } } ^ { n _ { 1 } } \left( \begin{array} { l } { n } \\ { i } \end{array} \right) p _ { 0 } ^ { i } \left( 1 - p _ { 0 } \right) ^ { n - i } \leq \frac { \alpha } { 2 }\]
 的最小整数.
-\begin{problem}\label{exam7.3.2}
+\begin{example}\label{exam7.3.2}
 	某厂生产的产品优质品率一直保持在40\%，近期对该厂生产的该类产品抽检20件，其中优质品7件，在$\alpha=0.05$下能否认为优质品率仍保持在40\%？
 	
 	这是一个假设检验问题，以$p$表示优质品率，$x$表示20件产品中的优质品件数，则$x\sim b（(20,p)$，待检验的原假设为
@@ -417,7 +417,7 @@ H _ { 0 } : p = p _ { 0 } \quad \text { vs } \quad H _ { 1 } ; p \neq p _ { 0 },
 	故取$c_{1}=3$，又因
 	\[P ( x \geq 11 ) = 0.0565 > 0.025 > P ( x \geq 12 ) = 0.0210\]
 	从而$c_{2}=12$，拒绝域为$W={x\leq 3\text{或}x\geq 12}$.附带指出，该拒绝域的显著水平实际上不是0.05，而是0.0160+0.021=0.0370，本例中，由于观测值没有落入拒绝域，故接受原假设.
-\end{problem}
+\end{example}
 
 \subsection{大样本检验}\label{sec:7.3.3}
 前一小节我们介绍了对二点分布参数$p$的检验问题，我们看到临界值的确定比较繁琐，使用不太方便.如果样本量较大，我们可用近似的检验方法一—大样本检验.其一般思路如下：设$x_{1},\dotsc,x_{n}$，是来自某总体的样本，又设该总体均值为$\theta$，方差为$\theta$的函数，记为$\sigma^{2}(\theta)$，譬如，对二点分布$b(1,\theta)$，其方差$\theta(1-\theta)$是均值$\theta$的函数，则对下列三类假设检验问题：
@@ -434,9 +434,9 @@ u=\frac{\sqrt{n}\left(\overline{x}-\theta_0\right)}{\sqrt{\sigma^2\left(\theta_0
 \end{equation}
 近似地确定拒绝域.对应上述三类检验问题的拒绝域依次分别为
 \[\begin{array} { l } { W = \left\{ u \geq u _ { 1 - \alpha } \right\} } \\ { W = \left\{ u \leq u _ { a } \right\} } \\ { W = \left\{ | u | \geq u _ { 1 - a / 2 } \right\} } \end{array}\]
-\begin{problem}\label{exam7.3.3}
+\begin{example}\label{exam7.3.3}
 	某厂生产的产品不合格率为10\%，在一次例行检查中，随机抽取80件，发现有11件不合格品，在$\alpha=0.05$下能否认为不合格品率仍为10\%？
-\end{problem}
+\end{example}
 \begin{solution}
 	这是关于不合格品率$\theta$的检验，假设为
 	\[H _ { 0 } : \theta = 0.1 \quad \text { vs } \quad H _ { 1 } : \theta \neq 0.1\]
@@ -444,7 +444,7 @@ u=\frac{\sqrt{n}\left(\overline{x}-\theta_0\right)}{\sqrt{\sigma^2\left(\theta_0
 	\[u = \frac { \sqrt { 80 } \left( \frac { 11 } { 80 } - 0.1 \right) } { \sqrt { 0.1 \times 0.9 } } = 1.118\]
 	若取$\alpha = 0.05$，则$u _ { 0.975 } = 1.96$，故拒绝域为$W = \{ | u | \geq 1.96 \}$.如今$u = 1.118$未落入拒绝域，故不能拒绝原假设，可以认为不合格品率仍为10\%.
 \end{solution}
-\begin{problem}\label{exam7.3.4}
+\begin{example}\label{exam7.3.4}
 	某建筑公司宣称其磨下建筑工地平均每天发生事故数不超过0.6起，现记录了该公司磨下建筑工地200天的安全生产情况，事故数记录如下：
 	\begin{table}[!htp]
 		\centering
@@ -455,7 +455,7 @@ u=\frac{\sqrt{n}\left(\overline{x}-\theta_0\right)}{\sqrt{\sigma^2\left(\theta_0
 		\end{tabularx}
 	\end{table}
 试检验该建筑公司的宜称是否成立.（取$\alpha=0.05$.）
-\end{problem}
+\end{example}
 \begin{solution}
 	以$X$记该建筑公司麾下建筑工地一天发生的事故数，可认为$X\sim P（(A)$见习题~(7.4.4)，现要检验的假设是：
 	\[H _ { 0 } : \lambda \leq 0.6 \quad \text { vs } \quad H _ { 1 } : \lambda > 0.6\]
@@ -475,6 +475,57 @@ u=\frac{\sqrt{n}\left(\overline{x}-\theta_0\right)}{\sqrt{\sigma^2\left(\theta_0
 0.01$）下却会得到相反的结论.这种情况在理论上很容易解释：因为显著水平变小后会导致检验的拒绝域变小，于是原来落在拒绝域中的观测值就可能落入接受域，但这种情况在应用中会带来一些麻烦.假如这时一个人主张选择显著水平$\alpha=
 0.05$，而另一个人主张选$\alpha=
 0.01$，则第一个人的结论是拒绝$H_{0}$，而后一个人的结论是接受H0，我们该如何处理这一问题呢？下面从一个例子谈起.
+\begin{example}\label{exam7.3.5}
+一支香烟中的尼古丁含量X服从正态分布$N(\mu ,1)$，质量标准规定$\mu $不能超过1.5mg.现从某厂生产的香烟中随机抽取20支测得其中平均每支香烟的尼古丁含量为$\overline{ x }$=1.97mg，试问该厂生产的香烟尼古丁含量是否符合质量标准的规定.
+这是一个单侧假设检验问题，
+\[\text{原假设}H_{0}:\mu\leq 1.5,\qquad \text{备择假设}H_{1}:\mu >1.5 \]
+由于总体的标准差已知，故采用 $\mu $检验，由数据，
+\[u = \frac { \overline{ x } - \mu _ { 0 } } { \sigma / \sqrt { n } } = \frac { 1.97 - 1.5 } { 1 / \sqrt { 20 } } = 2.10\]
+对一些的显著性水平，~\ref{table7.3.1}列出了相应的拒绝域和检验结论.
+\begin{table}[!htp]
+	\centering
+	\caption{例~\ref{exam7.3.5}的拒绝域}\label{table7.3.1}
+	\begin{tabularx}{\textwidth}{ZZZ}
+		\toprule
+		显著性水平&拒绝域&$\mu=2.10$对应的结论\\
+		\midrule
+		$\alpha=0.05$&$\mu \geq 1.645$&拒绝$H_{0}$\\
+		$\alpha=0.025$&$\mu \geq 1.96$&拒绝$H_{0}$\\
+		$\alpha=0.01$&$\mu \geq 2.33$&接受$H_{0}$\\
+		$\alpha=0.005$&$\mu \geq 2.58$&接受$H_{0}$\\
+		\bottomrule
+	\end{tabularx}
+\end{table}
+我们看到，不同的$\alpha$有不同的结论.
+
+现在换一个角度来看，在$\mu=1.5$时，$\mu $的分布是$N(0,1)$.此时可算得，$P ( u \geq 2.10 ) = 0.0179$，若以0.0179为基准来看上述检验问题，可得
+\begin{itemize}
+	\item 当$\alpha<0.0179$时，$u _ { 1 - a } > 2.10$.于是2.10就不在$\{ u > u _ { 1 - a } \}$中，此时应接受原假设；
+	\item 当$\alpha\geq 0.0179$时，$u _ { 1 - a } \leq  2.10$.于是2.10就落在$\{ u \geq u _ { 1 - a } \}$中，此时应拒绝$H_{0}$.
+\end{itemize}
+	由此可以看出，0.0179是能用观测值2.10做出“拒绝$H_{0}$”的最小的显著性水平，这就是$p$值，直观图形见图7.3.1.
+\end{example}
+\begin{definition}{}{def:7.3.1}
+	在一个假设检验问题中，利用观测值能够做出拒绝原假设的最小显著性水平称为检验的$p$值.
+\end{definition}
+引进检验的$p$值的概念有明显的好处.第一，它比较客观，避免了事先确定显著水平；其次，由检验的$p$值与人们心目中的显著性水平$\alpha$进行比较可以很容易做出检验的结论；
+\begin{itemize}
+	\item 如果$\alpha\geq p$，则在显著性水平$\alpha$下拒绝$H_{0}$；
+	\item 如果$\alpha<p$，则在显著性水平$\alpha$下应保留$H_{0}$.
+\end{itemize}
+$p$值在应用中很有用，如今的统计软件中对检验问题一般都会给出检验的$p$值.
+\begin{example}\label{exam7.3.6}
+	设$x_{1},\dotsc,x_{n}$是来自$b(1,\theta)$的样本，要检验如下假设：
+	\[H _ { 0 } : \theta \leq \theta _ { 0 } \quad \text { vs } \quad H _ { 1 } ; \theta > \theta _ { 0 }\]
+	若取检验的显著性水平为$\alpha$，则我们可给出检验的拒绝域的形式为：$W=\left|\sum{x_i\geq c}\right|$这里我们很难对一般的$n$和$\alpha$定出$c$的表达式，我们只能说$c$是满足$P_{\theta_0}\left|\sum{x_i\geq c}\right|\leq\alpha $的最小正整数.这样的叙说总觉得不是很自然，事实上，我们并不需要定出$c$，在得到观测值$\sum x _ { i } = t _ { 0 }$后，我们只需要计算如下的概率即可
+	\[
+	p=P_{\theta_0}\left|\sum{x_i\geq c}\right|
+	\]
+	这就是检验的$p$值.譬如，$n=40,\theta_{ 0 }=0.1,t_{0}=8$，则
+	\[p = 1 - 0.9 ^ { 40 } - \left( \begin{array} { c } { 40 } \\ { 1 } \end{array} \right) 0.1 \times 0.9 ^ { 39 } - \cdots - \left( \begin{array} { c } { 40 } \\ { 7 } \end{array} \right) 0.1 ^ { 7 } \times 0.9 ^ { 33 } = 0.0419\]
+	于是，若取$\alpha=0.05$，由于$p<\alpha$，则应拒绝原假设.
+	\end{example}
+对双边假设检验，同样可以计算检验的$p$值，下面以一个例子加以说明.
 \begin{xiti}
 	\item 从一批服从指数分布的产品中抽取10个进行寿命试验，观测值如下（单位：h）：
 	\[1643 \quad 1629 \quad 426 \quad 132 \quad 1522 \quad 432 \quad 1759 \quad 1074 \quad 528 \quad 283\]
@@ -491,7 +542,7 @@ u=\frac{\sqrt{n}\left(\overline{x}-\theta_0\right)}{\sqrt{\sigma^2\left(\theta_0
 			
 	\item 假定电话总机在单位时间内接到的呼叫次数服从泊松分布，现观测了40个单位时间，接到的呼叫次数如下：
 	\[0 \quad 2 \quad 3 \quad 2 \quad 3 \quad 2 \quad 1 \quad 0 \quad 2 \quad 2 \quad 1 \quad 2 \quad 2 \quad 1 \quad 3 \quad 1 \quad 1 \quad 4 \quad 1 \quad 1\]
-	\[5 \quad 1 \quad 2 \quad 3 \quad 3 \quad 1 \quad 3 \quad 1 \quad 3 \quad 4 \quad 0 \quad 6 \quad 1 \quad 1 \quad 1 \quad 4 \quad 0 \quad 1 \quad 3\]
+	\[5 \quad 1 \quad 2 \quad 2 \quad 3 \quad 3 \quad 1 \quad 3 \quad 1 \quad 3 \quad 4 \quad 0 \quad 6 \quad 1 \quad 1 \quad 1 \quad 4 \quad 0 \quad 1 \quad 3\]
 	在显著性水平0.05下能否认为单位时间内平均呼叫次数不低于2.5次？并给出检验的$p$值.
 				
 	\item 通常每平方米某种布上的疵点数服从泊松分布，现观测该种布100$m^{2}$，发现有126个疵点，在显著性水平为0.05下能否认为该种布每平方分米土平均疵点数不超过l个？并给出检验的$p$值.
