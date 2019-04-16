@@ -23,7 +23,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
 
 \subsection{特征函数的定义}
 
-\begin{definition}{}{def:4.1.1}
+\begin{definition}{}{4.1.1}
     设 $ X $ 是一个随机变量,
     称
     \begin{equation}\label{eq:4.1.1}
@@ -315,7 +315,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
 
 特征函数还有以下一些优良性质.
 
-\begin{theorem}{一致连续性}{thm:4.1.1}
+\begin{theorem}{一致连续性}{4.1.1}
     随机变量 $ X $ 的特征函数 $ \varphi (t) $ 在 $ ( -\infty, +\infty ) $ 上一致连续.
 \end{theorem}
 
@@ -341,7 +341,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
     即 $ \varphi (t) $ 在 $ (-\infty, +\infty) $ 上一致连续.
 \end{proof}
 
-\begin{theorem}{非负定性}{thm:4.1.2}
+\begin{theorem}{非负定性}{4.1.2}
     随机变量 $ X $ 的特征函数 $ \varphi (t) $ 是非负定的, 即对任意正整数 $ n $, 及 $ n $ 个实数 $ t_1, t_2, \dotsc, t_n $ 和 $ n $ 个复数 $ z_1, z_2, \dotsc, z_n $, 有
     \begin{equation}\label{eq:4.1.10}
         \sum_{k=1}^n \sum_{j=1}^n \varphi ( t_k - t_j ) z_k \overline{z_j} \geq 0.
@@ -368,7 +368,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
 以下定理~\ref{thm:4.1.3} 给出了由特征函数求分布函数的公式, 定理~\ref{thm:4.1.5} 给出了连续随机变量时由特征函数求密度函数的公式.
 而定理~\ref{thm:4.1.4} 说明了分布函数与特征函数是一一对应的.
 
-\begin{theorem}{逆转公式}{thm:4.1.3}
+\begin{theorem}{逆转公式}{4.1.3}
     设 $ F (x) $ 和 $ \varphi (t) $ 分别为随机变量 $ X $ 的分布函数和特征函数, 则对 $ F (x) $ 的任意两个连续点 $ x_1 < x_2 $, 有
     \begin{equation}\label{eq:4.1.11}
         F (x_2) - F (x_1) = \lim_{T \to \infty} \frac{1}{2\pi} \int_{-T}^T \frac{\ee^{-itx_1}  - \ee^{-itx_2}}{it} \varphi (t) \dd t.
@@ -391,4 +391,53 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
         \left\lvert \ee^{ia} - 1 \right\rvert = \left\lvert \int_0^t \ee^{ix} \dd x \right\rvert \leq \int_0^a \left\lvert \ee^{ix} \right\rvert \dd x = 0.
     \end{equation*}
     对 $ a < 0 $, 有
+    \begin{equation*}
+        \left\lvert \ee^{ia} - 1 \right\rvert = \left\lvert \ee^{ia} \left( \ee^{\lvert a \rvert} - 1 \right) \right\rvert = \left\lvert \ee^{i \lvert a \rvert} - 1 \right\rvert \leq \lvert a \rvert.
+    \end{equation*}
+    因此
+    \begin{equation*}
+        \left\lvert \frac{\ee^{-itx_1} - \ee^{-itx_2}}{it} \ee^{itx} \right\rvert \leq x_2 - x_1.
+    \end{equation*}
+    即 $ J_T $ 中被积函数有界, 所以可以交换积分次序, 从而得
+    \begin{align*}
+        J_T & = \frac{1}{2\pi} \int_{-\infty}^{+\infty} \left[ \int_{-T}^{T} \frac{\ee^{-itx_1} - \ee^{-itx_2}}{it} \ee^{itx} \dd t \right] p (x) \dd x\\
+        & = \frac{1}{2\pi} \int_{-\infty}^{+\infty} \left[ \int_{0}^{T} \frac{\ee^{it(x - x_1)} - \ee^{-it (x - x_1)} - \ee^{it (x - x_2)} + \ee^{-it (x - x_2)}}{it} \dd t \right] p (x) \dd x\\
+        & = \frac{1}{\pi} \int_{-\infty}^{+\infty} \left[ \int_{0}^{T} \left(\frac{\sin t (x - x_1)}{t} - \frac{\sin t (x - x_2)}{t} \right) \dd t \right] p (x) \dd x.
+    \end{align*}
+    又记
+    \begin{equation*}
+        g (T, x, x_1, x_2) = \frac{1}{\pi} \int_{0}^{T} \left(\frac{\sin t (x - x_1)}{t} - \frac{\sin t (x - x_2)}{t} \right) \dd t,
+    \end{equation*}
+    则由数学中的狄利克雷积分
+    \begin{equation*}
+        D (a) = \frac{1}{\pi} \int_0^{+\infty} \frac{\sin at}{t} \dd t =
+        \begin{cases}
+            \dfrac{1}{2}, & a > 0,\\
+            0, & a = 0,\\
+            -\dfrac{1}{2}, & a < 0.
+        \end{cases}
+    \end{equation*}
+    知
+    \begin{equation*}
+        \lim_{t \to +\infty} g (T, x, x_1, x_2) = D (x - x_1) - D (x - x_2).
+    \end{equation*}
+    分别考察 $ x $ 在区间 $ (x_1, x_2) $ 的端点及内外时狄利克雷积分的值即可得
+    \begin{equation*}
+        \lim_{t \to +\infty} g (T, x, x_1, x_2) =
+        \begin{cases}
+            0, & x < x_1 \ \text{或} \ x > x_2,\\
+            \dfrac{1}{2}, & x = x_1 \ \text{或} \ x = x_2,\\
+            1, & x_1 < x < x_2,
+        \end{cases}
+    \end{equation*}
+    且 $ \lvert g (T, x, x_1, x_2) \rvert $ 有界, 从而可以把积分号和极限号互换, 故有
+    \begin{align*}
+        \lim_{T \to +\infty} J_T & = \int_{-\infty}^{+\infty} \lim_{T \to +\infty} g (T, x, x_1, x_2) p (x) \dd x\\
+        & = \int_{x_1}^{x_2} p (x) \dd x = F (x_2) - F (x_1).
+    \end{align*}
+    定理得证.
 \end{proof}
+
+\begin{theorem}{唯一性定理}{4.1.4}
+    随机变量的分布函数由其特征函数唯一决定.
+\end{theorem}
