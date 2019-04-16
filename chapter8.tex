@@ -237,6 +237,34 @@ S_{T}=S_{A}+ S_{e}, \quad f_{T}=f_{A}+f_{e}
 \end{equation}
 作为检验 $H_0$ 的统计量，为给出检验拒绝域，我们需要如下定理：
 
+\begin{theorem}{}{8.1.2}
+  在单因子方差分析模型~\eqref{eq:8.1.8} 及前述符号下，有
+  \begin{enumerate}
+    \item $S_{\varepsilon} / \sigma^{2} \sim \chi^{2}(n-r)$, 从而 $E(S_{e})=(n-r) \sigma^{2}$ \label{enum:8.1.2.1}
+    \item $E(S_{A})=(r-1) \sigma^{2} + m \sum\limits_{i=1}^{r} a_{i}^{2}$, 进一步, 若 $H_0$ 成立, 则有 $S_{A} / \sigma^{2} \sim \chi^{2}(r-1)$;\label{enum:8.1.2.2} 
+    \item $S_A$ 与 $S_e$ 独立 \label{enum:8.1.2.3}.
+  \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+由于~\eqref{eq:8.1.11} 和~\eqref{eq:8.1.14}, $S_{e}=\sum\limits_{i=1}^{r} \sum\limits_{j=1}^{m}(\varepsilon_{i j}-\bar{\varepsilon_{i.}})^{2}$, 在单因子方差分析模型~\eqref{eq:8.1.8} 下, 我们知道, 诸 $\varepsilon_{ij}, \; i=1,2,\ldots,r,\; j=1,2,\ldots,m$ 独立同分布于 $N(0,\sigma^2)$，由定理~\ref{thm:5.4.1} 知，$\tfrac{1}{\sigma^2} \sum\limits_{j=1}^m (\varepsilon_{ij} - \bar{\varepsilon}_{i.})^2$, $i=1,2,\ldots,r$, 相互独立，其共同分布为 $\chi^2(m-1)$，由卡方分布的可加性，有 $\tfrac{S_e}{\sigma^2} \sim \chi^2(n-r)$，这给出 $E(S_e/\sigma^2) = n-r=f_e$, ~\ref{enum:8.1.2.1}得证.
+
+类似地，由~\eqref{eq:8.1.12} 和~\eqref{eq:8.1.15}，有
+\begin{equation*}
+  S_A =  m \sum_{i=1}^r (a_i + \varepsilon_{i.} - \bar{\varepsilon})^2.
+\end{equation*}
+由定理~\ref{thm:5.4.1} 知，对每个 $i$，平方和 $\sum\limits_{j=1}^m (\varepsilon_{ij} - \bar{\varepsilon}_{i.})^2$ 与均值 $\bar{\varepsilon}_{i}$ 独立，从而 $\bar{\varepsilon}_{1.}, \bar{\varepsilon}_{2.},\ldots,\bar{\varepsilon}_{r.}$ 与 $S_e$ 独立，而 $S_A$ 只是，$\bar{\varepsilon}_{1.}, \bar{\varepsilon}_{2.},\ldots,\bar{\varepsilon}_{r.}$ 的函数，由此~\ref{enum:8.1.2.3} 得证.
+
+在模型~\ref{eq:8.1.8} 下，$S_A$ 的期望是
+\begin{equation*}
+  E(S_A) = m \sum_{i=1}^r a^2 + E\big[m\sum_{i=1}^r (\bar{\varepsilon}_{i.} - \bar{\varepsilon})^2\big],
+\end{equation*}
+由于诸误差均值 $\bar{\varepsilon}_{1.}, \bar{\varepsilon}_{2.},\ldots,\bar{\varepsilon}_{r.}$ 独立同分布于 $N(0, \sigma^2/m)$，从而由诸误差均值组成的偏差平方和除以 $\sigma^2/m$ 服从卡方分布，即
+\begin{equation*}
+  \frac{1}{\sigma^{2}} \sum_{i=1}^{r} m\left(\bar{\varepsilon}_{i},-\bar{\varepsilon}\right)^{2}-\chi^{2}(r-1).
+\end{equation*}
+于是， $E\big[\sum\limits_{i=1}^r m(\bar{\varepsilon}_{i.} - \bar{\varepsilon})\big]$ 在 $H_0$ 成立下，$S_A/\sigma^2 \sim \chi^2(r-1)$, 这就完成了~\ref{enum:8.1.2.2} 的证明.
+\end{proof}
 
 \section{多重比较}\label{sec:8.2}
 
