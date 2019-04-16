@@ -1,6 +1,7 @@
 % !TeX program = XeLaTeX
 % !TeX root = main.tex
 % Edit by:
+\setcounter{chapter}{7}
 \chapter{方差分析与回归分析}\label{cha:8}
 
 \section{方差分析}\label{sec:8.1}
@@ -26,7 +27,7 @@
 \end{table}%
 \end{example}
 
-本例中, 我们要比较的是三种饲料对鸡的增肥作用是否相同. 为此, 把饲料称为\textbf{因子}\index{Y!因子}, 记为 $A$, 三种不同的配方称为因子 $A$ 的三个水平, 记为 $A_1$, $A_2$, $A_3$, 使用配方 $A_i$ 下第 $j$ 只鸡 60 天后的重量用 $y_{ij}$ 表示, $i = 1,2,3$, $j =1,2,3,\ldots,10$. 我们的目的是比较三种不同饲料配方下鸡的平均重量是否相等, 为此, 需要做一些基本假定, 把所研究的问题归结为一个统计问题, 然后用方差分析的方法进行解决. 
+本例~\ref{exam:8.1.1} 中, 我们要比较的是三种饲料对鸡的增肥作用是否相同. 为此, 把饲料称为\textbf{因子}\index{Y!因子}, 记为 $A$, 三种不同的配方称为因子 $A$ 的三个水平, 记为 $A_1$, $A_2$, $A_3$, 使用配方 $A_i$ 下第 $j$ 只鸡 60 天后的重量用 $y_{ij}$ 表示, $i = 1,2,3$, $j =1,2,3,\ldots,10$. 我们的目的是比较三种不同饲料配方下鸡的平均重量是否相等, 为此, 需要做一些基本假定, 把所研究的问题归结为一个统计问题, 然后用方差分析的方法进行解决. 
 
 在例~\ref{exam:8.1.1} 中, 我们只考察了一个因子, 称其为单因子试验. 通常, 在单因子试验中, 记因子为 $A$, 设其有 $r$ 个水平, 记为 $A_1,A_2,\ldots,A_r$, 在每一水平下考察的指标可以看成一个总体, 现有 $r$ 个水平, 故有 $r$ 个总体, 假定：
 
@@ -115,7 +116,7 @@
 \end{equation*}
 
 \subsection{平方和分解}\label{ssec:8.1.3}
-\textbf{一、试验数据}
+\subsubsection{试验数据}
 
 通常在单因子方差分析中可将试验数据列成如下表格形式. 
 
@@ -144,7 +145,8 @@
   n & = r \cdot m = \text{ 总试验次数 }.
 \end{align*}
 
-\textbf{二、组内偏差与组间偏差}
+\subsubsection{组内偏差与组间偏差}
+
 数据间是有差异的. 数据 $y_{ij}$ 与总平均 $\bar{y}$ 间的偏差可用 $y_{ij} - \bar{y}$ 表示, 它可分解为两个偏差之和
 \begin{equation}\label{eq:8.1.10}
   y_{ij}-\bar{y}=(y_{ij}-\bar{y}_{i.})+(\bar{y}_{i.}-\bar{y})
@@ -163,7 +165,7 @@
 \end{equation}
 $\bar{y}_{i.} - \bar{y}$ 除了反映随机误差外，还反映了第 $i$ 个水平的效应，称为组间偏差，
 
-\textbf{三、偏差平方和及其自由度}
+\subsubsection{偏差平方和及其自由度}
 
 在统计学中，把 $k$ 个数据 $y_1,\ldots,y_k$ 分别对其均值 $\bar{y}=(y_1+\cdots+y_{k}) / k$ 的偏差平方和
 \begin{equation*}
@@ -179,10 +181,9 @@ $\bar{y}_{i.} - \bar{y}$ 除了反映随机误差外，还反映了第 $i$ 个�
 
 这说明在 $Q$ 中独立的偏差只有 $k-1$ 个. 在统计学中把平方和中独立偏差个数称为该平方和的\textbf{自由度}\index{Z:自由度}，常记为 $f$ ，如 $Q$ 的自由度为 $f_{Q}=k-1$. 自由度是偏差平方和的一个重要参数.
 
-\textbf{四、总平方和分解公式}
+\subsubsection{总平方和分解公式}
 
 各 $y_{ij}$ 间总的差异大小可用\textbf{总偏差平方和} $S_T$ 表示，
-
 \begin{equation}\label{eq:8.1.13}
   S_{T}=\sum_{i=1}^{r} \sum_{j=1}^{m}\left(y_{i j}-\bar{y}\right)^{2}, \quad f_{T} = n-1,
 \end{equation}
@@ -265,6 +266,12 @@ S_{T}=S_{A}+ S_{e}, \quad f_{T}=f_{A}+f_{e}
 \end{equation*}
 于是， $E\big[\sum\limits_{i=1}^r m(\bar{\varepsilon}_{i.} - \bar{\varepsilon})\big]$ 在 $H_0$ 成立下，$S_A/\sigma^2 \sim \chi^2(r-1)$, 这就完成了~\ref{enum:8.1.2.2} 的证明.
 \end{proof}
+
+由定理`\ref{thm:8.1.2} 知，若 $H_0$ 成立，则 \eqref{eq:8.1.17} 定义的检验统计量 $F$ 服从自由度为 $f_A$ 和 $f_e$ 的 $F$ 分布，因此，由假设检验的一般理论，拒绝域为
+
+\begin{equation}
+W =\abs{F \geq F_{1-\alpha}(f_{A}, f_{e})} .
+\end{equation}
 
 \section{多重比较}\label{sec:8.2}
 
