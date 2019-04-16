@@ -91,13 +91,20 @@ ___
     + 添加到暂存区 `git add files....`
     + 提交到本地库 `git commit -m "commit msg"`
     + 提交到远程 master 分支 `git push origin master`
-4. 合并主分支更新的内容
+5. 合并主分支更新的内容
     有时候，主分支更新了内容，这时候想要把主分支的内容合并到 test 分支下：
     + 切换到 test 分支，`git checkout test`
     + 合并主分支，`git merge master`
+    + 提交合并之后的 test 分支内容到远端 test 分支 `git push`
 
-为了让本地 test 分支能够 pull github 上的 test 分支的内容，需要设置远端分支。
+**注：** 为了让本地 test 分支能够 pull github 上的 test 分支的内容，需要设置远端分支。
+
+```shell
+git checkout test
 git branch --set-upstream-to=origin/test
+```
+
+在 push 的时候如果出现问题，按提示操作（merge 或者 set-upstream）。
 
 END！
 ?	
