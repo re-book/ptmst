@@ -79,7 +79,7 @@
 \begin{array}{c|cccc}{x} & {0} & {1} & {2} & {3} \\ \hline P & {(1-p)^{3}} & {3 p(1-p)^{2}} & {3 p^{2}(1-p)} & {p^{3}}\end{array}
 \]
 
-\begin{definition}
+\begin{definition}{}{}
 	定义在样本空间$ Q $上的实值函数$ X=X(\omega) $称为随机变量,常用大写字母$ X,Y,Z $等表示随机变量,其取值用小写字母$ x,y,x $等表示.假如一个随机变量仅取有限个或可列个值,则称其为离散随机变量.假如一个随机变量的可能取值充满数轴上的一个区间$ (a,b) $,则称其为连续随机变量,其中$ a $可以是$ -\infty ,b $可以是$ +\infty $.
 \end{definition}
 
@@ -149,7 +149,7 @@ F(X,P(X\leq x))
 
 从分布函数的定义可见,任一随机变量$ X $(离散的或连续的)都有一个分布函数.有了分布函数,就可据此算得与随机变量$ X $有关事件的概率.下面先证明分布函数的三个基本性质.
 
-\begin{theorem}
+\begin{theorem}{}{}
 	任一分布函数F(x)都具有如下三条基本性质：
 	\begin{enumerate}
 		\item \textbf{单调性} $ F(x) $是定义在整个实数轴$ (-\infty,+\infty ) $上的单调非减函数,即对任意的$ x_1<x_2 $,有$ F(x_1)\leq F(x_2) $.
@@ -341,8 +341,7 @@ F(x)=\sum_{x_{1} \leqslant x} p\left(x_{i}\right)
 它的图形是有限级(成无穷级)的阶梯函数,具体见下面的例子.不过在离散场合,常用来描述其分布的是分布列,很少用到分布函数.因为求离散随机变量X的有关事件的概率时,用分布列比用分布函数来得更方便.
 
 \begin{example}
-	设离散随机变量$ X $的分布列为
-	
+	设离散随机变量 $X$ 的分布列为
 	\[ 
 	\begin{array}{c|ccc}
 	x & -1 & 2 & 3 \\\hline
@@ -398,8 +397,7 @@ F(x)=\sum_{x_{1} \leqslant x} p\left(x_{i}\right)
 		\caption{单点分布函数}
 		\label{fig:2-1-4}
 	\end{figure}
-	
-	
+
 \end{example}
 
 以下例子说明：在具体求离散随机变量$ X $的分布列时,关键是求出$ X $的所有可能取值及取这些值的概率.
@@ -462,7 +460,7 @@ F(x)=\sum_{x_{1} \leqslant x} p\left(x_{i}\right)
 
 下面给出连续随机变量的概率密度函数的定义.
 
-\begin{definition}
+\begin{definition}{}{}
 	设随机变量$ X $的分布函数为$ F(x) $,如果存在实数轴上的一个非负可积函数$ p(x) $,使得对任意实数$ x $有
 	\begin{equation} 
 	F(x)=\int_{-\infty}^{x} p(t) \mathrm{d} t \label{eq:2.1.4}
@@ -985,7 +983,7 @@ P & {0.25} & {0.75} \\
 
 \subsection{数学期望的定义}
 
-\begin{definition}
+\begin{definition}{}{}
 	设离散随机变量$ X $的分布列为
 	
 	\[ 
@@ -1011,7 +1009,7 @@ P & {0.25} & {0.75} \\
 
 连续随机变量数学期望的定义和含义完全类似于离散随机变景场合,只要将分布列$ p(x_i) $改为密度函数、将求和改为求积就可.
 
-\begin{definition}
+\begin{definition}{}{}
 	设连续随机变量$ X $的密度函数为$ p(x) $.如果
 	\[ 
 	\int_{-\infty}^{+\infty}|x| p(x) \mathrm{d} x<+\infty
@@ -1217,7 +1215,7 @@ E(X)=\frac{1}{k}(1-p)^{k}+\left(1+\frac{1}{k}\right)\left[1-(1-p)^{k}\right]=1-(
 
 
 一般场合,有如下定理：
-\begin{theorem}
+\begin{theorem}{}{}
 	若随机变量$ X $的分布用分布列$ p（x_i） $或用密度函数$ p（x） $表示,则$ X $的某一函数$ g（X） $的数学期望为
 	
 	\begin{equation}
@@ -1437,7 +1435,7 @@ X     & -1    & 0     & 1     &       & Y     & -10   & 0     & 10 \\
 \subsection{方整与标准差的定义}
 
 设随机变量X的均值为$ a=E（X） $,$ X $的取值当然不一定恰好是$ a $,会有偏离.偏离的量$ X-a $有正有负,为了不使正负偏离彼此抵消,我们一般考虑$ （X-a）^2 $,而不去考虑数学上难以处理的绝对值$ |X-a| $.因为$ （X-a）^2 $仍是一个随机变量,所以取其均值$ E（X-a）^2 $就可以作为刻画X的“波动”程度,这个量被称作$ X $的方差,其定义如下.
-\begin{definition}
+\begin{definition}{}{}
 	若随机变量$ X^2 $的数学期望$ E（X^2） $存在,则称偏差平方$ （X-EX）^2 $的数学期望$ E（X-EX）^2 $为随机变量$ X $（或相应分布）的方差,记为
 	
 	\begin{equation}
@@ -1643,7 +1641,7 @@ X     & -1    & 0     & 1     &       & Y     & -10   & 0     & 10 \\
 
 下面给出概率论中一个重要的基本不等式.
 
-\begin{theorem}
+\begin{theorem}{}{}
 	（切比雪夫$ （1821一1894） $不等式）设随机变量$ X $的数学期望和方差都存在,则对任意常数$ e>0 $,有
 	
 	\begin{equation}
@@ -1671,8 +1669,8 @@ X     & -1    & 0     & 1     &       & Y     & -10   & 0     & 10 \\
 在概率论中,事件“ $|X-E(X)| \geqslant \varepsilon$ ”称为大偏差,其概率 $ P（1X-E（X）1 \geqslant e） $ 称为大偏差发生概率.切比雪夫不等式给出大偏差发生概率的上界,这个上界与方差成正比,方差愈大上界也愈大.
 以下定理进一步说明了方差为0就意味着随机变量的取值集中在一点上.
 
-\begin{theorem}
-	若随机变量$ X $的方差存在,则 $\operatorname{Var}(X)=0$ 的充要条件是$ X $几乎处处为某个常数$ a $,即$ P（X=a）=1 $.
+\begin{theorem}{}{}
+	若随机变量 $X$ 的方差存在,则 $\operatorname{Var}(X)=0$ 的充要条件是$ X $几乎处处为某个常数$ a $,即$ P（X=a）=1 $.
 \end{theorem}
 
 \begin{proof}
