@@ -473,7 +473,7 @@
 % third（blue-prop):  assumptions property conclusion custom
 
 %% Example with counter
-\newcounter{exam}[chapter]
+\newcounter{exam}[section]
 \setcounter{exam}{0}
 \renewcommand{\theexam}{\thesection.\arabic{exam}}
 \newenvironment{example}[1][]{
@@ -485,7 +485,7 @@
  	}
 
 %% Exercise with counter
-\newcounter{exer}[chapter]
+\newcounter{exer}[section]
 \setcounter{exer}{0}
 \renewcommand{\theexer}{\thesection.\arabic{exer}}
 \newenvironment{exercise}[1][]{
@@ -497,7 +497,7 @@
  	}
 
 %% Exercise with counter
-\newcounter{prob}[chapter]
+\newcounter{prob}[section]
 \setcounter{prob}{0}
 \renewcommand{\theprob}{\thesection.\arabic{prob}}
 \newenvironment{problem}[1][]{
