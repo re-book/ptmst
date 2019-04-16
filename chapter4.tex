@@ -55,21 +55,25 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
 
 \begin{example}{常用分布的特征函数}\label{exam:4.1.1}
     \begin{enumerate}
-        \item \textbf{单点分布}\index{单点分布}: $ P (X = a) = 1 $, 
+        \item
+        \textbf{单点分布}\index{单点分布}: $ P (X = a) = 1 $, 
         其特征函数为
         \begin{equation*}
             \varphi (t) = \ee^{itz}.
         \end{equation*}
-        \item \textbf{0-1分布}\index{0-1分布}: $ P( X = x ) = p^x  ( 1 - p )^{1 - x} $, $ x = 0,1 $,
+        \item\label{exam:4.1.1.2}
+        \textbf{0-1分布}\index{0-1分布}: $ P( X = x ) = p^x  ( 1 - p )^{1 - x} $, $ x = 0,1 $,
         其特征函数为
         \begin{equation*}
             \varphi (t) = p \ee^{it} + q, \quad \text{其中} \ q= 1 - p.
         \end{equation*}
-        \item \textbf{泊松分布}\index{泊松分布}: $ P ( X = k ) = \tfrac{\lambda^k}{k!} \ee^{-\lambda} $, $ k = 0, 1, \dotsc $, 其特征函数为
+        \item
+        \textbf{泊松分布}\index{泊松分布}: $ P ( X = k ) = ( \lambda^k/k! ) \ee^{-\lambda} $, $ k = 0, 1, \dotsc $, 其特征函数为
         \begin{equation*}
             \varphi (t) = \sum_{k=0}^{+\infty} \ee^{ikt} \frac{\lambda^k}{k!} \ee^{-\lambda} = \ee^{\lambda} \ee^{\lambda \ee^{it}} = \ee^{\lambda ( \ee^{it} ) -1}.
         \end{equation*}
-        \item \textbf{均匀分布}\index{均匀分布} $ U ( a,b ) $: 因为密度函数为
+        \item
+        \textbf{均匀分布}\index{均匀分布} $ U ( a,b ) $: 因为密度函数为
         \begin{equation*}
             p (x) = 
             \begin{cases}
@@ -81,27 +85,29 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
         \begin{equation*}
             \varphi (t) = \int_a^b \frac{\ee^{itx}}{b - a} \dd x = \frac{\ee^{ibt} - \ee^{iat}}{it (b-a)}.
         \end{equation*}
-        \item \textbf{标准正态分布}\index{标准正态分布} $ N (0,1) $: 因为密度函数为
+        \item
+        \textbf{标准正态分布}\index{标准正态分布} $ N (0,1) $: 因为密度函数为
         \begin{equation*}
-            p (x) = \frac{1}{\sqrt{2\pi}} \ee^{-\frac{x^2}{2}}, \quad - \infty < x < + \infty.
+            p (x) = \frac{1}{\sqrt{2\pi}} \exp \left( -\frac{x^2}{2} \right), \quad - \infty < x < + \infty.
         \end{equation*}
         所以特征函数为
         \begin{align*}
-            \varphi (t) & = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{+\infty} \ee^{itx - \frac{x^2}{2}} \dd x\\
-            & = \ee^{-\frac{t^2}{2}} \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{+\infty} \ee^{-\frac{( x - it )^2}{2}} \dd x\\
-            & = \ee^{-\frac{t^2}{2}} \frac{1}{\sqrt{2\pi}} \int_{-\infty -it}^{+\infty -it} \ee^{-\frac{x^2}{2}} \dd x\\
-            & = \ee^{-\frac{t^2}{2}},
+            \varphi (t) & = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{+\infty} \exp \left( itx - \frac{x^2}{2} \right) \dd x\\
+            & = \exp \left( -\frac{t^2}{2} \right) \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{+\infty} \exp \left( -\frac{( x - it )^2}{2} \right) \dd x\\
+            & = \exp \left( -\frac{t^2}{2} \right) \frac{1}{\sqrt{2\pi}} \int_{-\infty -it}^{+\infty -it} \exp \left( -\frac{x^2}{2} \right) \dd x\\
+            & = \exp \left( -\frac{t^2}{2} \right),
         \end{align*}
         其中
         \begin{equation*}
-            \int_{-\infty -it}^{+\infty -it} \ee^{-\frac{x^2}{2}} \dd x = \sqrt{2\pi}
+            \int_{-\infty -it}^{+\infty -it} \exp \left( -\frac{x^2}{2} \right) \dd x = \sqrt{2\pi}
         \end{equation*}
         是利用复变函数中的围道积分求得的.
         有了标准正态分布的特征函数,
         再利用下节给出的特征函数的性质,
         就很容易得到一般正态分布 $ N ( \mu, \sigma^2 ) $ 的特征函数,
-        见例~.
-        \item \textbf{指数分布}\index{指数分布} $ \exp ( \lambda ) $: 因为密度函数为
+        见例~\ref{exam:4.1.2}.
+        \item
+        \textbf{指数分布}\index{指数分布} $ Exp ( \lambda ) $: 因为密度函数为
         \begin{equation*}
             p (x) =
             \begin{cases}
@@ -119,3 +125,220 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
         以上积分中用到了复变函数中的欧拉公式: $ \ee^{itx} = \cos (tx) + i \sin ( tx) $.
     \end{enumerate}
 \end{example}
+
+\subsection{特征函数的性质}
+
+现在我们来研究特征函数的一些性质,
+其中 $ \varphi_X (t) $ 表示 $ X $ 的特征函数,
+其他类似.
+
+\begin{property}\label{prop:4.1.1}
+    \begin{equation}\label{eq:4.1.4}
+        \lvert \varphi (t) \rvert \leq \varphi (0) = 1.
+    \end{equation}
+\end{property}
+
+\begin{property}\label{prop:4.1.2}
+    \begin{equation}\label{eq:4.1.5}
+        \varphi (-t) = \overline{\varphi (t)},
+    \end{equation}
+    其中 $ \overline{\varphi (t)} $ 表示 $ \varphi (t) $ 的共轭.
+\end{property}
+
+\begin{property}\label{prop:4.1.3}
+    若 $ Y = aX + b $, 其中 $ a,b $ 是常数, 则
+    \begin{equation}\label{eq:4.1.6}
+        \varphi_Y (t) = \ee^{ibt} \varphi_X (at).
+    \end{equation}
+\end{property}
+
+\begin{property}\label{prop:4.1.4}
+    独立随机变量和的特征函数为特征函数的积,
+    即设 $ X $ 与 $ Y $ 相互独立, 则
+    \begin{equation}\label{eq:4.1.7}
+        \varphi_{X+Y} (t) = \varphi_X (t) \cdot \varphi_Y (t).
+    \end{equation}
+\end{property}
+
+\begin{property}\label{prop:4.1.5}
+    若 $ E (x^l) $ 存在,
+    则 $ X $ 的特征函数 $ \varphi(t) $ 可 $ l $ 次求导,
+    且对 $ 1 \leq k \leq l $, 有
+    \begin{equation}\label{eq:4.1.8}
+        \varphi^{(k)} (0) = i^k E ( X^k ).
+    \end{equation}
+    上式提供了一条求随机变量的各阶矩的途径,
+    特别可用下式去求数学期望和方差.
+    \begin{equation}\label{eq:4.1.9}
+        E (X) = \frac{\varphi' (0)}{i}, \quad \mathrm{Var} (X) = - \varphi'' (0) + \bigl( \varphi' (0) \bigr)^2.
+    \end{equation}
+\end{property}
+
+\begin{proof}
+    在此我们仅对连续场合进行证明,
+    而在离散场合的证明是类似的.
+    \begin{enumerate}
+        \item 
+        \begin{align*}
+            \lvert \varphi (t) \rvert & = \left\lvert \int_{-\infty}^{+\infty} \ee^{itx} p (x) \dd x \right\rvert 
+            \leq \int_{-\infty}^{+\infty} \left\lvert \ee^{itx} \right\rvert p (x) \dd x\\
+            & = \int_{-\infty}^{+\infty} p (x) \dd x
+            = \varphi (0)
+            = 1.
+        \end{align*}
+        \item 
+        \begin{equation*}
+            \varphi (-t) = \int_{-\infty}^{+\infty} \ee^{-itx} p (x) \dd x
+            = \overline{\int_{-\infty}^{+\infty} \ee^{itx} p (x) \dd x}
+            = \overline{\varphi (t)}.
+        \end{equation*}
+        \item
+        \begin{equation*}
+            \varphi_Y (t) = E ( \ee^{it (aX + b)} )
+            = \ee^{ibt} E ( \ee^{iatX} ) = \ee^{ibt} \varphi (at).
+        \end{equation*}
+        \item
+        因为 $ X $ 与 $ Y $ 相互独立, 所以 $ \ee^{itX} $ 与 $ \ee^{itY} $ 也是独立的, 从而有
+        \begin{equation*}
+            E \left( \ee^{it ( X + Y )} \right) = E \left( \ee^{itX} \ee^{itY} \right) = \varphi_X (t) \cdot \varphi_Y (t).
+        \end{equation*}
+        \item
+        因为 $ E \left( X^l \right) $ 存在, 也就是
+        \begin{equation*}
+            \int_{-\infty}^{+\infty} \lvert x \rvert^l p (x) \dd x < +\infty,
+        \end{equation*}
+        于是含参变量 $ t $ 的广义积分 $ \int_{-\infty}^{+\infty} \ee^{itx} p(x) \dd x $ 可以对 $ t $ 求导 $ l $ 次, 于是对 $ 0 \leq k \leq l $, 有
+        \begin{equation*}
+            \varphi ^{(k)} (t) = \int_{-\infty}^{+\infty} i^k x^k \ee^{itx} p (x) \dd x = i^k E \left( X^k \ee^{itX} \right).
+        \end{equation*}
+        令 $ t = 0 $ 即得
+        \begin{equation*}
+            \varphi^{(k)} (0) = i^k E \left( X^k \right).
+        \end{equation*}
+    \end{enumerate}
+    至此上述5条性质全部得证.
+\end{proof}
+
+下例是利用 \eqref{eq:4.1.6} 和 \eqref{eq:4.1.7} 来求一些常用分布的特征函数.
+
+\begin{example}{常用分布的特征函数 (二)}\label{exam:4.1.2}
+    \begin{enumerate}
+        \item
+        \textbf{二项分布}\index{二项分布} $ b (n, p) $: 设 $ Y \sim b (n, p) $, 则 $ Y = X_1 + x_2 + \dotsb X_n $, 其中诸 $ X_i $ 是相互独立同分布的随机变量, 且 $ X_{i} \sim b (1, p) $, 由 例~\ref{exam:4.1.2} \ref{exam:4.1.1.2} 知
+        \begin{equation*}
+            \varphi_{X_i} (t) = p \ee^{it} + q,
+        \end{equation*}
+        所以由独立随机变量和的特征函数为特征函数的积, 得
+        \begin{equation*}
+            \varphi_Y (t) = \left( p \ee^{it} + q \right)^{\pi}
+        \end{equation*}
+        \item
+        \textbf{正态分布}\index{正态分布} $ N (\mu, \sigma^2) $: 设 $ Y \sim N (\mu, \sigma^2) $, 则 $ X = (Y - \mu) / \sigma \sim N (0, 1) $.
+        由例~\ref{exam:4.1.1} 知
+        \begin{equation*}
+            \varphi_{X} (t) = \exp \left( -\frac{t^2}{2} \right).
+        \end{equation*}
+        所以由 $ Y = \sigma X + \mu $ 得
+        \begin{equation*}
+            \varphi_Y (t) = \varphi_{\alpha X + \mu} (t) =\ee^{i \mu t} \varphi_X ( \sigma t ) = \exp \left( i \mu t - \frac{\sigma^2 t^2}{2} \right).
+        \end{equation*}
+        \item 
+        \textbf{伽玛分布}\index{伽玛分布} $ Ga ( n, \lambda ) $: 设 $ Y \sim Ga ( n, \lambda ) $, 则$ Y = X_1 + X_2 + \dotsb + X_n $, 其中 $ X_i $ 独立同分布, 且 $ X_i \sim Exp ( \lambda ) $.
+        由例~\ref{exam:4.1.1} 知
+        \begin{equation*}
+            \varphi_{X_i} (t) = \left( 1 - \frac{it}{\lambda} \right)^{-1}.
+        \end{equation*}
+        所以由独立随机变量和的特征函数为特征函数的积, 得
+        \begin{equation*}
+            \varphi_Y (t) = \left( \varphi_{X_i} (t) \right)^n = \left( 1 - \frac{it}{\lambda} \right)^{-n}.
+        \end{equation*}
+        进一步, 当 $ a $为任一正实数时, 我们可得 $ Ga ( n, \lambda ) $ 分布的特征函数为
+        \begin{equation*}
+            \varphi(t) = \left( 1 - \frac{it}{\lambda} \right)^{-a}.
+        \end{equation*}
+        \item
+        $ \mathbf{\chi^2 (n)} $ \textbf{分布}\index{$ \mathbf{\chi^2 (n)} $ 分布}: 因为 $ \chi^2 (n) = Ga ( n/2, 1/2 ) $, 所以 $ \chi^2 (n) $ 分布的特征函数为
+        \begin{equation*}
+            \varphi (t) = ( 1 - 2it )^{-n/2}.
+        \end{equation*}
+    \end{enumerate}
+\end{example}
+
+上述常用分布的特征函数汇总在表~\ref{tab:4.1.1} 中.
+
+\begin{table}
+    \renewcommand{\arraystretch}{1.6}
+    \centering
+    \caption{常用分布的特征函数}\label{tab:4.1.1}
+    \begin{tabular}{>{\centering\arraybackslash}m{0.15\linewidth}>{\centering\arraybackslash}m{0.45\linewidth}>{\centering\arraybackslash}m{0.3\linewidth}}
+        \toprule
+        分布 & 分布列 $ p_k $ 或分布密度 $ p (x) $ & 特征函数 $ \varphi (t) $\\
+        \midrule
+        单点分布 & $ P (X = a) = 1 $ & $ \ee^{itz} $\\
+        0-1分布 & $ P_k = p^k  q^{1 - k} $, $ k = 0,1 $ & $ p \ee^{it} + q $\\
+        二项分布 $ b (n, p) $ & $ p_k = \binom{n}{k} p^k q^{1-k} $, $ k = 0,1,\dotsc,n $ & $ \left( p \ee^{it} + q \right)^{\pi} $\\
+        泊松分布 $ P (\lambda) $ & $ P_k = ( \lambda^k/k! ) \ee^{-\lambda} $, $ k = 0, 1, \dotsc $ & $ \ee^{\lambda ( \ee^{it} ) -1} $\\
+        均匀分布 $ U (a,b) $ & $ p (x) = 1/(b-a) $, $ a \leq x \leq b $ & $ \dfrac{\ee^{ibt} - \ee^{iat}}{it (b-a)} $\\
+        正态分布 $ N (\mu, \sigma^2) $ & $ p (x) = \dfrac{1}{\sqrt{2\pi}\sigma} \exp \left( - \dfrac{( x - \mu )^2}{2 \sigma^2} \right) $ & $ \exp \left( i \mu t - \dfrac{\sigma^2 t^2}{2} \right) $\\
+        指数分布 $ Exp ( \lambda ) $ & $ p (x) = \lambda \ee^{-\lambda x} $, $ x > 0 $ & $ \left( 1 - \dfrac{it}{\lambda} \right)^{-1} $\\
+        伽玛分布 $ Ga ( a, \lambda ) $ & $ p (x) = \dfrac{\lambda^\alpha}{\Gamma (a)} x^{\alpha - 1} \ee^{-\lambda x} $, $ x \geq 0 $ & $ \left( 1 - \dfrac{it}{\lambda} \right)^{-a} $\\
+        $ \chi^2 (n) $ 分布 & $ p (x) = \dfrac{x^{n/2 - 1} \ee^{-x/2}}{\Gamma (n/2) 2^{n/2}} $, $ x > 0 $ & $ ( 1 - 2it )^{-n/2} $\\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+下例是利用 \eqref{eq:4.1.8} 来求分布的数学期望和方差.
+
+\begin{example}\label{exam:4.1.3}
+    试利用特征函数的方法求伽玛分布 $ Ga ( n, \lambda ) $ 的数学期望和方差.
+\end{example}
+
+\begin{solution}
+    因为伽玛分布 $ Ga ( a, \lambda ) $ 的特征函数及其一、二阶导数为
+    \begin{gather*}
+        \varphi (t) = \left( 1 - \dfrac{it}{\lambda} \right)^{-a},\\
+        \varphi' (t) = \frac{ai}{\lambda} \left( 1 - \frac{it}{\lambda} \right)^{-a-1}, \ \varphi' (0) = \frac{ai}{\lambda},\\
+        \varphi'' (t) = \frac{a ( a + 1 ) i^2}{\lambda^2} \left( 1 - \frac{it}{\lambda} \right)^{-a-2}, \ \varphi'' (0) = -\frac{a (a+1)}{\lambda^2},
+    \end{gather*}
+    所以由 \eqref{eq:4.1.9} 得
+    \begin{align*}
+        E (X) & = \frac{\varphi' (0)}{i} = \frac{a}{\lambda},\\
+        Var (X) & = - \varphi'' (0) + \bigl( \varphi' (0) \bigr)^2 = \frac{a (a+1)}{\lambda^2} + \left( \frac{ai}{\lambda} \right)^2\\
+        & = \frac{a (a+1)}{\lambda^2} - \frac{a^2}{\lambda^2} = \frac{a}{\lambda^2}.
+    \end{align*}
+\end{solution}
+
+特征函数还有以下一些优良性质.
+
+\begin{theorem}{一致连续性}{thm:4.1.1}
+    随机变量 $ X $ 的特征函数 $ \varphi (t) $ 在 $ ( -\infty, +\infty ) $ 上一致连续.
+\end{theorem}
+
+\begin{proof}
+    设 $ X $ 是连续随机变量 (离散随机变量的证明是类似的), 其密度函数为 $ p (x) $, 则对任意实数 $t$, $h$ 和正数$ a > 0 $, 有
+    \begin{align*}
+        \lvert \varphi ( t + h ) - \varphi (t) \rvert & = \left\lvert \int_{-\infty}^{+\infty} \bigl( \ee^{ihx} - 1 \bigr) \ee^{itx} p (x) \dd x \right\rvert\\
+        & \leq \int_{-\infty}^{+\infty} \bigl\lvert \ee^{ihx} - 1 \bigr\rvert p (x) \dd x\\
+        & \leq \int_{-a}^a \bigl\lvert \ee^{ihx} - 1 \bigr\rvert p (x) \dd x + 2 \int_{\lvert x \rvert \geq a} p (x) \dd x.
+    \end{align*}
+    对任意的 $ \varepsilon > 0 $, 先取定一个充分大的 $ a $, 使得
+    \begin{equation*}
+        2 \int_{\lvert x \rvert \geq a} p (x) \dd x < \frac{\varepsilon}{2},
+    \end{equation*}
+    然后对任意的$ x \in [-a,a] $, 只要取$ \delta = \varepsilon/(2a) $, 则当$ \lvert h \rvert < \delta $ 时, 便有
+    \begin{align*}
+        \lvert \ee^{ihx} - 1 \rvert & = \left\lvert \ee^{i \frac{h}{2} x} \left( \ee^{i \frac{h}{2} x} - \ee^{-i \frac{h}{2} x} \right) \right\rvert\\
+        & = 2 \left\lvert \sin \frac{hx}{2} \right\rvert
+        \leq 2 \left\lvert \frac{hx}{2} \right\rvert
+        < ha
+        < \frac{\varepsilon}{2},
+    \end{align*}
+    即 $ \varphi (t) $ 在 $ (-\infty, +\infty) $ 上一致连续.
+\end{proof}
+
+\begin{theorem}{非负定性}{thm:4.1.2}
+    随机变量 $ X $ 的特征函数 $ \varphi (t) $ 是非负定的, 即对任意正整数 $ n $, 及 $ n $ 个实数 $ t_1, t_2, \dotsc, t_n $ 和 $ n $ 个复数 $ z_1, z_2, \dotsc, z_n $, 有
+    \begin{equation}\label{eq:4.1.10}
+        \sum_{k=1}^n \sum_{j=1}^n \varphi ( t_k - t_j ) z_k \overline{z_j} \geq 0.
+    \end{equation}
+\end{theorem}
