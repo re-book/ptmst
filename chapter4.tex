@@ -44,7 +44,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
 
 当连续随机变量 $ X $ 的密度函数为 $ p (x) $,
 则 $ X $ 的特征函数为
-\begin{equation}\label{ch9:eq:4.1.3}
+\begin{equation}\label{eq:4.1.3}
     \varphi (t) = \int_{-\infty}^{+\infty} \ee^{itx} p (x) \dd x, \; -\infty \leq t \leq +\infty.
 \end{equation}
 
@@ -441,3 +441,50 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
 \begin{theorem}{唯一性定理}{4.1.4}
     随机变量的分布函数由其特征函数唯一决定.
 \end{theorem}
+
+\begin{proof}
+    对 $ F (x) $ 的每一个连续点 $ x $, 当 $ y $ 沿着 $ F (x) $ 的连续点趋于 $ -\infty $ 时, 由逆转公式得
+    \begin{equation*}
+        F (x) = \lim_{y \to -\infty} \lim_{T \to +\infty} \frac{1}{2\pi} \int_{-T}^T \frac{\ee^{-ity} - \ee^{-itx}}{it} \varphi (t) \dd t,
+    \end{equation*}
+    而分布函数由其连续点上的值惟一决定, 故结论成立.
+\end{proof}
+
+由于分布函数 $ F (x) $ 是非降函数， 因此我们一定能做到让 $ y $ 沿着 $ F (x) $ 的连续点趋于 $ -\infty $, 并且 $ F (x) $ 由其连续点上的值唯一确定, 而这些性质的证明在此从略了.
+
+特别, 当 $ X $ 为连续随机变量, 有下述更强的结果.
+\begin{theorem}{}{4.1.5}
+    若 $ X $ 为连续随机变量, 其密度函数为 $ p (x) $, 特征函数为 $ \varphi (t) $.
+    如果 $ \int_{-\infty}^{+\infty} \lvert \varphi (t) \rvert \dd t < +\infty $, 则
+    \begin{equation}\label{eq:4.1.12}
+        p (x) = \frac{1}{2\pi} \int_{-\infty}^{+\infty} \ee^{-itx} \varphi (t) \dd t.
+    \end{equation}
+\end{theorem}
+
+\begin{proof}
+    记 $ X $ 的分布函数为 $ F (x) $, 由逆转公式知
+    \begin{align*}
+        p (x) & = \lim_{\Delta x \to 0} \frac{F (x + \Delta x) - F (x)}{\Delta x}\\
+        & = \lim_{\Delta x \to 0} \frac{1}{2\pi} \int_{-\infty}^{+\infty} \frac{\ee^{-itx} - \ee^{-it (x + \Delta x)}}{it \cdot \Delta x} \varphi (t) \dd t.
+    \end{align*}
+    再次利用不等式 $ \lvert \ee^{ia} - 1 \rvert \leq \lvert a \rvert $, 就有
+    \begin{equation*}
+        \left\lvert \frac{\ee^{-itx} - \ee^{-it (x + \Delta x)}}{it \cdot \Delta x} \right\rvert \leq 1.
+    \end{equation*}
+    又因为 $ \int_{-\infty}^{+\infty} \lvert \varphi (t) \rvert < +\infty $, 所以可以交换极限号和积分号, 即
+    \begin{align*}
+        p (x) & = \frac{1}{2\pi} \int_{-\infty}^{+\infty} \lim_{\Delta x \to 0} \frac{\ee^{-itx} - \ee^{-it (x + \Delta x)}}{it \cdot \Delta x} \varphi (t) \dd t\\
+        & = \frac{1}{2\pi} \int_{-\infty}^{+\infty} \ee^{-itx} \varphi (t) \dd t.
+    \end{align*}
+    定理得证.
+\end{proof}
+
+\eqref{eq:4.1.12} 在数学分析中也称为傅里叶逆变换, 所以 \eqref{eq:4.1.3} 和 \eqref{eq:4.1.12} 实质上是一对互逆的变换:
+\begin{gather*}
+    \varphi (t) = \int_{-\infty}^{+\infty} \ee^{itx} p (x) \dd x,\\
+    P (x) = \frac{1}{2\pi} \int_{-\infty}^{+\infty} \ee^{-itx} \varphi (t) \dd t.
+\end{gather*}
+即特征函数是密度函数的傅里叶变换, 而密度函数是特征函数的傅星叶逆变换
+
+在此着重指出: 在概率论中, 独立随机变量和的问题占有``中心''地位, 用卷积公式去处理独立随机变量和的问题是相当复杂, 而引入了特征函数可以很方便地用特征函数相乘求得独立随机变量和的特征函数, 由此大大简化了处理独立随机变量和的难度.
+读者可从下例中体会出这一点.
