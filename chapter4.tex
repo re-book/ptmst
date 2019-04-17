@@ -542,4 +542,36 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
         $P$ & 0.4 & 0.3 & 0.2 & 0.1\\
         \bottomrule
     \end{tabularx}
+    \item 设离散随机变量 $ X $ 服从几何分布
+    \begin{equation*}
+        P ( X = k ) = ( 1 - p )^{k - 1} p, \ k=1,2,\dotsc.
+    \end{equation*}
+    试求 $ X $ 的特征函数, 并以此求 $ E ( X ) $ 和 $ Var ( X ) $.
+    \item 设离散随机变量 $ X $ 服从巴斯卡分布
+    \begin{equation*}
+        P ( X = k ) = \binom{k - 1}{r - 1} p^r ( 1 - p )^{k - r}, \ k=r, r+1, \dotsc.
+    \end{equation*}
+    试求 $ X $ 的特征函数.
+    \item 求下列分布函数的特征函数, 并由特征函数求其数学期望和方差.
+    \begin{enumerate}
+        \item $ F_1 (x) = a/2 \int_{-\infty}^x \ee^{-a \lvert x \rvert} \dd x, \ ( a > 0 ) $.
+        \item $ F_2 (x) = a/\pi \int_{-\infty}^x \frac{1}{x^2 + a^2} \dd x, \ ( a > 0 ) $.
+    \end{enumerate}
+    \item 设 $ X \sim N ( \mu, \sigma^2 ) $, 试用特征函数的方法求 $ X $ 的3阶及4阶中心矩.
+    \item 试用特征函数的方法证明二项分布的可加性: 若 $ X \sim b ( m, p ) $, $ Y \sim b ( m, p ) $, 且 $ X $ 与 $ Y $ 独立, 则 $ X + Y \sim b ( n + m, p ) $.
+    \item 试用特征函数的方法证明泊松分布的可加性: 若 $ X \sim P ( \lambda_1 ) $, $ Y \sim P ( \lambda_2 ) $, 目 $ X $ 与 $ Y $ 独立, 则 $ X + Y \sim P ( \lambda_1 + \lambda_2 ) $.
+    \item 试用特征函数的方法证明伽玛分布的可加性: 若 $ X \sim Ga ( a_1, \lambda ) $, $ Y \sim Ga ( a_1, \lambda ) $, 且 $ X $ 与 $ Y $ 独立, 则 $ X + Y \sim Ga ( a_1 + a_2, \lambda ) $.
+    \item 试用特征函数的方法证明 $ \chi^2 $ 分布的可加性: 若 $ X \sim \chi^2 ( n ) $, $ Y \sim \chi^2 ( m ) $, 且 $ X $ 与 $ Y $ 独立, 则 $ X + Y \sim \chi^2 ( m + n ) $.
+    \item 设 $ X_i $ 独立同分布, 且 $ X_i \sim Exp ( \lambda ) $, $ i = 1,2,\dotsc,n $. 试用特征函敷的方法证明: $ Y_n = \sum_{i=1}^n X_i \sim Ga ( n, \lambda ) $.
+    \item 设连续随机变量 $ X $ 的密度函数如下:
+    \begin{equation*}
+        p (x) = \frac{1}{\pi} \cdot \frac{\lambda}{\lambda^2 + ( x - \mu )^2}, \ -\infty < x < +\infty.
+    \end{equation*}
+    其中参数 $ \lambda > 0 $, $ -\infty < \mu < +\infty $. 试证
+    \begin{enumerate}
+        \item $ X $ 的特征函数为 $ \exp \bigl( i\mu t - \lambda \lvert t \rvert \bigr) $, 且利用此结果证明柯西分布的可加性.
+        \item 当 $ \mu = 0 $, $ \lambda = 1 $ 时, 记 $ Y = X $, 试证 $ \varphi_{X + Y} (t) = \varphi_X (t) \cdot \varphi_Y (t) $, 但是 $ X $ 与 $ Y $ 不独立.
+        \item 若 $ X_1, X_2, \dotsc, X_n $ 相互独立, 且服从同一柯西分布, 试证: $ (1/n) ( X_1 + X_2 + \dotsb + X_n ) $ 与 $ X_1 $ 同分布.
+    \end{enumerate}
+    \item 设连续随机变量 $ X $ 的密度函数为 $ p (x) $, 试证: $ p (x) $ 关于原点对称的充要条件是它的特征函数是实的偶函数.
 \end{xiti}
