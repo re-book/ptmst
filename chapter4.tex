@@ -488,3 +488,58 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
 
 在此着重指出: 在概率论中, 独立随机变量和的问题占有``中心''地位, 用卷积公式去处理独立随机变量和的问题是相当复杂, 而引入了特征函数可以很方便地用特征函数相乘求得独立随机变量和的特征函数, 由此大大简化了处理独立随机变量和的难度.
 读者可从下例中体会出这一点.
+
+\begin{example}\label{exam:4.1.4}
+    在 3.3.4 节中, 我们用卷积公式通过复杂的计算证明了二项分布、泊松分布、伽玛分布和 $ \chi^2 $ 分布的可加性.
+    现在用特征函数方法 (性质~\ref{prop:4.1.4} 和唯一性定理) 可以很方便地证明正态分布的可加性.
+    设 $ X \sim N ( \mu_1, \sigma_1^2) $, $ Y \sim N ( \mu_2, \sigma_2^2) $ 且 $ X $ 与 $ Y $ 独立.
+    因为
+    \begin{equation*}
+        \varphi_X (t) = \exp \left( it\mu_1 - \frac{\sigma_1^2 t^2}{2} \right), \ \varphi_Y (t) = \exp \left( it\mu_2 - \frac{\sigma_2^2 t^2}{2} \right)
+    \end{equation*}
+    所以由性质~\ref{prop:4.1.4} 得
+    \begin{equation*}
+        \varphi_{X+Y} (t) = \varphi_X (t) \cdot \varphi_Y (t) = \exp \left( it ( \mu_1 + \mu_2 ) - \frac{(\sigma_1^2 + \sigma_2^2) t^2}{2} \right).
+    \end{equation*}
+    这正是 $ N ( \mu_1 + \mu_2, \sigma_1^2 + \sigma_2^2 ) $ 的特征函数, 再由特征函数的唯一性定理, 即知
+    \begin{equation*}
+        X + Y \sim N ( \mu_1 + \mu_2, \sigma_1^2 + \sigma_2^2 ).
+    \end{equation*}
+    同理可证: 若 $ X_j $ 相互独立, 且 $ X_j \sim N ( \mu_j, \sigma_j^2 ) $, $ j = 1,2,\dotsc,n $, 则
+    \begin{equation*}
+        \sum_{j=1}^n X_j \sim N \left( \sum_{j=1}^n \mu_j, \sum_{j=1}^n \sigma_J^2 \right).
+    \end{equation*}
+\end{example}
+
+\begin{example}
+    已知连续随机变量的特征函数如下, 求其分布.
+    \begin{enumerate}
+        \item $ \varphi_1 (t) = \ee^{- \lvert t \rvert} $,
+        \item $ \varphi_2 (t) = \frac{\sim at}{at} $.
+    \end{enumerate}
+\end{example}
+
+\begin{solution}
+    \begin{enumerate}
+        \item 由逆转公式 \eqref{eq:4.1.12} 可知其密度函数为
+        \begin{align*}
+            p (x) & = \frac{1}{2\pi} \int_{-\infty}^{+\infty} \ee^{-ixt} \cdot \ee^{- \lvert t \rvert} \dd t\\
+            & = \frac{1}{2\pi} \int_{0}^{+\infty} \ee^{- (1 + ix)t} \dd t + \frac{1}{2\pi} \int_{-\infty}^{0} \ee^{(1 - ix)t} \dd t\\
+            & = \frac{1}{2\pi} \left( \frac{1}{1 + ix} + \frac{1}{1 - ix} \right) = \frac{1}{\pi ( 1 + x^2 )}
+        \end{align*}
+        这是柯西分布, 所以特征函数 $ \varphi_1 (t) = e^{-\lvert t \rvert} $ 对应的是柯西分布.
+        \item $ \varphi_2 (t) = \sin at / at $ 是均匀分布 $ U ( -a, a ) $ 的特征函数, 由唯一性定理知, 该特征函数对应的分布不是别的, 只能是均匀分布 $ U ( -a, a ) $.
+    \end{enumerate}
+\end{solution}
+
+\begin{xiti}
+    \item 设离微随机变量 $ X $ 的分布列如下, 试求 $ X $ 的特征函数.
+    
+    \begin{tabularx}{0.95\linewidth}{>{\centering\arraybackslash}X|*{5}{>{\centering\arraybackslash}X}}
+        \toprule
+        $X$ & 0 & 1 & 2 & 3\\
+        \midrule
+        $P$ & 0.4 & 0.3 & 0.2 & 0.1\\
+        \bottomrule
+    \end{tabularx}
+\end{xiti}
