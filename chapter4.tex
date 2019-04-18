@@ -574,4 +574,47 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
         \item 若 $ X_1, X_2, \dotsc, X_n $ 相互独立, 且服从同一柯西分布, 试证: $ (1/n) ( X_1 + X_2 + \dotsb + X_n ) $ 与 $ X_1 $ 同分布.
     \end{enumerate}
     \item 设连续随机变量 $ X $ 的密度函数为 $ p (x) $, 试证: $ p (x) $ 关于原点对称的充要条件是它的特征函数是实的偶函数.
+    \item 设 $ X_1, X_2, \dotsc, X_n $ 独立同分布, 且都服从 $ N (\mu, \sigma^2) $ 分布, 试求 $ \bar{X} = \frac{1}{n} \sum_{i=1}^n X_i $ 的分布.
 \end{xiti}
+
+\section{大数定律}
+
+``概率是频率的稳定值'', 其中``稳定''一词是什么含义?
+在第一章我们从直观上描述稳定性: 频率在其概率附近摆动.
+但如何摆动仍没说清楚, 现在可用大数定律来彻底说清这个问题了.
+
+大数定律有多种形式, 下面从最简单的伯努利大数定律说起, 逐步介绍各种大数定律.
+
+\subsection{伯努利大数定律}
+
+记 $ \mu_n $ 为 $ n $ 重伯努利试验中事件 $ A $ 出现的次数, 称 $ \mu_n / n $ 为事件 $ A $ 出现的频率.
+
+如果记一次试验中 $ A $ 发生的概率为 $ p $, 则 $ \mu_n $ 服从二项分布 $ b (n, p $, 因此频率 $ \mu_n / n $ 的数学期望与方差分别为
+\begin{equation}\label{eq:4.2.1}
+    E \left( \frac{\mu_n}{n} \right) = p, \ Var \left( \frac{\mu_n}{n} \right) = \frac{p ( 1 - p )}{n}.
+\end{equation}
+
+下面我们讨论 $ n \to +\infty $ 时, 频率 $ \mu_n / n $ 的极限状态.
+
+由 \eqref{eq:4.2.1} 式, 当 $ n \to +\infty $  时, 频率的数学期望 $ p $ 保持不变, 而方差趋于0.
+我们已经知道方差为0的随机变量是常数, 那么现在的问题是频率 $ \mu_n / n $ 是如何``收敛于''概率 $ p $, 即我们如何来理解``收敛''一词.
+
+按数学分析中的数列极限概念, 数列 $ \{ \mu_n / n \} $ 的极限为 $ p $,
+\begin{equation*}
+    \lim_{n \to +\infty} \frac{\mu_n}{n} = p,
+\end{equation*}
+即对任意的 $ \varepsilon > 0 $, 当 $ n $ 充分大时, ``必定''有
+\begin{equation*}
+    \left\lvert \frac{\mu_n}{n} - p \right\rvert < \varepsilon,
+\end{equation*}
+而其对立事件
+\begin{equation*}
+    \left\lvert \frac{\mu_n}{n} - p \right\rvert geq \varepsilon,
+\end{equation*}
+是``必定''不会发生的.
+然而在随机现象中各种情况都可能出现, 甚至事件``$ \mu_n = n $''也是可能发生的, 因为 $ p ( \mu_n = n )=p^n > 0 $, 即事件``$ \mu_n = n $''的概率大于零, 从而事件
+\begin{equation*}
+    \left\lvert \frac{\mu_n}{n} - p \right\rvert geq \varepsilon,
+\end{equation*}
+就有可能发生.
+这说明用数学分析中的极限来描述频率的极限是不妥当的, 是对频率随机性的认识不足的表现.
