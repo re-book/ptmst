@@ -51,31 +51,31 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
 与随机变量的数学期望、方差及各阶矩一样,
 特征函数只依赖于随机变量的分布,
 分布相同则特征函数也相同,
-所以我们也常称为某\textbf{分布的特征函数}\index{G!分布的特征函数}.
+所以我们也常称为某\textbf{分布的特征函数}\index{特征函数!分布的特征函数}.
 
 
 \begin{example}\label{exam:4.1.1}
     常用分布的特征函数
     \begin{enumerate}
         \item
-        \textbf{单点分布}\index{单点分布}: $ P (X = a) = 1 $, 
+        \textbf{单点分布}\index{分布!单点分布}: $ P (X = a) = 1 $, 
         其特征函数为
         \begin{equation*}
             \varphi (t) = \ee^{itz}.
         \end{equation*}
         \item\label{exam:4.1.1.2}
-        \textbf{0-1分布}\index{0-1分布}: $ P( X = x ) = p^x  ( 1 - p )^{1 - x} $, $ x = 0,1 $,
+        \textbf{0-1分布}\index{分布!0-1分布}: $ P( X = x ) = p^x  ( 1 - p )^{1 - x} $, $ x = 0,1 $,
         其特征函数为
         \begin{equation*}
             \varphi (t) = p \ee^{it} + q, \quad \text{其中} \ q= 1 - p.
         \end{equation*}
         \item
-        \textbf{泊松分布}\index{泊松分布}: $ P ( X = k ) = ( \lambda^k/k! ) \ee^{-\lambda} $, $ k = 0, 1, \dotsc $, 其特征函数为
+        \textbf{泊松分布}\index{分布!泊松分布}: $ P ( X = k ) = ( \lambda^k/k! ) \ee^{-\lambda} $, $ k = 0, 1, \dotsc $, 其特征函数为
         \begin{equation*}
             \varphi (t) = \sum_{k=0}^{+\infty} \ee^{ikt} \frac{\lambda^k}{k!} \ee^{-\lambda} = \ee^{\lambda} \ee^{\lambda \ee^{it}} = \ee^{\lambda ( \ee^{it} ) -1}.
         \end{equation*}
         \item
-        \textbf{均匀分布}\index{均匀分布} $ U ( a,b ) $: 因为密度函数为
+        \textbf{均匀分布}\index{分布!均匀分布} $ U ( a,b ) $: 因为密度函数为
         \begin{equation*}
             p (x) = 
             \begin{cases}
@@ -88,7 +88,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
             \varphi (t) = \int_a^b \frac{\ee^{itx}}{b - a} \dd x = \frac{\ee^{ibt} - \ee^{iat}}{it (b-a)}.
         \end{equation*}
         \item
-        \textbf{标准正态分布}\index{标准正态分布} $ N (0,1) $: 因为密度函数为
+        \textbf{标准正态分布}\index{分布!标准正态分布} $ N (0,1) $: 因为密度函数为
         \begin{equation*}
             p (x) = \frac{1}{\sqrt{2\pi}} \exp \left( -\frac{x^2}{2} \right), \quad - \infty < x < + \infty.
         \end{equation*}
@@ -109,7 +109,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
         就很容易得到一般正态分布 $ N ( \mu, \sigma^2 ) $ 的特征函数,
         见例~\ref{exam:4.1.2}.
         \item
-        \textbf{指数分布}\index{指数分布} $ Exp ( \lambda ) $: 因为密度函数为
+        \textbf{指数分布}\index{分布!指数分布} $ Exp ( \lambda ) $: 因为密度函数为
         \begin{equation*}
             p (x) =
             \begin{cases}
@@ -229,7 +229,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
 
     \begin{enumerate}
         \item
-        \textbf{二项分布}\index{二项分布} $ b (n, p) $: 设 $ Y \sim b (n, p) $, 则 $ Y = X_1 + x_2 + \dotsb X_n $, 其中诸 $ X_i $ 是相互独立同分布的随机变量, 且 $ X_{i} \sim b (1, p) $, 由 例~\ref{exam:4.1.2} \ref{exam:4.1.1.2} 知
+        \textbf{二项分布}\index{分布!二项分布} $ b (n, p) $: 设 $ Y \sim b (n, p) $, 则 $ Y = X_1 + x_2 + \dotsb X_n $, 其中诸 $ X_i $ 是相互独立同分布的随机变量, 且 $ X_{i} \sim b (1, p) $, 由 例~\ref{exam:4.1.2} \ref{exam:4.1.1.2} 知
         \begin{equation*}
             \varphi_{X_i} (t) = p \ee^{it} + q,
         \end{equation*}
@@ -238,7 +238,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
             \varphi_Y (t) = \left( p \ee^{it} + q \right)^{\pi}
         \end{equation*}
         \item
-        \textbf{正态分布}\index{正态分布} $ N (\mu, \sigma^2) $: 设 $ Y \sim N (\mu, \sigma^2) $, 则 $ X = (Y - \mu) / \sigma \sim N (0, 1) $.
+        \textbf{正态分布}\index{分布!正态分布} $ N (\mu, \sigma^2) $: 设 $ Y \sim N (\mu, \sigma^2) $, 则 $ X = (Y - \mu) / \sigma \sim N (0, 1) $.
         由例~\ref{exam:4.1.1} 知
         \begin{equation*}
             \varphi_{X} (t) = \exp \left( -\frac{t^2}{2} \right).
@@ -248,7 +248,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
             \varphi_Y (t) = \varphi_{\alpha X + \mu} (t) =\ee^{i \mu t} \varphi_X ( \sigma t ) = \exp \left( i \mu t - \frac{\sigma^2 t^2}{2} \right).
         \end{equation*}
         \item 
-        \textbf{伽玛分布}\index{伽玛分布} $ Ga ( n, \lambda ) $: 设 $ Y \sim Ga ( n, \lambda ) $, 则$ Y = X_1 + X_2 + \dotsb + X_n $, 其中 $ X_i $ 独立同分布, 且 $ X_i \sim Exp ( \lambda ) $.
+        \textbf{伽玛分布}\index{分布!伽玛分布} $ Ga ( n, \lambda ) $: 设 $ Y \sim Ga ( n, \lambda ) $, 则$ Y = X_1 + X_2 + \dotsb + X_n $, 其中 $ X_i $ 独立同分布, 且 $ X_i \sim Exp ( \lambda ) $.
         由例~\ref{exam:4.1.1} 知
         \begin{equation*}
             \varphi_{X_i} (t) = \left( 1 - \frac{it}{\lambda} \right)^{-1}.
@@ -262,7 +262,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
             \varphi(t) = \left( 1 - \frac{it}{\lambda} \right)^{-a}.
         \end{equation*}
         \item
-        $ \mathbf{\chi^2 (n)} $ \textbf{分布}\index{$ \mathbf{\chi^2 (n)} $ 分布}: 因为 $ \chi^2 (n) = Ga ( n/2, 1/2 ) $, 所以 $ \chi^2 (n) $ 分布的特征函数为
+        $ \mathbf{\chi^2 (n)} $ \textbf{分布}\index{分布!chi2分布@$ \mathbf{\chi^2 (n)} $ 分布}: 因为 $ \chi^2 (n) = Ga ( n/2, 1/2 ) $, 所以 $ \chi^2 (n) $ 分布的特征函数为
         \begin{equation*}
             \varphi (t) = ( 1 - 2it )^{-n/2}.
         \end{equation*}
