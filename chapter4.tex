@@ -609,12 +609,46 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
 \end{equation*}
 而其对立事件
 \begin{equation*}
-    \left\lvert \frac{\mu_n}{n} - p \right\rvert geq \varepsilon,
+    \left\lvert \frac{\mu_n}{n} - p \right\rvert \geq \varepsilon,
 \end{equation*}
 是``必定''不会发生的.
 然而在随机现象中各种情况都可能出现, 甚至事件``$ \mu_n = n $''也是可能发生的, 因为 $ p ( \mu_n = n )=p^n > 0 $, 即事件``$ \mu_n = n $''的概率大于零, 从而事件
 \begin{equation*}
-    \left\lvert \frac{\mu_n}{n} - p \right\rvert geq \varepsilon,
+    \left\lvert \frac{\mu_n}{n} - p \right\rvert \geq \varepsilon,
 \end{equation*}
 就有可能发生.
 这说明用数学分析中的极限来描述频率的极限是不妥当的, 是对频率随机性的认识不足的表现.
+
+为此, 频率``收敛于''概率用以下方式描述是合适的: 当 $ n $ 充分大时, 频率 $ \mu_n / n $ 与概率 $ p $间有大偏差的概率很小, 而且随着 $ n $ 的增大, 它愈来愈小.
+用数学语言来讲, 就是对任意的 $ \varepsilon > 0 $, 有
+\begin{equation}\label{eq:4.2.2}
+    \lim_{n \to +\infty} P \left( \left\lvert \frac{\mu_n}{n} - p \right\rvert < \varepsilon \right) = 1.
+\end{equation}
+或
+\begin{equation}\label{eq:4.2.3}
+    \lim_{n \to +\infty} P \left( \left\lvert \frac{\mu_n}{n} - p \right\rvert \geq \varepsilon \right) = 0.
+\end{equation}
+这种收敛性就称作\textbf{依概率收敛}\index{依概率收敛}, 它的一般定义将在 \S 4.3 节中给出.
+下面的伯努利大数定律就是对上述讨论作了一个很好的总结.
+\begin{theorem}{伯努利大数定律}{4.2.1}
+    设 $ \mu_n $ 为 $ n $ 重伯努利试验中事件 A 发生的次数, $ p $为每次试验中 A 出现的概率, 则对任意的 $ \varepsilon > 0 $, 有
+    \begin{equation*}
+        \lim_{n \to +\infty} P \left( \left\lvert \frac{\mu_n}{n} - p \right\rvert < \varepsilon \right) = 1.
+    \end{equation*}
+\end{theorem}
+
+\begin{proof}
+    因为 $ \mu_n \sim b ( n, p ) $, 且 $ \mu_n $ 的数学期望和方差如 \eqref{eq:4.2.1} 式所示.
+    所以由切比雪夫不等式得
+    \begin{equation}
+        1 \geq P \left( \left\lvert \frac{\mu_n}{n} - p \right\rvert < \varepsilon \right) \geq 1 - \frac{Var (\mu_n / n)}{\varepsilon^2} = 1 - \frac{p ( 1 - p )}{n \varepsilon^2}.
+    \end{equation}
+    当 $ n \to + \infty $ 时, 上式右端趋于1, 因此
+    \begin{equation*}
+        \lim_{n \to +\infty} P \left( \left\lvert \frac{\mu_n}{n} - p \right\rvert < \varepsilon \right) = 1.
+    \end{equation*}
+    结论得证.
+\end{proof}
+
+伯努利大数定律说明: 随着 $ n $的增大, 事件A发生的频率 $ \mu_n / n $ 与其频率 $ p $ 的偏差 $ \lvert \mu_n / n - p \rvert $ 大于预先给定的精度 $ \varepsilon $ 的可能性愈来愈小, 小到可以忽略不计.
+这就是频率稳定于概率的含义, 或者说频率依概率收敛于概率.
