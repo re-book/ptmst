@@ -694,4 +694,55 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
         的次数, 这就是事件A发生的频数 $ \mu_n $.
         由此可得事件 $ A $发生的频率 $ \mu_n / n $, 则 $ J \approx \mu_n / n $.
     \end{enumerate}
+
+    譬如计算 $ \int_0^1 \ee^{-x^2/2}/\sqrt{2\pi} \dd x $, ，其精确值和 $ n = 10^4 $, $ n = 10^5 $ 时的模拟值如下
+
+    \begin{tabularx}{0.9\linewidth}{*{3}{>{\centering\arraybackslash}X}}
+        \toprule
+        精确值 & $ n = 10^4 $ & $ n = 10^5 $ \\
+        \midrule
+        \num{0.341344} & \num{0.340698} & \num{0.341355}\\
+        \bottomrule
+    \end{tabularx}
+
+    注意，对于一般区间 $ [a, b] $ 上的定积分
+    \begin{equation*}
+        J' = \int_a^b g (x) \dd x,
+    \end{equation*}
+    作线性变换 $ y=(x-a)/(b-a) $, 即可化成 $ [0, 1] $ 区间上的积分.
+    进一步若 $ c \leq g(x) \leq d$, 可令
+    \begin{equation*}
+        f (y) = \frac{1}{d-c} \bigl( g ( a + ( b - a ) y ) - c \bigr),
+    \end{equation*}
+    则 $ 0 \leq f (y) \leq 1 $.
+    此时有
+    \begin{equation*}
+        J' = \int_a^b g (x) \dd x = S_0 \int_0^1 f (y) \dd y + c ( b - a ).
+    \end{equation*}
+    其中 $ S_0 = ( b -a ) ( d - c ) $.
+    这说明以上用蒙特卡洛方法计算定积分方法带有普遍意义.
 \end{example}
+
+\subsection{常用的几个大数定律}
+
+\subsubsection{大数定律的一般形式}
+
+伯努利大数定律讨论的是一个相互独立同分布的随机变量序列 $ \{ X_n \} $, 其共同分布为二点分布.
+若记
+\begin{equation*}
+    X_i =
+    \begin{cases}
+        1, & \text{第} \ i \ \text{次试验中事件} \ A \ \text{发生},\\
+        0, & \text{第} \ i \ \text{次试验中事件} \ A \ \text{不发生},
+    \end{cases}
+    \quad i=1,2,\dotsc,n,\dotsc,
+\end{equation*}
+则 $ \{ X_n \} $ 是独立的二点分布随机变量序列, 现考察该序列的前 $ n $ 个随机变量之和 $ \mu_n = \sum_{i=1}^n X_i $, 其频率及频率的数学期望分别为
+\begin{equation*}
+    \frac{\mu_n}{n} \frac{1}{n} \sum_{i=1}^n X_i, \quad p = E \left( \frac{1}{n} \sum_{i=1}^n X_i \right) = \frac{1}{n} \sum_{i=1}^n E (X_i).
+\end{equation*}
+那么伯努利大数定律的结论为: 对任意的 $ \varepsilon > 0 $, 有
+\begin{equation}\label{eq:4.2.5}
+    \lim_{n \to +\infty} P \left( \left\lvert \frac{1}{n} \sum_{i=1}^n X_i - \frac{1}{n} \sum_{i=1}^n E (X_i) \right\rvert < \varepsilon \right) = 1.
+\end{equation}
+一般的大数定律都涉及一个随机变量序列 $ \{ X_n \} $, 大数定律的结论都是形如\eqref{eq:4.2.5}, 为此我们给出如下定义.
