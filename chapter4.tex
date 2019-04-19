@@ -652,3 +652,46 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
 
 伯努利大数定律说明: 随着 $ n $的增大, 事件A发生的频率 $ \mu_n / n $ 与其频率 $ p $ 的偏差 $ \lvert \mu_n / n - p \rvert $ 大于预先给定的精度 $ \varepsilon $ 的可能性愈来愈小, 小到可以忽略不计.
 这就是频率稳定于概率的含义, 或者说频率依概率收敛于概率.
+
+譬如, 抛一枚硬币出现正面的概率 $ p = 0.5 $.
+若把这枚硬币连抛10次, 则因为 $ n $ 较小, 发生大偏差的可能性有时会大一些, 有时会小一些.
+若把这枚硬币连抛 $ n $,当 $ n $ 很大时, 由切比雪夫不等式知: 正面出现的频率与0.5的偏差大于预先给定的精度 $ \varepsilon $ (若取精度 $ \varepsilon = 0.01 $) 的可能性
+\begin{equation*}
+    P \left( \left\lvert \frac{\mu_n}{n} - 0.5 \right\vert > 0.01 \right) \leq \frac{0.5 \times 0.5}{n 0.01^n} = \frac{10^4}{4n}.
+\end{equation*}
+当 $ n = 10^5 $ 时, 大偏差发生的可能性小于 $ 1/40 = \SI{2.5}{\percent} $.
+当 $ n = 10^6 $ 时, 大偏差发生的可能性小于 $ 1/400 = \SI{0.25}{\percent} $.
+可见试验次数愈多，偏差发生的可能性愈小.
+
+伯努利大数定律提供了用频率来确定概率的理论依据.
+譬如要估计某种产品的不合格品率 $ p $, 则可从该种产品中随机抽取 $ n $ 件, 当 $ n $ 很大时, 这 $ n $ 件产品中的不合格品的比例可作为不合格品率 $ p $ 的估计值.
+
+\begin{example}\label{exam:4.2.1}
+    (用蒙特卡洛方法计算定积分 (随机投点法))
+    设 $ 0 \leq f (x) \leq 1 $, 求 $ f (x) $ 在区间 $ [0, 1] $ 上的积分值:
+    \begin{equation*}
+        J = \int_0^1 f (x) \dd x.
+    \end{equation*}
+    设 $ (X,Y) $ 服从正方形 $ \{ 0 \leq x \leq 1, 0 \leq y \leq 1 \} $ 上的均匀分布, 则可知 $ X $ 服从 $ [ 0, 1 ] $ 上的均匀分布, $ Y $ 也服从 $ [ 0, 1 ] $ 上的均匀分布, 且 $ X $ 与 $ Y $ 独立.
+    又记事件
+    \begin{equation*}
+        A = \{ Y \leq f (X) \},
+    \end{equation*}
+    则 $ A $ 的概率为
+    \begin{equation*}
+        p = P ( Y \leq f (x) ) = \int_0^1 \int_0^{f(x)} \dd y \dd x = \int_0^1 f (x) \dd x = J.
+    \end{equation*}
+    即定积分的值 $ J $ 就是事件 $ A $ 的概率 $ p $.
+    由伯努利大数定律, 我们可以用重复试验中 $ A $ 出现的额率作为 $ p $ 的估计值.
+    这种求定积分的方法也称为随机投点法, 即将 $ (X, Y) $ 看成是向正方形 $ \{ 0 \leq x \leq 1, 0 \leq y \leq 1 \} $ 内的随机投点, 用随机点落在区域 $ \{ y \leq f (x) \} $ 中的频率作为定积分的近似值.
+    下面用蒙特卡洛方法, 来得到 $ A $ 出现的频率:
+    \begin{enumerate}
+        \item 先用计算机产生 $ (0, 1) $ 上均匀分布的 $ 2n $个随机数: $ x_i, y_i $, $ i=1, 2, \dotsc, n$, 这里 $ n $ 可以很大, 臂如 $ n = 10^4 $, 甚至 $ n = 10^5 $.
+        \item 对 $ n $ 对数据 $ (x_i, y_i) $, $ i=1, 2, \dotsc, n $, 记录满足如下不等式
+        \begin{equation*}
+            y_i \leq f (x)
+        \end{equation*}
+        的次数, 这就是事件A发生的频数 $ \mu_n $.
+        由此可得事件 $ A $发生的频率 $ \mu_n / n $, 则 $ J \approx \mu_n / n $.
+    \end{enumerate}
+\end{example}
