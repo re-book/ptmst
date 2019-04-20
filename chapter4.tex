@@ -806,3 +806,55 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
     \end{equation*}
     故 $ \{ Y_n \} $ 服从大数定律.
 \end{proof}
+
+\subsubsection{马尔可夫大数定律}
+
+注意到以上大数定律的证明中, 只要有
+\begin{equation*}\label{eq:4.2.6}
+    \frac{1}{n^2} Var \left( \sum_{i=1}^n X_i \right) \to 0.
+\end{equation*}
+则大数定律就能成立.
+这个条件 \ref{eq:4.2.6} 被称为\textbf{马尔可夫条件}\index{马尔可夫条件}.
+
+\begin{theorem}{马尔可夫大数定律}{4.2.3}
+    对随机变量序列 $ \{ X_n \} $, 若 \ref{eq:4.2.6} 成立, 则 $ \{ X_n \} $ 服从大数定律, 即对任意的 $ \varepsilon > 0 $, \eqref{eq:4.2.5} 成立.
+\end{theorem}
+
+\begin{proof}
+    利用切比雪夫不等式即可证得.
+\end{proof}
+
+马尔可夫大数定律的重要性在于: 对 $ \{ X_n \} $ 已经没有任何同分布、独立性、不相关的假定.
+切比雪夫大数定律显然可由马尔可夫大数定律推出.
+
+\begin{example}\label{exam:4.2.3}
+    设 $ \{ X_n \} $ 为一同分布、方差存在的随机变量序列, 且 $ X_n $ 仅与 $ X_{n-1} $ 和 $ X_{n+1} $ 相关, 而与其他的 $ X_i $ 不相关.
+    试问该随机变量序列 $ \{ X_n \} $ 是否服从大数定律？
+\end{example}
+
+\begin{proof}
+    $ \{ X_n \} $ 为相依随机变量序列, 考虑其马尔可夫条件
+    \begin{equation*}
+        \frac{1}{n^2} Var \left( \sum_{i=1}^n X_i \right) = \frac{1}{n^2} \left( \sum_{i=1}^n Var \bigl( X_i \bigr) + 2 \sum_{i=1}^{n-1} Cov \bigl( X_i, X_{i-1} \bigr) \right)
+    \end{equation*}
+    记 $ Var ( X_i ) = \sigma^2 $, 则 $ \lvert Cov ( X_i, X_j ) \rvert \leq \sigma^2 $, 于是有
+    \begin{equation*}
+        \frac{1}{n^2} Var \left( \sum_{i=1}^n X_i \right) \leq \frac{1}{n^2} \bigl( n \sigma^2 + 2 ( n - 1 ) \sigma^2 \bigr) \to 0, \ ( n \to +\infty ),
+    \end{equation*}
+    即马尔可夫条件成立, 故 $ \{ X_n \} $ 服从大数定律.
+\end{proof}
+
+\subsubsection{辛钦大数定律}
+
+我们已经知道, 一个随机变量的方差存在, 则其数学期望必定存在; 但反之不成立, 即一个随机变量的数学期望存在, 则其方差不一定存在.
+以上几个大数定律均假设随机变量序列 $ \{ X_n \} $ 的方差存在, 以下的辛钦大数定律去掉了这一假设, 仅设每个 $ X_i $ 的数学期望存在, 但同时要求 $ \{ X_n \} $ 为独立同分布的随机变量序列.
+伯努利大数定律仍然是辛钦大数定律的特例.
+
+\begin{theorem}{辛钦大数定律}{4.2.4}
+    设 $ \{ X_n \} $ 为一独立同分布的随机变量序列, 若 $ X_i $ 的数学期望存在, 则 $ \{ X_n \} $ 服从大数定律, 即对任意的 $ \varepsilon > 0 $, \eqref{eq:4.2.5} 成立.
+\end{theorem}
+
+这个定理的证明要用到特征函数这一工具, 在下一节中给出具体证明.
+
+辛钦大数定律提供了求随机变量数学期望 $ E ( X ) $ 的近似值的方法.
+设想对
