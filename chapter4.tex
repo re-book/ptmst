@@ -745,4 +745,64 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
 \begin{equation}\label{eq:4.2.5}
     \lim_{n \to +\infty} P \left( \left\lvert \frac{1}{n} \sum_{i=1}^n X_i - \frac{1}{n} \sum_{i=1}^n E (X_i) \right\rvert < \varepsilon \right) = 1.
 \end{equation}
-一般的大数定律都涉及一个随机变量序列 $ \{ X_n \} $, 大数定律的结论都是形如\eqref{eq:4.2.5}, 为此我们给出如下定义.
+一般的大数定律都涉及一个随机变量序列 $ \{ X_n \} $, 大数定律的结论都是形如 \eqref{eq:4.2.5}, 为此我们给出如下定义.
+
+\begin{definition}{}{4.2.1}
+    设有一随机变量序列 $ \{ X_n \} $, 假如它具有形如 \eqref{eq:4.2.5} 的性质, 则称该随机变量序列 $ \{ X_n \} $ 服从\textbf{大数定律}\index{大数定律}.
+\end{definition}
+
+不同的大数定律的差别只是对不同的随机变量序列 $ \{ X_n \} $ 而言, 有的是相互独立的随机变量序列, 有的是相依的随机变量序列, 有的是同分布的随机变量序列, 有的是不同分布的随机变量序列等等.
+
+\subsubsection{切比需夫大数定律}
+
+利用切比雪夫不等式就可证明下面的切比雪夫大数定律.
+
+\begin{theorem}{切比需夫大数定律}{4.2.2}
+    设 $ \{ X_n \} $ 为一列两两不相关的随机变量序列, 若每个 $ X_i $ 的方差存在, 且有共同的上界, 即 $ Var (X) \le c $, $ i=1,2, \dotsc $, 则 $ \{ X_n \} $ 服从大数定律, 即对任意的 $ \varepsilon > 0 $,  \eqref{eq:4.2.5}  成立.
+\end{theorem}
+
+\begin{proof}
+    因为 $ \{ X_n \} $ 两两不相关, 故
+    \begin{equation*}
+        Var \left( \frac{1}{n} \sum_{i=1}^n X_i \right) = \frac{1}{n^2} \sum_{i=1}^n Var \bigl( X_i \bigr) \leq \frac{c}{n}.
+    \end{equation*}
+    再由切比雪夫不等式得到: 对任意的 $ \varepsilon > 0 $, 有
+    \begin{equation*}
+        P \left( \left\lvert \frac{1}{n} \sum_{i=1}^n X_i - \frac{1}{n} \sum_{i=1}^n E \bigl( X_i \bigr) \right\rvert < \varepsilon \right) \geq 1 - \frac{Var\left( \frac{1}{n} \sum_{i=1}^n X_i \right)}{\varepsilon^2} \geq 1 - \frac{c}{n\varepsilon^2}.
+    \end{equation*}
+    于是当 $ n \to +\infty $ 时, 有
+    \begin{equation*}
+        \lim_{n \to +\infty} P \left( \left\lvert \frac{1}{n} \sum_{i=1}^n X_i - \frac{1}{n} \sum_{i=1}^n E \bigl( X_i \bigr) \right\rvert < \varepsilon \right) = 1.
+    \end{equation*}
+\end{proof}
+
+注意, 切比雪夫大数定律只要求 $ \{ X_n \} $ 互不相关, 并不要求它们是同分布的.
+假如 $ \{ X_n \} $ 是独立同分布的随机变量序列, 且方差有限, 则 $ \{ X_n \} $ 必定服从大数定律.
+
+\begin{example}\label{exam:4.2.2}
+    设 $ \{ X_n \} $ 是独立同分布的随机变量序列, $ E \bigl( X_n^4 \bigr) < +\infty $. 若令 $ E \bigl( X_n^4 \bigr) < +\infty $, $ Var \bigl( X_n \bigr)= \sigma^2 $, 考察
+    \begin{equation*}
+        Y_n = \bigl( X_n - \mu \bigr)^2, \quad n = 1, 2, \dotsc,
+    \end{equation*}
+    则随机变量序列 $ \{ Y_n \} $ 服从大数定律, 即对任意的 $ \varepsilon > 0 $, 有
+    \begin{equation*}
+        \lim_{n \to +\infty} P \left( \left\lvert \frac{1}{n} \sum_{i=1}^n \bigl( X_i - \mu \bigr)^2 - \sigma^2 \right\rvert \geq \varepsilon \right) = 0.
+    \end{equation*}
+\end{example}
+
+\begin{proof}
+    显然 $ \{ Y_n \} $ 是独立同分布随机变量序列, 其方差
+    \begin{equation*}
+        Var \bigl( Y_n \bigr) = Var \bigl( X_n - \mu \bigr)^2 = E \bigl( X_n - \mu \bigr)^4 - \sigma^4.
+    \end{equation*}
+    由于 $ E \bigl( X_n^4 \bigr) $ 存在, 故 $ E \bigl( X_n^3 \bigr) $ ,  $ E \bigl( X_n^2 \bigr) $ 皆存在, 从而 $ E \bigl( X_n - \mu \bigr)^4 $ 也存在.
+    由切比雪夫大数定律知
+    \begin{equation*}
+        \lim_{n \to +\infty} P \left( \left\lvert \frac{1}{n} \sum_{i=1}^n Y_i - \frac{1}{n} \sum_{i=1}^n E \bigl( Y_i \bigr) \right\rvert \geq \varepsilon \right) = 0.
+    \end{equation*}
+    其中
+    \begin{equation*}
+        \frac{1}{n} \sum_{i=1}^n Y_n = \frac{1}{n} \sum_{i=1}^n \bigl( X_i - \mu \bigr)^2, \ \frac{1}{n} \sum_{i=1}^n E \bigl( Y_n \bigr) = \sigma^2.
+    \end{equation*}
+    故 $ \{ Y_n \} $ 服从大数定律.
+\end{proof}
