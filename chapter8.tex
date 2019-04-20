@@ -430,10 +430,60 @@ S_e &= S_{T} - S_A = 37876.04 - 9660.08 = 28215.96, && f_{e} = 3(8-1)=21.
 \end{equation}
 进一步，利用~\ref{eq:8.1.23} 可以给出诸水平均值的置信区间. 此处，$\sigma^2=\sqrt{1343.62}=
 36.66$，若取 $a=0.05$，则 $t_{1-\alpha/2} (f_e)=t_{0.975}(21)=2.0796$, $\hat{\sigma} t_{0.975}(21)/\sqrt{8}=26.95$, 于是三个水平均值的 $0.95$ 置信区间分别为
-\begin{equation*}
-  \mu_{1} : 1024.25 \mp 26.95 = [997.30, 1051.21],
-\end{equation*}
+\begin{gather*}
+  \mu_{1} : 1024.25 \mp 26.95 = [997.30, 1051.21],\\
+  \mu_{2} : 1073.13 \mp 26.95=[1046.18,1100.08],\\
+  \mu_{3} : 1044.25 \mp 26.95=[1017.30,1071.21]
+\end{gather*}
+至此，我们可以看到：在单因子试验的数据分析中可得到如下三个结果：
+\begin{itemize}
+  \item 因子 $A$ 是否显著：
+  \item 试验的误差方差 $\sigma^2$ 的估计；
+  \item 诸水平均值 $\mu_i$ 的点估计与区间估计.
+\end{itemize}
+
+在因子 $A$ 显著时，通常只需对较优的水平均值作参数估计，在因子 $A$ 不显著场合，参数估计无需进行.
 \end{example}
+\subsection{重复数不等情形}
+
+有时，每个水平下重复试验次数不全相等，在这最一般情况下进行方差分析与重复数相等情况下的方差分析极为相似，只在几处略有差别.下面我们指出差异之处.
+·
+\begin{itemize}
+  \item 数据
+  设从第 $i$ 个水平下的总体获得 $m_i$ 个试验结果，记为 $y_{i1}，y_{i2},\ldots,y_{im_{i}}$, $i=1,2,\ldots,r$, 故总试验次数为 $n=m_1+m_2+\cdots+m_r$, 从而, 其统计模型为：
+  \begin{equation}\label{eq:8.1.24}
+    \begin{cases}
+      y_{i j}=\mu_{i}+\varepsilon_{i v}, \quad i=1,2, \cdots, r, \quad j=1,2, \cdots, m_{i},\\
+      \text{各 $\varepsilon_{ij}$ 相互独立，且都服从 $N(0,\sigma^2)$}.
+    \end{cases}
+  \end{equation}
+  \item 总均值
+  诸 $\mu_i$ 的加权平均（所有试验结果的均值的平均）
+  \begin{equation}\label{eq:8.1.25}
+    \mu=\frac{1}{n}\left(m_{1} \mu_{1}+\cdots+m_{n} \mu_{r}\right)=\frac{1}{n} \sum_{i=1}^{r} m_{i j} \mu_{z}
+  \end{equation}
+  称为总均值.第 $i$ 个水平均值 $\mu_i$ 与总均值 $\mu$ 的差
+  \begin{equation}\label{eq:8.1.26}
+    a_{i}=\mu_{i}-\mu, \quad i=1,2, \cdots, r
+  \end{equation}
+  称为因子 $A$ 的第 $i$ 个水平的效应.
+  \item 效应约束条件
+  由~\eqref{eq:8.1.25} 和~\eqref{eq:8.1.26}，容易看出关于效应的约束条件为
+  \begin{equation*}
+    \sum_{i=1}^{r} m_{i} a_{i}=0
+  \end{equation*}
+  且 $\mu_i = \mu + a_i$, 这表明第 $i$ 个总体的均值是由总均值与该水平的效应叠加而成的.类似于~\eqref{eq:8.1.8}，有
+  \begin{equation}\label{eq:8.1.27}
+    \begin{cases}
+      y_{i j}=\mu+a_{i}+\varepsilon_{i j}, \quad i=1,2, \cdots, r, j=1,2, \cdots, m_{i}\\
+      \sum_{i=1}^{r} m_{i} a_{i}=0\\
+      \text{$\varepsilon_{ij}$ 相互独立，服从 $N(0,\sigma^2)$}.
+    \end{cases}
+  \end{equation}
+  \item 各平方和的计算
+\end{itemize}
+
+
 
 \section{多重比较}\label{sec:8.2}
 
