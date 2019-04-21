@@ -666,8 +666,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
 伯努利大数定律提供了用频率来确定概率的理论依据.
 譬如要估计某种产品的不合格品率 $ p $, 则可从该种产品中随机抽取 $ n $ 件, 当 $ n $ 很大时, 这 $ n $ 件产品中的不合格品的比例可作为不合格品率 $ p $ 的估计值.
 
-\begin{example}\label{exam:4.2.1}
-    (用蒙特卡洛方法计算定积分 (随机投点法))
+\begin{example}[(用蒙特卡洛方法计算定积分 (随机投点法))]\label{exam:4.2.1}
     设 $ 0 \leq f (x) \leq 1 $, 求 $ f (x) $ 在区间 $ [0, 1] $ 上的积分值:
     \begin{equation*}
         J = \int_0^1 f (x) \dd x.
@@ -857,4 +856,50 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
 这个定理的证明要用到特征函数这一工具, 在下一节中给出具体证明.
 
 辛钦大数定律提供了求随机变量数学期望 $ E ( X ) $ 的近似值的方法.
-设想对
+设想对随机变量 $ X $ 独立重复地观察 $ n $ 次, 第 $ k $ 次观察值为 $ X_k $, 则 $ X1,X2, \dotsc, X_n $ 应该是相互独立的, 且它们的分布应该与 $ X $ 的分布相同.
+所以, 在 $ E (X) $ 存在的条件下, 按照辛钦大数定律, 当 $ n $ 足够大时, 可以把平均观察值
+\begin{equation*}
+    \frac{1}{n} \sum_{i=1}^n X_i
+\end{equation*}
+作为 $ E ( X ) $ 的近似值.
+这样做法的一个优点是我们可以不必去管 $ X $ 的分布究竟是怎样的, 我们的目的只是寻求数学期望.
+
+事实上, 用观察值的平均去作为随机变量的均值在实际生活中是常用的方法.
+管如, 用观察到的某地区 \num{5000} 个人的平均寿命作为该地区的人均寿命的近似值是合适的, 这样做法的依据就是辛钦大数定律.
+
+\begin{example}[(用蒙特卡洛方法计算定积分 (平均值法))]\label{exam:4.2.4}
+    为计算定积分
+    \begin{equation*}
+        J = \int_0^1 f (x) \dd x.
+    \end{equation*}
+    设随机变量 $ X $ 服从 $ ( 0, 1 ) $ 上的均匀分布, 则 $ Y = f (X) $ 的数学期望为
+    \begin{equation*}
+        E \bigl( f (X) \bigr) = \int_0^1 f (x) \dd x = J.
+    \end{equation*}
+    所以估计 $ J $ 的值就是估计 $ f (X) $ 的数学期望的值.
+    由辛钦大数定律， 可以用 $ f (X) $ 的观察值的平均去估计 $ f (X) $ 的数学期望的值.
+    具体做法如下: 先用计算机产生 $ n $ 个 $ (0, 1) $ 上均匀分布的随机数: $ x_i $, $ i = 1, 2, \dotsc, n $. 然后对每个 $ x_i $ 计算 $ f (x_i) $, 最后得 $ J $ 的估计值为
+    \begin{equation*}
+        J \approx \frac{1}{n} \sum_{i=1}^n f (x_i).
+    \end{equation*}
+
+    譬如计算 $ \int_0^1 \ee^{-x^2/2} / \sqrt{2\pi} \dd x $, 其精确值和 $ n = 10^4 $, $ n = 10^5 $ 时的模拟值如下:
+
+    \begin{tabularx}{0.9\linewidth}{*{3}{>{\centering\arraybackslash}X}}
+        \toprule
+        精确值 & $ n = 10^4 $ & $ n = 10^5 $ \\
+        \midrule
+        \num{0.341344} & \num{0.341329} & \num{0.341334}\\
+        \bottomrule
+    \end{tabularx}
+    
+    正如例~\ref{exam:4.2.1} 中所说明的, 可以通过线性变换将 $ [a, b] $ 区间上的定积分化成 $ [O, 1] $ 区间上的定积分, 所以以上方法计算定积分方法带有普遍意义。
+\end{example}
+
+\begin{xiti}
+    \item 设 $ \{ X_k \} $ 为独立随机变量序列, 且
+    \begin{equation*}
+        P \bigl( X_k = \pm \sqrt{\ln k} \bigr) = \frac{1}{2}, \ k = 1, 2, \dotsc.
+    \end{equation*}
+    证明 $ \{ X_k \} $ 服从大数定律.
+\end{xiti}
