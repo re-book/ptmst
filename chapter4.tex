@@ -952,4 +952,44 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
     \end{equation*}
     则 $ \{ X_n \} $ 服从大数定律.
     \item (伯恩斯组大数定律) 设 $ \{ X_n \} $ 是方差有界的随机变量序列, 且当 $ \lvert k - l \rvert \to +\infty $ 时, 一致地有 $ Cov \bigl( X_k, X_l \bigr) \to 0 $, 证明 $ \{ X_n \} $ 服从大数定律.
+    \item (格涅坚科大数定律) 设 $ \{ X_n \} $ 是随机变量序列, 若记
+    \begin{equation*}
+        Y_n = \frac{1}{n} \sum_{i=1}^n X_i, \ a_n = \frac{1}{n} \sum_{i=1}^n E (x_i).
+    \end{equation*}
+    则 $ \{ X_n \} $ 服从大数定律的充要条件是
+    \begin{equation*}
+        \lim_{n \to +\infty} E \left( \frac{( Y_n - a_n )^2}{1 + ( Y_n - a_n )^2} \right) = 0.
+    \end{equation*}
+    \item 设 $ \{ X_n \} $ 为独立同分布的随机变量序列, 方差存在.
+    又设 $ \sum_{n=1}^{+\infty} a_n $ 为绝对收敛级数.
+    令 $ Y = \sum_{i=1}^n X_i $, 证明 $ \{ a_n Y_n \} $服从大数定律.
+    \item 设 $ \{ X_n \} $ 为独立同分布的随机变量序列, 方差存在, 令 $ Y = \sum_{i=1}^n X_i $. 又设 $ \{ a_n \} $ 为一列常数, 如果存在常数 $ c > 0 $, 使得对一一切 $ n $ 有 $ \lvert n a_n \rvert \leq c $, 证明 $ \{ a_n Y_n \} $ 服从大数定律.
+    \item 设 $ \{ X_n \} $ 为独立同分布的随机变量序列, 其方差有限, 且 $ X_n $ 不恒为常数.
+    如果 $ S_n = \sum_{i=1}^n X_i $, 试证: 随机变量序列 $ \{ S_n \} $ 不服从大数定律.
+    \item 分别用随机投点法和平均值法计算下列定积分:
+    \begin{equation*}
+        J_1 = \int_0^1 \frac{e^x - 1}{e - 1} \dd x, \ J_2 = \int_{-1}^1 \ee^x \dd x.
+    \end{equation*}
 \end{xiti}
+
+\subsection{随机变量序列的两种收敛性}
+
+随机变量序列的收敛性有多种, 其中常用的是两种: 依概率收敛和按分布收敛.
+前面叙述的大数定律涉及的是一种依概率收敛, 后面叙述的中心极限定理将涉及按分布收敛.
+这些极限定理不仅是概率论研究的中心议题, 而且在数理统计中有广泛的应用.
+本节将给出这两种收敛性的定义及其有关性质, 读者应从中吸收其思考问题的方法.
+
+\subsubsection{1依概率收敛}
+
+首先由随机变量序列 $ \{ X_n \} $ 服从``大数定律''的讨论启发我们引进如下定义.
+
+\begin{definition}{依概率收敛}{4.3.1}
+    设 $ \{ Y_n \} $ 为一随机变量序列, $ Y $ 为一随机变量.
+    如果对任意的 $ \varepsilon > c $, 有
+    \begin{equation}\label{eq:4.3.1}
+        \lim_{n \to +\infty} P \bigl( \bigr\lvert Y_n - Y \bigr\rvert < \varepsilon \bigr) = 1,
+    \end{equation}
+    则称 $ \{ Y_n \} $ \textbf{依概率收敛}\index{依概率收敛} 于 $ Y $, 记作 $ Y_n \stackrel{P}{\to} Y $.
+\end{definition}
+
+前面讨论的独立同分布随机变量序列 $ \{ X_n \} $ 服从大数定律是上述依概率收敛的特殊情况, 这只要构造另一个随机变量序列 $ \{ Y_n \} $, 其中
