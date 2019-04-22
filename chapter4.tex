@@ -902,4 +902,54 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
         P \bigl( X_k = \pm \sqrt{\ln k} \bigr) = \frac{1}{2}, \ k = 1, 2, \dotsc.
     \end{equation*}
     证明 $ \{ X_k \} $ 服从大数定律.
+    \item 设 $ \{ X_k \} $ 为独立随机变量序列, 且
+    \begin{equation*}
+        P \bigl( X_k = \pm 2^k \bigr) = \frac{1}{2^{2k+1}}, \ P \bigl( X_k = 0 \bigr) = 1 - \frac{1}{2^{2k}}, \ k = 1, 2, \dotsc .
+    \end{equation*}
+    证明 $ \{ X_k \} $ 服从大数定律.
+    \item 设 $ \{ X_n \} $ 为独立随机变量序列, 且 $ P \bigl( X_1 = 0 \bigr) = 1 $,
+    \begin{equation*}
+        P \bigl( X_n = \pm \sqrt{n} \bigr) = \frac{1}{n}, \ P \bigl( X_n = 0 \bigr) = 1 - \frac{2}{n}, \ n = 2, 3, \dotsc .
+    \end{equation*}
+    证明 $ \{ X_n \} $ 服从大数定律.
+    \item 在伯努利试验中, 事件 $ A $ 出现的概率为 $ p $, 令
+    \begin{equation*}
+        X+n = 
+        \begin{cases}
+            1, & \text{若在第} \ n \ \text{次及第} \ n+1 \ \text{次试验中} \ A \ \text{出现}\\
+            0, & \text{其他}.
+        \end{cases}
+    \end{equation*}
+    证明 $ \{ X_n \} $ 服从大数定律.
+    \item  设 $ \{ X_n \} $ 为独立的随机变量序列, 且
+    \begin{equation*}
+        P \bigl( X_n = 1 \bigr) = p_n, \ P \bigl( X_n = 0 \bigr) = 1 - p_n.
+    \end{equation*}
+    证明 $ \{ X_n \} $ 服从大数定律.
+    \item 设 $ \{ X_n \} $ 为独立同分布的随机变量序列, 其共同的分布函数为
+    \begin{equation*}
+        F (x) = \frac{1}{2} + \frac{1}{\pi} \arctan \frac{a}{x}, \ -\infty < x < +\infty 
+    \end{equation*}
+    试问: 辛钦大数定律对此随机变量序列是否适用?
+    \item 设 $ \{ X_n \} $ 为独立同分布的随机变量序列, 其共同分布为
+    \begin{equation*}
+        P \left( X_n = \frac{2^k}{k^2} \right) = \frac{1}{2^k}, \ k = 1, 2, \dotsc .
+    \end{equation*}
+    试问 $ \{ X_n \} $ 是否服从大数定律?
+    \item 设 $ \{ X_n \} $ 为独立同分布的随机变量序列, 其共同分布为
+    \begin{equation*}
+        P \bigl( X_n = k \bigr) = \frac{c}{k^2 \cdot \log^2 k}, \ k = 2, 3, \dotsc .
+    \end{equation*}
+    其中
+    \begin{equation*}
+        c = \left( \sum_{k = 2}^{+\infty} \frac{1}{k^2 \cdot \log^2 k} \right)^{-1},
+    \end{equation*}
+    试同 $ \{ X_n \} $ 是否服从大数定律?
+    \item 设 $ \{ X_n \} $ 为独立的随机变量序列, 其中 $ X_n $ 服从参数为 $ \sqrt{n} $ 的泊松分布, 试问 $ \{ X_n \} $ 是否服从大数定律?
+    \item 设 $ \{ X_n \} $ 为独立的随机变量序列, 每个 $ X_n $ 的方差 $ \sigma^2 $ 有限, 证明: 若
+    \begin{equation*}
+        \frac{\sigma_n^2}{n} \to 0, \ n \to +\infty.
+    \end{equation*}
+    则 $ \{ X_n \} $ 服从大数定律.
+    \item (伯恩斯组大数定律) 设 $ \{ X_n \} $ 是方差有界的随机变量序列, 且当 $ \lvert k - l \rvert \to +\infty $ 时, 一致地有 $ Cov \bigl( X_k, X_l \bigr) \to 0 $, 证明 $ \{ X_n \} $ 服从大数定律.
 \end{xiti}
