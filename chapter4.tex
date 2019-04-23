@@ -993,3 +993,66 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
 \end{definition}
 
 前面讨论的独立同分布随机变量序列 $ \{ X_n \} $ 服从大数定律是上述依概率收敛的特殊情况, 这只要构造另一个随机变量序列 $ \{ Y_n \} $, 其中
+\begin{equation*}
+    Y_n = \frac{1}{n} \sum_{i=1}^n X_n, \quad Y = \frac{1}{n} \sum_{i=1}^n E \bigl( Y_i \bigr) = \mu,
+\end{equation*}
+就可看出, $ X_n $ 服从大数定律等价于 $ Y_n \stackrel{P}{\to} \mu $.
+如今的依概率收敛是把原收敛于一个常数 $ \mu $ 推广到收敛于一个随机变量场合.
+
+\begin{theorem}{}{4.3.1}
+    设 $ \{ X_n \} $, $ \{ Y_n \} $ 是两个随机变量序列, $ a $, $ b $ 是两个常数.
+    如果
+    \begin{equation*}
+        X_n \stackrel{P}{\to} a, \quad Y_n \stackrel{P}{\to} b,
+    \end{equation*}
+    则有
+    \begin{enumerate}
+        \item $ X_n \pm Y_n \stackrel{P}{\to} a \pm b $,
+        \item $ X_n \times Y_n \stackrel{P}{\to} a \times b $,
+        \item $ X_n \div Y_n \stackrel{P}{\to} a \div b (b \neq 0) $.
+    \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+    \begin{enumerate}
+        \item\label{thm:4.3.1.1} 因为
+        \begin{equation*}
+            \bigl\{ \bigl\lvert \bigl( X_n + Y_n \bigr) - ( a + b ) \bigr\rvert \geq \varepsilon \bigr\} \subset \biggl\{ \biggl( \bigl\lvert X_n - a \bigr\rvert \geq \frac{\varepsilon}{2} \biggr) \cup \biggl( \bigl\lvert Y_n - b \bigr\rvert \geq \frac{\varepsilon}{2} \biggr) \biggr\},
+        \end{equation*}
+        所以
+        \begin{equation*}
+            0 \leq P \bigl( \big\lvert \bigl( X_n + Y_n \bigr) - ( a + b ) \bigr\rvert \geq \varepsilon \bigr)
+            \leq P \biggl( \bigl\lvert X_n - a \bigr\rvert \geq \frac{\varepsilon}{2} \biggr) + P \biggl( \bigl\lvert Y_n - b \bigr\rvert \geq \frac{\varepsilon}{2} \biggr) \to 0 \ ( n \to +\infty ).
+        \end{equation*}
+        即
+        \begin{equation*}
+            P \bigl( \bigl\lvert \bigl( X_n + Y_n ) - ( a + b ) \bigr\rvert < \varepsilon \bigr) \to 1 \ ( n \to +\infty ),
+        \end{equation*}
+        由此得 $ X_n + Y_n \stackrel{P}{\to} a + b $.
+        类似可证 $ X_n - Y_n \stackrel{P}{\to} a - b $.
+        \item 为了证明 $ X_n \times Y_n \stackrel{P}{\to} a \times b $, 我们分几步进行:
+        \begin{enumerate}
+            \item 若 $ X_n \stackrel{P}{\to} 0 $, 则有 $ X_n^2 \stackrel{P}{\to} 0 $.
+            这是因为对任意 $ \varepsilon > 0 $, 有
+            \begin{equation*}
+                P \bigl( \bigl\lvert X_n^2 \bigr\rvert \geq \varepsilon \bigr) = P \bigl( \bigl\lvert X_n \bigr\rvert \geq \sqrt{\varepsilon} \bigr) \to 0, \ n \to + \infty.
+            \end{equation*}
+            \item 若 $ X_n \stackrel{P}{\to} a $, 则有 $ cX_n \stackrel{P}{\to} ca $. 这是因为在 $ c \neq 0 $ 时, 有
+            \begin{equation*}
+                P \bigl( \bigl\lvert c X_n - ca \bigr\rvert \geq \varepsilon \bigr) = P \bigl( \bigl\lvert X_n - a \bigr\rvert \geq \varepsilon/\lvert c \rvert \bigr) \to 0, \ n \to +\infty,
+            \end{equation*}
+            而当 $ c = 0$ 时, 结论显然成立.
+            \item\label{thm:4.3.1.2.3} 若 $ X_n \stackrel{P}{\to} a $, 则有 $ X_n^2 \stackrel{P}{\to} a^2 $.
+            这是因为有以下一系列结论:
+            \begin{gather*}
+                X_n - a \stackrel{P}{\to} 0, \ \bigl( X_n - a \bigr)^2 \stackrel{P}{\to} 0, \ 2a \bigl( X_n - a \bigr) \stackrel{P}{\to} 0,\\
+                \bigl( X_n - a \bigr)^2 + 2a \bigl( X_n - a \bigr) = X_n^2 - a^2 \stackrel{P}{\to} 0, \ \text{即} \ X_n^2 \stackrel{P}{\to} a^2.
+            \end{gather*}
+            \item 由 \ref{thm:4.3.1.2.3} 及 \ref{thm:4.3.1.1} 知
+            \begin{equation*}
+                X_n^2 \stackrel{P}{\to} a^2, \ Y_n^2 \stackrel{P}{\to} b^2, \ \bigl( X_n + Y_n \bigr)^2 \stackrel{P}{\to} ( a + b )^2.
+            \end{equation*}
+            从而有
+        \end{enumerate}
+    \end{enumerate}
+\end{proof}
