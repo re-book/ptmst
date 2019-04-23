@@ -979,7 +979,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
 这些极限定理不仅是概率论研究的中心议题, 而且在数理统计中有广泛的应用.
 本节将给出这两种收敛性的定义及其有关性质, 读者应从中吸收其思考问题的方法.
 
-\subsubsection{1依概率收敛}
+\subsubsection{依概率收敛}
 
 首先由随机变量序列 $ \{ X_n \} $ 服从``大数定律''的讨论启发我们引进如下定义.
 
@@ -1030,7 +1030,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
         \end{equation*}
         由此得 $ X_n + Y_n \stackrel{P}{\to} a + b $.
         类似可证 $ X_n - Y_n \stackrel{P}{\to} a - b $.
-        \item 为了证明 $ X_n \times Y_n \stackrel{P}{\to} a \times b $, 我们分几步进行:
+        \item\label{thm:4.3.1.2} 为了证明 $ X_n \times Y_n \stackrel{P}{\to} a \times b $, 我们分几步进行:
         \begin{enumerate}
             \item 若 $ X_n \stackrel{P}{\to} 0 $, 则有 $ X_n^2 \stackrel{P}{\to} 0 $.
             这是因为对任意 $ \varepsilon > 0 $, 有
@@ -1053,6 +1053,50 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
                 X_n^2 \stackrel{P}{\to} a^2, \ Y_n^2 \stackrel{P}{\to} b^2, \ \bigl( X_n + Y_n \bigr)^2 \stackrel{P}{\to} ( a + b )^2.
             \end{equation*}
             从而有
+            \begin{align*}
+                X_n \times Y_n & = \frac{1}{2} \bigl[ \bigl( X_n + y_n \bigr)^2 - X_n^2 - Y_n^2 \bigr]\\
+                & \stackrel{P}{\to} \frac{1}{2} [ ( a + b )^2 - a^2 - b^2 ] = ab.
+            \end{align*}
         \end{enumerate}
+        \item 为了证明 $ X_n / Y_n \stackrel{P}{\to} a/b $, 我们先证: $ 1 / Y_n \stackrel{P}{\to} 1 / b $.
+        这是因为对任意 $ \varepsilon > 0 $, 有
+        \begin{align*}
+            P \biggl( \biggl\lvert \frac{1}{Y_n} - \frac{1}{b} \biggr\rvert \geq \varepsilon \biggr)
+            ={} & P \biggl( \biggl\lvert \frac{Y_n - b}{Y_n b} \biggr\rvert \geq \varepsilon \biggr)\\
+            ={} & P \biggl( \biggl\lvert \frac{Y_n - b}{b^2 + b ( Y_n - b )} \biggr\rvert \geq \varepsilon, \bigl\lvert Y_n - b \bigr\rvert < \varepsilon \biggr)\\
+            & + P \biggl( \biggl\lvert \frac{Y_n - b}{b^2 + b ( Y_n - b )} \biggr\rvert \geq \varepsilon, \bigl\lvert Y_n - b \bigr\rvert \geq \varepsilon \biggr)\\
+            ={} & P \biggl( \frac{\lvert Y_n - b \rvert}{b^2 - \varepsilon \lvert b \rvert} \geq \varepsilon \biggr)
+            + P \bigl( \bigl\lvert Y_n + b \bigr\rvert \geq \varepsilon \bigr)\\
+            ={} & P \bigl( \bigl\lvert Y_n - b \bigr\rvert \geq \bigl( b^2 - \varepsilon \lvert b \rvert \bigr) \varepsilon \bigr)
+            + P \bigl( \bigl\lvert Y_n - b \bigr\rvert \geq \varepsilon \bigr)\\
+            \to {} & 0, \ n \to +\infty.
+        \end{align*}
+        这就证明了 $ 1 / Y_n \stackrel{P}{\to} 1 / b $, 再与 $ X_n \stackrel{P}{\to} a $ 结合, 利用 \ref{thm:4.3.1.2} 即得 $ X_n / Y_n \stackrel{P}{\to} a / b $.
+        这就完成了全部证明.
     \end{enumerate}
 \end{proof}
+
+由此定理可以看出, 随机变量序列在概率意义下的极限 (即依概率收敛于常数 $ a $) 在四则运算下仍然成立.
+这与数学分析中的数列极限十分类似.
+
+\subsubsection{按分布收敏、弱收敛}
+
+我们知道分布函数全面描述了随机变量的统计规律， 因此讨论一个分布函数序列 $ \{ F_n (x) \} $ 收敛到一个极限分布函数 $ F (x) $ 是有实际意义的.
+现在的问题是: 如何来定义 $ \{ F_n (x) \} $ 的收敛性呢?
+很自然地, 由于 $ \{ F_n (x) \} $ 是实变量函数序列, 我们的一个猜想是: 对所有的 $ x $, 要求 $ F_n (x) \to F (x) \ ( n \to +\infty ) $ 都成立, 也即数学分析中的点点收敛.
+然而遗憾的是, 以下例子告诉我们这个要求过严了.
+
+\begin{example}\label{exam:4.3.1}
+    设 $ \{ X_n \} $ 服从如下的退化分布
+    \begin{equation*}
+        P \biggl( X_n = \frac{1}{n} \biggr) = 1, \quad n = 1, 2, \dotsc,
+    \end{equation*}
+    若记它们的分布函数分别为 $ F_x (x) $, 则
+    \begin{equation*}
+        F_n ( x ) =
+        \begin{cases}
+            0, & x < 1/n,\\
+            1, & x \geq 1/n.
+        \end{cases}
+    \end{equation*}
+\end{example}
