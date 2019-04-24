@@ -1220,3 +1220,62 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
 \begin{theorem}{}{4.3.3}
     若 $ c $ 为常数, 则 $ X_n \stackrel{P}{\to} c $ 的充要条件是: $ X_n \stackrel{L}{\to} c $.
 \end{theorem}
+
+\begin{proof}
+    必要性已由定理~\ref{thm:4.3.2} 给出, 下证充分性.
+    记 $ X_n $ 的分布函数为 $ F (x) $, $ n = 1, 2, \dotsc $, 因为常数 $ c $ 的分布函数 (退化分布) 为
+    \begin{equation*}
+        F (x) =
+        \begin{cases}
+            0, & x < c,\\
+            1, & x \geq c.
+        \end{cases}
+    \end{equation*}
+    所以对任意的 $ \varepsilon > 0 $, 有
+    \begin{align*}
+        P \big( \big\lvert X_n - c \bigr\rvert \geq \varepsilon \bigr)
+        & = P \bigl( X_n \geq c + \varepsilon \bigr) + P \bigl( X_n \leq c - \varepsilon \bigr)\\
+        & \leq P \bigl( X_n > c + \varepsilon / 2 \bigr) + P \bigl( X_n \leq c - \varepsilon \bigr)\\
+        & = 1 - F_n ( c + \varepsilon / 2 ) + F_n ( c - \varepsilon ).
+    \end{align*}
+
+    由于 $ x = c + \varepsilon / 2 $ 和 $ x = c - \varepsilon $ 均为 $ F (x) $ 的连续点, 且 $ F_n (x) \stackrel{W}{\to} F (x) $, 所以当 $ n \to +\infty $ 时, 有
+    \begin{equation*}
+        F_n ( c + \varepsilon / 2 ) \to F ( c + \varepsilon / 2 ) = 1, \quad F_n ( c - \varepsilon) \to F ( c - \varepsilon ) = 0.
+    \end{equation*}
+    由此得
+    \begin{equation*}
+        P \bigl( \bigl\lvert X_n - c \bigr\rvert \geq \varepsilon \bigr) \to 0. 
+    \end{equation*}
+    即 $ X_n \stackrel{P}{\to} X $.
+    定理证毕.
+\end{proof}
+
+\subsubsection{判断弱收敛的方法}
+
+分布函数列的弱收敛是一个很有用的概念, 它可帮助我们寻求极限分布.
+但判别一个分布函数列是否弱收敛于某个分布函数, 有时是很麻烦的, 这时我们就可利用特征函数这一工具, 为此要研究: 分布函数序列的弱收敛性与相应的特征函数序列的点点收敛性有什么关系?
+下面的定理指出这是等价的.
+
+\begin{theorem}{}{4.3.4}
+    分布函数序列 $ \{ F_n (x) \} $ 弱收敛于分布函数 $ F (x) $ 的充要条件是 $ \{ F_n (x) \} $ 的特征函数序列 $ \varphi_n (t) $ 收敛于 $ F (x) $ 的特征函数 $ \varphi (t) $.
+\end{theorem}
+
+这个定理的证明只涉及数学分析的一些结果, 且证明比较冗长 (参阅文献
+[1]), 在此就不介绍了.
+通常把以上定理称为特征函数的连续性定理, 因为它表明分布函数与特征函数的一一对应关系有连续性.
+
+\begin{example}\label{exam:4.3.3}
+    若 $ X_\lambda $ 服从参数为 $ \lambda $ 的泊松分布, 证明:
+    \begin{equation*}
+        \lim_{\lambda \to +\infty} \left( \frac{X_\lambda - \lambda}{\sqrt{\lambda}} \leq x \right) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^x \exp \left( - \frac{t^2}{2} \right) \dd t.
+    \end{equation*}
+\end{example}
+
+\begin{proof}
+    已知 $ X_\lambda $ 的特征函数为 $ \varphi_\lambda (t) = \exp \bigl( \lambda ( \ee^{it} - 1 ) \bigr) $, 故 $ Y_n = \bigl( X_n - \lambda \bigr) / \sqrt{\lambda} $ 的特征函数为
+    \begin{equation*}
+        g_\lambda (t) = \varphi_\lambda \left( \frac{t}{\sqrt{\lambda}} \right) \exp \left( -i \sqrt{\lambda} t \right) = \exp \left( \lambda \left( \ee^{i t / \sqrt{\lambda}} - 1 \right) - i \sqrt{\lambda} t \right).
+    \end{equation*}
+    对任意的 $ t $, 有
+\end{proof}
