@@ -1,12 +1,14 @@
+% !TeX program = XeLaTeX
+% !TeX root = main.tex
 % Edit by: 八一
 \chapter{假设检验\label{cha:7}}
 统计推断的另一个主要内容是统计假设检验。在这一章里我们将讨论统计假设的设立及其检验问题。
 
-\section{假设检验的基本思想与概念}\label{sec:7.1}
+\section{假设检验的基本思想与概念\label{sec:7.1}}
 \subsection{假设检验问题\label{7.1.1}}
 我们从一个例子开始引出假设检验问题。
-\begin{problem}\label{exam7.1.1}
-某厂生产的合金强度服从正态分布 $N(\theta,16)$ ，其中 $\theta$ 的设计值为不低于 110Pa .为保证质量，该厂每天都要对生产情况做例行检查，以判断生产是否正常进行，即该合金的平均强度不低于 110(pa) .某天从生产中随机抽取25块合金，测得强度值为 $x_{1},x_{2},\dotsc,x_{25}$ 其均值为 $\overline{x}=108(\mathrm {Pa})$ ，间当日生产是否正常？
+\begin{example}\label{exam7.1.1}
+某厂生产的合金强度服从正态分布 $N(\theta,16)$ ，其中 $\theta$ 的设计值为不低于 110Pa .为保证质量，该厂每天都要对生产情况做例行检查，以判断生产是否正常进行，即该合金的平均强度不低于 110(Pa) .某天从生产中随机抽取25块合金，测得强度值为 $x_{1},x_{2},\dotsc,x_{25}$ 其均值为 $\overline{x}=108$(Pa) ，间当日生产是否正常？
 
 对这个实际问题可作如下分析；
 \begin{enumerate}
@@ -27,10 +29,10 @@
 		
 		“假设正确”——称为接收该假设.
 	\end{center}
-	\item 若假设可用一个参数的集合表示，该假设检验问题称为参数假设检验问题，否则称为非参数假设检验问题，例~\ref{exam7.1.1}就是一个参数假设检验问题，而对假设“总体为正态分布”作出检验的问题就是一个非参数假设检验问题.本章前三节讲述参数假设检验问题，最后一节(7.4)将讨论非参数假设检验问题.
+	\item 若假设可用一个参数的集合表示，该假设检验问题称为参数假设检验问题，否则称为非参数假设检验问题，例~\ref{exam7.1.1}就是一个参数假设检验问题，而对假设“总体为正态分布”作出检验的问题就是一个非参数假设检验问题.本章前三节讲述参数假设检验问题，最后一节(\ref{sec:7.4})将讨论非参数假设检验问题.
 \end{enumerate}
 
-\end{problem}
+\end{example}
 
 \subsection{假设检验的基本步骤\label{7.1.2}}
 接下来我们来叙述假设检验的基本步骤.
@@ -56,9 +58,21 @@
 	\item 如果 $\left( x _ { 1 } , \cdots , x _ { n } \right) \in \overline { W }$ ，认为 $H_{0}$成立；
 \end{itemize}
 
-一般将$\overline{W}$称为接收域.由此可见，一个拒绝域$W$唯一确定一个检验法则，反之，一个检验法则也唯一确定一个拒绝续.在两个观测值$n=2$场合，图7.1.1给出拒绝域的示意图.
-	
-通常我们将注意力放在拒绝域上.正如在数学上我们不能用一个例子去证明一个结论一样，用一个样本（例子）不能证明一个命题（假设）是成立的，但可以用一个例子（样本）推翻一个命题.因此，从逻辑上看，注重拒绝域是适当的.事实上，在“拒绝原假设”和“拒绝备择假设（从而接收原假设）”之间还有一个模糊域，如今我们把它并入接收域(参见图7.1.1)，所以接收域是复杂的，将之称为保留域也许更恰当，但习惯上已把它称为接收域，没有必要再进行改变，只是应注意它的含义.
+一般将$\overline{W}$称为接收域.由此可见，一个拒绝域$W$唯一确定一个检验法则，反之，一个检验法则也唯一确定一个拒绝续.在两个观测值$n=2$场合，图~\ref{fig7.1.1}给出拒绝域的示意图.
+
+通常我们将注意力放在拒绝域上.正如在数学上我们不能用一个例子去证
+\begin{figure}[!htbp]
+\begin{minipage}[t]{0.60\linewidth}	
+明一个结论一样，用一个样本（例子）不能证明一个命题（假设）是成立的，但可以用一个例子（样本）推翻一个命题.因此，从逻辑上看，注重拒绝域是适当的.事实上，在“拒绝原假设”和“拒绝备择假设（从而接收原假设）”之间还有一个模糊域，如今我们把它并入接收域(参见图~\ref{fig7.1.1})，所以接收域是复杂的，将之称为保留域也许更恰当，但习惯上已把它称为接收域，没有必要再进行改变，只是应注意它的含义.
+\end{minipage}
+\begin{minipage}[t]{0.40\linewidth} 
+	\vspace{-4pt}
+	\begin{flushright}
+		{\includegraphics[width=40mm]{fig7-1-1.pdf}}%
+		\caption{拒绝域示意图}\label{fig7.1.1}
+	\end{flushright}
+\end{minipage} 	
+\end{figure}
 
 \textbf{三、选择显着性水平}
 
@@ -68,14 +82,26 @@
 \end{equation}
 其中$X= \left( x _ { 1 } , \dotsc , x _ { n } \right)$表示样本.另一种错误是$H_{0}$不真（即$H_{1}$为真）但由于随机性使样本观测值落在接受域中，从而接受原假设$H_{0}$，这种错误称为第二类错误，其发生的概率称为犯第二类错误的概率，或称受伪概率，通常记为$\beta$，即
 \begin{equation}\label{eq7.1.2}
-\alpha =P\left(\textrm{接受}H_0\left| H_0\textrm{为真}\right.\right)=P\left(X\in \overline{ W }\right),\theta\in\theta_0
+\alpha =P\left(\textrm{接受}H_0\left| H_0\textrm{为真}\right.\right)=P\left(X\in \overline{ W }\right),\theta\in\Theta_0
 \end{equation}
-表7.1.1列出了检验的各种情况及两类错误.
+
+表\ref{table7.1.1}列出了检验的各种情况及两类错误.
+\begin{table}[!htp]
+	\centering
+	\caption{检验的两类错误}\label{table7.1.1}
+		\begin{tabular}{lll}
+	\hline
+\multirow{2}{*}{观察数据情况} & \multicolumn{2}{l}{\hspace{4em}总体情况} \\ \cline{2-3} 
+& $H_{0}$为真   & $H_{1}$为真     \\ \hline
+$(x_{1},\dotsc,x_{n})\in W$ & 犯第一类错误 & 正确  \\ 
+$(x_{1},\dotsc,x_{n})\in W^{c}$   & 正确  & 犯第二类错误        \\ \hline
+	\end{tabular}
+\end{table}
 
 犯第一类错误的概率 $\alpha$ 和犯第二类错误的概率 $\beta$ 可以用同一个函数表示，即所谓的势函数.势函数是假设检验中最重要的概念之一，它的定义如下：
 \begin{definition}{}{ybjz}
 	设检验问题
-	\[H _ { 0 } : \theta \in \Theta _ { 0 } \quad \text { vs } \quad H _ { 1 } : \theta \in \theta  _ { 1 }\]
+	\[H _ { 0 } : \theta \in \Theta _ { 0 } \quad \text { vs } \quad H _ { 1 } : \theta \in \Theta  _ { 1 }\]
 	的拒绝域为$W$，则样本观测值$X$落在拒绝域W内的概率称为该检验的势函数，记为
 	\begin{equation}\label{eq7.1.3}
 	g\left(\theta\right)=P_{\theta}\left(X\in  W\right),\quad\theta\in\boldsymbol{\Theta }=\Theta_0\cup\Theta_1
@@ -92,7 +118,12 @@ g\left(\theta\right)=\left\{\begin{matrix}
 \[
 g\left(\theta\right)=P_{\theta}\left(\overline{x}\leq c\right)=P_{\theta}\left(\frac{\overline{x}-\theta}{4/5}\le\frac{c-\theta}{4/5}\right)=\Phi\left(\frac{c-\theta}{4/5}\right)
 \]
-这个势函数是$\theta$的减函数(见图7.1.2)
+这个势函数是$\theta$的减函数(见图\ref{fig7.1.2})
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.4\textwidth]{fig7-1-2.pdf}
+	\caption{例\ref{exam7.1.1}的势函数$g(\theta)$}\label{fig7.1.2}
+\end{figure}
 
 利用这个势函数容易写出其犯两类错误的概率分别为
 \begin{equation}\label{eq7.1.4}
@@ -107,6 +138,7 @@ g\left(\theta\right)=P_{\theta}\left(\overline{x}\leq c\right)=P_{\theta}\left(\
 	\item 当$\beta$减小时，由\ref{eq7.1.5}知，$c$会增大，再由\ref{eq7.1.4}知，$c$的增大必导致$\alpha$的增大.
 	
 \end{itemize}
+
 这一现象说明：在样本量给定的条件下，$\alpha$与$\beta$中一个减小必导致另一个增大，这不是偶然的，而具有一般性.这进一步说明：在样本量一定的条件下不可能找到一个使$\alpha,\beta$都小的检验.在此背景下，只能采取折中方案.英国统计学家Neyman和Pearson 提出水平为$\alpha$的显著性检验的概念.
 \begin{definition}{}{ybjz}
 	对检验问题$H _ { 0 } : \theta \in \Theta _ { 0 } \quad \text { vs } \quad H _ { 1 } : \theta \in \Theta _ { 1 }$，如果一个检验满足对任意的$\theta \in \Theta _ { 0 }$，都有
@@ -117,7 +149,7 @@ g\left(\theta\right)=P_{\theta}\left(\overline{x}\leq c\right)=P_{\theta}\left(\
 
 \textbf{四、给出拒绝域}
 
-在确定显著性水平后，我们可以定出检验的拒绝域$W$.在例~\ref{exam7.1.1}中，若取$\alpha=0.05$，则要求对任意的$\theta\geq 100$有$g ( \theta ) = \Phi ( 5 ( c - \theta ) / 4 ) \leq 0.05$，由于$g(\theta)$是关于$\theta$的单调减函数（见图7.1.2），只需要
+在确定显著性水平后，我们可以定出检验的拒绝域$W$.在例~\ref{exam7.1.1}中，若取$\alpha=0.05$，则要求对任意的$\theta\geq 100$有$g ( \theta ) = \Phi ( 5 ( c - \theta ) / 4 ) \leq 0.05$，由于$g(\theta)$是关于$\theta$的单调减函数(见图~\ref{fig7.1.2})，只需要
 \[g ( 110 ) = \Phi ( 5 ( c - 110 ) / 4 ) = 0.05\]
 成立即可.由此可先确定标准正态分布的0.05分位数$u _ { 0.05 } = - u _ { 0.95 }$，它使得
 \[\frac { 5 ( c - 110 ) } { 4 } = u _ { 0.05 }\]
@@ -142,17 +174,18 @@ g\left(\theta\right)=P_{\theta}\left(\overline{x}\leq c\right)=P_{\theta}\left(\
 \begin{xiti}
 	\item 设$x_1,\dotsc ,x_n$是来自 $N(\mu ,1)$ 的样本，考虑如下假设检验问题
 	\[H _ { 0 } : \mu = 2 \quad \text { vs } \quad H _ { 1 } , \mu = 3\]
+	若检验由拒绝域为 $w = \{ \overline { x } \geq 2.6 \}$ 确定.
 	\begin{enumerate}
 		\item 当 $n=20$ 时求检验犯两类错误的概率；
 		\item 如果要使得检验犯第二类错误的概率$\beta \leq 0.01$，$n$最小应取多少？
 		
 		\item 证明：当 $n\rightarrow +\infty $时，$\alpha \rightarrow  0$，$\beta \rightarrow  0$.
 	\end{enumerate}
-	\item 设$x_1,\dotsc ,x_{10}$是来自 $0-1$ 总体 $b(1,p)$ 的样本，考虑如下假设检验问题
+	\item 设$x_1,\dotsc ,x_{10}$是来自 $0-1$ 总体 $b(1,p)$ 的样本，考虑如下检验问题
 	\[H _ { 0 } : p = 0.2 \quad \text { vs } \quad H _ { 1 } , p = 0.4\]
 	取拒绝域为$W = \{ \overline { x } \geq 0.5 \}$，求该检验犯两类错误的概率.
 	
-	\item 设$x _ { 1 } , \dotsc , x _ { 16 }$是来自正态总体$N(\mu,6)$的样本，考虑检验问题
+	\item 设$x _ { 1 } , \dotsc , x _ { 16 }$是来自正态总体$N(\mu,4)$的样本，考虑检验问题
 	\[H _ { 0 } : \mu = 6 \quad \text { vs } \quad H _ { 1 } : \mu \neq 6\]
 	拒绝域取为$W=\left\{\left|\overline{x}-6\right|\geq c\right\}$，试求$c$使得检验的显著性水平为0.05，并求该检验在$\mu =6.5$ 处犯第二类错误的概率.
 	
@@ -165,7 +198,7 @@ g\left(\theta\right)=P_{\theta}\left(\overline{x}\leq c\right)=P_{\theta}\left(\
 \end{xiti}
 
 
-\section{正态总体参数假设检验}\label{sec:7.2}
+\section{正态总体参数假设检验\label{sec:7.2}}
 参数假设检验常见的有三种基本形式
 
 \[\begin{array} { l } { \text { (1) } H _ { 0 } : \theta \leq \theta _ { 0 } \quad \text { vs } H _ { 1 } : \theta > \theta _ { 0 } } \\ { \text { (2) } H _ { 0 } : \theta \geq \theta _ { 0 } \quad \text { vs } H _ { 1 } ; \theta < \theta _ { 0 } } \\ { \text { (3) } H _ { 0 } : \theta = \theta _ { 0 } \quad \text { vs } H _ { 1 } : \theta \neq \theta _ { 0 } } \end{array}\]
@@ -198,12 +231,68 @@ W = \left\{ \left( x _ { 1 } , \cdots , x _ { n } \right) : u \geq c \right\}
 \end{equation}
 常简记为${\mu \geq c}$，若要求检验的显著性水平为$\alpha$，则$c$满足
 \[P _ { \mu _ { 0 } } ( u \geq c ) = \alpha\]
+由于在$\mu =\mu_{0}$时$\mu \sim N(0,1)$，故$c=\mu _{1-\alpha}$(见图~\ref{fig7.2.1}(a))，最后的拒绝域为
+\begin{equation}\label{eq7.2.6}
+W = \left\lbrace  u \geq u _ { 1 - \alpha }\right\rbrace 
+\end{equation}
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.6\textwidth]{fig7-2-1.png}
+	\caption{$\mu $检验的拒绝域}\label{fig7.2.1}
+\end{figure}
 
-\begin{problem}\label{exam7.2.1}
+该检验用的检验统计量是$\mu $统计量，故一般称为$\mu $检验.该检验的势函数是$\mu $的函数，它可用正态分布写出，具体如下：对$\mu \in(\infty,+\infty)$，
+\begin{align*}
+g ( \mu ) &= P _ { \mu } ( \mathbf { X } \in W ) = P _ { \mu } \left( u \geq u _ { 1 - \alpha } \right)\\
+&= P _ { \mu } \left( \frac { \overline { x } - \mu _ { 0 } } { \sigma / \sqrt { n } } \geq u _ { 1 - a } \right)\\
+&= P _ { \mu } \left( \frac { \overline { x } - \mu + \mu - \mu _ { 0 } } { \sigma / \sqrt { n } } \geq u _ { 1 - \alpha } \right)\\
+&= P _ { \mu } \left( \frac { \overline { x } - \mu } { \sigma / \sqrt { n } } \geq \frac { \mu _ { 0 } - \mu } { \sigma / \sqrt { n } } + u _ { 1 - \alpha } \right)\\
+&= 1 - \Phi \left( \sqrt { n } \left( \mu _ { 0 } - \mu \right) / \sigma + u _ { 1 - a } \right)
+\end{align*}
+由此可见，势函数是$\mu $的增函数，其图形见图~\ref{fig7.2.2}(a)，由增函数性质知，只要$g(\mu_{0}=\alpha)$就可保证在$\mu \leq \mu_{ 0 }$时有$g(\mu )\leq \mu_{ 0 }$,所以上述求出的检验是水平为$\alpha$的检验.
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.6\textwidth]{fig7-2-1.png}
+	\caption{$g(\mu ) $的图形}\label{fig7.2.2}
+\end{figure}
+
+对单侧检验问题($\ref{eq7.2.1}$)，可以类似进行讨论.仍选用$\mu $作为检验统计量，考虑到($\ref{eq7.2.1}$)的备择假设$H_{1}$在左侧，故其拒绝城应有如下形式
+\[
+W=\left\{\mu\le c\right\}
+\]
+对给定的显著性水平$\alpha(0<\alpha<1)$，由$P _ { \mu _ { 0 } } ( u \leq c ) = \alpha$可定出$c=\mu_{\alpha}$(图~\ref{fig7.2.1}（(b))，最后的拒绝域为
+\begin{equation}\label{eq7.2.7}
+W=\left\{\mu\le\mu_{\alpha}\right\}
+\end{equation}
+
+判断准则是类似的：当$\mu\le\mu_{\alpha}$时拒绝原假设$H_{0}$(接收$H_{1}$)，否则接收$H_{0}$.该检验的势函数也是$\mu $的减函数(图~\ref{fig7.2.2}(b))，具体如下：对$\mu \in(-\infty,+\infty)$，
+\begin{align*}
+g ( \mu ) &= P _ { \mu } \left( u \leq u _ { a } \right)\\
+&= P _ { \mu } \left( \frac { \overline { x } - \mu _ { 0 } } { \sigma / \sqrt { n } } \leq u _ { \mathrm { a } } \right)\\
+&= P _ { \mu } \left( \frac { \overline { x } - \mu } { \sigma / \sqrt { n } } \leq \frac { \mu _ { 0 } - \mu } { \sigma / \sqrt { n } } + u _ { \alpha } \right)\\
+&= \Phi \left( \sqrt { n } \left( \mu _ { 0 } - \mu \right) / \sigma + u _ { a } \right)
+\end{align*}
+
+对双侧检验问题(\ref{eq7.2.3})，也可类似进行讨论.仍选用$\mu$作为检验统计量，考虑到(\ref{eq7.2.3})的备择假设$H_{1}$分散在二侧，故其拒绝域亦应在二侧，即拒绝域应有如下形式
+\[W=\left\{\left|\mu\right|\geq c\right\}\]
+对给定的显著性水平$\alpha(0<\alpha<1)$，由$P_{\mu_0}\left(\left|\mu\right|\geq c\right)=\alpha $可定出$c=\mu_{1-\alpha/2}$(\ref{fig7.2.1}(c))，最后的拒绝域为
+\begin{equation}\label{eq7.2.8}
+W=\left\{\left|\mu\right|\geq_{1-\alpha/2}\right\}
+\end{equation}
+
+判断准则仍类似：当$\mu\geq_{1-\alpha/2}$时拒绝原假设$H_{0}$（接收$H_{1}$），否则接收$H_{0}$.该检验的势函数仍是$\mu $的函数(\ref{fig7.2.2}(c))，具体如下：对$\mu \in (-\infty,+\infty)$，
+\begin{align*}
+	g ( \mu ) &= P _ { \mu } \left( | u | \geq u _ { 1 - \alpha / 2 } \right) = P _ { \mu } \left( \frac { \left| \overline { x } - \mu _ { 0 } \right| } { \sigma / \sqrt { n } } \geq u _ { 1 - a / 2 } \right)\\
+	&=1-P_{\mu}\left(\frac{\mu_0-\mu}{\sigma/\sqrt{n}}-u_{1-a/2}\le\frac{\overline{x}-\mu}{\sigma/\sqrt{n}}\le\frac{\mu_0-\mu}{\sigma/\sqrt{n}}+u_{1-a/2}\right)\\
+	&= 1 - \Phi \left( \sqrt { n } \left( \mu _ { 0 } - \mu \right) / \sigma + u _ { 1 - a / 2 } \right) + \Phi \left( \sqrt { n } \left( \mu _ { 0 } - \mu \right) / \sigma - u _ { 1 - a / 2 } \right)
+\end{align*}
+
+由图\ref{fig7.2.2}可以看出，对三种假设检验问题，只要在$\mu=\mu_{ 0 }$处控制检验犯第一类错误的概率为$\alpha$，则检验就是水平为$\alpha$的显著性检验.这不是偶然的现象，具有一般性，这为求显著性检验提供了很大的方便.
+\begin{example}\label{exam7.2.1}
 从甲地发送一个讯号到乙地.设乙地接受到的讯号值是一个服从正态分布$N(\mu ,0.2^{2})$的随机变量，其中$\mu $为甲地发送的真实讯号值.现甲地重复发送同一讯号5次，乙地接收到的讯号值为
 \[8.05 \quad 8.15 \quad 8.2 \quad 8.1 \quad 8.25\]
 设接受方有理由猜测甲地发送的讯号值为8，问能否接受这猜测？
-\end{problem}
+\end{example}
 \begin{solution}
 	这是一个假设检验的问题，总体$X \sim N \left( \mu , 0.2 ^ { 2 } \right)$，待检验的原假设$H_{0}$与备择假设$H_{1}$分别为
 	\[H _ { 0 } : \mu = 8 \quad \text { vs } \quad H _ { 1 } : \mu \neq 8\]
@@ -216,11 +305,245 @@ W = \left\{ \left( x _ { 1 } , \cdots , x _ { n } \right) : u \geq c \right\}
 \begin{equation}\label{eq7.2.9}
 t = \frac { \sqrt { n } \left( \overline { x } - \mu _ { 0 } \right) } { s }
 \end{equation}
+由定理5.4.1知，在$\mu=\mu_{ 0 }$时$t\sim t(n-1)$，从而检验问题(\ref{eq7.2.1})的拒绝域为
+\begin{equation}\label{eq7.2.10}
+W = \left\{ t \geq t _ { 1 \cdot a } ( n - 1 ) \right\}
+\end{equation}
+对检验问题(\ref{eq7.2.2})，拒绝域为
+\begin{equation}\label{eq7.2.11}
+W = \left\{ t \leq t _ { a } ( n - 1 ) \right\}
+\end{equation}
+对检验问题(\ref{eq7.2.3})，拒绝域为
+\begin{equation}\label{eq7.2.12}
+W=\left\{\left| t\right|\geq t_{1-a/2}\left(n-1\right)\right\}
+\end{equation}
+同样可证明这三个检验都是水平为$\alpha$的检验.
+
+\begin{example}\label{exam7.2.2}
+	某厂生产的某种铝材的长度服从正态分布，其均值设定为 240cm.现从该厂抽取5件产品，测得其长度为（单位：cm）
+	\[239.7 \quad 239.6 \quad 239 \quad 240 \quad 239.2\]
+	试判断该厂此类铝材的长度是否满足设定要求？
+	
+	这是一个关于正态均值的双侧假设检验问题.原假设是$H_{0}:\mu =240$，备择假设是$H_{1}:\mu =240$.由于$\sigma$未知，故采用$t$检验，其拒绝域为$\left\{\left| t\right|\geq t_{1-a/2}\left(n-1\right)\right\}$，若取$\alpha=0.05$，则查表得$t_{0.975}(4)=2.776$.现由样本计算得到$\overline{ x }=239.5,s=0.4$，故
+	\[t = \sqrt { 5 } \cdot | 239.5 - 240 | / 0.4 = 2.795\]
+	由于$2.795>2.776$，故拒绝原假设，认为该厂生产的铝材的长度不满足设定要求.
+	
+	综上，关于单个正态总体的均值的检验问题可汇总成表~\ref{tab7.2.1}.
+	\begin{table}[!ht]
+		\centering
+		\caption{单个正态总体均值的假设检验}\label{tab7.2.1}
+\begin{tabularx}{\textwidth}{p{1.5cm}p{1.5cm}ccccc}
+			\toprule
+检验法&条件&原假设$H_{0}$&备择假设$H_{1}$&检验统计量&拒绝域\\
+			\midrule
+$\mu $检验&$\sigma$已知&\parbox{1.5cm}{$\mu \leq \mu _ { 0 }$\\$\mu \geq \mu _ { 0 }$\\$\mu = \mu _ { 0 }$}&\parbox{1.2cm}{$\mu > \mu _ { 0 }$\\$\mu < \mu _ { 0 }$\\$\mu \ne  \mu _ { 0 }$}&$\mu = \frac { \overline { x } - \mu _ { 0 } } { \sigma / \sqrt { n } }$&\parbox{1.2cm}{$\left\lbrace  u \geq u _ { 1 } - \alpha \right\rbrace $\\$\left\lbrace  u \leq u _ {\alpha} \right\rbrace $\\$\left\lbrace  |u| \geq u _ { 1- \alpha/ 2} \right\rbrace $}\\
+$t $检验&$\sigma$已知&\parbox{1.5cm}{$\mu \leq \mu _ { 0 }$\\$\mu \geq \mu _ { 0 }$\\$\mu = \mu _ { 0 }$}&\parbox{1.2cm}{$\mu > \mu _ { 0 }$\\$\mu < \mu _ { 0 }$\\$\mu \ne  \mu _ { 0 }$}&$t = \frac { \overline { x } - \mu _ { 0 } } { s / \sqrt { n } }$&\parbox{1.2cm}{$\left\{t\geq\mu_{1-\alpha}\left(n-1\right)\right\} $\\$\left\{ t\leq t_{\alpha}\left(n-1\right)\right\} $\\$\left\{\left| t\right|\geq t_{1-\alpha/2}\left(n-1\right)\right\} $}\\
+			\bottomrule
+		\end{tabularx}
+	\end{table}
+\end{example}
+
+\textbf{三、假设检验与置信区间的关系}
+
+细心的读者可能会发现，这里用的检验统计量与6.5.5节中置信区间所用的枢轴量是相同的，这不是偶然的，两者之间存在非常密切的关系，现叙述如下.
+
+设$x_{1},\dotsc,x_{n}$ 是来自正态总体$N（(\mu,\sigma^{2})$ 的样本，现讨论在$\sigma$未知场合关于均值$\mu $的检验问题.分三种情况：
+
+考虑双侧检验问题
+\[H _ { 0 } : \mu = \mu _ { 0 } \quad \text { vs } \quad H _ { 1 } : \mu \neq \mu _ { 0 }\]
+则水平为$\alpha$ 的检验的接收域为
+\[
+\overline{W}=\left\{\left|\overline{x}-\mu_0\right|\leq\frac{s}{\sqrt{n}}t_{1-\alpha/2}\left(n-1\right)\right\}
+\]
+它可以改写为
+\[
+\overline{W}=\left\{\overline{x}-\frac{s}{\sqrt{n}}t_{1-a/2}\left(n-1\right)\le\mu_0\le\overline{x}+\frac{s}{\sqrt{n}}t_{1-\alpha/2}\left(n-1\right)\right\}
+\]
+并且有$P_{\mu_{ 0 }}(\overline{ W }=1-\alpha)$，这里$\mu_{ 0 }$并无限制，若让$\mu_{ 0 }$在$(-\infty,+\infty)$内取值，就可得到$\mu $的$1-\alpha$置信区间$:\overline { x } \pm \frac { s } { \sqrt { n } } t _ { 1 - a / 2 } ( n - 1 )$.反之，若有一个如上的$1-\alpha$置信区间，也可获得关于$H_{0}:\mu =\mu_{ 0 }$的水平为$\alpha$的显著性检验.所以，“正态均值$\mu$的$1-\alpha$置信区间”与“关于$H_{0}:\mu =\mu_{ 0 }$的双侧检验问题的水平为$\alpha$的检验”是一一对应.
+
+考虑单侧检验问题
+\[H _ { 0 } : \mu \leq  \mu _ { 0 } \quad \text { vs } \quad H _ { 1 } : \mu > \mu _ { 0 }\]
+其水平为$\alpha$的检验的接受域为
+\begin{align*}
+\overline { W }& = \left\{ \overline { x } - \mu _ { 0 } \geq \frac { s } { \sqrt { n } } t _ { 1 - a } ( n - 1 ) \right\}\\
+&= \left\{ \mu _ { 0 } \leq \overline { x } - \frac { s } { \sqrt { n } } t _ { 1 - \alpha } ( n - 1 ) \right\}
+\end{align*}
+这就给出了参数$\mu$的$1-\alpha$置信上限.反之，对上述给定的$p$的$1-\alpha$置信上限，我们也可以得到关于$H_{0}:u\leq u_{0}$的单侧检验问题的水平为$\alpha$的检验，它们之间也是一一对应的.类似地，对另一个单侧检验问题，其水平为$\alpha$的检验与参数$\mu$的$1-\alpha$置信下限也是一一对应的.
 \subsection{两个正态总体均值差的检验\label{7.2.2}}
+设$x_{1},\dotsc,x_{m}$是来自正态总体$N(\mu_{ 1 },\sigma_{1}^{2})$的样本，$y_{1},\dotsc,y_{n}$是来自另一个正态总体$N(\mu_{ 2 },\sigma_{2}^{2})$的样本，两个样本相互独立.考虑如下三类检验问题：
+\begin{equation}\label{eq7.2.13}
+H _ { 0 } : \mu _ { 1 } - \mu _ { 2 } \leq 0 \quad \text { vs } \quad H _ { 1 } : \mu _ { 1 } - \mu _ { 2 } > 0
+\end{equation}
+\begin{equation}\label{eq7.2.14}
+H _ { 0 } : \mu _ { 1 } - \mu _ { 2 } \geq 0 \quad \text { vs } \quad H _ { 1 } : \mu _ { 1 } - \mu _ { 2 } < 0
+\end{equation}
+\begin{equation}\label{eq7.2.15}
+H _ { 0 } : \mu _ { 1 } - \mu _ { 2 } = 0 \quad \text { vs } \quad H _ { 1 } : \mu _ { 1 } - \mu _ { 2 } \ne  0
+\end{equation}
+这里主要分两种情形进行讨论.
 
+\textbf{一、$\sigma_{1},\sigma_{2}$已知时的两样本$\mu$检验}
 
+此时$\mu_{ 1 }-\mu_{ 2 }$的点估计$\overline{ x}-\overline{y}$的分布完全已知，
+\[\overline { x } - \overline { y } \sim N \left( \mu _ { 1 } - \mu _ { 2 } , \frac { \sigma _ { 1 } ^ { 2 } } { m } + \frac { \sigma _ { 2 } ^ { 2 } } { n } \right)\]
+由此可采用$\mu$检验方法，检验统计量为
+\[u = ( \overline { x } - \overline { y } ) / \sqrt { \frac { \sigma _ { 1 } ^ { 2 } } { m } + \frac { \sigma _ { 2 } ^ { 2 } } { n } }\]
+在$\mu_{ 1 }=\mu_{ 2 }$时，$\mu\sim N(0,1)$.检验的拒绝域取决于备择假设的具体内容.对检验问题(\ref{eq7.2.13})，检验的拒绝域为
+\begin{equation}\label{eq7.2.16}
+W=\left\{u\geq u_{1-\alpha}\right\}
+\end{equation}
+对检验问题(\ref{eq7.2.14})，检验的拒绝域为
+\begin{equation}\label{eq7.2.17}
+W=\left\{\mu\leq\mu_{\alpha}\right\}
+\end{equation}
+对检验问题(\ref{eq7.2.15})，检验的拒绝域为
+\begin{equation}\label{eq7.2.18}
+W=\left\{\left|\mu\right|\geq\mu_{1-\alpha/2}\right\}
+\end{equation}
+
+\textbf{二、$\sigma_{1}=\sigma_{ 2 }=0$但未知时的两样本$t$检验}
+
+在$\sigma _ { 1 } ^ { 2 } = \sigma _ { 2 } ^ { 2 } = \sigma ^ { 2 }$但未知时，首先$\overline { x } - \overline { y } \sim N \left( \mu _ { 1 } - \mu _ { 2 } , \left( \frac { 1 } { m } + \frac { 1 } { n } \right) \sigma ^ { 2 } \right)$，其次，由于
+\[\frac { 1 } { \sigma ^ { 2 } } \sum _ { i = 1 } ^ { \infty } \left( x _ { i } - \overline { x } \right) ^ { 2 } \sim \chi ^ { 2 } ( m - 1 ) , \quad \frac { 1 } { \sigma ^ { 2 } } \sum _ { i = 1 } ^ { n } \left( y _ { i } - \overline { y } \right) ^ { 2 } \sim \chi ^ { 2 } ( n - 1 )\]
+故$\frac { 1 } { \sigma ^ { 2 } } \left( \sum \left( x _ { i } - \overline { x } \right) ^ { 2 } + \sum \left( y _ { i } - \overline { y } \right) ^ { 2 } \right) \sim \chi ^ { 2 } ( m + n - 2 )$，记
+\[s _ { w } ^ { 2 } = \frac { 1 } { m + n - 2 } \left[ \sum _ { i = 1 } ^ { m } \left( x _ { i } - \overline { x } \right) ^ { 2 } + \sum _ { i = 1 } ^ { n } \left( y _ { i } - \overline { y } \right) ^ { 2 } \right]\]
+于是有
+\[t = \frac { ( \overline { x } - \overline { y } ) - \left( \mu _ { 1 } - \mu _ { 2 } \right) } { s _ { w } \sqrt { \frac { 1 } { m } + \frac { 1 } { n } } } \sim t ( m + n - 2 )\]
+这就给出了检验统计量为
+\[t = \frac { ( \overline { x } - \overline { y } ) } { s _ { w } \sqrt { \frac { 1 } { m } + \frac { 1 } { n } } }\]
+对检验问题$(\ref{eq7.2.13})$，检验的拒绝域为
+\begin{equation}\label{eq7.2.19}
+W=\left\{t\geq t_{1-\alpha}\left(m+n-2\right)\right\}
+\end{equation}
+对检验问题$(\ref{eq7.2.14})$，检验的拒绝域为
+\begin{equation}\label{eq7.2.20}
+W=\left\{t\leq t_{\alpha}\left(m+n-2\right)\right\}
+\end{equation}
+对检验问题$(\ref{eq7.2.15})$，检验的拒绝域为
+\begin{equation}\label{eq7.2.21}
+W = \left\{ | t | \geq t _ { 1 - \alpha/ 2 } ( m + n - 2 ) \right\}
+\end{equation}
+\begin{example}\label{exam7.2.3}
+	某厂铸造车间为提高铸件的耐磨性而试制了一种镍合金铸件以取代铜合金铸件，为此，从两种铸件中各抽取一个容量分别为8和9的样本，测得其硬度(一种耐磨性指标)为
+	\begin{align*}
+	&\text{镍合金}:76.43 \quad 76.21 \quad 73.58 \quad 69.69 \quad 65.29 \quad 70.83 \quad 82.75 \quad 72.34\\
+	&\text{铜合金}:73.66 \quad 64.27 \quad 69.34 \quad 71.37 \quad 69.77 \quad 68.12 \quad 67.27 \quad 68.07 \quad 62.61
+	\end{align*}
+	根据专业经验，硬度服从正态分布，且方差保持不变，试在显著性水平$\alpha=0.05$下判断镍合金的硬度是否有明显提高.
+\end{example}
+\begin{solution}
+	用$X$表示镍合金的硬度，$Y$表示钢合金的硬度，则由假定，$X\sim N(\mu_{ 1 },\sigma^{2}),Y\sim N(\mu_{ 2},\sigma^{ 2 })$，要检验的假设是$:H _ { 0 } : \mu _ { 1 } = \mu _ { 2 } \quad \text { vs } \quad H _ { 1 } : \mu _ { 1 } > \mu _ { 2 }$.由于两者方差未知但相等，故采用两样本$t$检验，经计算，
+	\[\overline { x } = 73.39 , \quad \overline { y } = 68.2756 , \quad \sum _ { i = 1 } ^ { 8 } \left( x _ { i } - \overline { x } \right) ^ { 2 } = 205.7958\]
+	\[\sum _ { i = 1 } ^ { 9 } \left( y _ { i } - \overline { y } \right) ^ { 2 } = 91.1552\]
+	从而$s _ { w } = \sqrt { \frac { 1 } { 8 + 9 - 2 } ( 205.7958 + 91.1552 ) } = 4.4494$，
+	\[t = \frac { 73.39 - 68.2756 } { 4.4494 \cdot \sqrt { \frac { 1 } { 7 } + \frac { 1 } { 8 } } } = 2.2210\]
+	查表知$t _ { 0.95 } ( 15 ) = 1.753$，由于$t>t_{0.95}(15)$，故拒绝原假设，可判断镍合金硬度有显著提高.
+	
+	利用假设检验与置信区间的关系对其他情况下的检验问题可仿6.5.5节中两正态总体均值差的置信区间类似进行，我们下面以表格形式列出，而不作推导($l$的表达式见6.5.5节).
+		\begin{table}[!ht]
+		\centering
+		\caption{两个正态总体均值的假设检验}\label{tab7.2.2}
+		\begin{tabularx}{\textwidth}{p{1.5cm}p{2.5cm}ccccc}
+			\toprule
+			检验法&条件&原假设$H_{0}$&备择假设$H_{1}$&检验统计量&拒绝域\\
+			\midrule
+			$\mu $检验&$\sigma_{1},\sigma_{ 2 }$已知&\parbox{1.5cm}{$\mu \leq \mu _ { 0 }$\\$\mu \geq \mu _ { 0 }$\\$\mu = \mu _ { 0 }$}&\parbox{1.2cm}{$\mu > \mu _ { 0 }$\\$\mu < \mu _ { 0 }$\\$\mu \ne  \mu _ { 0 }$}&$\mu = \frac { \overline { x } - \mu _ { 0 } } { \sigma / \sqrt { n } }$&\parbox{1.2cm}{$\left\lbrace  u \geq u _ { 1 } - \alpha \right\rbrace $\\$\left\lbrace  u \leq u _ {\alpha} \right\rbrace $\\$\left\lbrace  |u| \geq u _ { 1- \alpha/ 2} \right\rbrace $}\\
+			$t $检验&\parbox{1.5cm}{$\sigma_{1},\sigma_{ 2 }\text{未知}$\\$\sigma_{ 1 }=\sigma_{ 2 }$}&\parbox{1.5cm}{$\mu \leq \mu _ { 0 }$\\$\mu \geq \mu _ { 0 }$\\$\mu = \mu _ { 0 }$}&\parbox{1.2cm}{$\mu > \mu _ { 0 }$\\$\mu < \mu _ { 0 }$\\$\mu \ne  \mu _ { 0 }$}
+			&$t = \frac { ( \overline { x } - \overline { y } ) } { s _ { w } \sqrt { \frac { 1 } { m } + \frac { 1 } { n } } }$
+			&\parbox{1.2cm}{$\left\{t\geq\mu_{1-\alpha}\left(m+n-2\right)\right\} $\\$\left\{ t\leq t_{\alpha}\left(m+n-2\right)\right\} $\\$\left\{\left| t\right|\geq t_{1-\alpha/2}\left(m+n-2\right)\right\} $}\\
+			\bottomrule
+		\end{tabularx}
+	\end{table}
+
+\end{solution}
 \subsection{正态总体方整的检验\label{7.2.3}}
 
+\textbf{一、单个正态总体方差的$\chi^{2}$检验}
+
+设$x_{1},\dotsc,x_{n}$是来自$N(\mu ,\sigma^{2})$的样本，对方差亦可考虑如下三个检验问题：
+\begin{equation}\label{eq7.2.22}
+H _ { 0 } : \sigma ^ { 2 } \leq \sigma _ { 0 } ^ { 2 } \quad \text { vs } \quad H _ { 1 } : \sigma ^ { 2 } > \sigma _ { 0 } ^ { 2 }
+\end{equation}
+\begin{equation}\label{eq7.2.23}
+H _ { 0 } : \sigma ^ { 2 } \geq \sigma _ { 0 } ^ { 2 } \quad \text { vs } \quad H _ { 1 } : \sigma ^ { 2 } < \sigma _ { 0 } ^ { 2 }
+\end{equation}
+\begin{equation}\label{eq7.2.24}
+H _ { 0 } : \sigma ^ { 2 } = \sigma _ { 0 } ^ { 2 } \quad \text { vs } \quad H _ { 1 } : \sigma ^ { 2 } \ne  \sigma _ { 0 } ^ { 2 }
+\end{equation}
+此处通常假定$\mu$未知，它们采用的检验统计量是相同的，均为
+\begin{equation}\label{eq7.2.25}
+\chi ^ { 2 } = ( n - 1 ) s ^ { 2 } / \sigma _ { 0 } ^ { 2 }
+\end{equation}
+在$\sigma ^ { 2 } = \sigma _ { 0 } ^ { 2 }$时，$\chi ^ { 2 } \sim \chi ^ { 2 } ( n - 1 )$，于是，若取显著性水平为$\alpha$，则对应三个检验问题的拒绝域依次分别为
+\[W = \left\{ x ^ { 2 } \geq \chi _ { 1 -\alpha } ^ { 2 } ( n - 1 ) \right\}\]
+\[
+W=\left\{\chi^2\le\chi_{\alpha}^{2}\left(n-1\right)!\right\}
+\]
+\[
+W=\left\{\chi^2\le\chi_{\alpha/2}^{2}\left(n-1\right)\textrm{或}\chi^2\geq\chi_{1-\alpha/2}^{2}\left(n-1\right)\right\}
+\]
+$\chi^{2}$分布是偏态分布，三种拒绝域形式见图~\ref{fig7.2.3}
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.6\textwidth]{fig7-2-3.png}
+	\caption{$\chi^{2}$检验的拒绝域$(n-1=6,\alpha=0.05)$}\label{fig7.2.3}
+\end{figure}
+\begin{example}\label{exam7.2.4}
+	某类钢板每块的重量$X$服从正态分布，其一项质量指标是钢板重量的方差不得超过$0.016kg^{2}$.现从某天生产的钢板中随机抽取25块，得其样本方差$s^{2}=0.025kg^{2}$，问该天生产的钢板重量的方差是否满足要求.
+\end{example}
+\begin{solution}
+	这是一个关于正态总体方差的单侧检验问题.原假设为$H _ { 0 } : \sigma ^ { 2 } \leq 0.016$，备择假设为$H _ { 1 } : \sigma ^ { 2 } > 0.016$，此处$n=25$，若取$\alpha=0.05$，则查表知$\chi _ { 0.95 } ^ { 2 } ( 24 ) = 36.415$，现计算可得
+	\[\chi ^ { 2 } = \frac { ( n - 1 ) s ^ { 2 } } { \sigma _ { 0 } ^ { 2 } } = \frac { 24 \times 0.025 } { 0.016 } = 37.5 > 36.415\]
+	由此，在显著性水平0.05下，我们拒绝原假设，认为该天生产的钢板重量不符合要求.
+	
+	若取$\alpha=0.01$，则$\chi _ { 0.99 } ^ { 2 } ( 24 ) = 42.98$，则不能拒绝原假设.所以，显著性水平的大小对检验结果是有影响的.关于这方面的讨论我们在~\ref{sec:7.4}节进行.
+\end{solution}
+
+\textbf{二、两个正态总体方差比的$F$检验}
+
+设$x_{1},\dotsc,x_{m}$是来自$N(\mu_{ 1 },\sigma_{1}^{2})$的样本，$y_{1},\dotsc,y_{n}$是来自$N(\mu_{ 2 },\sigma_{2}^{2})$的样本，考虑如下三个假设检验问题
+\begin{equation}\label{eq7.2.26}
+H _ { 0 } : \sigma _ { 1 } ^ { 2 } \leq \sigma _ { 2 } ^ { 2 } \quad \text { vs } \quad H _ { 1 } : \sigma _ { 1 } ^ { 2 } > \sigma _ { 2 } ^ { 2 }
+\end{equation}
+\begin{equation}\label{eq7.2.27}
+H _ { 0 } : \sigma _ { 1 } ^ { 2 } \geq \sigma _ { 2 } ^ { 2 } \quad \text { vs } \quad H _ { 1 } : \sigma _ { 1 } ^ { 2 } < \sigma _ { 2 } ^ { 2 }
+\end{equation}
+\begin{equation}\label{eq7.2.28}
+H _ { 0 } : \sigma _ { 1 } ^ { 2 } = \sigma _ { 2 } ^ { 2 } \quad \text { vs } \quad H _ { 1 } : \sigma _ { 1 } ^ { 2 }\ne  \sigma _ { 2 } ^ { 2 }
+\end{equation}
+此处$\mu_{ 1 },\mu_{ 2 }$均未知，记$s_{x}^{2},s_{y}^{2}$分别是由$x_{1},\dotsc,x_{m}$算得的$\sigma_{ 1 }^{2}$的无偏估计和由$y_{1},\dotsc,y_{n}$算得的$\sigma_{ 2 }^{2}$的无偏估计(两个都是样本方差)，则可建立如下的检验统计量
+\begin{equation}\label{eq7.2.29}
+F = \frac { s _ { x } ^ { 2 } } { s _ { y } ^ { 2 } }
+\end{equation}
+当$\sigma_{ 1 }^{2}=\sigma_{ 2 }^{2}$时，(\ref{eq7.2.29})的$F\sim F(m-1,n-1)$，由此给出三个检验问题对应的拒绝域依次分别为
+\[W = \left\{ F \geq F _ { 1 - \alpha} ( m - 1 , n - 1 ) \right\}\]
+\[W = \left\{ F \leq F _ { 1 - \alpha } ( m - 1 , n - 1 ) \right\}\]
+\[W = \left\{ F \leq F _ { \alpha / 2 } ( m - 1 , n - 1 )\right\}\text{或}W = \left\{ F \geq F _ { \alpha / 2 } ( m - 1 , n - 1 )\right\}.\]
+\begin{example}\label{exam7.2.4}
+	甲、乙两台机床加工某种零件，零件的直径服从正态分布，总体方差反映了加工精度，为比较两台机床的加工精度有无差别，现从各自加工的零件中分别抽取7件产品和8件产品，测得其直径为
+	\begin{align*}
+	&X\textrm{机床甲\quad 16.2\quad 16.4\quad 15.8\quad 15.5\quad 16.7\quad 15.6\quad }15.8\\
+	&Y\textrm{机床乙\quad 15.9\quad 16.0\quad 16.4\quad 16.1\quad 16.5\quad 15.8\quad 15.7\quad }15.0
+	\end{align*}
+	这就形成了一个双侧假设检验问题，原假设是$H _ { 0 }:\sigma _ { 1 } ^ { 2 } = \sigma _ { 2 } ^ { 2 }$，备择假设为$H _ { 1 }:\sigma _ { 1 } ^ { 2 }\ne  \sigma _ { 2 } ^ { 2 }$.此处$m=7,n=8$，经计算，$s _ { x } ^ { 2 } = 0.2729 , s _ { y } ^ { 2 } = 0.2164$，于是$F = \frac { 0.2729 } { 0.2164 } =1.261$.若取$\alpha=0.05$，查表知$F _ { 0.975 } ( 6,7 ) = 5.12 , F _ { 0.025 } = \frac { 1 } { F _ { 0.025 } ( 7,6 ) } = \frac { 1 } { 5.70 } =0.175$.其拒绝域为
+	\[W = \{ F \leq 0.175\text{或}F \geq 5.12 \}\]
+	由此可见，样本未落人拒绝域，即在0.05水平下可以认为二台机床的加工精度一致.
+	
+	关于正态总体方差的假设检验汇总列于表~\ref{tab7.2.3}中.
+		\begin{table}[!ht]
+		\centering
+		\caption{正态总体方差的假设检验}\label{tab7.2.3}
+		\begin{tabularx}{\textwidth}{p{1.5cm}p{1.5cm}ccc}
+			\toprule
+			检验法&$H_{0}$&$H_{1}$&检验统计量&拒绝域\\
+			\midrule
+			$\chi ^ { 2 } $检验&\parbox{1.5cm}{$\sigma ^ { 2 } \leq \sigma _ { 0 } ^ { 2 }$\\$\sigma ^ { 2 } \geq \sigma _ { 0 } ^ { 2 }$\\$\sigma ^ { 2 }= \sigma _ { 0 } ^ { 2 }$}&\parbox{1.5cm}{$\sigma ^ { 2 } > \sigma _ { 0 } ^ { 2 }$\\$\sigma ^ { 2 } < \sigma _ { 0 } ^ { 2 }$\\$\sigma ^ { 2 }\ne \sigma _ { 0 } ^ { 2 }$}&$\chi ^ { 2 } = \frac { ( n - 1 ) s ^ { 2 } } { \sigma _ { 0 } ^ { 2 } }$&\parbox{3.5cm}{$\chi ^ { 2 } \geq \chi _ { 1-\alpha} ^ { 2 } ( n - 1 )$\\$\chi ^ { 2 } \leq \chi _ { \alpha } ^ { 2 } ( n - 1 )$\\$\chi ^ { 2 } \leq \chi _ { \alpha/2} ^ { 2 } ( n - 1 )$或\\$\chi ^ { 2 } \leq \chi _ { 1-\alpha } ^ { 2 } ( n - 1 )$}\\
+			$F$检验&\parbox{1.5cm}{$\sigma ^ { 2 } \leq \sigma _ { 0 } ^ { 2 }$\\$\sigma ^ { 2 } \geq \sigma _ { 0 } ^ { 2 }$\\$\sigma ^ { 2 }= \sigma _ { 0 } ^ { 2 }$}&\parbox{1.5cm}{$\sigma ^ { 2 } > \sigma _ { 0 } ^ { 2 }$\\$\sigma ^ { 2 } < \sigma _ { 0 } ^ { 2 }$\\$\sigma ^ { 2 }\ne \sigma _ { 0 } ^ { 2 }$}&$F = \frac { s _ { x } ^ { 2 } } { s _ { y } ^ { 2 } }$&\parbox{4.5cm}{$F\geq F_{1-\alpha}\left(m-1,n-1\right)$\\$F\leq F_{\alpha}\left(m-1,n-1\right)$\\$F\leq F_{\alpha/2}\left(m-1,n-1\right)\textrm{或}$\\$F\geq F_{1-\alpha/2}\left(m-1,n-1\right)$}\\
+			\bottomrule
+		\end{tabularx}
+	\end{table}
+	
+\end{example}
 \begin{xiti}
 	\item 有一批枪弹，出厂时，其初速 $v\sim N(950,100)$（单位：m/s）.经过较长时间储存，取9发进行测试，得样本值（单位：m/s）如下：
 	\[914 \quad 920 \quad 910 \quad 934 \quad 953 \quad 945 \quad 912 \quad 924 \quad 940\]
@@ -254,13 +577,13 @@ t = \frac { \sqrt { n } \left( \overline { x } - \mu _ { 0 } \right) } { s }
 	\end{enumerate}
 	\item 假定考生成绩服从正态分布，在某地一次数学统考中，随机抽取了36位考生的成绩，算得平均成绩为66.5分，标准差为15分，问在显著性水平0.05下，是否可以认为这次考试全体考生的平均成绩为70分？
 	
-	\item 一个小学校长在报纸上看到这样的报道：“这一城市的初中学生平均每周着8h电视.”她认为她所在学校的学生看电视的时间明显小于该数字为此她在该校随机调查了100个学生，得知平均每周看电视的时间$\overline{ x }$=6.5h，样本标准差为s=2h.问是否可以认为这位校长的看法是对的？取$\alpha$=0.05.
+	\item 一个小学校长在报纸上看到这样的报道：“这一城市的初中学生平均每周着8h电视.”她认为她所在学校的学生看电视的时间明显小于该数字为此她在该校随机调查了100个学生，得知平均每周看电视的时间$\overline{ x }=6.5h$，样本标准差为s=2h.问是否可以认为这位校长的看法是对的？取$\alpha$=0.05.
 	
-	\item 设在木材中抽出100根，测其小头直径，得到样本平均数为$\overline{x}$=11.2cm，样本标准差s=2.6cm，问该批木材小头的平均直径能否认为不低于12cm($\alpha=0.05$)？
+	\item 设在木材中抽出100根，测其小头直径，得到样本平均数为$\overline{x}=11.2cm$，样本标准差 $s=2.6cm$，问该批木材小头的平均直径能否认为不低于12cm($\alpha=0.05$)？
 	
 	\item 考察一鱼塘中鱼的含汞量，随机地取10条鱼测得各条鱼的含汞量（单位：mg）为：
 	\[0.8 \quad 1.6 \quad 0.9 \quad 0.8 \quad 1.2 \quad 0.4 \quad 0.7 \quad 1.0 \quad 1.2 \quad 1.1\]
-	设鱼的含汞量服从正态分布$N(\mu ,\sigma^{2}$，试检验假设$H _ { 0 } : \mu \leq 1.2 \quad \text { vs } \quad \mathrm { H } _ { 1 } ; \mu > 1.2$（取$\alpha=0.10$）.
+	设鱼的含汞量服从正态分布$N(\mu ,\sigma^{2})$，试检验假设$H _ { 0 } : \mu \leq 1.2 \quad \text { vs } \quad \mathrm { H } _ { 1 } ; \mu > 1.2$（取$\alpha=0.10$）.
 	
 	\item 如果一个矩形的宽度$w$与长度$l$的比$\frac { w } { l } = \frac { 1 } { 2 } ( \sqrt { 5 } - 1 ) \approx 0.618$，这样的矩形称为黄金矩形.下面列出某工艺品工厂随机取的20个矩形宽度与长度的比值.
 	\[0.693 \quad 0.749 \quad 0.654 \quad 0.670 \quad 0.662 \quad 0.672 \quad 0.615 \quad 0.606 \quad 0.690 \quad 0.628\]
@@ -326,9 +649,9 @@ t = \frac { \sqrt { n } \left( \overline { x } - \mu _ { 0 } \right) } { s }
 \end{xiti}
 
 
-\section{其他分布参数的假设检验}\label{sec:7.3}
-\subsection{指数分布参数的假设检验}\label{sec:7.3.1}
-指数分布是一类重要的分布，有广泛的应用.设$x_{1},\dotsc,x_{n}$，是来自指数分布$Exp(1/\theta)$的样本，$\theta$为其均值，现考虑关于$\theta$的如下检验问题：
+\section{其他分布参数的假设检验\label{sec:7.3}}
+\subsection{指数分布参数的假设检验\label{sec:7.3.1}}
+指数分布是一类重要的分布，有广泛的应用.设$x_{1},\dotsc,x_{n}$，是来自指数分布$\mathrm{ Exp}(1/\theta)$的样本，$\theta$为其均值，现考虑关于$\theta$的如下检验问题：
 \begin{equation}\label{eq7.3.1}
 H _ { 0 } : \theta \leq \theta _ { 0 } \quad \text { vs } \quad H _ { 1 } : \theta > \theta _ { 0 }
 \end{equation}
@@ -356,7 +679,7 @@ W = \left\{ \chi ^ { 2 } \leq \chi _ { a } ^ { 2 } ( 2 n ) \right\}
 \begin{equation}\label{eq7.3.7}
 W=\left\{\chi^2\leq\chi_{\alpha/2}^{2}\left(2n\right)\textrm{或}\chi^2\geq\chi_{\alpha/2}^{2}\left(2n\right)\right\}
 \end{equation}
-\begin{problem}\label{exam7.3.1}
+\begin{example}\label{exam7.3.1}
 	设我们要检验某种元件的平均寿命不小于6000h，假定元件寿命为指敬分布，现取5个元件投人试验，观测到如下5个失效时间（h）
 	\[395 \quad 4094 \quad 119 \quad 11572 \quad 6133\]
 	这是一个假设检验问题，检验的假设为
@@ -364,8 +687,8 @@ W=\left\{\chi^2\leq\chi_{\alpha/2}^{2}\left(2n\right)\textrm{或}\chi^2\geq\chi_
 	经计算，$\overline{ x }=4462.6$，故检验统计量为
 	\[\chi ^ { 2 } = \frac { 10 \overline { x } } { \theta _ { 0 } } = \frac { 10 \times 4462.6 } { 6000 } = 7.4377\]
 	若取$\alpha = 0.05$，则查表知$\chi _ { 0.05 } ^ { 2 } ( 10 ) = 3.94$，由于$\chi^{2}>\chi _ { 0.05 } ^ { 2 } ( 10 ) $，故接受原假设可以认为平均寿命不低于6000h.
-\end{problem}
-\subsection{比例 $p$ 检验}\label{sec:7.3.2}
+\end{example}
+\subsection{比例 $p$ 检验\label{sec:7.3.2}}
 比例$p$可看作某事件发生的概率，即可看作二点分布$b(1,p)$中的参数.作$n$次独立试验，以$x$记该事件发生的次数，则$x\sim b(n,p)$.我们可以根据$x$检验关于$p$的一些假设.先考虑如下单边假设检验问题.
 \begin{equation}\label{eq7.3.8}
 H _ { 0 } : p \leq p _ { 0 } \quad \text { vs } \quad H _ { 1 } : p > p _ { 0 }
@@ -405,7 +728,7 @@ H _ { 0 } : p = p _ { 0 } \quad \text { vs } \quad H _ { 1 } ; p \neq p _ { 0 },
 的最大整数，$c_{2}$为满足
 \[\sum _ { i = c _ { 2 } } ^ { n _ { 1 } } \left( \begin{array} { l } { n } \\ { i } \end{array} \right) p _ { 0 } ^ { i } \left( 1 - p _ { 0 } \right) ^ { n - i } \leq \frac { \alpha } { 2 }\]
 的最小整数.
-\begin{problem}\label{exam7.3.2}
+\begin{example}\label{exam7.3.2}
 	某厂生产的产品优质品率一直保持在40\%，近期对该厂生产的该类产品抽检20件，其中优质品7件，在$\alpha=0.05$下能否认为优质品率仍保持在40\%？
 	
 	这是一个假设检验问题，以$p$表示优质品率，$x$表示20件产品中的优质品件数，则$x\sim b（(20,p)$，待检验的原假设为
@@ -417,9 +740,9 @@ H _ { 0 } : p = p _ { 0 } \quad \text { vs } \quad H _ { 1 } ; p \neq p _ { 0 },
 	故取$c_{1}=3$，又因
 	\[P ( x \geq 11 ) = 0.0565 > 0.025 > P ( x \geq 12 ) = 0.0210\]
 	从而$c_{2}=12$，拒绝域为$W={x\leq 3\text{或}x\geq 12}$.附带指出，该拒绝域的显著水平实际上不是0.05，而是0.0160+0.021=0.0370，本例中，由于观测值没有落入拒绝域，故接受原假设.
-\end{problem}
+\end{example}
 
-\subsection{大样本检验}\label{sec:7.3.3}
+\subsection{大样本检验\label{sec:7.3.3}}
 前一小节我们介绍了对二点分布参数$p$的检验问题，我们看到临界值的确定比较繁琐，使用不太方便.如果样本量较大，我们可用近似的检验方法一—大样本检验.其一般思路如下：设$x_{1},\dotsc,x_{n}$，是来自某总体的样本，又设该总体均值为$\theta$，方差为$\theta$的函数，记为$\sigma^{2}(\theta)$，譬如，对二点分布$b(1,\theta)$，其方差$\theta(1-\theta)$是均值$\theta$的函数，则对下列三类假设检验问题：
 
 (1) $H _ { 0 } : \theta \leq \theta _ { 0 } \quad \text { vs } \quad H _ { 0 } : \theta > \theta _ { 0 }$;
@@ -434,9 +757,9 @@ u=\frac{\sqrt{n}\left(\overline{x}-\theta_0\right)}{\sqrt{\sigma^2\left(\theta_0
 \end{equation}
 近似地确定拒绝域.对应上述三类检验问题的拒绝域依次分别为
 \[\begin{array} { l } { W = \left\{ u \geq u _ { 1 - \alpha } \right\} } \\ { W = \left\{ u \leq u _ { a } \right\} } \\ { W = \left\{ | u | \geq u _ { 1 - a / 2 } \right\} } \end{array}\]
-\begin{problem}\label{exam7.3.3}
+\begin{example}\label{exam7.3.3}
 	某厂生产的产品不合格率为10\%，在一次例行检查中，随机抽取80件，发现有11件不合格品，在$\alpha=0.05$下能否认为不合格品率仍为10\%？
-\end{problem}
+\end{example}
 \begin{solution}
 	这是关于不合格品率$\theta$的检验，假设为
 	\[H _ { 0 } : \theta = 0.1 \quad \text { vs } \quad H _ { 1 } : \theta \neq 0.1\]
@@ -444,7 +767,7 @@ u=\frac{\sqrt{n}\left(\overline{x}-\theta_0\right)}{\sqrt{\sigma^2\left(\theta_0
 	\[u = \frac { \sqrt { 80 } \left( \frac { 11 } { 80 } - 0.1 \right) } { \sqrt { 0.1 \times 0.9 } } = 1.118\]
 	若取$\alpha = 0.05$，则$u _ { 0.975 } = 1.96$，故拒绝域为$W = \{ | u | \geq 1.96 \}$.如今$u = 1.118$未落入拒绝域，故不能拒绝原假设，可以认为不合格品率仍为10\%.
 \end{solution}
-\begin{problem}\label{exam7.3.4}
+\begin{example}\label{exam7.3.4}
 	某建筑公司宣称其磨下建筑工地平均每天发生事故数不超过0.6起，现记录了该公司磨下建筑工地200天的安全生产情况，事故数记录如下：
 	\begin{table}[!htp]
 		\centering
@@ -455,7 +778,7 @@ u=\frac{\sqrt{n}\left(\overline{x}-\theta_0\right)}{\sqrt{\sigma^2\left(\theta_0
 		\end{tabularx}
 	\end{table}
 试检验该建筑公司的宜称是否成立.（取$\alpha=0.05$.）
-\end{problem}
+\end{example}
 \begin{solution}
 	以$X$记该建筑公司麾下建筑工地一天发生的事故数，可认为$X\sim P（(A)$见习题~(7.4.4)，现要检验的假设是：
 	\[H _ { 0 } : \lambda \leq 0.6 \quad \text { vs } \quad H _ { 1 } : \lambda > 0.6\]
@@ -464,17 +787,102 @@ u=\frac{\sqrt{n}\left(\overline{x}-\theta_0\right)}{\sqrt{\sigma^2\left(\theta_0
 	
 	由（\ref{eq7.3.12}），检验统计量为
 	\[u = \frac { \sqrt { n } ( \overline { x } - \lambda ) } { \lambda } = \frac { \sqrt { 200 } ( 0.74 - 0.6 ) } { \sqrt { 0.6 } } = 2.556\]
+
 	若取$\alpha=0.05$，则$u_{0.95}=1.645$，拒绝域为$W=\{u\geq 1.645\}$.如今$u=
 	2.556$，已落入拒绝域，故拒绝原假设，认为该建筑公司的宣称明显不成立.
 	
 	大样本检验是近似的.近似的含义是指检验的实际显著性水平与原先设定的显著性水平有差距，这是由于诸如（\ref{eq7.3.12}）中$u$的分布与$N(0,1)$有距离.如果$n$很大，则这种差异就很小.实用中我们一般并不清楚对一定的$n$，$u$的分布与$N(0,1)$的差异有多大，因而也就不能确定检验的实际水平与设定水平究竟差多少.在区间估计中也有类似问题.因此，大样本方法是一个“不得已而为之”的方法.只要有基于精确分布的方法一般总是首先要加以考虑的.
 \end{solution}
-\subsection{检验的 $p$ 值}\label{sec:7.3.4}
+\subsection{检验的 $p$ 值\label{sec:7.3.4}}
 假设检验的结论通常是简单的.在给定的显著水平下，不是拒绝原假设就是保留原假设.然而有时也会出现这样的情况：在一个较大的显著水平（比如$\alpha=
 0.05$）下得到拒绝原假设的结论，而在一个较小的显著水平（比如$\alpha=
 0.01$）下却会得到相反的结论.这种情况在理论上很容易解释：因为显著水平变小后会导致检验的拒绝域变小，于是原来落在拒绝域中的观测值就可能落入接受域，但这种情况在应用中会带来一些麻烦.假如这时一个人主张选择显著水平$\alpha=
 0.05$，而另一个人主张选$\alpha=
 0.01$，则第一个人的结论是拒绝$H_{0}$，而后一个人的结论是接受H0，我们该如何处理这一问题呢？下面从一个例子谈起.
+\begin{example}\label{exam7.3.5}
+一支香烟中的尼古丁含量X服从正态分布$N(\mu ,1)$，质量标准规定$\mu $不能超过1.5mg.现从某厂生产的香烟中随机抽取20支测得其中平均每支香烟的尼古丁含量为$\overline{ x }$=1.97mg，试问该厂生产的香烟尼古丁含量是否符合质量标准的规定.
+这是一个单侧假设检验问题，
+\[\text{原假设}H_{0}:\mu\leq 1.5,\qquad \text{备择假设}H_{1}:\mu >1.5 \]
+由于总体的标准差已知，故采用 $\mu $检验，由数据，
+\[u = \frac { \overline{ x } - \mu _ { 0 } } { \sigma / \sqrt { n } } = \frac { 1.97 - 1.5 } { 1 / \sqrt { 20 } } = 2.10\]
+对一些的显著性水平，~\ref{table7.3.1}列出了相应的拒绝域和检验结论.
+\begin{table}[!htp]
+	\centering
+	\caption{例~\ref{exam7.3.5}的拒绝域}\label{table7.3.1}
+	\begin{tabularx}{\textwidth}{ZZZ}
+		\toprule
+		显著性水平&拒绝域&$\mu=2.10$对应的结论\\
+		\midrule
+		$\alpha=0.05$&$\mu \geq 1.645$&拒绝$H_{0}$\\
+		$\alpha=0.025$&$\mu \geq 1.96$&拒绝$H_{0}$\\
+		$\alpha=0.01$&$\mu \geq 2.33$&接受$H_{0}$\\
+		$\alpha=0.005$&$\mu \geq 2.58$&接受$H_{0}$\\
+		\bottomrule
+	\end{tabularx}
+\end{table}
+我们看到，不同的$\alpha$有不同的结论.
+
+现在换一个角度来看，在$\mu=1.5$时，$\mu $的分布是$N(0,1)$.此时可算得，$P ( u \geq 2.10 ) = 0.0179$，若以0.0179为基准来看上述检验问题，可得
+\begin{itemize}
+	\item 当$\alpha<0.0179$时，$u _ { 1 - a } > 2.10$.于是2.10就不在$\{ u > u _ { 1 - a } \}$中，此时应接受原假设；
+	\item 当$\alpha\geq 0.0179$时，$u _ { 1 - a } \leq  2.10$.于是2.10就落在$\{ u \geq u _ { 1 - a } \}$中，此时应拒绝$H_{0}$.
+\end{itemize}
+	由此可以看出，0.0179是能用观测值2.10做出“拒绝$H_{0}$”的最小的显著性水平，这就是$p$值，直观图形见图~\ref{fig7.3.1}.
+\end{example}
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.6\textwidth]{fig7-3-1.png}
+	\caption{观测值$\mu =2.10$对应的$p$值}\label{fig7.3.1}
+\end{figure}
+
+\begin{definition}{}{def:7.3.1}
+	在一个假设检验问题中，利用观测值能够做出拒绝原假设的最小显著性水平称为检验的$p$值.
+\end{definition}
+引进检验的$p$值的概念有明显的好处.第一，它比较客观，避免了事先确定显著水平；其次，由检验的$p$值与人们心目中的显著性水平$\alpha$进行比较可以很容易做出检验的结论；
+\begin{itemize}
+	\item 如果$\alpha\geq p$，则在显著性水平$\alpha$下拒绝$H_{0}$；
+	\item 如果$\alpha<p$，则在显著性水平$\alpha$下应保留$H_{0}$.
+\end{itemize}
+$p$值在应用中很有用，如今的统计软件中对检验问题一般都会给出检验的$p$值.
+\begin{example}\label{exam7.3.6}
+	设$x_{1},\dotsc,x_{n}$是来自$b(1,\theta)$的样本，要检验如下假设：
+	\[H _ { 0 } : \theta \leq \theta _ { 0 } \quad \text { vs } \quad H _ { 1 } ; \theta > \theta _ { 0 }\]
+	若取检验的显著性水平为$\alpha$，则我们可给出检验的拒绝域的形式为：$W=\left|\sum{x_i\geq c}\right|$这里我们很难对一般的$n$和$\alpha$定出$c$的表达式，我们只能说$c$是满足$P_{\theta_0}\left|\sum{x_i\geq c}\right|\leq\alpha $的最小正整数.这样的叙说总觉得不是很自然，事实上，我们并不需要定出$c$，在得到观测值$\sum x _ { i } = t _ { 0 }$后，我们只需要计算如下的概率即可
+	\[
+	p=P_{\theta_0}\left|\sum{x_i\geq c}\right|
+	\]
+	这就是检验的$p$值.譬如，$n=40,\theta_{ 0 }=0.1,t_{0}=8$，则
+	\[p = 1 - 0.9 ^ { 40 } - \left( \begin{array} { c } { 40 } \\ { 1 } \end{array} \right) 0.1 \times 0.9 ^ { 39 } - \cdots - \left( \begin{array} { c } { 40 } \\ { 7 } \end{array} \right) 0.1 ^ { 7 } \times 0.9 ^ { 33 } = 0.0419\]
+	于是，若取$\alpha=0.05$，由于$p<\alpha$，则应拒绝原假设.
+	\end{example}
+对双边假设检验，同样可以计算检验的$p$值，下面以一个例子加以说明.
+\begin{example}\label{exam7.3.7}
+	某工厂两位化验员甲、乙分别独立地用相同方法对某种聚合物的含氯量进行测定.甲测9次，样本方差为0.7292；乙测11次，样本方差为0.2114.假定测量数据服从正态分布，试对两总体方差作一致性检验.
+\end{example}
+\begin{solution}
+这是7.2.3节中关于二个正态总体的方差相等的检验，待检验的假设是
+\[H _ { 0 } : \sigma _ { \text{甲} } ^ { 2 } = \sigma _ { \text{乙} } ^ { 2 } , \quad \text { vs } \quad H _ { 1 } : \sigma _ { F } ^ { 2 } \neq \sigma _ { Z } ^ { 2 }\]
+检验统计量为$F = s _ { \text{甲}  } ^ { 2 } / s _ { \text{乙}  } ^ { 2 }$，在原假设成立下，$F \sim F ( 8,10 )$，拒绝域为
+\[
+W=\left\{F\geq F_{1-\alpha/2}\left(8,10\right)\textrm{或}F\leq F_{a/2}\left(8,10\right)\right\}
+\]
+如今我们不是把拒绝域具体化，而是由观测值算得$F=0.7292/0.2114=
+3.4494$，再去计算该检验的$p$值.
+
+在这种双侧检验情况下，如何由观测值$F=3.4494$算得$p$值呢？
+
+首先，我们用$F$分布算得
+\[P ( F \geq 3.4494 ) = 0.0354\]
+其次考虑到双侧检验的拒绝域W分散在两端，且两端尾部概率相等（见图
+7.3.2），据此可定出$p$值为
+\[p = 2 P ( F \geq 3.4494 ) = 0.0708\]
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.6\textwidth]{fig7-3-2.png}
+	\caption{观测值$F=3.4494$对应的$p$值由两端尾部概率之和确定}\label{fig7.3.2}
+\end{figure}
+此$p$值不算很小，若心目中的$\alpha=0.05$，则接受两方差相等的假设.
+\end{solution}
 \begin{xiti}
 	\item 从一批服从指数分布的产品中抽取10个进行寿命试验，观测值如下（单位：h）：
 	\[1643 \quad 1629 \quad 426 \quad 132 \quad 1522 \quad 432 \quad 1759 \quad 1074 \quad 528 \quad 283\]
@@ -491,18 +899,55 @@ u=\frac{\sqrt{n}\left(\overline{x}-\theta_0\right)}{\sqrt{\sigma^2\left(\theta_0
 			
 	\item 假定电话总机在单位时间内接到的呼叫次数服从泊松分布，现观测了40个单位时间，接到的呼叫次数如下：
 	\[0 \quad 2 \quad 3 \quad 2 \quad 3 \quad 2 \quad 1 \quad 0 \quad 2 \quad 2 \quad 1 \quad 2 \quad 2 \quad 1 \quad 3 \quad 1 \quad 1 \quad 4 \quad 1 \quad 1\]
-	\[5 \quad 1 \quad 2 \quad 3 \quad 3 \quad 1 \quad 3 \quad 1 \quad 3 \quad 4 \quad 0 \quad 6 \quad 1 \quad 1 \quad 1 \quad 4 \quad 0 \quad 1 \quad 3\]
+	\[5 \quad 1 \quad 2 \quad 2 \quad 3 \quad 3 \quad 1 \quad 3 \quad 1 \quad 3 \quad 4 \quad 0 \quad 6 \quad 1 \quad 1 \quad 1 \quad 4 \quad 0 \quad 1 \quad 3\]
 	在显著性水平0.05下能否认为单位时间内平均呼叫次数不低于2.5次？并给出检验的$p$值.
 				
 	\item 通常每平方米某种布上的疵点数服从泊松分布，现观测该种布100$m^{2}$，发现有126个疵点，在显著性水平为0.05下能否认为该种布每平方分米土平均疵点数不超过l个？并给出检验的$p$值.
 \end{xiti}
-\section{分布拟合检验}\label{sec:7.4}
+\section{分布拟合检验\label{sec:7.4}}
 在前面我们讨论的检验问题都是在总体分布形式已知的前提下对分布的参数建立假设并进行检验，它们都属于参数假设检验问题.下面我们对总体分布的形式建立假设并进行检验.这一类检验问题统称为分布的拟合检验，它们是一类非参数检验问题.
 
-\subsection{总体分布只取有限个值的情况}\label{sec:7.3.1}
+\subsection{总体分布只取有限个值的情况\label{sec:7.3.1}}
+设总体$X$可以分成$k$类，记为$A_{1},\dotsc,A_{k}$，现对该总体做了$n$次观测，$k$个类出现的频数分别为$n_{1},\dotsc,n_{k}$，且$\sum _ { i = 1 } ^ { k } n _ { i } = n$.如今要检验的假设为
+\begin{equation}\label{eq7.4.1}
+H _ { 0 } : P \left( A _ { i } \right) = p _ { i } , \quad i = 1,2 , \cdots , k
+\end{equation}
+其中诸$p_{1}\geq 0$，且且$\sum _ { i = 1 } ^ { k } p _ { i } = 1$.其备择假设是(\ref{eq7.4.1})中的诸等式不全成立，在实际中，此种备择假设可以省略不写.下面我们分两种情况讨论(\ref{eq7.4.1})的检验问题.
 
-\subsection{列联表的独立性检验}\label{sec:7.3.2}
-\subsection{正态性检验}\label{sec:7.3.3}
+\textbf{一、诸$p_{i}$均已知}
+
+如果$H_{0}$成立，则对每一类$A_{i}$，其频率$n_{i}/n$与概率$p_{i}$应较接近.或者说，观测频数$n_{i}$与理论频数$np_{i}$应相差不大.据此，英国统计学家K.Pearson提出如下检验统计量
+\begin{equation}\label{eq7.4.2}
+\chi ^ { 2 } = \sum _ { i = 1 } ^ { k } \frac { \left( n _ { i } - n p _ { i } \right) ^ { 2 } } { n p _ { i } }
+\end{equation}
+
+并证明在$H_{0}$成立时对充分大的$n$，（\ref{eq7.4.2}）给出的检验统计量$\chi^{2}$近似服从自由度为$k-1$的$\chi^{2}$分布.由于统计量$\chi^{2}$度量的是观测频数$n_{i}$与理论频数$np$；的偏离程度，$\chi^{2}$值大，表示偏离程度大，偏离程度越大越倾向于拒绝原假设$H_{0}$.因此，对给定的显著性水平$\alpha(0<\alpha<1)$，该检验的拒绝域应为
+\begin{equation}\label{eq7.4.3}
+W=\left\{\chi^2\geq\chi_{1-\alpha}^{2}\left(k-1\right)\right\}
+\end{equation}
+\begin{example}\label{exam7.4.1}
+	为募集社会福利基金，某地方政府发行福利彩票，中彩者用摇大转盘的方法确定最后中奖金额.大转盘均分为20份，其中金额为5万、10万、20万、30万、50万、100万的分别占2份、4份、6份、4份、2份、2份，假定大转盘是均匀的，则每一点朝下是等可能的，于是摇出各个奖项的概率如下：
+	
+	\begin{table}[!htp]
+		\centering
+		\begin{tabularx}{1.0\textwidth}{Z|ZZZZZZ}
+			额度&5万&10万&20万&30万&50万&100万\\
+			\midrule
+			概率&0.1&0.2&0.3&0.2&0.1&0.1
+		\end{tabularx}
+	\end{table}
+	现20人参加摇奖，摇得5万、10万、20万、30万、50万和100万的人数分别为2、6、6、3、3、0，由于没有一个人摇到100万，于是有人怀疑大转盘是不均匀的，那么该怀疑是否成立呢？这就需要对转盘的均匀性做检验.
+\end{example}
+\begin{solution}
+这是一个典型的分布拟合优度检验，总体共有6类，其发生概率分别为0.1、0.2、0.3、0.2、0.1和0.1.这里 $k=6$，检验拒绝域为$\left\{ x ^ { 2 } \geq x _ { 1 - a } ^ { 2 } ( 5 ) \right\}$，若取$\alpha=0.05$，则查附表3知$\chi _ { 0.95 } ^ { 2 } ( 5 ) = 11.07$.由本例数据，依（\ref{eq7.4.2}）可以算出
+\[x ^ { 2 } = \frac { ( 2 - 2 ) ^ { 2 } } { 2 } + \frac { ( 6 - 4 ) ^ { 2 } } { 4 } + \frac { ( 6 - 6 ) ^ { 2 } } { 6 } + \frac { ( 3 - 4 ) ^ { 2 } } { 4 } +\frac { ( 3 - 2 ) ^ { 2 } } { 2 } + \frac { ( 0 - 2 ) ^ { 2 } } { 2 } = 3.75\]
+由于$x ^ { 2 } = 3.75$未落入拒绝域，故接受原假设，没有理由认为转盘不均匀.
+在分布拟合检验中使用$p$值也是方便的.本例中，以$T$记服从$x ^ {5}$的随机变量，则使用统计软件可以算出
+\[p = P ( T \geq 3.75 ) = 0.5859\]
+这个$p$值就反映了数据与假设的分布拟合程度的高低，$p$值越大，拟合越好.
+\end{solution}
+\subsection{列联表的独立性检验\label{sec:7.3.2}}
+\subsection{正态性检验\label{sec:7.3.3}}
 
 \begin{xiti}
 	\item 有人对 $\pi =3.1415926\dotsc $的小数点后800位数字中数字 $0,1,2,\dotsc,9$ 出现的次数进行了统计，结果如下
@@ -515,5 +960,125 @@ u=\frac{\sqrt{n}\left(\overline{x}-\theta_0\right)}{\sqrt{\sigma^2\left(\theta_0
 	次数&74&92&83&79&80&73&77&75&76&91
 		\end{tabularx}
 	\end{table}
+
 试在显著性水平为0.05下检验每个数字出现概率相同的假设.
+
+\item 掷一颗骰子60次，结果如下：
+\begin{table}[!htp]
+	\centering
+	\begin{tabularx}{1.0\textwidth}{Z|ZZZZZZ}
+		点数&1&2&3&4&5&6\\
+		\midrule
+		次数&7&8&12&11&9&13
+	\end{tabularx}
+\end{table}
+
+试在显著性水平为0.05下检验这颗骰子是否均匀.
+\item 检查了一本书的100页，记录各页中的印刷错误的个数，其结果如下：
+\begin{table}[!htp]
+	\centering
+	\begin{tabularx}{0.5\textwidth}{c|ccccccc}
+		错误个数&0&1&2&3&4&5&$\geq 6$\\
+		\midrule
+		页数&35&40&19&3&2&1&0
+	\end{tabularx}
+\end{table}
+问能否认为一页的印刷错误个数服从泊松分布？(取$\alpha=0.05$)
+
+\item 某建筑工地每天发生事故数现场记录如下：
+\begin{table}[!htp]
+	\centering
+	\begin{tabularx}{0.75\textwidth}{c|cccccccc}
+		一天发生的事故数&0&1&2&3&4&5&$\geq 6$&合计\\
+		\midrule
+		天数&102&59&30&8&0&1&0&200
+	\end{tabularx}
+\end{table}
+试在显著性水平$\alpha=0.05$下检验这批数据是否服从泊松分布.
+
+\item 在一批灯泡中抽取300只作寿命试验，其结果如下：
+\begin{table}[!htp]
+	\centering
+	\begin{tabularx}{1.0\textwidth}{Z|ZZZZ}
+		寿命(h)&<100&100$\sim$200&200$\sim $300&$\geq $300\\
+		\midrule
+		灯泡数&121&78&43&58
+	\end{tabularx}
+\end{table}
+
+在显著性水平为0.05下能否认为灯泡寿命服从指数分布$Exp(0.005)$？
+
+\item 对1000位高中生做性别与色盲的调查，获得如下2位列联表
+\begin{table}[!htb]
+	\centering
+	\begin{tabular}{c|cc}\hline
+		\multirow{2}[0]{*}{性别} & \multicolumn{2}{c}{视觉} \\
+		& 正常    & 色盲 \\\hline
+		男     & 535   & 65 \\\hline
+		女     & 382   & 18 \\\hline
+	\end{tabular}
+\end{table}
+
+试在显著性水平$\alpha=0.05$下考察色育与性别之间是否独立.
+
+\item 为研究慢性气管炎与吸烟量的关系，调查了813人，各类人数统计数字如下：
+\begin{table}[!htb]
+	\centering
+	\begin{tabular}{l|llll}
+		\toprule
+		\multirow{2}{*}{健康情况} & \multicolumn{3}{l}{\hspace{2em}吸烟量} & \multirow{2}{*}{合计} \\
+		& 0      & $1\sim 5$    & >5   &                     \\
+		\midrule
+		患病                    & 126    & 245    & 49    & 420                 \\
+		健康                    & 152    & 209    & 32    & 393                 \\
+		合计                    & 278    & 454    & 81    & 813                \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+是否可以认为吸烟量对慢性气管炎没有影响？（取$\alpha=0.05$）
+
+\item 下表是1976年至1977年间在美国佛罗里达州29个地区发生判死刑的情况：
+	\begin{table}[!ht]
+	\centering
+	\begin{tabularx}{1.0\textwidth}{Z|ZZ}
+		\toprule
+		被害人肤色&判死刑&不判死刑\\
+		\midrule
+		白人&30&184\\
+		黑人&6&106\\
+		\bottomrule
+	\end{tabularx}
+\end{table}
+
+是否可以认为被害人肤色不同不会影响对被告的死刑判决？
+
+\item 某调查机构连续三年对某城市的居民进行热点调查：对下列四个问题，（1）收入、（2）物价、（3）住房、（4）交通，要求被调查者选择其中之一作为最关心的问题.调查结果如下：
+
+是否可以认为各年该城市居民对社会热点问题的看法保持不变？
+
+\item 某砖厂为考察其生产的砖的抗断强度是否服从正态分布，现从一批砖中随机抽取30件，测得其抗压强度如下：
+\[77 \quad 70 \quad 80 \quad 81 \quad 73 \quad 87 \quad 87 \quad 79 \quad 81 \quad 81 \quad78 \quad 84 \quad 76 \quad 93 \quad 79\]
+\[80 \quad 86 \quad 80 \quad 79 \quad 75 \quad 81 \quad 71 \quad 84 \quad 89 \quad 75 \quad 85 \quad 87 \quad 70 \quad 71 \quad 83\]
+试对这批数据用正态概率纸做正态性检验，然后再进行$W$检验。
+
+\item 下列数据是某工厂的冷却水中的含氯量(ppm)，
+\[
+0.9920\quad 1.0138\quad 1.0163\quad 1.0142\quad 1.0258\quad 1.0134\quad 1.0238\quad 0.9760
+\]
+\[
+0.9996\quad 0.9969\quad 0.9679\quad 1.0051\quad 0.9789\quad 1.0283\quad 0.9839\quad 1.0106
+\]
+\[
+1.0044\quad 0.9816\quad 0.9566\quad 0.9988\quad 0.9798\quad 1.0123\quad 1.0102\quad 1.0338
+\]
+\[
+1.0118\quad 0.9871\quad 1.0076\quad 0.9798\quad 0.9996\quad 0.9900\quad 1.0000\quad 0.9936
+\]
+\[
+1.0219\quad 0.9625\quad 1.0086\quad 1.0179\quad 1.0146\quad 1.0116\quad 1.0008\quad 1.0135
+\]
+\[
+1.0114\quad 0.9949\quad 0.9925\quad 0.9941\quad 0.9705\quad 0.9953\quad 1.0024\quad 1.0063
+\]
+试在显著性水平0.01下对这批数据做正态性检验.
 \end{xiti}
