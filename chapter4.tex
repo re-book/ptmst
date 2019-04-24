@@ -628,7 +628,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
 \begin{equation}\label{eq:4.2.3}
     \lim_{n \to +\infty} P \left( \left\lvert \frac{\mu_n}{n} - p \right\rvert \geq \varepsilon \right) = 0.
 \end{equation}
-这种收敛性就称作\textbf{依概率收敛}\index{依概率收敛}, 它的一般定义将在 \S 4.3 节中给出.
+这种收敛性就称作\textbf{依概率收敛}\index{收敛!依概率收敛}, 它的一般定义将在 \S 4.3 节中给出.
 下面的伯努利大数定律就是对上述讨论作了一个很好的总结.
 \begin{theorem}{伯努利大数定律}{4.2.1}
     设 $ \mu_n $ 为 $ n $ 重伯努利试验中事件 A 发生的次数, $ p $为每次试验中 A 出现的概率, 则对任意的 $ \varepsilon > 0 $, 有
@@ -989,7 +989,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
     \begin{equation}\label{eq:4.3.1}
         \lim_{n \to +\infty} P \bigl( \bigr\lvert Y_n - Y \bigr\rvert < \varepsilon \bigr) = 1,
     \end{equation}
-    则称 $ \{ Y_n \} $ \textbf{依概率收敛}\index{依概率收敛} 于 $ Y $, 记作 $ Y_n \stackrel{P}{\to} Y $.
+    则称 $ \{ Y_n \} $ \textbf{依概率收敛}\index{收敛!依概率收敛} 于 $ Y $, 记作 $ Y_n \stackrel{P}{\to} Y $.
 \end{definition}
 
 前面讨论的独立同分布随机变量序列 $ \{ X_n \} $ 服从大数定律是上述依概率收敛的特殊情况, 这只要构造另一个随机变量序列 $ \{ Y_n \} $, 其中
@@ -1099,4 +1099,68 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
             1, & x \geq 1/n.
         \end{cases}
     \end{equation*}
+    因为 $ F_n (x) $ 是在点 $ x=1 $ 处有跳跃, 所以当 $ n \to +\infty $ 时, 跳跃点位置趋于0, 于是我们很自然地认为 $ \{ F_n (x) \} $ 应该收敛于点 $ x=0 $处的退化分布, 即
+    \begin{equation*}
+        F (x) =
+        \begin{cases}
+            0, & x < 0,\\
+            1, & x \geq 0.
+        \end{cases}
+    \end{equation*}
+
+    但是, 对任意的 $ n $, 有 $ F_n (0) = 0 $, 而 $ F (0) = 1 $, 所以
+    \begin{equation*}
+        \lim_{n \to +\infty} F_n (0) = 0 \neq 1 = F (0).
+    \end{equation*}
 \end{example}
+
+从这个例子我们得到启示:
+\begin{enumerate}
+    \item 对分布函数序列 $ \{ F_n (x) \} $ 而言, 要求其点点收敛到一个极限分布函数 $ F_n (x) $ 是太苛刻了, 以上这么简单的一个例于都无法达到要求.
+    甚至在点点收效这个苛刻的要求下, $ \{ F_n (x) \} $ 的极限函数
+    \begin{equation*}
+        g (x) =
+        \begin{cases}
+            0, & x \leq 0,\\
+            1, & x > 0,
+        \end{cases}
+    \end{equation*}
+    不满足右连续性，即 $ g (x) $ 不是一个分布函数.
+    \item 如何把点点收效这要求减``弱''一些呢?
+    从这个例子又可以发现: 收敛关系不成立的点 $ x=0 $, 恰好是 $ F (x) $ 的间断点.
+    这就启示我们, 可以撤开这些间断点而只考虑 $ F (x) $ 的连续点.
+    这就是以下给出的关于分布函数列的弱收敛定义.
+\end{enumerate}
+
+\begin{definition}{}{4.3.2}
+    设随机变量 $ X, X_1,  X_2, \dotsc $  的分布函数分别为 $ F (x), F_1 (x), F_2 (x), \dotsc $.
+    若对 $ F (x) $ 的任一连续点 $x$, 都有
+    \begin{equation}\label{eq:4.3.2}
+        \lim_{n \to +\infty} F_n (x) = F (x),
+    \end{equation}
+    则称 $ \{ F_n (x) \} $ \textbf{弱收敛}\index{收敛!弱收敛}于 $ F (x) $, 记作
+    \begin{equation}\label{eq:4.3.3}
+        F_n (x) \stackrel{W}{\to} F (x).
+    \end{equation}
+    也称 $ \{ X_n \} $ \textbf{按分布收敛}\index{收敛!按分布收敛}于 $ X $, 记作
+    \begin{equation}\label{eq:4.3.4}
+        X_n \stackrel{L}{\to} X.
+    \end{equation}
+\end{definition}
+
+以上定义的``弱收敛''是自然的, 因为它比在每一点上都收敛的要求的确``弱''了些.
+若 $ F (x) $ 是直线上的连续函数, 则弱收敛就是点点收敛.
+
+注意, 在上述定义中, 对分布函数序列 $ \{ F_n (x) \} $ 称为弱收敛, 而对其随机变量序列 $ \{ X_n \} $ 则称为按分布收敛, 这是在两种不同场合给出的两个不同名称, 但其本质含义是一样的, 都要求在 $ F (x) $ 的连续点上有 \eqref{eq:4.3.2}.
+
+下面的定理说明依概率收敛是一种比按分布收敛更强的收敛性.
+
+\begin{theorem}{}{4.3.2}
+    \begin{equation*}
+        X_n \stackrel{P}{\to} X \Rightarrow X_n \stackrel{L}{\to} X.
+    \end{equation*}
+\end{theorem}
+
+\begin{proof}
+    设随机变量 $ X, X_1,  X_2, \dotsc $  的分布函数分别为 $ F (x), F_1 (x), F_2 (x), \dotsc $.
+\end{proof}
