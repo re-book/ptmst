@@ -1163,4 +1163,60 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
 
 \begin{proof}
     设随机变量 $ X, X_1,  X_2, \dotsc $  的分布函数分别为 $ F (x), F_1 (x), F_2 (x), \dotsc $.
+    为证 $ X_n \stackrel{L}{\to} X $, 相当于证 $ F_n (x) \stackrel{W}{\to} F (x) $, 所以只须证: 对所有的 $ x $, 有
+    \begin{equation}\label{eq:4.3.5}
+        F ( x - 0 ) \leq \varliminf_{n \to +\infty} F_n (x) \leq \varlimsup_{n \to +\infty} F_x (x) \leq F ( x + 0 ).
+    \end{equation}
+    因为若上式成立, 则当 $ x $ 是 $ F (x) $ 的连续点时, 有 $ F (x-0) =F (x+0) $, 由此即可得 $ F_n (x) \stackrel{W}{\to} F (x) $.
+    
+    为证 \eqref{eq:4.3.5}, 先令 $ x' < x $, 则
+    \begin{equation*}
+        \{ X \leq x' \} = \{ X_n \leq x, X \leq x' \} \cup \{ X_n > x, X \leq x' \} \subset \{ X_n \leq x \} \cup \{ \bigl\lvert X_n - X \bigr\rvert \geq x - x' \},
+    \end{equation*}
+    从而有
+    \begin{equation*}
+        F (x') \leq F_n (x) + P \bigl( \bigl\lvert X_n - X \bigr\rvert \geq x - x' \bigr).
+    \end{equation*}
+    由 $ x_n \stackrel{P}{\to} x $, 得 $ P ( \lvert X_n - X \rvert \geq x - x' ) \to 0 $, $ (n \to +\infty) $.
+    所以有
+    \begin{equation*}
+        F (x') \leq \varliminf_{n \to +\infty} F_n (x).
+    \end{equation*}
+    再令 $ x' \to x $, 即得
+    \begin{equation*}
+        F (x-0) \leq \varliminf_{n \to +\infty} F_n (x).
+    \end{equation*}
+    
+    同理可证，当 $ x'' > x $ 时, 有
+    \begin{equation*}
+        \varlimsup_{n \to +\infty} F_n (x) \leq F (x'').
+    \end{equation*}
+    令 $ x'' \to x $, 即得
+    \begin{equation*}
+        \varlimsup_{n \to +\infty} F_n (x) \leq F (x + 0).
+    \end{equation*}
+    这就证明了定理.
 \end{proof}
+
+注意, 以上定理的逆命题不成立, 即由按分布收敛无法推出依概率收敛, 见下例.
+
+\begin{example}\label{exam:4.3.2}
+    设 $ X $的分布列为
+    \begin{equation*}
+        P ( X = -1 ) = \frac{1}{2}, \quad P ( X = 1) = \frac{1}{2}.
+    \end{equation*}
+    令 $ X_n = -X $, 则 $ X_n $ 与 $ X $ 同分布, 即 $ X_n $ 与 $ X $ 有相同的分布函数, 故 $ X_n \stackrel{L}{\to} X $.
+
+    但对任意的 $ 0 < \varepsilon < 2 $, 有
+    \begin{equation*}
+        P \bigl( \bigl\lvert X_n - X \bigr\rvert \geq \varepsilon \bigr) = P ( 2 \lvert X \rvert \geq \varepsilon ) = 1 \nrightarrow 0.
+    \end{equation*}
+    即 $ X_n $ 不是依概率收敛于 $ X $.
+\end{example}
+
+以上例子说明: 一般按分布收敛与依概率收敛是不等价的.
+而下面的定理则说明: 当极限随机变量为常数 (服从退化分布) 时, 按分布收敛与依概率收敛是等价的.
+
+\begin{theorem}{}{4.3.3}
+    若 $ c $ 为常数, 则 $ X_n \stackrel{P}{\to} c $ 的充要条件是: $ X_n \stackrel{L}{\to} c $.
+\end{theorem}
