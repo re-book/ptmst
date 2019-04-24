@@ -1,3 +1,247 @@
-% Edit by:
-\chapter{参数估计}
-参数估计
+% Edit by 汤
+\chapter{参数估计\label{cha:6}} % p285
+
+这里所指的参数是指如下三类未知参数：
+\begin{itemize}
+\item 分布中所含有未知参数 $\theta$. 如: 二点分布 $b(1,p)$ 中的 $p$; 正态分布 $N(\mu,\sigma)$ 中的 $\mu$ 和 $\sigma^2$.
+\item 分布中所含的未知参数 $\theta$ 的函数. 如: 服从正态分布 $N(\mu,\sigma^2)$ 的变量 $X$ 不超过某给定值 $a$ 的概率 $P(X\leqslant a)=\Phi\big(\frac{a-\mu}{\sigma}\big)$ 是未知参数 $\mu,\sigma$ 的函数; 单位产品的缺陷数 $X$ 通常服从泊松分布 $P(\lambda)$, 则单位产品合格(无缺陷)的概率 $P(X=0)=\ee^{-\lambda}$ 是未知参数 $\lambda$ 的函数.
+\item 分布的各种特征数也都是未知参数, 如: 均值 $E(X)$, 方差 $\mathrm{Var}(X)$，分布中位数等.
+\end{itemize}
+
+一般场合，常用日表示参数, 参数 $\theta$ 所有可能取值组成的集合称为参数空间，常用 $\theta$ 表示. 参数估计问题就是根据样本对上述各种未知参数作出估计. 
+
+参数估计的形式有两种: 点估计与区间估计. 这里我们从点估计开始.
+
+设 $x_1,x_2,\cdots,x_n$ 是来自总体的一个样本, 我们用一个统计量 $\bar{\theta}=\bar{\theta}(x_1,\cdots,x_n)$ 的取值作为 $\theta$ 的估计值, $\bar{\theta}$ 称为 $\theta$ 的点估计(量), 简称估计. 在这里如何构造统计量并没有明确的规定, 只要它满足一定的合理性即可, 这就涉及两个问题:
+
+\begin{itemize}
+\item 其一是如何给出估计, 即估计的方法问题: 
+\item 其二是如何对不同的估计进行评价, 即估计的好坏判断标准. 
+\end{itemize}
+
+接下来我们先介绍一些估计的方法, 接着讨论估计的好坏标准, 然后对几个有用的专题给介绍，最后讲述区间估计. 
+
+\section{点估计的几种方法\label{section-6-1}} %
+
+人们可以运用各种方法构造出很多 $\theta$ 的估计, 本节介绍两种最常用的点估计方法,它们是: 矩法和最大似然法.
+
+\subsection{替换原理和矩法估计} %6.1.1录入完毕，待检查
+
+1900 年英国统计学家 K.Pearson 提出了一个替换原则, 后来人们称此方法为矩法. 
+
+\subsubsection{矩法估计}
+%一、矩法估计 P286
+
+替换原理常指如下两句话:
+\begin{itemize}
+\item 用样本矩去替换总体矩, 这里的矩可以是原点矩也可以是中心矩; 
+\item 用样本矩的函数去替换相应的总体矩的函数.
+\end{itemize}
+
+根据这个替换原理, 在总体分布形式未知场合也可对各种参数作出估计, 譬如: 
+\begin{itemize}
+\item 用样本均值 $\bar{x}$ 估计总体均值 $E(X)$，即 $\hat{E}(X)=\bar{x}$;
+\item 用样本方差 $s_n^2$ 品估计总体方差 $\mathrm{Var}(x)$, 即 $\mathrm{\hat{V}ar}(x)=s_n^2$;
+\item 用事件 $A$ 出现的频率估计事件 $A$ 发生的概率;
+\item 用样本的 $p$ 分位数估计总体的 $p$ 分位数, 特别, 用样本中位数估计总体中位数.
+\end{itemize}
+
+\begin{example}
+对某型号的 $20$ 辆汽车记录其每 $5L$ 汽油的行驶里程(公里), 观测数据如下: 
+
+\begin{tabular}{cccccccccc}
+29.8 & 27.6 & 28.3 & 27.9 & 30.1 & 28.7 & 29.9 & 28.0 & 27.9 & 28.7\\
+28.4 & 27.2 & 29.5 & 28.5 & 28.0 & 30.0 & 29.1 & 29.8 & 29.6 & 26.9		
+\end{tabular}
+
+这是一个容量为 $20$ 的样本观测值, 对应总体是该型号汽车每 $5L$ 汽油的行驶里程, 其分布形式尚不清楚, 可用矩法估计其均值、方差和中位数等. 本例中经计算有
+\[\bar{x}=28.695,\quad s_n^2=0.9185,\quad m_{0.5}=28.6,\]
+由此给出总体均值、方差和中位数的估计分别为 28.695, 0.9185 和 28.6.
+\end{example}
+
+矩法估计的统计思想(替换原理)十分简单明确, 众人都能接受, 使用场合甚广它的实质是用经验分布函数去替换总体分布, 其理论基础是格里纹科定理.
+
+\subsubsection{概率函数 $p(x;\theta)$ 已知时未知参数的矩法估计}
+
+设总体具有已知的概率函数 $p(x;\theta_1,\cdots,\theta_k)$, $(\theta_1,\cdots,\theta_k)\in \Theta$ 未知参数或参数向量,  $x_1,\cdots,x_n$ 是样本, 假定总体的 $k$ 阶原点矩 $\mu_k$ 存在, 则对所有的 $j$, 
+$0<j<k$, $A$ 内都存在, 若假设 $\theta_1,\cdots,\theta_k$. 能够表示成 $u_1,\cdots,u_k$ 的函数 $\theta_j=\theta_j(u_1,\cdots,u_k)$, 则可给出诸 $\theta_j$ 的矩法估计:
+\begin{equation}
+\hat{\theta}_j=\theta_j(a_1,\cdots,a_k),\quad j=1,\cdots,k,
+\end{equation}
+其中 $a_1,\cdots,a_k$. 是前个样本原点矩: $a_j=\frac{1}{n}\sum_{i=1}^{n}x_i^j$. 进一步, 如果我们要估计 $\theta_1,\cdots,\theta_k$
+的函数 $\eta=g(\theta_1,\cdots,\theta_k)$, 则可直接得到 $\eta$ 的矩法估计
+\begin{equation}
+\hat{\eta}=g(\hat{\theta}_1,\cdots,\hat{\theta}_k),
+\end{equation}
+当 $k=1$ 时, 我们通常可以由样本均值出发对未知参数进行估计; 如果 $k=2$, 我们可以由一阶、二阶原点矩(或二阶中心矩)出发估计未知参数.
+
+\begin{example}
+设总体为指数分布, 其密度函数为
+\[p(x;\lambda)=\lambda\cdot\ee^{-\lambda x},\quad x>0, \]
+$x_1,\cdots,x_n$ 是样本, 此处 $k=1$, 由于 $EX=1/\lambda$, 亦即 $\lambda=1/EX$, 故 $\lambda$ 的矩法估计为
+\[\hat{\lambda}=1/\bar{x}. \]
+另外, 由于 $\mathrm{Var}(X)=1/\lambda^2$, 其反函数为 $\lambda=1/\sqrt{\mathrm{Var}(X)}$, 因此, 从替换原理来看, $\lambda$ 的矩法估计也可取为
+\[\hat{\lambda}_1=1/s. \] 
+$s$为样本标准差. 这说明矩估计可能是不唯一的, 这是矩法估计的一个缺点, 此时通常应该尽量采用低阶矩给出未知参数的估计.
+\end{example}
+
+\begin{example}
+$x_1,\cdots,x_n$ 是来自 $(a,b)$ 上的均匀分布 $U(a,b)$ 的样本, $a$ 与 $b$ 均是未知参数, 这里 $k=2$, 由于
+\[EX=\frac{a+b}{2},\quad\mathrm{Var}(X)=\frac{(b-a)^2}{12}, \]
+不难推出
+\[a=EX-\sqrt{3\mathrm{Var}(X)},\quad b=EX+\sqrt{3\mathrm{Var}(X)}, \]
+由此即可得到 $a,b$ 的矩估计:
+\[\hat{a}=\bar{x}-\sqrt{3}s,\quad\hat{b}=\bar{x}+\sqrt{3}s, \]
+若从均匀总体 $U(a,b)$ 获得如下一个容量为 5 的样本: $4.5\quad5.0\quad4.7\quad4.0\quad4.2$, 经计算, 有 $\bar{x}=4.48,s_n=0.3962$, 于是可得 $a,b$ 的矩估计为
+\[\hat{a}=4.48-0.3962\sqrt{3}=3.7938,\]
+\[\hat{b}=4.48+0.3962\sqrt{3}=5.1662.\]
+\end{example}
+
+\subsection{最大似然估计}%6.1.2录入完毕，待检查
+
+最大似然估计法是求估计用得最多的方法, 它最早是由高斯在 1821 年提出, 但一般将之归功于费希尔(R.A.Fisher), 因为费希尔在 1922 年再次提出了这种想法并证明了它的一些性质而使得最大似然法得到了广泛的应用.
+
+为了叙述最大似然原理的直观想法, 先看两个例子.
+
+\begin{example}
+设有外形完全相同的两个箱子, 甲箱中有 99 个白球和 1 个黑球, 乙箱中有 99 个黑球和 1 个白球, 今随机地抽取一箱, 并从中随机抽取一球, 结果取得白球, 间这球是从哪一个箱子中取出？
+\end{example}
+\begin{solution}
+不管是哪一个箱子, 从箱子中任取一球都有两个可能的结果：$A$ 表示取出白球，$B$ 表示取出黑球. 如果我们取出的是甲箱, 则 $A$ 发生的概率为 0.99, 而如果取出的是乙箱, 则 $A$ 发生的概率为 0.01. 现在一次试验中结果 $A$ 发生了, 人们的第一印象就是: “此白球 $(A)$ 最像从甲箱取出的”, 或者说, 应该认为试验条件对结果 $A$ 出现有利，从而可以推断这球是从甲箱中取出的. 这个推断很符合人们的经验事实, 这里 “最像” 就是 “最大似然” 之意.
+
+本例中假设的数据很极端. 一般地, 我们可以这样设想: 有两个箱子中各有 100 只球，甲箱中白球的比例是 $p_1$, 乙箱中白球的比例是 $p_2$, 已知 $p_1>p_2$, 现随即地抽取一个箱子并从中抽取一球, 假定取到的是白球, 如果我们要在两个箱子中进行选择, 由子甲箱中白球的比例高于乙箱, 根据最大似然原理, 我们应该推断该球来自甲箱.
+\end{solution}
+
+\begin{example}\label{exam:6.1.5}
+设产品分为合格品与不合格品两类, 我们用一个随即变量 $X$ 来表示某个产品是否合格, $X=0$ 表示合格品, $X=1$ 表示不合格品, 则 $X$ 服从二点分布 $b(1,p)$, 其中 $p$ 是未知的不合格品率. 现抽取 $n$ 个产品看其是否合格, 得到样本 $x_1,\cdots,x_n$, 这批观测值发生的概率为:
+\begin{equation}\label{eq:6.1.3}
+P(X_1=x_1,\cdots,X_n=x_n;p)=\prod_{i=1}^np^{x_i}(1-p)^{1-x_i}=p^{\sum x_i}(1-p)^{n-\sum x_i}, %6.1.3
+\end{equation}
+由子 $p$ 是未知的, 根据最大似然原理, 我们应选择 $p$ 使得 \eqref{eq:6.1.3} 表示的概率尽可能大. 将\eqref{eq:6.1.3}看作未知参数 $p$ 的函数，用 $L(p)$ 表示, 称作\textbf{似然函数}\index{G!似然函数}, 亦即
+\begin{equation}\label{eq:6.1.4}
+L(p)=p^{\sum x_i}(1-p)^{n-\sum x_i},
+\end{equation}
+要求 \eqref{eq:6.1.4} 的最大值点不是难事, 将 \eqref{eq:6.1.4} 两端取对数并关子 $p$ 求导令其为 $\Theta$, 即得如下方程:
+\begin{equation}\label{eq:6.1.5}
+\frac{\partial \ln L(p)}{\partial p}=\frac{\sum x_i}{p}-\frac{n-\sum x_i}{1-p}=0
+\end{equation}
+解之即得 $p$ 的最大\textbf{似然估计}\index{G!似然估计}, 为
+\[\hat{p}=\hat{p}(x_1,\cdots,x_n)=\sum x_i/n=\bar{x}. \]
+由例\ref{eq:6.1.5} 我们可以看到求最大似然估计的基本思路, 对离散型总体, 设有样本观测值 $x_1,\cdots,x_n$, 我们写出该观测值出现的概率, 它一般依赖子某个或某些参数, 用 $\theta$ 表示，将该概率看成 $\theta$ 的函数, 用 $L(\theta)$ 表示, 即
+\[L(\theta)=L(X_1=x_1,\cdots,X_n=x_n;\theta), \]
+求最大似然估计就是找 $\theta$ 的估计值 $\hat{\theta}=\hat{\theta}(x_1,\cdots,x_n)$ 使得上式的 $L(\theta)$ 达到最大.
+\end{example}
+
+对连续型总体, 样本观测值 $x_1,\cdots,x_n$ 出现的概率总是为 0 的, 但我们可用联合概率密度函数来表示随机变量在观测值附近出现的可能性大小, 也将之称为似然函数, 由此, 我们给出如下正规的定义.
+
+\begin{definition}{}{}%6.1.1
+设总体的概率函数为 $p(x;\theta)$, $\theta\in\Theta$, 日，其中 $\theta$ 是一个未知参数或几个未知参数组成的参数向量, 是参数 $\theta$ 可能取值的参数空间, $x_1,\cdots,x_n$ 是来自该总体的样本, 将样本的联合概率函数看成8的函数，用 $L(\theta;x_1,\cdots,x_n)$ 表示, 简记为 $L(\theta)$,
+\begin{equation}\label{eq:6.1.6}
+L(\theta)=L(\theta;x_1,\cdots,x_n)=p(x_1;\theta)\cdot p(x_2;\theta)\cdot \cdots \cdot p(x_n;\theta),
+\end{equation}
+$L(\theta)$ 称为样本的似然函数. 如果某统计量 $\hat{\theta}=\hat{\theta}(x_1,\cdots,x_n)$ 满足
+\begin{equation}\label{eq:6.1.7}
+L(\hat{\theta})=\max_{\theta\in\Theta}L(\theta),
+\end{equation}
+则称 $\hat{\theta}$ 是 $\theta$ 的\textbf{最大似然估计}\index{G!最大似然估计}, 简记为 MLE(Maximum Likelihood Estimate).
+\end{definition}
+
+由于 $\ln x$ 是 $x$ 的单调增函数, 因此, 使对数似然函数 $\ln L(\theta)$ 达到最大与使 $L(\theta)$ 达到最大是等价的. 人们通常更习惯于由 $\ln L(\theta)$ 出发寻找日的最大似然估计. 当 $L(\theta)$ 是可微函数时, 求导是求最大似然估计最常用的方法，此时对对数似然函数求导更加简单些.
+
+\begin{example}
+设一个试验有三种可能结果，其发生概率分别为
+\begin{equation}\label{eq:6.1.8}
+p_1=\theta^2,\quad p_2=2\theta(1-\theta),\quad p_3=(1-\theta)^2.
+\end{equation}
+现做了 $n$ 次试验，观测到三种结果发生的次数分别为 $n_1,n_2,n_3(n_1+n_2+n_3=n)$. 则似然函数为
+\begin{align*}
+L(\theta) 
+&=\big(\theta^{2}\big)^{n_1}[2 \theta(1-\theta)]^{n_{2}}\left[(1-\theta)^{2}\right]^{n_{3}} \\ &=2^{n_{2}} \theta^{2 n_{1}+n_{2}}(1-\theta)^{2 n_{3}+n_{2}}
+\end{align*}
+其对数似然函数为
+\[\ln L(\theta)=\left(2 n_{1}+n_{2}\right)\ln\theta+\left(2 n_{3}+n_{2}\right)\ln (1-\theta)+n_{2}\ln 2,\]
+将之关于 $\theta$ 求导并令其为 0 得到似然方程
+\[\frac{2 n_{1}+n_{2}}{\theta}-\frac{2 n_{3}+n_{2}}{1-\theta}=0,\]
+解之，得
+\[\hat{\theta}=\frac{2 n_{1}+n_{2}}{2\left(n_{1}+n_{2}+n_{3}\right)}=\frac{2 n_{1}+n_{2}}{2 n},\]
+由于
+\[\frac{\partial^{2} \ln L(\theta)}{\partial \theta^{2}}=-\frac{2 n_{1}+n_{2}}{\theta^{2}}-\frac{2 n_{3}+n_{2}}{(1-\theta)^{2}}<0,\]
+所以 $\hat{\theta}$ 是极大值点.
+\end{example}
+
+\begin{example}\label{exam:6.1.7}
+对正态总体 $N(u,\delta^2)$, $\theta=(u,\delta^2)$ 是二维参数, 设有样本 $x_1,\cdots,x_n$, 则似然函数及其对数分别为
+\begin{align*}
+L\left(\mu,\sigma^{2}\right) 
+&=\prod_{i=1}^{n}\left\{\frac{1}{\sqrt{2\pi}\sigma}\exp \left\{-\frac{\left(x_{i}-\mu\right)^{2}}{2 \sigma^{2}}\right\}\right\}\\ 
+&=\left(2\pi\sigma^{2}\right)^{-n/2}\exp\left\{-\frac{1}{2 \sigma^{2}}\sum_{i=1}^{n}\left(x_{i}-\mu\right)^{2}\right\}
+\end{align*}
+\[\ln L\left(\mu,\sigma^{2}\right)=-\frac{1}{2\sigma^{2}} \sum_{i=1}^{n}\left(x_{i}-\mu\right)^{2}-\frac{n}{2} \ln \sigma^{2}-\frac{n}{2}\ln(2\pi)\]
+将 $\ln L(\mu,\delta^2)$ 分别关于两个分量求偏导并令其为 0 即得到似然方程组
+将 $\ln L(u,\delta^2)$ 分别关于两个分量求偏导并令其为 0 即得到似然方程组
+\begin{equation}\label{eq:6.1.9}
+\frac{\partial\ln L\left(\mu, \sigma^{2}\right)}{\partial \mu}=\frac{1}{\sigma^{2}} \sum_{i=1}^{n}\left(x_{i}-\mu\right)=0
+\end{equation}
+\begin{equation}\label{eq:6.1.10}
+\frac{\partial \ln L\left(\mu, \sigma^{2}\right)}{\partial \sigma^{2}}=\frac{1}{2 \sigma^{4}} \sum_{i=1}^{n}\left(x_{i}-\mu\right)^{2}-\frac{n}{2\sigma^{2}}=0
+\end{equation}
+解此方程组, 由 \eqref{eq:6.1.9} 可得 $\mu$ 的最大似然估计为
+\[\hat{\mu}=\frac{1}{n} \sum_{z=1}^{n} x_{i}=\overline{x},\]
+将之代入 \eqref{eq:6.1.10} 给出 $\delta^2$ 的最大似然估计
+\[\vec{\sigma}^{2}=\frac{1}{n} \sum_{i=1}^{n}\left(x_{i}-\overline{x}\right)^{2}=s^{* 2},\]
+利用二阶导函数矩阵的非正定性可以说明上述估计使得似然函数取极大值.
+
+虽然求导函数是求最大似然估计最常用的方法, 但并不是在所有场合求导都是有效的, 下面的例子说明了这个问题.
+\end{example}
+
+\begin{example}%6.1.8
+设 $x_1,\cdots,x_n$ 是来自均匀总体 $U(0,\theta)$ 的样本, 试求 $\theta$ 的最大似然估计.
+\end{example}
+\begin{solution}
+似然函数
+\[L(\theta)=\frac{1}{\theta^n}\prod_{i=1}^nI_{\{0<X_i\leqslant\theta\}}=\frac{1}{\theta^n}I_{\{X_{(n)}\leqslant\theta\}} \]
+要使 $L(\theta)$ 达到最大, 首先一点是示性函数取值应该为 1, 其次是 $1/\theta^n$ 尽可能大. 由于 $1/\theta^n$ 是 $\theta$ 的单调减函数, 所以 $\theta$ 的取值应尽可能小, 但示性函数为 1 决定了 $\theta$ 不能小于x（a）, 由此给出 $\theta$ 的最大似然估计: $\hat{\theta}=x_{(n)}$.
+
+最大似然估计有一个简单面有用的性质: 如果是 $\theta$ 的最大似然估计, 则对任一函数 $g(\theta)$, 其最大似然估计为 $g(\hat{\theta})$. 该性质称为最大似然估计的不变性, 从而使一些复杂结构的参数的最大似然估计的获得变得容易了.
+\end{solution}
+
+\begin{example}
+设 $x_1,\cdots,x_n$ 是来自正态总体 $N(\mu,\delta^2)$ 的样本, 在例\ref{exam:6.1.7}中已求得 $\mu$ 和 $\delta^2$ 的最大似然估计为
+\[\hat{\mu}=\overline{x},\quad\hat{\sigma}^{2}=s^{*2}\]
+于是由最大似然估计的不变性可得如下参数的最大似然估计, 它们是
+\begin{itemize}
+\item 标准差 $\delta$ 的MLE是 $\delta=\sigma^*$;
+\item 概率 $P(X<3)=\Phi\big(\frac{3-u}{\delta}\big)$ 的 MLE 是 $\Phi\big(\frac{3-\bar{x}}{s^*}\big)$;
+\item 总体 0.90 分位数 $x_{0.90}=\mu+\sigma\cdot\mu_{0.90}$ 的 MLE 是 $\bar{x}+s^{*}\cdot u_{0.90}$, 其中 $u_{0.90}$ 为标准正态分布的 0.90 分位数.
+\end{itemize}
+\end{example}
+
+\subsection{习题\label{ssec:6.1}}
+
+\section{点估计的评价标准}
+\subsection{相关性}
+\subsection{无偏性}
+\subsection{有效性}
+\subsection{均方误差}
+\subsection{习题}
+
+\section{最小方差无偏估计}
+\subsection{Rao-Blackwell定理}
+\subsection{最小方差无偏估计}
+\subsection{Cramer-Rao不等式}
+\subsection{习题}
+
+\section{贝叶斯统计}
+\subsection{统计推断的基础}
+\subsection{贝叶斯公式的密度函数形式}
+\subsection{贝叶斯估计}
+\subsection{共轭先验分部}
+\subsection{习题}
+
+\section{区间估计}
+\subsection{区间估计的概念}
+\subsection{枢轴量法}
+\subsection{单个正态总体参数的置信区间}
+\subsection{大样本置信区间}
+\subsection{两个正态总体下的置信区间}
+\subsection{习题}
