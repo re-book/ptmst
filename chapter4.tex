@@ -577,7 +577,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
     \item 设 $ X_1, X_2, \dotsc, X_n $ 独立同分布, 且都服从 $ N (\mu, \sigma^2) $ 分布, 试求 $ \bar{X} = \frac{1}{n} \sum_{i=1}^n X_i $ 的分布.
 \end{xiti}
 
-\section{大数定律}
+\section{大数定律}\label{sec:4.2}
 
 ``概率是频率的稳定值'', 其中``稳定''一词是什么含义?
 在第一章我们从直观上描述稳定性: 频率在其概率附近摆动.
@@ -893,7 +893,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
         \bottomrule
     \end{tabularx}
     
-    正如例~\ref{exam:4.2.1} 中所说明的, 可以通过线性变换将 $ [a, b] $ 区间上的定积分化成 $ [O, 1] $ 区间上的定积分, 所以以上方法计算定积分方法带有普遍意义。
+    正如例~\ref{exam:4.2.1} 中所说明的, 可以通过线性变换将 $ [a, b] $ 区间上的定积分化成 $ [0, 1] $ 区间上的定积分, 所以以上方法计算定积分方法带有普遍意义。
 \end{example}
 
 \begin{xiti}
@@ -1278,4 +1278,59 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
         g_\lambda (t) = \varphi_\lambda \left( \frac{t}{\sqrt{\lambda}} \right) \exp \left( -i \sqrt{\lambda} t \right) = \exp \left( \lambda \left( \ee^{i t / \sqrt{\lambda}} - 1 \right) - i \sqrt{\lambda} t \right).
     \end{equation*}
     对任意的 $ t $, 有
+    \begin{equation*}
+        \exp \left( i \frac{t}{\sqrt{\lambda}} \right) = 1 + \frac{it}{\sqrt{\lambda}} - \frac{t^2}{2!\lambda} + o \left( \frac{1}{\lambda} \right),
+    \end{equation*}
+    于是
+    \begin{equation*}
+        \lambda \left( \ee^{it / \sqrt{\lambda}} - 1 \right) - i \sqrt{\lambda} t = - \frac{t^2}{2} + \lambda \cdot o \left( \frac{1}{\lambda} \right) \to - \frac{t^2}{2}, \ n \to +\infty.
+    \end{equation*}
+    从而有
+    \begin{equation*}
+        \lim_{\lambda \to +\infty} g_\lambda (t) = \ee^{-t^2 / 2},
+    \end{equation*}
+    而 $ \ee^{-t^2 / 2} $ 正是标准正态分布 $ N (0, 1) $ 的特征函数, 由定理~\ref{thm:4.3.4} 即知结论成立.
 \end{proof}
+
+最后, 我们利用以上的一些结论来证明 \ref{sec:4.2} 节中的辛钦大数定律.
+
+\textbf{辛软大数定律的证明}:
+设 $ \{ X_n \} $ 独立同分布, 且 $ E (X_n) = a, i=1, 2, \dotsc $.
+现在要证明
+\begin{equation*}
+    \frac{1}{n} \sum_{k=1}^n X_k \stackrel{P}{\to} a, \ n \to +\infty.
+\end{equation*}
+为此记
+\begin{equation*}
+    Y_n = \frac{1}{n} \sum_{k=1}^n X_k.
+\end{equation*}
+由定理~\ref{thm:4.3.3} 知, 只须证 $ Y_n \stackrel{L}{\to} a $.
+又由定理~\ref{thm:4.3.4} 知, 只须证 $ \varphi_Y (t) \to \ee^{-iat} $.
+
+因为 $ \{ X_n \} $ 同分布, 所以它们有相同的特征函数, 记这个特征函数为 $ \varphi (t) $.
+又因为 $ \varphi(0) / i = E ( X_i ) = a $, 从而 $ \varphi (t) $ 在0点展开式为
+\begin{equation*}
+    \varphi (t) = \varphi (0) + \varphi' (0) t + o (t) = 1 + iat + o (t).
+\end{equation*}
+再由 $ \{ X_n \} $ 的独立性知 $ Y_n $ 的特征函数为
+\begin{equation*}
+    \varphi_{Y_n} (t) = \bigl( \varphi ( t / n) \bigr)^n = \bigl( 1 + iat/n + o (1/n) \bigr)^n.
+\end{equation*}
+对任意的 $ t $ 有
+\begin{equation*}
+    \lim_{n \to +\infty} \bigl( \varphi ( t / n) \bigr)^n = \lim_{n \to +\infty} \bigl( 1 + iat/n + o (1/n) \bigr)^n = \ee^{iat}.
+\end{equation*}
+而 $ \ee^{iat} $ 正是退化分布的特征函数, 由此证得了 $ Y_n \stackrel{L}{\to} a $.
+至此定理得证.
+
+\begin{xiti}
+    \item 如果 $ X_n \stackrel{P}{\to} X $, 且 $ X_n \stackrel{P}{\to} Y $. 试证: $ P ( X = Y ) = 1 $.
+    \item 如果 $ X_n \stackrel{P}{\to} X $, $ Y_n \stackrel{P}{\to} Y $. 试证:
+    \begin{enumerate}
+        \item $ X_n + Y_n \stackrel{P}{\to} X + Y $;
+        \item $ X_n \times Y_n \stackrel{P}{\to} X \times Y $.
+    \end{enumerate}
+\end{xiti}
+
+% （1）X。+Y，x+Y:（2）x，xY.xxy.
+% ·224·
