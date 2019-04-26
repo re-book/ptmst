@@ -490,9 +490,9 @@ S_e &= S_{T} - S_A = 37876.04 - 9660.08 = 28215.96, && f_{e} = 3(8-1)=21.
   \begin{equation}
     \label{eq:8.1.28}
     \begin{split}
-      S_{T} & =\sum_{i=1}^{r} \sum_{j=1}^{m_{i}}\left(y_{i j}-\overline{y}\right)^{2}=\sum_{i=1}^{r} \sum_{j=1}^{\infty_{i}} y_{i j}^{2}-\frac{T^{2}}{n}, \quad f_{T}=n-1 \\
-      S_{A} & =\sum_{i=1}^{r} m_{i}\left(\overline{y}_{i} .-\overline{y}\right)^{2}=\sum_{i=1}^{r} \frac{T_{i}^{2}}{m_{i}}-\frac{T^{2}}{n}, \quad f_{A}=r-1 \\
-      S_{e} & =\sum_{i=1}^{r} \sum_{i=1}^{m_{3}}\left(y_{i j}-\overline{y}_{i}\right)^{2}=S_{T}-S_{A},\quad f_e = n - r
+      S_{T} & =\sum_{i=1}^{r} \sum_{j=1}^{m_{i}}\left(y_{i j}-\bar{y}\right)^{2}=\sum_{i=1}^{r} \sum_{j=1}^{\infty_{i}} y_{i j}^{2}-\frac{T^{2}}{n}, \quad f_{T}=n-1 \\
+      S_{A} & =\sum_{i=1}^{r} m_{i}\left(\bar{y}_{i} .-\bar{y}\right)^{2}=\sum_{i=1}^{r} \frac{T_{i}^{2}}{m_{i}}-\frac{T^{2}}{n}, \quad f_{A}=r-1 \\
+      S_{e} & =\sum_{i=1}^{r} \sum_{i=1}^{m_{3}}\left(y_{i j}-\bar{y}_{i}\right)^{2}=S_{T}-S_{A},\quad f_e = n - r
     \end{split}
   \end{equation}
   方差分析表以及参数估计是一样的.
@@ -549,7 +549,7 @@ S_e &= S_{T} - S_A = 37876.04 - 9660.08 = 28215.96, && f_{e} = 3(8-1)=21.
   由于因子显著，我们还可以给出诸水平均值的估计.因子 $A$ 的四个水平均值的估计分别为 
   \begin{gather*}
     \hat{\mu}_{1}=30 / 2=15, \quad \hat{\mu}_{2}=39 / 3=13 \\
-    \hat{\mu}_{3}=57 / 3=19, \quad \overline{\mu}_{4}=54 / 2=27
+    \hat{\mu}_{3}=57 / 3=19, \quad \bar{\mu}_{4}=54 / 2=27
   \end{gather*} 
   由此可见，第四种包装方式效果最好.误差方差的无偏估计为
   \begin{equation*}
@@ -661,15 +661,45 @@ S_e &= S_{T} - S_A = 37876.04 - 9660.08 = 28215.96, && f_{e} = 3(8-1)=21.
 
 \section{多重比较}\label{sec:8.2}
 \subsection{效应差的置信区间} \label{ssec:8.2.1}
-如果方差分析的结果因子 $A$ 显著，则等于说有充分理由认为因子 $A$ 各水平的效应不全相同，但这并不是说它们中一定没有相同的. 就指定的一对水平 $A_i$ 与 $A_j$，我们可通过求 $\mu_i - \mu_j$ 的区间估计来进行比较，方法如下：由\eqref{eq:8.1.27} 可以推出
+如果方差分析的结果因子 $A$ 显著，则等于说有充分理由认为因子 $A$ 各水平的效应不全相同，但这并不是说它们中一定没有相同的. 就指定的一对水平 $A_i$ 与 $A_j$，我们可通过求 $\mu_i - \mu_j$ 的区间估计来进行比较，方法如下：由~\eqref{eq:8.1.27} 可以推出
 \begin{equation*}
   \bar{y}_{i.} - \bar{y}_{j.} \sim N \left(\mu_{i}-\mu_{j},\left(\frac{1}{m_{i}}+\frac{1}{m_{j}}\right) \sigma^{2}\right)
 \end{equation*}
 而定理~\ref{thm:8.1.2} 指出 $S_e/\sigma^2 \sim \chi^2(f_e)$, 且两者独立，故
 
+\begin{equation*}
+  \frac{(\bar{y}_{i.} - \bar{y}_{j.}) - (\mu_i - \mu_j) }{\sqrt{\big(\frac{1}{m_i} + \frac{1}{m_i}\big) \frac{S_e}{f_e}}}
+\end{equation*}
+由此给出 $\mu_i -\mu_j$ 的置信水平为 $1-\alpha$ 的置信区间为
 
+\begin{equation}\label{eq:8.2.1}
+  \left[\bar{y}_{i.}-\bar{y}_{j.}-\sqrt{\left(\frac{1}{m_{i}}+\frac{1}{m_{j}}\right)} \hat{\sigma} \cdot t_{1-\frac{\alpha}{2}}\left(f_{e}\right),\,\bar{y}_{i},-\bar{y}_{j}+\sqrt{\left(\frac{1}{m_{i}}+\frac{1}{m_{j}}\right)} \hat{\sigma} \cdot t_{1-\frac{\alpha}{2}}\left(f_{e}\right)\right]
+\end{equation}
+其中 $\hat{\sigma}^2$ 是 $\sigma^2$ 的无偏估计.
 
+\begin{example}\label{exam:8.2.1}
+在例~\ref{exam:8.1.2} 中，我们已知饲料因子是显著的，此处 $m_1=m_2=
+m_3 = 8$，$f_e = 21$，$\hat{\sigma}=\sqrt{1343.62} = 36.66$，若取 $\alpha=0.05$，则 $t_{1-\alpha/2}(f_e)=
+t_{0.975}(21) = 2.0796$, $\sqrt{1/8+1/8} \hat{\sigma} t_{0.975}(21) = 38.11$，于是可算出各个置信区闻为
+\begin{align*} 
+\mu_{1}-\mu_{2} : &\; -48.88 \pm 38.11=[-86.99,-10.77] \\ 
+\mu_{1}-\mu_{3} : &\; -20 \pm 38.11=[-58.11,18.11] \\ 
+\mu_{2}-\mu_{3} : &\; 28.88 \pm 38.11=[-9.23,66.99] 
+\end{align*}
+可见第一个区间在 0 的左边，所以我们可以概率 95\% 断言认为 $\mu_1$ 小于 $\mu_2$，其他两个区间包含 0 点，虽然从点估计角度看水平均值估计有差别，但这种差异在 0.05 水平上是不显著的.
 
+我们看到，\eqref{eq:8.2.1} 给出的置信区间与第六章中的两样本的 $t$ 区间基本一致，区别在于这里 $\sigma^2$ 的估计使用了全部样本而不仅仅是 $A_i, A_j$ 两个水平下的观测值.
+\end{example}
+
+\subsection{多重比较问题}
+
+这里遇到一个新的问题，对每一组 $(i, j)$，\eqref{eq:8.1.2} 给出的区间的置信水平都是 $1-\alpha$，但对多个这样的区间，要求其同时成立，其联合置信水平就不再是  $1-\alpha$ 了. 譬如，设 $E_1,\ldots, E_k$ 是 $k$ 个随机事件，且有 $P(E_i)=1-\alpha$，$i=1,\ldots, k$，则其同时发生的概率 
+
+\begin{equation}
+  P\big(\bigcap_{i=1}^{k} E_{i}\big)=1-P\left(\bigcup_{i=1}^{k} \bar{E}_{i}\right) \geqslant 1-\sum_{i=1}^{k} P\left(\bar{E}_{i}\right)=1-k \alpha
+\end{equation}
+
+这说明它们同时发生的概率可能比 $1-\alpha$ 小很多.为了使它们同时发生的概率不低于 $1-\alpha$，一个办法是把每个事件发生的概率提高到 $1-a/k$.比如，如果我们同时考虑所有的 $k = r(r-1)/2$ 组对比 $\mu_i - \mu_j$ 的置信区间，则在~\eqref{eq:8.2.1} 中将 $t_{1-\alpha/2}(f_e)$ 替换为 $t_{1-\alpha/(2k)}(f_e)$ 即可.这将导致每个置信区间过长，联合置信区间的精度很差，一般人们不采用这种方法，而是采用我们下面介绍的多重比较
 
 \section{方差齐次检验}\label{sec:8.3}
 
