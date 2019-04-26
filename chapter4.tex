@@ -1330,7 +1330,59 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
         \item $ X_n + Y_n \stackrel{P}{\to} X + Y $;
         \item $ X_n \times Y_n \stackrel{P}{\to} X \times Y $.
     \end{enumerate}
+    \item 如果 $ X_n \stackrel{P}{\to} X $, $ g (x) $ 是直线上的连续函数, 试证: $ g ( X_n ) \stackrel{P}{\to} g (X) $.
+    \item 如果 $ X_n \stackrel{P}{\to} a $, 则对任意常数 $ c $, 有
+    \begin{equation*}
+        c X_n \stackrel{P}{\to} ca.
+    \end{equation*}
+    \item 试证: $ X_n \stackrel{P}{\to} X $ 的充要条件为: $ n \to +\infty $ 时, 有
+    \begin{equation*}
+        E \left( \frac{\lvert X_n - X \rvert}{1 + \lvert X_n - X \rvert} \right) \to 0.
+    \end{equation*}
+    \item 设 $ D (x) $ 为退化分布:
+    \begin{equation*}
+        D (x) =
+        \begin{cases}
+            0, & x < 0,\\
+            1, & x \geq 0.
+        \end{cases}
+    \end{equation*}
+    试问下列分布函数列的极限函数是否仍是分布函数? (其中 $ n = 1, 2, \dotsc $.)
+    \begin{enumerate}
+        \item $ \{ D ( x + n ) \} $,
+        \item $ \{ D ( x + 1/n ) \} $,
+        \item $ \{ D ( x - 1/n ) \} $.
+    \end{enumerate}
+    \item 设分布函数列 $ \{ F_n (x) \} $ 弱收敛于连续的分布函数 $ F (x) $, 试证: $ \{ F_n (x) \} $ 在 $ ( -\infty, +\infty ) $ 上一致收敛于分布函数 $ F (x) $.
+    \item 利用特征函数方法证明如下的泊松定理： 设有一列二项分布 $ \{ b ( k, n, p_n ) \} $, 若 $ \lim_{n \to +\infty} n p_n = \lambda > 0 $, 则
+    \begin{equation*}
+        \lim_{n \to +\infty} b ( k, n, p_n ) = \frac{\lambda^k}{k!} \ee^{\lambda}, \ k = 0, 1, 2, \dotsc.
+    \end{equation*}
+    \item 如果 $ X_n \stackrel{L}{\to} X $, 且数列 $ a_n \to a $, $ b_n \to b $. 试证: $ a_n X_n + b_n \stackrel{L}{\to} a X + b $.
+    \item 如果 $ X_n \stackrel{L}{\to} X $, $ Y_n \stackrel{P}{\to} a $, 试证: $ X_n + Y_n \stackrel{L}{\to} X + a $.
+    \item 如果 $ X_n \stackrel{L}{\to} X $, $ Y_n \stackrel{P}{\to} 0 $, 试证: $ X_n Y_n \stackrel{P}{\to} 0 $.
+    \item 如果 $ X_n \stackrel{L}{\to} X $, $ Y_n \stackrel{P}{\to} a $, 且 $ Y_n \neq 0 $, 常数 $ a \neq 0 $, 试证: $ X_n / Y_n \stackrel{L}{\to} X/a $.
+    \item 设随机变量 $ X_n $ 服从柯西分布, 其密度函数为
+    \begin{equation*}
+        p_n (x) = \frac{n}{\pi (1 + n^2 x^2)}, \ -\infty < x < +\infty.
+    \end{equation*}
+    试证 $ X_n \stackrel{P}{\to} 0 $.
+    \item 设随机变量序列 $ \{ X_n \} $ 独立同分布, 其密度函数为
+    \begin{equation*}
+        p (x) =
+        \begin{cases}
+            1 / \beta, & 0 < x < \beta,\\
+            0, & \text{其他}.
+        \end{cases}
+    \end{equation*}
+    其中常数 $ \beta > 0 $. 令 $ Y_n = \max ( X_1, X_2, \dotsc, X_n ) $, 试证: $ Y_n \stackrel{P}{\to} \beta $.
+    \item 设随机变量序列 $ \{ X_n \} $ 独立同分布, 其密度函数为
+    \begin{equation*}
+        p (x) =
+        \begin{cases}
+            \ee^{- ( x - a )}, & x \geq a,\\
+            0, & x < a.
+        \end{cases}
+    \end{equation*}
+    令 $ Y_n = \min ( X_1, X_2, \dotsc, X_n ) $, 试证: $ Y_n \stackrel{P}{\to} a $.
 \end{xiti}
-
-% （1）X。+Y，x+Y:（2）x，xY.xxy.
-% ·224·
