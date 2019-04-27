@@ -1426,6 +1426,86 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
         \item 在刀具方面有装配与磨损的影响;
         \item 在材料方面有钢材的成分、产地的影响;
         \item 在操作者方面有注意力集中程度、当天的情绪的影响;
-        \item 在测量方面有量具误差、测量技术的影响;        
+        \item 在测量方面有量具误差、测量技术的影响;
+        \item 在环境方面有车间的温度、湿度、照明、工作电压的影响:
+        \item 在具体场合还可列出许多其他影响因素.
     \end{itemize}
+    由于这些因素很多, 每个因素对加工精度的影响都是很微小的, 每个因素的出现都是人们无法控制的、是随机的、时有时无、时大时小、时正时负.
+    这些因素的综合影响最后使每个加工轴的直径产生误差, 若将这个误差记为 $ Y_n $, 那么 $ Y_n $ 是随机变量, 且可以将 $ Y_n $ 看作很多微小的随机波动 $ X_1, X_2, \dotsc, X_n $ 之和, 即
+    \begin{equation*}
+        Y_n = X_1 + X_2 + \dotsb X_n,
+    \end{equation*}
+    这里 $ n $ 是很大的, 人们关心的是当 $ n \to +\infty $ 时, ``$ Y_n $ 的分布是什么?''
 \end{example}
+
+当然, 我们可以用卷积公式去计算 $ Y_n $ 的分布, 但是这样的计算是相当复杂的、不易实现的.
+有的可写出 $ Y_n $ 的分布, 由于其形式复杂而无法使用, 这从下面例子可以看出这一点.
+
+\begin{example}\label{exam:4.4.2}
+    设 $ \{ X_n \} $ 为独立同分布随机变量序列, 其共同分布为区间 $ ( 0, 1 ) $ 上的均匀分布.
+    记 $ Y_n = \sum_{i = 1}^n X_i $, $ p_n (y) $ 为 $ Y_n $ 的密度函数, 用卷积公式可以求出
+    \begin{align*}
+        p_1 ( y ) & =
+        \begin{cases}
+            1, & 0 < y < 1,\\
+            0, & \text{其他}.
+        \end{cases}\\
+        p_2 ( y ) & =
+        \begin{cases}
+            y, & 0 < y < 1,\\
+            2 - y, & 1 \leq y < 2,\\
+            0, & \text{其他}.
+        \end{cases}\\
+        p_3 ( y ) & =
+        \begin{cases}
+            y^2 / 2, & 0 < y < 1,\\
+            - ( y - 3 / 2 )^2 + 3 / 4, & 1 \leq y < 2,\\
+            ( 3 - y )^2 / 2, & 2 \leq y < 3,\\
+            0, \text{其他}.
+        \end{cases}\\
+        p_4 ( y ) & =
+        \begin{cases}
+            y^2 / 6, & 0 < y < 1,\\
+            \bigl( y^3 - 4 ( y - 1 )^3 \bigr) / 6, & 1 \leq y < 2,\\
+            \bigl( ( 4 - y )^3 - 4 ( 3 - y )^3 \bigr) / 6, & 2 \leq y < 3,\\
+            ( 4 - y )^3 / 6, & 3 \leq y < 4,\\
+            0, & \text{其他}.
+        \end{cases}
+    \end{align*}
+    将 $ p_1 (y) $, $ p_2 (y) $, $ p_3 (y) $, $ p_4 (y) $ 表示在图~\ref{fig:4.4.1} 中.
+    从图上我们可以看出: 随着 $ n $ 的增加, $ p_n ( y ) $ 的图形愈来愈光滑, 且愈来愈接近正态曲线.
+\end{example}
+
+\begin{figure}
+    \centering
+    % \begin{tikzpicture}[scale=2]
+    %     \draw[-stealth,font=\small] (0,0) -- (4.5,0) node[right] {$y$};
+    %     \draw[-stealth,font=\small] (0,0) -- (0,1.3) node[above] {$p(y)$};
+    %     \draw (0,1) -- (1,1);
+    %     \draw[semithick] (0,0) -- (1,1) -- (2,0);
+    %     \draw[dashed,samples=100,domain=0:1] plot(\x,{(\x)^2/2});
+    %     \draw[dashed,samples=100,domain=1:2] plot(\x,{-(\x-3/2)^2+3/4});
+    %     \draw[dashed,samples=100,domain=2:3] plot(\x,{(3-\x)^2/2});
+    %     \draw[dashed,samples=100,domain=0:1] plot(\x,{(\x)^2/6});
+    %     \draw[dashed,samples=100,domain=1:2] plot(\x,{((\x)^3-4*(\x-1)^3)/6});
+    %     \draw[dashed,samples=100,domain=2:3] plot(\x,{((4-\x)^3-4*(3-\x)^3)/6});
+    %     \draw[dashed,samples=100,domain=3:4] plot(\x,{(4-\x)^3/6});
+    %     \draw[->,font=\small] (0.85,1.2) node[above right] {$p_1(y)$} -- (0.7,1);
+    %     \draw[->,font=\small] (1.4,1) node[above right] {$p_2(y)$} -- (1.2,0.8);
+    %     \draw[->,font=\small] (1.9,0.9) node[above right] {$p_3(y)$} -- (1.7,0.7);
+    %     \draw[->,font=\small] (2.9,0.55) node[above right] {$p_4(y)$} -- (2.7,0.35);
+    %     \foreach \i in {1,...,4} {\draw[very thin,font=\tiny] (\i,0) -- (\i,0.05) node[below=4pt] {\i};}
+    %     \foreach \i in {1/6,1/2,2/3,3/4,1} {\draw[very thin,font=\tiny] (0,\i) -- (0.05,\i) node[left=4pt] {\i};}
+    %     \draw[densely dotted] (0,1/6) -- (1,1/6);
+    %     \draw[densely dotted] (0,1/2) -- (1,1/2);
+    %     \draw[densely dotted] (0,2/3) -- (1.8,2/3);
+    %     \draw[densely dotted] (0,3/4) -- (1.26,3/4);
+    % \end{tikzpicture}
+    \includegraphics[width=0.9\linewidth]{figure/fig4-4-1.pdf}
+    \caption{均匀分布的卷积}\label{fig:4.4.1}
+\end{figure}
+
+可以设想, 当 $ n = 100 $ 时, $ p_{100} (x) $ 的非零区城为 $ ( 0, 100 ) $, 若用卷积公式可以分 100 段求出 $ p_{100} ( x ) $ 的表达式, 它们分别是 99 次多项式.
+如此复杂的形式即使求出 (当然没有人去求), 也无法使用.
+这就迫使人们去寻求近似分布.
+若记 $ Y_n $ 的分布函数为 $ F_n (x) $, 在弱收敛的含义下, 求出其极限分布 $ F (x) $, 那么当 $ n $ 很大时, 就可用 $ F(x) $ 作为 $ F_n (x) $ 的近似分布.
