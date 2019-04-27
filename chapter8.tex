@@ -699,7 +699,75 @@ t_{0.975}(21) = 2.0796$, $\sqrt{1/8+1/8} \hat{\sigma} t_{0.975}(21) = 38.11$，�
   P\big(\bigcap_{i=1}^{k} E_{i}\big)=1-P\left(\bigcup_{i=1}^{k} \bar{E}_{i}\right) \geqslant 1-\sum_{i=1}^{k} P\left(\bar{E}_{i}\right)=1-k \alpha
 \end{equation}
 
-这说明它们同时发生的概率可能比 $1-\alpha$ 小很多.为了使它们同时发生的概率不低于 $1-\alpha$，一个办法是把每个事件发生的概率提高到 $1-a/k$.比如，如果我们同时考虑所有的 $k = r(r-1)/2$ 组对比 $\mu_i - \mu_j$ 的置信区间，则在~\eqref{eq:8.2.1} 中将 $t_{1-\alpha/2}(f_e)$ 替换为 $t_{1-\alpha/(2k)}(f_e)$ 即可.这将导致每个置信区间过长，联合置信区间的精度很差，一般人们不采用这种方法，而是采用我们下面介绍的多重比较
+这说明它们同时发生的概率可能比 $1-\alpha$ 小很多.为了使它们同时发生的概率不低于 $1-\alpha$，一个办法是把每个事件发生的概率提高到 $1-a/k$.比如，如果我们同时考虑所有的 $k = r(r-1)/2$ 组对比 $\mu_i - \mu_j$ 的置信区间，则在~\eqref{eq:8.2.1} 中将 $t_{1-\alpha/2}(f_e)$ 替换为 $t_{1-\alpha/(2k)}(f_e)$ 即可.这将导致每个置信区间过长，联合置信区间的精度很差，一般人们不采用这种方法，而是采用我们下面介绍的多重比较来解决上述问题.
+
+在方差分析中，如果经过F检验拒绝原假设，表明因子 $A$ 是显著的，即 $r$ 个水平对应的水平均值不全相等，此时，我们还需要进一步确认哪些水平均值间是确有差异的，哪些水平均值间无显著差异. 
+
+在 $r(r>2)$ 个水平均值中同时比较任意两个水平均值间有无明显差异的问题称为多意比较，多重比较即要以显著性水平 $a$ 同时检验如下 $r(r-1)/2$ 个假设
+
+\begin{equation}\label{eq:8.2.2}
+  H_{0}^{ij}:\; \mu_i = \mu_j,\quad 1 \leq i < j \leq r.
+\end{equation}
+
+直观地看，当 $H_{0}^{ij}$ 成立时，$|\bar{y}_{i.} - \bar{y}_{j.}|$ 不应过大，因此，关子假设~\eqref{eq:8.2.2} 的拒绝域应有如下形式
+\begin{equation*}
+  W = \bigcup_{1\leq i < j \leq r}\{|\bar{y}_{i.} - \bar{y}_{j.}| \geq \varepsilon_{ij}\},
+\end{equation*}
+诸临界值应~\eqref{eq:8.2.2} 成立时由 $P(W)=a$ 确定. 下面分重复数相等和不等分别介绍临界值的确定.
+
+\subsection{重复数相等场合的 $T$ 法}
+
+在重复数相等时，由对称性自然可以要求诸 $\varepsilon_{ij}$ 相等，记为 $c$. 记 $\hat{\sigma^2} = S_e/f_e$，则由给定条件不难有
+\begin{equation*}
+  t_i = \frac{\bar{y}_{i.} - \mu_i}{\hat{\sigma}/\sqrt{m}} \sim t(f_e),
+\end{equation*}
+于是当~\eqref{eq:8.2.2} 成立时，$\mu_1 = \cdots = \mu_r = \mu$，故有
+\begin{align*}
+  P(W)  & = P\left(\bigcup_{1\leq i < j \leq r} \{|\bar{y}_{i.} - \bar{y}_{j.}| \geq c\}\right)\\
+        & = 1- P\left(\bigcap_{1\leq i < j \leq r} \{|\bar{y}_{i.} - \bar{y}_{j.}| < c\}\right)\\
+        & = 1 - P(\max_{1\leq i < j \leq r} |\bar{y}_{i.} - \bar{y}_{j.}| < c) \\
+        & = P(\max_{1\leq i < j \leq r} |\bar{y}_{i.} - \bar{y}_{j.}| \geq c) \\
+        & = P\left(\max_{1 \leq i < j \leq r} \left|\frac{(\bar{y}_{i.}-\mu) - (\bar{y}_{j.}-\mu)}{\hat{\sigma}/\sqrt{m}}\right|\geq \frac{c}{\hat{\sigma}/\sqrt{m}}\right)\\
+        & = P\left(\max_{i} \frac{(\bar{y}_{i.}-\mu)}{\hat{\sigma}/\sqrt{m}} - \min_{j}\frac{(\bar{y}_{j.}-\mu)}{\hat{\sigma}/\sqrt{m}}\geq \frac{c}{\hat{\sigma}/\sqrt{m}}\right)
+\end{align*}
+这里 $q(r,f_e)=\max_{i} \frac{(\bar{y}_{i.}-\mu)}{\hat{\sigma}/\sqrt{m}} - \min_{j} \frac{(\bar{y}_{j.}-\mu)}{\hat{\sigma}/\sqrt{m}}$ 一般称为 $t$ 化极差统计量，这是因为它的结构类似子 $t$ 统计量 $q(r,f_e)$ 的分布与参数 $\mu, \sigma^2$ 无关，也与 $m$ 无关，该分布可由随机模拟方法得到，方法如下（不妨设 $\mu=0, \sigma^2=1, m=1)$: 对给定的 $r$ 和 $f_e$,
+\begin{enumerate}[label=\color{structurecolor}(\arabic*)]
+  \item 从标准正态分布 $N(0,1)$ 产生 $r$ 个随机数 $x_1,\ldots, x_r$, 将该 $r$ 个随机数按从小到大排序得到 $x_{(1)}$ 和 $x_{(r))}$; \label{item:8.2.3.1}
+  \item 从自由度为 $f_e$ 的 $\chi^2$ 分布 $\chi^2(f_e)$ 产生一个随机数 $y$; \label{item:8.2.3.2}
+  \item 计算 $g =(x_{(r)}-x_{(1)}))/y$; \label{item:8.2.3.3}
+  \item 重复~\ref{item:8.2.3.1} 到~\ref{item:8.2.3.3} $N$ (例如 $10^4$ 或 $10^5$) 次, 即得 $g(r,f)$ 的 $N$ 个观测值, 由此可获得 $q(r,f)$ 的各种分位数.\\
+  于是, 由
+  \begin{equation}\label{eq:8.2.3}
+    P(W) = P(q(r,f_e)) \geq \sqrt{m} c/\hat{\sigma} = \alpha,
+  \end{equation}
+  可以得出
+  \begin{equation}\label{eq:8.2.4}
+    c = q_{1-\alpha}(r,f_e) \hat{\sigma}/\sqrt{m},
+  \end{equation}
+  其中 $q_{1-\alpha}(r,f_e)$ 表示 $g(r,f)$ 的 $1-\alpha$ 分位数，其值在附表 8 中给出.
+
+至此，可将重复数相同时多重比较的步骤总结如下：对给定的显著性水平 $\alpha$，查多重比较的分位数 $q_{1-\alpha}(r,f)$ 表，计算 $c = q_{1-\alpha}(r,f_e)\hat{\sigma}/\sqrt{m}$，比较诸 $|\bar{y}_{i.} - \bar{y}_{j.}|$ 与 $c$ 的大小，若
+\begin{equation*}
+  |\bar{y}_{i.} - \bar{y}_{j.} \geq c
+\end{equation*}
+则认为水平 $A_i$ 与水平 $A_j$ 间有显著差异，反之，则认为水平 $A_i$ 与水平 $A_j$ 间无明显差别. 这一方法最早由 Turkey 提出，因此称为 $T$ 法.
+\end{enumerate}
+
+\begin{example}
+  我们已在例~\ref{exam:8.1.2} 中指出饲料因于是显著的，下面进行多重比较，若取 $\alpha=0.05$，则查表知 $q_{1-0.05}(3,21)=3.57$，而 $\hat{\sigma} = 36.6554$. 所以 $c = 3.57 \times 36.6554/\sqrt{8} = 46.27$.
+\end{example}
+
+$\left|\bar{y}_{1.}-\bar{y}_{2.}\right|=|1024.25-1073.13|=48.88>46.27$, 认为 $\mu_1$ 与 $\mu_2$ 有显著差别；
+
+$\left|\bar{y}_{1.}-\bar{y}_{3.}\right|=|1024.25-1044.25|=20<46.27$, 认为 $\mu_1$ 与 $\mu_3$ 无显著差别；
+
+$\left|\bar{y}_{2.}-\bar{y}_{3.}\right|=|1073.13-1044.25|=46.88>46.27$, 认为 $\mu_2$ 与 $\mu_2$ 有显著差别.
+
+由此可见，$\mu_1$ 与 $\mu_3$ 之间无显著差别，而它们与 $\mu_2$ 之间都有显著差异，即以鱼粉为主的饲料与以苜着粉为主的饲料在鸡的增重方面差别不明显，但以槐树粉为主的饲料则明显更有效.
+
+\subsection{意复数不等场合的 $S$ 法}
+
+在重复数不等时，沿用上面的记号，我们有
 
 \section{方差齐次检验}\label{sec:8.3}
 
