@@ -216,7 +216,65 @@ L\left(\mu,\sigma^{2}\right)
 \end{itemize}
 \end{example}
 
-\subsection{习题\label{ssec:6.1}}
+\subsection{习题\label{ssec:6.1}} %p291 习题录入完毕，未检查
+
+\begin{xiti}
+\item 从一批电子元件中抽取 8 个进行寿命测试, 得到如下数据 (单位：h):
+\begin{center}
+\begin{tabular}{cccccccc}
+	1050,&1100,&1130,&1040,&1250,&1300,&1200,&1080
+\end{tabular}
+\end{center}
+试对这批元件的平均寿命以及寿命分布的标准差给出矩估计.
+\item 设总体 $X\sim U(0,0)$, 现从该总体中抽取容量为 10 的样本, 样本值为:
+\begin{center}
+\begin{tabular}{cccccccccc}
+0.5,&1.3,&0.6,&1.7,&2.2,&1.2,&0.8,&1.5,&2.0,&1.6
+\end{tabular}	
+\end{center}
+试对参数 $\theta$ 给出矩估计.
+\item 设总体分布列如下, $x_1,x_2,\cdots,x_n$ 是样本, 试求未知参数的矩估计.\\
+(1) $P(X=k)=\frac{1}{N}, k=0,1,2, \cdots, N-1, N$, (正整数)是未知参数;\\
+(2) $P(X=k)=(k-1) \theta^{2}(1-\theta)^{k-2}, k=2,3, \cdots, 0<\theta<1$.
+\item 设总体密度函数如下, $x_1,x_2,\cdots,x_n$ 是样本, 试求未知参数的矩估计. \\
+(1) $p(x ; \theta)=\frac{2}{\theta^{2}}(\theta-x), 0<x<\theta, \theta>0$, \\
+(2) $p(x ; \theta)=(\theta+1) x^{8}, 0<x<1, \theta>0$, \\
+(3) $p(x ; \theta)=\sqrt{\theta} x^{\sqrt8-t}, 0<x<1, \theta>0$, \\
+(4) $p(x ; \theta, \mu)=\frac{1}{\theta} \mathrm{e}^{-\frac{x-\mu}{\theta}}, x>\mu, \theta>0$.
+\item 设总体为 $N(\mu,1)$, 现对该总体观测 $n$ 次, 发现有 $k$ 次观测值为正, 使用频率替换方法求 $A$ 的估计. 
+\item 甲、乙两个校对员被此独立对同一本书的样稿进行校对, 校完后, 甲发现 $a$ 个错字, 乙发现 $b$ 个错字, 其中共同发现的错字有 $c$ 个, 试用矩法给出如下两个未知参数的估计:\\
+(1) 该书样稿的总错字个数;\\
+(2) 未被发现的错字数.
+\item 设总体概率函数如, $x_1,x_2,\cdots,x_n$ 是样本, 试求未知参数的最大似然估计. \\
+(1) $p(x ; \theta)=\sqrt{\theta} x^{\sqrt{\theta}-1}, 0<x<1, \theta>0$, \\
+(2) $p(x ; \theta)=\theta c^{\theta} x^{-(\theta+1)}, x>c, c>0$, 已知,  $\theta>1$.
+\item 设总体概率函数如下, $x_1,x_2,\cdots,x_n$ 是样本, 试求未知参数的最大似然估计.
+(1) $p(x ; \theta)=c \theta^{c} x^{-(c+1)}, x>\theta, \theta>0, c>0$, 已知 ,\\
+(2) $p(x ; \theta, \mu)=\frac{1}{\theta} e^{-\frac{x-\mu}{\theta}}, x>\mu, \theta>0$ ,\\
+(3) $p(x ; \theta)=(k \theta)^{-1}, \theta<x<(k+1) \theta, \theta>0$ .
+\item 设总体概率函数如下, $x_1,x_2,\cdots,x_n$ 是样本, 试求未知参数的最大似然估计.\\
+(1) $p(x ; \theta)=\frac{1}{2\theta} e^{-|x| / \theta}, \theta>0$ ,\\
+(2) $p(x ; \theta)=1, \theta-1 / 2<x<\theta+1 / 2$ ,\\
+(3) $p\left(x ; \theta_{1}, \theta_{2}\right)=\frac{1}{\theta_{2}-\theta_{1}}, \theta_{1}<x<\theta_{2}$ .
+\item 一地质学家为研究密歇根湖的湖滩地区的岩石成分, 随机地自该地区取 100 个样品，每个样品有 10 块石子, 记录了每个样品中属石灰石的石子数. 假设这 100 次观豪相互独立, 求这地区石子中石灰石的比例 $p$ 的最大似然估计.该地质学家所得的数据如下: 
+\begin{center}
+\begin{tabularx}{0.8\textwidth}{Z|*{10}{c|}|c}
+样本中的石子数 & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10\\\hline
+样品个数 & 0 & 1 & 6 & 7 & 23 & 26 & 21 & 12 & 3 & 1 & 0
+\end{tabularx}
+\end{center}
+\item 在遗传学研究中经常要从截尾二项分布中抽样，其总体概率函数为
+\[P\left(X=k; p\right)=\frac{\bigg(\begin{array}{@{}c@{}}{m} \\ {k}\end{array}\bigg) p^{k}(1-p)^{m-k}}{1-(1-p)^{m}}, k=1,2, \cdots, m\]
+若已知 $m=2$, $x_1,x_2,\cdots,x_n$ 是样本，试求 $p$ 的最大似然估计.
+\item 已知在文学家萧伯纳的 “An lntelligent Wotman's Guide To Socialisn”一书中, 一个句子的单词数 $X$ 近似地服从对数正态分布, 即 $x=\ln X\sim N(\mu,\sigma^2)$. 今从该书中随机地取 20 个句子, 这些句子中的单词数分别为
+\begin{center}
+\begin{tabularx}{0.8\textwidth}{*{10}{Z}}
+52 & 24 & 15 & 67 & 15 & 22 & 63 & 26 & 16 & 32\\
+7 & 33 & 28 & 14 & 7 & 29 & 10 & 6 & 59 & 30
+\end{tabularx}	
+\end{center}
+求该书中一个句子单词数均值 $E(X)=\ee^{\mu+\sigma^2/2}$ 的最大似然估计.
+\end{xiti}
 
 \section{点估计的评价标准}
 \subsection{相关性}
