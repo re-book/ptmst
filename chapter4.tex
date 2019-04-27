@@ -1385,4 +1385,47 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
         \end{cases}
     \end{equation*}
     令 $ Y_n = \min ( X_1, X_2, \dotsc, X_n ) $, 试证: $ Y_n \stackrel{P}{\to} a $.
+    \item 设分布函数列 $ \{ F_n (x) \} $ 弱收敛于分布函数 $ F (x) $, 且 $ F_n (x) $ 和 $ F (x) $ 都是连续、严格单调函数, 又设 $ \xi $ 服从 $ ( 0, 1 ) $ 上的均匀分布, 试证: $ F_n^{-1} ( \xi ) \stackrel{P}{\to} F^{-1} ( \xi ) $.
+    \item 设随机变量序列 $ \{ X_n \} $ 独立同分布, 数学期望、方差均存在, 且 $ E ( x_n ) = \mu $, 试证:
+    \begin{equation*}
+        \frac{2}{n ( n + 1 )} \sum_{k = 1}^n k \cdot X_k \stackrel{P}{\to} \mu.
+    \end{equation*}
+    \item 设随机变量序列 $ \{ X_n \} $ 独立同分布, 数学期望、方差均存在, 且
+    \begin{equation*}
+        E \bigl( X_n \bigr) = 0, \ Var \bigl( X_n \bigr) = \sigma^2.
+    \end{equation*}
+    试证：
+    \begin{equation*}
+        \frac{1}{n} \sum_{k = 1}^n X_k^2 \stackrel{P}{\to} \sigma^2.
+    \end{equation*}
+    \item 设随机变量序列 $ \{ X_n \} $ 独立同分布, 且 $ Var (X_n) = \sigma^2 $ 存在, 令
+    \begin{equation*}
+        \bar{X} = \frac{1}{n} \sum_{i=1}^n X_i, \ S_n^2 = \frac{1}{n} \sum_{i=1}^n \bigl( X_i - \bar{X} \bigr)^2.
+    \end{equation*}
+    试证: $ S_n^2 \stackrel{P}{\to} \sigma^2 $.
+    \item 设随机变量 $ X \sim Ga ( a, \lambda ) $, 证明: 当 $ a \to +\infty $ 时, 随机变量 $ ( \lambda X - a )/\sqrt{a} $ 按分布收敛于标准正态变量.
 \end{xiti}
+
+
+\section{中心极限定理}
+
+\subsection{独立随机变量和}
+
+大数定律讨论的是多个随机变量的平均 $ \frac{1}{n} \sum_{i=1}^n X_i $ 的渐近性质.
+现在我们来讨论独立随机变量和
+\begin{equation*}
+    Y_n = \sum_{i=1}^n X_i
+\end{equation*}
+的极限分布.
+以下我们先给出一个独立随机变量和的例子.
+
+\begin{example}\label{exam:4.4.1}
+    误差分析是人们经常遇到且感兴趣的随机变量, 大量的研究表明, 误差的产生是由大量微小的相互独立的随机因素叠加而成的, 譬如一位操作者在机床加工机械轴, 使其直径符合规定要求, 但加工后的机械轴与规定要求总有一定的误差, 这是因为在加工时受到一些随机因素的影响, 它们是
+    \begin{itemize}
+        \item 在机床方面有机床振动与转速的影响;
+        \item 在刀具方面有装配与磨损的影响;
+        \item 在材料方面有钢材的成分、产地的影响;
+        \item 在操作者方面有注意力集中程度、当天的情绪的影响;
+        \item 在测量方面有量具误差、测量技术的影响;        
+    \end{itemize}
+\end{example}
