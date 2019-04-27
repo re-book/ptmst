@@ -276,8 +276,111 @@ L\left(\mu,\sigma^{2}\right)
 求该书中一个句子单词数均值 $E(X)=\ee^{\mu+\sigma^2/2}$ 的最大似然估计.
 \end{xiti}
 
-\section{点估计的评价标准}
-\subsection{相关性}
+\section{点估计的评价标准}\label{sec:6.2}
+
+我们已经看到，点估计有各种不同的求法, 为了在不同的点估计间进行比较选择, 就必须对各种点估计的好坏给出评价标准.
+
+数理统计中给出了众多的估计量评价标准，对同一估计量使用不同的评价标准可能会得到完全不同的结论, 因此, 在评价某一个估计好坏时首先要说明是在哪一个标准下, 否则所论好坏则毫无意义.
+
+但不管怎么说, 有一个基本标准是所有的估计都应该满足的, 它是衡量一个估计是否可行的必要条件, 这就是估计的相合性, 我们就从相合性开始.
+
+\subsection{相关性}\label{ssec:6.2.1} % P293 录入完毕，未检查
+
+\begin{definition}{}{6.2.1}
+设 $\theta\in\Theta$ 为未知参数, $\hat{\theta}_n=\hat{\theta}_n(x_1,\cdots,x_n)$ 是 $\theta$ 的一个估计量, $n$ 是样本容量, 若对任何一个 $\varepsilon>0$, 有
+\begin{equation}\label{eq:6.2.1}
+\lim _{n \rightarrow \infty} P(|\hat{\theta}_{n}-\theta|>\varepsilon)=0
+\end{equation}
+则称 $\hat{\theta}_n$ 为参数 $\theta$ 的相合估计.
+\end{definition}
+相合性被认为是对估计的一个最基本要求, 如果一个估计量, 在样本量不断增大时, 它都不能把被估参数估计到任意指定的精度, 那么这个估计是很值得怀疑的. 通常, 不满足相合性要求的估计一般不予考虑. 证明估计的相合性一般可应用大数定律或直接由定义来证.
+
+若把依赖于样本量 $n$ 的估计量 $\hat{\theta}_n$. 看作一个随机变量序列, 相合性就是 $\hat{\theta}_n$. 依概率收敛于 $\theta$，所以证明估计的相合性可应用依概率收敛的性质及各种大数定律. 
+
+\begin{example}\label{exam:6.2.1}
+设 $x_1,\cdots,x_n$ 是来自正态总体 $N(\mu,\sigma^2)$ 的样本，则由辛钦大数定律及依概率收敛的性质知:
+\begin{itemize}
+\item $\bar x$ 是 $\mu$ 的相合估计;
+\item $s^{*2}$ 是 $\sigma^2$ 的相合估计;
+\item $s^2$ 也是 $\sigma^2$ 的相合估计.
+\end{itemize}
+由此可见参数的相合估计不止一个.
+\end{example}
+
+\begin{theorem}{}{6.2.1}
+设 $\hat{\theta}_n=\hat{\theta}_n(x_1,\cdots,x_n)$ 是 $\theta$ 的一个估计量, 若
+\begin{equation}\label{eq:6.2.2}
+\lim _{n \rightarrow+\infty} E(\hat{\theta}_{n})=\theta, \quad \lim _{n \rightarrow+\infty} \operatorname{Var}(\hat{\theta}_{n})=0
+\end{equation}
+则 $\hat{\theta}_n$ 是 $\theta$ 的相合估计，
+\end{theorem}\begin{proof}
+对任意的 $\varepsilon>0$, 由切比雪夫不等式有
+\[P(|\hat{\theta}_{n}-E \hat{\theta}_{n}| \geqslant \varepsilon / 2) \leqslant \frac{4}{\varepsilon^{2}} \operatorname{Var}(\hat{\theta}_{n})\]
+另一方面，由 $\lim _{n \rightarrow+\infty} E(\hat{\theta}_{n})=\theta$ 可知, 当 $n$ 充分大时有
+\[|E \hat{\theta}_{n}-\theta|<\varepsilon / 2\]
+注意到此时如果 $|\hat{\theta}_n-E\hat{\theta}_n|<\varepsilon/2$, 就有
+\[|\hat{\theta}_{n}-\theta| \leqslant|\hat{\theta}_{n}-E \hat{\theta}_{n}|+|E \hat{\theta}_{n}-\theta|<\varepsilon\]
+故
+\[\{|\hat{\theta}_{n}-E \hat{\theta}_{n}|<\varepsilon / 2\} \subset| | \hat{\theta}_{n}-\theta |<\varepsilon \}\]
+等价地
+\[\{ | \hat{\theta}_{n}-E \hat{\theta}_{n}|< \varepsilon/ 2 \} \supset\{|\hat{\theta}_{n}-\theta|<\varepsilon \}\]
+由此即有
+\[P(|\hat{\theta}_{n}-\theta|>\epsilon) \leqslant P(|\hat{\theta}_{n}-E \hat{\theta}_{n}| \geqslant \epsilon / 2) \leqslant \frac{4}{\varepsilon^{2}} \operatorname{Var}(\hat{\theta}_{n}) \rightarrow 0(n \rightarrow+\infty)\]
+定理得证.
+\end{proof}
+
+\begin{example}\label{exam:6.2.2}
+设 $x_1,\cdots,x_n$ 是来自均匀总体 $U(0,0)$ 的样本, 证明 $\theta$ 的最大似然估计是相合估计.
+\end{example}
+\begin{proof}
+在例\ref{exam:6.1.7}中我们已经给出 $\theta$ 的最大似然估计是 $x_{(n)}$.  由次序统计量的分布, 我们知道 $\hat{\theta}=x_{(n)}$ 的分布密度函数为
+\[p(y)=n y^{n-1} / \theta^{n}, \quad y<\theta\]
+故有
+\[E \hat{\theta}=\int_{0}^{\theta} n y^{n}\dd y / \theta^{n}=\frac{n}{n+1} \theta \rightarrow \theta\]
+\[E \hat{\theta^{2}}=\int_{0}^{\theta} n y^{n+1} \mathrm{d} y / \theta^{n}=\frac{n}{n+2} \theta^{2}\]
+\[\operatorname{Var}(\hat{\theta})=\frac{n}{n+2} \theta^{2}-\left(\frac{n}{n+1} \theta\right)^{2}=\frac{n}{(n+1)^{2}(n+2)} \theta^{2} \rightarrow 0 \quad(n \rightarrow+\infty)\]
+由定理\ref{thm:6.2.1}可知,  $x_{(n)}$ 是 $\theta$ 的相合估计.
+\end{proof}
+
+\begin{theorem}{}{6.2.2} %定理6.2.2 P294
+若 $\hat{\theta}_{n1},\cdots,\hat{\theta}_{nk}$ 分别是 $\theta_1,\cdots,\theta_k$ 的相合估计, $\eta=g(\theta_1,\cdots,\theta_k)$ 是 $\theta_1,\cdots,\theta_k$ 的连续函数，则 $\bar{\eta}_n=g(\hat{\theta}_{n1},\cdots,\hat{\theta}_{nk})$ 是 $\eta$ 的相合估计.
+\end{theorem}
+\begin{proof}
+由函数 $g$ 的连续性, 对任意给定的 $\varepsilon>0$, 存在一个 $\delta>0$, 当 $|\hat{\theta}_j-\theta_j|<\delta,j=1,\cdots,k$, 有
+\begin{equation}\label{eq:6.2.3}
+|g(\hat{\theta}_{1}, \cdots, \hat{\theta}_{k})-g(\theta_{1}, \cdots, \theta_{k})|<\varepsilon
+\end{equation}
+又由 $\hat{\theta}_{n1},\cdots,\hat{\theta}_{nk}$ 是的相合性, 对给定的 $\delta$, 对任意给定的 $v>0$, 存在正整数 $N$, 使得 $n\geqslant N$ 时, 
+\[P(|\hat{\theta}_{n j}-\theta_{j}| \geqslant \delta)<v / k, \quad j=1, \cdots, k\]
+从而有
+\begin{align*}
+P\left(\bigcap_{i=1}^{k}\{|\hat{\theta}_{n j}-\theta_{j}|<\delta\}\right)
+&=1-P\left(\bigcup_{j=1}^{k}\{ | \vec{\theta}_{n j}-\theta_{j} | \geqslant \delta\}\right)\\
+&\geqslant 1-\sum_{j=1}^{k} P(|\hat{\theta}_{n j}-\theta_{j}| \geqslant \delta)\\
+&>1-k \cdot v / k=1-v
+\end{align*}
+根据\eqref{eq:6.2.3}, $\bigcap_{j=1}^{k}\{|\hat{\theta}_{n j}-\theta_{j}|<\delta\} \subset\{ | \hat{\eta}_{n}-\eta |<\varepsilon \}$ 故有
+\[P\left(\left|\hat{\eta}_{n}-\eta\right|<\epsilon\right)>1-v\]
+由v的任意性，定理得证.
+\end{proof}
+
+由大数定律及定理\ref{thm:6.2.2}, 我们可以看到, 矩估计一般都具有相合性. 比如: 
+\begin{itemize}
+\item 样本均值是总体均值的相合估计;
+\item 样本标准差是总体标准差的相合估计;
+\item 样本变异系数 $s/\bar x$ 是总体变异系数的相合估计.
+\end{itemize}
+
+\begin{example}\label{exam:6.2.3}
+设一个试验有三种可能结果, 其发生概率分别为
+\[p_{1}=\theta^{2}, \quad p_{2}=2 \theta(1-\theta), p_{3}=(1-\theta)^{2}\]
+现做了 $n$ 次试验，观测到三种结果发生的次数分别为 $n_1,n_2,n_3$ 可以采用频率替换方法估计 $\theta$. 由于可以有三个不同的日的表达式：
+\[\theta=\sqrt{p_{1}}, \quad \theta=1-\sqrt{p_{3}}, \quad \theta=p_{1}+p_{2} / 2\]
+从而可以给出 $\theta$ 三种不同的频率替换估计，它们分别是：
+\[\hat{\theta}_{1}=\sqrt{n_{1} / n}, \quad \hat{\theta}_{2}=1-\sqrt{n_{3} / n}, \quad \hat{\theta}_{3}=\left(n_{1}+n_{2} / 2\right) / n\]
+由大数定律, $n_1/n,n_2/n,n_3/n$ 分别是 $p_1,p_2,p_3$ 的相合估计，由定理\ref{thm:6.2.2}知, 上述三个估计都是 $\theta$ 的相合估计.
+\end{example}
+
 \subsection{无偏性}
 \subsection{有效性}
 \subsection{均方误差}
