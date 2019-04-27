@@ -381,7 +381,67 @@ P\left(\bigcap_{i=1}^{k}\{|\hat{\theta}_{n j}-\theta_{j}|<\delta\}\right)
 由大数定律, $n_1/n,n_2/n,n_3/n$ 分别是 $p_1,p_2,p_3$ 的相合估计，由定理\ref{thm:6.2.2}知, 上述三个估计都是 $\theta$ 的相合估计.
 \end{example}
 
-\subsection{无偏性}
+\subsection{无偏性}\label{ssec:6.2.2} % P295 录入完毕，未检查
+
+相合性是大样本下估计量的评价标准, 对小样本而言, 需要一些其他的评价标准, 无偏性便是一个常用的评价标准.
+
+\begin{definition}{}{6.2.2} % P295
+设 $\hat{\theta}_n=\hat{\theta}_n(x_1,\cdots,x_n)$ 是 $\theta$ 的一个估计, $\theta$ 的参数空间为 $\Theta$ ，若对任意的 $\theta\in\Theta$, 有
+\begin{equation}\label{eq:6.2.4}
+E(\hat{\theta})=\theta
+\end{equation}
+则称 $\hat\theta$ 是 $\theta$ 的{\heiti 无偏估计}\index{G!无偏估计}, 否则称为{\heiti 有偏估计}\index{G!有偏估计}.
+\end{definition}
+
+无偏性要求可以改写为 $E(\hat{\theta}-\theta)=0$, 这表示无偏估计没有系统偏差，当我们使用 $\hat{\theta}$ 估计 $\theta$ 时, 由于样本的随机性, $\hat{\theta}$ 与 $\theta$ 总是有偏差的, 这种偏差时而（对某些样本观测值）为正, 时而(对另一些样本观测值)为负, 时而大, 时而小. 无偏性表示, 把这些偏差平均起来其值为 0, 这就是无偏估计的含义. 而若估计不具有无偏性, 则无论使用多少次, 其平均也会与参数真值有一定的距离, 这个距离就是系统误差.
+
+\begin{example}\label{exam:6.2.4}
+对任一总体而言, 样本均值是总体均值的无偏估计. 当总体 $k$ 阶矩存在时, 样本 $k$ 阶原点矩 $a_k$ 是总体息 $k$ 阶原点矩 $\mu_k$ 么的无偏估计. 但对 $k$ 阶中心矩则不一样, 譬如, 样本方差 $s^{*2}$ 就不是总体方差 $\sigma^2$ 的无偏估计, 因在定理\ref{thm:5.2.1}
+中已经指出:
+\[E\left(s^{* 2}\right)=\frac{n-1}{n} \sigma^{2}\]
+对此, 有如下两点说明：
+
+(1) 当样本量趋于无穷时, 有 $E(s^{*2})\to\sigma^2$, 我们称 $s^{*2}$ 为 $\sigma^2$ 的渐近无偏估计, 这表明当样本量较大时,  $s^{*2}$ 可近似看作 $\sigma^2$ 的无偏估计.
+
+(2) 若对 $s^{*2}$ 作如下修正:
+\begin{equation}\label{eq:6.2.5}
+s^{2}=\frac{n s^{* 2}}{n-1}=\frac{1}{n-1} \sum_{i=1}^{n}\left(x_{i}-\overline{x}\right)^{2}
+\end{equation}
+则 $s^2$ 是总体方差的无偏估计.这种简单的修正方法在一些场合常被采用.\eqref{eq:6.2.5}定义的 $s^2$ 也称为样本方差，它比 $s^{*2}$ 更常用.这是因为在 $n\geqslant2$ 时，$s^{*2}<s^2$，因此用 $s^{*2}$ 估计 $\sigma^2$ 有偏小的倾向，特别在小样本场合要使用 $s^2$ 估计 $\sigma^2$.
+
+无偏性不具有不变性. 即若 $\hat{\theta}$ 是 $\theta$ 的无偏估计, 一般而言, $g(\hat{\theta})$ 不是 $g(\theta)$ 的无偏估计, 除非 $g(\theta)$ 是 $\theta$ 的线性函数.譬如，$s^2$ 是 $\sigma^2$ 的无偏估计, 但 $s$ 不是 $\sigma$ 的无偏估计. 下而我们以正态分布为例加以说明.
+\end{example}
+
+\begin{example}\label{exam:6.2.5}
+设总体为 $N(\mu,\sigma^{2}), x_{1}, \cdots, x_{n}$ 是样本，我们已经指出 $s^2$ 是 $\sigma^2$ 的无偏估计. 由定理\ref{thm:5.3.1}, $Y=\frac{(n-1) s^{2}}{\sigma^{2}} \sim \chi^{2}(n-1)$, 其密度函数为
+\[p(y)=\frac{1}{2^{\frac{n-1}{2}} \Gamma(\frac{n-1}{2})} y^{\frac{n-1}{2}}\ee^{-\frac{y}{2}}, \quad y>0\]
+从而
+\begin{align*}
+E(Y^{1/2}) 
+&=\int_{0}^{+\infty} y^{1 / 2} p(y)\dd y \\ &=\frac{1}{2^{\frac{n-1}{2}} \Gamma(\frac{n-1}{2})} \int_{0}^{\infty} y^{\frac{n}{2}-1} \mathrm{e}^{-\frac{y}{2}} \dd y \\
+&=\frac{2^{\frac{n}{2}} \Gamma(\frac{n}{2})}{2^{\frac{n-1}{2}} \Gamma(\frac{n-1}{2})}=\sqrt{2} \frac{\Gamma(\frac{n}{2})}{\Gamma(\frac{n-1}{2})}
+\end{align*}
+由此, 我们有
+\[E s=\frac{\sigma}{\sqrt{n-1}} E(Y^{1 / 2})=\sqrt{\frac{2}{n-1}} \cdot \frac{\Gamma(n / 2)}{\Gamma((n-1) / 2)} \cdot \sigma \equiv \frac{\sigma}{c_{n}}\]
+这说明 $s$ 不是 $\sigma$ 的无偏估计，利用修正技术可得 $c_n\cdot s$ 是 $\sigma$ 的无偏估计，其中 $c_n=\sqrt{\frac{n-1}{2}} \cdot \frac{\Gamma((n-1) / 2)}{\Gamma(n / 2)}$ 是修偏系数，表\ref{tab:6.2.1}给出了 $c_n$ 的部分取值. 可以证明, 当 $n\to+\infty$ 时有 $c_n\to1$, 这说明 $s$ 是 $\sigma$ 的渐近无偏估计, 从而在样本容量较大时, 不经修正的 $s$ 也是 $\sigma$ 的一个很好的估计.
+\begin{table}[htbp]
+\centering
+\caption{正态标准差的修信系数表}\label{tab:6.2.1}
+\begin{tabular}{>{$}c<{$}*{4}{>{$}c<{$}||>{$}c<{$}}>{$}c<{$}}
+\toprule
+n &   c_n  &  n &   c_n  &  n &   c_n  &  n &   c_n  &  n & c_n \\
+\midrule
+  &        &  7 & 1.0424 & 13 & 1.0210 & 19 & 1.0140 & 25 & 1.0105\\
+2 & 1.2533 &  8 & 1.0362 & 14 & 1.0194 & 20 & 1.0132 & 26 & 1.0100\\
+3 & 1.1284 &  9 & 1.0317 & 15 & 1.0180 & 21 & 1.0126 & 27 & 1.0097\\
+4 & 1.0854 & 10 & 1.0281 & 16 & 1.0168 & 22 & 1.0120 & 28 & 1.0093\\
+5 & 1.0638 & 11 & 1.0253 & 17 & 1.0157 & 23 & 1.0114 & 29 & 1.0090\\
+6 & 1.0509 & 12 & 1.0230 & 18 & 1.0148 & 24 & 1.0109 & 30 & 1.0087\\
+\bottomrule
+\end{tabular}
+\end{table}
+\end{example}
+
 \subsection{有效性}
 \subsection{均方误差}
 \subsection{习题}
