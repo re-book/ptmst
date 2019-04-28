@@ -1543,4 +1543,45 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
     \begin{equation*}
         \varphi_{Y_n^*} (t) = \Biggl( \varphi \biggl( \frac{t}{\sigma \sqrt{n}} \biggr) \Biggr)^n.
     \end{equation*}
+    又因为 $ E ( X_n - \mu ) = 0 $, $ Var ( X_n - \mu ) = \sigma^2 $, 所以有
+    \begin{equation*}
+        \varphi' (0) = 0, \ \varphi'' (0) = - \sigma^2.
+    \end{equation*}
+    于是特征函数 $ \varphi (t) $ 有展开式
+    \begin{align*}
+        \varphi (t) & = \varphi (0) + \varphi' (0) t + \varphi'' (0) \frac{t^2}{2} + o (t^2)\\
+        & = 1 - \frac{1}{2} \sigma^2 t^2 + o (t^2).
+    \end{align*}
+    从而有
+    \begin{equation*}
+        \lim_{n \to +\infty} \varphi_{Y_n^*} (t) = \lim_{n \to +\infty} \Biggl( 1 - \frac{t^2}{2n} + o \biggl( \frac{t^2}{n} \biggr) \Biggr)^n = \ee^{-t^2/n},
+    \end{equation*}
+    而 $ \ee^{-t^2/2} $正是 $ N (0,1) $ 分布的特征函数, 定理得证.
 \end{proof}
+
+定理~\ref{thm:4.4.1} 有广泛的应用, 它只假设 $ \{ X_n \} $ 独立同分布、方差存在, 不管原来的分布是什么, 只要 $ n $充分大, 就可以用正态分布去逼近.
+以下给出一些林德贝格-勒维中心极限定理的应用例子.
+
+\begin{example}[正态菌机数的产生]\label{exam:4.4.3}
+    在随机模拟 (蒙特卡洛方法) 中经常需要产生正态分布 $ N ( \mu, \sigma^2 ) $ 的随机数, 但一般计算机软件只具备产生区间 $ (0,1) $ 上的均匀分布随机数的功能, 现在我们要用中心极限定理通过 $ (0,1) $ 上均匀分布的随机数来产生正态分布 $ N ( \mu, \sigma^2 ) $ 的随机数.
+    
+    设 $ X $ 服从 $ (0,1) $ 上的均匀分布, 则其数学期望与方差分别为 $ 1/2 $ 和 $ 1/12 $.
+    由此得 12 个相互独立的 $ (0,1) $ 上均匀分布随机变量和的数学期望与方差分别为 6 和1.
+    因此我们可以如下产生正态分布 $ N ( \mu, \sigma^2 ) $ 的随机数.
+
+    \begin{enumerate}
+        \item\label{exam:4.4.3.1} 从计算机中产生 12 个 $ (0,1) $ 上均匀分布的随机数, 记为 $ x_1, x_2, \dotsc, x_{12} $.
+        \item 计算 $ y = x_1 + x_2 + \dotsb + x_{12} - 6 $, 则由林德贝格-勒维中心极限定理知, 可将 $ y $ 看成来自标准正态分布 $ N (0,1) $ 的一个随机数.
+        \item\label{exam:4.4.3.3} 计算 $z = \mu + \sigma y $, 则可将 $ z $ 看成来自标准正态分布 $ N (\mu, \sigma^2) $ 的一个随机数.
+        \item 重复 \ref{exam:4.4.3.1}-\ref{exam:4.4.3.3} $n$次, 就可得到 $ N (\mu,\sigma^2 ) $ 分布的 $n$ 个随机数.
+    \end{enumerate}
+\end{example}
+
+从这个例子可以看出, 由 12 个均匀分布的随机数得到 1 个正态分布的随机数是利用了林德贝格-勒维中心极限定理.
+
+\begin{example}[数值计算中的误差分析]\label{exam:4.4.4}
+    在数值计算中, 任何实数 $x$ 都只能用一定位数的小数 $x'$来近似.
+    譬如在计算中取5位小数, 第6位以后的小数都用四舍五人的方法舍去, 则 $ \pi = 3.141592654\dots $ 和 $ \ee = 2.718281828\dots $ 的近似数为 $\pi' = 3.14159 $ 和 $ \ee' = 2.71828 $.
+    
+    现在如果要求 $ n $ 个实数 $ x_i (i = 1, 2, \dotsc, n) $ 的和 $ S $, 在数值计算中, 只能用 $x_i$
+\end{example}
