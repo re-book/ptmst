@@ -768,8 +768,118 @@ $\left|\bar{y}_{2.}-\bar{y}_{3.}\right|=|1073.13-1044.25|=46.88>46.27$, 认为 $
 \subsection{意复数不等场合的 $S$ 法}
 
 在重复数不等时，沿用上面的记号，我们有
+\begin{equation*}
+  \frac{(\bar{y}_{i.} - \bar{y}_{j.}) - (\mu_i - \mu_j)}{\sqrt{\frac{1}{m_i}+\frac{1}{m_j}}\hat{\sigma}} \sim t(f_e)
+\end{equation*}
+在假设~\eqref{eq:8.2.2} 成立时，$\mu_1 = \cdots = \mu_r = \mu$，于是有
+\begin{equation*}
+  t_{ij} =   \frac{(\bar{y}_{i.} - \bar{y}_{j.})}{\sqrt{\frac{1}{m_i}+\frac{1}{m_j}}\hat{\sigma}} \sim t(f_e) \quad \text{ 或 } F_{ij} = \frac{(\bar{y}_{i.} - \bar{y}_{j.})^2}{\left(\frac{1}{m_i}+\frac{1}{m_j}\right)\hat{\sigma}}^2 \sim F(1, f_e),
+\end{equation*}
+从而可以要求 $c_{ij} = c \sqrt{\frac{1}{m_i}+\frac{1}{m_j}}$, 类似于重复数相等时的推导，有
+\begin{align*}
+  P(W) & = P \left[\bigcap_{1\leq i < j \leq r} \left(|\bar{y}_{i.} - \bar{y}_{j.}| \geq c \sqrt{\frac{1}{m_i}+\frac{1}{m_j}}\right)\right] \\
+       & = P \left[\max_{1 \leq i < j \leq r} \frac{|\bar{y}_{i.} - \bar{y}_{j.}|}{\sqrt{\frac{1}{m_i}+\frac{1}{m_j}}\hat{\sigma}} \geq \frac{c}{\hat{\sigma}}\right] \\
+       & = P \left[\max_{1 \leq i < j \leq r} \frac{(\bar{y}_{i.} - \bar{y}_{j.})^2}{\frac{1}{m_i}+\frac{1}{m_j}\hat{\sigma}} \geq \frac{c}{\hat{\sigma}^2}\right] \\
+       & = P(\max_{1\leq i < j \leq r} F_{ij} \geq (c/\hat{\sigma})^2).
+\end{align*}
+可以证明，$\frac{\max_{1\leq i < j \leq r} F_{ij}}{r-1} \sim F(r-1, f_e)$, 从而由 $P(W)=\alpha$ 可推出 $(c/\hat{\sigma})^2 = (r-1) F_{1-\alpha} (r-1, f_e)$, 亦即
+\begin{equation*}
+  c_{ij} = \sqrt{(r-1) F_{1-\alpha}(r-1, f_e) \left(\frac{1}{m_i} + \frac{1}{m_j} \hat{\sigma}^2\right)}
+\end{equation*}
+
+\begin{example}\label{exam:8.2.3}
+  在例~\ref{exam:8.1.4} 中，我们已指出包装方式对食品销量有显著影响，此处 $r=4$, $f_e = 6$, $\hat{\sigma}^2 = 7.67$, 若取 $\alpha = 0.05$, 则 $F_{0.95}(3,6) = 4.76$. 注意到 $m_1 = m_4 = 2$, $m_2=m_3=3$, 故
+  \begin{align*} 
+    c_{12} &=c_{13}=c_{24}=c_{34}=\sqrt{3 \times 4.76 \times(1 / 2+1 / 3) \times 7.67}=9.6 \\ 
+    c_{14} &=\sqrt{3 \times 4.76 \times(1 / 2+1 / 2) \times 7.67}=10.5 \\ 
+    c_{23} &=\sqrt{3 \times 4.76 \times(1 / 3+1 / 3) \times 7.67}=8.5 
+  \end{align*}
+  由于
+  \begin{align*}
+    \left|\bar{y}_{1.}-\bar{y}_{2.} \right| &=  2 < c_{12},\\
+    \left|\bar{y}_{1.}-\bar{y}_{3.} \right| &=  4 < c_{13},\\
+    \left|\bar{y}_{1.}-\bar{y}_{4.} \right| &= 12 > c_{14},\\
+    \left|\bar{y}_{2.}-\bar{y}_{3.} \right| &=  6 < c_{23},\\
+    \left|\bar{y}_{2.}-\bar{y}_{4.} \right| &= 14 > c_{24},\\
+    \left|\bar{y}_{3.}-\bar{y}_{4.} \right| &=  8 < c_{34},   
+  \end{align*}
+这说明 $A_1, A_2, A_3$ 间无显著差异，$A_1, A_2$ 与 $A_4$ 有显著差异，但 $A_4$ 与 $A_3$ 的差异却尚未达到显著水平。综合上述，包装 $A_4$ 销售量最佳。
+\end{example}
+
+\begin{xiti}
+  \item 采用习题 8.1 中第 7 题的数据，对三种储藏方法的平均含水率在 $\alpha = 0.05$ 下作多重比较.
+  \item 采用习题 8.1 中第 8 题的数据，对五种推销方法在 $\alpha = 0.05$ 下作多重比较.
+  \item 有七种人造纤维，每种抽 4 根测其强度，得每种纤维的乎均强度及标准差如下：
+  \begin{center}
+    \begin{tabular}{cccccccc}
+      \toprule
+      i     & 1     & 2     & 3     & 4     & 5     & 6     & 7 \\
+      \midrule
+      y     & 6.3   & 6.2   & 6.7   & 6.8   & 6.5   & 7     & 7.1 \\
+      s     & 0.81  & 0.92  & 1.22  & 0.74  & 0.88  & 0.58  & 1.05 \\
+      \bottomrule
+      \end{tabular}%  
+  \end{center}
+  假定各种纤维的强度凝从等方差的正态分布.
+  \begin{enumerate}
+    \item 试问七种纤维强度间有无显着差异（取 $\alpha=0.05$）；
+    \item 若各种纤维的强度间无显著差异，则给出乎均强度的置信水平为 0.95 的置信区间；若各种纤维的强度间有显著差异，请进一步在 $\alpha=0.05$ 下进行多重比较，并指出哪种纤维的平均强度最大，同时给出该种纤维平均强度的置信水平为 0.95 的置信区间.
+  \end{enumerate}
+  \item 一位经济学家对生产电子计算机设备的企业收集了在一年内生产力提高指数（用 0 到 100 内的数表示）并按过去三年间在科研和开发上的乎均花费分为三类：
+  \begin{center}
+    $A_1$: 花费少,\quad $A_2$: 花费中等,\quad $A_3$: 花费多.
+  \end{center}
+生产力提高的指数如下表所示：
+\begin{center}
+  \begin{tabular}{ccccccccccccc}
+    \toprule
+    水平    & \multicolumn{12}{c}{生产力提高指数} \\
+    \midrule
+    $A_1$    & 7.6   & 8.2   & 6.8   & 5.8   & 6.9   & 6.6   & 6.3   & 7.7   & 6     &       &       &  \\
+    $A_2$    & 6.7   & 8.1   & 9.4   & 8.6   & 7.8   & 7.7   & 8.9   & 7.9   & 8.3   & 8.7   & 7.1   & 8.4 \\
+    $A_3$    & 8.5   & 9.7   & 10.1  & 7.8   & 9.6   & 9.5   &       &       &       &       &       &  \\
+    \bottomrule
+    \end{tabular}%
+\end{center}
+请列出方差分析表，并进行多重比较。
+\end{xiti}
 
 \section{方差齐次检验}\label{sec:8.3}
+在单因子试验中 $r$ 个水平的指标可以用 $r$ 个正态分布 $N(\mu_i,\sigma_i^2)$, $i=1,2,\ldots,r$ 表示. 在进行方差分析时要求 $r$ 个方差相等，这称为\textbf{方整齐性}\index{F!方差齐性}. 而方差齐性不一定自然具有. 理论研究表明，当正态性假定不满足时对 $F$ 检验影响较小,即 $F$ 检验对正态性的偏离具有一定的稳健性，而F检验对方差齐性的偏离较为敏感.所以 $r$ 个方差的齐性检验就显得十分必要.
+
+所谓方差齐性检验是对如下一对假设作出检验：
+\begin{equation}\label{eq:8.3.1}
+  H_0:\; \sigma_1^2 = \sigma_2^2 = \cdots = \sigma_r^2 \text{ vs } H_1:\; \text{ 诸 } \sigma_i^2 \text{ 不全相等}.
+\end{equation}
+很多统计学家提出了一些很好的检验方法，这里介绍几个最常用的检验，它们是：
+\begin{itemize}
+  \item Hartley 检验，仅适用于样本量相等的场合；
+  \item Bartlett 检验，可用于样本量相等或不等的场合，但是每个样本量不得低于5；
+  \item 修正的 Bartlett 检验，在样本量较小或较大、相等或不等场合均可使用.
+\end{itemize}
+
+下面分别来叙述它们.
+\subsection{Hartley 检验}
+
+当各水平下试验重复次数相等时，即
+\begin{equation*}
+  m_{1}=m_{2}=\cdots=m_{r}=m
+\end{equation*}
+Hartley 提出检验方差相等的检验统计量：
+\begin{equation}\label{eq:8.3.2}
+  H=\frac{\max \left\{s_{1}^{2}, s_{2}^{2}, \ldots, s_{r}^{2}\right\}}{\min \left\{s_{1}^{2}, s_{2}^{2}, \ldots, s_{r}^{2}\right\}}
+\end{equation}
+它是 $r$ 个样本方差的最大值与最小值之比.这个统计量的分布尚无明显的表达式，但在诸方差相等条件下，可通过随机模拟方法获得H分布的分位数，该分布依赖于水平数 $r$ 和样本方差的自由度 $f=m-1$，因此该分布可记为 $H(r,f)$，其分位数表列于附表 10 上.
+
+直观上看，当 $H_0$ 成立，即诸方差相等 $\sigma_1^2 = \sigma_2^2= \ldots = \sigma_r^2$ 时，$H$ 的值应接近于1，当 $H$ 的值较大时，诸方差间的差异就大，$H$ 愈大，诸方差间的差异就愈大，这时应拒绝~\eqref{eq:8.3.1} 中的 $H_0$. 由此可知，对给定的显著性水平 $\alpha$，检验 $H_0$ 的拒绝域为
+\begin{equation}
+  W=|H>H_{1-\alpha}(r, f)|
+\end{equation}
+其中 $H_{1-\alpha}(r,f)$ 为 $H$ 分布的 $1-\alpha$ 分位数.
+
+\begin{example}
+  有四种不同牌号的铁锈防护剂（简称防锈剂），现要比较其防锈能力.为此，制作 40 个大小形状相同的铁块（试验样品），然后把它们随机分为四组，每组 10 件样品. 在每一组样品上涂上同一牌号的防锈剂，最后把 40 个样品放在一个广场上让其经受日晒、风吹和雨打.一段时间后再行观察其防锈能力.由于防锈能力无测量仪器，只能请专家评分. 五位受聘专家对评分标准进行讨论，取得共识. 样品上无锈迹的评 100 分，全锈了评 0 分.他们在不知牌号的情况
+\end{example}
 
 \section{一元线性回归}\label{sec:8.4}
 
