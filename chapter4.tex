@@ -1478,24 +1478,24 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
 
 \begin{figure}
     \centering
-    % \begin{tikzpicture}[scale=2]
-    %     \draw[-stealth,font=\small] (0,0) -- (4.5,0) node[right] {$y$};
-    %     \draw[-stealth,font=\small] (0,0) -- (0,1.3) node[above] {$p(y)$};
+    % \begin{tikzpicture}[samples=100,>=stealth,every node/.style={scale=0.5}]
+    %     \draw[->] (0,0) -- (4.2,0) node[right] {$y$};
+    %     \draw[->] (0,0) -- (0,1.2) node[above] {$p(y)$};
     %     \draw (0,1) -- (1,1);
     %     \draw[semithick] (0,0) -- (1,1) -- (2,0);
-    %     \draw[dashed,samples=100,domain=0:1] plot(\x,{(\x)^2/2});
-    %     \draw[dashed,samples=100,domain=1:2] plot(\x,{-(\x-3/2)^2+3/4});
-    %     \draw[dashed,samples=100,domain=2:3] plot(\x,{(3-\x)^2/2});
-    %     \draw[dashed,samples=100,domain=0:1] plot(\x,{(\x)^2/6});
-    %     \draw[dashed,samples=100,domain=1:2] plot(\x,{((\x)^3-4*(\x-1)^3)/6});
-    %     \draw[dashed,samples=100,domain=2:3] plot(\x,{((4-\x)^3-4*(3-\x)^3)/6});
-    %     \draw[dashed,samples=100,domain=3:4] plot(\x,{(4-\x)^3/6});
-    %     \draw[->,font=\small] (0.85,1.2) node[above right] {$p_1(y)$} -- (0.7,1);
-    %     \draw[->,font=\small] (1.4,1) node[above right] {$p_2(y)$} -- (1.2,0.8);
-    %     \draw[->,font=\small] (1.9,0.9) node[above right] {$p_3(y)$} -- (1.7,0.7);
-    %     \draw[->,font=\small] (2.9,0.55) node[above right] {$p_4(y)$} -- (2.7,0.35);
-    %     \foreach \i in {1,...,4} {\draw[very thin,font=\tiny] (\i,0) -- (\i,0.05) node[below=4pt] {\i};}
-    %     \foreach \i in {1/6,1/2,2/3,3/4,1} {\draw[very thin,font=\tiny] (0,\i) -- (0.05,\i) node[left=4pt] {\i};}
+    %     \draw[densely dashed,domain=0:1] plot(\x,{(\x)^2/2});
+    %     \draw[dashed,domain=1.03:2] plot(\x,{-(\x-3/2)^2+3/4});
+    %     \draw[dashed,domain=2.03:3] plot(\x,{(3-\x)^2/2});
+    %     \draw[dashed,domain=0:1] plot(\x,{(\x)^2/6});
+    %     \draw[dashed,domain=1.03:2] plot(\x,{((\x)^3-4*(\x-1)^3)/6});
+    %     \draw[dashed,domain=2.03:3] plot(\x,{((4-\x)^3-4*(3-\x)^3)/6});
+    %     \draw[densely dashed,domain=3.03:4] plot(\x,{(4-\x)^3/6});
+    %     \draw[->] (0.82,1.2) node[above right=-1.5pt and -1.5pt] {$p_1(y)$} -- (0.7,1);
+    %     \draw[->] (1.35,1) node[above right=-1.5pt and -1.5pt] {$p_2(y)$} -- (1.2,0.8);
+    %     \draw[->] (1.85,0.9) node[above right=-1.5pt and -1.5pt] {$p_3(y)$} -- (1.7,0.7);
+    %     \draw[->] (2.85,0.55) node[above right=-1.5pt and -1.5pt] {$p_4(y)$} -- (2.7,0.35);
+    %     \foreach \i in {1,...,4} \draw[very thin] (\i,0)node[below]{\i}-- (\i,0.02);
+    %     \foreach \i in {1/6,1/2,2/3,3/4,1} {\draw[very thin,font=\scriptsize] (0,\i) -- (0.04,\i) node[left] {\i};}
     %     \draw[densely dotted] (0,1/6) -- (1,1/6);
     %     \draw[densely dotted] (0,1/2) -- (1,1/2);
     %     \draw[densely dotted] (0,2/3) -- (1.8,2/3);
@@ -1509,3 +1509,38 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
 如此复杂的形式即使求出 (当然没有人去求), 也无法使用.
 这就迫使人们去寻求近似分布.
 若记 $ Y_n $ 的分布函数为 $ F_n (x) $, 在弱收敛的含义下, 求出其极限分布 $ F (x) $, 那么当 $ n $ 很大时, 就可用 $ F(x) $ 作为 $ F_n (x) $ 的近似分布.
+
+为了使寻求 $ Y_n $ 的极限分布有意义, 有必要先研究一下问题的提法.
+在图~\ref{fig:4.4.1} 上可以看出: 当 $ n $ 增大时, $ p_n (y) $ 的中心右移, 且 $ p_n (y) $ 的方差增大.
+这意味着当 $ n \to +\infty $ 时, $ Y_n $ 的分布中心会趋向 $ +\infty $, 其方差也趋向 $ +\infty $.
+这种情况就没有什么意义了.
+为了克服这个缺点, 在中心极限定理的研究中均对 $ Y_n $ 进行标准化
+\begin{equation*}
+    Y_n^* = \frac{Y_n - E (Y_n)}{\sqrt{Var ( Y_n )}}.
+\end{equation*}
+由于 $ E (Y_n) = 0 $, $ Var (Y_n) = 1 $, 这就有可能得出 $ Y_n $ 的极限分布为标准正态分布 $ N (0, 1) $.
+
+中心极限定理就是研究独立随机变量和的极限分布为正态分布的问题.
+
+\subsection{独立同分布下的中心极限定理}
+
+\begin{theorem}{林德贝格-勒维中心极限定理}{4.4.1}
+    设 $ \{ X_n \} $ 是独立同分布的随机变量序列, 且 $ E (X_n) = \mu $, $ Var (X_n)= \sigma^2 > 0 $.
+    记
+    \begin{equation*}
+        Y_n^* = \frac{X_1 + X_2 + \dotsb + X_n - n \mu}{\sigma \sqrt{n}},
+    \end{equation*}
+    则对任意实数 $ y $, 有
+    \begin{equation}\label{eq:4.4.1}
+        \lim_{n \to +\infty} P ( Y_n ^* \leq y ) = \Phi (y) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^y \ee^{-t^2/2} \dd t.
+    \end{equation}
+\end{theorem}
+
+\begin{proof}
+    为证 \eqref{eq:4.4.1}, 只须证 $ \{ Y_n^* \} $ 的分布函数列弱收敛于标准正态分布.
+    又由定理~\ref{thm:4.3.4}, 只须证 $ \{ Y_n^* \} $ 的特征函数列收敛于标准正态分布的特征函数.
+    为此设 $ X_n - \mu $ 的特征函数为 $ \varphi (t) $, 则 $ \{ Y_n^* \} $ 的特征函数为
+    \begin{equation*}
+        \varphi_{Y_n^*} (t) = \Biggl( \varphi \biggl( \frac{t}{\sigma \sqrt{n}} \biggr) \Biggr)^n.
+    \end{equation*}
+\end{proof}
