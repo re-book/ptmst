@@ -1583,5 +1583,48 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
     在数值计算中, 任何实数 $x$ 都只能用一定位数的小数 $x'$来近似.
     譬如在计算中取5位小数, 第6位以后的小数都用四舍五人的方法舍去, 则 $ \pi = 3.141592654\dots $ 和 $ \ee = 2.718281828\dots $ 的近似数为 $\pi' = 3.14159 $ 和 $ \ee' = 2.71828 $.
     
-    现在如果要求 $ n $ 个实数 $ x_i (i = 1, 2, \dotsc, n) $ 的和 $ S $, 在数值计算中, 只能用 $x_i$
+    现在如果要求 $ n $ 个实数 $ x_i (i = 1, 2, \dotsc, n) $ 的和 $ S $, 在数值计算中, 只能用 $x_i$ 的近似数 $ x'_i $来得到 $ S $ 的近似数$ S' $, 记个别误差为 $ \varepsilon_i = x_i - x'_i $, 则总误差为
+    \begin{equation*}
+        S - S' = \sum_{i=1}^n x_i - \sum_{i=1}^n x'_i = \sum_{i=1}^n \varepsilon_i.
+    \end{equation*}
+    
+    若在数值计算中, 取 $ k $ 位小数, 则可认为 $ \varepsilon_i $ 服从区间 $ ( -0.5\times 10^{-k}, 0.5\times 10^{-k} ) $ 上的均匀分布, 且相互独立.
+    下面我们来估计总误差.
+    一种粗略的估计方法是: 由于 $ \lvert \varepsilon_i \rvert \leq 0.5 \times 10^{-k} $, 所以
+    \begin{equation}
+        \biggl\lvert \sum_{i=1}^n \varepsilon_i \biggr\rvert \leq n \times 0.5 \times 10^{-k}.
+    \end{equation}
+    
+    现在用中心极限定理来估计: 因为 $ \{ \varepsilon_i \} $ 独立同分布, 且
+    \begin{equation*}
+        E \big( \varepsilon_i \bigr) = 0, \quad Var \bigl( \varepsilon_i \bigr)= \frac{10^{-2k}}{12}.
+    \end{equation*}
+    因此对总误差有
+    \begin{equation*}
+        E \biggl( \sum_{i=1}^n \varepsilon_i \biggr) = 0, \quad Var \biggl( \sum_{i=1}^n \varepsilon_i \biggr) = \frac{n 10^{-2k}}{12}.
+    \end{equation*}
+    由林德贝格-勒维中心极限定理知, 对任意的 $x$, 有
+    \begin{align*}
+        P \Biggl( \biggl\lvert \sum_{i=1}^n \varepsilon_i \biggr\rvert \leq z \Biggr) & \approx \Phi \biggl( \frac{z \sqrt{12}}{\sqrt{n 10^{-2k}}} \biggr) - \Phi \biggl( -\frac{z \sqrt{12}}{\sqrt{n 10^{-2k}}} \biggr)\\
+        & = 2 \Phi \biggl( \frac{z \sqrt{12}}{\sqrt{n 10^{-2k}}} \biggr) - 1.
+    \end{align*}
+    要从上式中求出总误差的上限 $z$, 可令上式右边的概率为 0.99, 由此得
+    \begin{equation*}
+        \Phi \biggl( \frac{z \sqrt{12}}{\sqrt{n 10^{-2k}}} \biggr) = 0.995.
+    \end{equation*}
+    再查标准正态分布函数的 0.995 分位数得
+    \begin{equation*}
+        \frac{z \sqrt{12}}{\sqrt{n 10^{-2k}}} = 2.575.
+    \end{equation*}
+    由此解得
+    \begin{align*}
+        z & = \frac{2.575 \sqrt{n \times 10^{-2k}}}{\sqrt{12}} = 0.7433 \times \sqrt{n \times 10^{-2k}}\\
+        & = 0.7433 \times \sqrt{n} \times 10^{-k}.
+    \end{align*}
+    也就是我们有 \SI{99}{\percent} 的把握程度, 可以说
+    \begin{equation}\label{eq:4.4.3}
+        \biggl\lvert \sum_{i=1}^n \varepsilon_i \biggr\rvert \leq 0.7433 \times \sqrt{n} \times 10^{-k}.
+    \end{equation}
+    
+    譬如在数值计算中保留 5 位小数, 以概率 \num{0.99} 可以保证, \num{10000} 个近似数之和的总误差, 用 \eqref{eq:4.4.3} 式估计为 \num{0.0007433}, 即万分之七左右.
 \end{example}
