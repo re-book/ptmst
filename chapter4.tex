@@ -29,7 +29,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
     \begin{equation}\label{eq:4.1.1}
         \varphi (t) = E \bigl( \ee^{itx} \bigr), \; -\infty \leq t \leq +\infty,
     \end{equation}
-    为 $ X $ 的\textbf{特征函数}\index{特征函数}.
+    为 $ X $ 的{\heiti 特征函数}\index{特征函数}.
 \end{definition}
 
 因为 $ \lvert \ee^{itx} \rvert \leq 1 $,
@@ -51,31 +51,31 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
 与随机变量的数学期望、方差及各阶矩一样,
 特征函数只依赖于随机变量的分布,
 分布相同则特征函数也相同,
-所以我们也常称为某\textbf{分布的特征函数}\index{特征函数!分布的特征函数}.
+所以我们也常称为某{\heiti 分布的特征函数}\index{特征函数!分布的特征函数}.
 
 
 \begin{example}\label{exam:4.1.1}
     常用分布的特征函数
     \begin{enumerate}
         \item
-        \textbf{单点分布}\index{分布!单点分布}: $ P (X = a) = 1 $, 
+        {\heiti 单点分布}\index{分布!单点分布}: $ P (X = a) = 1 $, 
         其特征函数为
         \begin{equation*}
             \varphi (t) = \ee^{itz}.
         \end{equation*}
         \item\label{exam:4.1.1.2}
-        \textbf{0-1分布}\index{分布!0-1分布}: $ P( X = x ) = p^x  ( 1 - p )^{1 - x} $, $ x = 0,1 $,
+        {\heiti 0-1分布}\index{分布!0-1分布}: $ P( X = x ) = p^x  ( 1 - p )^{1 - x} $, $ x = 0,1 $,
         其特征函数为
         \begin{equation*}
             \varphi (t) = p \ee^{it} + q, \quad \text{其中} \ q= 1 - p.
         \end{equation*}
         \item
-        \textbf{泊松分布}\index{分布!泊松分布}: $ P ( X = k ) = ( \lambda^k/k! ) \ee^{-\lambda} $, $ k = 0, 1, \dotsc $, 其特征函数为
+        {\heiti 泊松分布}\index{分布!泊松分布}: $ P ( X = k ) = ( \lambda^k/k! ) \ee^{-\lambda} $, $ k = 0, 1, \dotsc $, 其特征函数为
         \begin{equation*}
             \varphi (t) = \sum_{k=0}^{+\infty} \ee^{ikt} \frac{\lambda^k}{k!} \ee^{-\lambda} = \ee^{\lambda} \ee^{\lambda \ee^{it}} = \ee^{\lambda ( \ee^{it} ) -1}.
         \end{equation*}
         \item
-        \textbf{均匀分布}\index{分布!均匀分布} $ U ( a,b ) $: 因为密度函数为
+        {\heiti 均匀分布}\index{分布!均匀分布} $ U ( a,b ) $: 因为密度函数为
         \begin{equation*}
             p (x) = 
             \begin{cases}
@@ -88,7 +88,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
             \varphi (t) = \int_a^b \frac{\ee^{itx}}{b - a} \dd x = \frac{\ee^{ibt} - \ee^{iat}}{it (b-a)}.
         \end{equation*}
         \item
-        \textbf{标准正态分布}\index{分布!标准正态分布} $ N (0,1) $: 因为密度函数为
+        {\heiti 标准正态分布}\index{分布!标准正态分布} $ N (0,1) $: 因为密度函数为
         \begin{equation*}
             p (x) = \frac{1}{\sqrt{2\pi}} \exp \left( -\frac{x^2}{2} \right), \quad - \infty < x < + \infty.
         \end{equation*}
@@ -109,7 +109,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
         就很容易得到一般正态分布 $ N ( \mu, \sigma^2 ) $ 的特征函数,
         见例~\ref{exam:4.1.2}.
         \item
-        \textbf{指数分布}\index{分布!指数分布} $ Exp ( \lambda ) $: 因为密度函数为
+        {\heiti 指数分布}\index{分布!指数分布} $ Exp ( \lambda ) $: 因为密度函数为
         \begin{equation*}
             p (x) =
             \begin{cases}
@@ -229,7 +229,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
 
     \begin{enumerate}
         \item
-        \textbf{二项分布}\index{分布!二项分布} $ b (n, p) $: 设 $ Y \sim b (n, p) $, 则 $ Y = X_1 + x_2 + \dotsb X_n $, 其中诸 $ X_i $ 是相互独立同分布的随机变量, 且 $ X_{i} \sim b (1, p) $, 由 例~\ref{exam:4.1.2} \ref{exam:4.1.1.2} 知
+        {\heiti 二项分布}\index{分布!二项分布} $ b (n, p) $: 设 $ Y \sim b (n, p) $, 则 $ Y = X_1 + x_2 + \dotsb X_n $, 其中诸 $ X_i $ 是相互独立同分布的随机变量, 且 $ X_{i} \sim b (1, p) $, 由 例~\ref{exam:4.1.2} \ref{exam:4.1.1.2} 知
         \begin{equation*}
             \varphi_{X_i} (t) = p \ee^{it} + q,
         \end{equation*}
@@ -238,7 +238,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
             \varphi_Y (t) = \left( p \ee^{it} + q \right)^{\pi}
         \end{equation*}
         \item
-        \textbf{正态分布}\index{分布!正态分布} $ N (\mu, \sigma^2) $: 设 $ Y \sim N (\mu, \sigma^2) $, 则 $ X = (Y - \mu) / \sigma \sim N (0, 1) $.
+        {\heiti 正态分布}\index{分布!正态分布} $ N (\mu, \sigma^2) $: 设 $ Y \sim N (\mu, \sigma^2) $, 则 $ X = (Y - \mu) / \sigma \sim N (0, 1) $.
         由例~\ref{exam:4.1.1} 知
         \begin{equation*}
             \varphi_{X} (t) = \exp \left( -\frac{t^2}{2} \right).
@@ -248,7 +248,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
             \varphi_Y (t) = \varphi_{\alpha X + \mu} (t) =\ee^{i \mu t} \varphi_X ( \sigma t ) = \exp \left( i \mu t - \frac{\sigma^2 t^2}{2} \right).
         \end{equation*}
         \item 
-        \textbf{伽玛分布}\index{分布!伽玛分布} $ Ga ( n, \lambda ) $: 设 $ Y \sim Ga ( n, \lambda ) $, 则$ Y = X_1 + X_2 + \dotsb + X_n $, 其中 $ X_i $ 独立同分布, 且 $ X_i \sim Exp ( \lambda ) $.
+        {\heiti 伽玛分布}\index{分布!伽玛分布} $ Ga ( n, \lambda ) $: 设 $ Y \sim Ga ( n, \lambda ) $, 则$ Y = X_1 + X_2 + \dotsb + X_n $, 其中 $ X_i $ 独立同分布, 且 $ X_i \sim Exp ( \lambda ) $.
         由例~\ref{exam:4.1.1} 知
         \begin{equation*}
             \varphi_{X_i} (t) = \left( 1 - \frac{it}{\lambda} \right)^{-1}.
@@ -262,7 +262,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
             \varphi(t) = \left( 1 - \frac{it}{\lambda} \right)^{-a}.
         \end{equation*}
         \item
-        $ \mathbf{\chi^2 (n)} $ \textbf{分布}\index{分布!chi2分布@$ \mathbf{\chi^2 (n)} $ 分布}: 因为 $ \chi^2 (n) = Ga ( n/2, 1/2 ) $, 所以 $ \chi^2 (n) $ 分布的特征函数为
+        $ \mathbf{\chi^2 (n)} $ {\heiti 分布}\index{分布!chi2分布@$ \mathbf{\chi^2 (n)} $ 分布}: 因为 $ \chi^2 (n) = Ga ( n/2, 1/2 ) $, 所以 $ \chi^2 (n) $ 分布的特征函数为
         \begin{equation*}
             \varphi (t) = ( 1 - 2it )^{-n/2}.
         \end{equation*}
@@ -628,7 +628,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
 \begin{equation}\label{eq:4.2.3}
     \lim_{n \to +\infty} P \left( \left\lvert \frac{\mu_n}{n} - p \right\rvert \geq \varepsilon \right) = 0.
 \end{equation}
-这种收敛性就称作\textbf{依概率收敛}\index{收敛!依概率收敛}, 它的一般定义将在 \S 4.3 节中给出.
+这种收敛性就称作{\heiti 依概率收敛}\index{收敛!依概率收敛}, 它的一般定义将在 \S 4.3 节中给出.
 下面的伯努利大数定律就是对上述讨论作了一个很好的总结.
 \begin{theorem}{伯努利大数定律}{4.2.1}
     设 $ \mu_n $ 为 $ n $ 重伯努利试验中事件 A 发生的次数, $ p $为每次试验中 A 出现的概率, 则对任意的 $ \varepsilon > 0 $, 有
@@ -747,7 +747,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
 一般的大数定律都涉及一个随机变量序列 $ \{ X_n \} $, 大数定律的结论都是形如 \eqref{eq:4.2.5}, 为此我们给出如下定义.
 
 \begin{definition}{}{4.2.1}
-    设有一随机变量序列 $ \{ X_n \} $, 假如它具有形如 \eqref{eq:4.2.5} 的性质, 则称该随机变量序列 $ \{ X_n \} $ 服从\textbf{大数定律}\index{大数定律}.
+    设有一随机变量序列 $ \{ X_n \} $, 假如它具有形如 \eqref{eq:4.2.5} 的性质, 则称该随机变量序列 $ \{ X_n \} $ 服从{\heiti 大数定律}\index{大数定律}.
 \end{definition}
 
 不同的大数定律的差别只是对不同的随机变量序列 $ \{ X_n \} $ 而言, 有的是相互独立的随机变量序列, 有的是相依的随机变量序列, 有的是同分布的随机变量序列, 有的是不同分布的随机变量序列等等.
@@ -813,7 +813,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
     \frac{1}{n^2} Var \left( \sum_{i=1}^n X_i \right) \to 0.
 \end{equation*}
 则大数定律就能成立.
-这个条件 \ref{eq:4.2.6} 被称为\textbf{马尔可夫条件}\index{马尔可夫条件}.
+这个条件 \ref{eq:4.2.6} 被称为{\heiti 马尔可夫条件}\index{马尔可夫条件}.
 
 \begin{theorem}{马尔可夫大数定律}{4.2.3}
     对随机变量序列 $ \{ X_n \} $, 若 \ref{eq:4.2.6} 成立, 则 $ \{ X_n \} $ 服从大数定律, 即对任意的 $ \varepsilon > 0 $, \eqref{eq:4.2.5} 成立.
@@ -989,7 +989,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
     \begin{equation}\label{eq:4.3.1}
         \lim_{n \to +\infty} P \bigl( \bigr\lvert Y_n - Y \bigr\rvert < \varepsilon \bigr) = 1,
     \end{equation}
-    则称 $ \{ Y_n \} $ \textbf{依概率收敛}\index{收敛!依概率收敛} 于 $ Y $, 记作 $ Y_n \stackrel{P}{\to} Y $.
+    则称 $ \{ Y_n \} $ {\heiti 依概率收敛}\index{收敛!依概率收敛} 于 $ Y $, 记作 $ Y_n \stackrel{P}{\to} Y $.
 \end{definition}
 
 前面讨论的独立同分布随机变量序列 $ \{ X_n \} $ 服从大数定律是上述依概率收敛的特殊情况, 这只要构造另一个随机变量序列 $ \{ Y_n \} $, 其中
@@ -1138,11 +1138,11 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
     \begin{equation}\label{eq:4.3.2}
         \lim_{n \to +\infty} F_n (x) = F (x),
     \end{equation}
-    则称 $ \{ F_n (x) \} $ \textbf{弱收敛}\index{收敛!弱收敛}于 $ F (x) $, 记作
+    则称 $ \{ F_n (x) \} $ {\heiti 弱收敛}\index{收敛!弱收敛}于 $ F (x) $, 记作
     \begin{equation}\label{eq:4.3.3}
         F_n (x) \stackrel{W}{\to} F (x).
     \end{equation}
-    也称 $ \{ X_n \} $ \textbf{按分布收敛}\index{收敛!按分布收敛}于 $ X $, 记作
+    也称 $ \{ X_n \} $ {\heiti 按分布收敛}\index{收敛!按分布收敛}于 $ X $, 记作
     \begin{equation}\label{eq:4.3.4}
         X_n \stackrel{L}{\to} X.
     \end{equation}
@@ -1294,7 +1294,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
 
 最后, 我们利用以上的一些结论来证明 \ref{sec:4.2} 节中的辛钦大数定律.
 
-\textbf{辛软大数定律的证明}:
+{\heiti 辛软大数定律的证明}:
 设 $ \{ X_n \} $ 独立同分布, 且 $ E (X_n) = a, i=1, 2, \dotsc $.
 现在要证明
 \begin{equation*}
@@ -1628,3 +1628,46 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
     
     譬如在数值计算中保留 5 位小数, 以概率 \num{0.99} 可以保证, \num{10000} 个近似数之和的总误差, 用 \eqref{eq:4.4.3} 式估计为 \num{0.0007433}, 即万分之七左右.
 \end{example}
+
+从上例可以看出, 利用中心极限定理不但可以求概率, 还可以求随机变量和的上限 $z$.
+
+\subsection{二项分布的正态近似}
+
+由林德贝格-勒维中心极限定理, 马上就可以得到下面的棣莫弗-拉普拉斯极限定理.
+
+\begin{theorem}{棣莫弗-拉普拉斯极限定理}{4.4.2}
+    设 $n$ 重伯努利试验中, 事件 $A$ 在每次试验中出现的概率为 $ p (0<p<1) $.
+    记 $ \mu_n $ 为 $n$ 次试验中事件 $A$ 出现的次数, 且记
+    \begin{equation*}
+        T_n^* = \frac{\mu_n - np}{\sqrt{npq}}.
+    \end{equation*}
+    则对任意实数 $y$, 有
+    \begin{equation*}
+        \lim_{n \to +\infty} P \bigl( Y_n^* \leq y \bigr) = \Phi (y) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{y} \ee^{-t^2/2} \d t. 
+    \end{equation*}
+\end{theorem}
+
+棣莫弗-拉普拉斯极限定理是概率论历史上的第一个中心极限定理, 它是专门针对二项分布的, 因此称为``二项分布的正态近似''.
+前面第二章中定理~\ref{thm:2.4.1} (泊松定理) 给出了``二项分布的泊松近似''.
+两者相比, 一般在 $p$ 较小时, 用泊松分布近似较好; 而在 $ np>5 $ 和 $ n (1-p)>5 $ 时, 用正态分布近似较好.
+
+下面在给出棣莫弗-拉普拉斯极限定理定理的应用之前, 先说明两点:
+\begin{enumerate}
+    \item 因为二项分布是离散分布, 而正态分布是连续分布, 所以用正态分布作为二项分布的近似计算中, 作些修正可以提高精度.
+    若 $ k_1 < k_2 $ 均为整数, 一般先作如下修正后再用正态近似 $ P ( k_1 \leq \mu_n \leq k_2) = P ( k_1 - 0.6 < \mu_n < k_2 + 0.5 ) $.
+    
+    譬如 $ \mu_n \sim b (25, 0.4) $, $ P ( 5 \leq \mu_n \leq 15) $ 的值为图~\ref{fig:4.4.2} 中长条矩形的面积, 其精确值为 \num{0.9780}.
+
+    使用修正的正态近似
+    \begin{align*}
+        P ( 5 \leq \mu_n \leq 15) & = P ( 5 - 0.5 < \mu_n < 15 + 0.5 )\\
+        & \sim \Phi \biggl( \frac{15 + 0.5 -10}{\sqrt{6}} \biggr) - \Phi \biggl( frac{5 - 0.5 - 10}{\sqrt{6}} \biggr)\\
+        & = 2 \Phi (2.245) - 1 = 0.9754.
+    \end{align*}
+    不用修正的正态近似
+    \begin{align*}
+        P ( 5 \leq \mu_n \leq 15) & \sim \Phi \biggl( \frac{15 -10}{\sqrt{6}} \biggr) - \Phi \biggl( frac{5 - 10}{\sqrt{6}} \biggr)\\
+        & = 2 \Phi (2.041) - 1 = 0.9588.
+    \end{align*}
+    可见不用修正的正态近似误差较大.
+\end{enumerate}.
