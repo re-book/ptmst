@@ -1651,6 +1651,21 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
 前面第二章中定理~\ref{thm:2.4.1} (泊松定理) 给出了``二项分布的泊松近似''.
 两者相比, 一般在 $p$ 较小时, 用泊松分布近似较好; 而在 $ np>5 $ 和 $ n (1-p)>5 $ 时, 用正态分布近似较好.
 
+\begin{figure}
+    \centering
+    % \begin{tikzpicture}[>=stealth,xscale=0.24,yscale=25]
+    %     \draw[->](0,0)node[below left]{$O$}--(25,0)node[below]{$x$};
+    %     \draw[->](0,0)--(0,0.19)node[right]{$y$};
+    %     \foreach \x in {5,10,15,20} \draw (\x,0) node [below] {$\x$} -- (\x,0.003);
+    %     \foreach \x in {0.05,0.10,0.15} \draw (0,\x) node [left] {$\x$} -- (0.3,\x);
+    %     \draw[samples=150,domain=3.8:16.2,thick] plot(\x,{0.17*e^(-(\x-10)^2/15)-0.013});
+    %     \foreach \x in {4,5,...,16} \draw[semithick] (\x-0.5,0) -- (\x-0.5,{0.17*e^(-(\x-10)^2/15)-0.013}) -- (\x+0.5,{0.17*e^(-(\x-10)^2/15)-0.013}) -- (\x+0.5,0) -- cycle;
+    %     \node at (17,0.16) {$n=25,p=0.4$};
+    % \end{tikzpicture}
+    \includegraphics[width=0.9\linewidth]{./figure/fig4-4-2.pdf}
+    \caption{二项分布正太近似时的修正}\label{fig:4.4.2}
+\end{figure}
+
 下面在给出棣莫弗-拉普拉斯极限定理定理的应用之前, 先说明两点:
 \begin{enumerate}
     \item 因为二项分布是离散分布, 而正态分布是连续分布, 所以用正态分布作为二项分布的近似计算中, 作些修正可以提高精度.
