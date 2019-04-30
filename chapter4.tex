@@ -1685,4 +1685,71 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
         & = 2 \Phi (2.041) - 1 = 0.9588.
     \end{align*}
     可见不用修正的正态近似误差较大.
-\end{enumerate}.
+
+    \item 若记 $ \beta = \Phi (y) $, 则由棣莫弗-拉普拉斯极限定理给出的近似式
+    \begin{equation*}
+        P \bigl( Y_n^* \leq y \bigr) \sim \Phi (y) = \beta,
+    \end{equation*}
+    可用来解决三类计算问题:
+    \begin{enumerate}
+        \item 已知 $n$, $y$ 求 $\beta$,
+        \item 已知 $n$, $\beta$ 求 $y$,
+        \item 已知 $y$, $\beta$ 求 $n$,
+    \end{enumerate}
+\end{enumerate}
+
+以下我们就分这三类情况给出一些具体的例子.
+
+\subsubsection{给定 $n$, $y$ 求 $\beta$}
+
+\begin{example}\label{exam:4.4.5}
+    一复杂系统由100个相互独立工作的部件组成, 每个部件正常工作的概率为 0.9.
+    已知整个系统中至少有 85 个部件正常工作, 系统工作才正常.
+    试求系统正常工作的概率.
+\end{example}
+
+\begin{solution}
+    记 $ n = 100 $, $ Y_n $ 为 100 个部件中正常工作的部件数, 则
+    \begin{equation*}
+        Y_n \sim b (100, 0.9), \ E \bigl( Y_n \bigr) = 90, \ Var \bigl( Y_n \bigr) = 9.
+    \end{equation*}
+    所求概率为
+    \begin{align*}
+        P \bigl( Y_n \geq 85 \bigr) & \sim 1 - \Phi \biggl( \frac{85 - 0.5 - 90}{3} \biggr)\\
+        & = 1 - \Phi \biggl( - \frac{5.5}{3} \biggr)
+        = \Phi (1.83) = 0.966.
+    \end{align*}
+\end{solution}
+
+\begin{example}\label{exam:4.4.6}
+    某药厂生产的某种药品, 声称对某疾病的治愈率为 \SI{80}{\percent}.
+    现为了检验此治愈率, 住意抽取 100 个此种病患者进行临床试验, 如果有多于 75 人治愈, 则此药通过检验.
+    试在以下两种情况下, 分别计算此药通过检验的可能性.
+    \begin{enumerate}
+        \item 此药的实际治愈率为 \SI{80}{\percent},
+        \item 此药的实际治愈率为 \SI{70}{\percent}
+    \end{enumerate}
+\end{example}
+
+\begin{solution}
+    记 $ n = 100 $, $ Y_n $ 为 100 个临床受试者中的治愈者人数.
+    \begin{enumerate}
+        \item 因为 $ Y_n \sim b (100, 0.8) $, $ E (Y_n) = 80 $, $ Var (Y_n) = 16 $.
+        所以通过检验的可能性为
+        \begin{align*}
+            P \bigl( Y_n > 75 \bigr) & \sim 1 - \Phi \biggl(\frac{75 - 0.5 - 80}{4} \biggr)\\
+            & = 1 - \Phi \biggl( -\frac{5.5}{4} \biggr)
+            = \Phi (1.375) = 0.9155.
+        \end{align*}
+        即此药通过检验的可能性是较大的.
+
+        \item 因为 $ Y_n \sim b (100, 0.7) $, $ E (Y_n) = 70 $, $ Var (Y_n) = 21 $.
+        所以通过检验的可能性为
+        \begin{align*}
+            P \bigl( Y_n > 75 \bigr) & \sim 1 - \Phi \biggl(\frac{75 - 0.5 - 70}{\sqrt{21}} \biggr)\\
+            & = 1 - \Phi ( 0.982 )
+            = 1-0.8370 = 0.1630. 
+        \end{align*}
+        即此药通过检验的可能性是很小的.
+    \end{enumerate}
+\end{solution}
