@@ -1753,3 +1753,51 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
         即此药通过检验的可能性是很小的.
     \end{enumerate}
 \end{solution}
+
+\subsubsection{给定$n$, $\beta$ 求 $y$}
+
+\begin{example}\label{exam:4.4.7}
+    某车间有同型号的机床 200 台, 在一小时内每台机床约有 \SI{70}{\percent} 的时间是工作的.
+    假定各机床工作是相互独立的, 工作时每台机床要消耗电能 \SI{15}{\kilo\watt}.
+    问至少要多少电能, 才可以有 \SI{95}{\percent} 的可能性保证此车间正常生产.
+\end{example}
+
+\begin{solution}
+    记 $ n = 200 $, $ Y_n $ 为 200 台机床中同时工作的机床数, 则 $ Y_n \sim b (200,0.7) $, $ E ( Y_n ) = 140 $, $ Var (Y_n) = 42 $.
+
+    因为 $ Y_n $ 台机床同时工作需消耗 $ 15Y_n $ (\si{\kilo\watt}) 电能, 所以设供电数为 $ y $ (\si{\kilo\watt}), 则正常生产为 $\{ 15 Y_n \leq y \}$, 由题设 $ P ( 15Y_n \leq y ) \geq 0.95 $, 其中
+    \begin{equation*}
+        P \bigl( 15Y_n \leq y \bigr) \approx \Phi \left( \frac{y/15 + 0.5 - 140}{\sqrt{42}} \right) \geq 0.95.
+    \end{equation*}
+    查正态分布表得
+    \begin{equation*}
+        \frac{y/15 + 0.5 - 140}{\sqrt{42}} \geq 1.645.
+    \end{equation*}
+    从中解得 $ y \geq $ \SI{2252}{(\kilo\watt)}, 即此车间每小时至少需要 \SI{2252}{(\kilo\watt)} 电能, 才有 \SI{95}{\percent} 的可能性保证此车间正常生产.
+\end{solution}
+
+\subsubsection{给定 $y$, $\beta$ 求 $n$}
+
+\begin{example}\label{exam:4.4.8}
+    某调查公司受委托, 调查某电视节目在 S 市的收视率 $ p $, 调查公司将所有调查对象中收看此节目的额率作为 $ p $的估计 $ \hat{p} $.
+    现在要保证有 \SI{90}{\percent} 的把握, 使得调查所得收视率 $ \hat{p} $ 与真实收视率 $p$ 之间的差异不大于 \SI{5}{\percent}.
+    问至少要调查多少对象?
+\end{example}
+
+\begin{solution}
+    设共调查 $n$ 个对象, 记
+    \begin{equation*}
+        X_i =
+        \begin{cases}
+            1, & \text{第} \ i \ \text{个调查对象收看此电视节目},\\
+            0, & \text{第} \ i \ \text{个调查对象不看此电视节目},
+        \end{cases}
+    \end{equation*}
+    则 $ X_i $ 独立同分布, 且 $ P (X_i = 1) = p $, $ P (X_i = 0) = 1 - p $, $ i =1, 2, \dotsc, n $.
+    又记 $ n $ 个被调查对象中, 收看此电视节目的人数为 $ Y_n $, 则有
+    \begin{equation*}
+        Y_n = \sum_{i=1}^n X_i \sim b (n, p).
+    \end{equation*}
+    由大数定律知, 当 $ n $ 很大时, 频率 $ Y_n / n $ 与概率 $ p $ 很接近, 即用频率作为 $ p $ 的估计是合适的.
+    根据题意有
+\end{solution}
