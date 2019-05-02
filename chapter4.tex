@@ -1800,4 +1800,45 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
     \end{equation*}
     由大数定律知, 当 $ n $ 很大时, 频率 $ Y_n / n $ 与概率 $ p $ 很接近, 即用频率作为 $ p $ 的估计是合适的.
     根据题意有
+    \begin{equation*}
+        P \biggl( \biggl\lvert \frac{1}{n} \sum_{i=1}^n X_i - p \biggr\rvert < 0.05 \biggr)
+        \approx 2 \Phi \biggl( 0.05 \sqrt{\frac{n}{p (1 - p)}} \biggr) - 1
+        \geq 0.90.
+    \end{equation*}
+    所以
+    \begin{equation*}
+        \Phi \biggl( 0.05 \sqrt{\frac{n}{p (1 - p)}} \biggr) \geq 0.95.
+    \end{equation*}
+    查正态分布表得
+    \begin{equation*}
+        0.05 \sqrt{\frac{n}{p (1 - p)}} \geq 1.645.
+    \end{equation*}
+    从中解得
+    \begin{equation*}
+        n \geq p (1 - p) \frac{1.645^2}{0.05^2} = p (1 - p) \times 1082.41.
+    \end{equation*}
+    又因为 $ p (1-p) \leq 0.25 $, 所以 $ n \geq 270.6 $, 即至少调查271个对象.
 \end{solution}
+
+\subsection{独立不同分布下的中心极限定理}
+
+前面我们已经在独立同分布的条件下, 解决了随机变量和的极限分布问题.
+在实际间题中说诸 $ X_i $ 具有独立性是常见的, 但是很难说诸 $ X_i $ 是``同分布''的随机变量.
+正如前面所提到的测量误差 $ Y_n $ 的产生是由大量``微小的''相互独立的随机因素叠加而成的, 即 $ Y_n = \sum_{i=1}^n X_i $, 则诸 $ X_i $ 间具有独立性, 但不一定同分布.
+本节研究独立不同分布随机变量和的极限分布问题, 目的是给出极限分布为正态分布的条件.
+
+为使极限分布是正态分布, 必须对 $ Y_n = \sum{i=1}^n X_i $ 的各项有一定的要求.
+譬如若允许从第二项起都等于0, 则极限分布显然出 $ X_1 $ 的分布完全确定, 这时就很难得到什么有意思的结果.
+这就告诉我们, 要使中心极限定理成立, 在和的各项中不应有起突出作用的项, 或者说, 要求各项在概率意义下``均匀地小''.
+下面我们来分析如何从数学式子上明确表达这个要求.
+
+设 $ \{ X_n \} $ 是一个相互独立的随机变量序列, 它们具有有限的数学期望和方差:
+\begin{equation*}
+    E \bigl( X_i \bigr) \mu_i, \; Var \bigl( X_i \bigr) = \sigma_i^2, \; i = 1, 2, \dotsc.
+\end{equation*}
+
+要讨论随机变量的和 $ Y_n = \sum{i=1}^n X_i $, 我们先将其标准化, 即将它减去均值、除以标准差, 由于
+\begin{align*}
+    E \bigl( Y_n \bigr) & = \mu_1 + \mu_2 + \dotsb + \mu_n,\\
+    \sigma \bigl( T_n \bigr) & = \sqrt{Var \bigl( X_i \bigr)} = \sqrt{\sigma_1^2 + \sigma_2^2 + \dotsb + \sigma_n^2},
+\end{align*}
