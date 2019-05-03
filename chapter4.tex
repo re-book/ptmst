@@ -1842,3 +1842,47 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
     E \bigl( Y_n \bigr) & = \mu_1 + \mu_2 + \dotsb + \mu_n,\\
     \sigma \bigl( T_n \bigr) & = \sqrt{Var \bigl( X_i \bigr)} = \sqrt{\sigma_1^2 + \sigma_2^2 + \dotsb + \sigma_n^2},
 \end{align*}
+且记 $ \sigma ( Y_n ) = B $, 则 $ Y_n $ 的标准化为
+\begin{equation*}
+    Y_n^* = \frac{Y_n - \bigl( \mu_1 + \mu_2 + \dotsb + \mu_n \bigr)}{B_n} = \sum_{i=1}^n \frac{X_i - \mu_i}{B_n}.
+\end{equation*}
+
+如果要求 $ Y_n^* $ 中各项 $ (X_i - \mu_i) / B_n $ ``均匀地小'', 即对任意的 $ \tau > 0 $, 要求事件
+\begin{equation*}
+    A_k = \left\{ \frac{\lvert X_i - \mu_i \rvert}{B_n} > \tau \right\} = \bigl\{ \lvert X_i - \mu_i \rvert > \tau B_n \bigr\}
+\end{equation*}
+发生的可能性小, 或直接要求其概率趋于0.
+为达到这个目的， 我们要求
+\begin{equation*}
+    \lim_{n \to +\infty} P \left\{ \max_{1 \leq i \leq n} \lvert X_i - \mu_i \rvert > \tau B_n \right\} = 0.
+\end{equation*}
+因为
+\begin{align*}
+    P \left\{ \max_{1 \leq i \leq n} \lvert X_i - \mu_i \rvert > \tau B_n \right\} & = P \left\{ \cup_{i=1}^n \bigl( \lvert X_i - \mu_i \rvert > \tau B_n \bigr) \right\}\\
+    & \leq \sum_{i=1}^n P \bigl( \lvert X_i - \mu_i \rvert > \tau B_n \bigr).
+\end{align*}
+若设诸 $ X_i $ 为连续随机变量, 其密度函数为 $ p_i (x) $, 则
+\begin{align*}
+    \text{上式} & = \sum_{i=1}^n \int_{\lvert x - \mu_i \rvert > \tau B_n} p_i (x) \dd x\\
+    & \leq \frac{1}{\tau^2 B_n^2} \sum_{i=1}^n \int_{\lvert x - \mu_i \rvert > \tau B_n} \bigl( x - \mu_i \bigr)^2 p_i (x) \dd x.
+\end{align*}
+因此, 只要对任意的 $ \tau > 0 $, 有
+\begin{equation}\label{eq:4.4.4}
+    \lim_{n \to +\infty} \frac{1}{\tau^2 B_n^2} \sum_{i=1}^n \int_{\lvert x - \mu_i \rvert > \tau B_n} \bigl( x - \mu_i \bigr)^2 p_i (x) \dd x = 0
+\end{equation}
+就可保证 $ Y_n^* $ 中各加项``均匀地小''.
+
+上述条件 \eqref{eq:4.4.4} 称为{\heiti 林德贝格条件}\index{林德贝格条件}.
+林德贝格证明了满足 \eqref{eq:4.4.4} 条件的和 $ Y_n $ 的极限分布是正态分布, 这就是下面的给出的{\heiti 林德贝格中心极限定理}\index{林德贝格中心极限定理}, 由于这个定理的证明需要更多的数学工具, 所以以下仅叙述定理, 略去其证明.
+
+\begin{theorem}{林德贝格中心极限定理}{4.4.3}
+    设独立随机变量序列 $ \{ X_n \} $ 满足林德贝格条件, 则对任意的x, 有
+    \begin{equation*}
+        \lim_{n \to +\infty} P \left\{ \frac{1}{B_n} \sum_{i=1}^n \bigl( X_i - \mu_i \bigr) \leq x \right\} = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^x \ee^{-t^2 /2 } \dd t.
+    \end{equation*}
+\end{theorem}
+
+假如独立随机变量序列 $ \{ X_n \} $ 具有同分布和方差有限的条件, 则必定满足以上 \eqref{eq:4.4.4} 林德贝格条件, 也就是说定理~\ref{thm:4.4.1} 是定理~\ref{thm:4.4.3} 的特例.
+这一点是很容易证明的:
+
+设 $ \{ X_n \} $ 是独立同分布随机变量序列, 为确定起见, 设诸 $ X_n $ 是连续随机变
