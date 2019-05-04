@@ -1885,4 +1885,55 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
 假如独立随机变量序列 $ \{ X_n \} $ 具有同分布和方差有限的条件, 则必定满足以上 \eqref{eq:4.4.4} 林德贝格条件, 也就是说定理~\ref{thm:4.4.1} 是定理~\ref{thm:4.4.3} 的特例.
 这一点是很容易证明的:
 
-设 $ \{ X_n \} $ 是独立同分布随机变量序列, 为确定起见, 设诸 $ X_n $ 是连续随机变
+设 $ \{ X_n \} $ 是独立同分布随机变量序列, 为确定起见, 设诸 $ X_n $ 是连续随机变量, 其共同的密度函数为 $ p (x) $, $ \mu_i = \mu $, $ \sigma_i = \sigma $.
+这时 $ B_n = \sigma \sqrt{\mu} $, 由此得
+\begin{equation*}
+    \frac{1}{B_n^2} \sum_{i=1}^n \int_{\lvert x - \mu_i \rvert > \tau B_n} ( x - \mu_i )^2 p (x) \dd x = \frac{n}{n \sigma^2} \int_{\lvert x - \mu \rvert > \tau \sigma \sqrt{n}} ( x - \mu )^2 p (x) \dd x.
+\end{equation*}
+因为方差存在, 即
+\begin{equation*}
+    Var \bigl( X_i \bigr) = \int_{-\infty}^{+\infty} ( x - \mu )^2 p (x) \dd x < + \infty.
+\end{equation*}
+所以其尾部积分一定有
+\begin{equation*}
+    \lim_{n \to +\infty} \int_{\lvert x - \mu \rvert > \tau \sigma \sqrt{n}} ( x - \mu )^2 p (x) \dd x = 0,
+\end{equation*}
+故林德贝格条件满足.
+
+林德贝格条件虽然比较一般, 但该条件较难验证, 下面的李雅普诺夫条件则比较容易验证, 因为它只对矩提出要求, 因而便于应用.
+下面我们仅叙述其结论, 证明从略.
+
+\begin{theorem}{李雅普诺夫中心极限定理}{4.4.4}
+    设 $ \{ X_n \} $ 为独立随机变量序列, 若存在 $ \delta > 0 $, 满足
+    \begin{equation}\label{eq:4.4.5}
+        \lim_{n \to +\infty} \frac{1}{B_n^{2 + \delta}} \sum_{i=1}^n E \bigl( \bigl\lvert X_i - \mu \bigr\rvert^{2+\delta} \bigr) = 0,
+    \end{equation}
+    则对任意的 $ x $, 有
+    \begin{equation*}
+        \lim_{n \to +\infty} P \biggl\{ \frac{1}{B_n} \sum_{i=1}^n \bigl( X_i - \mu_i \bigr) \leq x \biggr\} = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^x \ee^{-t^2/2} \dd t,
+    \end{equation*}
+    其中 $ \mu_i $ 与 $ B_n $ 如前所述.
+\end{theorem}
+
+\begin{example}\label{exam:4.4.9}
+    一份考卷由 99 个题目组成, 并按由易到难顺序排列, 某学生答对第 1 题的概率为 0.99; 答对第 2 题的概率为 0.98; 一般地, 他答对第 $ i $题的概率为 $ 1 - i/100 $, $ i = 1, 2, \dotsc $.
+    假如该学生回答各题目是相互独立的, 并且要正确回答其中 60 个题日以上 (包括 60 个) 才算通过考试.
+    试计算该学生通过考试的可能性多大?
+\end{example}
+
+\begin{solution}
+    设
+    \begin{equation*}
+        X_i =
+        \begin{cases}
+            1, & \text{若学生答对第} \ i \text{题},\\
+            0, & \text{若学生答错第} \ i \text{题}.
+        \end{cases}
+    \end{equation*}
+    于是 $ X_i $ 相互独立, 且服从不同的二点分布:
+    \begin{equation*}
+        P \bigl( X_i = 1 \bigr) = p_i = 1 - \frac{i}{100}, \
+        P \bigl( X_i = 0 \bigr) = 1 - p_i = \frac{i}{100}, \
+        i = 1,2, \dotsc, 99.
+    \end{equation*}
+\end{solution}
