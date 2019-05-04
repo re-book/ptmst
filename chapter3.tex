@@ -1,8 +1,6 @@
-% !TeX program = XeLaTeX
+% !TeX program = pdflatex
 % !TeX root=./main.tex
-% Edit by:XAjzh and 
-\setlength{\abovedisplayskip}{5pt}
-\setlength{\belowdisplayskip}{5pt}
+% Edit by:XAjzh and sikouhjw
 
 \chapter{多维随机变量及其分布}\label{cha:3}
 在有些随机现象中, 对每个样本点 $\omega$ 只用一个随机变量去描述是不够的, 
@@ -29,13 +27,13 @@
 乘积空间 $\Omega_1\times \Omega_2=\left\{(\omega_1,\omega_2);\omega_1 \in \Omega_1,\omega_2 \in \Omega_2 \right\}$ 上讨论, 
  这要用到更多的工具, 本章将不涉及这类问题. 
       
- 在实际问题中, 多维随机变量的情况是经常会遇到的臂如
+ 在实际问题中, 多维随机变量的情况是经常会遇到的譬如
   \begin{itemize}
-  	\item 在研究四岁至六岁儿童的生长发育情况时, 我们感兴趣于每个儿童（样本点 $\omega$ ）的身高 $X_1(\omega)$ 
-  	和体重 $X_2(\omega)$ . 这里 $(X_1(\omega),X_2(\omega))$是一个二维随机变量. 
-  	\item 在研究每个家庭的支出情况时, 我们感兴趣于每个家庭（样本点 $\omega$ ）的衣食住行四个方面, 
+  	\item 在研究四岁至六岁儿童的生长发育情况时, 我们感兴趣于每个儿童 (样本点 $\omega$) 的身高 $X_1(\omega)$ 
+  	和体重 $X_2(\omega)$ . 这里 $(X_1(\omega),X_2(\omega))$ 是一个二维随机变量. 
+  	\item 在研究每个家庭的支出情况时, 我们感兴趣于每个家庭 (样本点 $\omega$) 的衣食住行四个方面, 
   	若用 $X_1(\omega),X_2(\omega),X_3(\omega),X_4(\omega)$ 分别表示衣食住行的花费占其家庭总收人的百分比, 
-  	则 $X_1(\omega),X_2(\omega),X_3(\omega),X_4(\omega)$ 就是一个四维随机变量. 
+  	则 $(X_1(\omega),X_2(\omega),X_3(\omega),X_4(\omega))$ 就是一个四维随机变量. 
   \end{itemize}
 
   \subsection{联合分布函数}\label{ssec:3.1.2}
@@ -157,7 +155,7 @@
    
     $G(x,y)$ 在左下半平面 $(x+y\geq 0)$ 取值为0，
 
-    $G(x,y)$ 具有非降性、有界性和右连续性, 但在正方形区域 $\{(x，y)；-1\leq x\leq 1,-1\leq y\leq 1\}$的四个顶点上, 右上
+    $G(x,y)$ 具有非降性、有界性和右连续性, 但在正方形区域 $\{(x,y); -1\leq x\leq 1,-1\leq y\leq 1\}$的四个顶点上, 右上
     三个顶点位于右上半闭平面, 只有左下顶点 $(-1,-1)$ 位于左下半开平面, 故有
     \[
      	G(1,1)-G(1,-1)-G(-1,1)+G(-1,-1)=1-1-1+0=-1<0,
@@ -175,7 +173,7 @@
    	为 $(X,Y)$ 的\textbf{联合分布列}\index{L!联合分布列}, 也可如下用表格形式记联合分布列.
    \end{definition}
    \begin{center}
-   		\begin{tabular}{cccccc}
+   		\begin{tabularx}{0.8\textwidth}{ZZZZZZ}
    		\toprule
    		 & \multicolumn{5}{c}{$Y$} \\
    		 \cmidrule{2-6} 
@@ -191,7 +189,7 @@
    		\midrule 
    		 $\vdots$& $\vdots$ & $\vdots$ & $\ddots$ & $\vdots$ & $\ddots$ \\
    		 \bottomrule
-   		\end{tabular} 
+   		\end{tabularx} 
    \end{center}
    联合分布函数的基本性质:
    \begin{enumerate}
@@ -218,7 +216,7 @@
   		\]
 		所以得 $(X,Y)$ 的联合分布列为
 		\begin{center}
-			\begin{tabular}{ccccc}
+			\begin{tabularx}{0.8\textwidth}{ZZZZZ}
 			\toprule
 			 & \multicolumn{4}{c}{$Y$} 		 \\ 
 			 \cmidrule{2-5}
@@ -232,7 +230,7 @@
 			 \midrule
 			 4&  1/16	&  1/16	&  1/16&  1/16\\ 
 			 \bottomrule
-			\end{tabular} 
+			\end{tabularx} 
 		\end{center}
 		由此可算得事件 $\{X=Y\}$ 的概率为
 		\[
@@ -268,20 +266,20 @@
    		p(x, y)=\left\{
    		\begin{array}{cc}
    		6 \ee^{-2 x-3 y}, & x>0, y>0; \\
-   		0, & others.
+   		0, & \text{其他} .
    		\end{array}\right.
    		\]
    		试求: $(1)\; P(X<1,Y>1); \; (2)\; P(X>Y)$.
    \end{example}
    \begin{solution}
   		\begin{enumerate}
-  		\item 积分区域见图~中的阴影部分, 
+  		\item 积分区域见图~\ref{fig:3.1.3a} 中的阴影部分, 
   		\begin{align*} 
   		 P(X<1, Y>1) &=\int_{1}^{+\infty} \int_{0}^{1} 6 \ee^{-2 x-3 y} \dd x \dd y \\
   		 &=6 \int_{0}^{1} \ee^{-2 x} \dd x \int_{1}^{+\infty} \ee^{-3 x} \dd y \\ 
   		 &=\left(1-\ee^{-2}\right) \ee^{-3}=0.0430. 
   		\end{align*}
-  		\item 积分区域见图3.1.3（b）中的阴影部分, 从而容易写出累次积分.
+  		\item 积分区域见图~\ref{fig:3.1.3b} 中的阴影部分, 从而容易写出累次积分.
   		\begin{align*} 
   		 P(X>Y) &=\int_{0}^{+\infty} \int_{0}^{x} 6 \ee^{-2 x} \ee^{-3 y} \dd y \dd x=
   		 \int_{0}^{+\infty} 2 \ee^{-2 x}\left(1-\ee^{-3 x}\right) \dd x \\ 
@@ -291,14 +289,19 @@
    \end{solution}
    \begin{figure}[htbp]
    \centering
-   \includegraphics[width=0.4\textheight]{fig3-1-2.pdf}
+   \subfloat[$\{x<1,y>1\}$ 区域 $D_1$]{\label{fig:3.1.3a}
+   \includegraphics[width=0.4\textwidth]{fig3-1-3a.pdf}
+   }\qquad
+   \subfloat[$\{x>y\}$ 区域 $D_2$]{\label{fig:3.1.3b}
+   \includegraphics[width=0.4\textwidth]{fig3-1-3b.pdf}
+   }
    \caption{$p(x,y)$ 的非零区域与有关事件的交集部分}\label{fig:3.1.3}
    \end{figure}
    
   \subsection{常用多维分布}\label{ssec:3.1.5}
   下面介绍一些多维随机变量的常用分布. 
    
-  \textbf{一、多项分布}
+  \textbf{一、多项分布 }
    
   多项分布是重要的多维离散分布, 它是二项分布的推广.
   
@@ -320,7 +323,7 @@
   \begin{solution}
     因为 $X$ 和 $Y$ 的可能取值都是 0,1,2,3, 所以记 $(X,Y)$ 的联合分布列为
     \begin{center}
-      \begin{tabular}{ccccc}
+      \begin{tabularx}{0.8\textwidth}{ZZZZZ}
         \toprule
           & \multicolumn{4}{c}{$Y$} \\
         \cmidrule{2-5}
@@ -334,7 +337,7 @@
         \midrule
         3&  $p_{30}$& $p_{31}$& $p_{32}$& $p_{33}$\\
         \bottomrule
-      \end{tabular}
+      \end{tabularx}
     \end{center}
     当 $i+j>3$ 时, 有 $p_{ij}=0$, 即
     \[
@@ -347,7 +350,7 @@
     \]
     由以上公式, 就可具体算出 $(X,Y)$ 的联合分布列为
     \begin{center}
-      \begin{tabular}{ccccc}
+      \begin{tabularx}{0.8\textwidth}{ZZZZZ}
         \toprule
           & \multicolumn{4}{c}{$Y$} \\
         \cmidrule{2-5}
@@ -361,7 +364,7 @@
         \midrule
         3&  0.216   & 0       & 0       & 0       \\
         \bottomrule
-      \end{tabular}
+      \end{tabularx}
     \end{center}
   \end{solution}
   有此联合分布列, 就可计算有关事件的概率, 譬如
@@ -373,3 +376,822 @@
   %此是从一等品、二等品和三等品三种情况中抽取. 这里我们称它为三项分布, 它是一种特殊的多项分布.
   此例是第二章 2.4 节中的二项分布的推广, 差别在于: 2.4 中讨论的是从 " 合格品 "、" 不合格品" 两种情况中抽取, 而在此是从一等品、二等品和
   三等品三种情况中抽取. 这里我们称它为三项分布, 它是一种特殊的多项分布.
+
+  \textbf{二、多维超几何分布 }
+
+  以下给出多维超几何分布的描述: 袋中有 $N$ 只球, 其中有 $N_i$ 只 $i$ 号球, $i=1,2,\ldots,r$,
+ 记 $N=N_1+N_2+\cdots+N_r$. 从中任意取出 $n$ 只, 若记 $X_i$ 为取出的 $n$ 只球中 $i$ 号球的个数, $i=1,2,\ldots,r$, 则
+ \begin{equation}\label{eq:3.1.6}
+  	P(X_1=n_1,X_2=n_2,\ldots,X_r=n_r)=\frac	{\binom{N_1}{n_1}\binom{N_2}{n_2}\cdots\binom{N_r}{n_r}}{\binom{N}{n}},
+ \end{equation}
+ 其中 $n_1+n_2+\cdots+n_r=n$.
+ \begin{example}\label{exam:3.1.5}
+ 将例~\ref{exam:3.1.4} 改成不放回抽样, 即从这批产品中不放回地任取 3 件, 记 $x$ 和 $Y$ 分别表示 3 件产品中一等品和二等品的件数, 
+ 求二维随机变 $(X,Y)$ 的联合分布列. 
+ \end{example}
+ \begin{solution}
+记 $i$ 与 $j$ 分别为 $X$ 与 $Y$ 的取值, 此时对 $i+j>3$, 有 $p_{ij}=0$, 即
+\[
+	p_{13}=p_{22}=p_{23}=p_{31}=p_{32}=p_{33}=0.
+\]
+对于 $i+j\leq 3$, 有
+\[
+	p_{ij}=\frac{\binom{60}{i}\binom{30}{j}\binom{10}{3-i-j}}{\binom{100}{3}}.
+\]
+由此可得 $(X,Y)$ 的联合分布列，譬如
+\[
+P(X=1, Y=2)=\frac{\binom{60}{1}\binom{30}{2}}{\binom{100}{3}}
+=\frac{60 \times 30 \times 29 / 2}{100 \times 99 \times 98 / 6}=\frac{89}{539}=0.1614
+\]
+其他各概率都类似求出, 最后得如下联合分布列
+\begin{center}
+\begin{tabularx}{0.8\textwidth}{ZZZZZ}
+\toprule
+&\multicolumn{4}{c}{$Y$}	\\
+\cmidrule{2-5}
+$X$	&	0&	1&	2&	3		\\
+\midrule
+0	&	0.0007&	0.0083&	0.0269&	0.0251	\\
+\midrule
+1	&	0.0167&	0.1113&	0.1614&	0		\\
+\midrule
+2	&	0.1095&	0.3284&	0&		0		\\
+\midrule
+3	&	0.2116&	0&		0&		0		\\			
+\bottomrule
+\end{tabularx}
+\end{center}
+有此联合分布列，就可计算有关事件的概率，譬如
+\[
+\begin{gathered}
+P(X \leq 1, Y \leq 1)=0.0007+0.0167+0.0083+0.1113=0.1370 \\
+P(X=0)=\sum_{j=0}^{3} P(X=0, Y=j)=0.0610
+\end{gathered}
+\]
+\end{solution}
+ 此例是超几何分布的推广, 差别在于: 2.4 中讨论的是从“合格品”、“不合格品”两种情况中抽取, 而在此是从一等品、二等品
+ 和三等品三种情况中抽取. 这里我们称它为三维超几何分布, 它是一种特殊的多维超几何分布. 
+
+ \textbf{三、多维均匀分布}
+
+设 $D$ 为 $R^n$ 中的一个有界区域, 其度量（平面上为面积, 空间为体积等）为 $S_D$, 如果多维随机变量 $(X_1,X_2,\ldots,X_n)$ 的
+联合密度函数为
+ \begin{equation}\label{eq:3.1.7}
+ p(x_{1}, x_{2}, \cdots, x_{n}=\begin{cases}
+\frac{1}{S_{D}}, & (x_{1}, x_{2}, \ldots, x_{n} \in D \\
+0,&	\text{其他} \\
+\end{cases}.
+ \end{equation}
+ 则称 $(X_1,X_2,\ldots,X_n)$ 服从 $D$ 上的\textbf{多维均匀分布}\index{D!多维均匀分布}, 记为 $(X_1,X_2,\ldots,X_n)\sim U(D)$.
+
+二维均匀分布所描述的随机现象就是向平面区域 $D$ 中随机投点, 如果该点坐标 $(X,Y)$ 落在 $D$ 的
+子区域 $G$ 中的概率只与 $G$ 的面积有关, 而与 $G$ 的位置无关, 则由第一章知这是几何概率. 现在由二维均匀分布来描述，则
+\[
+P((X,Y)\in G)=\iint_G p(x,y) \dd x \dd y=\\int_G \frac{1}{S_D} \dd x \dd y =\frac{G\text{的面积}}{D\text{的面积}}.
+\]
+这正是几何概率的计算公式. 
+\begin{example}\label{exam:3.1.6}
+设 $D$ 为平面上以原点为圆心、以 $r$ 为半径的圆, $(X,Y)$ 服从 $D$ 上的二维均匀分布, 其密度函数为
+\[
+p(x, y)=\begin{cases}\frac{1}{\pi r^{2}}, & x^{2}+y^{2} \leq r^{2},\\ 
+0, & x^{2}+y^{2}>r^{2}.
+\end{cases}
+\]
+试求概率 $P(X)\leq r/2$.
+\end{example}
+\begin{solution}
+$p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{fig:3.1.4}, 因此所求概率为
+\begin{align*}
+	P(|X| \leq r / 2)&=\int_{-r / 2}^{r / 2} \int_{-\sqrt{r^{2}-x^{2}}}^{\sqrt{r^{2}-x^{2}}} \frac{1}{\pi r^{2}} \dd y \dd x
+	=\frac{1}{\pi r^{2}} \int_{-r / 2}^{r / 2} 2 \sqrt{r^{2}-x^{2}} \dd x \\
+	&=\frac{1}{\pi r^{2}}\left.\left[x \sqrt{r^{2}-x^{2}}+r^{2} \arcsin \frac{x}{r}\right]\right|_{-r / 2} ^{r / 2}	\\
+	&=\frac{1}{\pi r^{2}}\left[r \sqrt{r^{2}-\frac{r^{2}}{4}}+2 r^{2} \arcsin \frac{1}{2}\right]	\\
+	&=\frac{1}{\pi}\left[\frac{\sqrt{3}}{2}+\frac{\pi}{3}\right]=0.609	\\
+\end{align*}
+\end{solution}
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.4\textwidth]{fig3-1-4.png}
+\caption{$p(x,y)$ 的非零区域与有关事件的交集部分}\label{fig:3.1.4}
+\end{figure}
+
+\textbf{四、二元正态分布}
+
+如果二维随机变量 $(X,Y)$ 的联合密度函数 (见图~\ref{fig:3.1.5}) 为
+	\begin{equation}\label{eq:3.1.8}
+	\begin{aligned} 
+	p(x, y) &=\frac{1}{2 \pi \sigma_{1} \sigma_{2} \sqrt{1-\rho^{2}}} \exp \bigg\{-\frac{1}{2\left(1-\rho^{2}\right)}
+	\bigg[\frac{\left(x-\mu_{1}\right)^{2}}{\sigma_{1}^{2}}		\\
+	&-2 \rho \frac{\left(x-\mu_{1}\right)\left(y-\mu_{2}\right)}{\sigma_{1} \sigma_{2}}+\frac{\left(y-\mu_{2}\right)^{2}}{\sigma_{2}^{2}} 
+	\bigg] \bigg\}, \quad-\infty<x, y<+\infty \\
+	\end{aligned}
+	\end{equation}
+则称 $(X,Y)$ 服从二元正态分布, 记为 $(X,Y)\sim N(\mu_1,\mu_2,\sigma_1^2,\sigma_2^2,\rho)$. 其中五个参数的取值范围分别是：
+	\[
+	 	-\infty<\mu_{1}, \mu_{2}<+\infty; \quad \sigma_{1}, \sigma_{2}>0 ; \quad-1 \leq \rho \leq 1.
+	\]
+	以后将指出: $\mu_1,\mu_2$ 分别是 $X$ 与 $Y$ 的均值, $\sigma_1^2,\sigma_2^2$ 分别是 $X$ 与 $Y$ 的方差, $\rho$ 是
+	 $X$ 与 $Y$ 的相关系数.
+
+	 二元正态密度函数的图形很像一顶四周无限延伸的草帽, 其中心点在 $(\mu_1,\mu_2)$ 处, 其等高线是椭圆.
+
+	 \begin{figure}[htbp]
+	 	\centering
+	 	\includegraphics[width=0.4\textwidth]{fig3-1-5.png}
+	 	\caption{二元正态密度函数}\label{fig:3.1.5}
+	 \end{figure}
+
+	 \begin{example}\label{exam:3.1.7}
+	 	设二维随机变量 $(X,Y)\sim N(\mu_1,\mu_2,\sigma_1^2,\sigma_2^2,\rho)$, 求 $(x,Y)$ 落在区域
+	 	\[
+	 	 	D=\left\{(x, y) ; \frac{\left(x-\mu_{1}\right)^{2}}{\sigma_{1}^{2}}-2 \rho \frac{\left(x-\mu_{1}\right)\left(y-\mu_{2}\right)}{\sigma_{1} \sigma_{2}}+\frac{\left(y-\mu_{2}\right)^{2}}{\sigma_{2}^{2}} \leqslant \lambda^{2}\right\}
+	 	\]
+	 	内的概率.
+	 \end{example}
+	 \begin{solution}
+	 	所求的概率为
+	 	\begin{equation*}
+			\begin{aligned} 
+			p(x, y) &=\frac{1}{2 \pi \sigma_{1} \sigma_{2} \sqrt{1-\rho^{2}}} \iint_D \exp \bigg\{-\frac{1}{2\left(1-\rho^{2}\right)}
+			\bigg[\frac{\left(x-\mu_{1}\right)^{2}}{\sigma_{1}^{2}}		\\
+			&-2 \rho \frac{\left(x-\mu_{1}\right)\left(y-\mu_{2}\right)}{\sigma_{1} \sigma_{2}}+\frac{\left(y-\mu_{2}\right)^{2}}{\sigma_{2}^{2}} 
+			\bigg] \bigg\} \dd x \dd y\\
+			\end{aligned}
+		\end{equation*}
+		作变换
+		\[
+		 	\begin{cases}
+		 		u =\frac{x-\mu_1}{\sigma_1}-\rho \frac{y-\mu_2}{\sigma_2},\\
+		 		v =\frac{y-\mu_2}{\sigma_2}\sqrt{1-\rho^2}.
+		 	\end{cases}
+		\]
+		则可得
+		\[
+		 	\frac{\partial(u, v)}{\partial(x, y)}= \begin{vmatrix}{\frac{1}{\sigma_{1}}} & {0} \\ {-\frac{\rho}{\sigma_{2}}} & {\frac{\sqrt{1-\rho^{2}}}{\sigma_{2}}}\end{vmatrix}=\frac{\sqrt{1-\rho^{2}}}{\sigma_{1} \sigma_{2}}, \quad|J|=\frac{\sigma_{1} \sigma_{2}}{\sqrt{1-\rho^{2}}},
+		\]
+		由此得
+		\[
+		 	p=\frac{1}{2 \pi(1-\rho^{2})} \iint_{x^{2}+v^{2} \leq \lambda^{2}} \exp \left\{-\frac{u^{2}+v^{2}}{2\left(1-\rho^{2}\right)}\right\} \dd u \dd v
+		\]
+		再作极坐标变换
+		\[
+		 	\begin{cases} 
+		 		u=r \sin \alpha ,\\ 
+		 		v=r \cos \alpha	,
+		 	\end{cases}
+		\]
+		则可得
+		\[
+		 	J=\frac{\partial(u, v)}{\partial(r, \alpha)}= \begin{vmatrix}{\sin \alpha} & {\cos \alpha} \\ {r \cos \alpha} & {-r \sin \alpha}\end{vmatrix}=-r\left(\sin ^{2} \alpha+\cos ^{2} \alpha\right)=-r,
+		\]
+		最后得
+		\[
+		 	\begin{aligned} 
+		 	p &=\frac{1}{2 \pi (1-\rho^{2})} \int_{0}^{2 \pi} \dd \alpha \int_{0}^{\lambda} r \exp \left\{-\frac{r^{2}}{2\left(1-\rho^{2}\right)}\right\} \dd r \\ 
+		 	&=\int_{0}^{\lambda} \exp \left\{-\frac{r^{2}}{2\left(1-\rho^{2}\right)}\right\}\dd \left(\frac{r^{2}}{2\left(1-\rho^{2}\right)}\right)\\ 
+		 	&=\left.-\exp \left\{-\frac{r^{2}}{2\left(1-\rho^{2}\right)}\right\}\right|_{0} ^{\lambda}=1-\exp \left\{-\frac{\lambda^{2}}{2\left(1-\rho^{2}\right)}\right\} .
+		 	\end{aligned}
+		\]
+	 \end{solution}
+
+	 \begin{xiti}
+	 	\item 一批产品中有一等品 50\%, 二等品 30\%, 三等品 20\%. 从中有放回地抽取 5 件, 以 $X$、$Y$ 分别表示取出的 5 件中一等品、二等品的件数, 
+	 	求 $(X,Y)$ 的联合分布列.
+	 	\item 100 件产品中有 50 件一等品, 30 件二等品, 20 件三等品. 从中不放回地抽取 5 件, 以 $X$、$Y$ 分别表示取出的 5 件中一等品、二等品的件数,
+	 	求 $(X,Y)$ 的联合分布列.
+	 	\item 盘子里装有 3 只黑球、2 只红球、2 只白球, 从中任取 4 只, 以 $X$ 表示取到黑球的只数, 以 $Y$ 表示取到红球的只数,试求 $P\{X=Y\}$.
+	 	\item 设随机变量 $X_i$,$i=1,2$, 的分布列如下, 且满足 $P(X_1X_2=0) =1$, 试求 $P(X_1=X_2)$.
+	 	\begin{center}
+	 		\begin{tabularx}{0.8\textwidth}{Z|ZZZ}
+	 		$X_t$&	-1&		0&		1	\\
+	 		\hline
+	 		$P$	&	0.25&	0.5&	0.25	\\
+	 	\end{tabularx}
+	 	\end{center}
+	 	\item 设随机变量 $(X,Y)$ 的联合密度函数为
+	 	\[
+	 	 	p(x, y)=\begin{cases}k(6-x-y),\quad & 0<x<2,2<y<4 \\
+	 	 	 0,				&	\text{其他} .
+	 	 	\end{cases}
+	 	\]
+	 	试求
+	 	\begin{enumerate}[(1)]
+	 		\item 常数 $k$;
+	 		\item $P\{X<1,Y<3\}$;
+	 		\item $P\{X<1.5\}$;
+	 		\item $P\{X+Y\leq 4\}$.
+	 	\end{enumerate}
+	 	\item 设随机变量 $(X,Y)$ 的联合密度函数为
+	 	\[
+	 	 	p(x, y)=\begin{cases}
+	 	 				k \ee^{-(3 x+4 y)},&	x>0,y>0 \\
+	 	 	 			0,		&		\text{其他} . 
+	 	 	 		\end{cases}
+	 	\]
+	 	试求
+	 	\begin{enumerate}[(1)]
+	 		\item 常数 $k$;
+	 		\item $(X,Y)$ 的联合分布函数 $F(X,Y)$;
+	 		\item $P\{0<X\leq 1,0<Y\leq 2\}$.
+	 	\end{enumerate}
+	 	\item 设二维随机变量 $(X,Y)$ 的联合密度函数为
+	 	\[
+	 	 	p(x, y)=\begin{cases}
+	 	 				4 x y,&	0<x<1,0<y<1, \\ 
+	 	 				0,&		\text{其他} .
+	 	 			\end{cases}
+	 	\]
+	 	试求
+	 	\begin{enumerate}[(1)]
+	 		\item $P(0<X<0.5,0.25<Y<1)$;
+	 		\item $P(X+Y)$;
+	 		\item $P(X<Y)$;
+	 		\item $(X,Y)$ 的联合分布函数.
+	 	\end{enumerate}
+	 	\item 设二维随机变量 $(X,Y)$ 的联合密度函数为
+	 	\[
+	 	 	p(x,y)=\begin{cases}
+	 	 		k,&		0<x^2<y<x<1;\\
+	 	 		0,&		\text{其他} .
+	 	 	\end{cases}
+	 	\]
+	 	\begin{enumerate}[(1)]
+	 		\item 试求常数 $k$;
+	 		\item 求 $P(X>0.5)$ 和 $P(Y<0.5)$. 
+	 	\end{enumerate}
+	 	\item 设二维随机变量 $(X,Y)$ 的联合密度函数为
+	 	\[
+	 	 	p(x,y)=\begin{cases}
+	 	 		6 (1-y),&	0<x<y<1;	\\
+	 	 		0,&			\text{其他} .
+	 	 	\end{cases}
+	 	\]
+	 	\begin{enumerate}[(1)]
+	 		\item 求 $P(X>0.5,Y>0.5)$;
+	 		\item 求 $P(X<0.5)$ 和 $P(Y<0.5)$;
+	 		\item 求 $P(X+Y)<1$.
+	 	\end{enumerate}
+	 	\item 设随机变量 $Y$ 服从参数为 $\lambda=1$ 的指数分布, 定义随机变量 $X_k$ 如下
+	 	\[
+	 	 	X_k=\begin{cases}
+	 	 		0,&		Y\leq k, \\
+	 	 		1,&		Y>k,
+	 	 	\end{cases} \quad k=1,2.
+	 	\]
+	 	求 $X_1$ 和 $X_2$ 的联合分布列.
+	 	\item 设二维随机变量 $(X,Y)$ 的联合密度函数为
+	 	\[
+	 	 	p(x,y)=\begin{cases}
+	 	 		x^2+\frac{xy}{3},&	0<x<1,0<y<2;\\
+	 	 		0,		&			\text{其他} .
+	 	 	\end{cases}
+	 	\]
+	 	求 $P(X+Y)\geq 1$.
+	 	\item 设二维随机变量 $(X,Y)$ 的联合密度函数为
+	 	\[
+	 	 	p(x,y)=\begin{cases}
+	 	 		\ee^{-y},	&	0<x<y;\\
+	 	 		0&			\text{其他} .
+	 	 	\end{cases}
+	 	\]
+	 	试求 $P(X,Y)\leq 1$.
+	 	\item 设二维随机变量 $(X,Y)$ 的联合密度函数为
+	 	\[
+	 	 	p(x,y)=\begin{cases}
+	 	 		1/2,&	0<x<1,0<y<2;\\
+	 	 		0,&		\text{其他} .	
+	 	 	\end{cases}
+	 	\]
+	 	求 $X$ 与 $Y$ 中至少一个小于 0.5 的概率.
+	 	\item 从 (0,1) 中随机地取两个数, 求其积不小于 3/16, 且其和不大于 1 的概率.
+	 \end{xiti}
+
+	\section{边际分布与随机变量的独立性}\label{sec:3.2}
+  二维联合分布函数(二维联合分布列、二维联合密度函数也一样)含有丰富的信息,\ 主要有以下三方面信息：
+  \begin{itemize}
+  	\item 每个分量的分布(每个分量的所有信息),\ 即边际分布.
+  	\item 两个分量之间的关联程度,\ 即协方差和相关系数.
+  	\item 给定一个分量时,\ 另一个分量的分布,\ 即条件分布.
+  \end{itemize}
+  我们的目的时将这些信息从联合分布中挖掘出来,\ 本节先讨论边际分布.
+  
+  \subsection{边际分布函数}\label{ssec:3.2.1}
+  如果在二维随机变量 $(X,Y)$ 的联合分布函数 $F(X,Y)$ 中令 $y\to+\infty$ ,\ 由于 $|Y<+\infty|$ 为必然事件,\ 故可得
+  \begin{equation*}
+  \lim_{y\to+\infty}F(x,y)=P(X\leqslant x,Y<+\infty)=P(X\leqslant x),
+  \end{equation*}
+  这是一个分布函数,\ 被称为 $X$ 的边际分布,\ 记为
+  \begin{equation}
+  F_{X}(x)=F(x,+\infty).\label{eq:3.2.1}
+  \end{equation}
+  类似地,\ 在 $F(x,y)$ 中令 $x\to+\infty$ ,\ 可得 $Y$ 的边际分布
+  \begin{equation}
+  F_{Y}(y)=F(+\infty,y).\label{eq:3.2.2}
+  \end{equation}
+  在三维随机变量 $(X,Y,Z)$ 的联合分布函数 $F(x,y,z)$ 中,\ 用类似的方法可得到更多的边际分布函数:
+  \begin{align*}
+  &F_{X}(x) = F(x,+\infty,+\infty);\\
+  &F_{Y}(y) = F(+\infty,y,+\infty);\\
+  &F_{Z}(z) = F(+\infty,+\infty,z);\\
+  &F_{X,Y}(x,y) = F(x,y,+\infty);\\
+  &F_{X,Z}(x,z) = F(x,+\infty,z);\\
+  &F_{Y,Z}(y,z) = F(+\infty,y,z).
+  \end{align*}
+  在更高维的场合,\ 也可类似地从联合分布函数获得其低维的边际分布函数.
+  \begin{example}\label{exam:3.2.1}
+  	设二维随机变量 $(X,Y)$ 的联合分布函数为
+  	\begin{equation*}
+  	F(x,y)=
+  	\begin{cases}
+  	1-\ee^{-x}-\ee^{-y}+\ee^{-x-y-\lambda xy}, & x>0,y>0;\\
+  	0, & \text{其他}.
+  	\end{cases}
+  	\end{equation*}
+  	这个分布被称为二维指数分布,\ 其中参数 $\lambda>0$.
+  	
+  	由此联合分布函数 $F(x,y)$ ,\ 容易获得 $X$ 与 $Y$ 的边际分布函数为
+  	\begin{align*}
+  	F_{X}(x) &= F(x,+\infty)=
+  	\begin{cases}
+  	1-\ee^{-x}, & x>0;\\
+  	0, & x\leqslant0.
+  	\end{cases}\\
+  	F_{Y}(y) &= F(+\infty,y)=
+  	\begin{cases}
+  	1-\ee^{-y}, & y>0;\\
+  	0, & y\leqslant0.
+  	\end{cases}
+  	\end{align*}
+  	它们都是一维指数分布,\ 且与参数 $\lambda>0$ 无关.\ 不同的 $\lambda>0$ 对应不同的二维指数分布,\ 但它们的两个边际分布不变.\ 这说明:\ 二维联合分布不仅含有每个分量的概率分布,\ 而且还含有两个变量 $X$ 与 $Y$ 间关系的信息,\ 这正是人们要研究多维随机变量的原因.
+  \end{example}
+  
+  \subsection{边际分布列}\label{ssec:3.2.2}
+  在二维离散随机变量 $(X,Y)$ 的联合分布列 $\left\{P(X=x_i,Y=y_i)\right\}$ 中,\ 对 $j$ 求和所得的分布列
+  \begin{equation}
+  \sum_{j=1}^{+\infty}P(X=x_i,Y=y_j)=P(X=x_i),\ i=1,2,\ldots\label{eq:3.2.3}
+  \end{equation}
+  被称为 $X$ 的边际分布列.\ 类似地,\ 对 $i$ 求和所得的分布列
+  \begin{equation}
+  \sum_{i=1}^{+\infty}P(X=x_i,Y=y_j)=P(Y=y_j),\ j=1,2,\ldots\label{eq:3.2.4}
+  \end{equation}
+  被称为 $Y$ 的边际分布列.
+  \begin{example}\label{exam:3.2.2}
+  	设二维随机变量 $(X,Y)$ 有如下的联合分布列
+  	\begin{equation*}
+  	\begin{tabularx}{0.8\textwidth}{ZZZZ}
+  	\toprule
+  	 & \multicolumn{3}{c}{$Y$}\\
+  	\cmidrule{2-4}
+  	$X$ & 1 & 2 & 3\\
+  	\midrule
+  	0 & 0.09 & 0.21 & 0.24\\
+  	1 & 0.07 & 0.12 & 0.27\\
+  	\bottomrule
+  	\end{tabularx}
+  	\end{equation*}
+  	求 $X$ 与 $Y$ 的边际分布列.
+  	\end{example}
+  
+  \begin{solution}
+  	在上述联合分布列中,\ 对每一行求和得 $0.54$ 与 $0.46$ ,\ 并把它们写在对应行得右侧,\ 这就是 $X$ 的边际分布列.\ 再对每一列求和,\ 得 $0.16,0.33$ 和 $0.51$ ,\ 并把它们写在对应列的下侧,\ 这就是 $Y$ 得边际分布列.
+  	\begin{equation*}
+  	\begin{tabularx}{0.8\textwidth}{ZZZZZ}
+  	\toprule
+  	 & \multicolumn{3}{c}{$Y$} & \\
+  	 \cmidrule{2-4}
+  	$X$ & 1 & 2 & 3 & $P(X=i)$ \\
+  	\midrule
+  	0 & 0.09 & 0.21 & 0.24 & 0.54 \\
+  	1 & 0.07 & 0.12 & 0.27 & 0.46 \\
+  	\midrule
+  	$P(Y=j)$ & 0.16 & 0.33 & 0.51 &1\\
+  	\bottomrule
+  	\end{tabularx}
+  	\end{equation*}
+  \end{solution}
+
+  \subsection{边际密度函数}\label{ssec:3.2.3}
+  如果二维连续随机变量 $(X,Y)$ 的联合密度函数为 $p(x,y)$ ,\ 因为
+  \begin{align*}
+  F_{X}(x) &= F(x,+\infty)=\int_{-\infty}^{x}\left( \int_{-\infty}^{+\infty}p(u,v)\,\dd v \right)\,\dd u=\int_{-\infty}^{x}p_{X}(u)\,\dd u,\\
+  F_{Y}(y) &= F(+\infty,y)=\int_{-\infty}^{y}\left( \int_{-\infty}^{+\infty}p(u,v)\,\dd u \right)\,\dd v=\int_{-\infty}^{y}p_{Y}(v)\,\dd v,
+  \end{align*}
+  其中 $p_{X}(x)$ 和 $p_{Y}(y)$ 分别为
+  \begin{align}
+  p_{X}(x) &= \int_{-\infty}^{+\infty}p(x,y)\,\dd y.\label{eq:3.2.5}\\
+  p_{Y}(y) &= \int_{-\infty}^{+\infty}p(x,y)\,\dd x.\label{eq:3.2.6}
+  \end{align}
+  它们恰好处于密度函数位置,\ 故称上式给出的 $p_{X}(x)$ 为 $X$ 的边际密度函数,\ $p_{Y}(y)$ 为 $Y$ 的边际密度函数.
+  
+  由联合密度函数求边际密度函数时,\ 要注意积分区域的确定.
+  \begin{example}\label{exam:3.2.3}
+  	设二维随机变量 $(X,Y)$ 的联合密度函数为
+  	\begin{equation*}
+  	p(x,y)=
+  	\begin{cases}
+  	1, & 0<x<1,|y|<x;\\
+  	0, & \text{其他}.
+  	\end{cases}
+  	\end{equation*}
+  	试求：(1)边际密度函数 $p_{X}(x)$ 和 $p_{Y}(y)$;(2) $P(X<1/2)$ 及 $P(Y>1/2)$ .
+  \end{example}
+  \begin{solution}
+  	首先识别 $p(x,y)$ 的非零区域,\ 它如图~\ref{fig:3.2.1} 所示.
+  	\begin{figure}[htbp]
+  		\centering
+  		\includegraphics[scale=0.5]{fig3-2-1.png}
+  		\caption{$p(x,y)$ 的非零区域}\label{fig:3.2.1}
+  	\end{figure}
+  	\begin{itemize}
+  		\item[(1)]求 $p_X(x)$:\ 当 $x\leqslant0$ 或 $x\geqslant1$ 时,\ 有 $p_X(x)=0$.\ 而当 $0<x<1$ 时,\ 有
+  		\begin{equation*}
+  		p_X(x)=\int_{-\infty}^{+\infty}p(x,y)\,\dd y=\int_{-x}^{x}\,\dd y=2x.
+  		\end{equation*}
+  		所以 $X$ 的边际密度函数为(见图~\ref{fig:3.2.2})
+  		\begin{equation*}
+  		p_X(x)=
+  		\begin{cases}
+  		2x, & 0<x<1;\\
+  		0, & \text{其他}.
+  		\end{cases}
+  		\end{equation*}
+  		\begin{figure}[h]
+  			\centering
+  			\includegraphics[scale=0.2]{fig3-2-2.png}
+  			\caption{$X$ 的边际密度函数}\label{fig:3.2.2}
+  		\end{figure}
+  		再求 $p_Y(y):$\ 当 $y\leqslant-1$ 或 $y\geqslant1$ 时,\ 有 $p_Y(y)=0$.\ 而当 $-1<y<0$ 时,\ 有
+  		\begin{equation*}
+  		p_Y(y)=\int_{-\infty}^{+\infty}p(x,y)\,\dd x=\int_{-y}^{1}\,\dd x=1+y,
+  		\end{equation*}
+  		当 $0<y<1$ 时,\ 有
+  		\begin{equation*}
+  		p_Y(y)=\int_{-\infty}^{+\infty}p(x,y)\,\dd x=\int_{y}^{1}\,\dd x=1-y.
+  		\end{equation*}
+  		所以 $Y$ 的边际密度函数为(见图~\ref{fig:3.2.3})
+  		\begin{equation*}
+  		p_{Y}(y)=
+  		\begin{cases}
+  		1+y, & -1<y<0,\\
+  		1-y, & 0<y<1,\\
+  		0, & \text{其他}.
+  		\end{cases}
+  		\end{equation*}
+  		\begin{figure}[h]
+  			\centering
+  			\includegraphics[scale=0.5]{fig3-2-3.png}
+  			\caption{ $Y$ 的边际密度函数}\label{fig:3.2.3}
+  		\end{figure}
+  		\item[(2)] 要求的概率分别为
+  		\begin{align*}
+  		P(X<1/2) &= \int_{-\infty}^{1/2}p_{X}(x)\,\dd x=\int_{0}^{1/2}2x\,\dd x=\frac{1}{4}.\\
+  		P(Y>1/2) &= \int_{1/2}^{+\infty}p_{Y}(y)\,\dd y=\int_{1/2}^{1}(1-y)\,\dd y=\frac{1}{8}.
+  		\end{align*}
+  	\end{itemize}
+  \end{solution}
+  
+  \begin{example}\label{exam:3.2.4}
+  	多项分布的边际分布仍为多项分布
+  \end{example}
+  \begin{solution}
+  	下面只证三项分布的边际分布为二项分布.\ 设 $(X,Y)$ 服从三项分布 $M(n,p_1,p_2,p_3),$ \ 其联合分布列为
+  	\begin{equation*}
+  	P(X=i,Y=j)=\frac{n!}{i!j!(n-i-j)!}p_1^ip_2^j(1-p_1-p_2)^{n-i-j},\ i,j=1,2,\ldots,n,i+j\leqslant n.
+  	\end{equation*}
+  	对上式分别乘以和除以 $(1-p_1)^{n-i}/(n-i)!$ ,\ 再对 $j$ 从 $0$ 到 $n-1$ 求和,\ 并记 $p_2'=p_2/(1-p_1)$,\ 则可得
+  	\begin{align*}
+  	&\sum_{j=0}^{n-i}P(X=i,Y=j) = \frac{n!}{i!(n-i)!}p_1^i(1-p_1)^{n-i}.\\
+  	&\sum_{j=0}^{n-i} \binom{n-i}{j} \left(\frac{p_2}{1-p_1}\right)^{j}\left(1-\frac{p_2}{1-p_1}\right)^{n-i-j} \\
+  	&= \frac{n!}{i!(n-i)!}p_1^i(1-p_1)^{n-i}\left[p_2'+(1-p_2')\right]^{n-i}\\
+  	&= \frac{n!}{i!(n-i)!}p_1^i(1-p_1)^{n-i}.
+  	\end{align*}
+  	所以 $X\sim b(n,p_1)$ .\ 同理可证 $Y\sim b(n,p_2)$.
+  	
+  	用类似的方法可以证明:\ 若 $(X_,,X_2,\ldots,X_r)\sim M(n,p_1,p_2,\ldots,p_r)$,\ 则 $X_i\sim b(n,p_i),\ i=1,2,\ldots,r$.
+  \end{solution}
+  
+  \begin{example}\label{exam:3.2.5}
+  	二维正态分布的边际分布为一维正态分布
+  \end{example}
+  \begin{solution}
+  	设 $(X,Y)\sim N(\mu_1,\mu_2,\sigma_1^2,\sigma_2^2,\rho)$ .\ 先把 ~\ref{eq:3.1.8} 式二维正态密度函数 $p(x,y)$ 的指数部分
+  	\begin{equation*}
+  	-\frac{1}{2(1-\rho^2)}\left[\frac{(x-\mu_1)^2}{\sigma_1^2}-2\rho\frac{(x-\mu_1)(y-\mu_2)}{\sigma_1\sigma_2}+\frac{(y-\mu_2)^2}{\sigma_2^2}\right]
+  	\end{equation*}
+  	改写成
+  	\begin{equation*}
+  	-\frac{1}{2}\left[\rho\frac{x-\mu_1}{\sigma_1\sqrt{1-\rho^2}}-\frac{y-\mu_2}{\sigma_2\sqrt{1-\rho^2}}\right]^2-\frac{(x-\mu_1)^2}{2\sigma_1^2}.
+  	\end{equation*}
+  	再对积分
+  	\begin{equation*}
+  	\int_{-\infty}^{+\infty}\exp\left\{-\frac{1}{2}\left[\rho\frac{x-\mu_1}{\sigma_1\sqrt{1-\rho^2}}-\frac{y-\mu_2}{\sigma_2\sqrt{1-\rho^2}}\right]^2\right\}\,\dd y
+  	\end{equation*}
+  	作变换(注意把 $x$ 看作常量)
+  	\begin{equation*}
+  	t=\rho\frac{x-\mu_1}{\sigma_1\sqrt{1-\rho^2}}-\frac{y-\mu_2}{\sigma_2\sqrt{1-\rho^2}},
+  	\end{equation*}
+  	则
+  	\begin{align*}
+  	p_{X}(x) &= \int_{-\infty}^{+\infty}p(x,y)\,\dd y\\
+  	&=\frac{1}{2\uppi\sigma_1\sigma_2\sqrt{1-\rho^2}}\exp\left\{-\frac{(x-\mu_1)^2}{2\sigma_1^2}\right\}\sigma_2\sqrt{1-\rho^2}\int_{-\infty}^{+\infty}\exp\left\{-\frac{t^2}{2}\right\}\,\dd t.
+  	\end{align*}
+  	注意到上式中的积分恰好等于 $\sqrt{2\uppi}$ ,\ 所以有
+  	\begin{equation*}
+  	p_{X}(x)=\frac{1}{\sqrt{2\uppi}\sigma_1}\exp\left\{-\frac{(x-\mu_1)^2}{2\sigma_1^2}\right\}.
+  	\end{equation*}
+  	这正是一维正态分布 $N(\mu_1,\sigma_1^2)$ 的密度函数,\ 即 $X\sim N(\mu_1,\sigma_1^2)$ .\ 同理可证 $Y\sim N(\mu_2,\sigma_2^2)$ .\ 由此可见
+  	\begin{itemize}
+  		\item 二维正态分布的边际分布中不含参数 $\rho$ .
+  		\item 这说明二维正态分布 $N(\mu_1,\mu_2,\sigma_1^2,\sigma_2^2,0.1)$ 与 $N(\mu_1,\mu_2,\sigma_1^2,\sigma_2^2,0.2)$ 的边际分布是相同的.
+  		\item 具有相同边际分布的多维联合分布可以是不同的.
+  	\end{itemize}
+  \end{solution}
+  
+   \subsection{随机变量间的独立性}\label{ssec:3.2.4}
+   在多维随机变量中,\ 各分量的取值有时会相互影响,\ 但有时毫无影响.\ 譬如一个人的身高 $X$ 和体重 $Y$ 就会相互影响,\ 但与收入 $Z$ 一般无影响.\ 当两个随机变量取值的规律互不影响时,\ 就称它们是相互独立的.
+   \begin{definition}{}{3.2.1}
+   	设 $n$ 维随机变量 $(X_1,X_2,\ldots,X_n)$ 的联合分布函数为 $F(x_1,x_2,\ldots,x_n)$ ,\ $F_i(x_i)$ 为 $X_i$ 的边际分布函数.\ 如果对任意 $n$ 个实数 $x_1,x_2,\ldots,x_n$ ,\ 有
+   	\begin{equation}\label{eq:3.2.7}
+   		F(x_1,x_2,\ldots,x_n)=\prod_{i=1}^{n}F_i(x_i),
+   	\end{equation}
+   	则称 $X_1,X_2,\ldots,X_n$ 相互独立.
+   \end{definition}
+   在离散随机变量场合,\ 如果对其任意 $n$ 个取值 $x_1,x_2,\ldots,x_n$ ,\ 有
+   \begin{equation}\label{eq:3.2.8}
+   	P(X_1=x_1,X_2=x_2,\ldots,X_n=x_n)=\prod_{i=1}^{n}P(X_i=x_i),
+   \end{equation}
+   则称 $X_1,X_2,\ldots,X_n$ 相互独立.
+   
+   在连续随机变量场合,\ 如果对任意 $n$ 个实数 $x_1,x_2,\ldots,x_n$ ,\ 有
+   \begin{equation}\label{eq:3.2.9}
+   	p(x_1,x_2,\ldots,x_n)=\prod_{i=1}^{n}p_i(x_i),
+   \end{equation}
+   则称 $X_1,X_2,\ldots,X_n$ 相互独立.
+   
+   \begin{example}
+   	设 $(X,Y)$ 是二维离散随机变量,\ $X$ 和 $Y$ 的边际分布列分别如下所示:
+   	\begin{table}[h]
+   		\centering
+   		\begin{tabular}[h]{c|ccc}
+   			\hline
+   			$X$ & $-1$ & $0$ & $1$\\
+   			\hline
+   			$P$ & $1/4$ & $1/2$ & $1/4$\\
+   			\hline
+   		\end{tabular}
+   	    \qquad
+   	    \begin{tabular}[h]{c|cc}
+   	    	\hline
+   	    	$Y$ & $0$ & $1$\\
+   	    	\hline
+   	    	$P$ & $1/2$ & $1/2$\\
+   	    	\hline
+   	    \end{tabular}
+   	\end{table}
+   如果 $P\left\{XY=0\right\}=1$,\ 试求
+   
+   (1) $(X,Y)$ 的联合分布列;
+   
+   (2) $X$ 与 $Y$ 是否独立?
+
+   \end{example}
+   \begin{solution}
+   	\begin{itemize}
+   		\item[(1)] 记 $(X,Y)$ 得联合分布列如下,\ 其中 $p_{ij}=P(X=i,Y=j)$ ,\ 在联合分布列的右侧是 $X$ 的边际分布列,\ 下侧是 $Y$ 的边际分布列.
+   		\begin{center}
+   			\begin{tabularx}{0.8\textwidth}{XXXX}
+   				\toprule
+   				 & \multicolumn{2}{c}{$Y$} & \\
+   				\cmidrule{2-3}
+   				$X$ & $0$ & $1$ & $P(X=i)$\\
+   				\midrule
+   				$-1$ & $p_{11}$ & $p_{12}$ & $1/4$\\
+   				$0$ & $p_{21}$ & $p_{22}$ & $1/2$\\
+   				$1$ & $p_{31}$ & $p_{32}$ & $1/4$\\
+   				\midrule
+   				$P(Y=j)$ & $1/2$ & $1/2$ & $1$\\
+   				\bottomrule
+   			\end{tabularx}
+   		\end{center}
+   		由 $P(XY=0)=1$ ,\ 知 $P(XY\ne0)=0$ ,\ 即
+   		\begin{equation*}
+   		p_{12}=P(X=-1,Y=1)=0,\quad p_{32}=P(X=1,Y=1)=0.
+   		\end{equation*}
+   		其余四个概率可由下面等式分别确定.
+   		\begin{center}
+   			\begin{tabular}{l}
+   				从表中第一行看,\ 由 $p_{11}+p_{12}=1/4$ ,\ 得 $p_{11}=1/4$ .\\
+   				从表中第三行看,\ 由 $p_{31}+p_{32}=1/4$ ,\ 得 $p_{31}=1/4$ .\\
+   				从表中第一列看,\ 由 $p_{11}+p_{21}+p_{31}=1/2=1/4+p_{21}+1/4$ ,\ 得 $p_{21}=0$ .\\
+   				从表中第二列看,\ 由 $p_{12}+p_{22}+p_{32}=1/2=0+p_{22}+0$ ,\ 得 $p_{22}=1/2$ .
+   			\end{tabular}
+   		\end{center}
+   		
+   		于是得 $(X,Y)$ 的联合分布列如下:
+   		\begin{center}
+   			\begin{tabularx}{0.8\textwidth}{XXXX}
+   				\toprule
+   				 & \multicolumn{2}{c}{$Y$} & \\
+   				\cmidrule{2-3}
+   				$X$ & 0 & 1 & $p_{i\cdot}$\\
+   				\midrule
+   				$-1$ & $1/4$ & $0$ & $1/4$\\
+   				$0$ & $0$ & $1/2$ & $1/2$\\
+   				$1$ & $1/4$ & $0$ & $1/4$\\
+   				\midrule
+   				$p_{\cdot j}$ & $1/2$ & $1/2$ & $1$\\
+   				\bottomrule
+   			\end{tabularx}
+   		\end{center}
+   		\item[(2)] 因为 $P(X=0,Y=0)=p_{21}=0$ ,\ 而 $P(X=0)P(Y=0)=1/4$ ,\ 所以 $X$ 与 $Y$ 不独立.
+   	\end{itemize}
+   \end{solution}
+
+   \begin{example}\label{exam:3.2.7}
+   	若 $(X,Y)$ 的联合密度函数为
+   	\begin{equation*}
+   		p(x,y)=
+   		\begin{cases}
+   		8xy, & 0\leqslant x\leqslant y\leqslant1;\\
+   		0, & \text{其他}.
+   		\end{cases}
+   	\end{equation*}
+   	问 $X$ 与 $Y$ 是否相互独立?
+   \end{example}
+   \begin{solution}
+   	为判断 $X$ 与 $Y$ 是否独立,\ 只需看边际密度函数的乘积是否等于联合密度函数.\ 为此先求边际密度函数.
+   	当 $x<0$ 或 $x>1$ 时,\ $p_{X}(x)=0$ .\ 而当 $0\leqslant x\leqslant1$ 时,\ 有
+   	\begin{equation*}
+   		p_{X}(x)=\int_{x}^{1}8xy\,\dd y=8x\left(\frac{1}{2}-\frac{x^2}{2}\right)=4x\left(1-x^2\right).
+   	\end{equation*}
+   	因此
+   	\begin{equation*}
+   		p_{X}(x)=
+   		\begin{cases}
+   		4x\left(1-x^2\right), & 0\leqslant x\leqslant1,\\
+   		0, & \text{其他}.
+   		\end{cases}
+   	\end{equation*}
+   	同样,\ 当 $y<0$ 或 $y>1$ 时,\ $p_{Y}(y)=0$ .\ 而当 $0\leqslant y\leqslant 1$ 时,\ 有
+   	\begin{equation*}
+   		p_{Y}(y)=\int_{0}^{x}8xy\,\dd x=4y^3.
+   	\end{equation*}
+   	因此
+   	\begin{equation*}
+   		p_{Y}(y)=
+   		\begin{cases}
+   		4y^3, & 0\leqslant y\leqslant1;\\
+   		0, & \text{其他}.
+   		\end{cases}
+   	\end{equation*}
+   	由此得 $p(x,y)\ne p_{X}(x)p_{Y}(y)$ ,\ 所以 $X$ 与 $Y$ 不独立.
+   \end{solution}
+
+   \begin{example}\label{exam:3.2.8}
+   	从 $(0,1)$ 中任取两个数,\ 求下列事件的概率.
+   	
+   	(1)两数之和小于 $1.2$ ;
+   	
+   	(2)两数之积小于 $1/4$ .
+   \end{example}
+   \begin{solution}
+   	分别记这两个数为 $X$ 和 $Y$ ,\ 则 $X$ 和 $Y$ 独立,\ 且都服从 $(0,1)$ 上的均匀分布,\ $(X,Y)$ 的联合密度函数为
+   	\begin{equation*}
+   		p(x,y)=p_{X}(x)p_{Y}(y)=
+   		\begin{cases}
+   		1, & 0<x<1,0<y<1;\\
+   		0, & \text{其他}.
+   		\end{cases}
+   	\end{equation*}
+   	\begin{itemize}
+   		\item[(1)] 从图~\ref{fig:3.2.4a}可知
+   		\begin{align*}
+   			P(X+Y<1.2)=\int_{0}^{0.2}\int_{0}^{1}\,\dd y\dd x+\int_{0.2}^{1}\int_{0}^{1.2-x}\,\dd y\dd x\\
+   			=0.2+\int_{0.2}^{1}(1.2-x)\,\dd x=0.2+0.48=0.68\ .
+   		\end{align*}
+   		\begin{figure}[h]
+   			\centering
+   			\subfloat[$\{x+y<1.2,0<x,y<1\}$]{\label{fig:3.2.4a}
+   			\includegraphics[scale=0.5]{fig3-2-4a.png}}
+   			\qquad
+   			\subfloat[$\{xy<1/4,0<x,y<1\}$]{\label{fig:3.2.4b}
+   			\includegraphics[scale=0.5]{fig3-2-4b.png}
+   			}
+   			\caption{ $p(x,y)$ 的非零区域与有关事件的交集部分}\label{fig:3.2.4}
+   		\end{figure}
+   	\item[(2)] 从图~\ref{fig:3.2.4b}可知
+   	\begin{align*}
+   		P(XY<1/4)=\int_{0}^{1/4}\int_{0}^{1}\,\dd y\dd x+\int_{1/4}^{1}\int_{0}^{1/(4x)}\,\dd y\dd x\\
+   		=\frac{1}{4}+\int_{1/4}^{1}\frac{1}{4x}\,\dd x=\frac{1}{4}+\frac{1}{4}\ln4=0.5966\ .
+   	\end{align*}
+   	\end{itemize}
+   \end{solution}
+
+   \begin{xiti}
+   		\item 设二维离散随机变量 $(X,Y)$ 的可能值为
+   		\begin{equation*}
+   			(0,0),\ (-1,1),\ (-1,2),\ (1,0).
+   		\end{equation*}
+   		且取这些值的概率依次为 $1/6,1/3,1/12,5/12$ ,\ 试求 $X$ 与 $Y$ 各自的边际分布列.
+   		\item 设二维随机变量 $(X,Y)$ 的联合分布函数为
+   		\begin{equation*}
+   			F(x,y)=\begin{cases}
+   			1-\ee^{-\lambda_{1}x}-\ee^{-\lambda_{2}y}+\ee^{-\lambda_{1}x-\lambda_{2}y-\lambda_{12}\max\{x,y\}}, & x>0,y>0;\\
+   			0, & \text{其他}.
+   			\end{cases}
+   		\end{equation*}
+   		试求 $X$ 和 $Y$ 各自的边际分布函数.
+   		\item 试求以下二维均匀分布的边际分布:
+   		\begin{equation*}
+   			p(x,y)=\begin{cases}
+   			\frac{1}{\uppi}, & x^2+y^2\leqslant1;\\
+   			0, & \text{其他}.
+   			\end{cases}
+   		\end{equation*}
+   		\item 设平面区域 $D$ 由曲线 $y=1/x$ 及直线 $y=0,x=1,x=\ee^2$ 所围成,\ 二维随机变量 $(X,Y)$ 在区域 $D$ 上服从均匀分布,\ 试求 $X$ 的边际密度函数.
+   		\item 求以下给出的 $(X,Y)$ 的联合密度函数的边际密度函数 $p_{X}(x)$ 和 $p_{Y}(y)$.
+   		\begin{align*}
+   			p_{1}(x,y) &= \begin{cases}
+   			\ee^{-y}, & 0<x<y;\\
+   			0, & \text{其他}.
+   			\end{cases}\\
+   			p_{2}(x,y) &= \begin{cases}
+   			\frac{5}{4}(x^2+y), & 0<y<1-x^2;\\
+   			0, & \text{其他}.
+   			\end{cases}
+   		\end{align*}
+   		\item 设二维随机变量 $(X,Y)$ 的联合密度函数为
+   		\begin{equation*}
+   			p(x,y)=\begin{cases}
+   			6, & 0<x^2<y<x<1;\\
+   			0, & \text{其他}.
+   			\end{cases}
+   		\end{equation*}
+   		试求边际密度函数 $p_{X}(x)$ 和 $p_{Y}(y)$ .
+   		\item 试验证:\ 以下给出的两个不同的联合密度函数,\ 它们有相同的边际密度函数.
+   		\begin{align*}
+   			p(x,y) &= \begin{cases}
+   			x+y, & 0\leqslant x\leqslant1,0\leqslant y\leqslant1;\\
+   			0, & \text{其他}.
+   			\end{cases}\\
+   			g(x,y) &= \begin{cases}
+   			(0.5+x)(0.5+y), & 0\leqslant x\leqslant1,0\leqslant y\leqslant1;\\
+   			0, & \text{其他}.
+   			\end{cases}
+   		\end{align*}
+   		\item 设随机变量 $X$ 和 $Y$ 独立同分布,\ 且
+   		\begin{equation*}
+   			P(X=-1)=P(Y=-1)=P(X=1)=P(Y=1)=\frac{1}{2}
+   		\end{equation*}
+   		试求 $P\{X=Y\}$ .
+   		\item 甲、乙两人独立地各进行两次射击,\ 假设甲的命中率为 $0.2$ ,\ 乙的命中率为 $0.5$ ,\ 以 $X$ 和 $Y$ 分别表示甲和乙的命中次数,\ 试求 $P(X\leqslant Y)$ .
+   		\item 设随机变量 $X$ 和 $Y$ 相互独立,\ 其联合分布列为
+   		\begin{center}
+   			\begin{tabularx}{0.8\textwidth}{Z|ZZZ}
+   				\hline
+   				 & \multicolumn{3}{c}{ $Y$ }\\
+   				\cline{2-4}
+   				$X$ & $y_1$ & $y_2$ & $y_3$\\
+   				\hline
+   				$x_1$ & $a$ & $1/9$ & $c$\\
+   				\hline
+   				$x_2$ & $1/9$ & $b$ & $1/3$\\
+   				\hline
+   			\end{tabularx}
+   		\end{center}
+   	
+   	    试求联合分布列中的 $a,b,c$ .
+   		\item 设 $k_1,k_2$ 分别是掷一枚骰子两次先后出现的点数.\ 试求方程 $x^2+k_1x+k_2=0$ 有实根的概率 $p$ 和有重根的概率 $q$.
+   		\item 设 $X$ 与 $Y$ 是两个相互独立的随机变量,\ $X\sim U(0,1)$ ,\ $Y\sim Exp(1)$ .\ 试求
+   		\begin{itemize}
+   			\item[(1)] $X$ 与 $Y$ 的联合密度函数;
+   			\item[(2)] $P(Y\leqslant X)$ ;
+   			\item[(3)] $P(X+Y\leqslant1)$ .
+   		\end{itemize}
+   	    \item 设随机变量 $(X,Y)$ 的联合密度函数为
+   	    \begin{equation*}
+   	    	p(x,y)=\begin{cases}
+   	    	3x, & 0<x<1,0<y<x;\\
+   	    	0, & \text{其他}.
+   	    	\end{cases}
+   	    \end{equation*}
+   	    试求
+   	    \begin{itemize}
+   	    	\item[(1)] 边际密度函数 $p_{X}(x)$ 和 $p_{Y}(y)$ ;
+   	    	\item[(2)] $X$ 与 $Y$ 是否独立?
+   	    \end{itemize}
+       \item 设随机变量 $(X,Y)$ 的联合密度函数为
+       \begin{equation*}
+       	p(x,y)=\begin{cases}
+       	1, & |x|<y,0<y<1;\\
+       	0, & \text{其他}.
+       	\end{cases}
+       \end{equation*}
+       试求
+       \begin{itemize}
+       	\item[(1)] 边际密度函数 $p_{X}(x)$ 和 $p_{Y}(y)$ ;
+       	\item[(2)] $X$ 与 $Y$ 是否独立?
+       \end{itemize}
+       \item 在长为 $a$ 的线段的中点的两边随机地各选取一点,\ 求两点间的距离小于 $a/3$ 的概率.
+       \item 设二维随机变量 $(X,Y)$ 的联合密度函数为 $p(x,y)$ .\ 证明:\ $X$ 与 $Y$ 相互独立的充要条件是 $p(x,y)$ 可分离变量,\ 即 $p(x,y)=h(x)g(y)$ .\ 又问 $h(x),g(y)$ 与边际密度函数有什么关系?
+   \end{xiti}
