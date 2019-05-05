@@ -1936,4 +1936,42 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
         P \bigl( X_i = 0 \bigr) = 1 - p_i = \frac{i}{100}, \
         i = 1,2, \dotsc, 99.
     \end{equation*}
+    而我们要求的是
+    \begin{equation*}
+        P \biggl( \sum_{i=1}^99 X_i \geq 60 \biggr).
+    \end{equation*}
+
+    为使用中心极限定理, 我们可以设想从 $ X_{100} $ 开始的随机变量都与 $ X_{99} $ 同分布, 且相互独立.
+    下面我们用 $ \delta = 1 $ 来验证随机变量序列 $ \{ X_n \} $ 满足李雅普诺夫条件 \eqref{eq:4.4.5}, 因为
+    \begin{align*}
+        & B_n = \sqrt{\sum_{i=1}^n Var \bigl( X_i \bigr)} = \sqrt{\sum_{i=1}^n p_i \bigl( 1 - p_i \bigr)} \to +\infty, \ n \to +\infty\\
+        & E \bigl( \bigl\lvert X_i - p_i \bigr\rvert^3 \bigr) \bigl( 1 - p_i \bigr)^3 p_i + p_i^3 \bigl( 1 - p_i \bigr) \leq p_i \bigl( 1 - p_i \bigr),
+    \end{align*}
+    于是
+    \begin{equation*}
+        \frac{1}{B_n^3} \sum_{i=1}^n E \bigl( \bigl\lvert X_i - p_i \bigr\rvert^3 \bigr) \leq \frac{1}{\bigl( \sum_{i=1}^n p_i ( 1 - p_i ) \bigr)^{1/2}} \to 0, \ n \to +\infty.
+    \end{equation*}
+    即 $ \{ X_n \} $ 满足李雅普诺夫条件 \eqref{eq:4.4.5}, 所以可以使用中心极限定理.
+    又因为
+    \begin{align*}
+        & E \Biggl( \sum_{i=1}^{99} X_i \Biggr) = \sum_{i=1}^{99} p_i = \sum_{i=1}^{99} \biggl( 1 - \frac{i}{100} \biggr) = 49.5\\
+        & B_{99}^2 = \sum_{i=1}^{99} Var \bigl( X_i \bigr) = \sum_{i=1}^{99} \biggl( 1 - \frac{i}{100} \biggr) \biggl( \frac{i}{100} \biggr) = 16.665.
+    \end{align*}
+    所以该学生通过考试的可能性为
+    \begin{align*}
+        P \Biggl( \sum_{i=1}^{99} X_i \geq 60 \Biggr) & = P \left( \frac{\sum_{i=1}^{99} X_i - 49.5}{\sqrt{16.665}} \geq \frac{60-49.5}{\sqrt{16.665}} \right)\\
+        & \approx 1 - \Phi (2.5735) = 0.005.
+    \end{align*}
+    由此看出: 此学生通过考试的可能性很小, 大约只有千分之五.
 \end{solution}
+
+\begin{xiti}
+    \item 某保险公司多年的统计资料表明, 在索赔户中被森素赔户占 \SI{20}{\percent}, 以 $ X $ 表示在随意抽查的 \num{100} 个家赔户中因被盗向保险公司素赔的户数.
+    \begin{enumerate}
+        \item 写出 $X$ 的分布列,
+        \item 求被盗索赔户不少于 14 户且不多于 30 户的概率的近似值.
+    \end{enumerate}
+    \item 某电于计算机主机有 \num{100} 个终端, 每个终端有 \SI{80}{\percent} 的时间被使用.
+    若各个终端是否被使用是相互独立的, 试求至少有15个终端空闲的概率.
+    \item 有一批建筑房屋用的木柱, 其中 \SI{80}{\percent} 的长度不小于 \SI{3}{\meter}, 现从这批木柱中随机地取出 \num{100} 根, 问其中至少有 30 根短于 \SI{3}{\meter} 的概率是多少?
+\end{xiti}
