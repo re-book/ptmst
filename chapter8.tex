@@ -969,6 +969,42 @@ S_{e} & =S_{T}-S_{A}=221.03, f_{e} = 36
 \begin{equation*}
   M S_{e}=\frac{1}{f_{e}} \sum_{i=1}^{r} Q_{i}=\sum_{i=1}^{r} \frac{f_{i}}{f_{e}^{2}} s_{i}^{2}
 \end{equation*}
+它是 $r$ 个样本方差 $s_1^2,s_2^2, \ldots, s_r^2$ 的（加权）算术平均数. 而相应的 $r$ 个样本方差的几何平均数记为 $GMS_e$, 它是:
+\begin{equation*}
+  GMS_e = [(s_1^2)^{f_1}(s_2^2)^{f_2} \cdots (s_r^2)^{f_r}]^{1/f_e}
+\end{equation*}
+其中 $f_e = f_1 + f_2 + \cdots + f_r = \sum_{i=1}^r(m_i - 1) = n-r$.
+
+由于几何平均数总不会超过算术平均数，故有
+\begin{equation}
+  GMS_e \leq MS_e
+\end{equation}
+其中等号成立当且仅当诸 $s_i^2$ 系彼此相等，若诸 $s_i^2$ 间的差异愈大, 则此两个平均值相差也愈大. 由此可见，当诸总体方差相等时，其样本方差间不应相差较大，从而比值 $MS_e/GMS_e$ 接近于1.反之，在比值 $MS_e/GMS_e$ 较大时，就意味着诸样本方差差异较大，从而反映诸总体方差差异也较大.这个结论对此比值的对数也成立.从而检验~\eqref{eq:8.3.1} 表示的一对假设的拒绝域应是
+\begin{equation}\label{eq:8.3.4}
+  W=\left\{\ln \left(M S_{e} / G M S_{e}\right)>d\right\}
+\end{equation}
+Bartlett 证明了: 在大样本场合, $\ln(MS_e/GMS_e)$ 的某个函数近似服从自由度为 $r-1$ 的 $\chi^2$ 分布, 具体是:
+\begin{equation}\label{eq:8.3.5}
+  B=\frac{f_{e}}{C}(\ln M S_{e}-\ln G M S_{e}) \sim \chi^{2}(r-1).
+\end{equation}
+其中
+\begin{equation}\label{eq:8.3.6}
+  C = 1 + \frac{1}{3(r-1)} \left[\sum_{i=1}^{r} \frac{1}{f_{i}}-\frac{1}{f_{e}}\right]
+\end{equation}
+等号成立当且仅当诸
+且 $C$ 通常会大于 1. 根据上述结论，可取
+\begin{equation}\label{eq:8.3.7}
+  B=\frac{1}{C}\left[f_{e} \ln M S_{e}-\sum_{i=1}^{r} f_{i} \ln s_{i}^{2}\right]
+\end{equation}
+作为检验统计量，对给定的显著性水平 $\alpha$，检验的拒绝域为
+\begin{equation}
+  \boldsymbol{W}=\{ B>\chi_{1-\alpha}^{2}(r-1) \}
+\end{equation}
+考虑到这里 $\chi^2$ 分布是近似分布，在诸样本量 $m_i$ 均不小于 5 时使用上述检验是适当的.
+
+\begin{example}\label{exam:8.3.2}
+茶是世界上最为广泛的一种饮料，但很少人知其营养价值.任一种茶叶都含有叶酸，它是一种维他命B.如今已有测定茶叶中叶酸含量的方法.为研究各产地的绿茶的叶酸含量是否有显著差异，特选四个产地绿茶，其中 $A_1$ 制作了 7 个样品，$A_2$ 制作了 5 个样品，$A_3$ 与$A_4$ 各制作了 6 个样品，共有 24 个样品，按随机次序测试其叶酸含量（单位：\si{mg}），测试结果如表 8.3.3 所示.
+\end{example}
 \section{一元线性回归}\label{sec:8.4}
 
 \section{一元非线性回归}\label{sec:8.5}
