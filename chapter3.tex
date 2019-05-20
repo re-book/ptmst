@@ -932,21 +932,21 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
    	设 $(X,Y)$ 是二维离散随机变量,\ $X$ 和 $Y$ 的边际分布列分别如下所示:
    	\begin{table}[h]
    		\centering
-   		\begin{tabular}[h]{c|ccc}
+   		\begin{tabularx}{0.4\textwidth}{Z|ZZZ}
    			\hline
    			$X$ & $-1$ & $0$ & $1$\\
    			\hline
    			$P$ & $1/4$ & $1/2$ & $1/4$\\
    			\hline
-   		\end{tabular}
+   		\end{tabularx}
    	    \qquad
-   	    \begin{tabular}[h]{c|cc}
+   	    \begin{tabularx}{0.4\textwidth}{Z|ZZ}
    	    	\hline
    	    	$Y$ & $0$ & $1$\\
    	    	\hline
    	    	$P$ & $1/2$ & $1/2$\\
    	    	\hline
-   	    \end{tabular}
+   	    \end{tabularx}
    	\end{table}
    如果 $P\left\{XY=0\right\}=1$,\ 试求
    
@@ -1147,7 +1147,7 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
    		\item 甲、乙两人独立地各进行两次射击,\ 假设甲的命中率为 $0.2$ ,\ 乙的命中率为 $0.5$ ,\ 以 $X$ 和 $Y$ 分别表示甲和乙的命中次数,\ 试求 $P(X\leqslant Y)$ .
    		\item 设随机变量 $X$ 和 $Y$ 相互独立,\ 其联合分布列为
    		\begin{center}
-   			\begin{tabularx}{0.8\textwidth}{Z|ZZZ}
+   			\begin{tabularx}{0.8\textwidth}{ZZZZ}
    				\hline
    				 & \multicolumn{3}{c}{ $Y$ }\\
    				\cline{2-4}
@@ -1195,3 +1195,743 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
        \item 在长为 $a$ 的线段的中点的两边随机地各选取一点,\ 求两点间的距离小于 $a/3$ 的概率.
        \item 设二维随机变量 $(X,Y)$ 的联合密度函数为 $p(x,y)$ .\ 证明:\ $X$ 与 $Y$ 相互独立的充要条件是 $p(x,y)$ 可分离变量,\ 即 $p(x,y)=h(x)g(y)$ .\ 又问 $h(x),g(y)$ 与边际密度函数有什么关系?
    \end{xiti}
+      \section{多维随机变量函数的分布}\label{sec:3.3}
+   设 $(X_1,X_2,\ldots,X_n)$ 为 $n$ 维随机变量,\ 则 $Y=g(X_1,X_2,\ldots,X_n)$ 是 $(X_1,X_2,\ldots,X_n)$ 的函数,\ $Y$ 是一维随机变量.\ 现在的问题是如何由 $(X_1,X_2,\ldots,X_n)$ 的分布,\ 求出 $Y$ 的分布.\ 这是一类技巧性很强的工作,\ 不仅对离散场合和连续场合有不同的方法,\ 而且对不同形式的函数 $g(X_1,X_2,\ldots,X_n)$ 要采用不同的方法,\ 甚至有些方法只对特殊形式的 $g(\cdot)$ 适用.\ 下面将以例子形式讲述这些方法.
+   \subsection{多维离散随机变量函数的分布}\label{ssec:3.3.1}
+   设 $(X_1,X_2,\ldots,X_n)$ 为 $n$ 维离散随机变量,\ 则某一函数 $Y=g(X_1,X_2,\ldots,X_n)$ 是一维离散随机变量.\ 当 $(X_1,X_2,\ldots,X_n)$ 所有可能取值较少时,\ 可将 $Y$ 的取值一一列出,\ 然后再合并整理就可得出结果,\ 见下例.
+   \begin{example}\label{exam:3.3.1}
+   	设 $(X,Y)$ 的联合分布列如下所示:
+   	\begin{center}
+   		\begin{tabularx}{0.8\textwidth}{ZZZZ}
+   			\hline
+   			& \multicolumn{3}{c}{$Y$} \\
+   			\cline{2-4}
+   			$X$ & $-1$ & $1$ & $2$\\
+   			\hline
+   			$-1$ & $5/20$ & $2/20$ & $6/20$\\
+   			$2$ & $3/20$ & $3/20$ & $1/20$\\
+   			\hline
+   		\end{tabularx}
+   	\end{center}
+   	试求:
+   	\begin{itemize}
+   		\item[(1)] $Z_1=X+Y$ 的分布列;
+   		\item[(2)] $Z_2=X-Y$ 的分布列;
+   		\item[(3)] $Z_3=\max\{X,Y\}$ 的分布列.
+   	\end{itemize}
+   	\begin{solution}
+   		将 $(X,Y)$ 及各个函数的取值对应列于同一表中:
+   		\begin{center}
+   			\begin{tabular}{c|cccccc}
+   				\hline
+   				$P$ & $5/20$ & $2/20$ & $6/20$ & $3/20$ & $3/20$ & $1/20$\\
+   				\hline
+   				$(X,Y)$ & $(-1,-1)$ & $(-1,1)$ & $(-1,2)$ & $(2,-1)$ & $(2,1)$ & $(2,2)$\\
+   				\hline
+   				$Z_1=X+Y$ & $-2$ & $0$ & $1$ & $1$ & $3$ & $4$\\
+   				\hline
+   				$Z_2=X-Y$ & $0$ & $-2$ & $-3$ & $3$ & $1$ & $0$\\
+   				\hline
+   				$Z_3=\max\{X,Y\}$ & $-1$ & $1$ & $2$ & $2$ & $2$ & $2$\\
+   				\hline
+   			\end{tabular}
+   		\end{center}
+   		
+   		然后经过合并整理就可得最后结果:
+   		\begin{center}
+   			\begin{tabular}{c|ccccc}
+   				\hline
+   				$Z_1=X+Y$ & $-2$ & $0$ & $1$ & $3$ & $4$\\
+   				\hline
+   				$P$ & $5/20$ & $2/20$ & $9/20$ & $3/20$ & $1/20$\\
+   				\hline
+   			\end{tabular}
+   		\end{center}
+   	    \begin{center}
+   	    	\begin{tabular}{c|ccccc}
+   	    		\hline
+   	    		$Z_2=X-Y$ & $-3$ & $-2$ & $0$ & $1$ & $3$\\
+   	    		\hline
+   	    		$P$ & $6/20$ & $2/20$ & $6/20$ & $3/20$ & $3/20$\\
+   	    		\hline
+   	    	\end{tabular}
+   	    \end{center}
+       \begin{center}
+       	\begin{tabular}{c|ccc}
+       		\hline
+       		$Z_3=\max\{X,Y\}$ & $-1$ & $1$ & $2$\\
+       		\hline
+       		$P$ & $5/20$ &  $2/20$ & $13/20$\\
+       		\hline
+       	\end{tabular}
+       \end{center}
+   	\end{solution}
+   \end{example}
+   
+   \begin{example}[(泊松分布的可加性)]\label{exam:3.3.2}
+   	设 $X\sim P(\lambda_{1}),Y\sim P(\lambda_2)$ ,\ 且 $X$ 与 $Y$ 独立,\ 证明 $Z=X+Y\sim P(\lambda_{1}+\lambda_{2})$ .
+   	\begin{proof}
+   		首先指出,\ $Z=X+Y$ 可取 $0,1,2,\ldots$ 所有非负整数.\ 面事件 $\{Z=k\}$ 是诸互不相容事件
+   		\begin{equation*}
+   			\{X=i,Y=k-i\},\quad i=0,1,\ldots,k
+   		\end{equation*}
+   		的并,\ 再考虑到独立性,\ 则对任意非负整数 $k$ ,\ 有
+   		\begin{equation}
+   			P(Z=k)=\sum_{i=0}^{k}P(X=i)P(Y=k-i).\label{eq:3.3.1}
+   		\end{equation}
+   		这个概率等式被称为离散场合下的{\bfseries 卷积公式}.\ 利用此公式可得
+   		\begin{align*}
+   			P(Z=k) &=\sum_{i=1}^{k}\left(\frac{\lambda_{1}^i}{i!}\ee^{-\lambda_{1}}\right)\left(\frac{\lambda_2^{k-i}}{(k-i)!}\ee^{-\lambda_{2}}\right)\\
+   			&=\frac{(\lambda_{1}+\lambda_{2})^k}{k!}\ee^{(\lambda_{1}+\lambda_{2})}\sum_{i=0}^{k}\frac{k!}{i!(k-i)!}\left(\frac{\lambda_{1}}{\lambda_{1}+\lambda_{2}}\right)^i\left(\frac{\lambda_{2}}{\lambda_{1}+\lambda_{2}}\right)^{k-i}\\
+   			&=\frac{(\lambda_{1}+\lambda_{2})^k}{k!}\ee^{(\lambda_{1}+\lambda_{2})}\left(\frac{\lambda_{1}}{\lambda_{1}+\lambda_{2}}+\frac{\lambda_{2}}{\lambda_{1}+\lambda_{2}}\right)^k\\
+   			&=\frac{(\lambda_{1}+\lambda_{2})^k}{k!}\ee^{-(\lambda_{1}+\lambda_{2})},\quad k=0,1,\ldots
+   		\end{align*}
+   		这表明 $X+Y\sim P(\lambda_{1}+\lambda_{2})$ ,\ 结论得证.\ 注意 $X-Y$ 不服从泊松分布.
+   	\end{proof}
+   \end{example}
+   泊松分布的这个性质可以叙述为:\ 泊松分布的卷积仍是泊松分布,\ 并记为
+   \begin{equation}
+   	P(\lambda_{1})\ast P(\lambda_{2})=P(\lambda_{1}+\lambda_{2}).\label{eq:3.3.2}
+   \end{equation}
+   这里卷积是指“寻求两个独立随机变量和的分布运算”.\ 显然这个性质可以推广到有限个独立泊松变量之和的分布上去,\ 即
+   \begin{equation}
+   	P(\lambda_{1})\ast P(\lambda_{2})\ast \cdots\ast P(\lambda_n)=P(\lambda_{1}+\lambda_{2}+\cdots+\lambda_n).\label{eq:3.3.3}
+   \end{equation}
+   特别,\ 当 $\lambda_{1}=\lambda_{2}=\cdots=\lambda_n=\lambda$ 时,\ 有
+   \begin{equation}
+   	P(\lambda)\ast P(\lambda)\ast\cdots\ast P(\lambda)=P(n\lambda).\label{eq:3.3.4}
+   \end{equation}
+   这些结论在理论上和应用上都是重要的.
+   
+   以后我们称性质“同一类分布的独立随机变量和的分布仍属于此类分布”为此类分布具有{\bfseries 可加性}.\ 上例说明泊松分布具有可加性,\ 下例又说明二项分布具有可加性.
+   \begin{example}[二项分布的可加性]\label{exam:3.3.3}
+   	设 $X\sim b(n,p),Y\sim b(m,p)$ ,\ 且 $X$ 与 $Y$ 独立,\ 证明 $Z=X+Y\sim b(n+m,p)$ .
+   	\begin{proof}
+   		首先指出,\ $Z=X+Y$ 可取 $0,1,2,\ldots,n+m$ 等 $n+m+1$ 个不同的值,\ 利用离散场合的卷积公式~\ref{eq:3.3.1} ,\ 可把事件 $\{Z=k\}$ 的概率表示为
+   		\begin{equation*}
+   			P(Z=k)=\sum_{i=0}^{k}P(X=i)P(Y=k-i).
+   		\end{equation*}
+   		在二项分布场合,\ 上式中有些事件是不可能事件:
+   		\begin{itemize}
+   			\item 当 $i>n$ 时,\ $\{X=i\}$ 是不可能事件,\ 所以只须考虑 $i\leqslant n$ ;
+   			\item 当 $k-i>m$ 时,\ \{Y=k-i\} 是不可能事件,\ 所以只须考虑 $i\geqslant k-m$.
+   		\end{itemize}
+   		因此记
+   		\begin{equation*}
+   			a=\max\{0,k-m\},\quad b=\min\{n,k\},
+   		\end{equation*}
+   		则
+   		\begin{align*}
+   			P(Z=k)
+   			&= \sum_{i=a}^{b}P(X=i)P(Y=k-i)\\
+   			&= \sum_{i=a}^{b}\binom{n}{i}p^{i}(1-p)^{n-i}\cdot\binom{m}{k-i}p^{k-i}(1-p)^{m-(k-i)}\\
+   			&= p^{k}(1-p)^{n+m-k}\sum_{i=a}^{b}\binom{n}{i}\binom{m}{k-i}.
+   		\end{align*}
+   		利用超几何分布可证明上式组合乘积的和满足:
+   		\begin{equation*}
+   			\sum_{i=a}^{b}\frac{\displaystyle\binom{n}{i}\binom{m}{k-i}}{\displaystyle\binom{n+m}{k}}=1\quad\text{或}\quad\sum_{i=a}^{b}\binom{n}{i}\binom{m}{k-i}=\binom{n+m}{k}.
+   		\end{equation*}
+   		代回原式,\ 可得
+   		\begin{equation*}
+   			P(Z=k)=\binom{n+m}{k}p^k(1-p)^{n+m-k},\quad k=0,1,\ldots,n+m.
+   		\end{equation*}
+   		这表明 $Z=X+Y\sim b(n+m,p)$ ,\ 即在参数 $p$ 相同情况下,\ 二项分布的卷积仍是二项分布 $b(n,p)\ast b(m,p)=b(n+m,p)$ .\ 这个性质可以推广到有限个场合,\ 即
+   		\begin{equation}
+   			b(n_1,p)\ast b(n_2,p)\ast\cdots\ast b(n_k,p)=b(n_1+n_2+\cdots+n_k,p).\label{eq:3.3.5}
+   		\end{equation}
+   		特别当 $n_1=n_2=\cdots=n_k=1$ 时,\ 有
+   		\begin{equation}
+   			b(1,p)\ast b(1,p)\ast \cdots\ast b(1,p)=b(n,p).\label{eq:3.3.6}
+   		\end{equation}
+   		这表明:\ 如果 $X_1,X_2,\ldots,X_n$ 独立同分布,\ 都服从 $b(1,p)$ 分布,\ 即其和 $\displaystyle\sum_{i=1}^{n}X_i\sim b(n,p)$ .\ 或者说,\ 服从二项分布 $b(n,p)$ 的随机变量可以分解成 $n$ 个相互独立的 $0-1$ 分布的随机变量之和.
+   	\end{proof}
+   \end{example}
+   
+   \subsection{最大值与最小值的分布}\label{ssec:3.3.2}
+   \begin{example}[最大值分布]\label{exam:3.3.4}
+   	设 $X_1,X_2,\ldots,X_n$ 是相互独立的 $n$ 个随机变量,\ 若 $Y=\max(X_1,X_2,\ldots,X_n)$ .\ 试在以下情况下求 $Y$ 的分布:
+   	\begin{itemize}
+   		\item[(1)] $X_i\sim F_i(x),i=1,2,\ldots,n$;
+   		\item[(2)] $X_i$ 同分布,\ 即 $X_i\sim F(x),i=1,2,\ldots,n$;
+   		\item[(3)] $X_i$ 为连续随机变量,\ 且 $X_i$ 同分布,\ 即 $X_i$ 的密度函数为 $p(x),i=1,2,\ldots,n$;
+   		\item[(4)] $X_i\sim Exp(\lambda),i=1,2,\ldots,n$.
+   	\end{itemize}
+   	\begin{solution}
+   		\begin{itemize}
+   			\item[(1)] $Y=\max(X_1,X_2,\ldots,X_n)$ 的分布函数为
+   			\begin{align}
+   				F_Y(y)
+   				&=P(\max(X_1,X_2,\ldots,X_n)\leqslant y)=P(X_1\leqslant y,X_2\leqslant y,\ldots,X_n\leqslant y)\notag\\
+   				&=P(X_1\leqslant y)P(X_2\leqslant y)\cdots P(X_n\leqslant y)=\prod_{i=1}^{n}F_i(y).\label{eq:3.3.7}
+   			\end{align}
+   			\item[(2)] 将 $X_i$ 的共同分布函数 $F(x)$ 代入上式得
+   			\begin{equation}
+   				F_Y(y)=[F(y)]^n.\label{eq:3.3.8}
+   			\end{equation}
+   			\item[(3)] $Y$ 的分布函数仍为上式,\ 密度函数可对上式关于 $y$ 求导得
+   			\begin{equation}
+   				p_Y(y)=F_{Y}'(y)=n[F(y)]^{n-1}p(y).\label{eq:3.3.9}
+   			\end{equation}
+   			\item[(4)] 将 $Exp(\lambda)$ 的分布函数和密度函数代入(\ref{eq:3.3.8})和(\ref{eq:3.3.9})式得
+   			\begin{align*}
+   				F_Y(y) &= \begin{cases}
+   					0, & y<0;\\
+   					[1-\ee^{-\lambda y}]^n, & y\geqslant0.
+   				\end{cases}\\
+   				p_Y(y) &= \begin{cases}
+   					0, & y<0;\\
+   					n[1-\ee^{-\lambda y}]^{n-1}\lambda\ee^{-\lambda y}, & y\geqslant0.
+   				\end{cases}
+   			\end{align*}
+   		\end{itemize}
+   	\end{solution}
+   \end{example}
+   \begin{example}[最小值分布]\label{exam:3.3.5}
+   	设 $X_1,X_2,\ldots,X_n$ 是相互独立得 $n$ 个随机变量,\ 若 $Y=\min(X_1,X_2,\ldots,X_n)$ .\ 试在以下情况下求 $Y$ 得分布:
+   	\begin{itemize}
+   		\item[(1)] $X_i\sim F_i(x),i=1,2,\ldots,n$;
+   		\item[(2)] $X_i$ 同分布,\ 即 $X_i\sim F(x),i=1,2,\ldots,n$;
+   		\item[(3)] $X_i$ 为连续随机变量,\ 且 $X_i$ 同分布,\ 即 $X_i$ 的密度函数为 $p(x),i=1,2,\ldots,n$;
+   		\item[(4)] $X_i\sim Exp(\lambda),i=1,2,\ldots,n$.
+   	\end{itemize}
+   	\begin{solution}
+   		\begin{itemize}
+   			\item[(1)] $Y=\min(X_1,X_2,\ldots,X_n)$ 的分布函数为
+   			\begin{align}
+   				F_Y(y)&=P(\min(X_1,X_2,\ldots,X_n)\leqslant y)\notag\\
+   				&=1-P(\min(X_1,X_2,\ldots,X_n)>y)\notag\\
+   				&=1-P(X_1>y,X_2>y,\ldots,X_n>y)\notag\\
+   				&=1-P(X_1>y)P(X_2>y)\cdots P(X_n>y)\notag\\
+   				&=1-\prod_{i=1}^{n}[1-F_i(y)].\label{eq:3.3.10}
+   			\end{align}
+   			\item[(2)] 将 $X_i$ 的共同分布函数 $F(x)$ 代入上式得
+   			\begin{equation}
+   				F_Y(y)=1-[1-F(y)]^n.\label{eq:3.3.11}
+   			\end{equation}
+   			\item[(3)] $Y$ 的分布函数仍为上式,\ 密度函数可对上式关于 $y$ 求导得
+   			\begin{equation}
+   				p_Y(y)=F_Y'(y)=n[1-F(y)]^{n-1}p(y).\label{eq:3.3.12}
+   			\end{equation}
+   			\item[(4)] 将 $Exp(\lambda)$ 的分布函数和密度函数代入~(\ref{eq:3.3.11}) 和 ~(\ref{eq:3.3.12}) 式得
+   			\begin{equation*}
+   				F_Y(y)=\begin{cases}
+   					0, & y<0;\\
+   					1-\ee^{-n\lambda y}, & y\geqslant0.
+   				\end{cases}
+   			\end{equation*}
+   			\begin{equation*}
+   				p_Y(y)=\begin{cases}
+   					0, & y<0;\\
+   					n\lambda\ee^{-n\lambda y}, & y\geqslant0.
+   				\end{cases}
+   			\end{equation*}
+   		\end{itemize}
+   	\end{solution}
+   \end{example}
+   
+   由上面例~\ref{exam:3.3.4} 和 ~\ref{exam:3.3.5} 可以看出:\ 若 $X_1,X_2,\ldots,X_n$ 独立同分布,\ $X_i$ 服从参数为 $\lambda$ 的指数分布,\ 则 $\max(X_1,X_2,\ldots,X_n)$ 不服从指数分布,\ 而 $\min(X_1,X_2,\ldots,X_n)$ 仍服从指数分布,\ 参数为 $n\lambda$ .
+   \subsection{连续场合的卷积公式}\label{ssec:3.3.3}
+   \begin{theorem}{}{3.3.1}
+   	设 $X$ 与 $Y$ 是两个相互独立的连续随机变量,\ 其密度函数分别为 $p_X(x)$ 和 $p_Y(y)$ ,\ 则其和 $Z=X+Y$ 的密度函数为
+   	\begin{equation}
+   		p_Z(z)=\int_{-\infty}^{+\infty}p_X(z-y)p_Y(y)\,\dd y.\label{eq:3.3.13}
+   	\end{equation}
+   	\begin{proof}
+   		$Z=X+Y$ 的分布函数为
+   		\begin{align*}
+   			F_Z(z)&=P(X+Y\leqslant z)=\iint_{x+y\leqslant z}p_X(x)p_Y(y)\,\dd x\dd y\\
+   			&=\int_{-\infty}^{+\infty}\left\{\int_{-\infty}^{z-y}p_X(x)\,\dd x\right\}p_Y(y)\,\dd y\\
+   			&=\int_{-\infty}^{+\infty}F_X(z-y)p_Y(y)\,\dd y.
+   		\end{align*}
+   		其中 $F_X(x)$ 为 $X$ 的分布函数,\ 对上式两端求导,\ 可得 $Z$ 的密度函数为
+   		\begin{equation*}
+   			p_Z(z)=\int_{-\infty}^{+\infty}p_X(z-y)p_Y(y)\,\dd y.
+   		\end{equation*}
+   		这就是连续场合下的卷积公式.
+   	\end{proof}
+   \end{theorem}
+   下面对正态分布和伽玛分布分别使用上述卷积公式.
+   \begin{example}[(正态分布的可加性)]\label{exam:3.3.6}
+   	设 $X\sim N(\mu_1,\sigma_1^2),Y\sim N(\mu_2,\sigma_2^2)$ ,\ 且 $X$ 与 $Y$ 独立,\ 证明 $Z+X+Y\sim N(\mu_1+\mu_2,\sigma_1^2+\sigma_2^2)$ .
+   	\begin{proof}
+   		首先指出 $Z=X+Y$ 在 $(-\infty,+\infty)$ 上取值,\ 利用卷积公式~(\ref{eq:3.3.13})可得
+   		\begin{equation*}
+   			p_Z(z)=\frac{1}{2\uppi\sigma_1\sigma_2}\int_{-\infty}^{+\infty}\exp\left\{-\frac{1}{2}\left[\frac{(z-y-\mu_1)^2}{\sigma_1^2}+\frac{(y-\mu_2)^2}{\sigma_2^2}\right]\right\}\,\dd y,
+   		\end{equation*}
+   		对上式被积函数中的指数部分按 $y$ 的幂次展开,\ 再合并同类项,\ 不难得到
+   		\begin{equation*}
+   			\frac{(z-y-\mu_1)^2}{\sigma_1^2}+\frac{(y-\mu_2)^2}{\sigma_2^2}=A\left(y-\frac{B}{A}\right)^2+\frac{(y-\mu_1-\mu_2)^2}{\sigma_1^2+\sigma_2^2},
+   		\end{equation*}
+   		其中
+   		\begin{equation*}
+   			A=\frac{1}{\sigma_1^2}+\frac{1}{\sigma_2^2},\quad B=\frac{z-\mu_1}{\sigma_1^2}+\frac{\mu_2}{\sigma_2^2}.
+   		\end{equation*}
+   		代回原式,\ 可得
+   		\begin{equation*}
+   			p_Z(z)=\frac{1}{2\uppi\sigma_1\sigma_2}\exp\left\{-\frac{1}{2}\frac{(z-\mu_1-\mu_2)^2}{\sigma_1^2+\sigma_2^2}\right\}\cdot\int_{-\infty}^{+\infty}\exp\left\{-\frac{A}{2}\left(y-\frac{B}{A}\right)^2\right\}\,\dd y.
+   		\end{equation*}
+   		利用正态密度函数的正则性,\ 上式中的积分应为 $\sqrt{2\uppi}/\sqrt{A}$ ,\ 于是
+   		\begin{equation*}
+   			p_Z(z)=\frac{1}{\sqrt{2\uppi(\sigma_1^2+\sigma_2^2)}}\exp\left\{\frac{1}{2}\frac{(z-\mu_1-\mu_2)^2}{\sigma_1^2+\sigma_2^2}\right\},
+   		\end{equation*}
+   		这正是均值为 $\mu_1+\mu_2$ ,\ 方差是 $\sigma_1^2+\sigma_2^2$ 的正态密度函数.
+   	\end{proof}
+   \end{example}
+   上述结论表明:\ 两个独立的正态变量之和仍为正态变量,\ 其分布中的两个参数分别对应相加,\ 即
+   \begin{equation}\label{eq:3.3.14}
+   	N(\mu_1,\sigma_1^2)\ast N(\mu_2,\sigma_2^2)=N(\mu_1+\mu_2,\sigma_1^2+\sigma_2^2).
+   \end{equation}
+   显然,\ 这个结论可以推广到有限个独立正态变量之和的场合.
+   
+   另外我们知道,\ 若 $X\sim N(\mu,\sigma^2)$ ,\ 则对任意非零实数 $a$ 有 $aX\sim N(a\mu,a^2\sigma)$ .\ 由此我们可得另一个重要结论:\ 任意 $n$ 个相互独立的正态变量的线性组合仍是正态变量,\ 即
+   \begin{equation}\label{eq:3.3.15}
+   	a_1X_1+a_2X_2+\cdots+a_nX_n\sim N(\mu_0,\sigma_0^2),
+   \end{equation}
+   若记 $X_i\sim N(\mu_i,\sigma_i^2),i=1,2,\ldots,n$ ,\ 则参数 $\mu_0$ 与 $\sigma_0^2$ 分别为
+   \begin{equation*}
+   	\mu_0=\sum_{i=1}^{n}a_i\mu_i,\quad \sigma_0^2=\sum_{i=1}^{n}a_i^2\sigma_i^2.
+   \end{equation*}
+   
+   譬如,\ 已知 $X\sim N(-3,1),Y\sim N(2,1)$ ,\ 且 $X$ 与 $Y$ 独立,\ 则
+   \begin{equation*}
+   	Z=X-2Y+7\sim N(0,5).
+   \end{equation*}
+   \begin{example}[(伽玛分布的可加性)]\label{exam:3.3.7}
+   	设 $X\sim Ga(\alpha_1,\lambda),Y\sim Ga(\alpha_2,\lambda)$ , 且 $X$ 与 $Y$ 独立, 证明 $Z=X+Y\sim Ga(\alpha_1+\alpha_2,\lambda)$ .
+   	\begin{proof}
+   		首先指出 $Z=X+Y$ 在 $(0,+\infty)$ 上取值, 所以当 $z\leqslant0$ 时, $p_{Z}(z)=0$ . 而当 $z>0$ 时, 可用卷积公式~\ref{eq:3.3.13}, 此时使被积函数 $p_{X}(z-y)p_{Y}(y)>0$ 的积分限为 $0<y<z$ , 故
+   		\begin{align*}
+   			p_{Z}(z)&=\frac{\lambda^{\alpha_1+\alpha_2}}{\Gamma(\alpha_1)\Gamma(\alpha_2)}\int_{0}^{z}(z-y)^{\alpha_1-1}\ee^{-\lambda(z-y)}\cdot y^{\alpha_2-1}\ee^{-\lambda y}\dd y\\
+   			&=\frac{\lambda^{\alpha_1+\alpha_2}\ee^{-\lambda z}}{\Gamma(\alpha_1)\Gamma(\alpha_2)}\int_{0}^{z}(z-y)^{\alpha_1-1}y^{\alpha_2-1}\dd y\\
+   			&=\frac{\lambda^{\alpha_1+\alpha_2}\ee^{-\lambda z}}{\Gamma(\alpha_1)\Gamma(\alpha_2)}z^{\alpha_1+\alpha_2-1}\int_{0}^{1}(1-t)^{\alpha_1-1}t^{\alpha_2-1}\dd t,
+   		\end{align*}
+   		最后的积分是贝塔函数, 它等于 $\Gamma(\alpha_1)\Gamma(\alpha_2)/\Gamma(\alpha_1+\alpha_2)$ . 代入上式得
+   		\begin{equation*}
+   			p_{Z}(z)=\frac{\lambda^{\alpha_1+\alpha_2}}{\Gamma(\alpha_1+\alpha_2)}z^{\alpha_1+\alpha_2-1}\ee^{-\lambda z}.
+   		\end{equation*}
+   		这正是形状参数为 $\alpha_1+\alpha_2$ , 尺度参数仍为 $\lambda$ 的伽马分布.
+   		
+   		这个结论表明: 两个尺度参数相同的独立的伽马变量之和仍为伽马变量, 其尺度参数不变, 而形状参数相加, 即
+   		\begin{equation}\label{eq:3.3.16}
+   			Ga(\alpha_1,\lambda)\ast Ga(\alpha_2,\lambda)=Ga(\alpha_1+\alpha_2,\lambda)
+   		\end{equation}
+   		显然这个结论可推广到有限个尺度参数相同的独立伽马变量之和上.
+   	\end{proof}
+   	另外由第二章中我们知道, 伽马分布有两个常用的特例: 指数分布和卡方分布, 即
+   	\begin{equation*}
+   	Exp(\lambda)=Ga(1,\lambda),\quad\chi^2(n)=Ga\left( \frac{n}{2},\frac{1}{2}\right), 
+   	\end{equation*}
+   	由此又可以得到另两个结论:
+   	\begin{itemize}
+   		\item[(1)] $m$ 个独立同分布的指数变量之和为伽马变量, 即
+   		\begin{equation}\label{eq:3.3.17}
+   		\underbrace{Exp(\lambda)\ast Exp(\lambda)\ast\cdots\ast Exp(\lambda)}_{m\text{个}}=Ga(m,\lambda)
+   		\end{equation}
+   		\item[(2)] $m$ 个独立的 $\chi^2$ 变量之和为 $\chi^2$ 变量($\chi^2$ 分布的可加性), 即
+   		\begin{equation}\label{eq:3.3.18}
+   		\chi^2(n_1)\ast\chi^2(n_2)\ast\cdots\ast\chi^2(n_m)=\chi^2(n_1+n_2+\cdots+n_m).
+   		\end{equation}
+   	\end{itemize}
+   \end{example}
+   \begin{example}
+   	设 $X_1,X_2,\ldots,X_n$ 是 $n$ 个相互独立同分布的标准正态变量, 证明其平方和 $Y=X_1^2+X_2^2+\cdots+X_n^2$ 服从自由度为 $n$ 的 $\chi^2$ 分布.
+   	\begin{proof}
+   		由上一章例~\ref{exam:2.6.3}, 我们已经证得: 当 $X_i\sim N(0,1)$ , 有 $X_i^2\sim\chi^2(1)$ . 所以再由 $\chi^2$ 分布的可加性即可得结论.
+   		
+   		由此可见, $\chi^2(n)$ 分布中的参数 $n$ 就体现在: $n$ 是独立的标准正态变量的个数, 因此人们称这个参数 $n$ 为自由度.
+   	\end{proof}
+   \end{example}
+    
+    \subsection{变量变换法}\label{ssec:3.3.4}
+    在此我们仅介绍二维随机变量函数的分布, 而对于 $n$ 维随机变量函数的分布, 方法是类似的.
+    \subsubsection{变量变换法}
+    设 $(X,Y)$ 的联合密度函数为 $p(x,y)$ , 如果函数
+    \begin{equation*}
+    	\begin{cases}
+    	u=g_{1}(x,y),\\
+    	v=g_{2}(x,y)
+    	\end{cases}
+    \end{equation*}
+    有连续偏导数, 且存在唯一的反函数
+    \begin{equation*}
+    	\begin{cases}
+    	x=x(u,v),\\
+    	y=y(u,v),
+    	\end{cases}
+    \end{equation*}
+    其变换的雅可比行列式
+    \begin{equation}\label{eq:3.3.19}
+    	J=\frac{\partial(x,y)}{\partial(u,v)}=
+    	\begin{vmatrix}
+    	\frac{\partial x}{\partial u} & \frac{\partial y}{\partial u}\\
+    	\frac{\partial x}{\partial v} & \frac{\partial y}{\partial v}
+    	\end{vmatrix}=
+    	\left( \frac{\partial(u,v)}{\partial(x,y)}
+    	\right) ^{-1}=
+    	\left( 
+    	\begin{vmatrix}
+    	\frac{\partial u}{\partial x} & \frac{\partial u}{\partial y}\\
+    	\frac{\partial v}{\partial x} & \frac{\partial v}{\partial y}
+    	\end{vmatrix}
+    	\right) ^{-1}\ne0.
+    \end{equation}
+    
+    若
+    \begin{equation*}
+    	\begin{cases}
+    	U=g_{1}(X,Y),\\
+    	V=g_{2}(X,Y),
+    	\end{cases}
+    \end{equation*}
+    则 $(U,V)$ 的联合密度函数为
+    \begin{equation}\label{eq:3.3.20}
+    	p(u,v)=p(x(u,v),y(u,v))|J|.
+    \end{equation}
+    
+    这个方法实际上就是二重积分的变量变换法, 其证明可参阅数学分析教科书.
+    \begin{example}\label{exam:3.3.9}
+    	设 $X$ 与 $Y$ 独立同分布, 都服从正态分布 $N(\mu,\sigma^2)$ . 记
+    	\begin{equation*}
+    		\begin{cases}
+    		U=X+Y,\\
+    		V=X-Y.
+    		\end{cases}
+    	\end{equation*}
+    	试求 $(U,V)$ 的联合密度函数, 问 $U$ 与 $V$ 是否独立?
+    	\begin{solution}
+    		因为
+    		\begin{equation*}
+    			\begin{cases}
+    			u=x+y,\\
+    			v=x-y
+    			\end{cases}
+    		\end{equation*}
+    		的反函数为
+    		\begin{equation*}
+    			\begin{cases}
+    			x=(u+v)/2,\\
+    			y=(u-v)/2,
+    			\end{cases}
+    		\end{equation*}
+    		则
+    		\begin{equation*}
+    			J=
+    			\begin{vmatrix}
+    			\frac{\partial x}{\partial u} & \frac{\partial y}{\partial u}\\
+    			\frac{\partial x}{\partial v} & \frac{\partial y}{\partial v}
+    			\end{vmatrix}
+    			=
+    			\begin{vmatrix}
+    			1/2 & 1/2\\
+    			1/2 & -1/2
+    			\end{vmatrix}
+    			=-\frac{1}{2}.
+    		\end{equation*}
+    		所以得 $(U,V)$ 的联合密度函数为
+    		\begin{align*}
+    			p(u,v)&=p(x(u,v),y(u,v))|J|=p_{X}((u+v)/2)p_{Y}((u-v)/2)\left|-\frac{1}{2}\right|\\
+    			&=\frac{1}{2\sqrt{2\uppi}\sigma}\exp\left\{-\frac{[(u+v)/2-\mu]^2}{2\sigma^2}\right\}\frac{1}{\sqrt{2\uppi}\sigma}\exp\left\{-\frac{[(u-v)/2-\mu]^2}{2\sigma^2}\right\}\\
+    			&=\frac{1}{4\uppi\sigma^2}\exp\left\{-\frac{(u-2\mu)^2+v^2}{4\sigma^2}\right\}.
+    		\end{align*}
+    		这正是二元正态分布 $N(2\mu,0,2\sigma^2,2\sigma^2,0)$ 的密度函数, 其边际分布为 $U\sim N(2\mu,2\sigma^2)$ , $V\sim N(0,2\sigma^2)$ , 所以由 $p(u,v)=p_{U}(u)p_{V}(v)$ 知 $U$ 与 $V$ 相互独立.
+    	\end{solution}
+    \end{example}
+        \subsubsection{增补变量法}
+        增补变量法实质上是变换法的一种应用: 为了求出二维连续随机变量 $(X,Y)$ 的函数 $U=g(X,Y)$ 的密度函数, 增补一个新的随机变量 $V=h(X,Y)$ , 一般令 $V=X$ 或 $V=Y$ . 先用变换法求出 $(U,V)$ 的联合密度函数 $p(u,v)$ , 再对 $p(u,v)$ 关于 $v$ 积分, 从而得出关于 $U$ 的边际密度函数.
+        
+        下面我们以例子形式, 给出两个随机变量的积与商的公式.
+      \begin{example}[(积的公式)]\label{exam:3.3.10}
+      	设 $X$ 与 $Y$ 相互独立, 其密度函数分别为 $p_{X}(x)$ 和 $p_{Y}(y)$ . 则 $U=XY$ 的密度函数为
+      	\begin{equation}\label{eq:3.3.21}
+      		p_{U}(u)=\int_{-\infty}^{+\infty}p_{X}(u/v)p_{Y}(v)\frac{1}{|v|}\dd v.
+      	\end{equation}
+      	\begin{solution}
+      		记 $V=Y$ , 则 $\begin{cases}
+      		y=xy,\\
+      		v=y
+      		\end{cases}$ 的反函数为$\begin{cases}
+      		x=u/v,\\
+      		y=v,
+      		\end{cases}$雅可比行列式为
+      		\begin{equation*}
+      			J=\begin{vmatrix}
+      			1/v & -u/v^2\\
+      			0 & 1
+      			\end{vmatrix}=\frac{1}{v},
+      		\end{equation*}
+      		所以 $(U,V)$ 的联合密度函数为
+      		\begin{equation*}
+      			p(u,v)=p_{X}(u/v)\cdot p_{Y}(v)|J|=p_{X}(u/v)p_{Y}(v)\frac{1}{|v|}.
+      		\end{equation*}
+      		对 $p(u,v)$ 关于 $v$ 积分, 就可得 $U=XY$ 的密度函数为~\eqref{eq:3.3.21}~式.
+      	\end{solution}
+      \end{example}
+      \begin{example}[(商的公式)]\label{exam:3.3.11}
+      	设 $X$ 与 $Y$ 相互独立, 其密度函数分别为 $p_{X}(x)$ 和 $p_{Y}(y)$ . 则 $U=X/Y$ 的密度函数为
+      	\begin{equation}\label{eq:3.3.22}
+      		p_{U}(u)=\int_{-\infty}^{+\infty}p_{X}(uv)p_{Y}(v)|v|\dd v.
+      	\end{equation}
+      	\begin{solution}
+      		记 $V=Y$ , 则 $\begin{cases}
+      		u=x/y,\\
+      		v=y
+      		\end{cases}$ 的反函数为
+      		$\begin{cases}
+      		x=uv,\\
+      		y=v,
+      		\end{cases}$ 雅可比行列式为
+      		\begin{equation*}
+      			J=\begin{vmatrix}
+      			v & u\\
+      			0 & 1
+      			\end{vmatrix}=v,
+      		\end{equation*}
+      		所以 $(U,V)$ 的联合密度函数为
+      		\begin{equation*}
+      			p(u,v)=p_{X}(uv)\cdot p_{Y}(v)|J|=p(uv,v)|v|.
+      		\end{equation*}
+      		对 $p(u,v)$ 关于 $v$ 积分, 就可得 $U=X/Y$ 的密度函数为~\eqref{eq:3.3.22}~式.
+      	\end{solution}
+      \end{example}
+      \begin{xiti}
+      	\item 设二维随机变量 $(X,Y)$ 的联合分布列为
+      	\begin{center}
+      		\begin{tabularx}{0.8\textwidth}{ZZZZ}
+      			\hline
+      			\multicolumn{1}{c}{} & \multicolumn{3}{c}{$Y$}\\
+      			\cline{2-4}
+      			\multicolumn{1}{c}{$X$} & 1 & 2 & 3\\
+      			\hline
+      			0 & $0.05$ & $0.15$ & $0.20$\\
+      			1 & $0.07$ & $0.11$ & $0.22$\\
+      			2 & $0.04$ & $0.07$ & $0.09$\\
+      			\hline
+      		\end{tabularx}
+      	\end{center}
+      	试分别求 $U=\max(X,Y)$ 和 $V=\min(X,Y)$ 的分布列.
+      	\item 设 $X$ 和 $Y$ 是相互独立的随机变量, 且 $X\sim Exp(\lambda)$ , $Y\sim Exp(\mu)$ . 如果定义随机变量 $Z$ 如下
+      	\begin{equation*}
+      		Z=\begin{cases}
+      		1, & \text{当}X\leqslant Y;\\
+      		0, & \text{当}X>Y.
+      		\end{cases}
+      	\end{equation*}
+      	求 $Z$ 的分布列.
+      	\item 设随机变量 $X$ 和 $Y$ 的分布列分别为
+      	\begin{center}
+      		\begin{tabularx}{0.4\textwidth}{Z|ZZZ}
+      			$X$ & $-1$ & 0 & 1\\
+      			\hline
+      			$P$ & $1/4$ & $1/2$ & $1/4$
+      		\end{tabularx}
+      	\quad
+      	    \begin{tabularx}{0.4\textwidth}{Z|ZZ}
+      	    	$Y$ & 0 & 1\\
+      	    	\hline
+      	    	$P$ & $1/2$ & $1/2$
+      	    \end{tabularx}
+      	\end{center}
+      已知 $P(XY=0)=1$ , 试求 $Z=\max\{X,Y\}$ 的分布列.
+      \item 设随机变量 $X$ , $Y$ 独立同分布, 在以下情况下求随机变量 $Z=\max\{X,Y\}$ 的分布列.
+      \begin{enumerate}
+      	\item[(1)] $X$ 服从 $p=0.5$ 的 $(0-1)$ 分布;
+      	\item[(2)] $X$ 服从几何分布, 即 $P(X=k)=(1-p)^{k-1}p,k=1,2,\ldots$ .
+      \end{enumerate}
+      \item 设 $X$ 和 $Y$ 为两个随机变量, 且
+      \begin{equation*}
+      	P\{X\geqslant0,Y\geqslant0\}=\frac{3}{7},\quad P\{X\geqslant0\}=P\{Y\geqslant0\}=\frac{4}{7}.
+      \end{equation*}
+      试求 $P\{\max(X,Y)\geqslant0\}$ .
+      \item 设 $X$ 与 $Y$ 的联合密度函数为
+      \begin{equation*}
+      	p(x,y)=\begin{cases}
+      	\ee^{-(x+y)}, & x>0,y>0;\\
+      	0, & \text{其他}.
+      	\end{cases}
+      \end{equation*}
+      试求以下随机变量的密度函数
+      \begin{enumerate}
+      	\item[(1)] $Z=(X+Y)/2$ ;
+      	\item[(2)] $Z=Y-X$ .
+      \end{enumerate}
+      \item 设 $X$ 与 $Y$ 的联合密度函数为
+      \begin{equation*}
+      	p(x,y)=\begin{cases}
+      	3x, & 0<x<1,0<y<x;\\
+      	0, & \text{其他}.
+      	\end{cases}
+      \end{equation*}
+      试求 $Z=X-Y$ 的密度函数.
+      \item 某种商品一周的需要量是一个随机变量, 其密度函数为
+      \begin{equation*}
+      	p_{1}(t)=\begin{cases}
+      	t\ee^{-t}, & t>0;\\
+      	0, & t\leqslant0.
+      	\end{cases}
+      \end{equation*}
+      设各周的需要量是相互独立的, 试求
+      \begin{enumerate}
+      	\item[(1)] 两周需要量的密度函数 $p_{2}(x)$ ;
+      	\item[(2)] 三周需要量的密度函数 $p_{3}(x)$ .
+      \end{enumerate}
+      \item 设随机变量 $X$ 与 $Y$ 相互独立, 试在以下情况下求 $Z=X+Y$ 的密度函数:
+      \begin{enumerate}
+      	\item[(1)] $X\sim U(0,1)$ , $Y\sim U(0,1)$ ;
+      	\item[(2)] $X\sim U(0,1)$ , $Y\sim Exp(1)$ .
+      \end{enumerate}
+      \item 设二维随机变量 $(X,Y)$ 在矩形
+      \begin{equation*}
+      	G=\{(x,y)|0\leqslant x\leqslant2,0\leqslant y\leqslant1\}
+      \end{equation*}
+      上服从均匀分布, 试求边长分别为 $X$ 和 $Y$ 的矩形面积 $Z$ 的密度函数.
+      \item 设随机变量 $X_1,X_2,X_3,X_4$ 相互独立同分布, $P\{X_i=0\}=0.6,P\{X_i=1\}=0.4,i=1,2,3,4$ , 求行列式 $X=\begin{vmatrix}
+      X_1 & X_2\\
+      X_3 & X_4
+      \end{vmatrix}$ 的分布列.
+      \item 设某一设备装有 $3$ 个同类的电器元件, 元件工作相互独立, 且工作时间都服从参数为 $\lambda$ 的指数分布. 当 $3$ 个元件都正常工作时, 设备才正常工作. 试求设备正常工作时间 $T$ 的概率分布.
+      \item 设 $X$ , $Y$ 独立同分布, 且都服从标准正态分布 $N(0,1)$ , 试求 $Z=\sqrt{X^2+Y^2}$ 的分布.
+      \item 设 $X$ , $Y$ 独立同分布, 且都服从标准正态分布 $N(0,1)$ , 试证明: $Z=X/Y$ 服从柯西分布.
+      \item 设随机变量 $X$ 与 $Y$ 相互独立, 都服从 $(\theta-1/2,\theta+1/2)$ 上的均匀分布, 试证 $X-Y$ 的分布与 $\theta$ 无关.
+      \item 设随机变量 $X_1,X_2,\ldots,X_n$ 相互独立, 且 $X_{i}\sim Exp(\lambda)$ , 试证:
+      \begin{equation*}
+      	P\{X_{i}=\min(X_1,X_2,\ldots,X_n)\}=\frac{\lambda_{i}}{\lambda_{1}+\lambda_{2}+\cdots+\lambda_{n}}.
+      \end{equation*}
+      \item 设连续随机变量 $X_1,X_2,\ldots,X_n$ 独立同分布, 试证:
+      \begin{equation*}
+      	P\{X_n>\max(X_1,X_2,\ldots,X_{n-1})\}=\frac{1}{n}.
+      \end{equation*}
+      \item 设随机变量 $X$ 与 $Y$ 独立同分布, 其密度函数为
+      \begin{equation*}
+      	p(x)=\begin{cases}
+      	\ee^{-x}, & x>0;\\
+      	0, & x\leqslant0.
+      	\end{cases}
+      \end{equation*}
+      \begin{enumerate}
+      	\item[(1)] 求 $U=X+Y$ 与 $V=X/(X+Y)$ 的联合密度函数 $p_{U,V}(u,v)$ ;
+      	\item[(2)] 以上的 $U$ 与 $V$ 独立吗?
+      \end{enumerate}
+      \end{xiti}
+  \section{多维随机变量的特征数}\label{sec:3.4}
+  类似于一维随机变量的特征数, 多维随机变量也有特征数, 除了各个分量的期望、方差、标准差以外, 还有两个随机变量间的关联程度, 即协方差与相关系数, 这是一种反映两个随机变量相依关系的特征数, 要特别注意.
+  \subsection{多维随机变量函数的数学期望}\label{ssec:3.4.1}
+  在第二章中, 在求一维随机变量函数 $Y=g(X)$ 的数学期望中, 定理~\ref{thm:2.2.1}~发挥了重要的作用. 现在要求多维随机变量函数 $Z=g(X_1,X_2,\ldots,X_n)$ 的数学期望 $E(Z)$ , 下面的定理~\ref{thm:3.4.1}~也起着很重要的作用. 利用此定理, 可以省略求随机变量函数 $Z=g(X_1,X_2,\ldots,X_n)$ 的分布. 此定理的证明涉及更多的工具, 在此省略了. 为简单起见, 我们用二维随机变量叙述此定理, 而对 $n$ 维随机变量结论是类似的.
+  \begin{theorem}{}{3.4.1}
+  	若二维随机变量 $(X,Y)$ 的分布用联合分布列 $P(X=x_i,Y=y_j)$ 或用联合密度函数 $p(x,y)$ 表示, 则 $Z=g(X,Y)$ 的数学期望为
+  	\begin{equation}\label{eq:3.4.1}
+  		E(Z)=\begin{cases}
+  		\sum_{i}\sum_{j}g(x_i,y_j)P(X=x_i,Y=y_j), & \text{在离散场合},\\
+  		\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}g(x,y)p(x,y)\dd x\dd y, & \text{在连续场合}.
+  		\end{cases}
+  	\end{equation}
+  	这里所涉及的数学期望都假设存在.
+  	
+  	还要指出, 在连续场合(离散场合也类似)有:
+  	\begin{itemize}
+  		\item 当 $g(X,Y)=X$ 时, 可得 $X$ 的数学期望为
+  		\begin{equation*}
+  			E(X)=\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}xp(x,y)\dd x\dd y=\int_{-\infty}^{+\infty}xp_{X}(x)\dd x.
+  		\end{equation*}
+  		\item 当 $g(X,Y)=(X-E(X))^2$ 时, 可得 $X$ 的方差为
+  		\begin{align*}
+  			\mathrm{Var}(X)&=E(X-E(X))^2=\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}(x-E(X))^2p(x,y)\dd x\dd y\\
+  			&=\int_{-\infty}^{+\infty}(x-E(X))^2p_{X}(x)\dd x.
+  		\end{align*}
+  	\end{itemize}
+  
+    类似地可给出 $Y$ 的数学期望与方差的公式.
+  \end{theorem}
+  \begin{example}\label{exam:3.4.1}
+  	在长为 $a$ 的线段上任取两个点 $X$ 与 $Y$ , 求此两点间的平均长度.
+  	\begin{solution}
+  		因为 $X$ 与 $Y$ 都服从 $(0,a)$ 上的均匀分布, 且 $X$ 与 $Y$ 相互独立, 所以 $(X,Y)$ 的联合密度函数为
+  		\begin{equation*}
+  			p(x,y)=\begin{cases}
+  			\frac{1}{a^2}, & 0<x<a,0<y<a;\\
+  			0, & \text{其他}.
+  			\end{cases}
+  		\end{equation*}
+  		利用定理~\ref{thm:3.4.1}~, 得两点间的平均长度为
+  		\begin{align*}
+  			E(|X-Y|)&=\int_{0}^{a}\int_{0}^{a}|x-y|\frac{1}{a^2}\dd x\dd y\\
+  			&=\frac{1}{a^2}\left\{\int_{0}^{a}\int_{0}^{x}(x-y)\dd y\dd x+\int_{0}^{a}\int_{x}^{a}(y-x)\dd y\dd x\right\}\\
+  			&=\frac{1}{a^2}\left\{\int_{0}^{a}\left(x^2-ax+\frac{a^2}{2} \right)\dd x \right\}=\frac{a}{3}.
+  		\end{align*}
+  	\end{solution}
+  注意, 利用定理~\ref{thm:3.4.1}~, 虽然可以省略求随机变量函数的分布, 但在某些场合所涉及的求和或求积难以计算, 此时只能分两步进行: 先求随机变量函数 $Z=g(X_1,X_2,\ldots,X_n)$ 的分布, 然后再由 $Z$ 的分布去求 $E(Z)$ , 见下例.
+  \end{example}
+  \begin{example}\label{exam:3.4.2}
+  	设 $X_1$ 和 $X_2$ 是独立同分布的随机变量, 其共同分布为指数分布 $Exp(\lambda)$ . 试求 $Y=\max(X_1,X_2)$ 的数学期望.
+  	\begin{solution}
+  		在前面例~\ref{exam:3.3.4}~中已求得 $Y=\max(X_1,X_2)$ 的密度函数为
+  		\begin{equation*}
+  			p_{Y}(y)=2\left[1-\ee^{-\lambda y}\right]\lambda\ee^{-\lambda y},y>0.
+  		\end{equation*}
+  		这时 $Y=\max \left(X_{1}, X_{2}\right)$ 的数学期望为
+  		\begin{align*}
+  			E[\max(X_1,X_2)]&=\int_{0}^{+\infty}2\lambda y\left[ 1-\ee^{-\lambda y} \right]\ee^{-\lambda y}\dd y\\
+  			&=2\int_{0}^{+\infty}y\ee^{-\lambda y}\dd(\lambda y)-\int_{0}^{+\infty}y\ee^{-2\lambda y}\dd(2\lambda y)\\
+  			&=\frac{2}{\lambda}\int_{0}^{+\infty}u\ee^{-u}\dd u-\frac{1}{2\lambda}\int_{0}^{+\infty}v\ee^{-v}\dd v\\
+  			&=\frac{2}{\lambda}\Gamma(2)-\frac{1}{2\lambda}\Gamma(2)=\frac{3}{2\lambda}.
+  		\end{align*}
+  	\end{solution}
+  \end{example}
+  \subsection{数学期望与方差的运算性质}\label{ssec:3.4.2}
+  在第二章中曾给出了数学期望与方差的一些简单性质, 在此利用以上定理~\ref{thm:3.4.1}, 我们就可以给出数学期望和方差的一些运算性质, 以下均假定有关的期望和方差存在.
+  \begin{property}\label{pro:3.4.1}
+  	设 $(X,Y)$ 是二维随机变量, 则有
+  	\begin{equation}\label{eq:3.4.2}
+  		E(X+Y)=E(X)+E(Y).
+  	\end{equation}
+  	\begin{proof}
+  		不妨设 $(X,Y)$ 为连续随机变量(对离散随机变量可类似证明), 其联合密度函数为 $p(x,y)$ , 若令 $g(X,Y)=X+Y$ , 则由定理~\ref{thm:3.4.1}可得
+  		\begin{align*}
+  			E(X+Y)&=\int_{-\infty}^{+\infty} \int_{-\infty}^{+\infty}(x+y) p(x, y) \dd x \dd y\\
+  			&=\int_{-\infty}^{+\infty} x\left\{\int_{-\infty}^{+\infty} p(x, y) \dd y \right\} \dd x+\int_{-\infty}^{+\infty} y\left\{\int_{-\infty}^{+\infty} p(x, y) \dd x\right\} \dd y\\
+  			&=\int_{-\infty}^{+\infty} x p_{X}(x) \dd x+\int_{-\infty}^{+\infty} y p_{Y}(y) \dd y\\
+  			&=E(X)+E(Y).
+  		\end{align*}
+  	\end{proof}
+  这个性质可简单叙述为“和的期望等于期望的和”. 这个性质还可推广到 $n$ 维随机变量场合, 即
+  \begin{equation}\label{eq:3.4.3}
+  	E\left(X_{1}+X_{2}+\cdots+X_{n}\right)=E\left(X_{1}\right)+E\left(X_{2}\right)+\cdots+E\left(X_{n}\right).
+  \end{equation}
+  \end{property}
+  \begin{property}\label{pro:3.4.2}
+  	若随机变量 $X$ 与 $Y$ 相互独立, 则有
+  	\begin{equation}\label{eq:3.4.4}
+  		E(XY)=E(X)E(Y).
+  	\end{equation}
+  	\begin{proof}
+  		不妨设 $(X,Y)$ 为连续随机变量(对离散随机变量可类似证明), 其联合密度函数为 $p(x,y)$ , 由 $X$ 与 $Y$ 独立可知 $p(x,y)=p_{X}(x)p_{Y}(y)$ . 若令 $g(X,Y)=XY$ , 则由定理~\ref{thm:3.4.1}可得
+  		\begin{align*}
+  			E(XY)&=\int_{-\infty}^{+\infty} \int_{-\infty}^{+\infty} x y p_{X}(x) p_{Y}(y) \dd x \dd y\\
+  			&=\int_{-\infty}^{+\infty} x p_{X}(x) \dd x \int_{-\infty}^{+\infty} y p_{Y}(y) \dd y\\
+  			&=E(X)E(Y).
+  		\end{align*}
+  	\end{proof}
+  这个性质可推广到 $n$ 维随机变量场合, 即若 $X_{1}, X_{2}, \ldots, X_{n}$ 相互独立, 则有
+  \begin{equation}\label{eq:3.4.5}
+  	E\left(X_{1} X_{2} \cdots X_{n}\right)=E\left(X_{1}\right) E\left(X_{2}\right) \cdots E\left(X_{n}\right).
+  \end{equation}
+  \end{property}
+  \begin{property}\label{pro:3.4.3}
+  	若随机变量 $X$ 与 $Y$ 相互独立, 则有
+  	\begin{equation*}
+  		\mathrm{Var}(X\pm Y)=\mathrm{Var}(X)\pm\mathrm{Var}(Y).
+  	\end{equation*}
+  	\begin{proof}
+  		由性质~\ref{pro:3.4.1}和~\ref{pro:3.4.2}可得
+  		\begin{align*}
+  			\mathrm{Var}(X+Y)&=E(X+Y-E(X+Y))^2\\
+  			&=E((X-E(X))+(Y-E(Y)))^2\\
+  			&=\mathrm{Var}(X)+\mathrm{Var}(Y)+2E(X-E(X))(Y-E(Y)).
+  		\end{align*}
+  		最后一项为零, 故证得性质~\ref{pro:3.4.3}.
+  		
+  		这个性质可推广到 $n$ 维随机变量场合, 即若 $X_{1}, X_{2}, \cdots, X_{n}$ 相互独立, 则有
+  		\begin{equation}
+  			\mathrm{Var}\left(X_{1} \pm X_{2} \pm \cdots \pm X_{n}\right)=\mathrm{Var}\left(X_{1}\right)+\mathrm{Var}\left(X_{2}\right)+\cdots+\mathrm{Var}\left(X_{n}\right).
+  		\end{equation}
+  	\end{proof}
+  \end{property}
