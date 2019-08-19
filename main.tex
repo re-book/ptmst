@@ -1,7 +1,7 @@
-%% !TeX program = latexmk
-%% !TeX options = -pdfxe -synctex=1 -interaction=nonstopmode -silent %DOCFILE%
+% !TEX program = arch
+%%!TEX root = 
+%% !TeX TXS-program:compile = txs:///latexmk/{}[-pdf -synctex=1 -interaction=nonstopmode -silent -outdir=Temp %.tex]
 \documentclass[cn,simple]{elegantbook}
-
 
 \title{概率论与数理统计教程}
 \subtitle{经典书籍重排}
@@ -17,7 +17,7 @@
 \logo{REBook.png}
 \cover{cover.jpg}
 
-
+\usepackage{siunitx}
 
 \begin{document}
 
@@ -39,7 +39,22 @@
 %\include{chapter5}
 %\include{chapter6}
 %\include{chapter7}
+
 \include{chapter8}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \printindex
 \end{document}
