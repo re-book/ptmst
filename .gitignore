@@ -246,3 +246,5 @@ TSWLatexianTemp*
 # Camuse 
 Temp/*
 push.sh
+Source/*
+*.ini
