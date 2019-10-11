@@ -481,7 +481,7 @@
  			\ifdefstring{\ELEGANT@lang}{en}{Example}{例}
  		}~\theexam #1: }\rmfamily %
  	}{
- 		\par\medskip\ignorespacesafterend %
+ 		\par\ignorespacesafterend %
  	}
 
 %% Exercise with counter
