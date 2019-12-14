@@ -1097,16 +1097,14 @@ Bartlett 证明了: 在大样本场合, $\ln(MS_e/GMS_e)$ 的某个函数近似�
 
 % 修正 by ddswhu
 
-在例~\ref{exam:8.3.2} 中已求得 $C = 1.0856 $, $B = 0.970$, 还可求得：
-\begin{equation*}
-  \begin{align}
-    f_1 & = 4 - 1 = 3,\\
-    f_2 & = \frac{4 + 1}{(1.0856 C -1)^2} = 682.4, \\ 
-    A   & = \frac{682.4}{2 - 1.0856 + 2/682.4} = 743.9, \\ 
-    B^' & = \frac{682.4 \times 0.970 \times 1.0856}{3(743.9 - 0.970 \times 1.0856)} = 0.322.
-  \end{align}
-\end{equation*}
+在例~\ref{exam:8.3.2} 中已求得 $C = 1.0856$, $B = 0.970$, 还可求得：
 
+\begin{align*}
+  f_1 & = 4 - 1 = 3,\\
+  f_2 & = \frac{4 + 1}{(1.0856 C -1)^2} = 682.4, \\ 
+  A   & = \frac{682.4}{2 - 1.0856 + 2/682.4} = 743.9, \\ 
+  B^{'} & = \frac{682.4 \times 0.970 \times 1.0856}{3(743.9 - 0.970 \times 1.0856)} = 0.322.\\
+\end{align*}
 
 对给定的显著性水平 $\alpha = 0.05$, 在 $F$ 分布的分位数表上可查得
 \begin{equation}
@@ -1298,7 +1296,7 @@ $\beta_0,\beta_1$ 应该满足
 （$l_{yy}$ 在后面将会用到）由此给出回归方程为
 \begin{equation*}
   \hat{y} = 28.53 + 130.60 x 
-\end{equation}
+\end{equation*}
 \end{example}
 
 关于最小二乘估计的一些性质罗列在如下定理之中：
@@ -1315,7 +1313,7 @@ $\beta_0,\beta_1$ 应该满足
   \begin{equation*}
     \begin{split}
       \hat{\beta}_{1} & = \frac{l_{zx}}{l_{xx}} = \Sigma \frac{x_{i} - \bar{x}}{l_{xx}} y_{i} \\ 
-      \hat{\beta}_{0} & = \bar{y} - \hat{\beta}_{1} \bar{x} = \Sigma\left[\frac{1}{n} - \frac{\(x_{i} - \bar{x}) \bar{x}}{l_{xx}}\right] y_{i}.
+      \hat{\beta}_{0} & = \bar{y} - \hat{\beta}_{1} \bar{x} = \Sigma\left[\frac{1}{n} - \frac{(x_{i} - \bar{x}) \bar{x}}{l_{xx}}\right] y_{i}.
     \end{split}
   \end{equation*}
 \end{proof}  
@@ -1364,7 +1362,7 @@ H_0:\beta_1=0 \quad \text{vs} \quad H_1:\beta_1 \neq 0
 \end{equation*}
 拒绝 $H_0$ 表示回归方程是显著的. 在一元线性回归中有三种等价的检验方法, 使用中只要任选其中之一即可.
 
-一、 $F$ 检验
+\textbf{一、 $F$ 检验}
 
 采用方差分析的思想,我们从数据出发研究各 $y_i$ 不同的原因. 首先引入记号：记 $\hat{y}_i = \hat{\beta}_0 + \hat{\beta}_1 x$ 为\textbf{回归值}\index{H:回归值}, $y_i - \hat{y}_i$ 为\textbf{残差}\index{C:残差}. 
 
@@ -1378,7 +1376,7 @@ S_R=\Sigma{\left( \hat{y}_i-\bar{y}_i \right)}^2 \label{eq:8.4.11}
 \end{equation}
 表示；其二是其他一切因素, 包括随机误差、 $x$ 对 $E(y)$ 的非线性影响等,这样在得到回归值以后, $y$ 的观测值与回归值之间还有差距,这可用残差平方和
 \begin{equation}
-S_l=\Sigma{\left( y_i-\hat{y}_i \right)}^2  
+S_{e}=\Sigma{\left( y_i-\hat{y}_i \right)}^2  
 \end{equation}
 表示.
 % modified
@@ -1431,7 +1429,7 @@ S_T = S_R + S_E, \label{eq:8.4.13}
     \end{aligned}
     \end{equation*}
     又
-    \begin{equation}
+    \begin{equation*}
     \begin{aligned} 
     S_{e} 
     & =\Sigma\left(y_{i}-\hat{y}_{i}\right)^{2} \\ 
@@ -1439,7 +1437,7 @@ S_T = S_R + S_E, \label{eq:8.4.13}
     & =\Sigma\left[\left(\hat{\beta}_{0}-\beta_{0}\right)^{2}+x_{k}^{2}\left(\hat{\beta}_{1}-\beta_{1}\right)^{2}+\epsilon_{i}^{2}+  2(\hat{\beta}_{0}-\beta_{0})\left(\hat{\beta}_{1}-\beta_{1}\right) x_{i}-\right.\\ 
     & \quad \left.2\left(\hat{\beta}_{0}-\beta_{0}\right) \varepsilon_{1}-2\left(\hat{\beta}_{1}-\beta_{1}\right) x_{i} \varepsilon_{i}\right] 
     \end{aligned}
-    \end{equation}
+    \end{equation*}
     故
     \begin{equation*}
     \begin{array}{c}
@@ -1449,7 +1447,7 @@ S_T = S_R + S_E, \label{eq:8.4.13}
     将 $\hat{\beta}_0, \hat{\beta}_i$ 写成 $y_1, y_2, \ldots, y_n$ 的线性组合, 利用 $y_i$ 与 $\varepsilon_i(i \neq j)$ 的独立性, 有
     \begin{equation*}
     \begin{split}
-        E(\hat{\beta}_{0} \varepsilon_{i})& =E\left[\varepsilon_{i} \sum_{j}\left(\frac{1}{n}-\frac{\left(x_{j}-\bar{x}\right) \bar{x}}{l_{x x}}\right) y_{j}\right]=\left(\frac{1}{n}-\frac{\left(x_{i}-\bar{x}\right) \bar{x}}{l_{x x}}\right) \sigma^{2}
+        E(\hat{\beta}_{0} \varepsilon_{i})& =E\left[\varepsilon_{i} \sum_{j}\left(\frac{1}{n}-\frac{\left(x_{j}-\bar{x}\right) \bar{x}}{l_{x x}}\right) y_{j}\right]=\left(\frac{1}{n}-\frac{\left(x_{i}-\bar{x}\right) \bar{x}}{l_{x x}}\right) \sigma^{2}\\
         E(\hat{\beta}_{1} \varepsilon_{i}) &=E\left[\varepsilon_{i} \sum_{j} \frac{x_{j}-\bar{x}}{l_{x x}} y_{j}\right]=\frac{x_{i}-\bar{x}}{l_{x x}} \sigma^{2}
     \end{split}
     \end{equation*}
@@ -1470,14 +1468,14 @@ S_T = S_R + S_E, \label{eq:8.4.13}
 \begin{enumerate}
   \item  $S_e/\sigma^2 \sim \chi^2(n-2)$,
   \item  若 $H_0$ 成立, 则有 $S_R/\sigma^2 \sim \chi^{2}(1)$ ,
-  \item  $S_R$ 与 $S_e$、$\bar{y}$ 独立（或 $\hat{\beta}_{1} 与 $S_e$、$\bar{y}$ 独立）.
+  \item  $S_R$ 与 $S_e$、$\bar{y}$ 独立（或 $\hat{\beta}_{1}$ 与 $S_e$、$\bar{y}$ 独立）.
 \end{enumerate}
 \end{theorem}
 \begin{proof}
 取 $n \times n$ 的正交矩阵 $A$, 具有如下形式：
-\begin{equation}
+\begin{equation*}
 A=\left(\begin{array}{cccc}{a_{11}} & {a_{12}} & {\dots} & {a_{1 n}} \\ {\vdots} & {\vdots} & {} & {\vdots} \\ {a_{n-2,1}} & {a_{n-2,2}} & {\dots} & {a_{n-2, n}} \\ {\left(x_{1}-\bar{x}\right) / \sqrt{l_{x x}}} & {\left(x_{2}-\bar{x}\right) / \sqrt{l_{x x}}} & {\cdots} & {\left(x_{n}-\bar{x}\right) / \sqrt{l_{x x}}} \\ {1 / \sqrt{n}} & {1 / \sqrt{n}} & {\cdots} & {1 / \sqrt{n}}\end{array}\right)
-\end{equation}
+\end{equation*}
 由正交性, 可得如下一些约束条件
 \begin{gather*}
 \sum_{j} a_{i j}=0,\; \sum_{j} a_{i j} x_{j}=0,\;  \sum_{j} a_{i j}^{2}=1,\;  i = 1, 2, \ldots, n-2 \\ 
@@ -1520,7 +1518,7 @@ z_{n} & =\frac{1}{\sqrt{n}} \Sigma y_{i}=\sqrt{n} \bar{y}
 \end{equation*}
 则 ${Z}$ 仍然服从正态分布, 且其期望与协差阵分别为
 \begin{equation*}
-\mathbf{EZ} = 
+EZ = 
   \begin{pmatrix}
     0      \\
     \vdots \\
@@ -1528,11 +1526,11 @@ z_{n} & =\frac{1}{\sqrt{n}} \Sigma y_{i}=\sqrt{n} \bar{y}
     \sqrt{n}(\beta_{0} + \beta_{1} \bar{x}) \\
   \end{pmatrix},
   \quad
-  Var(\mathbf{Z}) = \mathbf{A} Var(\mathbf{Y}) \mathbf{A}^{\mathrm{T}} = \sigma^{2} I_{n}, 
+  Var(Z) = A Var(Y) A^{\mathrm{T}} = \sigma^{2} I_{n}, 
 \end{equation*}
 这表明 $z_1, z_2, \ldots, z_n$ 相互独立, $z_1, z_2, \ldots, z_{n-2}$ 的共同分布为 $N(0, \sigma^2)$, $z_{n-1} \sim N(\beta_{1} \sqrt{l_{xx}}, \sigma^2)$, $z_{n} \sim N(\sqrt{n} (\beta_0 + \beta_{1} \bar{x}), \sigma^{2})$.
 
-由于 $\Sigmaz_{i}^{2} = \Sigma y_{i}^{2} = S_{T} + n \bar{y}^2 = S_{R} + S_{e} + n \bar{y}^2$, 而 $z_n = \sqrt{n} \bar{y}$, $z_{n-1} = \sqrt{l_{xx}}\hat{\beta}_{1} = \sqrt{S_{R}}$, 于是 $z_{1}^2 + z_{2}^2 + \cdots + z_{n-2}^2 = S_{e}$, 所以 $S_{e}, S_{R}, \bar{y}$ 三者相互独立，并有
+由于 $\Sigma z_{i}^{2} = \Sigma y_{i}^{2} = S_{T} + n \bar{y}^2 = S_{R} + S_{e} + n \bar{y}^2$, 而 $z_n = \sqrt{n} \bar{y}$, $z_{n-1} = \sqrt{l_{xx}}\hat{\beta}_{1} = \sqrt{S_{R}}$, 于是 $z_{1}^2 + z_{2}^2 + \cdots + z_{n-2}^2 = S_{e}$, 所以 $S_{e}, S_{R}, \bar{y}$ 三者相互独立，并有
 \begin{equation*}
 S_{e} / \sigma^{2}=\sum_{i=1}^{n-2}\left(z_{i} / \sigma^{2}\right) \sim \chi^{2}(n-2)
 \end{equation*}
@@ -1552,12 +1550,12 @@ F=\frac{S_{R}}{S_{e} /(n-2)}
 % by ddswhu
 \begin{example}\label{exam:8.4.3}
 在合金钢强度的例~\ref{exam:8.4.2} 中,我们已求出了回归方程, 这里我们考虑关于回归方程的显著性检验. 经计算有
-\begin{equation}
+\begin{equation*}
 \begin{array}{ll}
 {S_{T}=l_{y y}=335.23,} & {f_{T}=11} \\ 
 {S_{R}=\hat{\beta}_{1}^{2} l_{x x}=130.60^{2} \times 0.0186=317.26,} & {f_{R}=1} \\ {S_{e}=S_{T}-S_{R}=335.23-317.26=17.97,} & {f_{e}=10}
 \end{array}
-\end{equation}
+\end{equation*}
 把各平方和移人方差分析表, 继续进行计算, 具体见表~\ref{tab:8.4.3}.
 % Table generated by Excel2LaTeX from sheet '1'
 \begin{table}[htbp]
@@ -1575,62 +1573,68 @@ F=\frac{S_{R}}{S_{e} /(n-2)}
 若取 $\alpha=0.01$ ,则 $F_{0.99}(1,10)=10.0$. 由于 $176.55>10.0$, 因此, 在显著性水平 $0.01$ 下回归方程是显著的.
 \end{example}
 
-二、 $t$ 检验
+\textbf{二、 $t$ 检验} 
+
 % by ddswhu
-对 $H_0: \beta_0=0$ 的检验也可基于 $t$ 分布进行由于 $=\hat{\beta}_{1} \sim N\left(\beta_{1}, \frac{\sigma^{2}}{l_{x x}}\right), \frac{S_{e}}{\sigma^{2}} \sim \chi^{2}(n-2)$ , 且与相互独立, 因此在 $H_0$ 为真时, 有
-\begin{equation}
-t=\frac{\hat{\beta}_{1}}{\hat{\sum} / \sqrt{l_{x x}}} \sim t(n-2)\label{eq}
+对 $H_0: \beta_0=0$ 的检验也可基于 $t$ 分布进行由于 $=\hat{\beta}_{1} \sim N \left(\beta_{1}, \frac{\sigma^{2}}{l_{x x}}\right), \frac{S_{e}}{\sigma^{2}} \sim \chi^{2}(n-2)$ , 且与 $\hat{\beta}_1$ 相互独立, 因此在 $H_0$ 为真时, 有
+\begin{equation}\label{eq:8.4.17}
+t=\frac{\hat{\beta}_{1}}{\hat{\sigma} / \sqrt{l_{x x}}} \sim t(n-2) 
 \end{equation}
-其中 $\sum =\sqrt{S/(n-2)}$ ,由于 $\sum_{\hat{\beta}_1}=\sum/\sqrt{l_{xx}}$ 因此称 $\sum_{\hat{\beta}_1}=\sum/\sqrt{l_{xx}} $ 为 $\hat{\beta}_1$ 的标准误,即 $\hat{\beta}_1$ ,的标准差的估计.~\ref{eq:8.4.17}式表示的 $t$ 统计量可用来检验假设 $H_0$ .对给定的显著性水平 $\alpha$ ,拒绝域为
-\begin{equation}
-W=\left\{|t|>t_{1-a / 2}(n-2)\right\}
-\end{equation}
+
+其中 $\hat{\sigma} =\sqrt{S_{e}/(n-2)}$, 由于 $\sigma_{\hat{\beta}_1}=\sigma/\sqrt{l_{xx}}$, 因此称 $\hat{\sigma}_{\hat{\beta}_1}=\hat{\sigma}/\sqrt{l_{xx}} $ 为 $\hat{\beta}_1$ 的标准误, 即 $\hat{\beta}_1$ 的标准差的估计. \ref{eq:8.4.17} 式表示的 $t$ 统计量可用来检验假设 $H_0$ .对给定的显著性水平 $\alpha$ , 拒绝域为
+\begin{equation*}
+W= \left| |t| > t_{1-\alpha/2} (n-2) \right|
+\end{equation*}
+
 注意到 $t^2=F$ ,因此, $t$ 检验与 $F$ 检验是等同的.
-以例~\ref{exa:8.4.2}中数据为例,可以计算得到
-\begin{equation}
+
+以例~\ref{exam:8.4.2} 中数据为例, 可以计算得到
+\begin{equation*}
 t=\frac{130.6022}{\sqrt{1.7970} / \sqrt{0.0186}}=13.2872
-\end{equation}
+\end{equation*}
+若取 $\alpha=0.01$, 则 $t_{0.995}(10)=3.1698$, 由于 $13.2872>3.1698$, 因此, 在显著性水平 $0.01$ 下回归方程是显著的.
 
-若取 $\alpha=0.01$ ,则 $t_{0.995}(10)=3.1698$ ,由于 $13.2872>3.1698$ ,因此,在显著性水平 $0.01$ 下回归方程是显著的.
 
+\textbf{三、相关系数检验}
 
-三、相关系数检验
-
-当一元线性回归方程是反映两个随机变量x与y间的线性相关关系时,它的显著性检验还可通过对二维总体相关系数 $p$ 的检验进行.它的一对假设是
+当一元线性回归方程是反映两个随机变量 $x$ 与 $y$ 间的线性相关关系时,它的显著性检验还可通过对二维总体相关系数 $p$ 的检验进行.它的一对假设是
 \begin{equation}
 H_{0} : \rho=0 \quad \text { vs } \quad H_{1} : \rho \neq 0
 \end{equation}
 所用的检验统计量为样本相关系数
 \begin{equation}
-r=\frac{\sum\left(x_{i}-\bar{x}\right)\left(y_{i}-\bar{y}\right)}{\sqrt{\sum\left(x_{i}-\bar{x}\right)^{2} \sum\left(y_{i}-\bar{y}\right)^{2}}}=\frac{l_{x y}}{\sqrt{l_{x x} l_{j y}}}
+r=\frac{\Sigma\left(x_{i}-\bar{x}\right)\left(y_{i}-\bar{y}\right)}{\sqrt{\Sigma\left(x_{i}-\bar{x}\right)^{2} \Sigma\left(y_{i}-\bar{y}\right)^{2}}}=\frac{l_{x y}}{\sqrt{l_{x x} l_{y y}}}
 \end{equation}
-其中 $(x_i,y_i),i=1…,n$ 是容量为 $n$ 的二维样本.
+其中 $(x_i,y_i), i=1, \ldots, n$ 是容量为 $n$ 的二维样本.
 
-利用施瓦茨不等式可以证明：样本相关系数也满足  $\left| r \right|\le 1$ ,其中等号成立条件是存在两个实数 $a$ 与 $b$ ,使得对 $i=_1,\cdots,n$ 有 $y_i=a+bx_i$ .由此可见, $n$ 个点 $(x,y；),i=1,\cdots,n$ 在散布图上的位置与样本相关系数 $r$ 有关,譬如：
-
+利用施瓦茨不等式可以证明：样本相关系数也满足  $\left| r \right|\le 1$, 其中等号成立条件是存在两个实数 $a$ 与 $b$, 使得对 $i=1,\ldots, n$ 有 $y_i = a + b x_i$. 由此可见, $n$ 个点 $(x_{i}, y_{u}), i=1, \ldots, n$ 在散布图上的位置与样本相关系数 $r$ 有关, 譬如：
 \begin{enumerate}
-    \item  $r=\pm 1,n$ 个点完全在一条上升或下降的直线上；
-    \item  $r>0 ,$ 当 $x$ 增加时, $y$ 有线性增加趋势,此时称正相关；
-    \item  $r<0,$ 当 $x$ 增加时, $y$ 反而有线性减少趋势,此时称负相关；
-    \item  $r=0,n$ 个点可能毫无规律,也可能呈某种曲线趋势,此时称不相关.
+  \item  $r=\pm 1,n$ 个点完全在一条上升或下降的直线上；
+  \item  $r>0$, 当 $x$ 增加时, $y$ 有线性增加趋势,此时称正相关；
+  \item  $r<0$, 当 $x$ 增加时, $y$ 反而有线性减少趋势,此时称负相关；
+  \item  $r=0$, $n$ 个点可能毫无规律,也可能呈某种曲线趋势,此时称不相关.
 \end{enumerate}
 
+根据样本相关系数的上述性质, 检验~\ref{eq:8.4.18} 中原假设 $H_0: \rho=0$ 的拒绝域为 
+\begin{equation*}
+  W={|r| \ge c},
+\end{equation*}
+其中临界值 $c$ 可由 $H_0:\rho =0$ 成立时样本相关系数的分布定出,该分布与自由度 $n-2$ 有关.
 
-根据样本相关系数的上述性质,检验~\ref{eq:8.4.18}中原假设 $H_0：p=0$ 的拒绝域为 $W={lrl\ge c}$ ,其中临界值 $c$ 可由 $H_0:p\rho =0$ 成立时样本相关系数的分布定出,该分布与自由度 $n-2$ 有关.
-对给定的显著性水平 $\alpha$ ,由 $P(W)=P(|r|\ge c)=\alpha$ 知,临界值 $c$ 应是 $H_0:\rho =0$ 成立下 $|r|$ 的分布的 $1-\alpha$ 分位数,故记为 $c=r_{1-\alpha}(n-2)$ .我们还可以用 $F$ 分布来确定临界值 $c$ ,下面加以叙述.
+对给定的显著性水平 $\alpha$ ,由 $P(W)=P(|r|\ge c)=\alpha$ 知, 临界值 $c$ 应是 $H_0:\rho =0$ 成立下 $|r|$ 的分布的 $1-\alpha$ 分位数, 故记为 $c = r_{1-\alpha}(n-2)$. 我们还可以用 $F$ 分布来确定临界值 $c$, 下面加以叙述.
 
 由样本相关系数的定义可以得到统计量 $r$ 与 $F$ 之间的关系
-\begin{equation}
-r^{2} =\frac{l_{x y}^{2}}{l_{x x} l_{x y}}=\frac{S_{R}}{S_{T}}=\frac{S_{R}}{S_{R}+S_{e}}=\frac{S_{R} / S_{e}}{S_{R} / S_{e}+1} 
-\end{equation}
+\begin{equation*}
+r^{2} =\frac{l_{x y}^{2}}{l_{x x} l_{y y}}=\frac{S_{R}}{S_{T}}=\frac{S_{R}}{S_{R}+S_{e}}=\frac{S_{R} / S_{e}}{S_{R} / S_{e}+1} 
+\end{equation*}
 而
-\begin{equation}
+\begin{equation*}
 F=\frac{MS_R}{MS_e}=\frac{S_R}{S_e/\left( n-2 \right)}=\frac{\left( n-2 \right) S_R}{S_e}
-\end{equation}
+\end{equation*}
 两者综合,可得
-\begin{equation}
+\begin{equation*}
 r^2=\frac{F}{F+(n-2)}  
-\end{equation}
+\end{equation*}
 这表明, $|r|$ 是 $F$ 的严格单调增函数,故可以从 $F$ 分布的 $1-\alpha$ 分位数 $F_{1-\alpha}(1,n-2)$ 得到 $|r|$ 的 $1-\alpha$ 分位数为
 \begin{equation}
 c=r_{1}, a(n-2)=\sqrt{\frac{F_{1-a}(1, n-2)}{F_{1}, a(1, n-2)+1}}
