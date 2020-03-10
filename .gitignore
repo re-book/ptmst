@@ -247,3 +247,5 @@ TSWLatexianTemp*
 Temp/*
 push.sh
 main.pdf
+Source/*
+*.ini

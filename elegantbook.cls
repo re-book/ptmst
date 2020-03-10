@@ -63,7 +63,7 @@
 \setlength\parindent{2em}
 
 % fontsetting
-
+\RequirePackage{amsmath,mathrsfs,amsfonts,amssymb}
 \PassOptionsToPackage{no-math}{fontspec}
 \RequirePackage[UTF8, scheme=plain,punct=kaiming]{ctex}
 
@@ -216,7 +216,7 @@
 \linespread{1.3}
 \RequirePackage{graphicx}
 %\RequirePackage{enumerate}
-\RequirePackage{amsmath,mathrsfs,amsfonts,amssymb}
+
 \RequirePackage{booktabs}
 \RequirePackage{multicol}
 \RequirePackage{xcolor}
@@ -481,7 +481,7 @@
  			\ifdefstring{\ELEGANT@lang}{en}{Example}{例}
  		}~\theexam #1: }\rmfamily %
  	}{
- 		\par\medskip\ignorespacesafterend %
+ 		\par\ignorespacesafterend %
  	}
 
 %% Exercise with counter
