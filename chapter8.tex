@@ -1362,7 +1362,7 @@ H_0:\beta_1=0 \quad \text{vs} \quad H_1:\beta_1 \neq 0
 \end{equation*}
 拒绝 $H_0$ 表示回归方程是显著的. 在一元线性回归中有三种等价的检验方法, 使用中只要任选其中之一即可.
 
-\textbf{一、 $F$ 检验}
+\subsubsection{$F$ 检验}
 
 采用方差分析的思想,我们从数据出发研究各 $y_i$ 不同的原因. 首先引入记号：记 $\hat{y}_i = \hat{\beta}_0 + \hat{\beta}_1 x$ 为\textbf{回归值}\index{H:回归值}, $y_i - \hat{y}_i$ 为\textbf{残差}\index{C:残差}. 
 
@@ -1383,11 +1383,11 @@ S_{e}=\Sigma{\left( y_i-\hat{y}_i \right)}^2
 注意到 $\hat{\beta}_0, \hat{\beta}_1$ 满足正规方程组~\ref{eq:8.4.8}, 因此有
 \begin{equation*}
 \begin{array}{c}
-\sum{\left( y_i-\widehat{\beta }_0-\widehat{\beta }_1x_i \right) =0\Rightarrow \sum{\left( y_i-\hat{y}_i \right)}}=0\\
-\sum{\left( y_i-\widehat{\beta }_0-\widehat{\beta }_1x_i \right) x_i=0\Rightarrow \sum{\left( y_i-\hat{y}_i \right)}}x_i=0\\
+\sum{\left( y_i-\hat{\beta }_0-\hat{\beta }_1x_i \right) =0\Rightarrow \sum{\left( y_i-\hat{y}_i \right)}}=0\\
+\sum{\left( y_i-\hat{\beta }_0-\hat{\beta }_1x_i \right) x_i=0\Rightarrow \sum{\left( y_i-\hat{y}_i \right)}}x_i=0\\
 \end{array}
 \end{equation*}
-利用 $\widehat{y}_i=\widehat{\beta }_0+\widehat{\beta }_1x_i,x_i=\bar{y}+\widehat{\beta }_1\left( x_i-\bar{x} \right) $ ,可得 
+利用 $\hat{y}_i=\hat{\beta }_0+\hat{\beta }_1x_i,x_i=\bar{y}+\hat{\beta }_1\left( x_i-\bar{x} \right) $ ,可得 
 \begin{equation*}
 \begin{aligned} 
 \Sigma\left(y_{i}-\hat{y}_{i}\right)\left(\hat{y}_{i}-\bar{y}\right) &=\Sigma\left(y_{i}-\hat{y}_{i}\right)\left[\hat{\beta}_{1}\left(x_{i}-\bar{x}\right)\right] \\ &=\hat{\beta}_{1}\left[\Sigma\left(y_{i}-\hat{y}_{i}\right) x_{i}-\Sigma\left(y_{i}-\hat{y}_{i}\right) \bar{x}\right]=0 
@@ -1573,15 +1573,15 @@ F=\frac{S_{R}}{S_{e} /(n-2)}
 若取 $\alpha=0.01$ ,则 $F_{0.99}(1,10)=10.0$. 由于 $176.55>10.0$, 因此, 在显著性水平 $0.01$ 下回归方程是显著的.
 \end{example}
 
-\textbf{二、 $t$ 检验} 
+\subsubsection{$t$ 检验} 
+
 
 % by ddswhu
-对 $H_0: \beta_0=0$ 的检验也可基于 $t$ 分布进行由于 $=\hat{\beta}_{1} \sim N \left(\beta_{1}, \frac{\sigma^{2}}{l_{x x}}\right), \frac{S_{e}}{\sigma^{2}} \sim \chi^{2}(n-2)$ , 且与 $\hat{\beta}_1$ 相互独立, 因此在 $H_0$ 为真时, 有
+对 $H_0: \beta_1=0$ 的检验也可基于 $t$ 分布进行. 由于 $\hat{\beta}_{1} \sim N \left(\beta_{1}, \frac{\sigma^{2}}{l_{x x}}\right), \frac{S_{e}}{\sigma^{2}} \sim \chi^{2}(n-2)$ , 且与 $\hat{\beta}_1$ 相互独立, 因此在 $H_0$ 为真时, 有
 \begin{equation}\label{eq:8.4.17}
 t=\frac{\hat{\beta}_{1}}{\hat{\sigma} / \sqrt{l_{x x}}} \sim t(n-2) 
 \end{equation}
-
-其中 $\hat{\sigma} =\sqrt{S_{e}/(n-2)}$, 由于 $\sigma_{\hat{\beta}_1}=\sigma/\sqrt{l_{xx}}$, 因此称 $\hat{\sigma}_{\hat{\beta}_1}=\hat{\sigma}/\sqrt{l_{xx}} $ 为 $\hat{\beta}_1$ 的标准误, 即 $\hat{\beta}_1$ 的标准差的估计. \ref{eq:8.4.17} 式表示的 $t$ 统计量可用来检验假设 $H_0$ .对给定的显著性水平 $\alpha$ , 拒绝域为
+其中 $\hat{\sigma} =\sqrt{S_{e}/(n-2)}$, 由于 $\sigma_{\hat{\beta}_1}=\sigma/\sqrt{l_{xx}}$, 因此称 $\hat{\sigma}_{\hat{\beta}_1}=\hat{\sigma}/\sqrt{l_{xx}} $ 为 $\hat{\beta}_1$ 的标准误, 即 $\hat{\beta}_1$ 的标准差的估计. \eqref{eq:8.4.17} 式表示的 $t$ 统计量可用来检验假设 $H_0$ .对给定的显著性水平 $\alpha$ , 拒绝域为
 \begin{equation*}
 W= \left| |t| > t_{1-\alpha/2} (n-2) \right|
 \end{equation*}
@@ -1594,30 +1594,29 @@ t=\frac{130.6022}{\sqrt{1.7970} / \sqrt{0.0186}}=13.2872
 \end{equation*}
 若取 $\alpha=0.01$, 则 $t_{0.995}(10)=3.1698$, 由于 $13.2872>3.1698$, 因此, 在显著性水平 $0.01$ 下回归方程是显著的.
 
-
-\textbf{三、相关系数检验}
+\subsubsection{相关系数检验}
 
 当一元线性回归方程是反映两个随机变量 $x$ 与 $y$ 间的线性相关关系时,它的显著性检验还可通过对二维总体相关系数 $p$ 的检验进行.它的一对假设是
-\begin{equation}
+\begin{equation}\label{eq:8.4.18}
 H_{0} : \rho=0 \quad \text { vs } \quad H_{1} : \rho \neq 0
 \end{equation}
 所用的检验统计量为样本相关系数
-\begin{equation}
+\begin{equation}\label{eq:8.4.19}
 r=\frac{\Sigma\left(x_{i}-\bar{x}\right)\left(y_{i}-\bar{y}\right)}{\sqrt{\Sigma\left(x_{i}-\bar{x}\right)^{2} \Sigma\left(y_{i}-\bar{y}\right)^{2}}}=\frac{l_{x y}}{\sqrt{l_{x x} l_{y y}}}
 \end{equation}
 其中 $(x_i,y_i), i=1, \ldots, n$ 是容量为 $n$ 的二维样本.
 
 利用施瓦茨不等式可以证明：样本相关系数也满足  $\left| r \right|\le 1$, 其中等号成立条件是存在两个实数 $a$ 与 $b$, 使得对 $i=1,\ldots, n$ 有 $y_i = a + b x_i$. 由此可见, $n$ 个点 $(x_{i}, y_{u}), i=1, \ldots, n$ 在散布图上的位置与样本相关系数 $r$ 有关, 譬如：
 \begin{enumerate}
-  \item  $r=\pm 1,n$ 个点完全在一条上升或下降的直线上；
-  \item  $r>0$, 当 $x$ 增加时, $y$ 有线性增加趋势,此时称正相关；
-  \item  $r<0$, 当 $x$ 增加时, $y$ 反而有线性减少趋势,此时称负相关；
-  \item  $r=0$, $n$ 个点可能毫无规律,也可能呈某种曲线趋势,此时称不相关.
+  \item  $r = \pm 1,n$ 个点完全在一条上升或下降的直线上；
+  \item  $r > 0$, 当 $x$ 增加时, $y$ 有线性增加趋势,此时称正相关；
+  \item  $r < 0$, 当 $x$ 增加时, $y$ 反而有线性减少趋势,此时称负相关；
+  \item  $r = 0$, $n$ 个点可能毫无规律,也可能呈某种曲线趋势,此时称不相关.
 \end{enumerate}
 
-根据样本相关系数的上述性质, 检验~\ref{eq:8.4.18} 中原假设 $H_0: \rho=0$ 的拒绝域为 
+根据样本相关系数的上述性质, 检验~\eqref{eq:8.4.18} 中原假设 $H_0: \rho=0$ 的拒绝域为 
 \begin{equation*}
-  W={|r| \ge c},
+  W = \{|r| \geq c\},
 \end{equation*}
 其中临界值 $c$ 可由 $H_0:\rho =0$ 成立时样本相关系数的分布定出,该分布与自由度 $n-2$ 有关.
 
@@ -1635,185 +1634,194 @@ F=\frac{MS_R}{MS_e}=\frac{S_R}{S_e/\left( n-2 \right)}=\frac{\left( n-2 \right) 
 \begin{equation*}
 r^2=\frac{F}{F+(n-2)}  
 \end{equation*}
-这表明, $|r|$ 是 $F$ 的严格单调增函数,故可以从 $F$ 分布的 $1-\alpha$ 分位数 $F_{1-\alpha}(1,n-2)$ 得到 $|r|$ 的 $1-\alpha$ 分位数为
-\begin{equation}
-c=r_{1}, a(n-2)=\sqrt{\frac{F_{1-a}(1, n-2)}{F_{1}, a(1, n-2)+1}}
-\end{equation}
+这表明, $|r|$ 是 $F$ 的严格单调增函数, 故可以从 $F$ 分布的 $1-\alpha$ 分位数 $F_{1-\alpha}(1,n-2)$ 得到 $|r|$ 的 $1-\alpha$ 分位数为
+\begin{equation*}
+c=r_{1-\alpha}(n-2)=\sqrt{\frac{F_{1-\alpha}(1, n-2)}{F_{1-\alpha}(1, n-2)+1}}
+\end{equation*}
 譬如,对 $\alpha =0.01,n=12$ ,查表知 $F_{0.99}(1,10)=10.04$ ,于是
-\begin{equation}
+\begin{equation*}
 r_{0.99}(10)=\sqrt{\frac{10.04}{10.04+1}}=0.708
-\end{equation}
-为实际使用方便,人们已对 $r_{1-\alpha}(n-2)$ 编制了专门的表,见附表9.
-以例~\ref{exa:8.4.2}中数据为例,可以计算得到
-\begin{equation}
+\end{equation*}
+为实际使用方便, 人们已对 $r_{1-\alpha}(n-2)$ 编制了专门的表, 见附表 9.
+以例~\ref{exam:8.4.2} 中数据为例,可以计算得到
+\begin{equation*}
 r=\frac{2.4292}{\sqrt{0.0186 \times 335.2292}}=0.9728
-\end{equation}
+\end{equation*}
 
-若取 $\alpha =0.01$ ,查附表9知则 $r_{0.99}(10)=0.708$ ,由于 $0.9728>0.708$ ,因此,在显著性水平 $0.01$ 下回归方程是显著的.
+若取 $\alpha =0.01$, 查附表 9 知则 $r_{0.99}(10)=0.708$, 由于 $0.9728>0.708$, 因此, 在显著性水平 $0.01$ 下回归方程是显著的.
 
 
-\subsubsection{估计与检测}\label{sec:8.4.5}
+\subsection{估计与检测}\label{sec:8.4.5}
 
 当回归方程经过检验是显著的后,可用来做估计和预测.这是两个不同的问题：
 \begin{itemize}
-    \item 当 $x=x_0$ 时,寻求均值 $E(y_0)=\beta_0+\beta_ix_0$ 的点估计与区间估计(注意这里 $E(y_0)$ 是常量),这是估计问题；
+    \item 当 $x=x_0$ 时,寻求均值 $E(y_0)=\beta_0+\beta_1 x_0$ 的点估计与区间估计(注意这里 $E(y_0)$ 是常量), 这是估计问题；
     \item 当 $x=x_0$ 时, $y_0$ 的观察值在什么范围内？由于 $y_0$ 是随机变量,为此只能求一个区间,使 $y_0$ 落在这一区间的概率为 $1-\alpha$ ,即要求 $\delta$ ,使 $P(|y_0-\hat{y}_0|<\delta)=1-\alpha$ ,称区间 $\left[\hat{y}_{0}-\delta, \hat{y}_{0}+\delta\right]$ 为 $y_0$ 的概率为 $1-\alpha$ 的预测区间,这是预测问题.
 \end{itemize}
 
-一、 $E(y_0)$ 的估计
+\subsubsection{$E(y_0)$ 的估计}
+
 
 在 $x=x_0$ 时,其对应的因变量 $y_0$ 是一个随机变量,有一个分布,我们经常需要对该分布的均值给出估计.我们知道,该分布的均值 $E(y_0)=\beta_0+\beta_1x_0$ ,因此,一个直观的估计应为
-\begin{equation}
-E(\widehat{y}_0)=\widehat{\beta }_0+\widehat{\beta }_1x_0
-\end{equation}
+\begin{equation*}
+\hat{E}(y_{0})=\hat{\beta}_0+\hat{\beta}_1 x_0
+\end{equation*}
 简单起见,我们习惯上将上述估计记为 $\hat{y}_0$ (注意这里 $\hat{y}_0$ 表示的是 $E(y_0)$ 的估计,而不表示 $y_0$ 的估计,因为 $y_0$ 是随机变量,它是没有估计的).由于 $\hat{\beta}_0,\hat{\beta}_1$ 分别是 $\beta_0,\beta_1$ 的无偏估计,因此 $\hat{y}_0$ 也是 $E(y_0)$ 的无偏估计.
-为得到 $E(y_0)$ 的区间估计,我们需要知道 $\hat{y}_0$ 的分布.由定理~\ref{thm:8.4.1}可得
-\begin{equation}
-\hat{y}_{0}=\hat{\beta}_{0}+\hat{\beta}_{1} x_{0} \sim N\left\{\beta_{0}+\beta_{1} x_{0},\left[\frac{1}{n}+\frac{\left(x_{0}-\bar{x}\right)^{2}}{l_{x x}}\right] \sigma^{2}\right)
-\end{equation}
-又由定理~\ref{thm:8.4.3}知$S_{e} / \sigma^{2} \sim \chi^{2}(n-2)$,且与 $\hat{y}_{0}=\bar{y}+\hat{\beta}_{1}\left(x_{0}-\bar{x}\right)$ 相互独立,记
-\begin{equation}
-\hat{\sum}^2=\frac{S_e}{n-2}  
-\end{equation}
+
+为得到 $E(y_0)$ 的区间估计,我们需要知道 $\hat{y}_0$ 的分布.由定理~\ref{thm:8.4.1} 可得
+\begin{equation*}
+\hat{y}_{0}=\hat{\beta}_{0}+\hat{\beta}_{1} x_{0} \sim N\left(\beta_{0}+\beta_{1} x_{0},\left[\frac{1}{n}+\frac{\left(x_{0}-\bar{x}\right)^{2}}{l_{x x}}\right] \sigma^{2}\right)
+\end{equation*}
+又由定理~\ref{thm:8.4.3} 知, $S_{e} / \sigma^{2} \sim \chi^{2}(n-2)$,且与 $\hat{y}_{0}=\bar{y}+\hat{\beta}_{1}\left(x_{0}-\bar{x}\right)$ 相互独立,记
+\begin{equation*}
+\hat{\sigma}^2=\frac{S_e}{n-2}  
+\end{equation*}
 则
-\begin{equation}
-\frac{\left(\hat{y}_{0}-E y_{0}\right) / \sqrt{\frac{1}{n}+\frac{\left(x_{0}-\bar{x}\right)^{2}}{l_{x x}}}}{\sqrt{\frac{S_{0}}{\sigma^{2}} /(n-2)}}=\frac{\hat{y}_{0}-E y_{0}}{\hat{\sum} \sqrt{\frac{1}{n}+\frac{\left(x_{0}-\bar{x}\right)^{2}}{l_{x x}}}}-t(n-2)
-\end{equation}
-于是 $E(y_0)$ 的 $1_\alpha$ 的置信区间是
-\begin{equation}
-\left[ \widehat{y}_0-\delta _0,\widehat{y}_0+\delta _0 \right] \label{eq:8.4.20}
+\begin{equation*}
+\frac{\left(\hat{y}_{0}-E y_{0}\right) / \sqrt{\frac{1}{n}+\frac{\left(x_{0}-\bar{x}\right)^{2}}{l_{x x}}}\sigma }{\sqrt{\frac{S_{e}}{\sigma^{2}} /(n-2)}}=\frac{\hat{y}_{0}-E y_{0}}{\hat{\sigma} \sqrt{\frac{1}{n}+\frac{\left(x_{0}-\bar{x}\right)^{2}}{l_{x x}}}}-t(n-2)
+\end{equation*}
+于是 $E(y_0)$ 的 $1 - \alpha$ 的置信区间是
+\begin{equation}\label{eq:8.4.20}
+\left[ \hat{y}_0-\delta _0,\hat{y}_0+\delta _0 \right] 
 \end{equation}
 其中
 \begin{equation}
-\delta_{0}=t_{1-\alpha / 2}(n-2) \hat{\sum} \sqrt{\frac{1}{n}+\frac{\left(x_{0}-\bar{x}\right)^{2}}{l_{x x}}}\label{eq:8.4.21}
+\delta_{0}=t_{1-\alpha / 2}(n-2) \hat{\sigma} \sqrt{\frac{1}{n}+\frac{\left(x_{0}-\bar{x}\right)^{2}}{l_{x x}}}\label{eq:8.4.21}
 \end{equation}
 
-二、 $y_0$ 的预测区间
+\subsubsection{$y_0$ 的预测区间}
 
-\ref{eq:8.4.20}给出了 $x=x_0$ 时对应的因变量的均值 $E(y_0)$ 的区间估计,实用中往往更关心 $x=x_0$ 时对应的因变量 $y_0$ 的取值范围.我们举一个不是非常贴切的例子说明这两者之间的差别：设想你要去买一台某厂生产的某种型号的彩电,则你很关心彩电的寿命—它能正常使用多长时间,彩电的寿命是一个随机变量,该厂生产的该型号的彩电寿命有一个分布,其均值就是它的平均寿命,当然,这是一个重要的质量指标,我们可以对它给出估计,譬如,平均寿命的 $0.95$ 置信区间为 $(12,18)$ (单位：千小时).然而,作为消费者,我们更关心的可能是我所购买的这台彩电的寿命在一个什么范围内,我所购买的这台彩电的寿命是一个随机变量,我们能否对该随机变量的取值给出一个预测区间呢？这就是我们这里要讨论的预测问题.
-事实上, $y_0=E(y_0)+\epsilon$ ,由于通常假定 $e\sim N(0,\sum 2)$ ,因此, $y_0$ 的最可能取值仍然为 $0$ ,于是,我们可以使用以列为中心的一个区间
-\begin{equation}
-\left( \widehat{y}_0-\delta ,\bar{y}_0+\delta \right) 
+\eqref{eq:8.4.20} 给出了 $x=x_0$ 时对应的因变量的均值 $E(y_0)$ 的区间估计,实用中往往更关心 $x=x_0$ 时对应的因变量 $y_0$ 的取值范围.我们举一个不是非常贴切的例子说明这两者之间的差别：设想你要去买一台某厂生产的某种型号的彩电,则你很关心彩电的寿命—它能正常使用多长时间,彩电的寿命是一个随机变量,该厂生产的该型号的彩电寿命有一个分布,其均值就是它的平均寿命,当然,这是一个重要的质量指标,我们可以对它给出估计,譬如,平均寿命的 $0.95$ 置信区间为 $(12,18)$ (单位：千小时).然而,作为消费者,我们更关心的可能是我所购买的这台彩电的寿命在一个什么范围内,我所购买的这台彩电的寿命是一个随机变量,我们能否对该随机变量的取值给出一个预测区间呢？这就是我们这里要讨论的预测问题.
+
+事实上, $y_0=E(y_0)+\varepsilon$ ,由于通常假定 $\varepsilon\sim N(0,\sigma^2)$ ,因此, $y_0$ 的最可能取值仍然为 $y_0$ ,于是,我们可以使用以列为中心的一个区间
+\begin{equation}\label{eq:8.4.22}
+\left( \hat{y}_0-\delta ,\hat{y}_0+\delta \right) 
 \end{equation}
-作为 $y_0$ 的取值范围,为确定的值,我们需要如下的结果：由于 $y_0$ 与 $\hat{y}_0$ 独立,故
-\begin{equation}
-y_{0}-\hat{y}_{0} \sim N\left(0,\left[1+\frac{1}{n}+\frac{\left(x_{0}-\bar{x}\right)^{2}}{l_{x x}}\right] \sigma^{2}\right)
-\end{equation}
+作为 $y_0$ 的取值范围,为确定 $\delta$ 的值, 我们需要如下的结果：由于 $y_0$ 与 $\hat{y}_0$ 独立,故
+\begin{equation*}
+y_{0}-\hat{y}_{0} \sim N\left(0,\left[1+\frac{1}{n}+\frac{\left(x_{0}-\bar{x}\right)^{2}}{l_{x x}}\right] \sigma^{2}\right).
+\end{equation*}
 因此有
+\begin{equation*}
+\frac{y_{0}-\hat{y}_{0}}{\hat{\sigma} \sqrt{1+\frac{1}{n}+\frac{\left(x_{0}-\bar{x}\right)^{2}}{l_{x x}}}} \sim t(n-2)
+\end{equation*}
+从而~\eqref{eq:8.4.22} 表示的预测区间中 $\delta$ 的表达式为：
 \begin{equation}
-\frac{y_{0}-\hat{y}_{0}}{\hat{\sum} \sqrt{1+\frac{1}{n}+\frac{\left(x_{0}-\bar{x}\right)^{2}}{l_{x x}}}}-t(n-2)
+\delta=\delta\left(x_{0}\right)=t_{1-a / 2}(n-2) \hat{\sigma} \sqrt{1+\frac{1}{n}+\frac{\left(x_{0}-\bar{x}\right)^{2}}{l_{x x}}}.\label{eq:8.4.23}
 \end{equation}
-从而\ref{eq:8.4.22}表示的预测区间中 $\delta$ 的表达式为：
-\begin{equation}
-\delta=\delta\left(x_{0}\right)=t_{1-a / 2}(n-2) \hat{\sum} \sqrt{1+\frac{1}{n}+\frac{\left(x_{0}-\bar{x}\right)^{2}}{l_{x x}}}\label{eq:8.4.23}
-\end{equation}
-上述预测区间与 $E(y_0)$ 的置信区间\ref{eq:8.4.21}的差别就在于根号里多个 $1$ ,计算时要注意到这个差别,这个差别导致预测区间要比置信区间宽一些.
-由\ref{eq:8.4.23}式可以看出预测区间的长度 $2\delta$ 与样本量 $n,x$ 的偏差平方和 $l_{xx},x_0$ 到 $x$ 的距离 $x_0,\bar{x}$ 有关. $x_0$ 愈远离,预测精度就愈差.当 $x_0$ 烂 $[x(1),x(n)]$ 时,预测精度可能变得很差,在这种情况下的预测称作外推,需要特别小心.另外,若 $x1,x2,xn$ 较为集中时,那么 $l_xx$ 就较小,也会导致预测精度的降低.因此,在收集数据时要使 $x1,x2…,x_n$ ,尽量分散,这对提高精度有利.图~\ref{fig:8.4.2.a}
-给出在不同的 $x$ 值上预测区间的示意图：在 $x=\bar{x}$ 处预测区间最短,远离乏的预测区间愈来愈长,呈喇叭状.
+上述预测区间与 $E(y_0)$ 的置信区间~\eqref{eq:8.4.21} 的差别就在于根号里多个 $1$ ,计算时要注意到这个差别,这个差别导致预测区间要比置信区间宽一些.
 
+由~\eqref{eq:8.4.23} 式可以看出预测区间的长度 $2\delta$ 与样本量 $n$, $x$ 的偏差平方和 $l_{xx}$, $x_0$ 到 $\bar{x}$ 的距离 $|x_0 - \bar{x}|$ 有关. $x_0$ 愈远离 $\bar{x}$ 预测精度就愈差.当 $x_0 \notin [x_{(1)},x_{(n)}]$ 时, 预测精度可能变得很差, 在这种情况下的预测称作外推,需要特别小心.另外,若 $x_{1}, x_{2}, \ldots, x_{n}$ 较为集中时, 那么 $l_{xx}$ 就较小,也会导致预测精度的降低.因此,在收集数据时要使 $x_{1}, x_{2}, \ldots, x_{n}$ ,尽量分散,这对提高精度有利.图~\ref{fig:8.4.2.a}
+给出在不同的 $x$ 值上预测区间的示意图：在 $x=\bar{x}$ 处预测区间最短,远离乏的预测区间愈来愈长,呈喇叭状.
 \begin{figure}[htb!]
-    \begin{minipage}[h]{0.47\textwidth}
+    \begin{minipage}[b]{0.5\textwidth}
         \centering
-        \subcaption{精确预测区间}
-        \includegraphics[width=0.95\textwidth]{figure/8-4-2-1.png}\label{fig:8.4.2.a}
+        \includegraphics[width=0.9\textwidth]{figure/8-4-2-1.png}
+        \subcaption{精确预测区间\label{fig:8.4.2.a}}
     \end{minipage}
-    \begin{minipage}[h]{0.47\textwidth}
+    \begin{minipage}[b]{0.45\textwidth}
         \centering
-        \subcaption{近似预测区间}
-        \includegraphics[width=0.95\textwidth]{figure/8-4-2-2.png}\label{fig:8.4.2.b}
+        \includegraphics[width=0.9\textwidth]{figure/8-4-2-2.png}
+        \subcaption{近似预测区间\label{fig:8.4.2.b}}
     \end{minipage}
     \caption{预测区间示意图}\label{fig:8.4.2}
 \end{figure}
 
 当 $n$ 较大时(如 $n>30$ ), $t$ 分布可以用正态分布近似,进一步,若 $x_0$ 与 $\bar{x}$ 相差不大时, $\delta$ 可以近似取为：
-\begin{equation}
-\delta\approx \hat{\delta}\mu_{1-\alpha/2}  \label{eq:8.2.24}
+\begin{equation}\label{eq:8.4.24}
+\delta \approx \hat{\sigma} u_{1-\alpha/2}
 \end{equation}
-其中 $\mu_{1-\alpha/2}$ 是标准正态分布的 $1-\alpha/2$ 分位数,见图~\ref{fig:8.4.2.b}.
+其中 $u_{1-\alpha/2}$ 是标准正态分布的 $1-\alpha/2$ 分位数, 见图~\ref{fig:8.4.2.b}.
 
-\begin{example}{}{}
-    在例~\ref{exa:8.4.2}中,如果 $x_0=0.16$ ,则得预测值为
-    \begin{equation}
-    y_0=28.5364+130.6022×0.16=49.4328.
-    \end{equation}
-    若取 $\alpha=0.05$ ,则 $t_{0.975}(10)=2.2281$ ,又 $\hat{\sum}=\sqrt{17.9703/(12-2)}=1.3405$ ,应用~\ref{eq:8.2.21}
-    \begin{equation}
+\begin{example}
+    在例~\ref{exam:8.4.2} 中,如果 $x_0=0.16$ ,则得预测值为
+    \begin{equation*}\label{eq:8.4.25}
+    y_0=28.5364+130.6022 \times 0.16=49.4328.
+    \end{equation*}
+    若取 $\alpha=0.05$ ,则 $t_{0.975}(10)=2.2281$ ,又 $\hat{\sigma}=\sqrt{17.9703/(12-2)}=1.3405$ , 应用~\eqref{eq:8.4.21}
+    \begin{equation*}
     \delta_{0}=1.3405 \times 2.2281 \times \sqrt{\frac{1}{12}+\frac{(0.16-0.19)^{2}}{0.0186}}=1.08
-    \end{equation}
+    \end{equation*}
     故 $x_0=0.16$ 对应因变量 $y_0$ 的均值 $E(y_0)$ 的 $0.95$ 置信区间为
-    \begin{equation}
-    49.43\pm 1.08=\left( 48.35,50.51 \right) 
-    \end{equation}
-    应用~\ref{eq:8.2.24}
-    \begin{equation}
+    \begin{equation*}
+    49.43\pm 1.08=\left( 48.35,50.51 \right).
+    \end{equation*}
+    应用~\eqref{eq:8.4.23}
+    \begin{equation*}
     \delta=1.3405 \times 2.2281 \times \sqrt{1+\frac{1}{12}+\frac{(0.16-0.19)^{2}}{0.0186}}=3.18
-    \end{equation}
+    \end{equation*}
     从而 $y_0$ 的概率为 $0.95$ 的预测区间为
-    \begin{equation}
+    \begin{equation*}
     49.43\pm 3.18=(46.25,52.61)
-    \end{equation}
+    \end{equation*}
     我们可以清楚地看到, $E(y_0)$ 的 $0.95$ 置信区间比 $y_0$ 的概率为 $0.95$ 的预测区间窄很多,这是因为随机变量的均值相对于随机变量本身而言要更容易估计出来.
     
-    如果求近似预测区间,则可按~\ref{eq:8.2.24}计算,由于 $\mu_{0.975}=1.96$ ,故有
- $\delta\approx 1.96\times 1.34=2.63$ ,则所求区间为
-    \begin{equation}
+    如果求近似预测区间,则可按~\eqref{eq:8.4.24} 计算,由于 $u_{0.975}=1.96$ ,故有 $\delta\approx 1.96\times 1.34=2.63$ ,则所求区间为
+    \begin{equation*}
     (49.43-2.63,49.43+2.63)=(46.80,52.06)
-    \end{equation}
+    \end{equation*}
     此处近似预测区间与精确预测区间相差较大,主要是因为 $n$ 较小的原因.
 \end{example}
 
 下而我们以一个完整的例子把本节内容重新梳理一遍.
-\begin{example}{}{8.4.5}
-    在动物学研究中,有时需要找出某种动物的体积与重量的关系.
-    因为动物的重量相对而言容易测量,而测量体积比较困难,因此,人们希望用动物的重量预测其体积.下面是 $18$ 只某种动物的体积与重量数据,在这里,动物重量被看作自变量,用 $x$ 表示,单位为 $kg$ ,动物体积则作为因变量,用 $y$ 表示,单位为 $dm^3,18$ 组数据列于表~\ref{tab:8.4.4}中.
+\begin{example}\label{exam:8.4.5}
+    在动物学研究中,有时需要找出某种动物的体积与重量的关系. 因为动物的重量相对而言容易测量,而测量体积比较困难, 因此, 人们希望用动物的重量预测其体积.下面是 $18$ 只某种动物的体积与重量数据,在这里,动物重量被看作自变量,用 $x$ 表示,单位为 $\si{\kilogram}$ ,动物体积则作为因变量,用 $y$ 表示,单位为 $\mathrm{dm}^3$, 18 组数据列于表~\ref{tab:8.4.4} 中.
     % Table generated by Excel2LaTeX from sheet '1'
     \begin{table}[htbp]
         \centering
         \caption{ $18$ 只某种动物的重量 $x$ 与体积 $y$ 数据}
-        \begin{tabular}{cc||cc||cc}
-            \toprule
-            x     & y     & x     & y     & x     & y \\\midrule
+        \begin{tabular}{cc|cc|cc}
+            \hline
+            $x$     & $y$     & $x$     & $y$     & $x$     & $y$ \\ \hline
             10.4  & 10.2  & 15.1  & 14.8  & 16.5  & 15.9  \\
             10.5  & 10.4  & 15.1  & 15.1  & 16.7  & 16.6  \\
             11.9  & 11.6  & 15.1  & 14.5  & 17.1  & 16.7  \\
             12.1  & 11.9  & 15.7  & 15.7  & 17.1  & 16.7  \\
             13.8  & 13.5  & 15.8  & 15.2  & 17.8  & 17.6  \\
-            15.0  & 14.5  & 16.0  & 15.8  & 18.4  & 18.3  \\\bottomrule
+            15.0  & 14.5  & 16.0  & 15.8  & 18.4  & 18.3  \\ \hline
         \end{tabular}%
         \label{tab:8.4.4}%
     \end{table}%
-    为能用动物重量估计动物体积,必须建立动物体积 $y$ 关于动物重量 $x$ 的回归方程.首先,我们用这 $18$ 组数据画出散点图,见图~\ref{fig:8.4.3}.
+    
+    为能用动物重量估计动物体积,必须建立动物体积 $y$ 关于动物重量 $x$ 的回归方程. 首先,我们用这 $18$ 组数据画出散点图,见图~\ref{fig:8.4.3}.
     \begin{figure}[!htb]
         \centering
-        \includegraphics[width=0.75\linewidth]{8-4-3}
+        \includegraphics[width=0.5\linewidth]{8-4-3}
         \caption{动物体积与动物重量的散点图}
         \label{fig:8.4.3}
     \end{figure}
-    从散点图我们发现 $18$ 个点基本在一条直线附近,这说明两个变量之间有一个线性相关关系,下面求该线性回归方程,计算过程见表~\ref{tab8.4.5}.
+
+    从散点图我们发现 $18$ 个点基本在一条直线附近,这说明两个变量之间有一个线性相关关系,下面求该线性回归方程,计算过程见表~\ref{tab:8.4.5}.
     % Table generated by Excel2LaTeX from sheet '1'
     \begin{table}[htbp]
+      \renewcommand*{\arraystretch}{1.5}
         \centering
-        \caption{例~\ref{exa:8.4.5}的计算表}
+        \caption{例~\ref{exam:8.4.5} 的计算表}
         \begin{tabular}{ccc}
-         $\sum x_i=270.1$   &    $n=18$     &  $\sum y_i=265.0$  \\
+          \toprule
+         $\Sigma x_i=270.1$   &    $n=18$     &  $\Sigma y_i=265.0$  \\
          $\bar{x}=15.0056$   &       &  $\bar{y}=14.7222$  \\
-         $\sum x_{i}^{2}=4149.39$   &    $\sum x_iy_i=4071.71$     &  $\sum y_{i}^{2}=3996.14$  \\
-         $n\bar{x}^2=4053.0006$   &    $n\dot \bar{x}\dot \bar{y}=39976.422$     &  $n\bar{y}^2=3901.3889$  \\
+         $\Sigma x_{i}^{2}=4149.39$   &    $\Sigma x_iy_i=4071.71$     &  $\Sigma y_{i}^{2}=3996.14$  \\
+         $n\bar{x}^2=4053.0006$   &    $n \cdot\bar{x} \cdot \bar{y}=39976.422$     &  $n\bar{y}^2=3901.3889$  \\
          $l_{xy}=96.3894$   &    $l_{xy}=95.238$     &  $l_{yy}=94.7511$  \\
-            \multicolumn{3}{c}{ $\hat{\beta}=l_{xy}/l_{xx}=0.9881$ } \\
+         \midrule
+            \multicolumn{3}{c}{ $\hat{\beta}_1=l_{xy}/l_{xx}=0.9881$ } \\
             \multicolumn{3}{c}{ $\hat{\beta}_0=\bar{y}-x\hat{\beta}_1=-0.1048$ } \\
+        \bottomrule
         \end{tabular}%
         \label{tab:8.4.5}%
     \end{table}%
+
+
     由此给出回归方程为
-    \begin{equation*}
-    \hat{y}=一0.1048+0.9881x. \label{eq:8.4.25}
-    \end{equation*}
-    接下来我们考虑关于回归方程的显著性检验. 经计算有
     \begin{equation}
-    \begin{array}{ll}{S_{T}=l_{y y}=94.751,} & {f_{T}=17} \\ {S_{R}=\hat{\beta}_{1}^{2} l_{x x}=0.9881^{2} \times 96.3894=94.1090,} & {f_{R}=1} \\ {S_{e}=S_{T}-S_{R}=0.6421,} & {f_{e}=16}\end{array}
+    \hat{y}= - 0.1048 + 0.9881x. \label{eq:8.4.25}
     \end{equation}
-    把诸平方和移入方差分析表上,继续计算,具体见表\ref{tab:8.4.6}
+    接下来我们考虑关于回归方程的显著性检验. 经计算有
+    \begin{equation*}
+    \begin{array}{ll}{S_{T}=l_{y y}=94.751,} & {f_{T}=17} \\ {S_{R}=\hat{\beta}_{1}^{2} l_{x x}=0.9881^{2} \times 96.3894=94.1090,} & {f_{R}=1} \\ {S_{e}=S_{T}-S_{R}=0.6421,} & {f_{e}=16}\end{array}
+    \end{equation*}
+    把诸平方和移入方差分析表上,继续计算,具体见表~\ref{tab:8.4.6}.
     \begin{table}[htbp]
         \centering
         \caption{合金钢强度与碳含量回归方程的方差分析表}
@@ -1826,93 +1834,97 @@ y_{0}-\hat{y}_{0} \sim N\left(0,\left[1+\frac{1}{n}+\frac{\left(x_{0}-\bar{x}\ri
         \end{tabular}%
         \label{tab:8.4.6}%
     \end{table}%
-    若取 $\alpha=0.01$ ,则 $F_{0.99}(1,10)=8.53$ ,由于 $2346.9>8.53$ ,因此,在显著性水平 $0.01$ 下回归方程是显著的.
     
-    如果测得某动物的重量为 $x_0=17.6kg$ ,则由\ref{eq:8.4.25},该动物体积的估计值为
-    \begin{equation}
+  \noindent 若取 $\alpha=0.01$ ,则 $F_{0.99}(1,10)=8.53$ ,由于 $2346.9>8.53$ ,因此,在显著性水平 $0.01$ 下回归方程是显著的.
+    
+    如果测得某动物的重量为 $x_0=17.6\si{\kilogram}$ ,则由~\eqref{eq:8.4.25}, 该动物体积的估计值为
+    \begin{equation*}
     \hat{y}_{0}=-0.1048+0.9881 \times 17.6=17.2858
-    \end{equation}
+    \end{equation*}
     
-    若取 $\alpha=0.05$ ,则 $t_{0.975}(16)=2.1199$ ,又 $\hat{\sum}=\sqrt{0.0401}=0.2002$ ,应用~\ref{eq:8.2.21}
-    \begin{equation}
+    若取 $\alpha=0.05$ ,则 $t_{0.975}(16)=2.1199$ ,又 $\hat{\sigma}=\sqrt{0.0401}=0.2002$ ,应用~\eqref{eq:8.4.21}
+    \begin{equation*}
     \delta=0.2002 \times 2.1199 \times \sqrt{1+\frac{1}{18}+\frac{(17.6-15.0056)^{2}}{96.3894}}=0.4776
-    \end{equation}
+    \end{equation*}
     从而该动物体积的概率为 $0.95$ 的预测区间为
- $(17.2858-0.4776,17.2858\pm 0.4776)=(16.8082,17.7634)$ .
-    用~\ref{eq:8.2.24}可以求近似预测区间,由于 $\mu_{0.975}=1.96$ ,故有 $\sum \sim 1.96\times 0.2002=0.3924$ ,则所求区间为
-    \begin{equation}
-    (17.2858-0.392 4,17.2858\pm 0.3924)=(16.8934,17.6782).
-    \end{equation}
+    \begin{equation*}
+      (17.2858 - 0.4776, 17.2858 + 0.4776)=(16.8082, 17.7634).
+    \end{equation*}
+
+    用~\eqref{eq:8.4.24}可以求近似预测区间, 由于 $u_{0.975}=1.96$ ,故有 $\delta \approx 1.96\times 0.2002=0.3924$, 则所求区间为
+    \begin{equation*}
+    (17.2858 - 0.392 4, 17.2858 + 0.3924)=(16.8934,17.6782).
+    \end{equation*}
     此处近似预测区间与精确预测区间差距已不大了,当 $n$ 更大一些,两者差距会更小一些.
 \end{example}
 
 \begin{xiti}
     \item 假设回归直线过原点,即一元线性回妇模型为 
-    \begin{equation}
-    y_i=\beta x_i+\epsilon_i,\quad i=1,\cdots ,n,
-    \end{equation}
- $E(\epsilon_i)=0,Var(\epsilon_i)=\sum^2$ ,诸观测值相互独立.
+    \begin{equation*}
+    y_i=\beta x_i+\varepsilon_i,\quad i=1,\ldots ,n,
+    \end{equation*}
+ $E(\varepsilon_i)=0, \mathrm{Var}(\varepsilon_i)=\sigma^2$ ,诸观测值相互独立.
     \begin{enumerate}
-        \item 写出 $\beta,\sum^2$ 的最小二乘估计；
-        \item 对给定的 $x_0$ ,其对应的因变量均值的估计为 $\hat{y}_0$ ,求 $Var(\hat{y}_0)$ .
+        \item 写出 $\beta,\sigma^2$ 的最小二乘估计；
+        \item 对给定的 $x_0$ ,其对应的因变量均值的估计为 $\hat{y}_0$ ,求 $\mathrm{Var}(\hat{y}_0)$ .
     \end{enumerate}
     \item 设回归模型为
-    \begin{equation}
-    \left\{ \begin{array}{l}
-    y_i=\beta _0+\beta _1x_i+\epsilon _i,i=1,\cdots ,n,\\
-    \text{各}\epsilon\text{独立同分布} ,\text{其分布为}N\left( 0,\sum ^2 \right)\\
-    \end{array} \right. 
-    \end{equation}
-    试求 $\beta_0,\beta_1,\sum^2$ 的最大似然估计,它们与其最小二乘估计一致吗？
+    \begin{equation*}
+      \begin{cases}
+        y_i=\beta _0+\beta _1x_i+\varepsilon _i,i=1,2,\ldots ,n,\\
+    \text{各 $\varepsilon$ 独立同分布}, \text{其分布为} N(0,\sigma^2)
+      \end{cases}
+    \end{equation*}
+    试求 $\beta_0,\beta_1,\sigma^2$ 的最大似然估计,它们与其最小二乘估计一致吗？
     \item 在回归分析计算中,常对数据进行变换：
-    \begin{equation}
-    \vec{y}_{\mathrm{i}}=\frac{y_{i}-c_{1}}{d_{1}}, \tilde{x}_{1}=\frac{x_{i}-c_{2}}{d_{2}}, i=1, \cdots, n
-    \end{equation}
+    \begin{equation*}
+    \tilde{y}_{\mathrm{i}}=\frac{y_{i}-c_{1}}{d_{1}}, \tilde{x}_{i}=\frac{x_{i}-c_{2}}{d_{2}}, i=1, \ldots, n
+    \end{equation*}
     其中 $c_1,c_2,d_1(>0),d_2(>0)$ 是适当选取的常数.
     \begin{enumerate}
         \item 试建立由原始数据和变换后数据得到的最小二乘估计、总平方和、回归平方和以及残差平方和之间的关系；
         \item 证明：由原始数据和变换后数据得到的 $F$ 检验统计量的值保持不变.
     \end{enumerate}
-    \item 对给定的 $n$ 组数据 $(x,,y),i=1,n$ ,若我们关心的是 $y$ 如何依赖 $x$ 的取值而变动,则可以建立如下回归方程\begin{equation}
+    \item 对给定的 $n$ 组数据 $(x_{i}, y_{i}),i=1,\ldots,n$, 若我们关心的是 $y$ 如何依赖 $x$ 的取值而变动,则可以建立如下回归方程\begin{equation*}
     \hat{y}=a+bx.
-    \end{equation}
+    \end{equation*}
     反之,若我们关心的是 $x$ 如何依赖 $y$ 的取值而变动,则可以建立另一个回归方程
-    \begin{equation}
+    \begin{equation*}
     \hat{x}=c+dy.
-    \end{equation}
+    \end{equation*}
     试问这两条直线在直角坐标系中是否重合？为什么？若不重合,它们有无交点？若有,试给出交点的坐标.
     \item 为考察某种维尼纶纤维的耐水性能,安排了一组试验,测得其甲醇浓度 $x$ 及相应的
     “缩醇化度” $y$ 数据如下：
     % Table generated by Excel2LaTeX from sheet '1'
-    \begin{equation}
+    \begin{equation*}
     \begin{array}{c|ccccccc}
     x     & 18    & 20    & 22    & 24    & 26    & 28    & 30 \\\hline
     y     & 26.86  & 28.35  & 28.75  & 28.87  & 29.75  & 30.00  & 30.36  \\
     \end{array}%
-    \end{equation}
+    \end{equation*}
     \begin{enumerate}
         \item 作散点图；
         \item 求样本相关系数；
         \item 建立一元线性回归方程；
         \item 对建立的回归方程作显著性检验 $(\alpha=0.05)$ .
     \end{enumerate}
-    \item 测得一组弹簧形变 $x$ (单位： $cm$ )和相应的外力 $y$ (单位： $N$ )数据如下：% Table generated by Excel2LaTeX from sheet '1'
-    \begin{equation}
+    \item 测得一组弹簧形变 $x$ (单位： $\si{cm}$ )和相应的外力 $y$ (单位： $\si{N}$ )数据如下：% Table generated by Excel2LaTeX from sheet '1'
+    \begin{equation*}
     \begin{array}{c|cccccccccc}
     x     & 1.0   & 1.2   & 1.4   & 1.6   & 1.8   & 2.0   & 2.2   & 2.4   & 2.8   & 3.0  \\\hline
     y     & 3.08  & 3.76  & 4.31  & 5.02  & 5.51  & 6.25  & 6.74  & 7.40  & 8.54  & 9.24  \\
     \end{array}%
-    \end{equation}
-    由胡克定律知 $y=kx$ ,试估计 $k$ ,并在 $x=2.6cm$ 试给出相应的外力 $y$ 的 $0.95$ 预测区间.
+    \end{equation*}
+    由胡克定律知 $y=kx$ ,试估计 $k$ ,并在 $x=2.6 \si{cm}$ 试给出相应的外力 $y$ 的 $0.95$ 预测区间.
     \item 设由 $(x_i,y_i),i=1,\cdots,n$ 可建立一元线性回归方程,,是由回归方程得到的拟合值,证明：样本相关系数 $r$ 满足如下关系
-    \begin{equation}
-    r^{2}=\frac{\sum_{i=1}^{n}\left(\dot{y}_{i}-\bar{y}\right)^{2}}{\sum_{i=1}^{n}\left(y_{i}-\bar{y}\right)^{2}}
-    \end{equation}
+    \begin{equation*}
+    r^{2}=\frac{\sum_{i=1}^{n}\left(y_{i}-\bar{y}\right)^{2}}{\sum_{i=1}^{n}\left(y_{i}-\bar{y}\right)^{2}}
+    \end{equation*}
     上式也称为回归方程的决定系数.
     \item 现收集了 $16$ 组合金钢中的碳含量 $x$ 及强度 $y$ 的数据,求得
-    \begin{equation}
-    \bar{x}=0.125,y=45.7886,l_{xx}=0.3024,l_{xy}=25.5218,L_{yy}=2432.4566.
-    \end{equation}
+    \begin{equation*}
+    \bar{x}=0.125, \quad y=45.7886,\quad l_{xx}=0.3024,\quad l_{xy}=25.5218,\quad l_{yy}=2432.4566.
+    \end{equation*}
     \begin{enumerate}
         \item  建立 $y$ 关于 $x$ 的一元线性回归方程 $\hat{y}=\hat{\beta}_0+\hat{\beta}_1x$ ;
         \item 写出 $\hat{\beta}_0$ 和 $\hat{\beta}_1$ 的分布；
@@ -1921,28 +1933,28 @@ y_{0}-\hat{y}_{0} \sim N\left(0,\left[1+\frac{1}{n}+\frac{\left(x_{0}-\bar{x}\ri
         \item 给出 $\beta_1$ 的 $0.95$ 置信区间；
         \item 在 $x=0.15$ 时求对应的 $y$ 的 $0.95$ 预测区间.
     \end{enumerate}
-    \item 设回归模型为 $\left\{\begin{array}{l}{y_{i}=\beta_{0}+\beta_{1} x_{1}+\epsilon_{i}} \\ {\varepsilon_{i} \sim N\left(0, \sigma^{2}\right)}\end{array}\right.$ 现收集了 $15$ 组数据,经计算有
-    \begin{equation}
+    \item 设回归模型为 $\left\{\begin{array}{l}{y_{i}=\beta_{0}+\beta_{1} x_{1}+\varepsilon_{i}}, \\ {\varepsilon_{i} \sim N\left(0, \sigma^{2}\right)}\end{array},\right.$ 现收集了 $15$ 组数据,经计算有
+    \begin{equation*}
     \bar{x}=0.85 \quad \bar{y}=25.60, \quad l_{x x}=19.56, \quad l_{x y}=32.54, \quad l_{x y}=46.74
-    \end{equation}
+    \end{equation*}
     后经核对,发现有一组数据记录错误,正确数据为 $(1.2,32.6)$ ,记录为 $(1.5,32.3)$ .
     \begin{enumerate}
-        \item 求 $\beta_0,\beta_1$ 的 $LSE$ ；
+        \item 求 $\beta_0,\beta_1$ 的 $\mathrm{LSE}$ ；
         \item 对回归方程做显著性检验 $(\alpha=0.05)$ ；
         \item 若 $x_0=1.1$ ,给出对应响应变量的 $0.95$ 预测区间.
     \end{enumerate}
     \item 在生产中积累了 $32$ 组某种铸件在不同腐蚀时间 $x$ 下腐蚀深度 $y$ 的数据,求得回归方程为
-    \begin{equation}
+    \begin{equation*}
     \hat{y}=-0.4441+0.002263x
-    \end{equation}
-    ,且误差方差的无偏估计为 $\hat{\sum}^2=0.001452$ ,总偏差平方和为 $0.1246$ .
+    \end{equation*}
+    ,且误差方差的无偏估计为 $\hat{\sigma}^2=0.001452$, 总偏差平方和为 $0.1246$ .
     \begin{enumerate}
         \item 对回归方程做显著性检验 $(\alpha=0.05)$ ,列出方差分析表；
         \item 求样本相关系数；
         \item 若腐蚀时间 $x=870$ ,试给出 $y$ 的 $0.95$ 近似预测区间.
     \end{enumerate}
     \item 我们知道营业税税收总额 $y$ 与社会商品零售总额 $x$ 有关,为能从社会商品零售总额去预测税收总额,需要了解两者之间的关系.现收集了如下九组数据：(单位：亿元)
-    \begin{equation}
+    \begin{equation*}
     \begin{array}{ccc}
     \toprule
     \text{序号}    & \text{社会商品零售额} & \text{营业税收总额} \\\midrule
@@ -1956,7 +1968,7 @@ y_{0}-\hat{y}_{0} \sim N\left(0,\left[1+\frac{1}{n}+\frac{\left(x_{0}-\bar{x}\ri
     8     & 389.29  & 16.39  \\
     9     & 453.40  & 18.45  \\\bottomrule
     \end{array}%
-    \end{equation}
+    \end{equation*}
     \begin{enumerate}
         \item 画散点图；
         \item 建立一元线性回归方程,并做显著性检验(取 $\alpha=0.05$ ),列出方差分析表；
@@ -1968,85 +1980,97 @@ y_{0}-\hat{y}_{0} \sim N\left(0,\left[1+\frac{1}{n}+\frac{\left(x_{0}-\bar{x}\ri
 \section{一元旅线性性回归}\label{sec:8.5}
 
 有时,回归函数并非是自变量的线性函数,但通过变换可以将之化为线性函数,从而利用一元线性回归对其分析,这样的问题是非线性回归问题.下面以一个例子说明上述非线性回归的分析步骤.
-\begin{example}{}{8.5.1}
+\begin{example}
     炼钢厂出钢水时用的钢包,在使用过程中由于钢水及炉渣对耐火材料的侵蚀,其容积不断增大.现在钢包的容积用盛满钢水时的质量 $y(kg)$ 表示,相应的试验次数用 $x$ 表示.数据见表~\ref{tab:8.5.1},要找出 $y$ 与 $x$ 的定量关系表达式.
     % Table generated by Excel2LaTeX from sheet '1'
     \begin{table}[htbp]
+      \renewcommand*{\arraystretch}{1.5}
         \centering
         \caption{钢包的置量 $y$ 与试验次数 $x$ 数据}
-        \begin{tabular}{ccc||ccc}
-            \toprule
-            序号    & x     & y     & 序号    & x     & y \\\midrule
+        \begin{tabular}{ccc|ccc}
+            \hline
+            序号    &  $x$     & $y$     & 序号    & $x$    & $y$ \\\hline
             1     & 2     & 106.42  & 8     & 11    & 110.59  \\
             2     & 3     & 108.20  & 9     & 14    & 110.60  \\
             3     & 4     & 109.58  & 10    & 15    & 110.90  \\
             4     & 5     & 109.50  & 11    & 16    & 110.76  \\
             5     & 7     & 110.00  & 12    & 18    & 111.00  \\
             6     & 8     & 109.93  & 13    & 19    & 111.20  \\
-            7     & 10    & 110.49  &       &       &  \\\bottomrule
+            7     & 10    & 110.49  &       &       &  \\\hline
         \end{tabular}%
         \label{tab:8.5.1}%
     \end{table}%
-    下面我们分三步进行
+    
+    下面我们分三步进行.
     
     \subsection{确定可能的函数形式}
     
-    为对数据进行分析,首先描出数据的散点图,判断两个变量之间可能的函数关系,图~\ref{fig:8.5.1}是本例的散点图.
+    为对数据进行分析,首先描出数据的散点图,判断两个变量之间可能的函数关系,图~\ref{fig:8.5.1} 是本例的散点图.
     
-    观测这 $13$ 个点构成的散点图,我们可以看到它们并不接近一条直线,用曲线拟合这些点应该是更恰当的.这里就涉及如何选择曲线函数形式的问题,首先,如果可由专业知识确定回归函数形式,则应尽可能利用专业知识.当若不能由专业知识加以确定函数形式,则可将散点图与一些常见的函数关系的图形进行比较,选择几个可能的函数形式,然后使用统计方法在这些函数形式之间进行
-    \begin{figure}[hb]
-        \centering
-        \includegraphics[width=0.6\linewidth]{8-5-1}
-        \caption{钢包质量与试验次数散点图}
-        \label{fig:8.5.1}
+    \begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.5\linewidth]{8-5-1}
+    \caption{钢包质量与试验次数散点图}
+    \label{fig:8.5.1}
     \end{figure}
-    比较,最后确定合适的曲线回归方程.为此,必须了解常见的曲线函数的图形,见图~\ref{fig:8.5.2}
+
+    观测这 $13$ 个点构成的散点图,我们可以看到它们并不接近一条直线,用曲线拟合这些点应该是更恰当的.这里就涉及如何选择曲线函数形式的问题,首先,如果可由专业知识确定回归函数形式,则应尽可能利用专业知识.当若不能由专业知识加以确定函数形式,则可将散点图与一些常见的函数关系的图形进行比较,选择几个可能的函数形式,然后使用统计方法在这些函数形式之间进行比较,最后确定合适的曲线回归方程.为此,必须了解常见的曲线函数的图形,见图~\ref{fig:8.5.2}.
+
+    \begin{figure}[p]
+    \centering
+    \includegraphics[width=0.95\linewidth]{8-5-2}
+    \caption{部分常见的曲线函数的图形}
+    \label{fig:8.5.2}
+    \end{figure}
     
-    本例中,散点图呈现一个明显的向上且上凸的趋势,可能选择的函数关系有很多,比如,参照图图~\ref{fig:8.5.2},我们可以给出如下四个曲线函数：
+    本例中,散点图呈现一个明显的向上且上凸的趋势,可能选择的函数关系有很多,比如,参照图~\ref{fig:8.5.2}, 我们可以给出如下四个曲线函数：
     \begin{align}
-    1 &\quad 1 / y=a+b / x : \\ 
-    2  &\quad  y=a+b \ln x ;  \\ 
-    3  &\quad  y=a+b \sqrt{x} ;  \\ 
-    4  &\quad  y-100=a \cdot e^{-x / b}(b>0)
+    1 &\quad 1 / y=a+b / x : \label{eq:8.5.1} \\ 
+    2  &\quad  y=a+b \ln x ;  \label{eq:8.5.2}\\ 
+    3  &\quad  y=a+b \sqrt{x} ; \label{eq:8.5.3} \\ 
+    4  &\quad  y-100=a \cdot e^{-x / b}(b>0)\label{eq:8.5.4}
     \end{align}
     在初步选出可能的函数关系(即方程)后,我们必须解决两个问题：
     \begin{itemize}
-        \item 如何估计所选方程中的参数？这在~\ref{ssec:8.5.2}中讨论；
-        \item 如何评价所选不同方程的优劣？这在~\ref{ssec:8.5.3}中介绍.
+        \item 如何估计所选方程中的参数？这在~\ref{ssec:8.5.2} 中讨论；
+        \item 如何评价所选不同方程的优劣？这在~\ref{ssec:8.5.3} 中介绍.
     \end{itemize}
 \end{example}
 
 \subsection{参数估计}\label{ssec:8.5.2}
 
-对形如~\ref{eq:8.5.1}式至~\ref{eq:8.5.4}式的非线性函数,参数估计最常用的方法是“线性化”方法,即通过某种变换,将方程化为一元线性方程的形式.
+对形如~\eqref{eq:8.5.1} 式至~\eqref{eq:8.5.4} 式的非线性函数,参数估计最常用的方法是“线性化”方法,即通过某种变换,将方程化为一元线性方程的形式.
 
-以~\ref{eq:8.5.1}式为例,为了能采用一元线性回归分析方法,我们作如下变换 $\mu =1/x,\nu =1/y,$ 
-则~\ref{eq:8.5.1}的曲线函数就化为如下的直线 $\nu=a+b\mu $ ,这是理论回归函数.对数据而言,回归方程为
-\begin{equation}
-\nu_i=a+b\mu_i+\epsilon_i,
-\end{equation}
-于是可用一元线性回归的方法估计出 $a,b$ .图~\ref{fig:8.5.3}给出变换后的数据的散点图.
+以~\eqref{eq:8.5.1} 式为例,为了能采用一元线性回归分析方法,我们作如下变换 
+\begin{equation*}
+  u =1/x, \quad \nu =1/y, 
+\end{equation*}
+则~\eqref{eq:8.5.1}的曲线函数就化为如下的直线 
+\begin{equation*}
+  \nu = a + bu
+\end{equation*}
+这是理论回归函数. 对数据而言, 回归方程为
+\begin{equation*}
+\nu_i=a+b u_i+\epsilon_i,
+\end{equation*}
+于是可用一元线性回归的方法估计出 $a,b$. 图~\ref{fig:8.5.3}给出变换后的数据的散点图.
 
-从图~\ref{fig:8.5.3}上看出可以认为所有的点近似在一条直线上下被动,因此,建立一元线性回归方程是可行的.整个计算过程及估计列于表~\ref{tab:8.5.2}和表~\ref{8.5.3}中.
-\begin{figure}[p]
-    \centering
-    \includegraphics[width=0.95\linewidth]{8-5-2}
-    \caption{部分常见的曲线函数的图形}
-    \label{fig:8.5.2}
-\end{figure}
+从图~\ref{fig:8.5.3}上看出可以认为所有的点近似在一条直线上下被动,因此,建立一元线性回归方程是可行的.整个计算过程及估计列于表~\ref{tab:8.5.2} 和表~\ref{tab:8.5.3} 中.
+
 \begin{figure}[htb]
     \centering
-    \includegraphics[width=0.75\linewidth]{8-5-3}
+    \includegraphics[width=0.5\linewidth]{8-5-3}
     \caption{变换后数据的散点图}
     \label{fig:8.5.3}
 \end{figure}
 % Table generated by Excel2LaTeX from sheet '1'
-\begin{table}[htbp]
+\begin{table}[!htbp]
+  \renewcommand*{\arraystretch}{1.5}
     \centering
     \caption{钢包数据的变换值}
     \begin{tabular}{cccccc}
         \toprule
-     $x$      &  $y$      &  $\mu =1/x$  &  $\nu =1/y$  &  $\nu^2$  &  $\mu\nu$  \\\midrule
+     $x$      &  $y$      &  $u =1/x$  &  $\nu =1/y$  &  $\nu^2$  &  $u\nu$  \\\midrule
         2     & 106.42  & 0.500000  & 0.009397  & 0.250000  & 0.004698  \\
         3     & 108.20  & 0.333333  & 0.009242  & 0.111111  & 0.003081  \\
         4     & 109.58  & 0.250000  & 0.009126  & 0.062500  & 0.002281  \\
@@ -2067,36 +2091,39 @@ y_{0}-\hat{y}_{0} \sim N\left(0,\left[1+\frac{1}{n}+\frac{\left(x_{0}-\bar{x}\ri
 \end{table}%
 
 % Table generated by Excel2LaTeX from sheet '1'
-\begin{table}[htb]
+\begin{table}[!htb]
+  \renewcommand*{\arraystretch}{1.5}
     \centering
     \caption{参数估计计算表}
     \begin{tabular}{ccc}
-     $\sum \mu_i=2.050 88194$   &    $n=13$     &  $\sum \nu_i=0.11826672$  \\
-     $\bar{\mu}=0.157 76015$   &       &  $ \bar{\nu} =0.009 097 44$  \\
-     $\sum\mu_{i}^{2}=0.537 217 98$   &    $\sum\mu_i\nu_i=0.01883495$     &  \\
-     $n\bar{\mu}=0.537 21798$   &   $n\bar{\mu\nu}=0.01865778$      &  \\
-     $l_{\nu\nu}=0.21367054$   &   $l_{\mu\nu}=0.000 17717$      &  \\
-        \multicolumn{3}{c}{ $\hat{b}=l_{\mu\nu }/l_{\mu\mu}=0.00082917$ } \\
-        \multicolumn{3}{c}{ $\hat{a}\bar{\nu}-\bar{\mu}\hat{b}=0.00896663$ } \\
-        \multicolumn{3}{c}{ $\therefore \widehat{y}=\frac{x}{0.00082917+0.00896663.x}$ } \\
+      \toprule
+     $\Sigma u_i=2.050 88194$   &    $n=13$     &  $\Sigma \nu_i=0.11826672$  \\
+     $\bar{u}=0.157 76015$   &       &  $ \bar{\nu} =0.009 097 44$  \\
+     $\Sigma u_{i}^{2}=0.537 217 98$   &    $\Sigma u_i\nu_i=0.01883495$     &  \\
+     $n\bar{u}=0.537 21798$   &   $n\overline{u\nu}=0.01865778$      &  \\
+     $l_{\nu\nu}=0.21367054$   &   $l_{u\nu}=0.000 17717$      &  \\
+        \multicolumn{3}{c}{ $\hat{b}=l_{u\nu }/l_{uu}=0.00082917$ } \\
+        \multicolumn{3}{c}{ $\hat{a}\bar{\nu}-\bar{u}\hat{b}=0.00896663$ } \\
+        \multicolumn{3}{c}{ $\displaystyle\therefore \hat{y}=\frac{x}{0.00082917+0.00896663.x}$ } \\[2ex]
+        \bottomrule
     \end{tabular}%
-    \label{tab:addlabel}%
+    \label{tab:8.5.3}%
 \end{table}%
-用类似的方法可以得出其他三个曲线回归方程,它们分别是：
-\begin{equation}
+用类似的方法可以得出其他三个曲线回归方程, 它们分别是：
+\begin{equation*}
 \begin{array}{l}
 {\hat{y}=106.3147+3.9466 \ln x} \\ 
 {\hat{y}=106.3013+1.1947 \sqrt{x}} \\ 
 {\hat{y}=100+11.7506 \mathrm{e}^{-1.1256 / x}}
 \end{array}
-\end{equation}
+\end{equation*}
 
-\subsection{曲线回归方程的比较}\label{sec:8.5.3}
+\subsection{曲线回归方程的比较}\label{ssec:8.5.3}
 
 我们上面得到了四个曲线回归方程,在这四个方程中,哪一个更好一点呢？
 通常可采用如下两个指标进行选择.
 \begin{enumerate}
-    \item 决定系数R2：类似于一元线性回归方程中相关系数,决定系数定义为：
+    \item 决定系数 $R^2$：类似于一元线性回归方程中相关系数,决定系数定义为：
     \begin{equation}
     R^{2}=1-\frac{\sum\left(y_{i}-\hat{y}_{i}\right)^{2}}{\sum\left(y_{i}-\bar{y}\right)^{2}}\label{eq:8.5.5}
     \end{equation} $R^2$ 越大,说明残差越小,回归曲线拟合越好, $R^2$ 从总体上给出一个拟合好坏程度的度量.
@@ -2104,23 +2131,24 @@ y_{0}-\hat{y}_{0} \sim N\left(0,\left[1+\frac{1}{n}+\frac{\left(x_{0}-\bar{x}\ri
     \begin{equation}
     s=\sqrt{\frac{\sum (y_i-\hat{y}_i)^2}{n-2}}\label{eq:8.5.6}
     \end{equation}
- $s$ 为诸观测点 $y$ ,与由曲线给出的拟合值 $y$ ；间的平均偏离程度的度量, $s$ 越小,方程越好.
+ $s$ 为诸观测点 $y_i$ 与由曲线给出的拟合值 $\hat{y}_i$ 间的平均偏离程度的度量, $s$ 越小,方程越好.
 \end{enumerate}
 
-在观测数据给定后,不同的曲线选择不会影响 $\sum (y_i-\bar{y}_i)^2$ 的取值,但会影响到残差平方和 $\sum (y_i-\hat{y}_i)^2$ 的取值.因此,对选择的曲线而言,决定系数和剩
-余标准差都取决于残差平方和 $\sum (y_i-\hat{y}_i)^2$ ,从而,两种选择准则是一致的,只是从两个不同侧面作出评价.
+在观测数据给定后,不同的曲线选择不会影响 $\sum_{i=1}^{n} (y_i-\bar{y}_i)^2$ 的取值,但会影响到残差平方和 $\sum_{i=1}^{n} (y_i-\hat{y}_i)^2$ 的取值.因此,对选择的曲线而言,决定系数和剩
+余标准差都取决于残差平方和 $\sum_{i=1}^{n} (y_i-\hat{y}_i)^2$ ,从而,两种选择准则是一致的,只是从两个不同侧面作出评价.
 
-表~\ref{tab:8.5.4}给出第一个曲线回归方程的残差平方和的计算过程,由于 $n=13$ , $\sum\limits_{i=1}^{13}(y_i-\bar{y})^2=0.5743$ ,故其决定系数及剩余标准差分别为：
-\begin{equation}
+表~\ref{tab:8.5.4} 给出第一个曲线回归方程的残差平方和的计算过程,由于 $n=13$ , $\sum\limits_{i=1}^{13}(y_i-\bar{y})^2=0.5743$ ,故其决定系数及剩余标准差分别为：
+\begin{equation*}
 R^{2}=1-\frac{0.5743}{21.2105}=0.9729, \quad s=\sqrt{\frac{0.5743}{13-2}}=0.2285
-\end{equation}
+\end{equation*}
 % Table generated by Excel2LaTeX from sheet '1'
 \begin{table}[htbp]
+  \renewcommand*{\arraystretch}{1.5}
     \centering
     \caption{第一个方程的残整平方和计算表}
     \begin{tabular}{cccc|cccc}
         \toprule
-     $y_i$   &  $\hat{y}_i$  &  $\hat{e}_i$  &  $\hat{e}_i^2$  &  $y_i$   &  $\hat{y}_i$  &  $\hat{e}_i$  &  $\hat{e}_i^2$  \\\midrule
+     $y_i$   &  $\hat{y}_i$  &  $\hat{e}_i=y_{i} - \hat{y}_i$  &  $\hat{e}_i^2$  &  $y_i$   &  $\hat{y}_i$  &  $\hat{e}_i$  &  $\hat{e}_i^2$  \\\midrule
         106.42 & 106.596 & -0.179 & 0.030976 & 110.59 & 110.595 & -0.00489 & 0.000024 \\
         108.2 & 108.19 & 0.010252 & 0.000105 & 110.6 & 110.793 & -0.193 & 0.037249 \\
         109.52 & 109.005 & 0.575373 & 0.331054 & 110.9 & 110.841 & 0.059 & 0.003481 \\
@@ -2131,8 +2159,8 @@ R^{2}=1-\frac{0.5743}{21.2105}=0.9729, \quad s=\sqrt{\frac{0.5743}{13-2}}=0.2285
     \end{tabular}%
     \label{tab:8.5.4}%
 \end{table}%
-其他三个方程的决定系数及剩余标准差可同样计算, 我们将它们列在表~\ref{tab:8.5.5}中.
-\begin{table}[htb]
+其他三个方程的决定系数及剩余标准差可同样计算, 我们将它们列在表~\ref{tab:8.5.5} 中.
+\begin{table}[!htb]
     \centering
     \caption{四种曲线回归的决定系数及剩余标准整}
     \begin{tabular}{ccccc}
@@ -2145,10 +2173,13 @@ R^{2}=1-\frac{0.5743}{21.2105}=0.9729, \quad s=\sqrt{\frac{0.5743}{13-2}}=0.2285
     \end{tabular}%
     \label{tab:8.5.5}%
 \end{table}%
-从表~\ref{tab:8.5.5}中可以看出,第一个曲线方程的决定系数最大,剩余标准差最小,在这四个曲线回归方程中,不论用哪个标准,都是第一个方程拟合得最好.因此,近似得比较好的定量关系式就是
-\begin{equation}
+
+从表~\ref{tab:8.5.5} 中可以看出,第一个曲线方程的决定系数最大,剩余标准差最小,在这四个曲线回归方程中,不论用哪个标准,都是第一个方程拟合得最好.因此,近似得比较好的定量关系式就是
+\begin{equation*}
 \hat{y}=\frac{x}{0.00082917 + 0.008 96663 x}  
-\end{equation}
+\end{equation*}
+
+\vskip4ex
 
 \begin{xiti}
     \item 设曲线函数形式为 $y = a + b \ln x$, 试给出一个变换将之化为一元线性回归的形式.
@@ -2157,12 +2188,12 @@ R^{2}=1-\frac{0.5743}{21.2105}=0.9729, \quad s=\sqrt{\frac{0.5743}{13-2}}=0.2285
     \item 设曲线函数形式为 $y = a + e^{bz}$, 问能否找到一个变换将之化为一元线性回归的形式,若能,试给出；若不能,说明理由.
     \item 设曲线函数形式为 $\displaystyle y = \frac{1}{a + be^{-x}}$, 问能否找到一个变换将之化为一元线性回归的形式,若能,试给出；若不能,说明理由.
     \item 设曲线函数形式为 $y = a e^{b/x}$ ,问能否找到一个变换将之化为一元线性回归的形式,若能,试给出；若不能,说明理由.
-    \item 为了检验 $X$ 射线的杀菌作用,用 \SI{200}{\kV} 的 X 射线照射杀菌,每次照射 \SI{6}{\minute} ,照射次数为 $x$ ,照射后所剩细菌数为 $y$ ,下表是一组试验结果
+    \item 为了检验 $X$ 射线的杀菌作用,用 \SI{200}{\kV} 的 $X$ 射线照射杀菌,每次照射 \SI{6}{\minute}, 照射次数为 $x$ ,照射后所剩细菌数为 $y$ ,下表是一组试验结果
     \begin{equation*}
-    \begin{array}{cc||cc||cc}
-  \toprule
+    \begin{array}{cc|cc|cc}
+  \hline
     x     & y     & x     & y     & x     & y \\
-  \midrule
+  \hline
     1     & 783   & 8     & 154   & 15    & 28 \\
     2     & 621   & 9     & 129   & 16    & 20 \\
     3     & 433   & 10    & 103   & 17    & 16 \\
@@ -2170,7 +2201,7 @@ R^{2}=1-\frac{0.5743}{21.2105}=0.9729, \quad s=\sqrt{\frac{0.5743}{13-2}}=0.2285
     5     & 287   & 12    & 50    & 19    & 9  \\
     6     & 251   & 13    & 43    & 20    & 7  \\
     7     & 175   & 14    & 31    &       &    \\
-  \bottomrule
+  \hline
     \end{array}%
     \end{equation*}
     根据经验知道 $y$ 关于 $x$ 的曲线回归方程形如 
