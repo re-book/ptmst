@@ -8,7 +8,8 @@
 \subsection{假设检验问题\label{7.1.1}}
 我们从一个例子开始引出假设检验问题。
 \begin{example}\label{exam7.1.1}
-某厂生产的合金强度服从正态分布 $N(\theta,16)$ ，其中 $\theta$ 的设计值为不低于 110Pa .为保证质量，该厂每天都要对生产情况做例行检查，以判断生产是否正常进行，即该合金的平均强度不低于 110(Pa) .某天从生产中随机抽取25块合金，测得强度值为 $x_{1},x_{2},\dotsc,x_{25}$ 其均值为 $\overline{x}=108$(Pa) ，间当日生产是否正常？
+
+某厂生产的合金强度服从正态分布 $N(\theta,16)$ ，其中 $\theta$ 的设计值为不低于 110Pa .为保证质量，该厂每天都要对生产情况做例行检查，以判断生产是否正常进行，即该合金的平均强度不低于 110(pa) .某天从生产中随机抽取25块合金，测得强度值为 $x_{1},x_{2},\dotsc,x_{25}$ 其均值为 $\overline{x}=108(\mathrm {Pa})$ ，间当日生产是否正常？
 
 对这个实际问题可作如下分析；
 \begin{enumerate}
@@ -288,6 +289,7 @@ W=\left\{\left|\mu\right|\geq_{1-\alpha/2}\right\}
 \end{align*}
 
 由图\ref{fig7.2.2}可以看出，对三种假设检验问题，只要在$\mu=\mu_{ 0 }$处控制检验犯第一类错误的概率为$\alpha$，则检验就是水平为$\alpha$的显著性检验.这不是偶然的现象，具有一般性，这为求显著性检验提供了很大的方便.
+
 \begin{example}\label{exam7.2.1}
 从甲地发送一个讯号到乙地.设乙地接受到的讯号值是一个服从正态分布$N(\mu ,0.2^{2})$的随机变量，其中$\mu $为甲地发送的真实讯号值.现甲地重复发送同一讯号5次，乙地接收到的讯号值为
 \[8.05 \quad 8.15 \quad 8.2 \quad 8.1 \quad 8.25\]
@@ -688,7 +690,9 @@ W=\left\{\chi^2\leq\chi_{\alpha/2}^{2}\left(2n\right)\textrm{或}\chi^2\geq\chi_
 	\[\chi ^ { 2 } = \frac { 10 \overline { x } } { \theta _ { 0 } } = \frac { 10 \times 4462.6 } { 6000 } = 7.4377\]
 	若取$\alpha = 0.05$，则查表知$\chi _ { 0.05 } ^ { 2 } ( 10 ) = 3.94$，由于$\chi^{2}>\chi _ { 0.05 } ^ { 2 } ( 10 ) $，故接受原假设可以认为平均寿命不低于6000h.
 \end{example}
+
 \subsection{比例 $p$ 检验\label{sec:7.3.2}}
+
 比例$p$可看作某事件发生的概率，即可看作二点分布$b(1,p)$中的参数.作$n$次独立试验，以$x$记该事件发生的次数，则$x\sim b(n,p)$.我们可以根据$x$检验关于$p$的一些假设.先考虑如下单边假设检验问题.
 \begin{equation}\label{eq7.3.8}
 H _ { 0 } : p \leq p _ { 0 } \quad \text { vs } \quad H _ { 1 } : p > p _ { 0 }
@@ -827,6 +831,7 @@ u=\frac{\sqrt{n}\left(\overline{x}-\theta_0\right)}{\sqrt{\sigma^2\left(\theta_0
 	\item 当$\alpha<0.0179$时，$u _ { 1 - a } > 2.10$.于是2.10就不在$\{ u > u _ { 1 - a } \}$中，此时应接受原假设；
 	\item 当$\alpha\geq 0.0179$时，$u _ { 1 - a } \leq  2.10$.于是2.10就落在$\{ u \geq u _ { 1 - a } \}$中，此时应拒绝$H_{0}$.
 \end{itemize}
+
 	由此可以看出，0.0179是能用观测值2.10做出“拒绝$H_{0}$”的最小的显著性水平，这就是$p$值，直观图形见图~\ref{fig7.3.1}.
 \end{example}
 \begin{figure}[htbp]
@@ -834,6 +839,7 @@ u=\frac{\sqrt{n}\left(\overline{x}-\theta_0\right)}{\sqrt{\sigma^2\left(\theta_0
 	\includegraphics[width=0.6\textwidth]{fig7-3-1.png}
 	\caption{观测值$\mu =2.10$对应的$p$值}\label{fig7.3.1}
 \end{figure}
+
 
 \begin{definition}{}{def:7.3.1}
 	在一个假设检验问题中，利用观测值能够做出拒绝原假设的最小显著性水平称为检验的$p$值.
@@ -876,11 +882,13 @@ W=\left\{F\geq F_{1-\alpha/2}\left(8,10\right)\textrm{或}F\leq F_{a/2}\left(8,1
 其次考虑到双侧检验的拒绝域W分散在两端，且两端尾部概率相等（见图
 7.3.2），据此可定出$p$值为
 \[p = 2 P ( F \geq 3.4494 ) = 0.0708\]
+
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[width=0.6\textwidth]{fig7-3-2.png}
 	\caption{观测值$F=3.4494$对应的$p$值由两端尾部概率之和确定}\label{fig7.3.2}
 \end{figure}
+
 此$p$值不算很小，若心目中的$\alpha=0.05$，则接受两方差相等的假设.
 \end{solution}
 \begin{xiti}
@@ -907,7 +915,9 @@ W=\left\{F\geq F_{1-\alpha/2}\left(8,10\right)\textrm{或}F\leq F_{a/2}\left(8,1
 \section{分布拟合检验\label{sec:7.4}}
 在前面我们讨论的检验问题都是在总体分布形式已知的前提下对分布的参数建立假设并进行检验，它们都属于参数假设检验问题.下面我们对总体分布的形式建立假设并进行检验.这一类检验问题统称为分布的拟合检验，它们是一类非参数检验问题.
 
+
 \subsection{总体分布只取有限个值的情况\label{sec:7.3.1}}
+
 设总体$X$可以分成$k$类，记为$A_{1},\dotsc,A_{k}$，现对该总体做了$n$次观测，$k$个类出现的频数分别为$n_{1},\dotsc,n_{k}$，且$\sum _ { i = 1 } ^ { k } n _ { i } = n$.如今要检验的假设为
 \begin{equation}\label{eq7.4.1}
 H _ { 0 } : P \left( A _ { i } \right) = p _ { i } , \quad i = 1,2 , \cdots , k
@@ -916,10 +926,12 @@ H _ { 0 } : P \left( A _ { i } \right) = p _ { i } , \quad i = 1,2 , \cdots , k
 
 \textbf{一、诸$p_{i}$均已知}
 
+
 如果$H_{0}$成立，则对每一类$A_{i}$，其频率$n_{i}/n$与概率$p_{i}$应较接近.或者说，观测频数$n_{i}$与理论频数$np_{i}$应相差不大.据此，英国统计学家K.Pearson提出如下检验统计量
 \begin{equation}\label{eq7.4.2}
 \chi ^ { 2 } = \sum _ { i = 1 } ^ { k } \frac { \left( n _ { i } - n p _ { i } \right) ^ { 2 } } { n p _ { i } }
 \end{equation}
+
 
 并证明在$H_{0}$成立时对充分大的$n$，（\ref{eq7.4.2}）给出的检验统计量$\chi^{2}$近似服从自由度为$k-1$的$\chi^{2}$分布.由于统计量$\chi^{2}$度量的是观测频数$n_{i}$与理论频数$np$；的偏离程度，$\chi^{2}$值大，表示偏离程度大，偏离程度越大越倾向于拒绝原假设$H_{0}$.因此，对给定的显著性水平$\alpha(0<\alpha<1)$，该检验的拒绝域应为
 \begin{equation}\label{eq7.4.3}
@@ -939,6 +951,7 @@ W=\left\{\chi^2\geq\chi_{1-\alpha}^{2}\left(k-1\right)\right\}
 	现20人参加摇奖，摇得5万、10万、20万、30万、50万和100万的人数分别为2、6、6、3、3、0，由于没有一个人摇到100万，于是有人怀疑大转盘是不均匀的，那么该怀疑是否成立呢？这就需要对转盘的均匀性做检验.
 \end{example}
 \begin{solution}
+
 这是一个典型的分布拟合优度检验，总体共有6类，其发生概率分别为0.1、0.2、0.3、0.2、0.1和0.1.这里 $k=6$，检验拒绝域为$\left\{ x ^ { 2 } \geq x _ { 1 - a } ^ { 2 } ( 5 ) \right\}$，若取$\alpha=0.05$，则查附表3知$\chi _ { 0.95 } ^ { 2 } ( 5 ) = 11.07$.由本例数据，依（\ref{eq7.4.2}）可以算出
 \[x ^ { 2 } = \frac { ( 2 - 2 ) ^ { 2 } } { 2 } + \frac { ( 6 - 4 ) ^ { 2 } } { 4 } + \frac { ( 6 - 6 ) ^ { 2 } } { 6 } + \frac { ( 3 - 4 ) ^ { 2 } } { 4 } +\frac { ( 3 - 2 ) ^ { 2 } } { 2 } + \frac { ( 0 - 2 ) ^ { 2 } } { 2 } = 3.75\]
 由于$x ^ { 2 } = 3.75$未落入拒绝域，故接受原假设，没有理由认为转盘不均匀.
@@ -948,6 +961,7 @@ W=\left\{\chi^2\geq\chi_{1-\alpha}^{2}\left(k-1\right)\right\}
 \end{solution}
 \subsection{列联表的独立性检验\label{sec:7.3.2}}
 \subsection{正态性检验\label{sec:7.3.3}}
+
 
 \begin{xiti}
 	\item 有人对 $\pi =3.1415926\dotsc $的小数点后800位数字中数字 $0,1,2,\dotsc,9$ 出现的次数进行了统计，结果如下
@@ -1050,6 +1064,7 @@ W=\left\{\chi^2\geq\chi_{1-\alpha}^{2}\left(k-1\right)\right\}
 	\end{tabularx}
 \end{table}
 
+
 是否可以认为被害人肤色不同不会影响对被告的死刑判决？
 
 \item 某调查机构连续三年对某城市的居民进行热点调查：对下列四个问题，（1）收入、（2）物价、（3）住房、（4）交通，要求被调查者选择其中之一作为最关心的问题.调查结果如下：
@@ -1080,5 +1095,6 @@ W=\left\{\chi^2\geq\chi_{1-\alpha}^{2}\left(k-1\right)\right\}
 \[
 1.0114\quad 0.9949\quad 0.9925\quad 0.9941\quad 0.9705\quad 0.9953\quad 1.0024\quad 1.0063
 \]
+
 试在显著性水平0.01下对这批数据做正态性检验.
 \end{xiti}
