@@ -264,7 +264,9 @@
 \setlist[itemize,2]{label={\eitemii}}
 \setlist[itemize,3]{label={\eitemiii}}
 
-\RequirePackage{natbib}
+% \RequirePackage{natbib}
+\RequirePackage{gbt7714}
+\bibliographystyle{gbt7714-numerical}
 \setlength{\bibsep}{0.0pt}
 \def\bibfont{\footnotesize}
 
