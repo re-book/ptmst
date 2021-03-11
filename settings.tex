@@ -106,7 +106,11 @@
 \newcommand{\Rmnum}[1]{\expandafter\@slowromancap\romannumeral #1@}
 \makeatother
 \let\Theta\varTheta
-\def\hyds{\CJKfontspec{汉仪大宋简}}
+\IfFontExistsTF{汉仪大宋简}{
+  \newCJKfontfamily\hyds{汉仪大宋简}
+}{
+  \let\hyds\rmfamily
+}
 \let\bfseries\hyds
 \let\Phi\varPhi
 
