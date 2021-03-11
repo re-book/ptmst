@@ -1,8 +1,7 @@
+\PassOptionsToPackage{inline}{enumitem}
 \documentclass[cn,simple]{elegantbook}
-%\usepackage{bm}
-\DeclareMathOperator{\Cov}{Cov}
-\DeclareMathOperator{\Corr}{Corr}
-\DeclareMathOperator{\Var}{Var}
+
+
 \title{概率论与数理统计教程}
 \subtitle{经典书籍重排}
 
@@ -12,25 +11,30 @@
 
 \input{settings}
 
+
+
 \version{ 3.00}
 \equote{普通高等教育“十五”国家级规划教材}
 \logo{REBook.png}
 \cover{cover.jpg}
+\bibliographystyle{plain}
 
-\usepackage{siunitx}
 
 \begin{document}
 
 \setlength{\abovedisplayskip}{3pt}
 \setlength{\belowdisplayskip}{3pt}
 \maketitle
-\tableofcontents
-\clearpage
+
+
 
 
 \mainmatter
 \hypersetup{pageanchor=true}
 
+\include{preface}
+\tableofcontents
+\cleardoublepage
 \include{chapter1}
 \include{chapter2}
 \include{chapter3}
@@ -39,7 +43,16 @@
 \include{chapter6}
 \include{chapter7}
 \include{chapter8}
+\include{appendix}
+\include{answer}
 
 
+
+\catcode`\,=13
+\newcommand{,}{，}
+
+\indexprologue{这里列出本文涉及的所有名词。}
 \printindex
+\nocite{*}
+\bibliography{ref}
 \end{document}

@@ -3,37 +3,37 @@
 % Edit by:XAjzh and sikouhjw
 
 \chapter{多维随机变量及其分布}\label{cha:3}
-在有些随机现象中, 对每个样本点 $\omega$ 只用一个随机变量去描述是不够的, 
-譬如要研究儿童的生长发育情况, 仅研究儿童的身高 $X(\omega)$ 或仅研究其体重 $Y(\omega)$都是片面的, 
-有必要把 $X(\omega)$ 和 $Y(\omega)$ 作为一个整体来考虑, 讨论它们总体变化的统计规律性, 
-进一步可以讨论 $X(\omega)$ 与 $Y(\omega)$ 之间的关系, 在有些随机现象中, 甚至要同时研究二个以上随机变量. 
+在有些随机现象中, 对每个样本点 $\omega$ 只用一个随机变量去描述是不够的,
+譬如要研究儿童的生长发育情况, 仅研究儿童的身高 $X(\omega)$ 或仅研究其体重 $Y(\omega)$都是片面的,
+有必要把 $X(\omega)$ 和 $Y(\omega)$ 作为一个整体来考虑, 讨论它们总体变化的统计规律性,
+进一步可以讨论 $X(\omega)$ 与 $Y(\omega)$ 之间的关系, 在有些随机现象中, 甚至要同时研究二个以上随机变量.
 
-如何来研究多维随机变量的统计规律性呢, 仿一维随机变量, 我们先研究联合分布函数, 
-然后研究离散随机变量的联合分布列、连续随机变量的联合密度函数. 
+如何来研究多维随机变量的统计规律性呢, 仿一维随机变量, 我们先研究联合分布函数,
+然后研究离散随机变量的联合分布列、连续随机变量的联合密度函数.
 
 \section{多维随机变量及其联合分布}\label{sec:3.1}
 
 \subsection{多维随机变量}\label{ssec:3.1.1}
-下面我们先给出 $n$ 维随机变量的定义. 
+下面我们先给出 $n$ 维随机变量的定义.
 \begin{definition}{随机变量}{3.1.1}
 	如果 $X_1(\omega),X_2(\omega),\ldots,X_n(\omega)$ 是定义在同一
 	样本空间 $\Omega=\left\{\omega\right\}$ 上的 $n$ 个随机变量, 则称
 	\[
 	X(\omega)=(X_1(\omega),X_2(\omega),\ldots,X_n(\omega))
 	\]
-	为 $n$ 维（或 $n$ 元）\textbf{随机变量}\index{S!随机变量}或\textbf{随机向量}\index{S!随机向量}. 
+	为 $n$ 维（或 $n$ 元）\textbf{随机变量}\index{S!随机变量}或\textbf{随机向量}\index{S!随机向量}.
 \end{definition}
 注意, 多维随机变量的关键是定义在同一样本空间上, 对于不同样本空间上的两个随机变量, 我们只能在
-乘积空间 $\Omega_1\times \Omega_2=\left\{(\omega_1,\omega_2);\omega_1 \in \Omega_1,\omega_2 \in \Omega_2 \right\}$ 上讨论, 
- 这要用到更多的工具, 本章将不涉及这类问题. 
-      
+乘积空间 $\Omega_1\times \Omega_2=\left\{(\omega_1,\omega_2);\omega_1 \in \Omega_1,\omega_2 \in \Omega_2 \right\}$ 上讨论,
+ 这要用到更多的工具, 本章将不涉及这类问题.
+
  在实际问题中, 多维随机变量的情况是经常会遇到的譬如
   \begin{itemize}
-  	\item 在研究四岁至六岁儿童的生长发育情况时, 我们感兴趣于每个儿童 (样本点 $\omega$) 的身高 $X_1(\omega)$ 
-  	和体重 $X_2(\omega)$ . 这里 $(X_1(\omega),X_2(\omega))$ 是一个二维随机变量. 
-  	\item 在研究每个家庭的支出情况时, 我们感兴趣于每个家庭 (样本点 $\omega$) 的衣食住行四个方面, 
-  	若用 $X_1(\omega),X_2(\omega),X_3(\omega),X_4(\omega)$ 分别表示衣食住行的花费占其家庭总收人的百分比, 
-  	则 $(X_1(\omega),X_2(\omega),X_3(\omega),X_4(\omega))$ 就是一个四维随机变量. 
+  	\item 在研究四岁至六岁儿童的生长发育情况时, 我们感兴趣于每个儿童 (样本点 $\omega$) 的身高 $X_1(\omega)$
+  	和体重 $X_2(\omega)$ . 这里 $(X_1(\omega),X_2(\omega))$ 是一个二维随机变量.
+  	\item 在研究每个家庭的支出情况时, 我们感兴趣于每个家庭 (样本点 $\omega$) 的衣食住行四个方面,
+  	若用 $X_1(\omega),X_2(\omega),X_3(\omega),X_4(\omega)$ 分别表示衣食住行的花费占其家庭总收人的百分比,
+  	则 $(X_1(\omega),X_2(\omega),X_3(\omega),X_4(\omega))$ 就是一个四维随机变量.
   \end{itemize}
 
   \subsection{联合分布函数}\label{ssec:3.1.2}
@@ -42,25 +42,30 @@
     \begin{equation}
     	F\left(x_{1}, x_{2}, \cdots, x_{n}\right)=P\left(X_{1} \leq x_{1}, X_{2} \leq x_{2}, \ldots, X_{n} \leq x_{n}\right)\label{eq:3.1.1}
     \end{equation}
-	称为 $n$ 维随机变量 $(X_1,X_2,\ldots,X_n)$ 的\textbf{联合分布函数}\index{L!联合分布函数}. 
+	称为 $n$ 维随机变量 $(X_1,X_2,\ldots,X_n)$ 的\textbf{联合分布函数}\index{L!联合分布函数}.
   \end{definition}
-   本章主要研究二维随机变量, 二维以上的情况可类似进行. 
+   本章主要研究二维随机变量, 二维以上的情况可类似进行.
 
-   在二维随机变量 $(X,Y)$ 场合, 联合分布函数 $F(x,y)=P(X\leq x,Y\leq y)$ 是事件 $\{X\leq x\}$ 与 $\{Y \leq y\}$ 同时发生（交）的概率. 
+   在二维随机变量 $(X,Y)$ 场合, 联合分布函数 $F(x,y)=P(X\leq x,Y\leq y)$ 是事件 $\{X\leq x\}$ 与 $\{Y \leq y\}$ 同时发生（交）的概率.
    如果将二维随机变量 $(X,Y)$ 看成是平面上随机点的坐标, 那么联合分布函数 $F(x,y)$ 在 $(x,y)$ 处的函数值就是随机点 $(X, Y)$ 落在
    以 $(x,y)$ 为右上角的无穷矩形内的概率, 见图~\ref{fig:3.1.1} .
    \begin{figure}[htbp]
    	\centering
-   	\includegraphics[width=0.4\textwidth]{fig3-1-1.pdf}
+   	\begin{tikzpicture}
+   	  \draw [-Stealth] (-2,0) -- (3,0) node[below] {$x$};
+      \draw [-Stealth] (0,-2) -- (0,3) node[left] {$y$};
+      \fill [pattern = north east lines] (2,-1.2) -- (2,2) node [above right]{$(x,y)$} -- (-1.2,2) -- (-1.2,-1.2);
+      \draw [thick] (2,-1.2) -- (2,2) -- (-1.2,2);
+   	\end{tikzpicture}
    	\caption{联合分布函数示意图}\label{fig:3.1.1}
    \end{figure}
    \begin{theorem}{}{3.1.1}
-   	任一二维联合分布函数 $F(x,y)$ 必具有如下四条基本性质: 
+   	任一二维联合分布函数 $F(x,y)$ 必具有如下四条基本性质:
     \begin{enumerate}
     	\item \textbf{单调性}\quad $F(x,y)$ 分别对 $x$ 或 $y$ 是单调不减的, 即
     	\begin{itemize}
     		\item 当 $x_1<x_2$ 时, 有 $F(x_1,y)\leq F(x_2,y)$.
-    		\item 当 $y_1<y_2$ 时, 有 $F(x,y_1)\leq F(x,y_2)$. 
+    		\item 当 $y_1<y_2$ 时, 有 $F(x,y_1)\leq F(x,y_2)$.
     	\end{itemize}
     	\item \textbf{有界性}\quad 对任意的 $x$ 和 $y$, 有 $0\leq F(x,y) \leq 1$, 且
     	\begin{align*}
@@ -69,7 +74,7 @@
     		&F(+\infty,+\infty)=\lim_{x,y\to +\infty}(x,y)=1.&
     	\end{align*}
     	\item \textbf{右连续性}\quad  对每个变量都是右连续的, 即
-    		\begin{align*} 
+    		\begin{align*}
     			F(x+0, y) &=F(x, y), &\hspace*{3cm} \\
     			F(x, y+0) &=F(x, y). &
     		\end{align*}
@@ -87,7 +92,7 @@
     		\]
     		由此可得
     		\[
-    			F\left(x_{1}, y\right)=P\left(X \leq x_{1}, Y \leq y\right) \leq 
+    			F\left(x_{1}, y\right)=P\left(X \leq x_{1}, Y \leq y\right) \leq
     			P\left(X \leq x_{2}, Y \leq y\right)=F\left(x_{2}, y\right),
     		\]
     		即 $F(x,y)$ 关于 $x$ 是单调不减的, 同理可证 $F(x,y)$ 关于 $y$ 是单调不减的.
@@ -124,13 +129,19 @@
         		 &=P(B D)-P(A D)-P(B C)+P(A B C D) \\
         		 &=P(B D)-P(A D)-P(B C)+P(A C ) \\
         		 &=P(B D)-P(A D)-P(B C)+P(A B C D) \\
-        		 &=F(b, d)-F(a, d)-F(b, c)+F(a, c). 
+        		 &=F(b, d)-F(a, d)-F(b, c)+F(a, c).
         	\end{align*}
     	\end{enumerate}
     \end{proof}
    \begin{figure}[htbp]
    	\centering
-   	\includegraphics[width=0.4\textwidth]{fig3-1-2.pdf}
+   	\begin{tikzpicture}[yscale=0.9]
+   	  \draw [-Stealth] (-1,0) -- (0,0) node[below left]{$O$} -- (4,0) node[below] {$x$};
+      \draw [-Stealth] (0,-1) -- (0,3) node[left] {$y$};
+      \draw [thick] (1,1) -- (3,1) -- (3,2) -- (1,2) -- cycle;
+      \draw [densely dashed] (1,1) -- (1,0) node[below] {$a$}
+      (3,1) -- (3,0) node[below]{$b$} (1,1) -- (0,1) node[left] {$c$} (1,2) -- (0,2) node[left]{$d$};
+   	\end{tikzpicture}
    	\caption{二维随机变量 $(X,Y)$ 落在矩形中的情况}\label{fig:3.1.2}
    \end{figure}
    还可证明, 具有上述四条性质的二元函数 $F(x,y)$ 一定是某个二维随机变量的分布函数.
@@ -150,10 +161,10 @@
    	满足二维分布函数的性质 \textit{1,2,3}, 但它不满足性质 \textit{4}.
 
     这从 $G(x,y)$ 的定义可看出: 若用 $x+y=0$ 将平面 $xOy$ 一分为二, 则
- 
-    $G(x,y)$ 在右上半平面 $(x+y\geq 0)$ 取值为1, 
-   
-    $G(x,y)$ 在左下半平面 $(x+y\geq 0)$ 取值为0, 
+
+    $G(x,y)$ 在右上半平面 $(x+y\geq 0)$ 取值为1,
+
+    $G(x,y)$ 在左下半平面 $(x+y\geq 0)$ 取值为0,
 
     $G(x,y)$ 具有非降性、有界性和右连续性, 但在正方形区域 $\{(x,y); -1\leq x\leq 1,-1\leq y\leq 1\}$的四个顶点上, 右上
     三个顶点位于右上半闭平面, 只有左下顶点 $(-1,-1)$ 位于左下半开平面, 故有
@@ -176,20 +187,20 @@
    		\begin{tabularx}{0.8\textwidth}{ZZZZZZ}
    		\toprule
    		 & \multicolumn{5}{c}{$Y$} \\
-   		 \cmidrule{2-6} 
+   		 \cmidrule{2-6}
    		 $X$	&	$y_1$&	$y_2$&	\ldots&	$y_j$& \ldots	\\
-   		 \midrule 
+   		 \midrule
    		 $x_1$& $p_{11}$ & $p_{12}$ & \ldots & $p_{1j}$ & \ldots \\
-   		 \midrule 
+   		 \midrule
    		 $x_2$& $p_{21}$ & $p_{22}$ & \ldots & $p_{2j}$ & \ldots \\
-   		 \midrule 
+   		 \midrule
    		 $\vdots$& $\vdots$ & $\vdots$ & $\ddots$ & $\vdots$ & $\ddots$ \\
-   		 \midrule 
+   		 \midrule
    		$x_i$ & $p_{i1}$ & $p_{i2}$ & \ldots & $p_{ij}$  & \ldots \\
-   		\midrule 
+   		\midrule
    		 $\vdots$& $\vdots$ & $\vdots$ & $\ddots$ & $\vdots$ & $\ddots$ \\
    		 \bottomrule
-   		\end{tabularx} 
+   		\end{tabularx}
    \end{center}
    联合分布函数的基本性质:
    \begin{enumerate}
@@ -199,17 +210,17 @@
    求二维离散随机变量的联合分布列, 关键是写出二维随机变量的可能取的数对及其发生的概率.
 
    \begin{example}\label{exam:3.1.2}
-   		从 1,2,3,4 中任取一数记为 $X$, 再从 $1,\ldots,X$ 中任取一数记为 $Y$. 求 $(X,Y)$ 的联合分布列及 $P(X=Y)$.     
+   		从 1,2,3,4 中任取一数记为 $X$, 再从 $1,\ldots,X$ 中任取一数记为 $Y$. 求 $(X,Y)$ 的联合分布列及 $P(X=Y)$.
    \end{example}
    \begin{solution}
    		$(X,Y)$ 为二维离散随机变量, 其中 $X$ 的分布列为
-         \[  
+         \[
          	 P(X=i)=1/4,i=1,2,3,4.
          \]
 		$Y$ 的可能取值也是 $1,2,3,4$, 若记 $j$ 为 $Y$ 的取值,
 
 		 则当 $j>i$ 时,有 $P(X=i,Y=j)=P(B)=0$.
-  
+
   		当 $1\leq j \leq i \leq 4$ 时, 由乘法公式
   		\[
   		 	P(X=i, Y=j)=P(X=i) P(Y=j | X=i)=\frac{1}{4} \times \frac{1}{i}.
@@ -230,7 +241,7 @@
 			 \midrule
 			 4&  1/16	&  1/16	&  1/16&  1/16\\
 			 \bottomrule
-			\end{tabularx} 
+			\end{tabularx}
 		\end{center}
 		由此可算得事件 $\{X=Y\}$ 的概率为
 		\[
@@ -251,10 +262,10 @@
    \]
    \textbf{联合密度函数的基本性质}:
    \begin{enumerate}
-   	\item \textbf{非负性}: $p(u,v)\geq 0$ 
+   	\item \textbf{非负性}: $p(u,v)\geq 0$
    	\item \textbf{正则性}: $\int_{-\infty}^{+\infty} \int_{-\infty}^{+\infty} p(u, v) \dd v \dd u=1$
    \end{enumerate}
-   给出联合密度函数 $p(x,y)$, 就可以求有关事件的概率了. 若 $G$ 为平面上的一个区域, 
+   给出联合密度函数 $p(x,y)$, 就可以求有关事件的概率了. 若 $G$ 为平面上的一个区域,
    则事件 $\{(X,Y) \in G\}$ 的概率可表示为在 $G$ 上对 $p(x,y)$的二重积分：
    \begin{equation}\label{eq:3.1.4}
     	P((X, Y) \in G)=\iint_{G} p(x, y) \dd x \dd y.
@@ -263,65 +274,77 @@
    \begin{example}\label{exam:3.1.3}
    		设 $(X,Y)$ 联合密度函数为
    		\[
-   		p(x, y)=\left\{
-   		\begin{array}{cc}
+   		p(x, y)=
+   		\begin{cases}
    		6 \ee^{-2 x-3 y}, & x>0, y>0; \\
    		0, & \text{其他} .
-   		\end{array}\right.
+   		\end{cases}
    		\]
    		试求: $(1)\; P(X<1,Y>1); \; (2)\; P(X>Y)$.
    \end{example}
    \begin{solution}
   		\begin{enumerate}
-  		\item 积分区域见图~\ref{fig:3.1.3a} 中的阴影部分, 
-  		\begin{align*} 
+  		\item 积分区域见图~\ref{fig:3.1.3a} 中的阴影部分,
+  		\begin{align*}
   		 P(X<1, Y>1) &=\int_{1}^{+\infty} \int_{0}^{1} 6 \ee^{-2 x-3 y} \dd x \dd y \\
   		 &=6 \int_{0}^{1} \ee^{-2 x} \dd x \int_{1}^{+\infty} \ee^{-3 x} \dd y \\
-  		 &=\left(1-\ee^{-2}\right) \ee^{-3}=0.0430. 
+  		 &=\left(1-\ee^{-2}\right) \ee^{-3}=0.0430.
   		\end{align*}
   		\item 积分区域见图~\ref{fig:3.1.3b} 中的阴影部分, 从而容易写出累次积分.
-  		\begin{align*} 
+  		\begin{align*}
   		 P(X>Y) &=\int_{0}^{+\infty} \int_{0}^{x} 6 \ee^{-2 x} \ee^{-3 y} \dd y \dd x=
   		 \int_{0}^{+\infty} 2 \ee^{-2 x}\left(1-\ee^{-3 x}\right) \dd x \\
   		 &=\left[-\ee^{-2 x}+\frac{1}{5} \ee^{-5 x}\right]_{0}^{+\infty}=1-\frac{1}{5}=\frac{4}{5} .
   		\end{align*}
-  		\end{enumerate}             
+  		\end{enumerate}
    \end{solution}
    \begin{figure}[htbp]
    \centering
    \subfloat[$\{x<1,y>1\}$ 区域 $D_1$]{\label{fig:3.1.3a}
-   \includegraphics[width=0.4\textwidth]{fig3-1-3a.pdf}
+     \begin{tikzpicture}[scale=2]
+       \fill [pattern = north east lines] (0,1) -- (1,1) -- (1,1.7) -- (0,1.7);
+       \draw [-Stealth] (-0.3,0) -- (0,0) node[below left] {$O$} -- (1,0)node[below]{1} -- (2,0) node[below] {$x$};
+       \draw [-Stealth] (0,-0.2) -- (0,1) node[left]{1}  -- (0,1.7) node[left]{$y$} ;
+       \node[inner sep=0pt,fill = white] at (0.4,1.3) {$D_1$};
+       \draw [thick] (1,0) -- (1,1.7) (0,1) -- (1.3,1);
+     \end{tikzpicture}
    }\qquad
    \subfloat[$\{x>y\}$ 区域 $D_2$]{\label{fig:3.1.3b}
-   \includegraphics[width=0.4\textwidth]{fig3-1-3b.pdf}
+     \begin{tikzpicture}
+       \fill [pattern = vertical lines] (0,0) -- (3,0) -- (3,3);
+       \draw [-Stealth] (-0.6,0) -- (0,0) node[below left] {$O$} -- (4,0) node [below] {$x$} ;
+       \draw [-Stealth] (0,-0.4) -- (0,3.6) node[left]{$y$};
+       \draw [thick] (0,0) -- (3.5,3.5);
+       \node[inner sep=0pt,fill = white] at (2,1) {$D_2$};
+     \end{tikzpicture}
    }
    \caption{$p(x,y)$ 的非零区域与有关事件的交集部分}\label{fig:3.1.3}
    \end{figure}
-   
+
   \subsection{常用多维分布}\label{ssec:3.1.5}
-  下面介绍一些多维随机变量的常用分布. 
-   
+  下面介绍一些多维随机变量的常用分布.
+
   \textbf{一、多项分布 }
-   
+
   多项分布是重要的多维离散分布, 它是二项分布的推广.
-  
-  进行 $n$ 次独立重复试验, 如果每次试验有 $r$ 个可能结果: $A_1, A_2$,\ldots,$A_r$, 且每次试验中 $A_i$ 发生的
+
+  进行 $n$ 次独立重复试验, 如果每次试验有 $r$ 个可能结果: $A_1, A_2,\cdots,A_r$, 且每次试验中 $A_i$ 发生的
   概率为 $p_{i}=P\left(A_{i}\right), i=1,2, \ldots, r . p_{1}+p_{2}+\cdots+p_{r}=1$.
-  记 $X_i$ 为 $n$ 次独立重复试验中 $A_i$ 出现的次数, $i=1,2,\ldots,r$. 则 $(X_1,X_2,\ldots,X_r)$ 
+  记 $X_i$ 为 $n$ 次独立重复试验中 $A_i$ 出现的次数, $i=1,2,\ldots,r$. 则 $(X_1,X_2,\ldots,X_r)$
   取值 $(n_1,n_2,\ldots,n_r)$ 的概率, 即 $A_1$ 出现 $n_1$ 次, $A_2$ 出现$n_2$ 次\ldots\ldots $A_r$ 出现 $n_r$ 次的概率为
   \begin{equation}
 	  P\left(X_{1}=n_{1}, X_{2}=n_{2}, \ldots, X_{r}=n_{r}\right)=\frac{n !}{n_{1} ! n_{2} ! \cdots n_{r} !} p_{1}^{n_{1}} p_{2}^{n_{2}} \ldots p_{r}^{n_r},
   \end{equation}
   其中 $n=n_1+n_2+\cdots+n_r$.
-  
+
   这个联合分布列称为 $r$ 项分布, 又称多项分布, 记为 $M(n,p_1,p_2,\ldots,p_r)$. 这个概率
   是多项式 $(p_1+p_2+\cdots+p_r)^n$ 展开式中的一项, 故其和为 1. 当 $r=2$ 时, 即为二项分布.
   \begin{example}\label{exam:3.1.4}
-    一批产品共有 100 件, 其中一等品 60 件、二等品 30 件、三等品 10 件. 
+    一批产品共有 100 件, 其中一等品 60 件、二等品 30 件、三等品 10 件.
     从这批产品中有放回地任取3件, 以 $X$ 和 $Y$ 分别表示取出的 3 件产品中一等品、二等品的件数, 求二维随机变量 $(X,Y)$ 的联合分布列.
   \end{example}
   \begin{solution}
-    因为 $X$ 和 $Y$ 的可能取值都是 0,1,2,3, 所以记 $(X,Y)$ 的联合分布列为
+    因为 $X$ 和 $Y$ 的可能取值都是 $0,1,2,3$, 所以记 $(X,Y)$ 的联合分布列为
     \begin{center}
       \begin{tabularx}{0.8\textwidth}{ZZZZZ}
         \toprule
@@ -343,7 +366,7 @@
     \[
       p_{13}=p_{22}=p_{23}=p_{31}=p_{32}=p_{33}=0.
     \]
-    而当 $i+j\leq 3$ 时, 事件 $\{X=i,Y=j\}$ 表示: 取出的 3 件产品中有 $i$ 件一等品、$j$ 件二等品、$3-i-j$ 件三等品的件数, 
+    而当 $i+j\leq 3$ 时, 事件 $\{X=i,Y=j\}$ 表示: 取出的 3 件产品中有 $i$ 件一等品、$j$ 件二等品、$3-i-j$ 件三等品的件数,
     所以有放回地抽取时, 对 $i+j\leq 3$, 有
     \[
       p_{i j}=\frac{3 !}{i ! j !(3-i-j) !}\left(\frac{6}{10}\right)^{i}\left(\frac{3}{10}\right)^{j}\left(\frac{1}{10}\right)^{3-i-j}.
@@ -386,8 +409,8 @@
  \end{equation}
  其中 $n_1+n_2+\cdots+n_r=n$.
  \begin{example}\label{exam:3.1.5}
- 将例~\ref{exam:3.1.4} 改成不放回抽样, 即从这批产品中不放回地任取 3 件, 记 $x$ 和 $Y$ 分别表示 3 件产品中一等品和二等品的件数, 
- 求二维随机变 $(X,Y)$ 的联合分布列. 
+ 将例~\ref{exam:3.1.4} 改成不放回抽样, 即从这批产品中不放回地任取 3 件, 记 $x$ 和 $Y$ 分别表示 3 件产品中一等品和二等品的件数,
+ 求二维随机变 $(X,Y)$ 的联合分布列.
  \end{example}
  \begin{solution}
 记 $i$ 与 $j$ 分别为 $X$ 与 $Y$ 的取值, 此时对 $i+j>3$, 有 $p_{ij}=0$, 即
@@ -430,7 +453,7 @@ P(X=0)=\sum_{j=0}^{3} P(X=0, Y=j)=0.0610
 \]
 \end{solution}
  此例是超几何分布的推广, 差别在于: 2.4 中讨论的是从“合格品”、“不合格品”两种情况中抽取, 而在此是从一等品、二等品
- 和三等品三种情况中抽取. 这里我们称它为三维超几何分布, 它是一种特殊的多维超几何分布. 
+ 和三等品三种情况中抽取. 这里我们称它为三维超几何分布, 它是一种特殊的多维超几何分布.
 
  \textbf{三、多维均匀分布}
 
@@ -449,7 +472,7 @@ P(X=0)=\sum_{j=0}^{3} P(X=0, Y=j)=0.0610
 \[
 P((X,Y)\in G)=\iint_G p(x,y) \dd x \dd y=\\int_G \frac{1}{S_D} \dd x \dd y =\frac{G\text{的面积}}{D\text{的面积}}.
 \]
-这正是几何概率的计算公式. 
+这正是几何概率的计算公式.
 \begin{example}\label{exam:3.1.6}
 设 $D$ 为平面上以原点为圆心、以 $r$ 为半径的圆, $(X,Y)$ 服从 $D$ 上的二维均匀分布, 其密度函数为
 \[
@@ -479,10 +502,10 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
 
 如果二维随机变量 $(X,Y)$ 的联合密度函数 (见图~\ref{fig:3.1.5}) 为
 	\begin{equation}\label{eq:3.1.8}
-	\begin{aligned} 
+	\begin{aligned}
 	p(x, y) &=\frac{1}{2 \pi \sigma_{1} \sigma_{2} \sqrt{1-\rho^{2}}} \exp \bigg\{-\frac{1}{2\left(1-\rho^{2}\right)}
 	\bigg[\frac{\left(x-\mu_{1}\right)^{2}}{\sigma_{1}^{2}}		\\
-	&-2 \rho \frac{\left(x-\mu_{1}\right)\left(y-\mu_{2}\right)}{\sigma_{1} \sigma_{2}}+\frac{\left(y-\mu_{2}\right)^{2}}{\sigma_{2}^{2}} 
+	&-2 \rho \frac{\left(x-\mu_{1}\right)\left(y-\mu_{2}\right)}{\sigma_{1} \sigma_{2}}+\frac{\left(y-\mu_{2}\right)^{2}}{\sigma_{2}^{2}}
 	\bigg] \bigg\}, \quad-\infty<x, y<+\infty \\
 	\end{aligned}
 	\end{equation}
@@ -497,7 +520,23 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
 
 	 \begin{figure}[htbp]
 	 	\centering
-	 	\includegraphics{fig3-1-5.pdf}
+	 	\begin{tikzpicture}[thick]
+  \node (a) {\includegraphics{fig3-1-5}};
+  \fill (0,0) circle (4pt);
+  \coordinate (O) at (-1.4,1.4);
+  \fill[red] (-1.4,1.4) circle(2pt);
+  \draw[white,line width=3pt] (O) -- ++ (-4.5,-1.05);
+  \draw[white,line width=5pt] (O) -- ++ (-4.5,-1.2);
+  \draw [white,line width=12pt] (O) -- ++ (0,3);
+  \draw [white,line width=5pt] (O) -- ++(0.46,-0.38);
+  \draw [white,line width=4pt](4.4,-2.1) -- (2.6,-1);
+  \fill [white] (4.4,-2)circle(0.5cm);
+  \fill [white] (2,-0.05) circle(0.1);
+  \draw [-Stealth] (O) -- ++ (-4.5,-1.3) node[above]{$x$};
+  \draw [-Stealth] (O)node[above left]{$O$} -- ++ (0,3) node[right]{$p(x,y)$};
+  \draw (-3,1.2) node{$\mu_1$} (2.15,-0.05)node{$\mu_2$};
+  \draw [-Stealth] (O) -- ++(0.5,-0.3) (2.6,-1)--(4.4,-2.2)node[above right]{$y$};
+\end{tikzpicture}
 	 	\caption{二元正态密度函数}\label{fig:3.1.5}
 	 \end{figure}
 
@@ -511,10 +550,10 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
 	 \begin{solution}
 	 	所求的概率为
 	 	\begin{equation*}
-			\begin{aligned} 
+			\begin{aligned}
 			p(x, y) &=\frac{1}{2 \pi \sigma_{1} \sigma_{2} \sqrt{1-\rho^{2}}} \iint_D \exp \bigg\{-\frac{1}{2\left(1-\rho^{2}\right)}
 			\bigg[\frac{\left(x-\mu_{1}\right)^{2}}{\sigma_{1}^{2}}		\\
-			&-2 \rho \frac{\left(x-\mu_{1}\right)\left(y-\mu_{2}\right)}{\sigma_{1} \sigma_{2}}+\frac{\left(y-\mu_{2}\right)^{2}}{\sigma_{2}^{2}} 
+			&-2 \rho \frac{\left(x-\mu_{1}\right)\left(y-\mu_{2}\right)}{\sigma_{1} \sigma_{2}}+\frac{\left(y-\mu_{2}\right)^{2}}{\sigma_{2}^{2}}
 			\bigg] \bigg\} \dd x \dd y\\
 			\end{aligned}
 		\end{equation*}
@@ -536,14 +575,14 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
 		\]
 		再作极坐标变换
 		\[
-		 	\begin{cases} 
+		 	\begin{cases}
 		 		u=r \sin \alpha ,\\
 		 		v=r \cos \alpha	,
 		 	\end{cases}
 		\]
 		则可得
 		\[
-		 	J=\frac{\partial(u, v)}{\partial(r, \alpha)}= 
+		 	J=\frac{\partial(u, v)}{\partial(r, \alpha)}=
 		 	\begin{vmatrix}
 		 	{\sin \alpha} & {\cos \alpha} \\
 		 	{r \cos \alpha} & {-r \sin \alpha}
@@ -551,7 +590,7 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
 		\]
 		最后得
 		\[
-		 	\begin{aligned} 
+		 	\begin{aligned}
 		 	p &=\frac{1}{2 \pi (1-\rho^{2})} \int_{0}^{2 \pi} \dd \alpha \int_{0}^{\lambda} r \exp \left\{-\frac{r^{2}}{2\left(1-\rho^{2}\right)}\right\} \dd r \\
 		 	&=\int_{0}^{\lambda} \exp \left\{-\frac{r^{2}}{2\left(1-\rho^{2}\right)}\right\}\dd \left(\frac{r^{2}}{2\left(1-\rho^{2}\right)}\right)\\
 		 	&=\left.-\exp \left\{-\frac{r^{2}}{2\left(1-\rho^{2}\right)}\right\}\right|_{0} ^{\lambda}=1-\exp \left\{-\frac{\lambda^{2}}{2\left(1-\rho^{2}\right)}\right\} .
@@ -560,7 +599,7 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
 	 \end{solution}
 
 	 \begin{xiti}
-	 	\item 一批产品中有一等品 50\%, 二等品 30\%, 三等品 20\%. 从中有放回地抽取 5 件, 以 $X$、$Y$ 分别表示取出的 5 件中一等品、二等品的件数, 
+	 	\item 一批产品中有一等品 50\%, 二等品 30\%, 三等品 20\%. 从中有放回地抽取 5 件, 以 $X$、$Y$ 分别表示取出的 5 件中一等品、二等品的件数,
 	 	求 $(X,Y)$ 的联合分布列.
 	 	\item 100 件产品中有 50 件一等品, 30 件二等品, 20 件三等品. 从中不放回地抽取 5 件, 以 $X$、$Y$ 分别表示取出的 5 件中一等品、二等品的件数,
 	 	求 $(X,Y)$ 的联合分布列.
@@ -590,7 +629,7 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
 	 	\[
 	 	 	p(x, y)=\begin{cases}
 	 	 				k \ee^{-(3 x+4 y)},&	x>0,y>0 \\
-	 	 	 			0,		&		\text{其他} . 
+	 	 	 			0,		&		\text{其他} .
 	 	 	 		\end{cases}
 	 	\]
 	 	试求
@@ -622,7 +661,7 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
 	 	\]
 	 	\begin{enumerate}[(1)]
 	 		\item 试求常数 $k$;
-	 		\item 求 $P(X>0.5)$ 和 $P(Y<0.5)$. 
+	 		\item 求 $P(X>0.5)$ 和 $P(Y<0.5)$.
 	 	\end{enumerate}
 	 	\item 设二维随机变量 $(X,Y)$ 的联合密度函数为
 	 	\[
@@ -679,7 +718,7 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
   	\item 给定一个分量时, 另一个分量的分布, 即条件分布.
   \end{itemize}
   我们的目的时将这些信息从联合分布中挖掘出来, 本节先讨论边际分布.
-  
+
   \subsection{边际分布函数}\label{ssec:3.2.1}
   如果在二维随机变量 $(X,Y)$ 的联合分布函数 $F(X,Y)$ 中令 $y\to+\infty$ , 由于 $|Y<+\infty|$ 为必然事件, 故可得
   \begin{equation*}
@@ -729,7 +768,7 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
   	\end{align*}
   	它们都是一维指数分布, 且与参数 $\lambda>0$ 无关. 不同的 $\lambda>0$ 对应不同的二维指数分布, 但它们的两个边际分布不变. 这说明: 二维联合分布不仅含有每个分量的概率分布, 而且还含有两个变量 $X$ 与 $Y$ 间关系的信息, 这正是人们要研究多维随机变量的原因.
   \end{example}
-  
+
   \subsection{边际分布列}\label{ssec:3.2.2}
   在二维离散随机变量 $(X,Y)$ 的联合分布列 $\left\{P(X=x_i,Y=y_i)\right\}$ 中, 对 $j$ 求和所得的分布列
   \begin{equation}
@@ -756,7 +795,7 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
   	\end{equation*}
   	求 $X$ 与 $Y$ 的边际分布列.
   	\end{example}
-  
+
   \begin{solution}
   	在上述联合分布列中, 对每一行求和得 $0.54$ 与 $0.46$ , 并把它们写在对应行得右侧, 这就是 $X$ 的边际分布列. 再对每一列求和, 得 $0.16,0.33$ 和 $0.51$ , 并把它们写在对应列的下侧, 这就是 $Y$ 得边际分布列.
   	\begin{equation*}
@@ -787,7 +826,7 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
   p_{Y}(y) &= \int_{-\infty}^{+\infty}p(x,y)\,\dd x.\label{eq:3.2.6}
   \end{align}
   它们恰好处于密度函数位置, 故称上式给出的 $p_{X}(x)$ 为 $X$ 的边际密度函数, $p_{Y}(y)$ 为 $Y$ 的边际密度函数.
-  
+
   由联合密度函数求边际密度函数时, 要注意积分区域的确定.
   \begin{example}\label{exam:3.2.3}
   	设二维随机变量 $(X,Y)$ 的联合密度函数为
@@ -804,7 +843,15 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
   	首先识别 $p(x,y)$ 的非零区域, 它如图~\ref{fig:3.2.1} 所示.
   	\begin{figure}[htbp]
   		\centering
-  		\includegraphics{fig3-2-1.pdf}
+  		\begin{tikzpicture}[scale=1.5,>=Stealth]
+  		  \draw[->] (-1,0) -- (0,0) 
+            node[below left] {$O$} -- (1,0)
+            node[below right]{1} -- (1.5,0)node[below] {$x$};
+          \draw [->] (0,-1.5) -- (0,-1) node[left] {$-1$}
+          -- (0,1) node[left] {1} -- (0,1.5) node[right] {$y$};
+          \filldraw [pattern=vertical lines,thick] (0,0) -- (1,-1) -- (1,1) -- cycle;
+          \draw [densely dashed] (1,1) -- (0,1) (1,-1) -- (0,-1);
+  		\end{tikzpicture}
   		\caption{$p(x,y)$ 的非零区域}\label{fig:3.2.1}
   	\end{figure}
   	\begin{itemize}
@@ -822,7 +869,14 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
   		\end{equation*}
   		\begin{figure}[h]
   			\centering
-  			\includegraphics{fig3-2-2.pdf}
+  			\begin{tikzpicture}[>=Stealth,scale=1.2]
+              \draw [->] (-0.8,0) -- (0,0) node[below left] {$O$} -- (1,0) node[below] {1} -- (2.5,0)node[below] {$x$};
+              \draw [->] (0,-0.3) -- (0,2) node[left]{2}
+               -- (0,2.5) node[right]{$p_X(x)$};
+              \draw (0,1) node[left]{1} -- (0.05,1);
+              \draw [thick] (0,0) -- (1,2);
+              \draw[densely dashed] (1,0) -- (1,2) -- (0,2);
+  			\end{tikzpicture}
   			\caption{$X$ 的边际密度函数}\label{fig:3.2.2}
   		\end{figure}
   		再求 $p_Y(y):$ 当 $y\leqslant-1$ 或 $y\geqslant1$ 时, 有 $p_Y(y)=0$. 而当 $-1<y<0$ 时, 有
@@ -844,7 +898,12 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
   		\end{equation*}
   		\begin{figure}[h]
   			\centering
-  			\includegraphics{fig3-2-3.pdf}
+  			\begin{tikzpicture}[scale=2,>=Stealth]
+  			  \draw [->] (-1.5,0) -- (-1,0) 
+                node[below] {$-1$} -- (0,0) node[below left] {$O$} -- (1,0)node[below] {1} -- (1.5,0)node[below] {$y$};
+                \draw [->] (0,-0.5) -- (0,0.5) node[above right] {0.5} -- (0,1) node[right] {$p_Y(y)$};
+                \draw (-1,0) -- (0,0.5) -- (1,0);
+  			\end{tikzpicture}
   			\caption{ $Y$ 的边际密度函数}\label{fig:3.2.3}
   		\end{figure}
   		\item[(2)] 要求的概率分别为
@@ -854,7 +913,7 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
   		\end{align*}
   	\end{itemize}
   \end{solution}
-  
+
   \begin{example}\label{exam:3.2.4}
   	\textbf{多项分布的边际分布仍为多项分布}
   \end{example}
@@ -866,7 +925,7 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
   	对上式分别乘以和除以 $(1-p_1)^{n-i}/(n-i)!$ , 再对 $j$ 从 $0$ 到 $n-1$ 求和, 并记 $p_2'=p_2/(1-p_1)$, 则可得
   	\begin{align*}
   	&\sum_{j=0}^{n-i}P(X=i,Y=j) = \frac{n!}{i!(n-i)!}p_1^i(1-p_1)^{n-i}.\\
-  	&\sum_{j=0}^{n-i} \binom{n-i}{j} \left(\frac{p_2}{1-p_1}\right)^{j}\left(1-\frac{p_2}{1-p_1}\right)^{n-i-j} \\
+  	&\sum_{j=0}^{n-i} \Binom{n-i}{j} \left(\frac{p_2}{1-p_1}\right)^{j}\left(1-\frac{p_2}{1-p_1}\right)^{n-i-j} \\
   	&= \frac{n!}{i!(n-i)!}p_1^i(1-p_1)^{n-i}\left[p_2'+(1-p_2')\right]^{n-i}\\
   	&= \frac{n!}{i!(n-i)!}p_1^i(1-p_1)^{n-i}.
   	\end{align*}
@@ -874,7 +933,7 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
   	
   	用类似的方法可以证明: 若 $(X_,,X_2,\ldots,X_r)\sim M(n,p_1,p_2,\ldots,p_r)$, 则 $X_i\sim b(n,p_i), i=1,2,\ldots,r$.
   \end{solution}
-  
+
   \begin{example}\label{exam:3.2.5}
   	\textbf{二维正态分布的边际分布为一维正态分布}
   \end{example}
@@ -911,7 +970,7 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
   		\item 具有相同边际分布的多维联合分布可以是不同的.
   	\end{itemize}
   \end{solution}
-  
+
    \subsection{随机变量间的独立性}\label{ssec:3.2.4}
    在多维随机变量中, 各分量的取值有时会相互影响, 但有时毫无影响. 譬如一个人的身高 $X$ 和体重 $Y$ 就会相互影响, 但与收入 $Z$ 一般无影响. 当两个随机变量取值的规律互不影响时, 就称它们是相互独立的.
    \begin{definition}{}{3.2.1}
@@ -926,13 +985,13 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
    	P(X_1=x_1,X_2=x_2,\ldots,X_n=x_n)=\prod_{i=1}^{n}P(X_i=x_i),
    \end{equation}
    则称 $X_1,X_2,\ldots,X_n$ 相互独立.
-   
+
    在连续随机变量场合, 如果对任意 $n$ 个实数 $x_1,x_2,\ldots,x_n$ , 有
    \begin{equation}\label{eq:3.2.9}
    	p(x_1,x_2,\ldots,x_n)=\prod_{i=1}^{n}p_i(x_i),
    \end{equation}
    则称 $X_1,X_2,\ldots,X_n$ 相互独立.
-   
+
    \begin{example}
    	设 $(X,Y)$ 是二维离散随机变量, $X$ 和 $Y$ 的边际分布列分别如下所示:
    	\begin{table}[h]
@@ -954,9 +1013,9 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
    	    \end{tabularx}
    	\end{table}
    如果 $P\left\{XY=0\right\}=1$, 试求
-   
+
    (1) $(X,Y)$ 的联合分布列;
-   
+
    (2) $X$ 与 $Y$ 是否独立?
 
    \end{example}
@@ -1272,7 +1331,7 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
        \end{center}
    	\end{solution}
    \end{example}
-   
+
    \begin{example}[(泊松分布的可加性)]\label{exam:3.3.2}
    	设 $X\sim P(\lambda_{1}),Y\sim P(\lambda_2)$ , 且 $X$ 与 $Y$ 独立, 证明 $Z=X+Y\sim P(\lambda_{1}+\lambda_{2})$ .
    	\begin{proof}
@@ -1307,7 +1366,7 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
    	P(\lambda)\ast P(\lambda)\ast\cdots\ast P(\lambda)=P(n\lambda).\label{eq:3.3.4}
    \end{equation}
    这些结论在理论上和应用上都是重要的.
-   
+
    以后我们称性质“同一类分布的独立随机变量和的分布仍属于此类分布”为此类分布具有{\bfseries 可加性}. 上例说明泊松分布具有可加性, 下例又说明二项分布具有可加性.
    \begin{example}[二项分布的可加性]\label{exam:3.3.3}
    	设 $X\sim b(n,p),Y\sim b(m,p)$ , 且 $X$ 与 $Y$ 独立, 证明 $Z=X+Y\sim b(n+m,p)$ .
@@ -1319,7 +1378,7 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
    		在二项分布场合, 上式中有些事件是不可能事件:
    		\begin{itemize}
    			\item 当 $i>n$ 时, $\{X=i\}$ 是不可能事件, 所以只须考虑 $i\leqslant n$ ;
-   			\item 当 $k-i>m$ 时, \{Y=k-i\} 是不可能事件, 所以只须考虑 $i\geqslant k-m$.
+   			\item 当 $k-i>m$ 时, $\{Y=k-i\}$ 是不可能事件, 所以只须考虑 $i\geqslant k-m$.
    		\end{itemize}
    		因此记
    		\begin{equation*}
@@ -1329,16 +1388,16 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
    		\begin{align*}
    			P(Z=k)
    			&= \sum_{i=a}^{b}P(X=i)P(Y=k-i)\\
-   			&= \sum_{i=a}^{b}\binom{n}{i}p^{i}(1-p)^{n-i}\cdot\binom{m}{k-i}p^{k-i}(1-p)^{m-(k-i)}\\
-   			&= p^{k}(1-p)^{n+m-k}\sum_{i=a}^{b}\binom{n}{i}\binom{m}{k-i}.
+   			&= \sum_{i=a}^{b}\Binom{n}{i}p^{i}(1-p)^{n-i}\cdot\Binom{m}{k-i}p^{k-i}(1-p)^{m-(k-i)}\\
+   			&= p^{k}(1-p)^{n+m-k}\sum_{i=a}^{b}\Binom{n}{i}\Binom{m}{k-i}.
    		\end{align*}
    		利用超几何分布可证明上式组合乘积的和满足:
    		\begin{equation*}
-   			\sum_{i=a}^{b}\frac{\displaystyle\binom{n}{i}\binom{m}{k-i}}{\displaystyle\binom{n+m}{k}}=1\quad\text{或}\quad\sum_{i=a}^{b}\binom{n}{i}\binom{m}{k-i}=\binom{n+m}{k}.
+   			\sum_{i=a}^{b}\frac{\displaystyle\Binom{n}{i}\Binom{m}{k-i}}{\displaystyle\Binom{n+m}{k}}=1\quad\text{或}\quad\sum_{i=a}^{b}\Binom{n}{i}\Binom{m}{k-i}=\Binom{n+m}{k}.
    		\end{equation*}
    		代回原式, 可得
    		\begin{equation*}
-   			P(Z=k)=\binom{n+m}{k}p^k(1-p)^{n+m-k},\quad k=0,1,\ldots,n+m.
+   			P(Z=k)=\Binom{n+m}{k}p^k(1-p)^{n+m-k},\quad k=0,1,\ldots,n+m.
    		\end{equation*}
    		这表明 $Z=X+Y\sim b(n+m,p)$ , 即在参数 $p$ 相同情况下, 二项分布的卷积仍是二项分布 $b(n,p)\ast b(m,p)=b(n+m,p)$ . 这个性质可以推广到有限个场合, 即
    		\begin{equation}
@@ -1348,10 +1407,10 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
    		\begin{equation}
    			b(1,p)\ast b(1,p)\ast \cdots\ast b(1,p)=b(n,p).\label{eq:3.3.6}
    		\end{equation}
-   		这表明: 如果 $X_1,X_2,\ldots,X_n$ 独立同分布, 都服从 $b(1,p)$ 分布, 即其和 $\displaystyle\sum_{i=1}^{n}X_i\sim b(n,p)$ . 或者说, 服从二项分布 $b(n,p)$ 的随机变量可以分解成 $n$ 个相互独立的 $0-1$ 分布的随机变量之和.
+   		这表明: 如果 $X_1,X_2,\ldots,X_n$ 独立同分布, 都服从 $b(1,p)$ 分布, 即其和 $\sum_{i=1}^{n}X_i\sim b(n,p)$ . 或者说, 服从二项分布 $b(n,p)$ 的随机变量可以分解成 $n$ 个相互独立的 $0-1$ 分布的随机变量之和.
    	\end{proof}
    \end{example}
-   
+
    \subsection{最大值与最小值的分布}\label{ssec:3.3.2}
    \begin{example}[最大值分布]\label{exam:3.3.4}
    	设 $X_1,X_2,\ldots,X_n$ 是相互独立的 $n$ 个随机变量, 若 $Y=\max(X_1,X_2,\ldots,X_n)$ . 试在以下情况下求 $Y$ 的分布:
@@ -1433,7 +1492,7 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
    		\end{itemize}
    	\end{solution}
    \end{example}
-   
+
    由上面例~\ref{exam:3.3.4} 和 ~\ref{exam:3.3.5} 可以看出: 若 $X_1,X_2,\ldots,X_n$ 独立同分布, $X_i$ 服从参数为 $\lambda$ 的指数分布, 则 $\max(X_1,X_2,\ldots,X_n)$ 不服从指数分布, 而 $\min(X_1,X_2,\ldots,X_n)$ 仍服从指数分布, 参数为 $n\lambda$ .
    \subsection{连续场合的卷积公式}\label{ssec:3.3.3}
    \begin{theorem}{}{3.3.1}
@@ -1487,7 +1546,7 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
    	N(\mu_1,\sigma_1^2)\ast N(\mu_2,\sigma_2^2)=N(\mu_1+\mu_2,\sigma_1^2+\sigma_2^2).
    \end{equation}
    显然, 这个结论可以推广到有限个独立正态变量之和的场合.
-   
+
    另外我们知道, 若 $X\sim N(\mu,\sigma^2)$ , 则对任意非零实数 $a$ 有 $aX\sim N(a\mu,a^2\sigma)$ . 由此我们可得另一个重要结论: 任意 $n$ 个相互独立的正态变量的线性组合仍是正态变量, 即
    \begin{equation}\label{eq:3.3.15}
    	a_1X_1+a_2X_2+\cdots+a_nX_n\sim N(\mu_0,\sigma_0^2),
@@ -1496,7 +1555,7 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
    \begin{equation*}
    	\mu_0=\sum_{i=1}^{n}a_i\mu_i,\quad \sigma_0^2=\sum_{i=1}^{n}a_i^2\sigma_i^2.
    \end{equation*}
-   
+
    譬如, 已知 $X\sim N(-3,1),Y\sim N(2,1)$ , 且 $X$ 与 $Y$ 独立, 则
    \begin{equation*}
    	Z=X-2Y+7\sim N(0,5).
@@ -1524,7 +1583,7 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
    	\end{proof}
    	另外由第二章中我们知道, 伽马分布有两个常用的特例: 指数分布和卡方分布, 即
    	\begin{equation*}
-   	Exp(\lambda)=Ga(1,\lambda),\quad\chi^2(n)=Ga\left( \frac{n}{2},\frac{1}{2}\right), 
+   	Exp(\lambda)=Ga(1,\lambda),\quad\chi^2(n)=Ga\left( \frac{n}{2},\frac{1}{2}\right),
    	\end{equation*}
    	由此又可以得到另两个结论:
    	\begin{itemize}
@@ -1546,7 +1605,7 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
    		由此可见, $\chi^2(n)$ 分布中的参数 $n$ 就体现在: $n$ 是独立的标准正态变量的个数, 因此人们称这个参数 $n$ 为自由度.
    	\end{proof}
    \end{example}
-    
+
     \subsection{变量变换法}\label{ssec:3.3.4}
     在此我们仅介绍二维随机变量函数的分布, 而对于 $n$ 维随机变量函数的分布, 方法是类似的.
     \subsubsection{变量变换法}
@@ -1573,14 +1632,14 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
     	\end{vmatrix}=
     	\left( \frac{\partial(u,v)}{\partial(x,y)}
     	\right) ^{-1}=
-    	\left( 
+    	\left(
     	\begin{vmatrix}
     	\frac{\partial u}{\partial x} & \frac{\partial u}{\partial y}\\
     	\frac{\partial v}{\partial x} & \frac{\partial v}{\partial y}
     	\end{vmatrix}
     	\right) ^{-1}\ne0.
     \end{equation}
-    
+
     若
     \begin{equation*}
     	\begin{cases}
@@ -1592,7 +1651,7 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
     \begin{equation}\label{eq:3.3.20}
     	p(u,v)=p(x(u,v),y(u,v))|J|.
     \end{equation}
-    
+
     这个方法实际上就是二重积分的变量变换法, 其证明可参阅数学分析教科书.
     \begin{example}\label{exam:3.3.9}
     	设 $X$ 与 $Y$ 独立同分布, 都服从正态分布 $N(\mu,\sigma^2)$ . 记
@@ -1643,7 +1702,7 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
     \end{example}
         \subsubsection{增补变量法}
         增补变量法实质上是变换法的一种应用: 为了求出二维连续随机变量 $(X,Y)$ 的函数 $U=g(X,Y)$ 的密度函数, 增补一个新的随机变量 $V=h(X,Y)$ , 一般令 $V=X$ 或 $V=Y$ . 先用变换法求出 $(U,V)$ 的联合密度函数 $p(u,v)$ , 再对 $p(u,v)$ 关于 $v$ 积分, 从而得出关于 $U$ 的边际密度函数.
-        
+
         下面我们以例子形式, 给出两个随机变量的积与商的公式.
       \begin{example}[(积的公式)]\label{exam:3.3.10}
       	设 $X$ 与 $Y$ 相互独立, 其密度函数分别为 $p_{X}(x)$ 和 $p_{Y}(y)$ . 则 $U=XY$ 的密度函数为
@@ -1843,7 +1902,7 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
   			&=\int_{-\infty}^{+\infty}(x-E(X))^2p_{X}(x)\dd x.
   		\end{align*}
   	\end{itemize}
-  
+
     类似地可给出 $Y$ 的数学期望与方差的公式.
   \end{theorem}
   \begin{example}\label{exam:3.4.1}
@@ -1889,7 +1948,7 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
   		E(X+Y)=E(X)+E(Y).
   	\end{equation}
   	\begin{proof}
-  		不妨设 $(X,Y)$ 为连续随机变量(对离散随机变量可类似证明), 其联合密度函数为 $p(x,y)$ , 若令 $g(X,Y)=X+Y$ , 则由定理~\ref{thm:3.4.1}可得
+  		不妨设 $(X,Y)$ 为连续随机变量(对离散随机变量可类似证明), 其联合密度函数为 $p(x,y)$ , 若令 $g(X,Y)=X+Y$ , 则由定理~\ref{thm:3.4.1} 可得
   		\begin{align*}
   			E(X+Y)&=\int_{-\infty}^{+\infty} \int_{-\infty}^{+\infty}(x+y) p(x, y) \dd x \dd y\\
   			&=\int_{-\infty}^{+\infty} x\left\{\int_{-\infty}^{+\infty} p(x, y) \dd y \right\} \dd x+\int_{-\infty}^{+\infty} y\left\{\int_{-\infty}^{+\infty} p(x, y) \dd x\right\} \dd y\\
@@ -1985,7 +2044,7 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
   譬如, 在 $m=n=6$ 时,
   \begin{equation*}
   	E(X)=6\left(1-\left(\frac{5}{6}\right)^{6}\right)=3.99 \approx 4
-  \end{equation*} 
+  \end{equation*}
   这表明袋中有 $6$ 只不同颜色的球, 从中有放回地摸取 $6$ 次, 平均只能摸到 $4$ 种颜色的球.
   \end{example}
   \begin{example}\label{exam:3.4.5}
@@ -2559,7 +2618,7 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
 					0 & 0.1 & 0.15\\
 					1 & 0.25 & 0.2\\
 					2 & 0.15 & 0.15\\
-					\bottomrule 
+					\bottomrule
 				\end{tabularx}
 			\end{center}
 		试求 $Z=\sin\left[ \frac{\uppi}{2}(X+Y) \right]$ 的数学期望.
@@ -2764,13 +2823,13 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
 
 	\section{条件分布和条件期望}\label{sec:3.5}
 
-	二维随机变量 $(X,Y)$ 之间主要表现为独立与相依两类关系. 
+	二维随机变量 $(X,Y)$ 之间主要表现为独立与相依两类关系.
 	由于在许多问题中有关的随机变量取值往往是彼此有影响的, 这就使得条件分布成为研究变量之间的相依关系的一个有力工具.
 
 	\subsection{条件分布}\label{ssec:3.5.1}
- 
-	对二维随机变量 $(X,Y)$ 而言, 所谓随机变量 $X$ 的条件分布,就是在给定 $Y$ 取某个值的条件下 $X$ 的分布. 
-	臂如, 记 $X$ 为人的体重, $Y$ 为人的身高, 则 $X$ 与 $Y$ 之间一般有相依关系, 现在如果限定 $Y=1.7(\mathrm{m})$, 
+
+	对二维随机变量 $(X,Y)$ 而言, 所谓随机变量 $X$ 的条件分布,就是在给定 $Y$ 取某个值的条件下 $X$ 的分布.
+	臂如, 记 $X$ 为人的体重, $Y$ 为人的身高, 则 $X$ 与 $Y$ 之间一般有相依关系, 现在如果限定 $Y=1.7(\mathrm{m})$,
 	在这个条件下体重 $X$ 的分布显然与 $X$ 的无条件分布 (无此限制下体重的分布) 会有很大的不同, 本节将给出条件分布
 	的定义, 以便进一步在条件分布的基础上给出条件期望的概念.
 
@@ -2792,7 +2851,7 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
 
 		同理, 对一切使 $P\left(X=x_{i}\right)=p_{i\cdot} =\sum_{i=1}^{+\infty} p_{i j}>$ 的 $x_i$, 称
 		\begin{equation}\label{eq:3.5.2}
-		 	p_{j | i}=P\left(Y=y_{j} | X=x_{i}\right)=\frac{P\left(X=x_{i}, 
+		 	p_{j | i}=P\left(Y=y_{j} | X=x_{i}\right)=\frac{P\left(X=x_{i},
 		 	Y=y_{i}\right)}{P\left(X=x_{i}\right)}=\frac{p_{i j}}{p_{i\cdot}}, \quad j=1,2, \ldots
 		\end{equation}
 		为给定 $X=x_i$ 条件下 $Y$ 的条件分布列.
@@ -2876,7 +2935,7 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
 			\end{tabularx}
 		\end{center}
 	\end{example}
-	从这个例子看出, 二维联合分布列只有一个, 而条件分布列有 5 个. 若 $X$ 与$Y$ 的取值更多, 则条件分布也更多, 
+	从这个例子看出, 二维联合分布列只有一个, 而条件分布列有 5 个. 若 $X$ 与$Y$ 的取值更多, 则条件分布也更多,
 	每个条件分布都从一个侧面描述了一种状态下的特定分布. 可见条件分布的内容丰富, 其应用也更广.
 	\begin{example}\label{exam:3.5.2}
 		设随机变量 $X$ 与 $Y$ 相互独立, 且 $X\sim P(\lambda_1),Y\sim P(\lambda_2)$. 在已知 $X+Y=n$ 的条件下, 求 $X$ 的条件分布.
@@ -2889,13 +2948,13 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
 			&=\frac{\frac{\lambda_1^k}{k!}\ee^{-\lambda_1}\cdot\frac{\lambda_2^{n-k}}{(n-k)!}\ee^{-\lambda_2}}
 			{\frac{(\lambda_1+\lambda_2)^n}{n!}\ee^{-(\lambda_1+\lambda_2)}}\\
 			&=\frac{n!}{k!(n-k)!}\frac{\lambda_1^k\lambda_2^{n-k}}{(\lambda_1+\lambda_2)^n}\\
-			&=\binom{n}{k}\left(\frac{\lambda_1}{\lambda_1+\lambda_2}\right)^k
+			&=\Binom{n}{k}\left(\frac{\lambda_1}{\lambda_1+\lambda_2}\right)^k
 			\left(\frac{\lambda_2}{\lambda_1+\lambda_2}\right)^{n-k},\quad k=0,1,\dots,n.
 		\end{align*}
 		即在 $X+Y=n$ 的条件下, $X$ 服从二项分布 $b(n,p)$, 其中 $p=\lambda_1/(\lambda_1+\lambda_2)$.
 	\end{solution}
 	\begin{example}\label{exam:3.5.3}
-		设在一段时间内进入某一商店的顾客人数 $X$ 服从泊松分布 $P(\lambda)$, 每个顾客购买某种物品的概率为 $p$, 
+		设在一段时间内进入某一商店的顾客人数 $X$ 服从泊松分布 $P(\lambda)$, 每个顾客购买某种物品的概率为 $p$,
 		并且各个顾客是否购买该种物品相互独立, 求进人商店的顾客购买这种物品的人数 $Y$ 的分布列.
 	\end{example}
 	\begin{solution}
@@ -2905,7 +2964,7 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
 		\]
 		在进人商店的人数 $X=m$ 的条件下, 购买某种物品的人数 $Y$ 的条件分布为二项分布 $b(m,p)$, 即
 		\[
-			P\{ Y=k | X=m \}=\binom{m}{k}p^{k}(1-p)^{m-k}, \quad k=0,1,2, \dots, m.
+			P\{ Y=k | X=m \}=\Binom{m}{k}p^{k}(1-p)^{m-k}, \quad k=0,1,2, \dots, m.
 		\]
 		由全概率公式有
 		\begin{align*}
@@ -2914,7 +2973,7 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
 			&=\ee^{-\lambda} \sum_{m=k}^{+\infty} \frac{\lambda^{m}}{k !(m-k) !} p^{k}(1-p)^{m-k}\\
 			&=\ee^{-\lambda} \frac{(\lambda p)^{k}}{k !} \sum_{m=k}^{+\infty} \frac{[(1-p) \lambda]^{m-k}}{(m-k) !} \\
 			&=\frac{(\lambda p)^{k}}{k !} \ee^{-\lambda} \ee^{\lambda(1-p)} \\
-			&=\frac{(\lambda p)^{k}}{k !} \ee^{-\lambda p}, \quad k=0,1,2, \dots. 
+			&=\frac{(\lambda p)^{k}}{k !} \ee^{-\lambda p}, \quad k=0,1,2, \dots.
 		\end{align*}
 	\end{solution}
 	即 $Y$ 服从参数为 $\lambda p$的泊松分布.
@@ -2925,7 +2984,7 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
 
 	设二维连续随机变量 $(X,Y)$ 的联合密度函数为 $p(x,y)$, 边际密度函数为 $p_X(x),p_Y(y)$.
 
-	在离散随机变量场合, 其条件分布函数为 $P(X\leq x|Y=y)$. 但是, 因为连续随机变量取某个值的概率为零, 即 $P(Y=y)=0$, 
+	在离散随机变量场合, 其条件分布函数为 $P(X\leq x|Y=y)$. 但是, 因为连续随机变量取某个值的概率为零, 即 $P(Y=y)=0$,
 	所以无法用条件概率直接计算 $P(X\leq x|Y=y)$, 一个很自然的想法是: 将 $P(X\leq x|Y=y)$ 看成
 	是 $h\to 0$ 时 $P(X\leq x|y\leq Y\leq y+h)$ 的极限, 即
 	\begin{align*}
@@ -3000,7 +3059,7 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
 			&=\begin{cases}
 				\frac{1 / \pi}{(2 / \pi) \sqrt{1-y^{2}}}=\frac{1}{2 \sqrt{1-y^{2}}},& -\sqrt{1-y^{2}} \leq x \leq \sqrt{1-y^{2}};\\
 				0,	&	\text{其他}.
-			\end{cases} 
+			\end{cases}
 		\end{align*}
 		将 $y=0$ 和 $y=0.5$ 分别代入上式可得 ( 两个均匀分布 )
 		\[
@@ -3015,7 +3074,7 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
 				{\frac{1}{\sqrt{3}}}, &  -\frac{\sqrt{3}}{2} \leq x \leq \frac{\sqrt{3}}{2}\\
 				{0},& \text{其他}. \end{cases}
 		\]
-		进一步有: 当 $-1<y<1$ 时, 给定 $Y=y$ 条件下, $X$ 服从 $\left(-\sqrt{1-y^{2}}, \sqrt{1-y^{2}}\right)$ 上的均匀分布. 同理有: 
+		进一步有: 当 $-1<y<1$ 时, 给定 $Y=y$ 条件下, $X$ 服从 $\left(-\sqrt{1-y^{2}}, \sqrt{1-y^{2}}\right)$ 上的均匀分布. 同理有:
 		当 $-1<x<1$ 时, 给定 $X=x$ 条件下, $Y$ 服从 $\left(-\sqrt{1-x^{2}}, \sqrt{1-x^{2}}\right)$ 上的均匀分布.
 	\end{solution}
 
@@ -3031,7 +3090,7 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
 		p_{Y}(y) &=\int_{-\infty}^{+\infty} p_{X}(x) p(y | x) \dd x\label{eq:3.5.11} \\
 		p_{X}(x) &=\int_{-\infty}^{+\infty} p_{Y}(y) p(x | y) \dd y \label{eq:3.5.12}
 	\end{align}
-	将式~\ref{eq:3.5.9} 代入式~\ref{eq:3.5.6} 式的分子, 式\ref{eq:3.5.11} 代入式~\ref{eq:3.5.6} 式的分母, 
+	将式~\ref{eq:3.5.9} 代入式~\ref{eq:3.5.6} 式的分子, 式\ref{eq:3.5.11} 代入式~\ref{eq:3.5.6} 式的分母,
 	就得贝叶斯公式的密度函数形式:
 	\begin{equation}
 		p(x | y)=\frac{p_{X}(x) p(y | x)}{\int_{-\infty}^{+\infty} p_{X}(x) p(y | x) \dd x},\label{eq:3.5.13}
@@ -3051,11 +3110,11 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
 			p(y | x)&=\frac{1}{\sqrt{2 \pi} \sigma_{2}} \exp \left\{-\frac{(y-x)^{2}}{2 \sigma_{2}^{2}}\right\}.
 		\end{align*}
 		所以由式~\ref{eq:3.5.11} 得
-		\begin{align*} 
+		\begin{align*}
 			p_{Y}(y) &=\int_{-\infty}^{+\infty} p_{X}(x) p(y | x) \dd x \\
 			&=\frac{1}{2 \pi \sigma_{1} \sigma_{2}} \int_{-\infty}^{+\infty}\exp \left\{-\frac{(x-\mu)^{2} }
 			{2 \sigma_{1}^{2}}-\frac{(y-x)^{2}}{2 \sigma_{2}^{2}}\right\} \dd x \\
-			&=\frac{1}{2 \pi \sigma_{1} \sigma_{2}} \int_{-\infty}^{+\infty} 
+			&=\frac{1}{2 \pi \sigma_{1} \sigma_{2}} \int_{-\infty}^{+\infty}
 			\exp \left\{-\frac{1}{2}\left[\left(\frac{1}{\sigma_{1}^{2}}+\frac{1}{\sigma_{2}^{2}}\right) x^{2}-2\left(\frac{y}{\sigma_{2}^{2}}+\frac{\mu}{\sigma_{1}^{2}}\right) x+\frac{y^{2}}{\sigma_{2}^{2}}\right]\right\} \dd x .
 		\end{align*}
 		记 $c=\frac{\sigma_{1}^{2} \sigma_{2}^{2}}{\sigma_{1}^{2}+\sigma_{2}^{2}}$, 则上式化成
@@ -3077,23 +3136,23 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
 			\int_{-\infty}^{+\infty} x p(x | y) \dd x,	& (X,Y) \text{ 为二维离散随机变量}.
 			 \end{cases}\label{eq:3.5.15} \\
 			E(Y | X=x)&=\begin{cases} \sum_{j} y_{j} P\left(Y=y_{j} | X=x\right), &(X,Y)\text{ 为二维离散随机变量};\\
-			 \int_{-\infty}^{+\infty} y p(y | x) \dd y, &(X,Y)\text{ 为二维离散随机变量}. 
+			 \int_{-\infty}^{+\infty} y p(y | x) \dd y, &(X,Y)\text{ 为二维离散随机变量}.
 			\end{cases}\label{eq:3.5.16}
 		\end{align}
 	\end{definition}
-	注意条件期望 $E(X|Y=y)$ 是 $y$ 的函数, 它与无条件期望 $E(X)$ 的区别, 不仅在于计算公式上, 而且在于其含义上, 
-	譬如, $X$ 表示中国成年人的身高, 则 $E(X)$ 表示中国成年人的平均身高. 
-	若用 $Y$ 表示中国成年人的足长（脚趾到脚跟的长度）, 则 $E(X|y=y)$ 表示足长为 $y$ 的中国成年人的平均身高, 
+	注意条件期望 $E(X|Y=y)$ 是 $y$ 的函数, 它与无条件期望 $E(X)$ 的区别, 不仅在于计算公式上, 而且在于其含义上,
+	譬如, $X$ 表示中国成年人的身高, 则 $E(X)$ 表示中国成年人的平均身高.
+	若用 $Y$ 表示中国成年人的足长（脚趾到脚跟的长度）, 则 $E(X|y=y)$ 表示足长为 $y$ 的中国成年人的平均身高,
 	我国公安部门研究获得
 	\[
 		E(X | Y=y)=6.876 y.
 	\]
-	这个公式对公安部门破案起着重要的作用, 例如, 测得案犯留下的足印长为 25.3cm, 
+	这个公式对公安部门破案起着重要的作用, 例如, 测得案犯留下的足印长为 25.3cm,
 	则由此公式可推算出此案犯身高约 174cm.
 	
-	其实以上公式的得出并不复杂, 
-	一般认为人的身高和足长 $(X,Y)$ 可以当作一个二维正态变量来处理, 
-	即 $(X,Y)$ 服从二维正态分布 $N(\mu_1,\mu_2,\sigma_1^2,\sigma_2^2,\rho)$. 由例~\ref{exam:3.5.4} 
+	其实以上公式的得出并不复杂,
+	一般认为人的身高和足长 $(X,Y)$ 可以当作一个二维正态变量来处理,
+	即 $(X,Y)$ 服从二维正态分布 $N(\mu_1,\mu_2,\sigma_1^2,\sigma_2^2,\rho)$. 由例~\ref{exam:3.5.4}
 	知, 在给定 $Y=y$ 的条件下, $X$ 服从一维正态分布
 	\[
 		N\left(\mu_{1}+\rho \frac{\sigma_{1}}{\sigma_{2}}\left(y-\mu_{2}\right),
@@ -3117,7 +3176,7 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
 	\[
 		g(y)=E(X | Y=y).
 	\]
-	进一步还可以将条件期望看成是随机变量 $Y$ 的函数, 记为 $E(X|Y)=g(Y)$, 而将 $E(X|Y=y)$ 
+	进一步还可以将条件期望看成是随机变量 $Y$ 的函数, 记为 $E(X|Y)=g(Y)$, 而将 $E(X|Y=y)$
 	看成是 $Y=y$ 时 $E(X|Y)$的一个取值, 由此看出: $E(X|Y)$ 本身也是一个随机变量.
 
 	引进 $E(X|Y)$ 不仅使我们前面所定义的 $E(X|Y=y)$ 得到了统一的处理, 而且可以得到更深刻的结果.
@@ -3150,7 +3209,7 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
 	得大范围上 $X$ 的平均 $E(X)$. 如要求全校学生的平均身高, 可先求出每个班级学生的平均身高, 然后再对各班级的平均
 	身高作加权平均, 其权重就是班级人数在全校学生中所占的比例.
 
-	重期望公式的具体使用如下: 
+	重期望公式的具体使用如下:
 	\begin{enumerate}
 		\item 如果 $Y$ 是一个离散随机变量, 则式~\eqref{eq:3.5.17} 成为
 			\begin{equation}
@@ -3162,7 +3221,7 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
 			\end{equation}
 	\end{enumerate}
 	\begin{example}\label{exam:3.5.7}
-		一矿工被困在有三个门的矿井里. 第一个门通一坑道, 沿此坑道走 3 小时可到达安全区; 第二个门通一坑道, 
+		一矿工被困在有三个门的矿井里. 第一个门通一坑道, 沿此坑道走 3 小时可到达安全区; 第二个门通一坑道,
 		沿此坑道走 5 小时又回到原处; 第三个门通一坑道, 沿此坑道走 7 小时也回到原处. 假定此矿工总是等可能
 		地在三个门中选择一个, 试求他平均要用多少时间才能到达安全区.
 	\end{example}
@@ -3188,7 +3247,7 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
 	上例的解题方法带有某种普遍性, 请读者从下例中再体会一下这种方法.
 
 	\begin{example}\label{exam:3.5.8}
-		口袋中有编号为 $1,2,\ldots,n$ 的 $n$ 个球, 从中任取 1 球. 若取到 1 号球, 则得 1 分, 
+		口袋中有编号为 $1,2,\ldots,n$ 的 $n$ 个球, 从中任取 1 球. 若取到 1 号球, 则得 1 分,
 		且停止摸球; 若取到 $i$ 号球（ $i\geq 2$）, 则得 $i$ 分, 且将此球放回, 重新摸球.
 		如此下去, 试求得到的平均总分数.
 	\end{example}
@@ -3207,14 +3266,14 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
 				\]
 	\end{solution}
 	\begin{example}
-		设电力公司每月可以供应某工厂的电力 $X$ 服从 $(10,30)$（单位: $10^4$ kW）上的均匀分布, 
-		而该工厂每月实际需要的电力 $Y$ 服从 $(10,20)$（单位: $10^4$ kW）上的均匀分布. 
-		如果工厂能从电力公司得到足够的电力, 则每 $10^4$ kW 电可以创造 30 万元的利润, 
+		设电力公司每月可以供应某工厂的电力 $X$ 服从 $(10,30)$（单位: $10^4$ kW）上的均匀分布,
+		而该工厂每月实际需要的电力 $Y$ 服从 $(10,20)$（单位: $10^4$ kW）上的均匀分布.
+		如果工厂能从电力公司得到足够的电力, 则每 $10^4$ kW 电可以创造 30 万元的利润,
 		若工厂从电力公司得不到足够的电力, 则不足部分由工厂通过其他途径解决, 由其他途径得到的电力
-		每 $10^4$ kW 电只有 10 万元的利润. 试求该厂每个月的平均利润. 
+		每 $10^4$ kW 电只有 10 万元的利润. 试求该厂每个月的平均利润.
 	\end{example}
 	\begin{solution}
-		从题意知, 每月供应电力 $X\sim U(10,30)$, 而工厂实际需要电力 $Y\sim U(10,20)$. 
+		从题意知, 每月供应电力 $X\sim U(10,30)$, 而工厂实际需要电力 $Y\sim U(10,20)$.
 		若设工厂每个月的利润为 $Z$ 万元, 则按题意可得
 		\[
 		Z=\begin{cases}30 Y, & \text{当} Y\leq X;\\
@@ -3233,14 +3292,14 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
 			E(Z | X=x)=\int_{10}^{20} 30 y p_{Y}(y) \dd y=\int_{10}^{20} 30 y \frac{1}{10} \dd y=450.
 			\]
 		然后用 $X$ 的分布对条件期望 $E(Z|X=x)$ 再作一次平均, 即得
-		\begin{align*} 
+		\begin{align*}
 		E(Z)=E(E(Z | X)) &=\int_{10}^{\infty} E(Z | X=x) p_{X}(x) \dd x+\int_{\infty}^{\infty} E(Z | X=x) p_{X}(x) \dd x \\
 		&=\frac{1}{20} \int_{10}^{20}\left(50+40 x-x^{2}\right) \dd x+\frac{1}{20} \int_{20}^{30} 450 \dd x \\
 		&=25+300-\frac{700}{6}+225 \approx 433. \end{align*}
 		所以该厂每月的平均利润为 433 万元.
 	\end{solution}
 	\begin{example}\label{exam:3.5.10}
-		\textbf{随机个随机变量和的数学期望}\quad 设 $X_1,X_2,\ldots,$ 为一列独立同分布的随机变量, 随机变量 $N$ 
+		\textbf{随机个随机变量和的数学期望}\quad 设 $X_1,X_2,\ldots,$ 为一列独立同分布的随机变量, 随机变量 $N$
 		只取正整数值, 且 $N$ 与 $\{X_n\}$ 独立, 证明
 		\[
 			E\left(\sum_{i=1}^{N} X_{i}\right)=E\left(X_{1}\right) E(N).
@@ -3248,12 +3307,12 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
 	\end{example}
 	\begin{proof}
 		由定理~\ref{thm:3.5.1} 知
-		\begin{align*} 
+		\begin{align*}
 			E\left(\sum_{i=1}^{N} X_{i}\right) &=E\left[E\left(\sum_{i=1}^{N} X_{i} | N\right)\right] \\
 			&=\sum_{n=1}^{+\infty} E\left(\sum_{i=1}^{N} X_{i} | N=n\right) P(N=n) \\
 			&=\sum_{n=1}^{+\infty} E\left(\sum_{i=1}^{n} X_{i}\right) P(N=n) \\
 			&=\sum_{n=1}^{+\infty} n E\left(X_{1}\right) P(N=n) \\
-			&=E\left(X_{1}\right) \sum_{n=1}^{+\infty} n P(N=n)=E\left(X_{1}\right) E(N). 
+			&=E\left(X_{1}\right) \sum_{n=1}^{+\infty} n P(N=n)=E\left(X_{1}\right) E(N).
 		\end{align*}
 		得证.
 	\end{proof}
@@ -3265,7 +3324,7 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
 			E\left(\sum_{i=0}^{N} X_{i}\right)=E\left(X_{1}\right) E(N)=82 \times 35000=287 (\text{万元}).
 			\]
 		其中 $X_0=0$.
-		\item 一只昆虫一次产卵数 $N$ 服从参数为 $\lambda$ 的泊松分布, 每个卵能成活的概率是 $p$, 可设 $X_i$ 
+		\item 一只昆虫一次产卵数 $N$ 服从参数为 $\lambda$ 的泊松分布, 每个卵能成活的概率是 $p$, 可设 $X_i$
 		服从 0--1 分布, 而 $\{X_i=1\}$ 表示第 $i$ 个卵成活, 则一只昆虫一次产卵后的平均成活卵数为
 		\[
 			E\left(\sum_{i=1}^{N} X_{i}\right)=E\left(X_{1}\right) E(N)=\lambda p.
@@ -3308,7 +3367,7 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
 					0,&		\text{其他}.
 				\end{cases}\]
 			求概率 $P(X>0.5)$.
-		\item 设随机变量 $X$ 服从 $(1,2)$ 上的均匀分布, 在 $X=x$ 的条件下, 随机变量 $Y$ 的条件分布是参数为 $x$ 
+		\item 设随机变量 $X$ 服从 $(1,2)$ 上的均匀分布, 在 $X=x$ 的条件下, 随机变量 $Y$ 的条件分布是参数为 $x$
 		的指数分布, 证明：$XY$ 服从参数为 1 的指数分布.
 		\item 设二维离散随机变量 $(X,Y)$ 的联合分布列为
 			\begin{center}
@@ -3359,4 +3418,4 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
 		\item 设 $X_1,X_2,\ldots,$ 为独立同分布的随机变量序列, 且方差存在. 随机变量 $N$ 只取正整数值, $\Var(N)$ 存在, 且 $N$ 与 $\{X_n\}$ 独立. 证明
 			\[
 				\Var\left(\sum_{i=1}^{N} X_{t}\right)=\Var(N)\left[E\left(X_{1}\right)\right]^{2}+E(N) \Var\left(X_{1}\right).\]
-	\end{xiti}
+	\end{xiti} 
