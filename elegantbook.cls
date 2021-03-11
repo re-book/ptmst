@@ -75,31 +75,31 @@
 	\RequirePackage[T1]{fontenc}
 \fi
 
-\RequirePackage{newtxtext}
-\RequirePackage{newtxmath}
+%\RequirePackage{newtxtext}
+%\RequirePackage{newtxmath}
 %
 
 % font setting for text and math
 % \RequirePackage[T1]{fontenc}
 % \RequirePackage{newtxtext}
 % \RequirePackage{newtxmath}
-% \RequirePackage[scale=0.85]{newtxtt}  
+% \RequirePackage[scale=0.85]{newtxtt}
 \RequirePackage{anyfontsize}
 
-\DeclareSymbolFont{CMletters}     {OML}{cmm} {m}{it}%
-\DeclareSymbolFont{CMsymbols}     {OMS}{cmsy}{m}{n}%
-\DeclareSymbolFont{CMlargesymbols}{OMX}{cmex}{m}{n}%
-
-% \let\sum\relax
-% \DeclareMathSymbol{\sum}{\mathop}{CMlargesymbols}{"50}%
-% \let\int\relax
-% \DeclareMathSymbol{\int}{\mathop}{CMlargesymbols}{"5A}%
-
-\let\intop\relax\let\sumop\relax\let\ointop\relax\let\prodop\relax
-\DeclareMathSymbol{\sumop}{\mathop}{CMlargesymbols}{"50}
-\DeclareMathSymbol{\intop}{\mathop}{CMlargesymbols}{"52}
-\DeclareMathSymbol{\ointop}{\mathop}{CMlargesymbols}{"49}
-\DeclareMathSymbol{\prodop}{\mathop}{CMlargesymbols}{"59}
+%\DeclareSymbolFont{CMletters}     {OML}{cmm} {m}{it}%
+%\DeclareSymbolFont{CMsymbols}     {OMS}{cmsy}{m}{n}%
+%\DeclareSymbolFont{CMlargesymbols}{OMX}{cmex}{m}{n}%
+%
+%% \let\sum\relax
+%% \DeclareMathSymbol{\sum}{\mathop}{CMlargesymbols}{"50}%
+%% \let\int\relax
+%% \DeclareMathSymbol{\int}{\mathop}{CMlargesymbols}{"5A}%
+%
+%\let\intop\relax\let\sumop\relax\let\ointop\relax\let\prodop\relax
+%\DeclareMathSymbol{\sumop}{\mathop}{CMlargesymbols}{"50}
+%\DeclareMathSymbol{\intop}{\mathop}{CMlargesymbols}{"52}
+%\DeclareMathSymbol{\ointop}{\mathop}{CMlargesymbols}{"49}
+%\DeclareMathSymbol{\prodop}{\mathop}{CMlargesymbols}{"59}
 
 % \let\partial\relax
 % \DeclareMathSymbol{\partial}{\mathord}{CMletters}{"40}%
@@ -199,16 +199,16 @@
 \newtoks\institute
 \newtoks\subtitle
 
+\usepackage{paralist}
 
-\RequirePackage{enumerate}
 % list/itemize/enumerate setting
 \RequirePackage[shortlabels]{enumitem}
 \setlist{nolistsep}
 
-% caption settings 
+% caption settings
 \RequirePackage{caption}
 \captionsetup{labelfont = bf}
-\RequirePackage[font=small,labelfont={bf,color=structurecolor}]{caption} 
+\RequirePackage[font=small,labelfont={bf,color=structurecolor}]{caption}
 \captionsetup[table]{skip=3pt}
 \captionsetup[figure]{skip=3pt}
 
@@ -251,13 +251,13 @@
 
 \RequirePackage{tikz}
 \usetikzlibrary{backgrounds,calc,shadows}
-\usepackage[object=vectorian]{pgfornament} %% 
+\usepackage[object=vectorian]{pgfornament} %%
 
 \newcommand*{\eitemi}{\tikz \draw [baseline, ball color=structurecolor, draw=none] circle (2pt);}
 \newcommand*{\eitemii}{\tikz \draw [baseline, fill=structurecolor,draw=none,circular drop shadow] circle (2pt);}
 \newcommand*{\eitemiii}{\tikz \draw [baseline, fill=structurecolor,draw=none] circle (2pt);}
-\setlist[enumerate,1]{label=\color{structurecolor}\arabic*.}
-\setlist[enumerate,2]{label=\color{structurecolor}(\alph*).}
+\setlist[enumerate,1]{label=\color{structurecolor}\arabic*.,ref=\color{structurecolor}\arabic*}
+\setlist[enumerate,2]{label=\color{structurecolor}(\arabic*),leftmargin=0.59cm}
 \setlist[enumerate,3]{label=\color{structurecolor}\Roman*.}
 \setlist[enumerate,4]{label=\color{structurecolor}\Alph*.}
 \setlist[itemize,1]{label={\eitemi}}
@@ -266,7 +266,7 @@
 
 % \RequirePackage{natbib}
 \RequirePackage{gbt7714}
-\bibliographystyle{gbt7714-numerical}
+%\bibliographystyle{gbt7714-numerical}
 \setlength{\bibsep}{0.0pt}
 \def\bibfont{\footnotesize}
 
@@ -343,7 +343,7 @@
 \ifdefstring{\ELEGANT@mode}{fancy}{
 \tcbset{
     common/.style={
-        fontupper=\ifdefstring{\ELEGANT@lang}{en}{\itshape}{\upshape\kaishu},
+        %fontupper=\ifdefstring{\ELEGANT@lang}{en}{\itshape}{\upshape\kaishu},
         lower separated=false,
         coltitle=white,
         colback=gray!5,
@@ -359,23 +359,23 @@
     },
     defstyle/.style={
         common,
-        colframe=main,  
+        colframe=main,
         colback=main!5,
-        colbacktitle=main, 
+        colbacktitle=main,
         overlay unbroken and last={\node[anchor=south east, outer sep=6pt] at (\textwidth-width,0) {\textcolor{main}{$\clubsuit$}}; }
     },
     thmstyle/.style={
         common,
-        colframe=second,  
+        colframe=second,
         colback=second!5,
-        colbacktitle=second, 
+        colbacktitle=second,
         overlay unbroken and last={\node[anchor=south east, outer sep=6pt] at (\textwidth-width,0) {\textcolor{second}{$\heartsuit$}}; }
     },
     propstyle/.style={
         common,
-        colframe=third,  
+        colframe=third,
         colback=third!5,
-        colbacktitle=third, 
+        colbacktitle=third,
         overlay unbroken and last={\node[anchor=south east, outer sep=6pt] at (\textwidth-width,0) {\textcolor{third}{$\spadesuit$}}; }
     },
 }
@@ -410,32 +410,32 @@
 % declare a new theorem style
 \newtheoremstyle{edefstyle}%
 {3pt}% Space above
-{3pt}% Space below 
+{3pt}% Space below
 {\ifdefstring{\ELEGANT@lang}{en}{\itshape}{\upshape\kaishu}}% Body font
 {}% Indent amount
 {\bfseries\color{main}}% Theorem head font
 {.}% Punctuation after theorem head
-{.5em}% Space after theorem head 
+{.5em}% Space after theorem head
 {\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}}% Theorem head spec (can be left empty, meaning ‘normal’)
 % -------------------------------------------------%
 \newtheoremstyle{ethmstyle}%
 {3pt}% Space above
-{3pt}% Space below 
+{3pt}% Space below
 {\ifdefstring{\ELEGANT@lang}{en}{\itshape}{\upshape\kaishu}}% Body font
 {}% Indent amount
 {\bfseries\color{second}}% Theorem head font
 {.}% Punctuation after theorem head
-{.5em}% Space after theorem head 
+{.5em}% Space after theorem head
 {\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}}% Theorem head spec (can be left empty, meaning ‘normal’)
 % -------------------------------------------------%
 \newtheoremstyle{eprostyle}%
 {3pt}% Space above
-{3pt}% Space below 
+{3pt}% Space below
 {\ifdefstring{\ELEGANT@lang}{en}{\itshape}{\upshape\kaishu}}% Body font
 {}% Indent amount
 {\bfseries\color{third}}% Theorem head font
 {.}% Punctuation after theorem head
-{.5em}% Space after theorem head 
+{.5em}% Space after theorem head
 {\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}}% Theorem head spec (can be left empty, meaning ‘normal’)
 
 \theoremstyle{edefstyle}
@@ -471,7 +471,7 @@
 }{\relax}
 
 % main（green-def): example exercise problem solution
-% second（orange-thm）: proof note remark  
+% second（orange-thm）: proof note remark
 % third（blue-prop):  assumptions property conclusion custom
 
 %% Example with counter
@@ -479,7 +479,7 @@
 \setcounter{exam}{0}
 \renewcommand{\theexam}{\thesection.\arabic{exam}}
 \newenvironment{example}[1][]{
- 		\refstepcounter{exam}\par\noindent\textbf{\color{main}{
+ 		\refstepcounter{exam}\par\noindent\kern-0.2em\textbf{\color{main}{
  			\ifdefstring{\ELEGANT@lang}{en}{Example}{例}
  		}~\theexam #1: }\rmfamily %
  	}{
@@ -533,8 +533,10 @@
 \newenvironment{solution}{\par\noindent\textbf{\color{main}
 	\ifdefstring{\ELEGANT@lang}{en}{Solution:}{解：}
 }}{\par}
-\newenvironment{property}{\par\noindent\textbf{\color{third}
-	\ifdefstring{\ELEGANT@lang}{en}{Property:}{性质：}
+\newcounter{prop}[section]
+
+\newenvironment{property}{\par\noindent\kern-0.2em\textbf{\color{third}\refstepcounter{prop}
+	\ifdefstring{\ELEGANT@lang}{en}{Property:}{性质\thesection.\theprop：}
 }}{\par}
 \newenvironment{custom}[1]{\par\noindent\textbf{\color{third}
 	\ifdefstring{\ELEGANT@lang}{en}{#1:}{#1：}
@@ -591,7 +593,7 @@
 }
 
 
-\renewcommand{\baselinestretch}{1.35} 
+\renewcommand{\baselinestretch}{1.35}
 
 \renewcommand*{\maketitle}{%
 \hypersetup{pageanchor=false}
@@ -615,7 +617,7 @@
 		{\color{darkgray}\bfseries\Large \the\subtitle\\[2ex]}
 		\color{gray}\kaishu\normalsize
 		{\renewcommand{\arraystretch}{0.618}
-		\begin{tabular}{l} 
+		\begin{tabular}{l}
 			\ifdefstring{\ELEGANT@lang}{en}{\textbf{Author: }}{\textbf{作者：}} \@author \\
 			\ifdefstring{\ELEGANT@lang}{en}{\textbf{Institute: }}{\textbf{组织：}} \the\institute\\
 			\ifdefstring{\ELEGANT@lang}{en}{\textbf{Date: }}{\textbf{时间：}} \@date\\
@@ -640,7 +642,7 @@
 
 
 
-\RequirePackage{listings} 
+\RequirePackage{listings}
 \renewcommand{\ttdefault}{cmtt}
 \lstdefinestyle{mystyle}{
   basicstyle=%

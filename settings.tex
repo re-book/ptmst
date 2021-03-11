@@ -1,5 +1,5 @@
-\let\leqslant\le
-\let\geqslant\ge
+\let\le\leqslant
+\let\ge\geqslant
 \let\leq\le
 \let\geq\ge
 
@@ -10,13 +10,14 @@
 \numberwithin{figure}{section}
 \numberwithin{table}{section}
 \numberwithin{equation}{section}
+\usepackage{bm}
 
 % \usepackage{gbt7714}
 % \bibliographystyle{gbt7714-numerical}
 \usepackage{multirow}
 
 \newcommand{\ee}{\mathrm e}
-\newcommand{\dd}{\,d}
+\newcommand{\dd}{\mathop{}\!\mathrm d}
 
 \newcommand{\textop}[1]{\relax\ifmmode\mathop{\text{#1}}\else\text{#1}\fi}
 \usepackage{tabularx,booktabs,multirow}
@@ -25,22 +26,105 @@
 \newcolumntype{Z}{>{\centering\arraybackslash}X}
 \newcolumntype{L}{>{\raggedright\arraybackslash}X}
 \newcolumntype{R}{>{\raggedleft\arraybackslash}X}
-%%%%定义罗马数字
+
+\newenvironment{xiti}{\begin{center}
+\textbf{\zihao{-3}\ding{45}\,习~~题\quad\thesection}
+\addcontentsline{toc}{subsection}{习题 \thesection}
+\end{center}
+\begin{enumerate}[leftmargin=0.5cm]
+}{\end{enumerate}}
+
+\newenvironment{answer}{\begin{center}\stepcounter{section}
+\textbf{\zihao{-3}\ding{45}\,习~~题\quad\thesection}
+\end{center}
+\begin{enumerate}[leftmargin=0.5cm]
+}{\end{enumerate}}
+
+\usetikzlibrary{decorations.pathreplacing,decorations.pathmorphing,arrows.meta,patterns}
+\newcommand{\TT}{^{\mathrm T}}
+\allowdisplaybreaks[4]
+
+\usepackage{subcaption}
+
+% \newcommand\hmmax{0}
+% \newcommand\bmmax{0}
+\DeclareMathAlphabet{\mathbbm}{U}{bbm}{m}{n}
+
+\usepackage{bm}
+\DeclareMathOperator{\Cov}{Cov}
+\DeclareMathOperator{\Corr}{Corr}
+\DeclareMathOperator{\Var}{Var}
+
+\let\heavymath\undefined
+\let\Bbbk\undefined
+\let\emptyset\varnothing
+\let\dotsc\cdots
+\newcommand\MR{\mathbb R}
+\let\olim\lim
+\def\lim{\olim\limits}
+\def\Binom#1#2{
+\Big(\begin{array}{@{}c@{}}
+    #1\\#2
+  \end{array}\Big)
+}
+\setmainfont{Times New Roman}
+
+\IfFileExists{mtpro2.sty}{
+  \usepackage[zswash,amsbb,straightbraces]{mtpro2}
+}{\usepackage{amssymb}}
+
+\usepackage{varwidth}
+\usepackage{zhlineskip}
+\usepackage[Symbol]{upgreek}
+\usepackage{longtable}
+\usepackage{lscape}
+\usepackage{diagbox}
+\let\pi\uppi
+\let\vOmega\Omega
+\let\Omega\varOmega
+\belowrulesep0pt
+\aboverulesep0pt
+\setcounter{MaxMatrixCols}{25}
+
+\edef\closure#1{%
+{}\mkern2mu\overline{\mkern-2mu#1}
+}
+\renewcommand\bar{\closure}
+\renewcommand\overline{\closure}
+\newcommand\BB{\mathrm B}
+
+\setCJKmainfont[BoldFont={FZHei-B01},ItalicFont={FZKai-Z03}]{FZShuSong-Z01}
+\let\originalleft\left
+\let\originalright\right
+\renewcommand{\left}{\mathopen{}\mathclose\bgroup\originalleft}
+\renewcommand{\right}{\aftergroup\egroup\originalright}
+\newcommand\ii{\mathrm i}
+\usetikzlibrary{positioning}
+
 \makeatletter
 \newcommand{\rmnum}[1]{\romannumeral #1}
 \newcommand{\Rmnum}[1]{\expandafter\@slowromancap\romannumeral #1@}
 \makeatother
-\newenvironment{xiti}{\begin{center}
-\textbf{\zihao{-3}\ding{45}\,习~~题\quad\thesection}
-\end{center}
-\begin{enumerate}[leftmargin=0.5cm]
+\let\Theta\varTheta
+\def\hyds{\CJKfontspec{汉仪大宋简}}
+\let\bfseries\hyds
+\let\Phi\varPhi
+
+\usepackage{imakeidx}
+\makeindex[
+title={名词索引},
+intoc=true,
+columns=2,
+columnsep=1cm,
+columnseprule=true,
+program=makeindex,
+options={-s mkind.ist},
+noautomatic=false
+]
+\indexsetup{
+toclevel=chapter,
+headers={名词索引}{名词索引},
+othercode={
+\renewcommand{\indexspace}{\smallskip}
 }
-{\end{enumerate}}
-\allowdisplaybreaks[4] 
-
-\usepackage{subcaption}
-
-\newcommand\hmmax{0}
-\newcommand\bmmax{0}
-\DeclareMathAlphabet{\mathbbm}{U}{bbm}{m}{n}
-
+}

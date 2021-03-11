@@ -12,12 +12,12 @@
 \end{itemize}
 \end{example}
 诸如例~\ref{exam5.0.1} 研究的问题属于数理统计的范畴.接下来我们从统计中最基本的概念——总体和样本开始介绍统计学内容.
-\section{总体与样本\label{sec:8.1}}
+\section{总体与样本\label{sec:5.1}}
 \subsection{总体与个体\label{ssec:5.1.1}}
-在一个统计问题中, 我们把研究对象的全体称为 \textbf{总体}\index{Z!总体}, 构成总体的每个成员称为 \textbf{个体}\index{G!个体}.对多数实际问题, 总体中的个体是一些实在的人或物.比如, 我们要研究某大学的学生身高情况, 则该大学的全体学生构成问题的总体, 而每一个学生即使一个个体.事实上, 每个学生都有许多特征：性别、年龄、身高、体重、名字、籍贯等等, 而在该问题中, 我们关心的只是该校学生的身高如何, 对其他的特征暂不予考虑.这样, 每个学生（个体）所具有的数量指标值——身高就是个体, 而将所有身高全体看成总体.这样一来, 若抛开实际背景, 总体就是一堆数, 这堆数中有大有小, 有的出现的机会多, 有的出现机会小, 因此用一个概率分布去描述和归纳总体是恰当的, 从这个意义看,  \textbf{总体就是一个分布}, 而其数量指标就是服从这个分布的随机变量.以后说``从总体中抽样"与``从分布中抽样"是同一个意思.
-\begin{example}
+在一个统计问题中, 我们把研究对象的全体称为 \textbf{总体}\index{Z!总体}, 构成总体的每个成员称为 \textbf{个体}\index{G!个体}.对多数实际问题, 总体中的个体是一些实在的人或物.比如, 我们要研究某大学的学生身高情况, 则该大学的全体学生构成问题的总体, 而每一个学生即使一个个体.事实上, 每个学生都有许多特征：性别、年龄、身高、体重、名字、籍贯等等, 而在该问题中, 我们关心的只是该校学生的身高如何, 对其他的特征暂不予考虑.这样, 每个学生（个体）所具有的数量指标值——身高就是个体, 而将所有身高全体看成总体.这样一来, 若抛开实际背景, 总体就是一堆数, 这堆数中有大有小, 有的出现的机会多, 有的出现机会小, 因此用一个概率分布去描述和归纳总体是恰当的, 从这个意义看,  \textbf{总体就是一个分布}, 而其数量指标就是服从这个分布的随机变量.以后说``从总体中抽样''与``从分布中抽样''是同一个意思.
+\begin{example}\label{exam:5.1.1}
 考察某厂的产品质量, 将其产品只分为合格品与不合格品, 并以$0$记合格品, 以$1$记不合格品, 则
-\[\text{总体}=\{\text{该厂生产的全部合格品与不合格品}\}=\{\text{由}~0~\text{或}~1~\text{组成的一堆数}\}.\]
+\[\text{总体}=\{\text{该厂生产的全部合格品与不合格品}\}=\{\text{由}\;0\;\text{或}\;1\;\text{组成的一堆数}\}.\]
 若以$p$表示这堆数中$1$的比例（不合格品率）, 则该总体可由一个二点分布表示：
 \begin{center}
 \begin{tabularx}{0.4\textwidth}{Y|YY}
@@ -47,10 +47,42 @@ P&0.915&0.085
 
 我们可以看到,第一个工厂的产品质量优于第二个工厂.实际中,分布中的不合格率是未知的,如何对之进行估计是统计学要研究的问题.
 \end{example}
-\begin{example}
-彩电的彩色浓度是彩电质量好坏的一个重要指标. 20世纪70年代在美国销售的SONY牌彩电有两个产地:美国和日本,两地的工厂是按统一设计方案和相同的生产线生产同一型号SONY彩电,连使用说明书和检验合格的标准也是一样的.其中关于彩色浓度X的标准是:目标值为$m$,公差为$5$,即当$X$在$[m-5,m+5]$内该彩电的热情高于购买美产SONY彩电,原因何在?这就要考察这两个总体有什么差别. 1979年4月17日日本《朝日新闻》刊登调查报告指出,日产SONY彩电的彩色浓度服从正态分布$N(m,(5/3)^2)$,而美产SONY彩电的彩色浓度服从$(m-5,m+5)$上的均匀分布,见图~\ref{fig5.1.1}.这两个不同的分布代表了不同的总体,其均值相同(都为$m$),但方差不同.若彩色浓度与$m$的距离在$5/3$以内为\Rmnum{1}级品,在$5/3$到$10/3$之间为\Rmnum{2}级品,在$10/3$到$5$之间为\Rmnum{3}级品,其他为\Rmnum{4}级品.于是日产SONY彩电的\Rmnum{1}级品为美产SONY的两倍出头(见表~\ref{table5.1.1}),这就是美国消费者愿意购买日产SONY的主要原因.
+\begin{example}\label{5.1.2}
+彩电的彩色浓度是彩电质量好坏的一个重要指标. 20世纪70年代在美国销售的SONY牌彩电有两个产地:美国和日本,两地的工厂是按统一设计方案和相同的生产线生产同一型号SONY彩电,连使用说明书和检验合格的标准也是一样的.其中关于彩色浓度X的标准是:目标值为$m$,公差为$5$,即当$X$在$[m-5,m+5]$内该彩电的热情高于购买美产SONY彩电,原因何在?这就要考察这两个总体有什么差别. 1979年4月17日日本《朝日新闻》刊登调查报告指出,日产SONY彩电的彩色浓度服从正态分布$N(m,(5/3)^2)$,而美产SONY彩电的彩色浓度服从$(m-5,m+5)$上的均匀分布,见图~\ref{fig:5.1.1}.这两个不同的分布代表了不同的总体,其均值相同(都为$m$),但方差不同.若彩色浓度与$m$的距离在$5/3$以内为\Rmnum{1}级品,在$5/3$到$10/3$之间为\Rmnum{2}级品,在$10/3$到$5$之间为\Rmnum{3}级品,其他为\Rmnum{4}级品.于是日产SONY彩电的\Rmnum{1}级品为美产SONY的两倍出头(见表~\ref{table5.1.1}),这就是美国消费者愿意购买日产SONY的主要原因.
 \end{example}
-\begin{table}[!htp]
+\begin{figure}[!ht]
+  \centering
+\begin{tikzpicture}[scale=1.2]
+\begin{scope}[semithick]
+\draw(-4,0)--(4,0);
+\foreach \x in{-3,...,3}
+\draw(\x,0)--(\x,0.1);
+\draw[dashed](-3,0)node[below]{$m-5$}--(-3,3.5)(3,0)node[below]{$m+5$}--(3,3.5);
+\end{scope}
+\draw[samples=100,domain=-4:4,thick]plot(\x,{4*(e^(-(\x)^2/4))+0.1});
+\draw(0,0)node[below=1pt]{$m$}--(0,5);
+\foreach \x in {-4,...,4}
+\coordinate(a\x)at(\x,-0.4);
+\begin{scope}[semithick]
+\draw[decorate,decoration=brace](a-3)--node[below=1pt]{\Rmnum{4}}(a-4);
+\draw[decorate,decoration=brace](a-2)--node[below=1pt]{\Rmnum{3}}(a-3);
+\draw[decorate,decoration=brace](a-1)--node[below=1pt]{\Rmnum{2}}(a-2);
+\draw[decorate,decoration=brace](a1)--node[below=1pt]{\Rmnum{1}}(a-1);
+\draw[decorate,decoration=brace](a2)--node[below=1pt]{\Rmnum{2}}(a1);
+\draw[decorate,decoration=brace](a3)--node[below=1pt]{\Rmnum{3}}(a2);
+\draw[decorate,decoration=brace](a4)--node[below=1pt]{\Rmnum{4}}(a3);
+\draw(-3,1.4)[out=60,in=180]to(-2.5,1.8)--(2.5,1.8)[out=0,in=120]to(3,1.4);
+\node[inner sep=0pt,fill=white](a)at(-3,2.5){美产SONY};
+\node[inner sep=0pt](b)at(-2.3,3.8){日产SONY};
+\draw(a.south)--(-2.5,1.8)(b.east)--(-1,3.2);
+\node[inner sep=2pt](c)at(0.5,0.4){$\sigma$};
+\draw(1,0)--(c)--(0,0);
+\end{scope}
+\end{tikzpicture}
+  \caption{SONY彩电彩色浓度分布图}\label{fig:5.1.1}
+\end{figure}
+
+\begin{table}[!ht]
   \centering
   \caption{各等级彩电的比例(\%)}\label{table5.1.1}
 \begin{tabularx}{\textwidth}{Z|Z|Z|Z|Z}
@@ -81,8 +113,8 @@ P&0.915&0.085
 \end{center}
 这是一个容量为10的样本的观测值,对应的总体为该厂生产的瓶装啤酒的净含量.
 \end{example}
-\begin{example} \textbf{(分组样本)}
-我们考察某厂生产的某种电子元件的寿命,该厂生产的一级将要生产的所有元件是总体是总体(通常可以认为是无限总体),我们选了100只进行寿命试验,由于一些原因,我们不可能每时每刻对试验进行观察,而只能定期(比如每隔24\si{h})进行观察,于是,对每个元件,我们只能观察到其寿命落在某个范围内,这就产生了表~\ref{table5.1.2} 所示的一组样本:
+\begin{example}\label{exam:5.1.4} \textbf{（分组样本）}
+我们考察某厂生产的某种电子元件的寿命,该厂生产的一级将要生产的所有元件是总体是总体(通常可以认为是无限总体),我们选了100只进行寿命试验,由于一些原因,我们不可能每时每刻对试验进行观察,而只能定期(比如每隔24 \si{h})进行观察,于是,对每个元件,我们只能观察到其寿命落在某个范围内,这就产生了表~\ref{table5.1.2} 所示的一组样本:
 \begin{table}
 \centering  \caption{100只元件的寿命数据}\label{table5.1.2}
 \begin{tabularx}{\textwidth}{YY||YY||YY}
@@ -103,7 +135,7 @@ P&0.915&0.085
 \end{tabularx}
 \end{table}
 
-表~\ref{table5.1.2}中的样本观测值没有具体的数值,只有一个范围,这样的样本称为分组样本\index{F!分组样本}.相应的,例~\ref{exam5.1.3}中的10个啤酒净含量称为完全样本\index{W!完全样本}.分组样本与完全样本相比在信息上总有损失,这是分组样本的缺点.为了获得更多信息,应尽量设法获得完全样本,在不得已场合可使用分组样本(如上例).但在实际中,在样本量特别大时(如$n\geq100$),又常用分组样本来代替完全样本,这时需要对样本进行分组整理,它能简明扼要地表示样本,使人们能更好地认识总体,这是分组样本的优点.
+表~\ref{table5.1.2} 中的样本观测值没有具体的数值,只有一个范围,这样的样本称为分组样本\index{F!分组样本}.相应的,例~\ref{exam5.1.3} 中的10个啤酒净含量称为完全样本\index{W!完全样本}.分组样本与完全样本相比在信息上总有损失,这是分组样本的缺点.为了获得更多信息,应尽量设法获得完全样本,在不得已场合可使用分组样本(如上例).但在实际中,在样本量特别大时(如$n\geq100$),又常用分组样本来代替完全样本,这时需要对样本进行分组整理,它能简明扼要地表示样本,使人们能更好地认识总体,这是分组样本的优点.
 \end{example}
 
 从总体中抽取样本可以有不同的抽法,为了能由样本对总体作出比较可靠的推断,就希望样本能很好的代表总体.这就需要对抽样方法提出一些要求,最常用的``简单随机样本"有如下两个要求:
@@ -117,7 +149,7 @@ P&0.915&0.085
 设总体$X$具有分布函数$F(x),x_1,x_2,\dotsc,x_n$为取自该总体的容量为$n$的样本,则样本 \textbf{联合分布函数}\index{L!联合分布函数}为
 \[F(x_1,x_2,\dotsc,x_n)=\prod_{i=1}^nF(x_i).\]
 对无限总体,随机性与独立性容易实现,困难在于排除有意或无意的认为干扰.对有限总体,只要总体所含个体数很大,特别是与样本量相比很大,则独立性也可基本得到满足.
-\begin{example}
+\begin{example}\label{exam:5.1.5}
 设有一批产品共$N$个,需要进行抽样检验以了解其不合格品率$p$,现从中抽出$n$个逐一检查它们是否是不合格的.如果把合格品记为$0$,不合格品记为$1$,则总体为一个二点分布,
 \[P(X=1)=p,P(X=0)=1-p,\]
 设想样本是一个一个抽出的,结果记为$x_1,x_2,\dotsc,x_n$.如果采取有放回抽样,则$x_1,x_2,\dotsc,x_n$为独立同分布,若采取不放回抽样,这是,第二次抽到不合格品的概率依赖于第一次抽到的是否是不合格品,如果第一次抽到不合格品,则
@@ -154,8 +186,8 @@ k/n,&\text{当}x_{(k)}\leq x<x_{(k+1)},k=1,2\dotsc,n-1,\\
 \end{equation}
 则$F_n(x)$是一非减右连续函数,且满足
 \[F_n(-\infty)=0\text{和}F_n(+\infty)=1.\]
-由此可见,$F_n(x)$是一个分布函数,并称$F_n(x)$为 \textbf{经验分布函数}\index{J!经验分布函数}.
-\begin{example}
+由此可见, $F_n(x)$是一个分布函数,并称$F_n(x)$为 \textbf{经验分布函数}\index{J!经验分布函数}.
+\begin{example}\label{exam:5.2.1}
 某食品厂生产听装饮料,现从生产线上随机抽取5听饮料,称得其净重为(单位:\si{g})
 \[351\quad347\quad355\quad344\quad351\]
 这是一个容量为5的样本,经排序可得有序样本:
@@ -164,13 +196,33 @@ k/n,&\text{当}x_{(k)}\leq x<x_{(k+1)},k=1,2\dotsc,n-1,\\
 \[F_n(x)=\begin{cases}
 0,&x<344,\\
 0.2,&344\leq x<347,\\
-0.4,&347\le x<351,\\
-0.8,&351\le x<355,\\
+0.4,&347\leq x<351,\\
+0.8,&351\leq x<355,\\
 1,&x\geq355.
 \end{cases}\]
+\begin{figure}[!ht]
+  \centering
+\begin{tikzpicture}[fill=white,draw=black,scale=0.8]
+\begin{scope}[semithick,>=Stealth]
+\draw[decorate,decoration={snake,segment length=1mm,amplitude=0.5mm}]
+(0,0)node[below left]{$O$}--(0.5,0);
+\draw[->](-0.5,0)--(0,0)--(0,6)node[left]{$F_n(x)$};
+\draw[->](0.5,0)--(8,0)node[below]{$x$};
+\end{scope}
+\foreach \x in{1,...,5}\draw(0,\x)--(0.1,\x);
+\node[left]at(0,1){$0.2$};\node[left]at(0,2){$0.4$};\node[left]at(0,3){$0.6$};
+\node[left]at(0,4){$0.8$};\node[left]at(0,5){$1.0$};
+\node[below](a)at(1,0){$344$};\node[below](b)at(2.5,0){$347$};
+\node[below](c)at(4.5,0){$351$};\node[below](d)at(6.5,0){$355$};
+\draw(b)--(2.5,0.1)(c)--(4.5,0.1)(d)--(6.5,0.1);
+\draw[ thick](0.5,0)--(1,0)(1,1)--(2.5,1)(2.5,2)--(4.5,2)(4.5,4)--(6.5,4)(6.5,5)--(8,5);
+\filldraw(1,0)circle(2pt)(2.5,1)circle(2pt)(4.5,2)circle(2pt)(6.5,4)circle(2pt);
+\end{tikzpicture}
+  \caption{经验分布函数}\label{fig:5.2.1}
+\end{figure}
 \end{example}
 
-对每一固定的$x,F_n(x)$是样本中事件``$x_i\leq x$"发生的频率.当$n$固定时,$F_n(x)$是样本的函数,它是一个随机变量,由伯努利大数定律:只要$n$相当大, $F_n(x)$依概率收敛于$F(x)$.更深刻的结果也是存在的,这就是格里纹科定理,下面我们不加证明地加以介绍.
+对每一固定的$x,F_n(x)$是样本中事件``$x_i\leq x$"发生的频率.当$n$固定时, $F_n(x)$是样本的函数,它是一个随机变量,由伯努利大数定律:只要$n$相当大, $F_n(x)$依概率收敛于$F(x)$.更深刻的结果也是存在的,这就是格里纹科定理,下面我们不加证明地加以介绍.
 \begin{theorem}{格里纹科定理}{5.2.1}
 设$x_1,x_2,\dotsc,x_n$是取自总体分布函数为$F(x)$的样本, $F_n(x)$是其经验分布函数,当$n\to\infty$时,有
 \[P\left\{\sup_{-\infty<x<+\infty}|F_n(x)-F(x)|\to0\right\}=1.\]
@@ -203,7 +255,7 @@ k/n,&\text{当}x_{(k)}\leq x<x_{(k+1)},k=1,2\dotsc,n-1,\\
 \item  \textbf{统计样本数据落入每个区间的个数——频数},并列出其频数频率分布表.本例的频数频率分布表见表~\ref{table5.2.1}.从表中可以读出很多信息,如: 40\%的工人产量在157到167之间;产量少于167个的有12人,占60\%;产量高于177的有3人,占15\%.
 \end{itemize}
 \end{example}
-\begin{table}[!htp]
+\begin{table}[!ht]
   \centering
   \caption{例~\ref{exam:5.2.2} 的频数频率分布表}\label{table5.2.1}
 \begin{tabularx}{0.7\textwidth}{cccccc}
@@ -222,8 +274,44 @@ k/n,&\text{当}x_{(k)}\leq x<x_{(k+1)},k=1,2\dotsc,n-1,\\
 \subsection{样本数据的图形显示\label{ssec:5.2.3}}
 前面我们介绍了频数频率分布的表格形式,它也可以用图形表示,这在许多场合更直观.
 \subsubsection{直方图}
-频数分布最常用的图形表示是直方图\index{Z!直方图},它在组距相等场合常用宽度相等的长条矩形表示,矩形的高低表示频数的大小.在图形上,横坐标表示所关心变量的取值区间,纵坐标表示频数,这样就得到频数直方图,图~\ref{fig5.2.2} 画出了例~\ref{exam:5.2.2} 的频数直方图.若把纵轴改成频率就得到频率直方图
+频数分布最常用的图形表示是直方图\index{Z!直方图},它在组距相等场合常用宽度相等的长条矩形表示,矩形的高低表示频数的大小.在图形上,横坐标表示所关心变量的取值区间,纵坐标表示频数,这样就得到频数直方图,图~\ref{fig:5.2.2} 画出了例~\ref{exam:5.2.2} 的频数直方图.若把纵轴改成频率就得到频率直方图
 为使诸长条矩形面积和为1,可将纵轴取为频率/组距,如此得到的直方图称为单位频率直方图,或简称频率直方图\index{P~频率直方图}.凡此三种直方图的差别仅在于纵轴刻度的选择,直方图本身并无变化.
+\begin{figure}[!htb]
+\begin{minipage}[b]{0.5\linewidth}
+\centering
+\begin{tikzpicture}[>=Stealth,yscale=0.5]
+\draw[decorate,decoration={snake,segment length=1mm,amplitude=0.5mm}]
+(0,0)node[below left]{$O$}--(0.4,0);
+\draw(0,0)--(-0.5,0);\draw[->](0,-0.5)--(0,9)node[right]{频数};
+\draw[->](0.4,0)--(5,0)node[below]{$x$};
+\node[below]at(0.7,0){147};\node[below]at(1.4,0){157};\node[below]at(2.1,0){167};
+\node[below]at(2.8,0){177};\node[below]at(3.5,0){187};\node[below]at(4.2,0){197};
+\foreach\x in{1,...,8}\draw(0,\x)node[left]{$\x$}--(0.07,\x);
+\draw[semithick](0.7,0)--(0.7,4)--(1.4,4)(1.4,0)--(1.4,8)--(2.1,8)--(2.1,0)
+(2.1,5)--(2.8,5)--(2.8,0)--(3.5,0)--(3.5,2)--(2.8,2)(3.5,1)--(4.2,1)--(4.2,0)
+(0.7,0)--(4.2,0);
+\end{tikzpicture}
+  \caption{例~\ref{exam:5.2.2} 的频数直方图}\label{fig:5.2.2}
+\end{minipage}%
+\begin{minipage}[b]{0.5\linewidth}
+\centering
+\begin{tabular}{r|l}
+6&47\\
+7&024669\\
+8&01223568\\
+9&112333566779\\
+10&002466788\\
+11&2246899\\
+12&23568\\
+13&3
+\end{tabular}\vspace{0.2cm}
+\caption{测试成绩的茎叶图}\label{fig:5.2.3}
+\end{minipage}
+\end{figure}
+
+
+
+
 \subsubsection{茎叶图}
 除直方图外,另一种常用的方法是茎叶图\index{J!茎叶图},下面我们从一个例子谈起.
 \begin{example}\label{exam:5.2.3}
@@ -242,16 +330,16 @@ k/n,&\text{当}x_{(k)}\leq x<x_{(k+1)},k=1,2\dotsc,n-1,\\
 112&$\to$&11 | 2&$\to$&11&和&2
 \end{tabularx}
 \end{center}
-然后画一条竖线, \textbf{在竖线的左侧写上茎,右侧写上叶,就形成了茎叶图}.应聘人员测试成绩的茎叶图见图~\ref{fig5.2.3}.
+然后画一条竖线, \textbf{在竖线的左侧写上茎,右侧写上叶,就形成了茎叶图}.应聘人员测试成绩的茎叶图见图~\ref{fig:5.2.3}.
 
 茎叶图的外观很像横放的直方图,但茎叶图中叶增加了具体的数值,使我们对数据的具体取值一目了然,从面保留了数据中全部的信息.
 
 在要比较两组样本时,可画出它们的 \textbf{背靠背的茎叶图}\index{B!背靠背的茎叶图},这是一个简单直观而有效的对比方法.
 \end{example}
 \begin{example}\label{exam:5.2.4}
-下面的数据是某厂两个车间某天各40名员工生产的产品数量(表~\ref{table5.2.2}).为对其进行比较,我们将这些数据放到一个背靠背茎叶图上(图~\ref{fig5.2.4}).
+下面的数据是某厂两个车间某天各40名员工生产的产品数量(表~\ref{table5.2.2}).为对其进行比较,我们将这些数据放到一个背靠背茎叶图上(图~\ref{fig:5.2.4}).
 \end{example}
-\begin{table}[!htp]
+\begin{table}[!ht]
   \centering
   \caption{某厂两个车间40名员工的产量}\label{table5.2.2}
 \begin{tabularx}{\textwidth}{YYYYYY|YYYYYY}
@@ -268,7 +356,7 @@ k/n,&\text{当}x_{(k)}\leq x<x_{(k+1)},k=1,2\dotsc,n-1,\\
 \bottomrule
 \end{tabularx}
 \end{table}
-\begin{figure}[!htp]
+\begin{figure}[!ht]
   \centering
 \begin{tabularx}{0.6\textwidth}{R|c|L}
 甲车间\hfill620&5&6\hfill 乙车间\\
@@ -278,15 +366,15 @@ k/n,&\text{当}x_{(k)}\leq x<x_{(k+1)},k=1,2\dotsc,n-1,\\
 73210&9&22358\\
 5300&10&7
 \end{tabularx}
-  \caption{两车间产量的背靠背茎叶图}\label{fig5.2.4}
+  \caption{两车间产量的背靠背茎叶图}\label{fig:5.2.4}
 \end{figure}
-在图~\ref{fig5.2.4} 中,茎在中间,左边表示甲车间的数据,右边表示乙车间的数据.从茎叶图可以看出,甲车间员工的产量偏于上方,而乙车间员工的产量大多位于中间,乙车间的平均产量要高于甲车间,乙车间各员工的产量比较集中,而甲车间员工的产量则比较分散.
+在图~\ref{fig:5.2.4} 中,茎在中间,左边表示甲车间的数据,右边表示乙车间的数据.从茎叶图可以看出,甲车间员工的产量偏于上方,而乙车间员工的产量大多位于中间,乙车间的平均产量要高于甲车间,乙车间各员工的产量比较集中,而甲车间员工的产量则比较分散.
 \begin{xiti}
 \item 以下是某工厂通过抽样调查得到的10名工人一周内生产的产品数
 \[149\quad156\quad160\quad138\quad149\quad153\quad153\quad169\quad156\quad156\]
 试由这批数据构造经验分布函数并作图.
 \item 下表是经过整理后得到的分组样本
-\begin{table}[!htp]
+\begin{table}[!ht]
   \centering
 \begin{tabularx}{0.9\textwidth}{Z|ZZZZZ}
 组序&1&2&3&4&5\\
@@ -386,7 +474,7 @@ k/n,&\text{当}x_{(k)}\leq x<x_{(k+1)},k=1,2\dotsc,n-1,\\
 \[\bar x=\frac1{20}(79+84+\dotsb+125)=99.4.\]
 将这20个数据分组可得到如表~\ref{table5.3.1}的频数频率分布:
 \end{example}
-\begin{table}[!htp]
+\begin{table}[!ht]
   \centering
   \caption{~\ref{exam:5.3.1}的频数频率分布表}\label{table5.3.1}
 \begin{tabularx}{\textwidth}{ZZZZZ}
@@ -430,10 +518,71 @@ $\sum(x_i-\bar x)=\sum x_i-n\bar x=\sum x_i-n\cdot\big(\sum x_i\big)/n=0$.
 下面考虑样本均值的分布.
 \end{proof}
 \begin{example}\label{exam:5.3.2}
-设有一个由20个数组成的总体,现从该总体抽取容量为5的样本.图~\ref{fig5.3.1} 画出第一个样本的抽样过程,左侧是该总体,右侧是从总体中随机地抽出的样本,这里一共抽出4个样本,每个样本有5个观测值,我们计算了各个样本的样本均值.从例中可以看到,每一个样本的样本均值都有差别.
+设有一个由20个数组成的总体,现从该总体抽取容量为5的样本.图~\ref{fig:5.3.1} 画出第一个样本的抽样过程,左侧是该总体,右侧是从总体中随机地抽出的样本,这里一共抽出4个样本,每个样本有5个观测值,我们计算了各个样本的样本均值.从例中可以看到,每一个样本的样本均值都有差别.
 \end{example}
+\begin{figure}[!ht]
+\centering
+\begin{tikzpicture}[yscale=0.7,xscale=0.8,inner sep=0.5pt]
+\begin{scope}
+\node(a)at(0,7){11};\node at(1,7){8};
+\node at(0,6.3){12};\node at(1,6.3){13};
+\node(b)at(0,5.6){12};\node at(1,5.6){9};
+\node at(0,4.9){11};\node at(1,4.9){10};
+\node at(0,4.2){9};\node(d)at(1,4.2){11};
+\node at(0,3.5){10};\node at(1,3.5){8};
+\node at(0,2.8){10};\node at(1,2.8){12};
+\node at(0,2.1){11};\node (e)at(1,2.1){9};
+\node at(0,1.4){8};\node at(1,1.4){11};
+\node (c)at(0,0.7){10};\node at(1,0.7){13};
+\end{scope}
+\begin{scope}
+\node at(2.5,0.9){样本均值};
+\node at(4.1,0.9){9.8};\node at(5.6,0.9){10.2};
+\node at(7.1,0.9){10.8};\node at(8.6,0.9){10.4};
+\node(b1) at(4.1,1.9){8};\node(c1) at(4.1,2.9){10};
+\node(e1) at(4.1,3.9){9};\node(d1) at(4.1,4.9){11};
+\node(a1) at(4.1,5.9){11};\node at(4.1,6.9){样本1};
+\node at(5.6,1.9){9};\node at(5.6,2.9){11};
+\node at(5.6,3.9){10};\node at(5.6,4.9){13};
+\node at(5.6,5.9){8};\node at(5.6,6.9){样本2};
+\node at(7.1,1.9){9};\node at(7.1,2.9){10};
+\node at(7.1,3.9){11};\node at(7.1,4.9){11};
+\node at(7.1,5.9){13};\node at(7.1,6.9){样本3};
+\node at(8.6,1.9){11};\node at(8.6,2.9){10};
+\node at(8.6,3.9){10};\node at(8.6,4.9){9};
+\node at(8.6,5.9){12};\node at(8.6,6.9){样本4};
+\end{scope}
+\draw[thick](-0.2,7.3)--(9.2,7.3)(1.6,1.4)--(9.2,1.4)(1.6,6.4)--(9.2,6.4)
+(1.6,0.4)--(9.2,0.4);
+\foreach \x in{a,b,c,d,e}\draw[-Stealth](\x)--(\x1);
+\end{tikzpicture}
+  \caption{4个样本的样本均值}\label{fig:5.3.1}
+\end{figure}
 
-设想类似抽取样本5、样本6 \raisebox{0.3em}{\tikz\foreach \x in{0.1,0.2,...,0.6}\fill(\x,3)circle(0.7pt);} 每次都计算样本均值,他们之间的差异是由于抽样的随机性引起的.假如无限制地抽下去,这样我们可以得到大量的$\bar x$的值,图~\ref{fig5.3.2} 就是用这样得到的500个的值所形成的直方图,它反映了$\bar x$的抽样分布.
+设想类似抽取样本5、样本6 \raisebox{0.3em}{\tikz\foreach \x in{0.1,0.2,...,0.6}\fill(\x,3)circle(0.7pt);} 每次都计算样本均值,他们之间的差异是由于抽样的随机性引起的.假如无限制地抽下去,这样我们可以得到大量的$\bar x$的值,图~\ref{fig:5.3.2} 就是用这样得到的500个的值所形成的直方图,它反映了$\bar x$的抽样分布.
+\begin{figure}[!ht]
+  \centering
+\begin{tikzpicture}[yscale=0.34,xscale=0.6,>=Stealth,semithick]
+\draw[decorate,decoration={snake,segment length=1mm,amplitude=0.5mm}]
+(0,0)node[below left]{$O$}--(1,0);
+\draw[->](0,0)--(0,12);
+\foreach \x in{5,10}\draw(0,\x)node[left]{$\x$}--(0.14,\x);
+\draw[->](1,0)--(11.5,0);
+\foreach \x/\y in{1/7.5,3/8.5,5/9.5,7/10.5,9/11.5,11/12.5}\draw(\x,0)node[below]{$\y$}--(\x,0.2);
+\begin{scope}[xshift=-6.3cm]
+\draw[thick](8.1,0)--(8.1,0.5)--(8.5,0.5)--(8.5,0)(8.5,0.3)--(8.9,0.3)--(8.9,0)
+--(8.9,0.7)--(9.3,0.7)(9.3,0)--(9.3,3)--(9.7,3)(9.7,0)--(9.7,5)
+--(10.1,5)(10.1,0)--(10.1,6)--(10.5,6)(10.5,0)--(10.5,8.2)--(10.9,8.2)(10.9,0)--(10.9,11)
+--(11.3,11)(11.3,0)--(11.3,12)--(11.7,12)--(11.7,0)(11.7,10.5)--(12.1,10.5)
+(12.1,0)--(12.1,11.7)--(12.5,11.7)--(12.5,0)(12.5,8)--(12.9,8)--(12.9,0)
+(12.9,6.7)--(13.3,6.7)--(13.3,0)(13.3,5.4)--(13.7,5.4)--(13.7,0)(13.7,2.2)--(14.1,2.2)
+--(14.1,0)(14.1,1.2)--(14.5,1.2)--(14.5,0)(14.5,0.8)--(14.9,0.8)--(14.9,0)--
+(14.9,1.1)--(15.3,1.1)--(15.3,0)--(15.3,1.2)--(15.7,1.2)--(15.7,0)(15.7,0.5)--(16.1,0.5)
+--(16.1,0);
+\end{scope}
+\end{tikzpicture}
+  \caption{500个样本均值形成的直方图}\label{fig:5.3.2}
+\end{figure}
 
 类似地,样本方差也有一个抽样分布,样本标准差也有一个抽样分布.
 
@@ -454,6 +603,105 @@ $\sum(x_i-\bar x)=\sum x_i-n\bar x=\sum x_i-n\cdot\big(\sum x_i\big)/n=0$.
 \begin{example}\label{exam:5.3.3}
 图~\ref{fig:5.3.3} 给出三个不同总体样本均值的分布.三个总体分别是:
 \ding{172}均匀分布、\ding{173}倒三角分布、\ding{174}指数分布,随着样本量的增加,样本均值的抽样分布逐渐向正态分布逼近,他们均值保持不变,而方差则缩小为原来的$1/n$.当样本量为30时,我们看到三个抽样分布都近似于正态分布.下面对之进行说明.
+\begin{figure}[!ht]
+  \centering
+\begin{tikzpicture}[>=Stealth,xscale=0.7,yscale=0.6,thick,samples=100]
+\node[align=center] at(1.5,3){$\bar X$的分布\\($n=30$)};
+\node[align=center] at(1.5,8){$\bar X$的分布\\($n=5$)};
+\node[align=center] at(1.5,11.9){$\bar X$的分布\\($n=2$)};
+\node[align=center] at(1.5,15.9){总体分布};
+\draw[dashed](0,6)--(12,6)(0,10)--(12,10)(0,14)--(12,14);
+\begin{scope}
+\draw(3.2,0)--(3.2,0.1)(4.2,0)--(4.2,0.1)(5.2,0)--(5.2,0.1);
+\draw[->](3,0)--(3,5.8);
+\draw[->](3,0)--(6,0);\node[below]at(3.2,0){$1$};
+\node[below]at(4.2,0){$3$};\node[below]at(5.2,0){$5$};
+\draw[domain=3.7:4.7]plot(\x,{5.2*(e^(-15*((\x)-4.2)^2))-0.1});
+\draw[->](3,6.8)--(6,6.8);
+\draw[->](3,6.8)--(3,9.8);\node[below]at(3.2,6.8){$1$};
+\node[below]at(4.2,6.8){$3$};\node[below]at(5.2,6.8){$5$};
+\draw(3.2,6.8)--(3.2,6.9)(4.2,6.8)--(4.2,6.9)(5.2,6.8)--(5.2,6.9)
+(3.7,6.8)--(3.7,6.9)(4.7,6.8)--(4.7,6.9);
+\draw[domain=3.4:5]plot(\x,{2.2*(e^(-5*((\x)-4.2)^2))+6.7});
+\draw[->](3,10.8)--(6,10.8);
+\draw[->](3,10.8)--(3,13.8);\node[below]at(3.2,10.8){$1$};
+\node[below]at(4.2,10.8){$3$};\node[below]at(5.2,10.8){$5$};
+\draw(3.2,10.8)--(3.2,10.9)(4.2,10.8)--(4.2,10.9)(5.2,10.8)--(5.2,10.9)
+(3.7,10.8)--(3.7,10.9)(4.7,10.8)--(4.7,10.9);
+\draw(3.2,10.8)--(4.2,13)--(5.2,10.8);
+\draw[->](3,14.8)--(6,14.8);
+\draw[->](3,14.8)--(3,17.8);\node[below]at(3.2,14.8){$1$};
+\node[below]at(4.2,14.8){$3$};\node[below]at(5.2,14.8){$5$};
+\draw(3.2,14.8)--(3.2,14.9)(4.2,14.8)--(4.2,14.9)(5.2,14.8)--(5.2,14.9)
+(3.7,14.8)--(3.7,14.9)(4.7,14.8)--(4.7,14.9);
+\draw(3.2,14.8)--(3.2,17)--node[above]{\ding{172}}(5.2,17)--(5.2,14.8);
+\draw[->](6.1,-0.7)--(6.1,18);
+\end{scope}
+\begin{scope}[xshift=3.4cm]
+\draw(3.2,0)--(3.2,0.1)(4.2,0)--(4.2,0.1)(5.2,0)--(5.2,0.1);
+\draw[->](3,0)--(3,5.8);
+\draw[->](3,0)--(6,0);\node[below]at(3.2,0){$1$};
+\node[below]at(4.2,0){$3$};\node[below]at(5.2,0){$5$};
+\draw[domain=3.7:4.7]plot(\x,{5.2*(e^(-60*((\x)-4.2)^4))-0.1});
+\draw[->](3,6.8)--(6,6.8);
+\draw[->](3,6.8)--(3,9.8);\node[below]at(3.2,6.8){$1$};
+\node[below]at(4.2,6.8){$3$};\node[below]at(5.2,6.8){$5$};
+\draw(3.2,6.8)--(3.2,6.9)(4.2,6.8)--(4.2,6.9)(5.2,6.8)--(5.2,6.9)
+(3.7,6.8)--(3.7,6.9)(4.7,6.8)--(4.7,6.9);
+\draw[domain=3.2:5.2]plot(\x,{2.2*(e^(-3*((\x)-4.2)^2))+6.7});
+\draw[->](3,10.8)--(6,10.8);
+\draw[->](3,10.8)--(3,13.8);\node[below]at(3.2,10.8){$1$};
+\node[below]at(4.2,10.8){$3$};\node[below]at(5.2,10.8){$5$};
+\draw(3.2,10.8)--(3.2,10.9)(4.2,10.8)--(4.2,10.9)(5.2,10.8)--(5.2,10.9)
+(3.7,10.8)--(3.7,10.9)(4.7,10.8)--(4.7,10.9);
+\draw[domain=3.7:4.7]plot(\x,{2.2*(e^(-3*((\x)-4.2)^2))+10.7});
+\draw[domain=3.2:3.7]plot(\x,{1.4*(e^(-20*((\x)-3.57)^2))+10.7});
+\draw[domain=4.7:5.2]plot(\x,{1.4*(e^(-20*((\x)-4.83)^2))+10.7});
+\draw[->](3,14.8)--(6,14.8);
+\draw[->](3,14.8)--(3,17.8);\node[below]at(3.2,14.8){$1$};
+\node[below]at(4.2,14.8){$3$};\node[below]at(5.2,14.8){$5$};
+\draw(3.2,14.8)--(3.2,14.9)(4.2,14.8)--(4.2,14.9)(5.2,14.8)--(5.2,14.9)
+(3.7,14.8)--(3.7,14.9)(4.7,14.8)--(4.7,14.9);
+\draw(3.2,14.8)--(3.2,17)--(4.2,14.8)--(5.2,17)--(5.2,14.8);
+\node[above]at(4.2,17){\ding{173}};
+\draw[->](6.1,-0.7)--(6.1,18);
+\end{scope}
+
+\begin{scope}[xshift=6.8cm]
+\draw(3,0)node[below]{0}--(3,0.1)(3.5,0)node[below]{$1$}--(3.5,0.1)(4,0)node[below]{2}
+--(4,0.1)(4.5,0)node[below]{3}--(4.5,0.1)(5,0)--(5,0.1);
+\draw[->](3,0)--(3,5.8);\draw[->](3,0)--(6,0);
+\draw[domain=3.7:4.7,xshift=-0.7cm]plot(\x,{5.2*(e^(-15*((\x)-4.2)^2))-0.1});
+\draw[->](3,6.8)--(6,6.8);
+\draw[->](3,6.8)--(3,9.8);
+\draw[yshift=6.8cm](3,0)node[below]{0}--(3,0.1)(3.5,0)node[below]{$1$}--
+(3.5,0.1)(4,0)node[below]{2}
+--(4,0.1)(4.5,0)node[below]{3}--(4.5,0.1)(5,0)--(5,0.1);
+\begin{scope}
+\clip(3,6.8)--(3,9.8)--(6,9.8)--(6,6.8)--cycle;
+\draw[domain=3.2:5.2,xshift=-0.9cm]plot(\x,{2.2*(e^(-3*((\x)-4.2)^2))+6.7});
+\end{scope}
+\draw[->](3,10.8)--(6,10.8);
+\draw[->](3,10.8)--(3,13.8);
+\draw[yshift=10.8cm](3,0)node[below]{0}--(3,0.1)(3.5,0)node[below]{$1$}--
+(3.5,0.1)(4,0)node[below]{2}
+--(4,0.1)(4.5,0)node[below]{3}--(4.5,0.1)(5,0)--(5,0.1);
+\begin{scope}[yshift=4cm]
+\clip(3,6.8)--(3,9.8)--(6,9.8)--(6,6.8)--cycle;
+\draw[domain=3.2:5.5,xshift=-1.3cm]plot(\x,{2.2*(e^(-4*((\x)-4.4)^2))+6.8});
+\end{scope}
+\draw[->](3,14.8)--(6,14.8);
+\draw[->](3,14.8)--(3,17.8);
+\draw[yshift=14.8cm](3,0)node[below]{0}--(3,0.1)(3.5,0)node[below]{$1$}--
+(3.5,0.1)(4,0)node[below]{2}
+--(4,0.1)(4.5,0)node[below]{3}--(4.5,0.1)(5,0)--(5,0.1);
+\node[above]at(4.2,17){\ding{174}};
+\draw[out=-80,in=160](3,17)to(4.5,14.8);
+\draw[->](6.1,-0.7)--(6.1,18);
+\end{scope}
+\end{tikzpicture}
+  \caption{不同总体样本均值的分布}\label{fig:5.3.3}
+\end{figure}
 
 \ding{172}的总体分布为均匀分布$U(1,5)$,该总体的均值和方差分别为$3$和$4/3$,若从该总体抽取样本容量为30的样本,则其样本均值的渐近分布为
 \[\bar x_1\dot{\sim}N\left(3,\frac4{3\times40}\right)=N(3,0.21^2).\]
@@ -501,7 +749,7 @@ s^2=\frac1{n-1}\sum_{i=1}^kf_i(x_i-\bar x)^2=\frac1{n-1}\Bigl[\sum_{i=1}^kf_ix_i
 \end{equation}
 其中$x_i,f_i$分别为第$i$个区间的组中值和频数, $\bar x$为~\eqref{eq:5.3.2} 中给出的样本均值.
 \begin{example}\label{exam:5.3.4}
-考察~\ref{exam:5.3.1} 的样本,我们已经算得$\bar x=99.4$,其样本方差与样本标准差分别为
+考察例~\ref{exam:5.3.1} 的样本,我们已经算得$\bar x=99.4$,其样本方差与样本标准差分别为
 \begin{align*}
 s^2&=\frac1{20-1}[(79-99.4)^2+(84-99.4)^2+\dotsb+(125-99.4)^2]133.9368,\\
 s&=\sqrt{133.9368}=11.5731,
@@ -542,7 +790,7 @@ E(\bar x)=\frac1nE\Bigl(\sum_{i=1}^nx_i\Bigr)=\frac{n\mu}n=\mu,\\
 \operatorname{Var}(\bar x)=\frac1{n^2}\operatorname{Var}\Bigl(\sum_{i=1}^nx_i\Bigr)
 =\frac{n\sigma^2}{n^2}=\frac{\sigma^2}n,
 \end{gather*}
-故~\eqref{eq:5.3.7} 成立.下证~\ref{eq:5.3.8} ,注意到
+故~\eqref{eq:5.3.7} 成立.下证~\eqref{eq:5.3.8} ,注意到
 \[\sum_{i=1}^n(x_i-\bar x)^2=\sum_{i=1}^nx_i^2-n\bar x^2,\]
 而$Ex_i^2=(Ex_i)^2+\operatorname{Var}(x_i)=\mu^2+\sigma^2,E(\bar x^2)=(E\bar x)^2+\operatorname(Var)(\bar x)=\mu^2+\sigma^2/n$,于是
 \[E\Bigl(\sum_{i=1}^n(x_i-\bar x)^2\Bigr)=n(\mu^2+\sigma^2)-n(\mu^2+\sigma^2/n)=(n-1)\sigma^2,\]
@@ -570,7 +818,50 @@ b_k=\frac1n\sum_{i=1}^n(x_i-\bar x)^k
 \end{equation}
 为样本偏度\index{Y!样本偏度}.
 \end{definition}
-样本偏度$\gamma_1$反映了总体分布密度曲线的对称性信息.如果数据完全对称,则不难看出$b_3=0$.对不对称的数据则$b_3=0$.这里用$b_3$除以$b_2^{3/2}$是为了消除量纲的影响,$\gamma_1$是个相对数,它很好地刻画了数据分布的偏斜方向和程度.如果$\gamma_1$表示样本对称(见图~\ref{fig:5.3.4(a)}),如果$\gamma_1>0$表示样本的右尾长,即样本中有几个较大的数,这反映总体分布是正偏的或右偏的(见图~\ref{fig:5.3.4(b)}),如果$\gamma_1<0$表示分布的左尾长,即样本中有几个特小的数,这反映总体分布是负偏的或左偏的(见图~\ref{fig:5.3.4(c)}).
+样本偏度$\gamma_1$反映了总体分布密度曲线的对称性信息.如果数据完全对称,则不难看出$b_3=0$.对不对称的数据则$b_3=0$.这里用$b_3$除以$b_2^{3/2}$是为了消除量纲的影响,$\gamma_1$是个相对数,它很好地刻画了数据分布的偏斜方向和程度.如果$\gamma_1$表示样本对称(见图~\ref{fig:5.3.4}\subref{fig:5.3.4(a)} ),如果$\gamma_1>0$表示样本的右尾长,即样本中有几个较大的数,这反映总体分布是正偏的或右偏的(见图~\ref{fig:5.3.4}\subref{fig:5.3.4(b)} ),如果$\gamma_1<0$表示分布的左尾长,即样本中有几个特小的数,这反映总体分布是负偏的或左偏的(见图~\ref{fig:5.3.4}\subref{fig:5.3.4(c)} ).
+\begin{figure}[!ht]
+\centering
+\subfloat[样本$(4,7,8,9,12)$的偏度\label{fig:5.3.4(a)}]{
+\begin{minipage}[b]{0.3\textwidth}
+\begin{tikzpicture}[semithick]
+\draw(0,0)--(\textwidth,0);
+\node[below]at(0.2\textwidth,0){4};\node[below]at(0.5\textwidth,0){8};
+\node[below]at(0.8\textwidth,0){12};\node[below]at(0.425\textwidth,0){7};
+\node[below]at(0.575\textwidth,0){9};
+\foreach \x in{0.2,0.425,0.5,0.575,0.8}
+\draw(\x\textwidth,0)--(\x\textwidth,0.06);
+\draw[samples=100,domain=0.3:4.15,dashed,thick]plot(\x,{2*e^(-(\x-2.2)^2)+0.1});
+\end{tikzpicture}
+\end{minipage}
+}
+\subfloat[样本$(7,8,9,12,15)$的偏度\label{fig:5.3.4(b)}]{
+\begin{minipage}[b]{0.3\textwidth}
+\begin{tikzpicture}[semithick]
+\draw(0,0)--(\textwidth,0);
+\node[below]at(0.2\textwidth,0){7};\node[below]at(0.275\textwidth,0){8};
+\node[below]at(0.35\textwidth,0){9};\node[below]at(0.575\textwidth,0){12};
+\node[below]at(0.8\textwidth,0){15};
+\foreach \x in{0.2,0.275,0.35,0.575,0.8}
+\draw(\x\textwidth,0)--(\x\textwidth,0.06);
+\draw[samples=100,domain=0.3:4.15,dashed,thick]plot(\x,{1.6*e^(-(\x-1.5)^2)+0.1});
+\end{tikzpicture}
+\end{minipage}
+}
+\subfloat[样本$(1,4,7,8,9)$的偏度\label{fig:5.3.4(c)}]{
+\begin{minipage}[b]{0.3\textwidth}
+\begin{tikzpicture}[semithick]
+\draw(0,0)--(\textwidth,0);
+\node[below]at(0.1\textwidth,0){1};\node[below]at(0.45\textwidth,0){4};
+\node[below]at(0.625\textwidth,0){7};\node[below]at(0.7\textwidth,0){8};
+\node[below]at(0.775\textwidth,0){9};
+\foreach \x in{0.1,0.45,0.625,0.7,0.775}
+\draw(\x\textwidth,0)--(\x\textwidth,0.06);
+\draw[samples=100,domain=0.3:4.15,dashed,thick]plot(\x,{1.6*e^(-(\x-2.8)^2)+0.1});
+\end{tikzpicture}
+\end{minipage}
+}
+\caption{样本偏度$\gamma_1$的例子(样本量$n=5$)}\label{fig:5.3.4}
+\end{figure}
 \begin{definition}{}{5.3.6}
 设$x_1,x_2,\dotsc,x_n$是样本,则统计量
 \begin{equation}\label{eq:5.3.12}
@@ -580,29 +871,9 @@ b_k=\frac1n\sum_{i=1}^n(x_i-\bar x)^k
 \end{definition}
 
 样本峰度$\gamma_2$反映了总体分布密度曲线在其峰值附近的陡峭程度.当$\gamma_2>0$时,分布密度曲线在其峰值附近比正态分布来得陡,称为尖顶型;当$\gamma_2<0$时,分布密度曲线在其峰值附近比正态分布来得平坦,称为平顶型.
-\begin{example}\label{exam:5.3.3}
+\begin{example}\label{exam:5.3.5}
 表~\ref{tab:5.3.3} 是两个班(每班50名同学)的英语课程的考试成绩.
-
-下面我们分别计算两个班级的平均成绩、标准差、样本偏度及样本峰度.表
-~\ref{tab:5.3.4} 和表~\ref{tab:5.3.5} 分别给出甲班和乙班的计算过程.
-
-可算得两个班的平均成绩、标准差、偏态系数、峰态系数分别为:
-\begin{align*}
-\begin{gathered}
-\bar x_{\text{甲}}=\frac{3790}{50}=75.8,\\
-s_{\text{甲}}=\sqrt{\frac{5368}{49}=10.47},\\
-\gamma_{1\text{甲}}=\frac{-8908.8/50}{(5368/50)^{3/2}}=-0.16,\\
-\gamma_{2\text{甲}}=\frac{1987874.56/50}{(5368/50)^2}-3=0.45,
-\end{gathered}\qquad
-\begin{gathered}
-\bar x_{\text{乙}}=\frac{3790}{50}=75.8,\\
-s_{\text{乙}}=\sqrt{\frac{5168}{49}}=10.27,\\
-\gamma_{1\text{乙}}=\frac{3571.2/50}{(5168/50)^{3/2}}=0.068,\\
-\gamma_{2乙}=\frac{1208706.56/50}{(5168/50)^2}-3=-0.74.
-\end{gathered}
-\end{align*}
-\end{example}
-\begin{table}[!htp]
+\begin{table}[!ht]
   \centering
   \caption{两个班级的英语成绩}\label{tab:5.3.3}
 \begin{tabularx}{\textwidth}{ZZZZ}
@@ -618,7 +889,10 @@ $40\sim49$&45&1&0\\
 \bottomrule
 \end{tabularx}
 \end{table}
-\begin{table}[!htp]
+
+下面我们分别计算两个班级的平均成绩、标准差、样本偏度及样本峰度.表
+~\ref{tab:5.3.4} 和表~\ref{tab:5.3.5} 分别给出甲班和乙班的计算过程.
+\begin{table}[!ht]
   \centering
   \caption{甲班成绩的计算过程}\label{tab:5.3.4}
 \begin{tabularx}{\textwidth}{YYYYYY}
@@ -636,7 +910,7 @@ x&f_{\text{甲}}&x\cdot f_{\text{甲}}&(x-\bar x_{甲})^2f_{\text{甲}}&(x-\bar 
 \bottomrule
 \end{tabularx}
 \end{table}
-\begin{table}[!htp]
+\begin{table}[!ht]
   \centering
   \caption{乙班成绩的计算过程}\label{tab:5.3.5}
 \begin{tabularx}{\textwidth}{YYYYYY}
@@ -652,6 +926,26 @@ x&f_{\text{乙}}&x\cdot f_{\text{乙}}&(x-\bar x_{乙})^2f_{\text{乙}}&(x-\bar 
 \bottomrule
 \end{tabularx}
 \end{table}
+可算得两个班的平均成绩、标准差、偏态系数、峰态系数分别为:
+\begin{align*}
+\begin{gathered}
+\bar x_{\text{甲}}=\frac{3790}{50}=75.8,\\
+s_{\text{甲}}=\sqrt{\frac{5368}{49}=10.47},\\
+\gamma_{1\text{甲}}=\frac{-8908.8/50}{(5368/50)^{3/2}}=-0.16,\\
+\gamma_{2\text{甲}}=\frac{1987874.56/50}{(5368/50)^2}-3=0.45,
+\end{gathered}\qquad
+\begin{gathered}
+\bar x_{\text{乙}}=\frac{3790}{50}=75.8,\\
+s_{\text{乙}}=\sqrt{\frac{5168}{49}}=10.27,\\
+\gamma_{1\text{乙}}=\frac{3571.2/50}{(5168/50)^{3/2}}=0.068,\\
+\gamma_{2乙}=\frac{1208706.56/50}{(5168/50)^2}-3=-0.74.
+\end{gathered}
+\end{align*}
+
+
+
+
+\end{example}
 \subsection{次序统计量及其分布}
 除了样本矩以外,另一类常见的统计量是 \textbf{次序统计量}\index{C!次序统计量},它在实际和理论中都有广泛的应用.
 \subsubsection{定义}
@@ -671,7 +965,7 @@ p&1/3&1/3&1/3
 \end{center}
 现从中抽取容量为3的样本,其一切可能取值有$3^3=27$种,现将它们列在表~\ref{tab:5.3.6} 左侧,其右侧相应的次序统计量观测值.
 \end{example}
-\begin{table}[!htp]
+\begin{table}[!ht]
   \centering
   \caption{例~\ref{exam:5.3.6} 中样本取值及其次序统计量}\label{tab:5.3.6}
 \begin{tabularx}{\textwidth}{YYY|YYY||YYY|YYY}
@@ -753,7 +1047,7 @@ p_k(x)=\frac{n!}{(k-1)!(n-k)!}(F(x))^{k-1}(1-F(x))^{n-k}p(x).
 \end{theorem}
 \begin{proof}
 对任意的实数$x$,考虑次序统计量$x_{(k)}$取值落在小区间$(x,x+\Delta x]$内这一事件,它等价``样本容量为$n$的样本中有1个观测值落在$(x,x+△x]$之间,而有$k-1$个观测值小于等于$x$,有$n一k$个观测值大于$x+△x$'',其直观示意见图~\ref{fig:5.3.5}.
-\begin{figure}[!htp]
+\begin{figure}[!ht]
   \centering
 \begin{tikzpicture}[semithick]
 \draw(-4,0)--(4,0);\coordinate(a)at(-1,0);\node[below=2pt]at(a){$x$};
@@ -814,13 +1108,15 @@ P(x_{(2)}<1/2)&=\int_0^{1/2}60x^5(1-x^3)^3\dd x\\
 \begin{theorem}{}{5.3.6}
 在定理~\ref{thm:5.3.5} 的记号下,次序统计量$(x_{(i)},x_{(j)})(i<j)$的联合分布密度函数为
 \begin{equation}\label{eq:5.3.16}
-p_{ij}(y,z)=\frac{n!}{(i-1)!(j-i-1)!(n-j)!}[F(y)]^{i-1}[F(z)-F(y)]^{j-i-1}
-\cdot[1-F(z)]^{n-j}p(y)p(z),\quad y\leq z,
+\begin{aligned}
+p_{ij}(y,z)=\frac{n!}{(i-1)!(j-i-1)!(n-j)!}[F(y)]^{i-1}[F(z)-F(y)]^{j-i-1}&\\
+\cdot[1-F(z)]^{n-j}p(y)p(z),\quad y\leq z&,
+\end{aligned}
 \end{equation}
 \end{theorem}
 \begin{proof}
-对正能量$\Delta y,\Delta z$以及$y<z$,事件``$x_{(i)}\in(y,y+\Delta y],x_{(j)}\in(z,z+\Delta z]$''可以表示为``容量为$n$的样本$x_1,\dotsc,x_n$中有$i-1$个观测值小于等于$y$,一个落入区间$(y,y+\Delta y],j-i-1$个落入区间$(y+\Delta y,z]$,一个落入区间$(z,z+\Delta z]$,而余下$n-j$个大于$z+\Delta z$''(见图~\ref{fig:5.3.6}).
-\begin{figure}[!htp]
+对正能量$\Delta y,\Delta z$以及$y<z$,事件``$x_{(i)}\in(y,y+\Delta y],x_{(j)}\in(z,z+\Delta z]$''可以表示为``容量为$n$的样本$x_1,\dotsc,x_n$中有$i-1$个观测值小于等于$y$,一个落入区间$(y,y+\Delta y],j-i-1$个落入区间$(y+\Delta y,z]$,一个落入区间$(z,z+\Delta z]$,而余下$n-j$个大于$z+\Delta z$''(见图~\ref{fig:5.3.6} ).
+\begin{figure}[!ht]
   \centering
 \begin{tikzpicture}[semithick]
 \draw(-6,0)--(6,0);
@@ -841,8 +1137,9 @@ p_{ij}(y,z)=\frac{n!}{(i-1)!(j-i-1)!(n-j)!}[F(y)]^{i-1}[F(z)-F(y)]^{j-i-1}
 
 于是由多项分布可得
 \begin{align*}
-{}&P(x_{(i)}\in(y,y+\Delta y),x_{(j)}\in(z,z+\Delta z))\\
-\approx&\frac{n!}{(i-1)!1!(j-i-1)!1!(n-j)!}[F(y)]^{i-1}p(y)\Delta y[F(z)-F(y+\Delta y)]^{j-i-1}p(z)\Delta z[1-F(z+\Delta z)]^{n-j},
+P(x_{(i)}\in(y,y+\Delta y),x_{(j)}\in(z,z+\Delta z))
+\approx&\frac{n!}{(i-1)!1!(j-i-1)!1!(n-j)!}[F(y)]^{i-1}p(y)\Delta y\\
+ &\cdot[F(z)-F(y+\Delta y)]^{j-i-1}p(z)\Delta z[1-F(z+\Delta z)]^{n-j},
 \end{align*}
 考虑到$F(x)$的连续性,当$\Delta y\to0,\Delta z\to0$时有$F(y+\Delta y)\to F(y),F(z+\Delta z)\to F(z)$,于是
 \begin{align*}
@@ -854,7 +1151,7 @@ p_{ij}(y,z)&=\lim_{\Delta y\to0,\Delta z\to0}
 \end{proof}
 
 在实际问题中会用到一些次序统计量的函数,如$R_n=x_{(n)}-x_{(1)}$称为 \textbf{样本极差}\index{Y!样本极差},是一个很常用的统计量,要推导这个统计量的分布原则上并不难,我们只要使用定理~\ref{fig:5.3.6} 以及第三章讲过的随机变量函数的分布求法即可解决.但它们的分布常用积分表示,只在很少几种场合可用初等函数表示,下面是一个样本极差的分布可用初等函数表示的例子.
-\begin{example}
+\begin{example}\label{exam:5.3.9}
 设总体分布为$U(0,1),x_1,x_2,\dotsc,x_n$为样本,则$(x_{(1)},x_{(n)})$的联合密度函数为
 \[p_{1,n}(y,z)=n(n-1)(z-y)^{n-2},\quad 0<y<z<1,\]
 令$R=x_{(n)}-x_{(1)}$,由$R>0$可以推出$0<x_{(1)}=x_{(n)}-R\leq1-R$,则
@@ -872,7 +1169,7 @@ x_{\left(\frac{n+1}2\right)},&n\;\text{为奇数}\\
 更一般地,样本$p$分位数$m_p$可如下定义:
 \[m_p=\begin{cases}
 x_{[np+1]},&\text{若}\;np\;\text{不是整数};\\
-\frac12(x_{np}+x_{(np+1)}),&\text{若}\;np\;\text{是整数}.
+\frac12\left(x_{np}+x_{(np+1)}\right),&\text{若}\;np\;\text{是整数}.
 \end{cases}\]
 譬如,若$n=10,p=0.35$,则$m_{0.35}=x_{(4)}$,若$n=20,p=0.45$,则$m_{0.45}=\frac12(x_{(9)}+x_{(10)})$.
 
@@ -887,7 +1184,7 @@ m_p\dot{\sim}N\left(x_p,\frac{p(1-p)}{n\cdot p^2(x_p)}\right).
 m_{0.5}\dot{\sim}\left(x_{0.5},\frac1{4n\cdot p^2(x_{0.5})}\right).
 \end{equation}
 \end{theorem}
-\begin{example}
+\begin{example}\label{5.3.10}
 设总体为柯西分布,密度函数为
 \[p(x;\theta)=\frac1{\pi(1+(x-\theta)^2)},\quad -\infty<x<+\infty,\]
 其分布函数为
@@ -898,12 +1195,12 @@ m_{0.5}\dot{\sim}\left(x_{0.5},\frac1{4n\cdot p^2(x_{0.5})}\right).
 通常,样本均值在概括数据方面具有一定的优势.但样本均值也有其不足之处.设我们有5个数$3,5,9,10,13$,则其均值为$(3+5+9+10+13)/5=8$.如果我们不小心将13错输入为133(比如在计算机输入时将3连按2下),则均值即变为$(3+5+9+10+133)/5=32$.这说明均值受极端数值影响较大,与之相对应,中位数则不受极端值的影响,因此,当数据中含有极端值时,使用中位数比使用均值更好,中位数的这种抗干扰性在统计中称为具有 \textbf{稳健性}\index{W!稳健性}.
 \subsection{五数概括与箱线图}
 次序统计量的应用之一是五数概括\index{W!五数概括}与箱线图\index{X!箱线图}.在得到有序样本后,容易计算如下五个值: 最小观测值$x_{\min}=x_{(1)}$;最大观测值$x_{\max}=x_{(n)}$,中位数$m_{0.5}$,第一4分位数$Q_1=m_{0.25}$和第三4分位数$Q_3=m_{0.75}$.所谓五数概括就是指用这五个数:
-\[x_{\min},\quad Q_1,\quad m_{0.5},\quad Q_3,x_{\max}\]
+\[x_{\min},\quad Q_1,\quad m_{0.5},\quad Q_3,\quad x_{\max}\]
 来大致描述一批数据的轮廓.
 \begin{example}\label{exam:5.3.11}
 表~\ref{tab:5.3.7} 是某厂160名销售入员某月的销售量数据的有序样本,由该批数据可计算得到$x_{\min}=45,x_{\max}=319,m_{0.5}=181,Q_1=144,Q_3=212$.
 \end{example}
-\begin{table}[!htp]
+\begin{table}[!ht]
   \centering
   \caption{某厂160名销售员的月销售量的有序样本}\label{tab:5.3.7}
 \begin{tabularx}{\textwidth}{YYYYYYYYYY}
@@ -932,7 +1229,7 @@ m_{0.5}\dot{\sim}\left(x_{0.5},\frac1{4n\cdot p^2(x_{0.5})}\right).
 (1)画一个箱子,其两侧恰为第一4分位数和第三4分位数,在中位数位置上画一条竖线,它在箱子内.这个箱子包含了样本中50\%的数据;
 
 (2)在箱子左右两侧各引出一条水平线,分别至最小值和最大值为止.每条线段包含了样本中25\%的数据.
-\begin{figure}[!htp]
+\begin{figure}[!ht]
   \centering
 \begin{tikzpicture}[scale=3]
 \draw(0,0)--(3.5,0);
@@ -949,4 +1246,652 @@ m_{0.5}\dot{\sim}\left(x_{0.5},\frac1{4n\cdot p^2(x_{0.5})}\right).
 \end{figure}
 
 箱线图可用来对样本数据分布的形状进行大致的判断.图~\ref{fig:5.3.8} 给出三种常见的箱线图,分别对应对称分布、左偏分布和右偏分布.
+\begin{figure}[!ht]
+  \centering
+\begin{tikzpicture}[semithick]
+\draw(0,0)--(1.5,0)(3,0)--(4.2,0)(2.4,0.25)--(2.4,-0.25);
+\draw(1.5,-0.25)--(1.5,0.25)--(3,0.25)--(3,-0.25)--cycle;
+\draw[dashed](0.1,0.05)..controls(1.4,0.1)and(1.7,0.9)..(2.5,1.1)
+[out=10,in=180]to(4.2,0.1);
+\node at(2.27,-0.47){左偏};
+\begin{scope}[xshift=4.5cm]
+\draw(0,0)--(1.6,0)(2.6,0)--(4.2,0)(2.1,0.25)--(2.1,-0.25);
+\draw(1.6,-0.25)--(1.6,0.25)--(2.6,0.25)--(2.6,-0.25)--cycle;
+\draw[dashed](2.1,1.1)[out=0,in=180]to(4.2,0.1);
+\draw[dashed](0,0.1)[out=0,in=180]to(2.1,1.1);
+\node at(2.1,-0.47){对称};
+\end{scope}
+\begin{scope}[xshift=9cm]
+\draw(0,0)--(1.5,0)(3,0)--(4.2,0)(2,0.25)--(2,-0.25);
+\draw(1.5,-0.25)--(1.5,0.25)--(3,0.25)--(3,-0.25)--cycle;
+\draw[dashed](0,0.05)[out=0,in=180]to(1.8,1.1);
+\draw[dashed](1.8,1.1)[out=0,in=180]to(4.1,0.05);
+\node at(2.1,-0.47){右偏};
+\end{scope}
+\end{tikzpicture}
+  \caption{三种常见的箱线图及其对应的分布轮廓}\label{fig:5.3.8}
+\end{figure}
 
+如果我们要对几批数据进行比较,则可以在一张纸上同时画出这批数据的箱线图.图~\ref{fig:5.3.9} 是某厂20天生产的某种产品的直径数据画成的箱线图,从图中可以清楚地看出,第18天的产品出现了异常.
+\begin{figure}[!ht]
+  \centering
+\begin{tikzpicture}[>=Stealth,thick]
+\draw[decorate,decoration={snake,segment length=1mm,amplitude=0.5mm}](0,0)--(0,0.3);
+\draw[->](0,0.3)--(0,5);
+\foreach \x in{0.5,2.5,4.5}\draw(0,\x)--(0.06,\x);
+\node[left]at(0,0.5){30};\node[left]at(0,2.5){40};\node[left]at(0,4.5){50};
+\draw[->](0,0)--(11,0);
+\foreach\x in{0.5,1,...,10}\draw(\x,0)--(\x,0.06);
+\node[below]at(0.5,0){1};\node[below]at(1,0){2};\node[below]at(1.5,0){3};
+\node[below]at(2,0){4};\node[below]at(2.5,0){5};\node[below]at(3,0){6};
+\node[below]at(3.5,0){7};\node[below]at(4,0){8};\node[below]at(4.5,0){9};
+\node[below]at(5,0){10};\node[below]at(6,0){12};\node[below]at(7,0){14};
+\node[below]at(8,0){16};\node[below]at(9,0){18};\node[below]at(10,0){20};
+\draw(0.5,1)--(0.5,2)(0.3,2)--(0.7,2)--(0.7,2.9)--(0.3,2.9)--(0.3,2)(0.5,2.9)--(0.5,4.1)
+(0.3,2.45)--(0.7,2.45);
+\draw(1,1.1)--(1,2.1)(0.8,2.1)--(1.2,2.1)--(1.2,3)--(0.8,3)--(0.8,2.1)(1,3)--(1,4.05)
+(0.8,2.55)--(1.2,2.55);
+\draw(1.5,1.2)--(1.5,2)(1.3,2)--(1.7,2)--(1.7,2.9)--(1.3,2.9)--(1.3,2)(1.5,2.9)--(1.5,4)
+(1.3,2.45)--(1.7,2.45);
+\draw(2,1.3)--(2,2)(1.8,2)--(2.2,2)--(2.2,2.9)--(1.8,2.9)--(1.8,2)(2,2.9)--(2,4.1)
+(1.8,2.45)--(2.2,2.45);
+\draw(2.5,1.2)--(2.5,2)(2.3,2)--(2.7,2)--(2.7,2.9)--(2.3,2.9)--(2.3,2)(2.5,2.9)--(2.5,4)
+(2.3,2.45)--(2.7,2.45);
+\draw(3,1)--(3,2)(2.8,2)--(3.2,2)--(3.2,2.9)--(2.8,2.9)--(2.8,2)(3,2.9)--(3,4.1)
+(2.8,2.45)--(3.2,2.45);
+\draw(3.5,1.1)--(3.5,2.1)(3.3,2.1)--(3.7,2.1)--(3.7,3)--(3.3,3)--(3.3,2.1)(3.5,3)--(3.5,4.05)
+(3.3,2.55)--(3.7,2.55);
+\draw(4,1)--(4,2)(3.8,2)--(4.2,2)--(4.2,2.9)--(3.8,2.9)--(3.8,2)(4,2.9)--(4,4.1)
+(3.8,2.45)--(4.2,2.45);
+\draw(4.5,1.1)--(4.5,2.1)(4.3,2.1)--(4.7,2.1)--(4.7,3)--(4.3,3)--(4.3,2.1)(4.5,3)--(4.5,4.05)
+(4.3,2.55)--(4.7,2.55);
+\draw(5,1)--(5,2)(4.8,2)--(5.2,2)--(5.2,2.9)--(4.8,2.9)--(4.8,2)(5,2.9)--(5,4.1)
+(4.8,2.45)--(5.2,2.45);
+\draw(5.5,1.1)--(5.5,2)(5.3,2)--(5.7,2)--(5.7,2.9)--(5.3,2.9)--(5.3,2)(5.5,2.9)--(5.5,4)
+(5.3,2.45)--(5.7,2.45);
+\draw(6,1.1)--(6,2.1)(5.8,2.1)--(6.2,2.1)--(6.2,3)--(5.8,3)--(5.8,2.1)(6,3)--(6,4.05)
+(5.8,2.55)--(6.2,2.55);
+\draw(6.5,1)--(6.5,2)(6.3,2)--(6.7,2)--(6.7,2.9)--(6.3,2.9)--(6.3,2)(6.5,2.9)--(6.5,4.1)
+(6.3,2.45)--(6.7,2.45);
+\draw(7,1.2)--(7,2)(6.8,2)--(7.2,2)--(7.2,2.9)--(6.8,2.9)--(6.8,2)(7,2.9)--(7,4)
+(6.8,2.45)--(7.2,2.45);
+\draw(7.5,1.2)--(7.5,2)(7.3,2)--(7.7,2)--(7.7,2.9)--(7.3,2.9)--(7.3,2)(7.5,2.9)--(7.5,4)
+(7.3,2.45)--(7.7,2.45);
+\draw(8,1.2)--(8,2.1)(7.8,2.1)--(8.2,2.1)--(8.2,3)--(7.8,3)--(7.8,2.1)(8,3)--(8,3.9)
+(7.8,2.55)--(8.2,2.55);
+\draw(8.5,1.3)--(8.5,2)(8.3,2)--(8.7,2)--(8.7,2.9)--(8.3,2.9)--(8.3,2)(8.5,2.9)--(8.5,4)
+(8.3,2.45)--(8.7,2.45);
+\draw(9,1.6)--(9,2.5)(8.8,2.5)--(9.2,2.5)--(9.2,3.4)--(8.8,3.4)--(8.8,2.5)(9,3.4)--(9,4.3)
+(8.8,2.95)--(9.2,2.95);
+\draw(9.5,1.3)--(9.5,2)(9.3,2)--(9.7,2)--(9.7,2.9)--(9.3,2.9)--(9.3,2)(9.5,2.9)--(9.5,4.2)
+(9.3,2.45)--(9.7,2.45);
+\draw(10,1.3)--(10,2)(9.8,2)--(10.2,2)--(10.2,2.9)--(9.8,2.9)--(9.8,2)(10,2.9)--(10,4.2)
+(9.8,2.45)--(10.2,2.45);
+\end{tikzpicture}
+  \caption{20天某产品的直径的箱线图}\label{fig:5.3.9}
+\end{figure}
+
+\begin{xiti}
+\item 在一本书上我们随机地检查了10页,发现每页上的错误数为
+\[4\quad5\quad6\quad0\quad3\quad1\quad4\quad2\quad1\quad4\]
+试计算其样本均值、样本方差和样本标准差.
+\item 证明: 对任意常数$c,d$,有
+\[\sum_{i=1}^n(x_i-c)(y_i-d)=\sum_{i=1}^n(x_i-\bar x)(y_i-\bar y)+n(\bar x-c)(\bar y-d).\]
+\item 设$x_1,\dotsc,x_n$和$y_1,\dotsc,y_n$是两组样本观测值,且有如下关系: $y_I=3x_i-4,i=1,\dotsc,n$,试求样本值$\bar x$和$\bar y$间的关系以及样本方差$s_x^2$和$s_y^2$间的关系.
+\item 记$\bar x_n=\frac1n\sum_{i=1}^n x_i,s_n^2=\frac1{n-1}\sum_{i=1}^n(x_I-\bar x_n)^2,n=1,2,\dotsc$,证明:
+\begin{align*}
+\bar x_{n+1}&=\bar x_n+\frac1{n+1}(x_{n+1}-\bar x_n),\\
+s_{n+1}^2&=\frac{n-1}ns_n^2+\frac1{n+1}(x_{n+1}-\bar x_n)^2.
+\end{align*}
+\item 从同一总体中抽取二个容量分别为$n,m$的样本,样本均值分别为$\bar x_1,\bar x_2$,样本方差分别为$s_1^2,s_2^2$,将二组样本合并,其均值、方差分别为$\bar x,s^2$,证明:
+\begin{align*}
+\bar x&=\frac{n\bar x_1+m\bar x_2}{n+m},\\
+s^2&=\frac{(n-1)S_1^2+(m-1)s_2^2}{n+m-1}+\frac{nm(\bar x_1=\bar x_2)^2}{(n+m)(n+m+1)}.
+\end{align*}
+\item 设有容量为$n$的样本$A$, 它的样本均值为$\bar x_A$,样本标准差为$s_A$,样本极差为$R_A$,样本中位数为$m_A$.现对样本中每一个观测值施行如下变换
+\[y=ax+b,\]
+如此得到样本$B$,试写出样本B的均值、标准差、极差和中位数.
+\item 证明:容量为$2$的样本$x_1,x_2$的方差为
+\[s^2=\frac12(x_1-x_2)^2,\]
+\item 设$x_1,\dotsc,x_n$是来自$U(-1,1)$的样本,试求$E(\bar x)$和$\operatorname{Var}(\bar x)$.
+\item 设总体二阶矩存在, $x_1,\dotsc,x_n$是样本,证明$x_i-\bar x$与$x_j-\bar x(i\ne j)$的相关系数为$-(n-1)^{-1}$.对此你能够给予解释吗?
+\item 利用契贝晓夫不等式求抛均匀硬币多少次才能使正面朝上的频率落在$(0.4,0.6)$间的概率至少为0.9.如何才能更精确地计算这个次数?是多少?
+\item 从指数总体$Exp(1)$抽取了40个样品,试求$\bar x$的渐近分布.
+\item 设$x_1,\dotsc,x_{25}$是从均匀分布$U(0,5)$抽取的样本,试求样本均值$\bar x$的渐近分布.
+\item 设$x_1,\dotsc,x_{20}$是从二点分布$b(1,p)$抽取的样本,试求样本均值$\bar x$的渐近分布.
+\item 设$x_1,\dotsc,x_{8}$是从正态总体$N(10,9)$中抽取的样本,试求样本均值$\bar x$的标准差.
+\item 切尾均值也是一个常用的反映样本数据的特征量,其想法是将数据的两端的值舍去,而用剩下的当中的值为计算样本均值,其计算公式是
+\[\bar x_n=\frac{x_{([n\alpha]+1)}+x_{([n\alpha]+2)}+\dotsb+x_{(n-[n\alpha])}}{n-2[n\alpha]},
+ \;\text{其中}\; 0<\alpha<1/2 \;\text{是切尾系数} ,  \]
+$x_{(1)}\leq x_{(2)}\leq\dotsb\leq x_{(n)}$是有序样本.现我们在某高校采访了16名大学生,了解他们平时的学习情况,以下数据是大学生每周用于看电视的时间:
+\[15\quad14\quad12\quad9\quad20\quad4\quad17\quad26\quad15\quad18\quad6\quad10\quad16
+\quad15\quad5\quad8\]
+取$\alpha=1/16$,试计算其切尾均值.
+\item 有一个分组样本如下:\\[2mm]
+\begin{tabularx}{\textwidth}{YYY}
+\toprule
+\text{区间}&\text{组中值}&\text{频数}\\
+\midrule
+(145,155)&150&4\\
+(155,165)&160&8\\
+(175,185)&180&2\\
+\bottomrule
+\end{tabularx}\\[2mm]
+试求该分组样本的样本均值、样本标准差、样本偏度和样本峰度.
+\item 检查四批产品,其批量与不合格品率如下:\\[2mm]
+\begin{tabularx}{\textwidth}{YYY}
+\toprule
+\text{批号}&\text{批量}&\text{不合格品率}\\
+\midrule
+1&100&0.05\\
+2&300&0.06\\
+3&250&0.04\\
+4&150&0.03\\
+\bottomrule
+\end{tabularx}\\[2mm]
+试求这四批产品的总不合格品率.
+\item 设总体以等概率取$1,2,3,4,5$,现从中抽取一个容量为4的样本,试分别求$x_{(1)}$和$x_{(4)}$的分布.
+\item 设$x_1,\dotsc,x_{16}$是来自$N(8,4)$的样本,试求下列概率:
+\begin{enumerate}
+\item $P(x_{(16)}>10)$.
+\item $P(x_{(1)}>5)$.
+\end{enumerate}
+\item 设总体为威布尔分布,其密度函数为
+\[p(x;m,\eta)=\frac{mx^{m-1}}{\eta^m}\exp\left\{ -\left( \frac{x}{\eta} \right) ^m \right\},\quad x>0,m>0,\eta>0.\]
+现从中得到样本$x_1,\dotsc,x_n$, 证明$x_{(1)}$仍复从威布尔分布,并指出其参数.
+\item 设总体密度函数为$p(x)=6x(1-x),0<x<1,x_1,\dotsc,x_9$是来自该总体的样本,试求样本中位数的分布.
+\item 设$x_1,\dotsc,x_n$是来自$U(0,\theta)$的样本, $x_{(1)}\leq\dotsb\leq x_{(n)}$为次序统计量,令
+\[y_i=\frac{x_{(i)}}{x_{(i+1)}},i=1,\dotsc,n-1,\quad y_n=x_{(n)},\]
+证明$y_1,\dotsc,y_n$相互独立.
+\item 对下列数据构造箱线图:
+\begin{align*}
+472&&425&&447&&377&&341&&369&&412&&419&\\
+400&&382&&366&&425&&399&&398&&423&&384&\\
+418&&392&&372&&418&&374&&385&&439&&428&\\
+429&&428&&430&&413&&405&&381&&403&&479&\\
+381&&443&&441&&433&&419&&379&&386&&387&
+\end{align*}
+\item 根据调查,某集团公司的中层管理人员的年薪数据如下(单位:千元):
+\begin{align*}
+40.6&&39.6&&43.8&&36.2&&40.8&&37.3&&39.2&&42.9&\\
+38.6&&39.6&&40.0&&34.7&&41.7&&45.4&&36.9&&37.8&\\
+44.9&&45.4&&37.0&&35.1&&36.7&&41.3&&38.1&&37.9&\\
+37.1&&37.7&&39.2&&36.9&&44.5&&40.4&&38.4&&38.9&\\
+39.9&&42.2&&43.5&&44.8&&37.7&&34.7&&36.3&&39.7&\\
+42.1&&41.5&&40.6&&38.9&&42.2&&40.3&&35.8&&39.2&
+\end{align*}
+试画出箱线图.
+\end{xiti}
+\section{三大抽样分布\label{sec:5.4}}
+大家很快会看到,有很多统计推断是基于正态分布的假设的,以标准正态变量为基石而构造的三个著名统计量在实际中有广泛的应用,这是因为这三个统计量不仅有明确背景,而且其抽样分布的密度函数有明显表达式,它们被称为统计中的``三大抽样分布''.
+
+若设$x_1,\dotsc,x_n$和$y_1,\dotsc,y_n$是来自标准正态分布的两个相互独立的样本,则此三个统计量的构造及其抽样分布如表~\ref{tab:5.4.1} 所示.
+\begin{table}[!ht]
+  \centering
+  \caption{三个著名统计量的构造及其抽样分布}\label{tab:5.4.1}
+\begin{tabularx}{\textwidth}{p{4cm}p{6.5cm}cc}
+\toprule
+统计量的构造&抽样分布密度函数&期望&方差\\
+\midrule
+$\chi^2=x_1^2+x_2^2+\dotsb+x_n^2$&$p(y)=\frac1{\Gamma\left(\frac n2\right)2^{n/2}}
+y^{n/2-1}\ee^{-\frac y2}\,(y>0)$&$n$&$2n$\\
+$F=\frac{(y_1^2+\dotsb+y_m^2)/m}{(x_1^2+\dotsc+x_n^2)/n}$&
+$p(y)=\frac{\Gamma\left(\frac{m+n}2\right)\left(\frac mn\right)^{m/2}}
+{\Gamma\left(\frac m2\right)\Gamma\left(\frac n2\right)}y^{\frac m2-1}
+\left(1+\frac mny\right)^{-\frac{m+n}2}$
+&\parbox{1.2cm}{$\begin{matrix}\frac{n}{n-2}\\(n>2)\end{matrix}$}
+&$\begin{matrix}\frac{2n^2(m+n-2)}{m(n-2)^2(n-4)}\\(n>4)\end{matrix}$\\
+$t=\frac{y_1}{\sqrt{(x_1^2+\dotsc+x_n^2)/n}}$&\parbox{6.5cm}{
+$\begin{matrix}p(y)=\frac{\Gamma\left(\frac{n+1}2\right)}
+{\sqrt{n\pi}\Gamma\left(\frac n2\right)}\left(1+\frac{y^2}n\right)^{-\frac{n+1}2}\\
+(-\infty<y<+\infty)
+\end{matrix}$}&$\begin{matrix}0\\n-1\end{matrix}$
+&$\begin{matrix}\frac n{n-2}\\(n>2)\end{matrix}$\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+下面我们将对它们逐个进行推导与说明.
+\subsection{$\chi^2$分布(卡方分布)\label{ssec:5.4.1}}
+\begin{definition}{}{5.4.1}
+设$X_1,X_2,\dotsc,X_n$独立同分布于标准正态分布$N(0,1)$,则$\chi^2=X_1^2+\dotsc+X_n^2$的分布称为自由度为$n$的$\chi^2$分布\index{C!$\chi^2$分布},记为$\chi^2\sim\chi^2(n)$.
+\end{definition}
+
+在第三章我们已经指出,若$X\sim N(0,1)$,则$X^2\sim Ga(1/2,1/2)$,根据伽玛分布的可加性立有$\chi^2\sim Ga(n/2,n/2)=\chi^2(n)$,由此可见, $\chi^2(n)$分布是伽玛分布的特例,故$\chi^2(n)$分布的密度函数为
+\[p(y)=\frac{(1/2)^{\frac n2}}{\Gamma(n/2)}y^{\frac n2-1}\ee^{-\frac y2},\quad y>0,\]
+
+该密度函数的图像是一个只取非负值的偏态分布,见图~\ref{fig:5.4.1},其期望等于自由度,方差等于2倍自由度,即$E\chi^2=n,\operatorname{Var}(\chi^2)=2n$.
+\begin{figure}[!ht]
+  \centering
+\begin{tikzpicture}[>=Stealth,semithick,xscale=0.45,yscale=30,samples=500]
+\draw[->](0,0)node[below left]{$O$}--(22,0);
+\foreach\x in{2,4,...,20}\draw(\x,0.002)--(\x,0)node[below]{\x};
+\draw[->](0,0)--(0,0.2);
+\foreach\x in{0.02,0.04,0.06,0.08,0.1,0.12,0.14,0.16,0.18}\draw(0,\x)node[left]{\x}--(0.12,\x);
+\draw[thick,domain=0:20]plot(\x,{(\x)*e^(-(\x)/2)/4});
+\draw(3.2,0.16)--(12,0.16)node[right=-2pt]{$n=4$};
+\draw[thick,dashed,domain=0:20]plot(\x,{(\x)^2*e^(-(\x)/2)/16});
+\draw[very thick,domain=0:8]plot(\x,{0.1*e^(-(\x-8)^2/14)});
+\draw[very thick,domain=8:20]plot(\x,{0.1*e^(-(\x-8)^2/40)});
+\draw(5.62,0.12)--(12,0.12)node[right=-2pt]{$n=6$};
+\draw(11.8,0.07)--(16,0.07)node[right=-2pt]{$n=10$};
+\end{tikzpicture}
+  \caption{$\chi^2(n)$分布的密度函数}\label{fig:5.4.1}
+\end{figure}
+
+
+当随机变量$\chi^2\sim\chi^2(n)$时,对给定$\alpha(0<\alpha<1)$,称满足$P(\chi^2\leq\chi_{1-\alpha}^2(n))=1-\alpha$的$\chi_{1-\alpha}^2$是自由度为$n$的卡方分布的$1-\alpha$分位数\index{F!分位数}.分位数$\chi_{1-\alpha}^2(n)$可以从附表3中查到.譬如$n=10,\alpha=0.05$,那么从附表3上查得
+\[\chi_{1-0.05}^2(10)=\chi_{0.95}^2(10)=18.31.\]
+\subsection{$F$分布\label{ssec:5.4.2}}
+\begin{definition}{}{}
+设$X_1\sim\chi^2(m),X_2\sim\chi^2(n),X_1$与$X_2$独立,则称$F+\frac{X_1/m}{X_2/n}$的分布是自由度为$m$与$n$的$F$分布\index{F!$F$分布},记为$F\sim F(m,n)$,其中$m$称为分子自由度, $n$称为分母自由度.
+\end{definition}
+下面分两步来导出$F$分布的密度函数.
+
+首先我们导出$Z=\frac{X_1}{X_2}$的密度函数,若记$p_1(x)$和$p_2(x)$分别为$\chi^2(m)$和$\chi^2(n)$的密度函数,根据独立随机变量商的分布的密度函数公式~\eqref{eq:3.3.22}. $Z$的密度函数为
+\begin{align*}
+p_Z(z)&=\int_0^{=\infty}x_2p_1(zx_2)p_2(x_2)\dd x_2\\
+&=\frac{z^{\frac{m}{2}-1}}{\Gamma \left( \frac{m}{2} \right) \Gamma \left( \frac{n}{2} \right) 2^{\frac{m+n}{2}}}\int_0^{+\infty}x_2^{\frac{m+n}2-1}\ee^{-\frac{x_2}2(1+z)}\dd x_2.
+\end{align*}
+运用变换$u=\frac{x_2}2(1+z)$,可得
+\[p_Z(z)=\frac{z^{\frac{m}{2}-1}\left( 1+z \right) ^{\frac{m+n}{2}}}{\Gamma \left( \frac{m}{2} \right) \Gamma \left( \frac{n}{2} \right)}\int_0^{+\infty}u^{\frac{m+n}2-1}\ee^{-u}\dd u.\]
+最后的定积分为伽马函数$\Gamma\left(\frac{m+n}2\right)$,从而
+\[
+p_Z\left( z \right) =\frac{\Gamma \left( \frac{m+n}{2} \right)}{\Gamma \left( \frac{m}{2} \right) \Gamma \left( \frac{n}{2} \right)}z^{\frac{m}{2}-1}\left( 1+z \right) ^{-\frac{m+n}{2}},\quad z>0.
+\]
+第二步,我们导出$F=\frac nm Z$的密度函数,对$y>0$,有
+\begin{align*}
+p_F\left( y \right) &=p_Z\left( \frac{m}{n}y \right) \cdot \frac{m}{n}\\
+&=\frac{\Gamma \left( \frac{m+n}{2} \right)}{\Gamma \left( \frac{m}{2} \right) \Gamma \left( \frac{n}{2} \right)}\left( \frac{m}{n}y \right) ^{\frac{m}{2}-1}\left( 1+\frac{m}{n}y \right) ^{-\frac{m+n}{2}}\cdot \frac{m}{n}\\
+&=\frac{\Gamma \left( \frac{m+n}{2} \right) \left( \frac{m}{n} \right) ^{\frac{m}{2}}}{\Gamma \left( \frac{m}{2} \right) \Gamma \left( \frac{n}{2} \right)}y^{\frac{m}{2}-1}\left( 1+\frac{m}{n}y \right) ^{-\frac{m+n}{2}}.
+\end{align*}
+这就是自由度为$m$与$n$的$F$分布的密度函数.该密度函数的图像是一个只取非负值的偏态分布(见图~\ref{fig:5.4.2} )
+\begin{figure}
+  \centering
+\begin{tikzpicture}[xscale=1.5,yscale=5,>=Stealth,domain=0:4,samples=500]
+\draw[->](0,0)node[below left]{$O$}--(4.5,0);\draw[->](0,0)--(0,0.9);
+\foreach \x in{0.5,1,...,4}\draw(\x,0.01)--(\x,0)node[below]{$\x$};
+\foreach \x in{0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8}\draw(0.05,\x)--(0,\x)node[left]{$\x$};
+\draw[dashed]plot (\x,{12*(\x)/(1+4*(\x))^(5/2)});
+\draw plot (\x,{6*(\x)/(1+\x)^4});
+\draw[thick,dashed]plot (\x,{4.8*(\x)/(1+0.4*(\x))^7});
+\draw[thick,domain=0.05:4]plot (\x,{4*(\x)/(1+0.04*\x)^52+0.02});
+\draw[thick](2.5,.8)--(2.8,.8)node[right=-2pt]{$F(4,4000)$};
+\draw[thick,dashed](2.5,.72)--(2.8,.72)node[right=-2pt]{$F(4,10)$};
+\draw(2.5,.64)--(2.8,.64)node[right=-2pt]{$F(4,4)$};
+\draw[dashed](2.5,.56)--(2.8,.56)node[right=-2pt]{$F(4,1)$};
+\end{tikzpicture}
+  \caption{$F$分布的密度函数}\label{fig:5.4.2}
+\end{figure}
+
+当随机变量$F\sim F(n,m)$时,对给定$\alpha(0<\alpha<1)$,称满足$P(F\leq F_{1-\alpha}(m,n))=1-\alpha$的$F_{1-\alpha}(m,n)$是自由度为$m$与$n$的$F$分布的$1-\alpha$分位数.
+
+由$F$分布的构造知,若$F\sim F(m,n)$,则有$1/F\sim F(n,m)$,故对给定$\alpha(0<\alpha<1)$,
+\[
+\alpha =P\left( \frac{1}{F}<F_{\alpha}\left( n,m \right) \right) =P\left( F\geq \frac{1}{F_{\alpha}\left( n,m \right)} \right).
+\]
+从而
+\[
+P\left( F\leq \frac{1}{F_{\alpha}\left( n,m \right)} \right) =1-\alpha,
+\]
+这说明
+\begin{equation}\label{eq:5.4.1}
+F_\alpha(n,m)=\frac1{F_{1-\alpha}(m,n)}.
+\end{equation}
+对小的$\alpha$,分位数$F_{1-\alpha}(m,n)$可以从附表5中查到,而分位数$F_\alpha(m,n)$则可通过 \eqref{eq:5.4.1} 得到.
+\begin{example}\label{exam:5.4.1}
+若取$m=10,n=5,\alpha=0.05$,那么从附表4上查得
+\[F_{1-0.05}(10,5)=F_{0.95}(10,5)=4.74,\]
+利用~\eqref{eq:5.4.1} 可得到
+\[F_{0.05}(10,5)=\frac1{F_{0.95}(5,10)}=\frac1{3.33}=0.3.\]
+\end{example}
+\subsection{$t$分布\label{eq:5.4.3}}
+\begin{definition}{}{5.4.3}
+设随机变量$X_1$与$X_2$独立且$X_1\sim N(0,1),X_2\sim\chi^2(n)$,则称$t=\frac{X_1}{\sqrt{X_2/n}}$的分布为自由度为$n$的$t$分布,记为$t\sim t(n)$.
+\end{definition}
+
+下面导出$t$分布的密度函数.由标准正态密度函数的对称性知, $X_1$与$-X_1$有相同分布,从而$t$与$-t$有相同分布.这意味着: 对任意实数$y$有
+\[P(0<t<y)=P(-y<-t<y)=P(-y<-t<0).\]
+
+于是
+\[P(0<t<y)=\frac12P(t^2<y^2).\]
+
+由$F$变量构造可知, $t^2=\frac{X_1^2}{X_2^2/n}\sim F(1,n)$,将上式两边关于$y$求导可微$t$分布的密度函数为
+\begin{align*}
+p_t(y)&=yp_F(y^2)=\frac{\Gamma \left( \frac{1+n}{2} \right) \left( \frac{1}{n} \right) ^{\frac{1}{n}}}{\Gamma \left( \frac{1}{2} \right) \Gamma \left( \frac{n}{2} \right)}\left( y^2 \right) ^{\frac{1}{2}-1}\left( 1+\frac{1}{n}y^2 \right) ^{-\frac{1+n}{2}}y\\
+&=\frac{\Gamma \left( \frac{n+1}{2} \right)}{\sqrt{n\pi}\Gamma \left( \frac{n}{2} \right)}\left( 1+\frac{y^2}{n} \right) ^{-\frac{n+1}{2}},\quad -\infty<y<+\infty.
+\end{align*}
+这就是自由度为$n$的$t$分布的密度函数.
+
+$t$分布的密度函数的图像是一个关于纵轴对称的分布(图~\ref{fig:5.4.3} ),与标准正态分布的密度函数形状类似,只是峰比标准正态分布低一些,尾部的概率比标准正态分布的大一些.
+\begin{figure}
+  \centering
+\begin{tikzpicture}[xscale=0.6,yscale=13,>=Stealth,domain=-6:6,samples=500]
+\draw[->](-6,0)--(7,0);\draw[->](-6,0)--(-6,0.45);
+\foreach \x in{-6,-4,...,6}\draw(\x,0.005)--(\x,0)node[below]{$\x$};
+\foreach \x in{0,0.05,0.1,0.15,0.2,0.25,0.3,0.35,0.4}\draw(-5.88,\x)--(-6,\x)node[left]{$\x$};
+\draw[thick]plot(\x,{0.396*e^(-(\x)^2/2)+0.004});
+\draw plot(\x,{0.375*(1+(\x)^2/4)^(-5/2)});
+\draw[thick](3,0.35)--(4,0.35)node[right=-2pt]{$N(0,1)$};
+\draw(3,0.32)--(4,0.32)node[right=-2pt]{$t(4)$};
+\end{tikzpicture}
+  \caption{$t$分布与$N(0,1)$的密度函数}\label{fig:5.4.3}
+\end{figure}
+\begin{itemize}
+\item 自由度为$1$的$t$分布就是标准柯西分布,它的均值不存在;
+\item $n>1$时, $t$分布的数学期望存在切尾$0$;
+\item $n>2$时, $t$分布的方程存在,且为$n/(n-2)$;
+\item 当自由度较大(如$n\geq30$时), $t$分布可以用$N(0,1)$分布近似.
+\end{itemize}
+
+$t$分布是统计学中的一类重要分布,它与标准正态分布的微小差别是由英国统计学家哥塞特(Gosset)发现的.哥塞特年轻时在牛津大学学习数学和化学, 1899年开始在一家酿酒厂担任酿酒化学技师,从事试验和数据分析工作. 由于哥塞特接触的样本容量都较小,只有$4,5$过大量实验数据的积累,哥塞特发现$t=\sqrt{n-1}(\bar x-\mu)/s$的分布与传统认为的$N(0,1)$分布并不同,特别是尾部概率相差较大,表~\ref{tab:5.4.2} 列出了标准正态分布$N(0,1)$和自由度为4的$t$分布的一些尾部概率.
+\begin{table}[!ht]
+  \centering
+  \caption{$N(0,1)$和$t(4)$的尾部概率$P(|X|\geq c)$}\label{tab:5.4.2}
+\begin{tabularx}{\textwidth}{YYYYY}
+\toprule
+&c=2&c=2.5&c=3&c=3.5\\
+\midrule
+X\sim N(0,1)&0.0455&0.0124&0.0027&0.000465\\
+X\sim t(4)&0.1161&0.0668&0.0399&0.0249\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+由此,哥塞特怀疑是否有另一个分布族存在,通过深入研究,哥塞特于1908年``Studen''的笔名发表了此项研究结果,故后人也称$t$分布为学生氏分布. $t$分布的发现在统计学史上具有划时代的意义,打破了正态分布一统天下的局面,开创了小样本统计推断的新纪元.
+
+当随机变量$t\sim t(n)$,称满足$P(t\leq t_{1-\alpha}(n))=1-\alpha$的$t_{1-\alpha}(n)$是自由度为$n$的$t$分布的$1-\alpha$分位数. 分位数$t_{1-\alpha}(n)$可以从附表3中查到.譬如$n=10,\alpha=0.05$,那么从附表4上查得$t_{1-0.05}(10)=t_{0.95}(10)=1.812$.
+
+由于$t$分布的密度函数关于0对称,故其分位数间有如下关系
+\begin{equation}\label{eq:5.4.2}
+t_\alpha(n)=-t_{1-\alpha}(n).
+\end{equation}
+譬如, $t_{0.05}(10)=-t_{0.95}(10)=-1.812$.
+\subsection{一些重要结论}
+来自一般正态总体的样本均值$x$和样本方差$s_2$的抽样分布是应用最广的抽样分布,下面我们加以介绍.
+\begin{theorem}{}{5.4.1}
+设$x_1,\dotsc,x_n$是来自正态总体$N(\mu,\sigma^2)$的样本,其样本均值和样本方差分别为
+\[\bar x=\frac1n\sum_{i=1}^nx_i\;\text{和}\;s^2=\frac1{n-1}\sum_{i=1}^n(x_i-\bar x)^2,\]
+则有
+\begin{enumerate}[label=(\arabic*)]
+\item $\bar x$相互独立;
+\item $\bar x\sim N(\mu,\sigma^2/n)$;
+\item $\frac{(n-1)\cdot s^2}{\sigma^2}=\chi^2(n-1)$.
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+记$\bm X=(x_1,\dotsc,x_n)\TT$,则有
+\[E\bm X=\begin{pmatrix}
+\mu\vdots\mu
+\end{pmatrix},\operatorname{\bm X}=\sigma^2 \bm I.\]
+\end{proof}
+取一个$n$维正交矩阵$\bm A$,其第一行的每一个元素均为$1/\sqrt n$,如
+\[\bm A=\begin{pmatrix}
+\frac1{\sqrt n}&\frac{1}{\sqrt n}&\frac1{\sqrt n}&\cdots&\frac1{\sqrt n}\\
+\frac1{\sqrt{2\cdot1}}&-\frac1{\sqrt{2\cdot1}}&0&\cdots&0\\
+\frac1{\sqrt{3\cdot2}}&\frac1{\sqrt{3\cdot2}}&-\frac2{\sqrt{3\cdot2}}&\cdots&0\\
+\vdots&\vdots&\vdots&\ddots&\vdots\\
+\frac1{\sqrt{n(n-1)}}&\frac1{\sqrt{n(n-1)}}&\frac1{\sqrt{n(n-1)}}&\cdots&
+-\frac1{\sqrt{n(n-1)}}
+\end{pmatrix}\]
+令$\bm Y=\bm A\bm X$,则由多维正态分布的性质知$\bm Y$仍服从$n$维正态分布,其均值和方差为
+\begin{align*}
+E\bm Y&\bm A\cdot E\bm X=\begin{pmatrix}
+\sqrt n\mu\\0\\\vdots\\0
+\end{pmatrix},\\
+\operatorname{Var}(\bm Y)&=\bm A\cdot\operatorname(\bm X\cdot\bm A\TT=\bm A\cdot\sigma^2\bm I\cdot \bm A\TT\\
+&=\sigma^2\bm A\bm A\TT=\sigma^2\bm I,
+\end{align*}
+由此, $\bm Y=(y_1,\dotsc,y_n)\TT$的各个分量相互独立,且都服从正态分布,其方差均为$\sigma^2$,而均值并不完全相同, $y_1$的均值为$\sqrt n\mu,y_2,\dotsc,y_n$的均值为$0$.注意到$\bar x=\frac1{\sqrt n}y_1$,这就证明了结论(2);由于$\sum_{i=1}^ny_i^2=\bm Y\TT\bm Y=\bm X\TT\bm A\TT\bm A\bm X=\sum_{i=1}^nx_i^2$,故而
+\begin{align*}
+(n-1)\cdot s^2&=\sum_{i=1}^n(x_i-\bar x)^2=\sum_{i=1}^nx_i^2-(\sqrt n\bar x)^2\\
+&=\sum_{i=1}^ny_i^2-y_1^2=\sum_{i=2}^ny_i^2,
+\end{align*}
+这证明结论(1);由于$y_2,\dotsc,y_n$独立同分布于$N(0,\sigma^2)$,于是
+\begin{equation}\label{eq:5.4.3}
+\frac{(n-1)\cdot s^2}{\sigma^2}=\sum_{i=2}^n\left(\frac{y_i}\sigma\right)^2\sim\chi^2(n-1),
+\end{equation}
+定理证明完成.
+\begin{corollary}{}{5.4.1}
+在定理~\ref{thm:5.4.1} 的记号下,有
+\begin{equation}\label{eq:5.4.4}
+t=\frac{\sqrt n(\bar x-\mu)}s\sim t(n-1).
+\end{equation}
+\end{corollary}
+\begin{proof}
+由定理~\ref{thm:5.4.1}(2)可以推出
+\begin{equation}\label{eq:5.4.5}
+\frac{\bar x-\mu}{\sigma/\sqrt n}\sim N(0,1),
+\end{equation}
+将~\ref{eq:5.4.4} 左端改写为
+\begin{equation}\label{eq:5.4.6}
+\frac{\sqrt{n}\left( \bar{x}-\mu \right)}{\sigma /\sqrt{n}}=\frac{\frac{\bar{x}-\mu}{\sigma /\sqrt{n}}}{\sqrt{\frac{\left( n-1 \right) \cdot s^2/\sigma ^2}{n-1}}}.
+\end{equation}
+由于分子是标准正态变量,分母的根号里是自由度为$n-1$的$t$变量除以它的自由度,且分子与分母相互独立,由$t$分布定义可知$t\sim t(n-1)$,推论证完.
+\end{proof}
+\begin{corollary}{}{5.4.2}
+设$x_1,\dotsc,x_m$是来自$N(\mu_1,\sigma_1^2)$的样本, $y_1,\dotsc,y_n$是来自$N(\mu_2,\sigma_2^2)$的样本,且此两样本相互独立,记
+\[s_x^2=\frac1{m-1}\sum_{i=1}^m(x_i-\bar x)^2,\quad s_y^2=\frac1{n-1}\sum_{i=1}^n
+(y_i-\bar y)^2,\]
+其中
+\[\bar x=\frac1m\sum_{i=1}^m x_i,\quad \bar y=\frac1n\sum_{i=1}^ny_i,\]
+则有
+\begin{equation}\label{eq5.4.7}
+F=\frac{s_x^2/\sigma_1^2}{s_y^2/\sigma_2^2}\sim F(m-1,n-1).
+\end{equation}
+特别,若$\sigma_1^2=\sigma_2^2$,则$F=s_x^2/s_y^2\sim F(m-1,n-1)$.
+\end{corollary}
+\begin{proof}
+由两样本独立可知, $s_x^2$与$s_y^2$相互独立,且
+\[\frac{(m-1)s_x^2}{\sigma_1^2}\sim\chi^2(m-1),\quad
+\frac{(n-1)s_y^2}{\sigma_1^2}\sim\chi^2(n-1).\]
+由$F$分布定义可知$F\sim F(m-1,n-1)$.
+\end{proof}
+\begin{corollary}{}{5.4.3}
+在推论~\ref{cor:5.4.2}的记号下,设$\sigma_1^2=\sigma_2^2=\sigma^2$,并记
+\[
+s_{w}^{2}=\frac{\left( m-1 \right) s_{x}^{2}+\left( n-1 \right) s_{y}^{2}}{m+n-2}=\frac{\sum_{i=1}^m{\left( x_i-\bar{x} \right) ^2}+\sum_{i=1}^n{\left( y_i-\bar{y} \right) ^2}}{m+n-2},
+\]
+则
+\begin{equation}\label{eq:5.4.8}
+\frac{\left( \bar{x}-\bar{y} \right) -\left( \mu _1-\mu _2 \right)}{s_w\sqrt{\frac{1}{m}+\frac{1}{n}}}\sim t\left( m+n-2 \right).
+\end{equation}
+\end{corollary}
+\begin{proof}
+由$\bar x\sim N(\mu_1,\sigma^2/m),\bar y\sim N(\mu_2,\sigma^2/n),\bar x$与$\bar y$独立,故有
+\[\bar x-\bar y\sim N\left(\mu_1-\mu_2,\left(\frac1m+\frac1n\right)\sigma^2\right),\]
+所以
+\begin{equation}\label{eq:5.4.9}
+\frac{\left( \bar{x}-\bar{y} \right) -\left( \mu _1-\mu _2 \right)}{\sigma \sqrt{\frac{1}{m}+\frac{1}{n}}}\sim N\left( \left( ,1 \right) \right).
+\end{equation}
+由定理~\ref{eq:5.4.1} 知, $\frac{(m-1)s_x^2}{\sigma^2}\sim\chi^2(m-1),
+\frac{(n-1)s_y^2}{\sigma^2}\sim\chi^2(n-1)$,且它们相互独立,则由可加性知
+\begin{equation}\label{eq:5.4.10}
+\frac{\left( m+n-2 \right) s_{w}^{2}}{\sigma ^2}=\frac{\left( m-1 \right) s_{x}^{2}+\left( n-1 \right) s_{y}^{2}}{\sigma ^2}\sim \chi ^2\left( m+n-2 \right).
+\end{equation}
+由于$\bar x-\bar y$与$s_w^2$相互独立,根据$t$分布的定义即可得到~\eqref{eq:5.4.8}.
+\end{proof}
+\begin{xiti}
+\item 在总体$N(7.6.4)$中抽取样本容量为$n$的样本,如果要求样本均值落在$(5.6,9.6)$内的概率不小于$0.95$,则$n$至少为多少?
+\item 设$x_1,\dotsc,x_n$是来自$N(\mu,25)$的样本,问$n$多大时才能使得$P(|\bar x-\mu|<1)\ge10.95$成立?
+\item 由正态总体$N(100,4)$抽取二个独立样本,样本均值分别为$\bar x,\bar y$,样本容量分别为$15,20$,试求$P(|\bar x-\bar y|>0.2)$.
+\item 由正态总体$N(\mu,\sigma^2)$抽取容量为$20$的样本,试求$P(10\sigma^2\leq\sum_{i=1}^{20}(x_i-\mu)^2\leq30\sigma^2)$.
+\item 设$x_1,\dotsc,x_{16}$是来自$N(\mu,\sigma^2)$的样本,经计算$\bar x=9,s^2=5.32$,试求$P(|\bar x-\mu|<0.6)$.
+\item 设$x_1,\dotsc,x_n$是来自$N(\mu,1)$的样本,试确定最小的常数$c$,使得对任意的$\mu\geq0$,有$P(|\bar x|<c)\leq\alpha$.
+\item 设随机变量$X\sim F(n,n)$,证明$P(X<1)=0.5$.
+\item 设$x_1,x_2$是来自$N(0,\sigma^2)$的样本,试求$Y=\left(\frac{x_1+x_2}{x_1-x_2}\right)^2$的分布.
+\item 设总体为$N(0,1),x_1,x_2$为样本,试求常数$k$,使得
+\[
+P\left( \frac{\left( x_1+x_2 \right) ^2}{\left( x_1-x_2 \right) ^2+\left( x_1+x_2 \right) ^2}>k \right) =0.05.
+\]
+\item 设$x_1,\dotsc,x_n$是来自$N(\mu_1,\sigma^2)$的样本, $y,\dotsc,y_m$是来自$N(\mu_2,\sigma^2)$的样本, $c,d$是任意两个不为0的常数,证明:
+\[
+t=\frac{c\left( \bar{x}-\mu _1 \right) +d\left( \bar{y}-\mu _2 \right)}{s_w\sqrt{\frac{c^2}{n}+\frac{d^2}{m}}}\sim t\left( n+m-2 \right),
+\]
+其中$s_{w}^{2}=\frac{\left( n-1 \right) s_{x}^{2}+\left( m-1 \right) s_{y}^{2}}{n+m-2}$.
+\item 设$x_1,\dotsc,x_n,x_{n+1}$是来自$N(\mu,\sigma^2)$的样本, $\bar x_n=\frac1n\sum_{i=1}^nx_i,s_n^2=\frac1{n-1}\sum_{i=1}^n(x_i-\bar x_n)^2$,试求常数$c$使得$t_c=c\frac{x_{n+1}-\bar x_n}{s_n}$服从$t$分布,并指出分布的自由度.
+\item 设从两个方差相等的正态总体中分别抽取容量为$15,20$的样本,其样本方差分别为$s_1^2,s_2^2$,试求$P(s_1^2/s_2^2>2)$.
+\end{xiti}
+\section{充分统计量\label{sec:5.5}}
+\subsection{充分性的概念\label{ssec:5.5.1}}
+统计量是把样本中的信息进行加工处理的结果,它可简化数据,便于统计推断.人们自然希望这种加工处理不损失原样本中的信息.不损失信息的统计量就是充分统计量.下面``不损失信息''给出明确的数学含义.
+\begin{example}\label{exam:5.5.1}
+为研究某个运动员的打靶命中率$\theta$,我们对该运动员进行测试,观测其10次,发现除第三、六次未命中外,其余8次都命中,这样的观测结果包含了两种信息:
+\begin{enumerate}
+\item[(1)] 打靶10次命中8次;
+\item[(2)] 2次不命中分别出现在第3次和第6次打靶上.
+\end{enumerate}
+
+第二种信息对了解该运动员的命中率是没有什么帮助的: 设想我们对该运动员的观测结果是第一、二次未命中,其余都命中,虽然样本观测值是不一样的,但它们提供的关于命中率$\theta$的信息是一样的.因此,在绝大多数实际问题中,试验编号信息常常对了解总体或其参数是无关紧要的,所以人们通常在试验前对样品进行随机编号.
+\end{example}
+
+一般地,设我们对该运动员进行$n$次观测,得到$x_1,\dotsc,x_n$每个$x_j$取值非0即1,命中为1,不命中为0,令
+$T=x_1+\dotsc+x_n,T$为观测到的命中次数,在这种场合仅仅记录使用$T$不会丢失任何与命中率$\theta$有关的信息,统计上将这种``样本加工不损失信''称为``充分性''\index{C!充分性}.
+
+上面我们直观地给出了关于``充分性''的概念,接下来我们从概率层面对之进行分析.我们知道,样本$ X=(x_1,\dotsc,x_n)$有一个样本分布$F_\theta( X)$, 这个分布包含了样本中一切有关$\theta$的信息.统计量$T=T(x_1,\dotsc,x_n)$也有一个抽样分布$F_\theta^T(t)$,当我们期望用统计量$T$代替原始样本$X$并且不损失任何有关$\theta$的信息时,也就是期望抽样分布$F_\theta^T(t)$像$F_\theta(X)$一样概括了有关$\theta$的一切信息.换言之,我们考察在统计量$T$的取值为$t$的情况下样本$X$的条件分布$F_\theta(X|T=t)$,可能有两种情况:
+\begin{itemize}
+\item $F_\theta(X|T=t)$依赖于参数$\theta$,此条件分布仍含有$\theta$的信息;
+\item $F_\theta(X|T=t)$不依赖于参数$\theta$,此条件分布已不含有$\theta$的信息.
+\end{itemize}
+后者表明,条件``$T=t$''的出现使得从样本分布$F_\theta(X)$到条件分布$F_\theta(X|T=t)$,有关$\theta$的信息消失了,这说明有关$\theta$的信息都含在统计量$T$之中.当已知统计量$T$的取值之后,也就知道了样本中关于$\theta$的所有信息,这正是统计量具有充分性的含义.
+\begin{example}\label{exam:5.5.2}
+设总体为二点分布$b(1,\theta),X_1,\dotsc,X_n$为样本,令$T=X_1+\dotsb+X_n$,则在给定$T$的取值后,对任意一组$x_1,\dotsc,x_n\bigl(\sum_{i=1}^nx_i=t\bigr)$,有
+\begin{align*}
+P(X_1=x_1,\dotsc,X_n=x_n|T=t)&=\frac{P\bigl(X_1=x_1,\dotsc,X_{n-1}=x_{n-1},X_n
+=t-\sum_{i=1}^{n-1}x_i\bigr)}{P\bigl(\sum_{i=1}^nX_i=t\bigr)}\\
+&=\frac{\prod_{i=1}^{n-1}P(X_i=x_i)\cdot P\bigl(X_n=t-\sum_{i=1}^{n-1}x_i\bigr)}
+{\binom nt\theta^t(1-\theta)^{n-t}}\\
+&=\frac{\prod_{i=1}^{n-1}\theta^{x_i}(1-\theta)^{1-x_i}\cdot\theta^{t-\sum_{i=1}^{n-1}x_i}
+(1-\theta)^{1-t+\sum_{i=1}^{n-1}x_i}}{\binom nt\theta^t(1-\theta)^{n-t}}\\
+&=\frac{\theta^t(1-\theta)^{n-t}}{\binom nt\theta^t(1-\theta)^{n-t}}=\frac1{\binom nt},
+\end{align*}
+该条件分布与$\theta$无关.若令$S=X_1+X_2(n>2)$,由于$S$只是用了前面两个样品观测值,显然没有包含样本中所有关于$\theta$的信息,在给定$S$的取值$S=s$后,对任意的一组$x_1,\dotsc,x_n(x_1+x_2=s)$,有
+\begin{align*}
+P(X_1=x_1,\dotsc,X_n=x_n|S=s)&=\frac{P(X_1=x_1,X_2=s-x_1,X_3=x_3,\dotsc,X_n=x_n)}{P(X_1+X_2=s)}\\
+&=\frac{\theta^{1+\sum_{i=3}^n}(1-\theta)^{n-s-\sum_{i=3}^nx_i}}{\binom 2s\theta^s(1-\theta)^{2-s}}
+=\frac{\theta^{\sum_{i=3}^nx_i}(1-\theta)^{n-2-\sum_{i=3}^nx_i}}{\binom2s}.
+\end{align*}
+这个分布依赖于未知参数$\theta$, 这说明样本中有关0的信息没有完全包含在统计量$S$中.
+\end{example}
+
+从上例可以直观地看出,用条件分布与未知参数无关来表示统计量不损失样本中有价值的信息是妥当的.由此可给出充分统计量的定义.
+\begin{definition}{}{5.5.1}
+设$x_1,\dotsc,x_n$是来自某个总体的样本,总体分布函数为$F(x;\theta)$,统计量$T=T(x_1,\dotsc,x_n)$称为$\theta$的 \textbf{充分统计量}\index{C!充分统计量},如果在给定$T$的取值后, $x_1,\dotsc,x_n$的条件分布与$\theta$无关.
+\end{definition}
+
+应用中条件分布可用条件分布列或条件密度函数来表示.
+\begin{example}\label{exam:5.5.2}
+设$x_1,\dotsc,x_n$是来自$N(\mu,1)$的样本, $T=\bar x$,则$T\sim N(\mu,1/n)$,易计算
+\begin{align*}
+p_\mu(x_1,\dotsc,x_N|T=t)&=\frac{p_\mu(x_1,\dotsc,x_n)}{p_\mu(t)}
+=\frac{(2\pi)^{-1/2}\exp\left\{-\frac12\sum_{i=1}^n(x_i-\mu)^2\right\}}
+{(2\pi/n)^{-1/2}\exp\left\{-\frac n2(t-\mu)^2\right\}}\\
+&=\sqrt n(2\pi)^{(n-1)/2}\exp\left\{-\frac12\sum_{i=1}^n(x_i-t)^2\right\},
+\end{align*}
+该分布与$\mu$无关,这说明$\bar x$是$\mu$的充分统计量.其中最后一个等式成立是因为有如下的平方和分解:
+\[\sum_{i=1}^n(x_i-\mu)^2=\sum_{i=1}^n(x_i-t)^2+n(t-\mu)^2.\]
+\end{example}
+\subsection{因子分解定理\label{ssec:5.5.2}}
+在统计学中有一个基本原则: 在充分统计量存在场合,任何统计推断都可以基于充分统计量进行,这可以简化统计推断的程序,通常将该原则称为充分性原则.然而在一般场合直接由定义~\ref{def:5,5.1} 出发验证一个统计量是充分的是困难的,因为条件分布的计算通常不那么容易.幸运的是,我们有一个简单的办法判断一个统计量是否充分,这就是下面的\textbf{因子分解定理},它由统计学家奈曼(Neyman)给出.为简便起见,我们引入一个在两种分布类型通用的概念—概率函数. $f(x)$称为随机变量$X$的概率函数: 在连续型场合, $f(x)$表示$X$的概率密度函数;在离散型场合,$f(x)$表示$X$的概率分布列.
+\begin{theorem}{}{5.5.1}
+设总体概率函数为$f(x;\theta),X_1,\dotsc,X_n$为样本,则$T=T(X_1,\dotsc,X_n)$为充分统计量的充分必要条件是: 存在两个函数$g(t,\theta)$和$h(x_1,\dotsc,x_n)$使得对任意的$\theta$和任一组观测值$x_1,\dotsc,x_n$,有
+\begin{equation}\label{eq:5.5.1}
+f(x_1,\dotsc,x_n;\theta)=g\big(T(x_1,\dotsc,x_n)\big)h(x_1,\dotsc,x_n),
+\end{equation}
+其中$g(t,\theta)$是通过统计量$T$的取值而依赖于样本的.
+\end{theorem}
+\begin{proof}
+一般性结果的证明超出本课程范围,此处我们将给出离散型随机变量下的证明,此时, $f(x_1,\dotsc,x_n)=P(X_1=x_1,\dotsc,X_n=x_n;\theta)$.
+
+先证必要性.设$T$是充分统计量,则在$T=t$下, $P(X_1=x_1,\dotsc,X_n=x_n|T=t)$与$\theta$无关,记为$h(x_1,\dotsc,x_n)$或$h(\bm X)$,令$A(t)=\{\bm X:T(\bm X)=t\}$,当$\bm X\in A(t)$时有
+\[\{T=t\}\supset\{X_1=x_1,\dotsc,X_n=x_n\},\]
+故
+\begin{align*}
+P(X_1=x_1,\dotsc,X_n&=x_n;\theta)=P(X_1=x_1,\dotsc,X_n=x_n,T=t;\theta)\\
+&=P(X_1=x_1,\dotsc,X_n=x_n|T=t)P(T=t;\theta)\\
+=h(x_1,\dotsc,x_n)g(t,\theta),
+\end{align*}
+其中$g(t,\theta)=P(T=t;\theta)$,而$h(\bm X)=P(X_1=x_1,\dotsc,X_n=x_n|T=t)$与$\theta$无关,必要性得证.
+
+对充分性,由于
+\begin{align*}
+P(T=t;\theta)&=\sum_{\{(x_1,\dotsc,x_n):T(x_1,\dotsc,x_n)=t\}}P(X_1=x_1,\dotsc,X_n=x_n;\theta)\\
+&=\sum_{\{(x_1,\dotsc,x_n):T(x_1,\dotsc,x_n)=t\}}g(t,\theta)h(x_1,\dotsc,x_n),
+\end{align*}
+对任给$\bm X=(x_1,\dotsc,x_n)$和$t$,满足$\bm X\in A(t)$,有
+\begin{align*}
+P(X_1=x_1,\dotsc,X_n=x_n|T=t)&=\frac{P(X_1=x_1,\dotsc,X_n=x_n,T=t;\theta)}{P(T=t;\theta)}\\
+&=\frac{P(X_1=x_1,\dotsc,X_n=x_n;\theta)}{P(T=t;\theta)}\\
+&=\frac{g(t,\theta)h(x_1,\dotsc,x_n)}{g(t,\theta)\sum_{\{(y_1,\dotsc,y_n):
+T(y_1,\dotsc,y_n)=t\}}h(y_1,\dotsc,y_n)}\\
+&=\frac{h(x_1,\dotsc,x_n)}{\sum_{\{(y_1,\dotsc,y_n):T(y_1,\dotsc,y_n)=t\}}h(y_1,\dotsc,y_n)},
+\end{align*}
+该分布与$\theta$无关,这证明了充分性.
+\end{proof}
+\begin{example}\label{exam:5.5.4}
+设$x_1,\dotsc,x_n$是取自总体$U(0,\theta)$的样本,即总体的密度函数为
+\[p(x;\theta)=\begin{cases}
+1/\theta,*0<x<\theta\\
+0,&\text{其他.}
+\end{cases}\]
+于是样本的联合密度函数为
+\[p(x_1;\theta)\dotsm p(x_n;\theta)=\begin{cases}
+(1/\theta)^n,&0<\min\{x_i\}\leq\max\{x_i\}<\theta,\\
+0,&\text{其他}.
+\end{cases}\]
+由于诸$x_i>0$,所以我们将上式改写为
+\[p(x_1;\theta)\dotsm p(x_n;\theta)=(1/\theta)^nI_{\{x_{(n)}<\theta\}},\]
+取$T=x_{(n)}$,并令$g(t,\theta)=(1/\theta)^nI_{t<\theta},h(\bm X)=1$,由因子分解定理知$T=x_{(n)}$是$\theta$的充分统计量.
+\end{example}
+\begin{example}
+设$x_1,\dotsc,x_n$是取自总体$N(\mu,\sigma^2)$的样本, $\theta=(\mu,\sigma^2)$是未知的,则联合密度函数为
+\begin{align*}
+P(x_1,\dotsc,x_n;\theta)&=(2\pi\sigma^2)^{-n/2}\exp\left\{-\frac1{2\sigma^2}\sum_{i=1}^n
+(x_i-\mu)^2\right\}\\
+&=(2\pi\sigma^2)^{_n/2}\exp\left\{-\frac{n\mu^2}{2\sigma^2}\right\}
+\exp\left\{-\frac1{2\sigma^2}\left(\sum_{i=1}^nx_i^2-2\mu\sim_{i=1}^n x_i\right)\right\},
+\end{align*}
+取$t_1=\sum_{i=1}^nx_i,t_2=\sum_{i=1}^nx_i^2$,并令
+\[g(t_1,t_2,\theta)=(2\pi\sigma^2)^{-n/2}\exp\left\{-\frac{n\mu^2}{2\sigma^2}\right\}
+\exp\left\{-\frac1{2\sigma^2}(t_2-2\mu t_1)\right\},h(\bm X)=1,\]
+则由因子分解定理, $T=(t_1,t_2)=\left(\sum_{i=1}^nx_i,\sum_{i=1}^n x_i^2\right)$是充分统计量.进一步,我们指出这个统计量与$(\bar x,s^2)$是一一对应的,这说明在正态总体场合常用的$(\bar x,s^2)$是充分统计量.
+\end{example}
+\begin{xiti}
+\item 设$x_1,\dotsc,x_n$来自几何分布
+\[P(X=x)=\theta(1-\theta)^xm\quad x=0,1,2,\dotsc\]
+的样本,证明$T=\sum_{i=1}^nx_i$是充分统计量.
+\item 设$x_1,\dotsc,x_n$是来自泊松分布$P(\lambda)$的样本,证明$T=\sum_{i=1}^nx_i$是充分统计量.
+\item 设总体为如下离散型分布,
+\begin{center}
+\begin{tabularx}{0.6\textwidth}{Y|YYYY}
+x&a_1&a_2&\dotsm&a_k\\
+\hline
+p&p_1&p_2&\dotsm&p_k
+\end{tabularx}
+\end{center}
+$x_1,\dotsc,x_n$是来自该总体的样本,
+\begin{enumerate}
+\item 证明次序统计量$(x_{(1)},\dotsc,x_{(n)})$是充分统计量.
+\item 以$n_j$表示$x_1,\dotsc,x_n$中等于$a_j$的个数,证明$(n_1,\dotsc,x_n)$是充分统计量.
+\end{enumerate}
+\item 设$x_1,\dotsc, x_n$是来自正态分布$N(\mu,1)$的样本,证明$T=\sum_{i=1}^nx_i$是充分统计量.
+\item 设$x_1,\dotsc,x_n$是来自
+\[p(x;\theta)=\theta\cdot x^{\theta-1},0<x<1,\theta>0\]
+的样本,试给出一个充分统计量.
+\item 设$x_1,\dotsc,x_n$是来自威布尔分布
+\[p(x;\theta)=mx^{m-1}\theta^{-m}\ee^{-(x/\theta)^m},\quad x>0,\theta>0\]
+的样本($m>0$已知),试给出一个充分统计量.
+\item 设$x_1,\dotsc,x_n$是来自Pareto分布
+\[p(x;\theta)=\theta\cdot a^\theta x^{-(\theta+1)},\quad x>a,\theta>0\]
+的样本($a>0$已知),试给出一个充分统计量.
+\item 设$x_1,\dotsc,x_n$是来自Laplace分布
+\[p(x;\theta)=\frac1{2\theta}\ee^{-|x|\theta},\quad\theta>0\]
+的样本,试给出一个充分统计量.
+\item 设$x_1,\dotsc,x_n$是辣子正态分布$N(\mu,\sigma^2)$的样本.
+\begin{enumerate}
+\item 在$\mu$已知时给出$\sigma^2$的一个充分统计量;
+\item 在$\sigma^2$已知时给出$\mu$的一个充分统计量.
+\end{enumerate}
+\item 设$x_1,\dotsc,x_n$是来自均匀分布$U(\theta_1,\theta_2)$的样本,试给出一个充分统计量.
+\item 设$x_1,\dotsc,x_n$是来自均匀分布$U(\theta,2\theta),\theta>0$的样本,试给出充分统计量.
+\end{xiti}

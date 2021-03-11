@@ -1,7 +1,8 @@
 % Edit by: Xiao Xing
 % !TEX root = ./main.tex
+\setcounter{chapter}{4}
 
-\chapter{大数定律与中心极限定理}
+\chapter{大数定律与中心极限定理\label{cha:5}}
 大数定律与中心极限定理
 
 \section{特征函数}
@@ -58,7 +59,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
     常用分布的特征函数
     \begin{enumerate}
         \item
-        {\heiti 单点分布}\index{分布!单点分布}: $ P (X = a) = 1 $, 
+        {\heiti 单点分布}\index{分布!单点分布}: $ P (X = a) = 1 $,
         其特征函数为
         \begin{equation*}
             \varphi (t) = \ee^{itz}.
@@ -77,7 +78,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
         \item
         {\heiti 均匀分布}\index{分布!均匀分布} $ U ( a,b ) $: 因为密度函数为
         \begin{equation*}
-            p (x) = 
+            p (x) =
             \begin{cases}
                 \dfrac{1}{b-a}, & a < x < b,\\
                 0, & \text{其他}.
@@ -180,15 +181,15 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
     在此我们仅对连续场合进行证明,
     而在离散场合的证明是类似的.
     \begin{enumerate}
-        \item 
+        \item
         \begin{align*}
-            \lvert \varphi (t) \rvert & = \left\lvert \int_{-\infty}^{+\infty} \ee^{itx} p (x) \dd x \right\rvert 
+            \lvert \varphi (t) \rvert & = \left\lvert \int_{-\infty}^{+\infty} \ee^{itx} p (x) \dd x \right\rvert
             \leq \int_{-\infty}^{+\infty} \left\lvert \ee^{itx} \right\rvert p (x) \dd x\\
             & = \int_{-\infty}^{+\infty} p (x) \dd x
             = \varphi (0)
             = 1.
         \end{align*}
-        \item 
+        \item
         \begin{equation*}
             \varphi (-t) = \int_{-\infty}^{+\infty} \ee^{-itx} p (x) \dd x
             = \overline{\int_{-\infty}^{+\infty} \ee^{itx} p (x) \dd x}
@@ -247,7 +248,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
         \begin{equation*}
             \varphi_Y (t) = \varphi_{\alpha X + \mu} (t) =\ee^{i \mu t} \varphi_X ( \sigma t ) = \exp \left( i \mu t - \frac{\sigma^2 t^2}{2} \right).
         \end{equation*}
-        \item 
+        \item
         {\heiti 伽玛分布}\index{分布!伽玛分布} $ Ga ( n, \lambda ) $: 设 $ Y \sim Ga ( n, \lambda ) $, 则$ Y = X_1 + X_2 + \dotsb + X_n $, 其中 $ X_i $ 独立同分布, 且 $ X_i \sim Exp ( \lambda ) $.
         由例~\ref{exam:4.1.1} 知
         \begin{equation*}
@@ -262,7 +263,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
             \varphi(t) = \left( 1 - \frac{it}{\lambda} \right)^{-a}.
         \end{equation*}
         \item
-        $ \mathbf{\chi^2 (n)} $ {\heiti 分布}\index{分布!chi2分布@$ \mathbf{\chi^2 (n)} $ 分布}: 因为 $ \chi^2 (n) = Ga ( n/2, 1/2 ) $, 所以 $ \chi^2 (n) $ 分布的特征函数为
+        $ \chi^2 (n) $ {\heiti 分布}\index{分布!chi2分布@$\chi^2 (n) $ 分布}: 因为 $ \chi^2 (n) = Ga ( n/2, 1/2 ) $, 所以 $ \chi^2 (n) $ 分布的特征函数为
         \begin{equation*}
             \varphi (t) = ( 1 - 2it )^{-n/2}.
         \end{equation*}
@@ -308,7 +309,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
     所以由 \eqref{eq:4.1.9} 得
     \begin{align*}
         E (X) & = \frac{\varphi' (0)}{i} = \frac{a}{\lambda},\\
-        Var (X) & = - \varphi'' (0) + \bigl( \varphi' (0) \bigr)^2 = \frac{a (a+1)}{\lambda^2} + \left( \frac{ai}{\lambda} \right)^2\\
+       \Var  (X) & = - \varphi'' (0) + \bigl( \varphi' (0) \bigr)^2 = \frac{a (a+1)}{\lambda^2} + \left( \frac{ai}{\lambda} \right)^2\\
         & = \frac{a (a+1)}{\lambda^2} - \frac{a^2}{\lambda^2} = \frac{a}{\lambda^2}.
     \end{align*}
 \end{solution}
@@ -534,7 +535,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
 
 \begin{xiti}
     \item 设离微随机变量 $ X $ 的分布列如下, 试求 $ X $ 的特征函数.
-    
+
     \begin{tabularx}{0.95\linewidth}{>{\centering\arraybackslash}X|*{5}{>{\centering\arraybackslash}X}}
         \toprule
         $X$ & 0 & 1 & 2 & 3\\
@@ -546,7 +547,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
     \begin{equation*}
         P ( X = k ) = ( 1 - p )^{k - 1} p, \ k=1,2,\dotsc.
     \end{equation*}
-    试求 $ X $ 的特征函数, 并以此求 $ E ( X ) $ 和 $ Var ( X ) $.
+    试求 $ X $ 的特征函数, 并以此求 $ E ( X ) $ 和 $\Var  ( X ) $.
     \item 设离散随机变量 $ X $ 服从巴斯卡分布
     \begin{equation*}
         P ( X = k ) = \binom{k - 1}{r - 1} p^r ( 1 - p )^{k - r}, \ k=r, r+1, \dotsc.
@@ -591,7 +592,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
 
 如果记一次试验中 $ A $ 发生的概率为 $ p $, 则 $ \mu_n $ 服从二项分布 $ b (n, p $, 因此频率 $ \mu_n / n $ 的数学期望与方差分别为
 \begin{equation}\label{eq:4.2.1}
-    E \left( \frac{\mu_n}{n} \right) = p, \ Var \left( \frac{\mu_n}{n} \right) = \frac{p ( 1 - p )}{n}.
+    E \left( \frac{\mu_n}{n} \right) = p, \Var  \left( \frac{\mu_n}{n} \right) = \frac{p ( 1 - p )}{n}.
 \end{equation}
 
 下面我们讨论 $ n \to +\infty $ 时, 频率 $ \mu_n / n $ 的极限状态.
@@ -680,9 +681,22 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
     \begin{equation*}
         p = P ( Y \leq f (x) ) = \int_0^1 \int_0^{f(x)} \dd y \dd x = \int_0^1 f (x) \dd x = J.
     \end{equation*}
+    \begin{figure}[!ht]
+      \centering
+      \begin{tikzpicture}[>=Stealth,scale=2.5]
+      \draw [->] (-0.2,0) -- (0,0) node[below left] {$O$} -- (1,0) node[below] {1} -- (1.3,0) node[below] {$x$};
+      \draw [->] (0,-0.15) -- (0,1) node[left]{1} -- (0,1.3) node[right] {$y$};
+     \filldraw[pattern = north east lines] (0,0.5) .. controls (0.2,0.2) and (0.7,0.9) .. (1,0.6) -- (1,0) -- (0,0) -- cycle;
+     \draw (0,1) -- (1,1) -- (1,0);
+     \node at (0.5,0.7) {$f(x)$};
+     \node[inner sep=0pt,fill=white] at (0.7,0.4) {$J$};
+     \end{tikzpicture}
+     \caption{随机投点法}
+    \end{figure}
     即定积分的值 $ J $ 就是事件 $ A $ 的概率 $ p $.
     由伯努利大数定律, 我们可以用重复试验中 $ A $ 出现的额率作为 $ p $ 的估计值.
     这种求定积分的方法也称为随机投点法, 即将 $ (X, Y) $ 看成是向正方形 $ \{ 0 \leq x \leq 1, 0 \leq y \leq 1 \} $ 内的随机投点, 用随机点落在区域 $ \{ y \leq f (x) \} $ 中的频率作为定积分的近似值.
+
     下面用蒙特卡洛方法, 来得到 $ A $ 出现的频率:
     \begin{enumerate}
         \item 先用计算机产生 $ (0, 1) $ 上均匀分布的 $ 2n $个随机数: $ x_i, y_i $, $ i=1, 2, \dotsc, n$, 这里 $ n $ 可以很大, 臂如 $ n = 10^4 $, 甚至 $ n = 10^5 $.
@@ -738,7 +752,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
 \end{equation*}
 则 $ \{ X_n \} $ 是独立的二点分布随机变量序列, 现考察该序列的前 $ n $ 个随机变量之和 $ \mu_n = \sum_{i=1}^n X_i $, 其频率及频率的数学期望分别为
 \begin{equation*}
-    \frac{\mu_n}{n} \frac{1}{n} \sum_{i=1}^n X_i, \quad p = E \left( \frac{1}{n} \sum_{i=1}^n X_i \right) = \frac{1}{n} \sum_{i=1}^n E (X_i).
+    \frac{\mu_n}{n} =  \frac{1}{n} \sum_{i=1}^n X_i, \quad p = E \left( \frac{1}{n} \sum_{i=1}^n X_i \right) = \frac{1}{n} \sum_{i=1}^n E (X_i).
 \end{equation*}
 那么伯努利大数定律的结论为: 对任意的 $ \varepsilon > 0 $, 有
 \begin{equation}\label{eq:4.2.5}
@@ -752,22 +766,22 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
 
 不同的大数定律的差别只是对不同的随机变量序列 $ \{ X_n \} $ 而言, 有的是相互独立的随机变量序列, 有的是相依的随机变量序列, 有的是同分布的随机变量序列, 有的是不同分布的随机变量序列等等.
 
-\subsubsection{切比需夫大数定律}
+\subsubsection{切比雪夫大数定律}
 
 利用切比雪夫不等式就可证明下面的切比雪夫大数定律.
 
 \begin{theorem}{切比需夫大数定律}{4.2.2}
-    设 $ \{ X_n \} $ 为一列两两不相关的随机变量序列, 若每个 $ X_i $ 的方差存在, 且有共同的上界, 即 $ Var (X) \le c $, $ i=1,2, \dotsc $, 则 $ \{ X_n \} $ 服从大数定律, 即对任意的 $ \varepsilon > 0 $,  \eqref{eq:4.2.5}  成立.
+    设 $ \{ X_n \} $ 为一列两两不相关的随机变量序列, 若每个 $ X_i $ 的方差存在, 且有共同的上界, 即 $\Var  (X) \le c $, $ i=1,2, \dotsc $, 则 $ \{ X_n \} $ 服从大数定律, 即对任意的 $ \varepsilon > 0 $,  \eqref{eq:4.2.5}  成立.
 \end{theorem}
 
 \begin{proof}
     因为 $ \{ X_n \} $ 两两不相关, 故
     \begin{equation*}
-        Var \left( \frac{1}{n} \sum_{i=1}^n X_i \right) = \frac{1}{n^2} \sum_{i=1}^n Var \bigl( X_i \bigr) \leq \frac{c}{n}.
+       \Var  \left( \frac{1}{n} \sum_{i=1}^n X_i \right) = \frac{1}{n^2} \sum_{i=1}^n\Var  \bigl( X_i \bigr) \leq \frac{c}{n}.
     \end{equation*}
     再由切比雪夫不等式得到: 对任意的 $ \varepsilon > 0 $, 有
     \begin{equation*}
-        P \left( \left\lvert \frac{1}{n} \sum_{i=1}^n X_i - \frac{1}{n} \sum_{i=1}^n E \bigl( X_i \bigr) \right\rvert < \varepsilon \right) \geq 1 - \frac{Var\left( \frac{1}{n} \sum_{i=1}^n X_i \right)}{\varepsilon^2} \geq 1 - \frac{c}{n\varepsilon^2}.
+        P \left( \left\lvert \frac{1}{n} \sum_{i=1}^n X_i - \frac{1}{n} \sum_{i=1}^n E \bigl( X_i \bigr) \right\rvert < \varepsilon \right) \geq 1 - \frac{\Var\left( \frac{1}{n} \sum_{i=1}^n X_i \right)}{\varepsilon^2} \geq 1 - \frac{c}{n\varepsilon^2}.
     \end{equation*}
     于是当 $ n \to +\infty $ 时, 有
     \begin{equation*}
@@ -779,7 +793,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
 假如 $ \{ X_n \} $ 是独立同分布的随机变量序列, 且方差有限, 则 $ \{ X_n \} $ 必定服从大数定律.
 
 \begin{example}\label{exam:4.2.2}
-    设 $ \{ X_n \} $ 是独立同分布的随机变量序列, $ E \bigl( X_n^4 \bigr) < +\infty $. 若令 $ E \bigl( X_n^4 \bigr) < +\infty $, $ Var \bigl( X_n \bigr)= \sigma^2 $, 考察
+    设 $ \{ X_n \} $ 是独立同分布的随机变量序列, $ E \bigl( X_n^4 \bigr) < +\infty $. 若令 $ E \bigl( X_n^4 \bigr) < +\infty $, $\Var  \bigl( X_n \bigr)= \sigma^2 $, 考察
     \begin{equation*}
         Y_n = \bigl( X_n - \mu \bigr)^2, \quad n = 1, 2, \dotsc,
     \end{equation*}
@@ -792,7 +806,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
 \begin{proof}
     显然 $ \{ Y_n \} $ 是独立同分布随机变量序列, 其方差
     \begin{equation*}
-        Var \bigl( Y_n \bigr) = Var \bigl( X_n - \mu \bigr)^2 = E \bigl( X_n - \mu \bigr)^4 - \sigma^4.
+       \Var  \bigl( Y_n \bigr) =\Var  \bigl( X_n - \mu \bigr)^2 = E \bigl( X_n - \mu \bigr)^4 - \sigma^4.
     \end{equation*}
     由于 $ E \bigl( X_n^4 \bigr) $ 存在, 故 $ E \bigl( X_n^3 \bigr) $ ,  $ E \bigl( X_n^2 \bigr) $ 皆存在, 从而 $ E \bigl( X_n - \mu \bigr)^4 $ 也存在.
     由切比雪夫大数定律知
@@ -810,7 +824,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
 
 注意到以上大数定律的证明中, 只要有
 \begin{equation*}\label{eq:4.2.6}
-    \frac{1}{n^2} Var \left( \sum_{i=1}^n X_i \right) \to 0.
+    \frac{1}{n^2}\Var  \left( \sum_{i=1}^n X_i \right) \to 0.
 \end{equation*}
 则大数定律就能成立.
 这个条件 \ref{eq:4.2.6} 被称为{\heiti 马尔可夫条件}\index{马尔可夫条件}.
@@ -834,11 +848,11 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
 \begin{proof}
     $ \{ X_n \} $ 为相依随机变量序列, 考虑其马尔可夫条件
     \begin{equation*}
-        \frac{1}{n^2} Var \left( \sum_{i=1}^n X_i \right) = \frac{1}{n^2} \left( \sum_{i=1}^n Var \bigl( X_i \bigr) + 2 \sum_{i=1}^{n-1} Cov \bigl( X_i, X_{i-1} \bigr) \right)
+        \frac{1}{n^2}\Var  \left( \sum_{i=1}^n X_i \right) = \frac{1}{n^2} \left( \sum_{i=1}^n\Var  \bigl( X_i \bigr) + 2 \sum_{i=1}^{n-1}\Cov  \bigl( X_i, X_{i-1} \bigr) \right)
     \end{equation*}
-    记 $ Var ( X_i ) = \sigma^2 $, 则 $ \lvert Cov ( X_i, X_j ) \rvert \leq \sigma^2 $, 于是有
+    记 $\Var  ( X_i ) = \sigma^2 $, 则 $ \lvert\Cov  ( X_i, X_j ) \rvert \leq \sigma^2 $, 于是有
     \begin{equation*}
-        \frac{1}{n^2} Var \left( \sum_{i=1}^n X_i \right) \leq \frac{1}{n^2} \bigl( n \sigma^2 + 2 ( n - 1 ) \sigma^2 \bigr) \to 0, \ ( n \to +\infty ),
+        \frac{1}{n^2}\Var  \left( \sum_{i=1}^n X_i \right) \leq \frac{1}{n^2} \bigl( n \sigma^2 + 2 ( n - 1 ) \sigma^2 \bigr) \to 0, \ ( n \to +\infty ),
     \end{equation*}
     即马尔可夫条件成立, 故 $ \{ X_n \} $ 服从大数定律.
 \end{proof}
@@ -892,7 +906,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
         \num{0.341344} & \num{0.341329} & \num{0.341334}\\
         \bottomrule
     \end{tabularx}
-    
+
     正如例~\ref{exam:4.2.1} 中所说明的, 可以通过线性变换将 $ [a, b] $ 区间上的定积分化成 $ [0, 1] $ 区间上的定积分, 所以以上方法计算定积分方法带有普遍意义。
 \end{example}
 
@@ -914,7 +928,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
     证明 $ \{ X_n \} $ 服从大数定律.
     \item 在伯努利试验中, 事件 $ A $ 出现的概率为 $ p $, 令
     \begin{equation*}
-        X+n = 
+        X+n =
         \begin{cases}
             1, & \text{若在第} \ n \ \text{次及第} \ n+1 \ \text{次试验中} \ A \ \text{出现}\\
             0, & \text{其他}.
@@ -928,7 +942,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
     证明 $ \{ X_n \} $ 服从大数定律.
     \item 设 $ \{ X_n \} $ 为独立同分布的随机变量序列, 其共同的分布函数为
     \begin{equation*}
-        F (x) = \frac{1}{2} + \frac{1}{\pi} \arctan \frac{a}{x}, \ -\infty < x < +\infty 
+        F (x) = \frac{1}{2} + \frac{1}{\pi} \arctan \frac{a}{x}, \ -\infty < x < +\infty
     \end{equation*}
     试问: 辛钦大数定律对此随机变量序列是否适用?
     \item 设 $ \{ X_n \} $ 为独立同分布的随机变量序列, 其共同分布为
@@ -951,7 +965,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
         \frac{\sigma_n^2}{n} \to 0, \ n \to +\infty.
     \end{equation*}
     则 $ \{ X_n \} $ 服从大数定律.
-    \item (伯恩斯组大数定律) 设 $ \{ X_n \} $ 是方差有界的随机变量序列, 且当 $ \lvert k - l \rvert \to +\infty $ 时, 一致地有 $ Cov \bigl( X_k, X_l \bigr) \to 0 $, 证明 $ \{ X_n \} $ 服从大数定律.
+    \item (伯恩斯组大数定律) 设 $ \{ X_n \} $ 是方差有界的随机变量序列, 且当 $ \lvert k - l \rvert \to +\infty $ 时, 一致地有 $\Cov  \bigl( X_k, X_l \bigr) \to 0 $, 证明 $ \{ X_n \} $ 服从大数定律.
     \item (格涅坚科大数定律) 设 $ \{ X_n \} $ 是随机变量序列, 若记
     \begin{equation*}
         Y_n = \frac{1}{n} \sum_{i=1}^n X_i, \ a_n = \frac{1}{n} \sum_{i=1}^n E (x_i).
@@ -972,7 +986,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
     \end{equation*}
 \end{xiti}
 
-\subsection{随机变量序列的两种收敛性}
+\section{随机变量序列的两种收敛性}
 
 随机变量序列的收敛性有多种, 其中常用的是两种: 依概率收敛和按分布收敛.
 前面叙述的大数定律涉及的是一种依概率收敛, 后面叙述的中心极限定理将涉及按分布收敛.
@@ -1168,7 +1182,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
         F ( x - 0 ) \leq \varliminf_{n \to +\infty} F_n (x) \leq \varlimsup_{n \to +\infty} F_x (x) \leq F ( x + 0 ).
     \end{equation}
     因为若上式成立, 则当 $ x $ 是 $ F (x) $ 的连续点时, 有 $ F (x-0) =F (x+0) $, 由此即可得 $ F_n (x) \stackrel{W}{\to} F (x) $.
-    
+
     为证 \eqref{eq:4.3.5}, 先令 $ x' < x $, 则
     \begin{equation*}
         \{ X \leq x' \} = \{ X_n \leq x, X \leq x' \} \cup \{ X_n > x, X \leq x' \} \subset \{ X_n \leq x \} \cup \{ \bigl\lvert X_n - X \bigr\rvert \geq x - x' \},
@@ -1186,7 +1200,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
     \begin{equation*}
         F (x-0) \leq \varliminf_{n \to +\infty} F_n (x).
     \end{equation*}
-    
+
     同理可证，当 $ x'' > x $ 时, 有
     \begin{equation*}
         \varlimsup_{n \to +\infty} F_n (x) \leq F (x'').
@@ -1245,7 +1259,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
     \end{equation*}
     由此得
     \begin{equation*}
-        P \bigl( \bigl\lvert X_n - c \bigr\rvert \geq \varepsilon \bigr) \to 0. 
+        P \bigl( \bigl\lvert X_n - c \bigr\rvert \geq \varepsilon \bigr) \to 0.
     \end{equation*}
     即 $ X_n \stackrel{P}{\to} X $.
     定理证毕.
@@ -1347,7 +1361,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
             1, & x \geq 0.
         \end{cases}
     \end{equation*}
-    试问下列分布函数列的极限函数是否仍是分布函数? (其中 $ n = 1, 2, \dotsc $.)
+    试问下列分布函数列的极限函数是否仍是分布函数? （其中 $ n = 1, 2, \dotsc $.）
     \begin{enumerate}
         \item $ \{ D ( x + n ) \} $,
         \item $ \{ D ( x + 1/n ) \} $,
@@ -1356,7 +1370,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
     \item 设分布函数列 $ \{ F_n (x) \} $ 弱收敛于连续的分布函数 $ F (x) $, 试证: $ \{ F_n (x) \} $ 在 $ ( -\infty, +\infty ) $ 上一致收敛于分布函数 $ F (x) $.
     \item 利用特征函数方法证明如下的泊松定理： 设有一列二项分布 $ \{ b ( k, n, p_n ) \} $, 若 $ \lim_{n \to +\infty} n p_n = \lambda > 0 $, 则
     \begin{equation*}
-        \lim_{n \to +\infty} b ( k, n, p_n ) = \frac{\lambda^k}{k!} \ee^{\lambda}, \ k = 0, 1, 2, \dotsc.
+        \lim_{n \to +\infty} b ( k, n, p_n ) = \frac{\lambda^k}{k!} \ee^{-\lambda}, \ k = 0, 1, 2, \dotsc.
     \end{equation*}
     \item 如果 $ X_n \stackrel{L}{\to} X $, 且数列 $ a_n \to a $, $ b_n \to b $. 试证: $ a_n X_n + b_n \stackrel{L}{\to} a X + b $.
     \item 如果 $ X_n \stackrel{L}{\to} X $, $ Y_n \stackrel{P}{\to} a $, 试证: $ X_n + Y_n \stackrel{L}{\to} X + a $.
@@ -1392,13 +1406,13 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
     \end{equation*}
     \item 设随机变量序列 $ \{ X_n \} $ 独立同分布, 数学期望、方差均存在, 且
     \begin{equation*}
-        E \bigl( X_n \bigr) = 0, \ Var \bigl( X_n \bigr) = \sigma^2.
+        E \bigl( X_n \bigr) = 0, \\Var  \bigl( X_n \bigr) = \sigma^2.
     \end{equation*}
     试证：
     \begin{equation*}
         \frac{1}{n} \sum_{k = 1}^n X_k^2 \stackrel{P}{\to} \sigma^2.
     \end{equation*}
-    \item 设随机变量序列 $ \{ X_n \} $ 独立同分布, 且 $ Var (X_n) = \sigma^2 $ 存在, 令
+    \item 设随机变量序列 $ \{ X_n \} $ 独立同分布, 且 $\Var  (X_n) = \sigma^2 $ 存在, 令
     \begin{equation*}
         \bar{X} = \frac{1}{n} \sum_{i=1}^n X_i, \ S_n^2 = \frac{1}{n} \sum_{i=1}^n \bigl( X_i - \bar{X} \bigr)^2.
     \end{equation*}
@@ -1478,35 +1492,35 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
 
 \begin{figure}
     \centering
-    % \begin{tikzpicture}[samples=100,>=stealth,every node/.style={scale=0.5}]
-    %     \draw[->] (0,0) -- (4.2,0) node[right] {$y$};
-    %     \draw[->] (0,0) -- (0,1.2) node[above] {$p(y)$};
-    %     \draw (0,1) -- (1,1);
-    %     \draw[semithick] (0,0) -- (1,1) -- (2,0);
-    %     \draw[densely dashed,domain=0:1] plot(\x,{(\x)^2/2});
-    %     \draw[dashed,domain=1.03:2] plot(\x,{-(\x-3/2)^2+3/4});
-    %     \draw[dashed,domain=2.03:3] plot(\x,{(3-\x)^2/2});
-    %     \draw[dashed,domain=0:1] plot(\x,{(\x)^2/6});
-    %     \draw[dashed,domain=1.03:2] plot(\x,{((\x)^3-4*(\x-1)^3)/6});
-    %     \draw[dashed,domain=2.03:3] plot(\x,{((4-\x)^3-4*(3-\x)^3)/6});
-    %     \draw[densely dashed,domain=3.03:4] plot(\x,{(4-\x)^3/6});
-    %     \draw[->] (0.82,1.2) node[above right=-1.5pt and -1.5pt] {$p_1(y)$} -- (0.7,1);
-    %     \draw[->] (1.35,1) node[above right=-1.5pt and -1.5pt] {$p_2(y)$} -- (1.2,0.8);
-    %     \draw[->] (1.85,0.9) node[above right=-1.5pt and -1.5pt] {$p_3(y)$} -- (1.7,0.7);
-    %     \draw[->] (2.85,0.55) node[above right=-1.5pt and -1.5pt] {$p_4(y)$} -- (2.7,0.35);
-    %     \foreach \i in {1,...,4} \draw[very thin] (\i,0)node[below]{\i}-- (\i,0.02);
-    %     \foreach \i in {1/6,1/2,2/3,3/4,1} {\draw[very thin,font=\scriptsize] (0,\i) -- (0.04,\i) node[left] {\i};}
-    %     \draw[densely dotted] (0,1/6) -- (1,1/6);
-    %     \draw[densely dotted] (0,1/2) -- (1,1/2);
-    %     \draw[densely dotted] (0,2/3) -- (1.8,2/3);
-    %     \draw[densely dotted] (0,3/4) -- (1.26,3/4);
-    % \end{tikzpicture}
-    \includegraphics[width=0.9\linewidth]{figure/fig4-4-1.pdf}
+    \begin{tikzpicture}[samples=100,>=Stealth,
+    yscale=3,xscale=1.5]
+        \draw[->] (0,0) -- (4.2,0) node[right] {$y$};
+        \draw[->] (0,0) -- (0,1.2) node[above] {$p(y)$};
+        \draw (0,1) -- (1,1);
+        \draw[semithick] (0,0) -- (1,1) -- (2,0);
+        \draw[densely dashed,domain=0:1] plot(\x,{(\x)^2/2});
+        \draw[dashed,domain=1.03:2] plot(\x,{-(\x-3/2)^2+3/4});
+        \draw[dashed,domain=2.03:3] plot(\x,{(3-\x)^2/2});
+        \draw[dashed,domain=0:1] plot(\x,{(\x)^2/6});
+        \draw[dashed,domain=1.03:2] plot(\x,{((\x)^3-4*(\x-1)^3)/6});
+        \draw[dashed,domain=2.03:3] plot(\x,{((4-\x)^3-4*(3-\x)^3)/6});
+        \draw[densely dashed,domain=3.03:4] plot(\x,{(4-\x)^3/6});
+        \draw[->] (0.82,1.2) node[above right=-1.5pt and -1.5pt] {$p_1(y)$} -- (0.7,1);
+        \draw[->] (1.35,1) node[above right=-1.5pt and -1.5pt] {$p_2(y)$} -- (1.2,0.8);
+        \draw[->] (1.85,0.9) node[above right=-1.5pt and -1.5pt] {$p_3(y)$} -- (1.7,0.7);
+        \draw[->] (2.85,0.55) node[above right=-1.5pt and -1.5pt] {$p_4(y)$} -- (2.7,0.35);
+        \foreach \i in {1,...,4} \draw[very thin] (\i,0)node[below]{$\i$}-- (\i,0.02);
+        \foreach \i in {1/6,1/2,2/3,3/4,1} {\draw[very thin,font=\scriptsize] (0,\i) -- (0.04,\i) node[left] {$\i$};}
+        \draw[densely dotted] (0,1/6) -- (1,1/6);
+        \draw[densely dotted] (0,1/2) -- (1,1/2);
+        \draw[densely dotted] (0,2/3) -- (1.8,2/3);
+        \draw[densely dotted] (0,3/4) -- (1.26,3/4);
+    \end{tikzpicture}
     \caption{均匀分布的卷积}\label{fig:4.4.1}
 \end{figure}
 
 可以设想, 当 $ n = 100 $ 时, $ p_{100} (x) $ 的非零区城为 $ ( 0, 100 ) $, 若用卷积公式可以分 100 段求出 $ p_{100} ( x ) $ 的表达式, 它们分别是 99 次多项式.
-如此复杂的形式即使求出 (当然没有人去求), 也无法使用.
+如此复杂的形式即使求出 （当然没有人去求）, 也无法使用.
 这就迫使人们去寻求近似分布.
 若记 $ Y_n $ 的分布函数为 $ F_n (x) $, 在弱收敛的含义下, 求出其极限分布 $ F (x) $, 那么当 $ n $ 很大时, 就可用 $ F(x) $ 作为 $ F_n (x) $ 的近似分布.
 
@@ -1518,14 +1532,14 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
 \begin{equation*}
     Y_n^* = \frac{Y_n - E (Y_n)}{\sqrt{Var ( Y_n )}}.
 \end{equation*}
-由于 $ E (Y_n) = 0 $, $ Var (Y_n) = 1 $, 这就有可能得出 $ Y_n $ 的极限分布为标准正态分布 $ N (0, 1) $.
+由于 $ E (Y_n) = 0 $, $\Var  (Y_n) = 1 $, 这就有可能得出 $ Y_n $ 的极限分布为标准正态分布 $ N (0, 1) $.
 
 中心极限定理就是研究独立随机变量和的极限分布为正态分布的问题.
 
 \subsection{独立同分布下的中心极限定理}
 
 \begin{theorem}{林德贝格-勒维中心极限定理}{4.4.1}
-    设 $ \{ X_n \} $ 是独立同分布的随机变量序列, 且 $ E (X_n) = \mu $, $ Var (X_n)= \sigma^2 > 0 $.
+    设 $ \{ X_n \} $ 是独立同分布的随机变量序列, 且 $ E (X_n) = \mu $, $\Var  (X_n)= \sigma^2 > 0 $.
     记
     \begin{equation*}
         Y_n^* = \frac{X_1 + X_2 + \dotsb + X_n - n \mu}{\sigma \sqrt{n}},
@@ -1543,7 +1557,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
     \begin{equation*}
         \varphi_{Y_n^*} (t) = \Biggl( \varphi \biggl( \frac{t}{\sigma \sqrt{n}} \biggr) \Biggr)^n.
     \end{equation*}
-    又因为 $ E ( X_n - \mu ) = 0 $, $ Var ( X_n - \mu ) = \sigma^2 $, 所以有
+    又因为 $ E ( X_n - \mu ) = 0 $, $\Var  ( X_n - \mu ) = \sigma^2 $, 所以有
     \begin{equation*}
         \varphi' (0) = 0, \ \varphi'' (0) = - \sigma^2.
     \end{equation*}
@@ -1560,11 +1574,11 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
 \end{proof}
 
 定理~\ref{thm:4.4.1} 有广泛的应用, 它只假设 $ \{ X_n \} $ 独立同分布、方差存在, 不管原来的分布是什么, 只要 $ n $充分大, 就可以用正态分布去逼近.
-以下给出一些林德贝格-勒维中心极限定理的应用例子.
+以下给出一些林德贝格{--}勒维中心极限定理的应用例子.
 
-\begin{example}[正态菌机数的产生]\label{exam:4.4.3}
+\begin{example}[正态随机数的产生]\label{exam:4.4.3}
     在随机模拟 (蒙特卡洛方法) 中经常需要产生正态分布 $ N ( \mu, \sigma^2 ) $ 的随机数, 但一般计算机软件只具备产生区间 $ (0,1) $ 上的均匀分布随机数的功能, 现在我们要用中心极限定理通过 $ (0,1) $ 上均匀分布的随机数来产生正态分布 $ N ( \mu, \sigma^2 ) $ 的随机数.
-    
+
     设 $ X $ 服从 $ (0,1) $ 上的均匀分布, 则其数学期望与方差分别为 $ 1/2 $ 和 $ 1/12 $.
     由此得 12 个相互独立的 $ (0,1) $ 上均匀分布随机变量和的数学期望与方差分别为 6 和1.
     因此我们可以如下产生正态分布 $ N ( \mu, \sigma^2 ) $ 的随机数.
@@ -1582,26 +1596,26 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
 \begin{example}[数值计算中的误差分析]\label{exam:4.4.4}
     在数值计算中, 任何实数 $x$ 都只能用一定位数的小数 $x'$来近似.
     譬如在计算中取5位小数, 第6位以后的小数都用四舍五人的方法舍去, 则 $ \pi = 3.141592654\dots $ 和 $ \ee = 2.718281828\dots $ 的近似数为 $\pi' = 3.14159 $ 和 $ \ee' = 2.71828 $.
-    
+
     现在如果要求 $ n $ 个实数 $ x_i (i = 1, 2, \dotsc, n) $ 的和 $ S $, 在数值计算中, 只能用 $x_i$ 的近似数 $ x'_i $来得到 $ S $ 的近似数$ S' $, 记个别误差为 $ \varepsilon_i = x_i - x'_i $, 则总误差为
     \begin{equation*}
         S - S' = \sum_{i=1}^n x_i - \sum_{i=1}^n x'_i = \sum_{i=1}^n \varepsilon_i.
     \end{equation*}
-    
+
     若在数值计算中, 取 $ k $ 位小数, 则可认为 $ \varepsilon_i $ 服从区间 $ ( -0.5\times 10^{-k}, 0.5\times 10^{-k} ) $ 上的均匀分布, 且相互独立.
     下面我们来估计总误差.
     一种粗略的估计方法是: 由于 $ \lvert \varepsilon_i \rvert \leq 0.5 \times 10^{-k} $, 所以
     \begin{equation}
         \biggl\lvert \sum_{i=1}^n \varepsilon_i \biggr\rvert \leq n \times 0.5 \times 10^{-k}.
     \end{equation}
-    
+
     现在用中心极限定理来估计: 因为 $ \{ \varepsilon_i \} $ 独立同分布, 且
     \begin{equation*}
-        E \big( \varepsilon_i \bigr) = 0, \quad Var \bigl( \varepsilon_i \bigr)= \frac{10^{-2k}}{12}.
+        E \big( \varepsilon_i \bigr) = 0, \quad\Var  \bigl( \varepsilon_i \bigr)= \frac{10^{-2k}}{12}.
     \end{equation*}
     因此对总误差有
     \begin{equation*}
-        E \biggl( \sum_{i=1}^n \varepsilon_i \biggr) = 0, \quad Var \biggl( \sum_{i=1}^n \varepsilon_i \biggr) = \frac{n 10^{-2k}}{12}.
+        E \biggl( \sum_{i=1}^n \varepsilon_i \biggr) = 0, \quad\Var  \biggl( \sum_{i=1}^n \varepsilon_i \biggr) = \frac{n 10^{-2k}}{12}.
     \end{equation*}
     由林德贝格-勒维中心极限定理知, 对任意的 $x$, 有
     \begin{align*}
@@ -1625,7 +1639,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
     \begin{equation}\label{eq:4.4.3}
         \biggl\lvert \sum_{i=1}^n \varepsilon_i \biggr\rvert \leq 0.7433 \times \sqrt{n} \times 10^{-k}.
     \end{equation}
-    
+
     譬如在数值计算中保留 5 位小数, 以概率 \num{0.99} 可以保证, \num{10000} 个近似数之和的总误差, 用 \eqref{eq:4.4.3} 式估计为 \num{0.0007433}, 即万分之七左右.
 \end{example}
 
@@ -1643,7 +1657,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
     \end{equation*}
     则对任意实数 $y$, 有
     \begin{equation*}
-        \lim_{n \to +\infty} P \bigl( Y_n^* \leq y \bigr) = \Phi (y) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{y} \ee^{-t^2/2} \d t. 
+        \lim_{n \to +\infty} P \bigl( Y_n^* \leq y \bigr) = \Phi (y) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{y} \ee^{-t^2/2} \d t.
     \end{equation*}
 \end{theorem}
 
@@ -1653,30 +1667,29 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
 
 \begin{figure}
     \centering
-    % \begin{tikzpicture}[>=stealth,xscale=0.24,yscale=25]
-    %     \draw[->](0,0)node[below left]{$O$}--(25,0)node[below]{$x$};
-    %     \draw[->](0,0)--(0,0.19)node[right]{$y$};
-    %     \foreach \x in {5,10,15,20} \draw (\x,0) node [below] {$\x$} -- (\x,0.003);
-    %     \foreach \x in {0.05,0.10,0.15} \draw (0,\x) node [left] {$\x$} -- (0.3,\x);
-    %     \draw[samples=150,domain=3.8:16.2,thick] plot(\x,{0.17*e^(-(\x-10)^2/15)-0.013});
-    %     \foreach \x in {4,5,...,16} \draw[semithick] (\x-0.5,0) -- (\x-0.5,{0.17*e^(-(\x-10)^2/15)-0.013}) -- (\x+0.5,{0.17*e^(-(\x-10)^2/15)-0.013}) -- (\x+0.5,0) -- cycle;
-    %     \node at (17,0.16) {$n=25,p=0.4$};
-    % \end{tikzpicture}
-    \includegraphics[width=0.9\linewidth]{./figure/fig4-4-2.pdf}
-    \caption{二项分布正太近似时的修正}\label{fig:4.4.2}
+     \begin{tikzpicture}[>=stealth,xscale=0.24,yscale=25]
+        \draw[->](0,0)node[below left]{$O$}--(25,0)node[below]{$x$};
+        \draw[->](0,0)--(0,0.19)node[right]{$y$};
+        \foreach \x in {5,10,15,20} \draw (\x,0) node [below] {$\x$} -- (\x,0.003);
+        \foreach \x in {0.05,0.10,0.15} \draw (0,\x) node [left] {$\x$} -- (0.3,\x);
+        \draw[samples=150,domain=3.8:16.2,thick] plot(\x,{0.17*e^(-(\x-10)^2/15)-0.013});
+        \foreach \x in {4,5,...,16} \draw[semithick] (\x-0.5,0) -- (\x-0.5,{0.17*e^(-(\x-10)^2/15)-0.013}) -- (\x+0.5,{0.17*e^(-(\x-10)^2/15)-0.013}) -- (\x+0.5,0) -- cycle;
+        \node at (17,0.16) {$n=25,p=0.4$};
+    \end{tikzpicture}
+    \caption{二项分布正态近似时的修正}\label{fig:4.4.2}
 \end{figure}
 
 下面在给出棣莫弗-拉普拉斯极限定理定理的应用之前, 先说明两点:
 \begin{enumerate}
     \item 因为二项分布是离散分布, 而正态分布是连续分布, 所以用正态分布作为二项分布的近似计算中, 作些修正可以提高精度.
     若 $ k_1 < k_2 $ 均为整数, 一般先作如下修正后再用正态近似 $ P ( k_1 \leq \mu_n \leq k_2) = P ( k_1 - 0.6 < \mu_n < k_2 + 0.5 ) $.
-    
+
     譬如 $ \mu_n \sim b (25, 0.4) $, $ P ( 5 \leq \mu_n \leq 15) $ 的值为图~\ref{fig:4.4.2} 中长条矩形的面积, 其精确值为 \num{0.9780}.
 
     使用修正的正态近似
     \begin{align*}
         P ( 5 \leq \mu_n \leq 15) & = P ( 5 - 0.5 < \mu_n < 15 + 0.5 )\\
-        & \sim \Phi \biggl( \frac{15 + 0.5 -10}{\sqrt{6}} \biggr) - \Phi \biggl( frac{5 - 0.5 - 10}{\sqrt{6}} \biggr)\\
+        & \sim \Phi \biggl( \frac{15 + 0.5 -10}{\sqrt{6}} \biggr) - \Phi \biggl( \frac{5 - 0.5 - 10}{\sqrt{6}} \biggr)\\
         & = 2 \Phi (2.245) - 1 = 0.9754.
     \end{align*}
     不用修正的正态近似
@@ -1711,7 +1724,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
 \begin{solution}
     记 $ n = 100 $, $ Y_n $ 为 100 个部件中正常工作的部件数, 则
     \begin{equation*}
-        Y_n \sim b (100, 0.9), \ E \bigl( Y_n \bigr) = 90, \ Var \bigl( Y_n \bigr) = 9.
+        Y_n \sim b (100, 0.9), \ E \bigl( Y_n \bigr) = 90, \\Var  \bigl( Y_n \bigr) = 9.
     \end{equation*}
     所求概率为
     \begin{align*}
@@ -1734,7 +1747,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
 \begin{solution}
     记 $ n = 100 $, $ Y_n $ 为 100 个临床受试者中的治愈者人数.
     \begin{enumerate}
-        \item 因为 $ Y_n \sim b (100, 0.8) $, $ E (Y_n) = 80 $, $ Var (Y_n) = 16 $.
+        \item 因为 $ Y_n \sim b (100, 0.8) $, $ E (Y_n) = 80 $, $\Var  (Y_n) = 16 $.
         所以通过检验的可能性为
         \begin{align*}
             P \bigl( Y_n > 75 \bigr) & \sim 1 - \Phi \biggl(\frac{75 - 0.5 - 80}{4} \biggr)\\
@@ -1743,12 +1756,12 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
         \end{align*}
         即此药通过检验的可能性是较大的.
 
-        \item 因为 $ Y_n \sim b (100, 0.7) $, $ E (Y_n) = 70 $, $ Var (Y_n) = 21 $.
+        \item 因为 $ Y_n \sim b (100, 0.7) $, $ E (Y_n) = 70 $, $\Var  (Y_n) = 21 $.
         所以通过检验的可能性为
         \begin{align*}
             P \bigl( Y_n > 75 \bigr) & \sim 1 - \Phi \biggl(\frac{75 - 0.5 - 70}{\sqrt{21}} \biggr)\\
             & = 1 - \Phi ( 0.982 )
-            = 1-0.8370 = 0.1630. 
+            = 1-0.8370 = 0.1630.
         \end{align*}
         即此药通过检验的可能性是很小的.
     \end{enumerate}
@@ -1763,7 +1776,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
 \end{example}
 
 \begin{solution}
-    记 $ n = 200 $, $ Y_n $ 为 200 台机床中同时工作的机床数, 则 $ Y_n \sim b (200,0.7) $, $ E ( Y_n ) = 140 $, $ Var (Y_n) = 42 $.
+    记 $ n = 200 $, $ Y_n $ 为 200 台机床中同时工作的机床数, 则 $ Y_n \sim b (200,0.7) $, $ E ( Y_n ) = 140 $, $\Var  (Y_n) = 42 $.
 
     因为 $ Y_n $ 台机床同时工作需消耗 $ 15Y_n $ (\si{\kilo\watt}) 电能, 所以设供电数为 $ y $ (\si{\kilo\watt}), 则正常生产为 $\{ 15 Y_n \leq y \}$, 由题设 $ P ( 15Y_n \leq y ) \geq 0.95 $, 其中
     \begin{equation*}
@@ -1834,7 +1847,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
 
 设 $ \{ X_n \} $ 是一个相互独立的随机变量序列, 它们具有有限的数学期望和方差:
 \begin{equation*}
-    E \bigl( X_i \bigr) \mu_i, \; Var \bigl( X_i \bigr) = \sigma_i^2, \; i = 1, 2, \dotsc.
+    E \bigl( X_i \bigr) \mu_i, \;\Var  \bigl( X_i \bigr) = \sigma_i^2, \; i = 1, 2, \dotsc.
 \end{equation*}
 
 要讨论随机变量的和 $ Y_n = \sum{i=1}^n X_i $, 我们先将其标准化, 即将它减去均值、除以标准差, 由于
@@ -1892,7 +1905,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
 \end{equation*}
 因为方差存在, 即
 \begin{equation*}
-    Var \bigl( X_i \bigr) = \int_{-\infty}^{+\infty} ( x - \mu )^2 p (x) \dd x < + \infty.
+   \Var  \bigl( X_i \bigr) = \int_{-\infty}^{+\infty} ( x - \mu )^2 p (x) \dd x < + \infty.
 \end{equation*}
 所以其尾部积分一定有
 \begin{equation*}
@@ -1944,7 +1957,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
     为使用中心极限定理, 我们可以设想从 $ X_{100} $ 开始的随机变量都与 $ X_{99} $ 同分布, 且相互独立.
     下面我们用 $ \delta = 1 $ 来验证随机变量序列 $ \{ X_n \} $ 满足李雅普诺夫条件 \eqref{eq:4.4.5}, 因为
     \begin{align*}
-        & B_n = \sqrt{\sum_{i=1}^n Var \bigl( X_i \bigr)} = \sqrt{\sum_{i=1}^n p_i \bigl( 1 - p_i \bigr)} \to +\infty, \ n \to +\infty\\
+        & B_n = \sqrt{\sum_{i=1}^n\Var  \bigl( X_i \bigr)} = \sqrt{\sum_{i=1}^n p_i \bigl( 1 - p_i \bigr)} \to +\infty, \ n \to +\infty\\
         & E \bigl( \bigl\lvert X_i - p_i \bigr\rvert^3 \bigr) \bigl( 1 - p_i \bigr)^3 p_i + p_i^3 \bigl( 1 - p_i \bigr) \leq p_i \bigl( 1 - p_i \bigr),
     \end{align*}
     于是
@@ -1955,7 +1968,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
     又因为
     \begin{align*}
         & E \Biggl( \sum_{i=1}^{99} X_i \Biggr) = \sum_{i=1}^{99} p_i = \sum_{i=1}^{99} \biggl( 1 - \frac{i}{100} \biggr) = 49.5\\
-        & B_{99}^2 = \sum_{i=1}^{99} Var \bigl( X_i \bigr) = \sum_{i=1}^{99} \biggl( 1 - \frac{i}{100} \biggr) \biggl( \frac{i}{100} \biggr) = 16.665.
+        & B_{99}^2 = \sum_{i=1}^{99}\Var  \bigl( X_i \bigr) = \sum_{i=1}^{99} \biggl( 1 - \frac{i}{100} \biggr) \biggl( \frac{i}{100} \biggr) = 16.665.
     \end{align*}
     所以该学生通过考试的可能性为
     \begin{align*}
@@ -2006,7 +2019,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
         \item 保证有 \SI{95}{\percent} 的可能性, 问 \SI{16}{\hour} 内最多可以组装多少件产品.
     \end{enumerate}
     \item 某种福利彩票的奖金额 $X$ 由摇奖决定, 其分布列为
-    
+
     \begin{tabularx}{0.95\linewidth}{>{\centering\arraybackslash}X|*{7}{>{\centering\arraybackslash}X}}
         \toprule
         $X$ (万元) & 5 & 10 & 20 & 30 & 40 & 50 & 100\\
@@ -2014,7 +2027,7 @@ $ \varphi (t) $ 恰好是 $ E \bigl( \ee^{itx} \bigr) $.
         $P$ & 0.2 & 0.2 & 0.2 & 0.1 & 0.1 & 0.1 & 0.1\\
         \bottomrule
     \end{tabularx}
-    
+
     若一年中要开出 300 个奖, 问需要多少奖金总额, 才有 \SI{95}{\percent} 的把握能够发放奖金.
     \item 一家有 500 间客房的大旅馆的每间客房装有一台 \SI{2}{\kilo\watt} 的空调机.
     若开房率为 \SI{80}{\percent}, 需要多少 \si{\kilo\watt} 的电力才能有 \SI{99}{\percent} 的可能性保证有足够的电力使用空调机.
