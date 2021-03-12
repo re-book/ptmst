@@ -188,15 +188,15 @@
    		\toprule
    		 & \multicolumn{5}{c}{$Y$} \\
    		 \cmidrule{2-6}
-   		 $X$	&	$y_1$&	$y_2$&	\ldots&	$y_j$& \ldots	\\
+   		 $X$	&	$y_1$&	$y_2$&	$\cdots$&	$y_j$& $\cdots	$ \\
    		 \midrule
-   		 $x_1$& $p_{11}$ & $p_{12}$ & \ldots & $p_{1j}$ & \ldots \\
+   		 $x_1$& $p_{11}$ & $p_{12}$ & $\cdots$ & $p_{1j}$ & $\cdots$ \\
    		 \midrule
-   		 $x_2$& $p_{21}$ & $p_{22}$ & \ldots & $p_{2j}$ & \ldots \\
+   		 $x_2$& $p_{21}$ & $p_{22}$ & $\cdots$ & $p_{2j}$ & $\cdots$\\
    		 \midrule
    		 $\vdots$& $\vdots$ & $\vdots$ & $\ddots$ & $\vdots$ & $\ddots$ \\
    		 \midrule
-   		$x_i$ & $p_{i1}$ & $p_{i2}$ & \ldots & $p_{ij}$  & \ldots \\
+   		$x_i$ & $p_{i1}$ & $p_{i2}$ & $\cdots$ & $p_{ij}$  & $\cdots$ \\
    		\midrule
    		 $\vdots$& $\vdots$ & $\vdots$ & $\ddots$ & $\vdots$ & $\ddots$ \\
    		 \bottomrule
@@ -844,7 +844,7 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
   	\begin{figure}[htbp]
   		\centering
   		\begin{tikzpicture}[scale=1.5,>=Stealth]
-  		  \draw[->] (-1,0) -- (0,0) 
+  		  \draw[->] (-1,0) -- (0,0)
             node[below left] {$O$} -- (1,0)
             node[below right]{1} -- (1.5,0)node[below] {$x$};
           \draw [->] (0,-1.5) -- (0,-1) node[left] {$-1$}
@@ -899,7 +899,7 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
   		\begin{figure}[h]
   			\centering
   			\begin{tikzpicture}[scale=2,>=Stealth]
-  			  \draw [->] (-1.5,0) -- (-1,0) 
+  			  \draw [->] (-1.5,0) -- (-1,0)
                 node[below] {$-1$} -- (0,0) node[below left] {$O$} -- (1,0)node[below] {1} -- (1.5,0)node[below] {$y$};
                 \draw [->] (0,-0.5) -- (0,0.5) node[above right] {0.5} -- (0,1) node[right] {$p_Y(y)$};
                 \draw (-1,0) -- (0,0.5) -- (1,0);
@@ -1371,7 +1371,7 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
    \begin{example}[二项分布的可加性]\label{exam:3.3.3}
    	设 $X\sim b(n,p),Y\sim b(m,p)$ , 且 $X$ 与 $Y$ 独立, 证明 $Z=X+Y\sim b(n+m,p)$ .
    	\begin{proof}
-   		首先指出, $Z=X+Y$ 可取 $0,1,2,\ldots,n+m$ 等 $n+m+1$ 个不同的值, 利用离散场合的卷积公式~\ref{eq:3.3.1} , 可把事件 $\{Z=k\}$ 的概率表示为
+   		首先指出, $Z=X+Y$ 可取 $0,1,2,\ldots,n+m$ 等 $n+m+1$ 个不同的值, 利用离散场合的卷积公式~ \eqref{eq:3.3.1} , 可把事件 $\{Z=k\}$ 的概率表示为
    		\begin{equation*}
    			P(Z=k)=\sum_{i=0}^{k}P(X=i)P(Y=k-i).
    		\end{equation*}
@@ -1436,7 +1436,7 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
    			\begin{equation}
    				p_Y(y)=F_{Y}'(y)=n[F(y)]^{n-1}p(y).\label{eq:3.3.9}
    			\end{equation}
-   			\item[(4)] 将 $Exp(\lambda)$ 的分布函数和密度函数代入(\ref{eq:3.3.8})和(\ref{eq:3.3.9})式得
+   			\item[(4)] 将 $Exp(\lambda)$ 的分布函数和密度函数代入( \eqref{eq:3.3.8})和( \eqref{eq:3.3.9})式得
    			\begin{align*}
    				F_Y(y) &= \begin{cases}
    					0, & y<0;\\
@@ -1476,7 +1476,7 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
    			\begin{equation}
    				p_Y(y)=F_Y'(y)=n[1-F(y)]^{n-1}p(y).\label{eq:3.3.12}
    			\end{equation}
-   			\item[(4)] 将 $Exp(\lambda)$ 的分布函数和密度函数代入~(\ref{eq:3.3.11}) 和 ~(\ref{eq:3.3.12}) 式得
+   			\item[(4)] 将 $Exp(\lambda)$ 的分布函数和密度函数代入~( \eqref{eq:3.3.11}) 和 ~( \eqref{eq:3.3.12}) 式得
    			\begin{equation*}
    				F_Y(y)=\begin{cases}
    					0, & y<0;\\
@@ -1518,7 +1518,7 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
    \begin{example}[(正态分布的可加性)]\label{exam:3.3.6}
    	设 $X\sim N(\mu_1,\sigma_1^2),Y\sim N(\mu_2,\sigma_2^2)$ , 且 $X$ 与 $Y$ 独立, 证明 $Z+X+Y\sim N(\mu_1+\mu_2,\sigma_1^2+\sigma_2^2)$ .
    	\begin{proof}
-   		首先指出 $Z=X+Y$ 在 $(-\infty,+\infty)$ 上取值, 利用卷积公式~(\ref{eq:3.3.13})可得
+   		首先指出 $Z=X+Y$ 在 $(-\infty,+\infty)$ 上取值, 利用卷积公式~( \eqref{eq:3.3.13})可得
    		\begin{equation*}
    			p_Z(z)=\frac{1}{2\uppi\sigma_1\sigma_2}\int_{-\infty}^{+\infty}\exp\left\{-\frac{1}{2}\left[\frac{(z-y-\mu_1)^2}{\sigma_1^2}+\frac{(y-\mu_2)^2}{\sigma_2^2}\right]\right\}\,\dd y,
    		\end{equation*}
@@ -1563,7 +1563,7 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
    \begin{example}[(伽玛分布的可加性)]\label{exam:3.3.7}
    	设 $X\sim Ga(\alpha_1,\lambda),Y\sim Ga(\alpha_2,\lambda)$ , 且 $X$ 与 $Y$ 独立, 证明 $Z=X+Y\sim Ga(\alpha_1+\alpha_2,\lambda)$ .
    	\begin{proof}
-   		首先指出 $Z=X+Y$ 在 $(0,+\infty)$ 上取值, 所以当 $z\leqslant0$ 时, $p_{Z}(z)=0$ . 而当 $z>0$ 时, 可用卷积公式~\ref{eq:3.3.13}, 此时使被积函数 $p_{X}(z-y)p_{Y}(y)>0$ 的积分限为 $0<y<z$ , 故
+   		首先指出 $Z=X+Y$ 在 $(0,+\infty)$ 上取值, 所以当 $z\leqslant0$ 时, $p_{Z}(z)=0$ . 而当 $z>0$ 时, 可用卷积公式~ \eqref{eq:3.3.13}, 此时使被积函数 $p_{X}(z-y)p_{Y}(y)>0$ 的积分限为 $0<y<z$ , 故
    		\begin{align*}
    			p_{Z}(z)&=\frac{\lambda^{\alpha_1+\alpha_2}}{\Gamma(\alpha_1)\Gamma(\alpha_2)}\int_{0}^{z}(z-y)^{\alpha_1-1}\ee^{-\lambda(z-y)}\cdot y^{\alpha_2-1}\ee^{-\lambda y}\dd y\\
    			&=\frac{\lambda^{\alpha_1+\alpha_2}\ee^{-\lambda z}}{\Gamma(\alpha_1)\Gamma(\alpha_2)}\int_{0}^{z}(z-y)^{\alpha_1-1}y^{\alpha_2-1}\dd y\\
@@ -2528,7 +2528,7 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
 		\end{equation*}
 		这说明应把全部资金的 $70\%$ 投资于甲证券, 而把余下的 $30\%$ 资金投向乙证券,这样的投资组合风险最小.
 	\end{example}
-	\subsection{随机向量的数学期与协方差阵}\label{ssec:3.4.5}
+	\subsection{随机向量的数学期望与协方差阵}\label{ssec:3.4.5}
 	以下我们用矩阵形式给出 $n$ 维随机变量的数学期望与方差.
 	\begin{definition}{}{3.4.3}
 		记 $n$ 维随机向量为 $\boldsymbol{X}=(X_1,X_2,\ldots,X_n)'$ , 若其每个分量的数学期望都存在, 则称
@@ -3020,7 +3020,7 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
 	\begin{example}\label{exam:3.5.4}
 		设 $(X,Y)$ 服从二维正态分布 $N(u_1,u_2,\sigma_1^2,\sigma_2^2,\rho)$ 由
 		边际分布知 $X$ 服从正态分布 $N(\mu_1,\sigma_1^2)$, $Y$ 服从正态分布 $N(\mu_2,\sigma_2^2)$. 现在来求条件分布.
-		根据式~\ref{eq:3.5.6} 得
+		根据式~ \eqref{eq:3.5.6} 得
 		\begin{align*}
 			 p(x|y)&=\frac{p(x,y)}{p_Y(y)}	\\
 			&=\frac{\exp\bigg\{-1/\left\{2(1-\rho^2)\left[
@@ -3080,7 +3080,7 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
 
 	\subsubsection{连续场合的全概率公式和贝叶斯公式}
 
-	有了条件分布密度函数的概念,  我们可以顺便给出连续随机变量场合的全概率公式和贝叶斯公式. 将式~\ref{eq:3.5.6} 和式~\ref{eq:3.5.8} 改写为
+	有了条件分布密度函数的概念,  我们可以顺便给出连续随机变量场合的全概率公式和贝叶斯公式. 将式~ \eqref{eq:3.5.6} 和式~ \eqref{eq:3.5.8} 改写为
 	\begin{align}
 		p(x,y)&=p_X(x)p(y|x),\label{eq:3.5.9}	\\
 		p(x,y)&=p_Y(y)p(x|y). \label{eq:3.5.10}
@@ -3090,7 +3090,7 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
 		p_{Y}(y) &=\int_{-\infty}^{+\infty} p_{X}(x) p(y | x) \dd x\label{eq:3.5.11} \\
 		p_{X}(x) &=\int_{-\infty}^{+\infty} p_{Y}(y) p(x | y) \dd y \label{eq:3.5.12}
 	\end{align}
-	将式~\ref{eq:3.5.9} 代入式~\ref{eq:3.5.6} 式的分子, 式\ref{eq:3.5.11} 代入式~\ref{eq:3.5.6} 式的分母,
+	将式~ \eqref{eq:3.5.9} 代入式~ \eqref{eq:3.5.6} 式的分子, 式 \eqref{eq:3.5.11} 代入式~ \eqref{eq:3.5.6} 式的分母,
 	就得贝叶斯公式的密度函数形式:
 	\begin{equation}
 		p(x | y)=\frac{p_{X}(x) p(y | x)}{\int_{-\infty}^{+\infty} p_{X}(x) p(y | x) \dd x},\label{eq:3.5.13}
@@ -3099,7 +3099,7 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
 	\begin{equation}
 		p(y | x)=\frac{p_{Y}(y) p(x | y)}{\int_{-\infty}^{+\infty} p_{y}(y) p(x | y) \dd y}.\label{eq:3.5.14}
 	\end{equation}
-	注意, 虽然由边际分布无法得到联合分布, 但式\ref{eq:3.5.9} 和式\ref{eq:3.5.10} 式说明, 由边际分布和条件分布就可以得到联合分布.
+	注意, 虽然由边际分布无法得到联合分布, 但式 \eqref{eq:3.5.9} 和式 \eqref{eq:3.5.10} 式说明, 由边际分布和条件分布就可以得到联合分布.
 	\begin{example}\label{exam:3.5.6}
 		设 $X\sim N(\mu,\sigma_1^2)$, 在 $X=x$ 的条件下 $Y|X=x\sim N(x,\sigma_2^2)$. 试求 $Y$ 的 ( 无条件 ) 密度函数 $p_Y(y)$.
 	\end{example}
@@ -3109,7 +3109,7 @@ $p(x,y)$ 的非零区域与事件 $\{|X|\leq r/2\}$ 的交集部分见图~\ref{f
 			p_{X}(x)&=\frac{1}{\sqrt{2 \pi} \sigma_{1}} \exp \left\{-\frac{(x-\mu)^{2}}{2 \sigma_{1}^{2}}\right\}, \\
 			p(y | x)&=\frac{1}{\sqrt{2 \pi} \sigma_{2}} \exp \left\{-\frac{(y-x)^{2}}{2 \sigma_{2}^{2}}\right\}.
 		\end{align*}
-		所以由式~\ref{eq:3.5.11} 得
+		所以由式~ \eqref{eq:3.5.11} 得
 		\begin{align*}
 			p_{Y}(y) &=\int_{-\infty}^{+\infty} p_{X}(x) p(y | x) \dd x \\
 			&=\frac{1}{2 \pi \sigma_{1} \sigma_{2}} \int_{-\infty}^{+\infty}\exp \left\{-\frac{(x-\mu)^{2} }
