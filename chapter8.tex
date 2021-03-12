@@ -1363,7 +1363,7 @@ E(\hat{\beta}_{0}) & = E(\hat{y}) - E(\hat{\beta}_{1}) \bar{x} = \beta_{0} + \be
   \item 要提高 $\hat{\beta}_0, \hat{\beta}_1$ 的估计精度(即降低它们的方差)就要求 $n$ 大, $l_{xx}$ 大(即要求 $x_1, x_2, \cdots, x_n$ 较分散).
 \end{itemize}
 % by ddswhu
-\subsection{回归方程的显着性检验}\label{ssec:8.4.4}
+\subsection{回归方程的显著性检验}\label{ssec:8.4.4}
 
 从回归系数的 LSE 可以看出,对任意给出的 $n$ 对数据 $(x_i, y_i)$, 都可以求出 $\hat{\beta}_0, \hat{\beta}_1$, 从而给出回归方程 $\hat{y} = \hat{\beta }_0 + \hat{\beta }_1 x_{i}$, 但是这样给出的回归方程不一定有意义.
 
@@ -2033,7 +2033,7 @@ y_{0}-\hat{y}_{0} \sim N\left(0,\left[1+\frac{1}{n}+\frac{\left(x_{0}-\bar{x}\ri
     \end{enumerate}
 \end{xiti}
 
-\section{一元非线性性回归}\label{sec:8.5}
+\section{一元非线性回归}\label{sec:8.5}
 
 有时,回归函数并非是自变量的线性函数,但通过变换可以将之化为线性函数,从而利用一元线性回归对其分析,这样的问题是非线性回归问题.下面以一个例子说明上述非线性回归的分析步骤.
 \begin{example}
@@ -2095,7 +2095,7 @@ y_{0}-\hat{y}_{0} \sim N\left(0,\left[1+\frac{1}{n}+\frac{\left(x_{0}-\bar{x}\ri
       函数名称 & 函数表达式 & 图像 & 线性化方法 \\
       \midrule
       \makecell{双曲线\\函\quad 数} & $\frac1y=a+\frac bx$
-      & 
+      &
       \begin{varwidth}{9cm}
         \begin{varwidth}[t]{4cm}
       \vspace{0pt}
@@ -2121,7 +2121,7 @@ y_{0}-\hat{y}_{0} \sim N\left(0,\left[1+\frac{1}{n}+\frac{\left(x_{0}-\bar{x}\ri
       \end{varwidth}
       & \makecell{$v=\frac1y$\\$u=\frac1x$} \\
       \midrule
-      幂函数 & $y=ax^b$ & 
+      幂函数 & $y=ax^b$ &
       \begin{varwidth}{4cm}
       \begin{tikzpicture}[>=Stealth,scale=0.8]
     \draw [<->] (0,3) node[left] {$y$} -- (0,0) node[below left] {$O$} -- (3,0) node[below] {$x$};
@@ -2154,7 +2154,7 @@ y_{0}-\hat{y}_{0} \sim N\left(0,\left[1+\frac{1}{n}+\frac{\left(x_{0}-\bar{x}\ri
       & \makecell{$v=\ln y$\\$u=\ln x$} \\
       \midrule
       \multirow{2}*{\makecell{ 指\quad 数\\函\quad 数}} &
-      $y=a\ee^{bx}$ & 
+      $y=a\ee^{bx}$ &
       \begin{varwidth}{4cm}
       \begin{tikzpicture}[>=Stealth,scale=0.8]
     \draw [->] (-1.3,0) -- (0,0) node[below] {$O$} -- (1.7,0) node[below] {$x$};
@@ -2173,7 +2173,7 @@ y_{0}-\hat{y}_{0} \sim N\left(0,\left[1+\frac{1}{n}+\frac{\left(x_{0}-\bar{x}\ri
       \end{varwidth}
       & \makecell{$v=\ln y$\\$u=x$} \\
       \cmidrule{2-4}
-        & $y=a\ee^{b/x}$ & 
+        & $y=a\ee^{b/x}$ &
         \begin{varwidth}{4cm}
       \begin{tikzpicture}[>=Stealth,scale=0.8]
     \draw [<->] (0,3) node[left] {$y$} -- (0,0) node[below left] {$O$} -- (3,0) node[below] {$x$};
@@ -2214,7 +2214,7 @@ y_{0}-\hat{y}_{0} \sim N\left(0,\left[1+\frac{1}{n}+\frac{\left(x_{0}-\bar{x}\ri
       \end{varwidth}
       & \makecell{$v=\ln y$\\$u=\frac1x$}\\
       \midrule
-      \makecell{$S$\quad 形\\ 曲\quad 线} & $y=\frac1{a+b\ee^{-x}}$ & 
+      \makecell{$S$\quad 形\\ 曲\quad 线} & $y=\frac1{a+b\ee^{-x}}$ &
       \begin{varwidth}{4cm}
        \begin{tikzpicture}[>=Stealth,scale=0.8]
     \draw [->] (-0.5,0) -- (0,0) node[below left] {$O$}
