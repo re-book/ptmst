@@ -284,6 +284,24 @@
 	footskip=12mm
 }
 
+\RequirePackage{imakeidx}
+\makeindex[
+  title = {名词索引},
+  intoc = true,
+  columns = 2,
+  columnsep = 1cm,
+  columnseprule = true,
+  program = makeindex,
+  options = {-s mkind.ist},
+  noautomatic = false
+]
+\indexsetup{
+  toclevel = chapter,
+  headers = {名词索引}{名词索引},
+  othercode = {
+    \renewcommand{\indexspace}{\smallskip}
+  }
+}
 
 \RequirePackage{hyperref}
 \hypersetup{
