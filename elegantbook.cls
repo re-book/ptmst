@@ -176,7 +176,7 @@
 
 
 \newcommand{\base}[2]{%
-	\nointerlineskip \vspace{0.1\baselineskip}\hspace{\fill}
+	\par\nointerlineskip \vspace{0.1\baselineskip}\hspace{\fill}
 	{\color{#1}
 		\resizebox{0.3\linewidth}{1.5ex}
 		{{%
